@@ -5,7 +5,7 @@ import glob
 import shutil
 from openai import OpenAI
 from pydantic import BaseModel, Field
-from dotenv import load_model, load_dotenv  
+from dotenv import load_dotenv
 
 # Carrega as variáveis salvas no arquivo oculto .env
 load_dotenv()
