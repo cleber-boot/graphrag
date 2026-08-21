@@ -5,6 +5,11 @@ import glob
 import shutil
 from openai import OpenAI
 from pydantic import BaseModel, Field
+from dotenv import load_model, load_dotenv  
+
+# Carrega as variáveis salvas no arquivo oculto .env
+load_dotenv()
+
 
 # =====================================================================
 # 1. CONFIGURAÇÃO INICIAL E CONTRATO DE DADOS DE TI (OPENROUTER)
@@ -13,7 +18,7 @@ from pydantic import BaseModel, Field
 # Inicialização segura conectando direto nos servidores do OpenRouter
 client = OpenAI(
     base_url="https://openrouter.ai",
-    api_key="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"
+    api_key=os.environ.get("GRAPHRAG_API_KEY")
 )
 
 class DetalhesTecnicos(BaseModel):
