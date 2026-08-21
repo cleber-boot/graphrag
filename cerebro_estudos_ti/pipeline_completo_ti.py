@@ -45,15 +45,29 @@ def obter_config_extracao():
     )
 
 # =====================================================================
-# 2. MOTOR DE PROCESSAMENTO MULTIMÍDIA (SUPORTA PDF, MP4 e MP3)
+# 2. MOTORES DE PROCESSAMENTO MULTIMÍDIA E WEB (GEMINI CHATS)
 # =====================================================================
+
+def processar_link_youtube(url: str, descricao_materia: str):
+    print(f"\n[Fase 1] Analisando Link do YouTube de TI: {url}")
+    part = types.Part.from_uri(file_uri=url, mime_type="video/mp4")
+    
+    chat = client.chats.create(
+        model='gemini-2.5-flash-lite',
+        config=obter_config_extracao()
+    )
+    response = chat.send_message(
+        message=[part, f"{PROMPT_COMANDO}\nContexto do Material: {descricao_materia}"]
+    )
+    
+    print("        [Controle de Taxa] Pausando por 20 segundos para preservar a cota da API...")
+    time.sleep(20)
+    return response.text
 
 def processar_arquivo_local(caminho_arquivo: str, mime_type: str, descricao_materia: str):
     print(f"\n[Fase 1] Fazendo upload do arquivo para o ecossistema Google Cloud: {caminho_arquivo}")
-    print(f"        Tipo de Mídia Detectado: {mime_type}")
     arquivo_remoto = client.files.upload(file=caminho_arquivo)
     
-    # Vídeos e áudios longos podem demorar um pouco mais para o Google indexar internamente
     while arquivo_remoto.state.name == "PROCESSING":
         print("        Aguardando indexação multimídia do arquivo nos servidores da Google (7 segundos)...")
         time.sleep(7)
@@ -76,10 +90,8 @@ def processar_arquivo_local(caminho_arquivo: str, mime_type: str, descricao_mate
         print("        Limpando e deletando arquivo temporário do servidor da Google...")
         client.files.delete(name=arquivo_remoto.name)
         
-    # Pausa de segurança anti-bloqueio (Rate Limit) ligeiramente maior para mídias pesadas
     print("        [Controle de Taxa] Pausando por 20 segundos para preservar a cota da API...")
     time.sleep(20)
-    
     return dados_json
 
 def salvar_dados_para_graphrag(json_str: str, nome_base: str, pasta_saida: str = "./input"):
@@ -103,71 +115,88 @@ def salvar_dados_para_graphrag(json_str: str, nome_base: str, pasta_saida: str =
     print(f"[Fase 2] Grafo textual salvo com sucesso para o GraphRAG: {caminho_final}")
 
 # =====================================================================
-# 3. GERENCIADOR MULTIMÍDIA EM LOTE (VARREDURA INTELIGENTE)
+# 3. EXECUTORES AUTOMÁTICOS (ARQUIVOS E LINKS)
 # =====================================================================
 
 def mapear_mime_type(extensao: str) -> str:
-    """Mapeia a extensão do arquivo para o MIME Type correto exigido pelo Gemini."""
-    mapeamento = {
-        ".pdf": "application/pdf",
-        ".mp4": "video/mp4",
-        ".mp3": "audio/mp3",
-        ".wav": "audio/wav"
-    }
+    mapeamento = {".pdf": "application/pdf", ".mp4": "video/mp4", ".mp3": "audio/mp3", ".wav": "audio/wav"}
     return mapeamento.get(extensao.lower(), "application/octet-stream")
 
-def executar_pipeline_multimidia_automatico():
+def processar_arquivos_locais_automatico():
     pasta_destino = "./arquivos_processados"
     os.makedirs(pasta_destino, exist_ok=True)
     
-    # Busca dinamicamente por PDFs, Vídeos (mp4) e Áudios (mp3/wav) na raiz do projeto
     extensoes_permitidas = ["*.pdf", "*.mp4", "*.mp3", "*.wav"]
     arquivos_encontrados = []
     for ext in extensoes_permitidas:
         arquivos_encontrados.extend(glob.glob(ext))
     
-    if not arquivos_encontrados:
-        print("\n[Aviso] Nenhum arquivo (.pdf, .mp4, .mp3) encontrado na raiz do projeto.")
-        return
+    if arquivos_encontrados:
+        print(f"\n[Mídias] Encontrados {len(arquivos_encontrados)} arquivos locais para processamento.")
+        for caminho_completo in arquivos_encontrados:
+            nome_arquivo = os.path.basename(caminho_completo)
+            nome_puro, extensao = os.path.splitext(nome_arquivo)
+            
+            print(f"\n🎬 Processando Arquivo Local: {nome_arquivo}")
+            try:
+                json_extraido = processar_arquivo_local(caminho_completo, mapear_mime_type(extensao), f"Mídia local {nome_puro}")
+                salvar_dados_para_graphrag(json_extraido, nome_base=nome_puro)
+                shutil.move(caminho_completo, os.path.join(pasta_destino, nome_arquivo))
+                print(f"📦 [Sucesso] Arquivo original movido para: {pasta_destino}")
+            except Exception as e:
+                print(f"❌ [Erro] Falha no arquivo {nome_arquivo}: {e}")
+                if "429" in str(e) or "quota" in str(e).lower(): return False
+    return True
 
-    print(f"\n[Foco] Encontrados {len(arquivos_encontrados)} materiais (Textos/Vídeos/Áudios) para processar.")
+def processar_links_txt_automatico():
+    arquivo_links = "links.txt"
+    if not os.path.exists(arquivo_links):
+        print("\n[Aviso] Arquivo 'links.txt' não encontrado na raiz. Pulando leitura de links.")
+        return True
+        
+    with open(arquivo_links, "r", encoding="utf-8") as f:
+        links = [linha.strip() for list_linha in f if (linha := list_linha.strip()) and not linha.startswith("#")]
+        
+    if not links:
+        print("\n[Links] O arquivo 'links.txt' está vazio ou sem links válidos.")
+        return True
+        
+    print(f"\n[Links] Encontrados {len(links)} links do YouTube para processar.")
+    links_processados_com_sucesso = []
     
-    for caminho_completo in arquivos_encontrados:
-        nome_arquivo = os.path.basename(caminho_completo)
-        nome_puro, extensao = os.path.splitext(nome_arquivo)
-        mime_type = mapear_mime_type(extensao)
-        
-        print(f"\n=======================================================")
-        print(f"🎬 Processando Mídia ({extensao.upper()}): {nome_arquivo}")
-        print(f"=======================================================")
-        
+    for indice, url in enumerate(links):
+        print(f"\n🌐 Processando Vídeo {indice + 1}/{len(links)}: {url}")
+        nome_base = f"youtube_video_{indice}"
         try:
-            # O Gemini 'assiste' ao vídeo, 'ouve' o áudio ou 'lê' o PDF automaticamente
-            json_extraido = processar_arquivo_local(
-                caminho_arquivo=caminho_completo, 
-                mime_type=mime_type, 
-                descricao_materia=f"Material de estudo de computação vindo da mídia {nome_puro}"
-            )
-            
-            # Formata e salva o .txt dentro da pasta ./input
-            salvar_dados_para_graphrag(json_extraido, nome_base=nome_puro)
-            
-            # Move o arquivo original para a pasta de segurança para limpar a raiz
-            caminho_destino_final = os.path.join(pasta_destino, nome_arquivo)
-            shutil.move(caminho_completo, caminho_destino_final)
-            print(f"📦 [Sucesso] Mídia original movida para: {caminho_destino_final}")
-            
+            json_extraido = processar_link_youtube(url, f"Videoaula extraída do link {url}")
+            salvar_dados_para_graphrag(json_extraido, nome_base=nome_base)
+            links_processados_com_sucesso.append(url)
         except Exception as e:
-            print(f"❌ [Erro] Falha ao processar a mídia {nome_arquivo}: {e}")
+            print(f"❌ [Erro] Falha ao processar o link {url}: {e}")
             if "429" in str(e) or "quota" in str(e).lower():
-                print("🛑 [Cota Excedida] Parando lote para proteger seu limite. Retorne amanhã!")
+                print("🛑 [Cota Excedida] Interrompendo lote de links para proteção.")
                 break
+                
+    # Atualiza o arquivo de links mantendo apenas o que NÃO foi processado por falta de cota
+    links_restantes = [l for l in links if l not in links_processados_com_sucesso]
+    with open(arquivo_links, "w", encoding="utf-8") as f:
+        for l in links_restantes:
+            f.write(f"{l}\n")
+            
+    if not links_restantes:
+        print("🧹 [Limpeza] Todos os links foram processados! O arquivo 'links.txt' foi limpo.")
+    else:
+        print(f"⚠️ [Aviso] {len(links_restantes)} links falharam ou pararam na cota e ficaram salvos para a próxima execução.")
 
 if __name__ == "__main__":
     if not os.environ.get("GEMINI_API_KEY"):
-        print("ERRO: Defina a variável de ambiente GEMINI_API_KEY.")
-        exit(1)
+        print("ERRO: Defina a variável de ambiente GEMINI_API_KEY."); exit(1)
         
-    print("=== INICIANDO ECOSSISTEMA MULTIMÍDIA DE TI COM AUTO-LIMPEZA ===")
-    executar_pipeline_multimidia_automatico()
+    print("=== INICIANDO ECOSSISTEMA TOTAL DE TI (ARQUIVOS + LINKS) ===")
+    
+    # Executa primeiro os arquivos locais e depois a lista de links
+    sucesso_locais = processar_arquivos_locais_automatico()
+    if sucesso_locais:
+        processar_links_txt_automatico()
+        
     print("\n=== PIPELINE DE EXTRAÇÃO CONCLUÍDO ===")
