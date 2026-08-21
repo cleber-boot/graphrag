@@ -1,0 +1,892 @@
+2026-08-20 22:25:39.0446 - INFO - graphrag.index.validate_config - LLM Config Params Validated
+2026-08-20 22:25:39.0724 - INFO - graphrag.index.validate_config - Embedding LLM Config Params Validated
+2026-08-20 22:25:39.0724 - INFO - graphrag.cli.index - Starting pipeline run. False
+2026-08-20 22:25:39.0725 - INFO - graphrag.cli.index - Using default configuration: {
+    "completion_models": {
+        "default_completion_model": {
+            "type": "litellm",
+            "model_provider": "gemini",
+            "model": "gemini-2.5-flash-lite",
+            "call_args": {},
+            "api_base": null,
+            "api_version": null,
+            "api_key": "==== REDACTED ====",
+            "auth_method": "api_key",
+            "azure_deployment_name": null,
+            "retry": {
+                "type": "exponential_backoff",
+                "max_retries": null,
+                "base_delay": null,
+                "jitter": null,
+                "max_delay": null
+            },
+            "rate_limit": null,
+            "metrics": {
+                "type": "default",
+                "store": "memory",
+                "writer": "log",
+                "log_level": null,
+                "base_dir": null
+            },
+            "mock_responses": []
+        }
+    },
+    "embedding_models": {
+        "default_embedding_model": {
+            "type": "litellm",
+            "model_provider": "gemini",
+            "model": "gemini-embedding-2",
+            "call_args": {},
+            "api_base": null,
+            "api_version": null,
+            "api_key": "==== REDACTED ====",
+            "auth_method": "api_key",
+            "azure_deployment_name": null,
+            "retry": {
+                "type": "exponential_backoff",
+                "max_retries": null,
+                "base_delay": null,
+                "jitter": null,
+                "max_delay": null
+            },
+            "rate_limit": null,
+            "metrics": {
+                "type": "default",
+                "store": "memory",
+                "writer": "log",
+                "log_level": null,
+                "base_dir": null
+            },
+            "mock_responses": []
+        }
+    },
+    "concurrent_requests": 25,
+    "async_mode": "threaded",
+    "input": {
+        "type": "text",
+        "encoding": null,
+        "file_pattern": null,
+        "id_column": null,
+        "title_column": null,
+        "text_column": null
+    },
+    "input_storage": {
+        "type": "file",
+        "encoding": null,
+        "base_dir": "/workspaces/graphrag/cerebro_estudos_ti/input",
+        "account_url": null,
+        "database_name": null
+    },
+    "chunking": {
+        "type": "tokens",
+        "encoding_model": "o200k_base",
+        "size": 1200,
+        "overlap": 100,
+        "prepend_metadata": null
+    },
+    "output_storage": {
+        "type": "file",
+        "encoding": null,
+        "base_dir": "/workspaces/graphrag/cerebro_estudos_ti/output",
+        "account_url": null,
+        "database_name": null
+    },
+    "update_output_storage": {
+        "type": "file",
+        "encoding": null,
+        "base_dir": "/workspaces/graphrag/cerebro_estudos_ti/update_output",
+        "account_url": null,
+        "database_name": null
+    },
+    "table_provider": {
+        "type": "parquet",
+        "legacy_container": null,
+        "batch_size": 50
+    },
+    "cache": {
+        "type": "json",
+        "storage": {
+            "type": "file",
+            "encoding": null,
+            "base_dir": "cache",
+            "account_url": null,
+            "database_name": null
+        }
+    },
+    "reporting": {
+        "type": "file",
+        "base_dir": "/workspaces/graphrag/cerebro_estudos_ti/logs",
+        "account_url": null
+    },
+    "vector_store": {
+        "type": "lancedb",
+        "db_uri": "/workspaces/graphrag/cerebro_estudos_ti/output/lancedb",
+        "url": null,
+        "audience": null,
+        "database_name": null,
+        "vector_size": 3072,
+        "index_schema": {
+            "text_unit_text": {
+                "index_name": "vector_index",
+                "id_field": "id",
+                "vector_field": "vector",
+                "vector_size": 3072,
+                "fields": {}
+            },
+            "entity_description": {
+                "index_name": "vector_index",
+                "id_field": "id",
+                "vector_field": "vector",
+                "vector_size": 3072,
+                "fields": {}
+            },
+            "community_full_content": {
+                "index_name": "vector_index",
+                "id_field": "id",
+                "vector_field": "vector",
+                "vector_size": 3072,
+                "fields": {}
+            }
+        }
+    },
+    "workflows": null,
+    "embed_text": {
+        "embedding_model_id": "default_embedding_model",
+        "model_instance_name": "text_embedding",
+        "batch_size": 16,
+        "batch_max_tokens": 8191,
+        "names": [
+            "entity_description",
+            "community_full_content",
+            "text_unit_text"
+        ]
+    },
+    "extract_graph": {
+        "completion_model_id": "default_completion_model",
+        "model_instance_name": "extract_graph",
+        "prompt": "prompts/extract_graph.txt",
+        "entity_types": [
+            "organization",
+            "person",
+            "geo",
+            "event"
+        ],
+        "max_gleanings": 1
+    },
+    "summarize_descriptions": {
+        "completion_model_id": "default_completion_model",
+        "model_instance_name": "summarize_descriptions",
+        "prompt": "prompts/summarize_descriptions.txt",
+        "max_length": 500,
+        "max_input_tokens": 4000
+    },
+    "extract_graph_nlp": {
+        "normalize_edge_weights": true,
+        "text_analyzer": {
+            "extractor_type": "regex_english",
+            "model_name": "en_core_web_md",
+            "max_word_length": 15,
+            "word_delimiter": " ",
+            "include_named_entities": true,
+            "exclude_nouns": [
+                "stuff",
+                "thing",
+                "things",
+                "bunch",
+                "bit",
+                "bits",
+                "people",
+                "person",
+                "okay",
+                "hey",
+                "hi",
+                "hello",
+                "laughter",
+                "oh"
+            ],
+            "exclude_entity_tags": [
+                "DATE"
+            ],
+            "exclude_pos_tags": [
+                "DET",
+                "PRON",
+                "INTJ",
+                "X"
+            ],
+            "noun_phrase_tags": [
+                "PROPN",
+                "NOUNS"
+            ],
+            "noun_phrase_grammars": {
+                "PROPN,PROPN": "PROPN",
+                "NOUN,NOUN": "NOUNS",
+                "NOUNS,NOUN": "NOUNS",
+                "ADJ,ADJ": "ADJ",
+                "ADJ,NOUN": "NOUNS"
+            }
+        },
+        "concurrent_requests": 25,
+        "async_mode": "threaded"
+    },
+    "prune_graph": {
+        "min_node_freq": 2,
+        "max_node_freq_std": null,
+        "min_node_degree": 1,
+        "max_node_degree_std": null,
+        "min_edge_weight_pct": 40.0,
+        "remove_ego_nodes": true,
+        "lcc_only": false
+    },
+    "cluster_graph": {
+        "max_cluster_size": 10,
+        "use_lcc": true,
+        "seed": 3735928559
+    },
+    "extract_claims": {
+        "enabled": false,
+        "completion_model_id": "default_completion_model",
+        "model_instance_name": "extract_claims",
+        "prompt": "prompts/extract_claims.txt",
+        "description": "Any claims or facts that could be relevant to information discovery.",
+        "max_gleanings": 1
+    },
+    "community_reports": {
+        "completion_model_id": "default_completion_model",
+        "model_instance_name": "community_reporting",
+        "graph_prompt": "prompts/community_report_graph.txt",
+        "text_prompt": "prompts/community_report_text.txt",
+        "max_length": 2000,
+        "max_input_length": 8000
+    },
+    "snapshots": {
+        "embeddings": false,
+        "graphml": false,
+        "raw_graph": false
+    },
+    "local_search": {
+        "prompt": "prompts/local_search_system_prompt.txt",
+        "completion_model_id": "default_completion_model",
+        "embedding_model_id": "default_embedding_model",
+        "text_unit_prop": 0.5,
+        "community_prop": 0.15,
+        "conversation_history_max_turns": 5,
+        "top_k_entities": 10,
+        "top_k_relationships": 10,
+        "max_context_tokens": 12000
+    },
+    "global_search": {
+        "map_prompt": "prompts/global_search_map_system_prompt.txt",
+        "reduce_prompt": "prompts/global_search_reduce_system_prompt.txt",
+        "completion_model_id": "default_completion_model",
+        "knowledge_prompt": "prompts/global_search_knowledge_system_prompt.txt",
+        "max_context_tokens": 12000,
+        "data_max_tokens": 12000,
+        "map_max_length": 1000,
+        "reduce_max_length": 2000,
+        "dynamic_search_threshold": 1,
+        "dynamic_search_keep_parent": false,
+        "dynamic_search_num_repeats": 1,
+        "dynamic_search_use_summary": false,
+        "dynamic_search_max_level": 2
+    },
+    "drift_search": {
+        "prompt": "prompts/drift_search_system_prompt.txt",
+        "reduce_prompt": "prompts/drift_search_reduce_prompt.txt",
+        "completion_model_id": "default_completion_model",
+        "embedding_model_id": "default_embedding_model",
+        "data_max_tokens": 12000,
+        "reduce_max_tokens": null,
+        "reduce_temperature": 0,
+        "reduce_max_completion_tokens": null,
+        "concurrency": 32,
+        "drift_k_followups": 20,
+        "primer_folds": 5,
+        "primer_llm_max_tokens": 12000,
+        "n_depth": 3,
+        "local_search_text_unit_prop": 0.9,
+        "local_search_community_prop": 0.1,
+        "local_search_top_k_mapped_entities": 10,
+        "local_search_top_k_relationships": 10,
+        "local_search_max_data_tokens": 12000,
+        "local_search_temperature": 0,
+        "local_search_top_p": 1,
+        "local_search_n": 1,
+        "local_search_llm_max_gen_tokens": null,
+        "local_search_llm_max_gen_completion_tokens": null
+    },
+    "basic_search": {
+        "prompt": "prompts/basic_search_system_prompt.txt",
+        "completion_model_id": "default_completion_model",
+        "embedding_model_id": "default_embedding_model",
+        "k": 10,
+        "max_context_tokens": 12000
+    }
+}
+2026-08-20 22:25:39.0725 - INFO - graphrag.api.index - Initializing indexing pipeline...
+2026-08-20 22:25:39.0725 - INFO - graphrag.index.workflows.factory - Creating pipeline with workflows: ['load_input_documents', 'create_base_text_units', 'create_final_documents', 'extract_graph', 'finalize_graph', 'extract_covariates', 'create_communities', 'create_final_text_units', 'create_community_reports', 'generate_text_embeddings']
+2026-08-20 22:25:39.0728 - INFO - graphrag.index.run.run_pipeline - Running standard indexing.
+2026-08-20 22:25:39.0730 - INFO - graphrag.index.run.run_pipeline - Executing pipeline...
+2026-08-20 22:25:39.0773 - INFO - graphrag.index.workflows.load_input_documents - Final # of rows loaded: 1
+2026-08-20 22:25:39.0867 - INFO - graphrag.api.index - Workflow load_input_documents completed successfully
+2026-08-20 22:25:39.0894 - INFO - graphrag.index.workflows.create_base_text_units - Workflow started: create_base_text_units
+2026-08-20 22:25:41.0501 - INFO - graphrag.index.workflows.create_base_text_units - Starting chunking process for 1 documents
+2026-08-20 22:25:41.0519 - INFO - graphrag.index.workflows.create_base_text_units - chunker progress:  1/1
+2026-08-20 22:25:41.0530 - INFO - graphrag.index.workflows.create_base_text_units - Workflow completed: create_base_text_units
+2026-08-20 22:25:41.0554 - INFO - graphrag.api.index - Workflow create_base_text_units completed successfully
+2026-08-20 22:25:41.0569 - INFO - graphrag.index.workflows.create_final_documents - Workflow started: create_final_documents
+2026-08-20 22:25:41.0597 - INFO - graphrag.index.workflows.create_final_documents - Workflow completed: create_final_documents
+2026-08-20 22:25:41.0597 - INFO - graphrag.api.index - Workflow create_final_documents completed successfully
+2026-08-20 22:25:41.0598 - INFO - graphrag.index.workflows.extract_graph - Workflow started: extract_graph
+2026-08-20 22:25:46.0669 - INFO - graphrag.logger.progress - extract graph progress: 1/3
+2026-08-20 22:25:53.0021 - INFO - graphrag.logger.progress - extract graph progress: 2/3
+2026-08-20 22:25:56.0557 - INFO - graphrag.logger.progress - extract graph progress: 3/3
+2026-08-20 22:25:56.0731 - WARNING - graphrag.index.operations.extract_graph.utils - Dropped 7 relationship(s) referencing non-existent entities.
+2026-08-20 22:25:56.0770 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 1/156
+2026-08-20 22:25:56.0805 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 2/156
+2026-08-20 22:25:56.0805 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 3/156
+2026-08-20 22:25:56.0806 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 4/156
+2026-08-20 22:25:56.0806 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 5/156
+2026-08-20 22:25:56.0806 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 6/156
+2026-08-20 22:25:56.0806 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 7/156
+2026-08-20 22:25:56.0807 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 8/156
+2026-08-20 22:25:56.0807 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 9/156
+2026-08-20 22:25:56.0807 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 10/156
+2026-08-20 22:25:56.0807 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 11/156
+2026-08-20 22:25:56.0807 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 12/156
+2026-08-20 22:25:56.0808 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 13/156
+2026-08-20 22:25:56.0808 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 14/156
+2026-08-20 22:25:56.0942 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 15/156
+2026-08-20 22:25:56.0942 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 16/156
+2026-08-20 22:25:56.0942 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 17/156
+2026-08-20 22:25:56.0943 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 18/156
+2026-08-20 22:25:56.0943 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 19/156
+2026-08-20 22:25:56.0943 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 20/156
+2026-08-20 22:25:56.0944 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 21/156
+2026-08-20 22:25:56.0944 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 22/156
+2026-08-20 22:25:56.0944 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 23/156
+2026-08-20 22:25:56.0944 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 24/156
+2026-08-20 22:25:56.0945 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 25/156
+2026-08-20 22:25:56.0945 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 26/156
+2026-08-20 22:25:56.0945 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 27/156
+2026-08-20 22:25:57.0124 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 28/156
+2026-08-20 22:25:57.0124 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 29/156
+2026-08-20 22:25:57.0125 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 30/156
+2026-08-20 22:25:57.0125 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 31/156
+2026-08-20 22:25:57.0125 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 32/156
+2026-08-20 22:25:57.0125 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 33/156
+2026-08-20 22:25:57.0126 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 34/156
+2026-08-20 22:25:57.0126 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 35/156
+2026-08-20 22:25:57.0126 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 36/156
+2026-08-20 22:25:57.0126 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 37/156
+2026-08-20 22:25:57.0126 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 38/156
+2026-08-20 22:25:57.0127 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 39/156
+2026-08-20 22:25:57.0127 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 40/156
+2026-08-20 22:25:57.0127 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 41/156
+2026-08-20 22:25:57.0127 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 42/156
+2026-08-20 22:25:57.0127 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 43/156
+2026-08-20 22:25:57.0128 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 44/156
+2026-08-20 22:25:57.0128 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 45/156
+2026-08-20 22:25:57.0128 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 46/156
+2026-08-20 22:25:57.0128 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 47/156
+2026-08-20 22:25:57.0128 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 48/156
+2026-08-20 22:25:57.0129 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 49/156
+2026-08-20 22:25:58.0139 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 50/156
+2026-08-20 22:25:58.0200 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 51/156
+2026-08-20 22:25:58.0352 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 52/156
+2026-08-20 22:25:58.0498 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 53/156
+2026-08-20 22:25:58.0545 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 54/156
+2026-08-20 22:25:58.0842 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 55/156
+2026-08-20 22:27:03.0155 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 56/156
+2026-08-20 22:27:03.0226 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 57/156
+2026-08-20 22:27:03.0565 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 58/156
+2026-08-20 22:27:03.0751 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 59/156
+2026-08-20 22:27:03.0927 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 60/156
+2026-08-20 22:27:04.0210 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 61/156
+2026-08-20 22:27:04.0231 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 62/156
+2026-08-20 22:27:04.0518 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 63/156
+2026-08-20 22:27:04.0526 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 64/156
+2026-08-20 22:27:04.0526 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 65/156
+2026-08-20 22:27:04.0527 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 66/156
+2026-08-20 22:27:04.0527 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 67/156
+2026-08-20 22:27:04.0527 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 68/156
+2026-08-20 22:27:04.0527 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 69/156
+2026-08-20 22:27:04.0528 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 70/156
+2026-08-20 22:27:04.0528 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 71/156
+2026-08-20 22:27:04.0528 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 72/156
+2026-08-20 22:27:04.0528 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 73/156
+2026-08-20 22:27:04.0528 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 74/156
+2026-08-20 22:27:04.0529 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 75/156
+2026-08-20 22:27:04.0529 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 76/156
+2026-08-20 22:27:04.0529 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 77/156
+2026-08-20 22:27:04.0529 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 78/156
+2026-08-20 22:27:04.0530 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 79/156
+2026-08-20 22:27:04.0530 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 80/156
+2026-08-20 22:27:04.0530 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 81/156
+2026-08-20 22:27:04.0530 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 82/156
+2026-08-20 22:27:04.0531 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 83/156
+2026-08-20 22:27:04.0531 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 84/156
+2026-08-20 22:27:04.0531 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 85/156
+2026-08-20 22:27:04.0531 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 86/156
+2026-08-20 22:27:04.0532 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 87/156
+2026-08-20 22:27:04.0532 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 88/156
+2026-08-20 22:27:04.0532 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 89/156
+2026-08-20 22:27:04.0532 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 90/156
+2026-08-20 22:27:04.0533 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 91/156
+2026-08-20 22:27:04.0533 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 92/156
+2026-08-20 22:27:04.0533 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 93/156
+2026-08-20 22:27:04.0533 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 94/156
+2026-08-20 22:27:04.0534 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 95/156
+2026-08-20 22:27:04.0534 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 96/156
+2026-08-20 22:27:04.0534 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 97/156
+2026-08-20 22:27:04.0534 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 98/156
+2026-08-20 22:27:04.0535 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 99/156
+2026-08-20 22:27:04.0535 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 100/156
+2026-08-20 22:27:04.0535 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 101/156
+2026-08-20 22:27:04.0536 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 102/156
+2026-08-20 22:27:04.0536 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 103/156
+2026-08-20 22:27:04.0536 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 104/156
+2026-08-20 22:27:04.0537 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 105/156
+2026-08-20 22:27:04.0537 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 106/156
+2026-08-20 22:27:04.0589 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 107/156
+2026-08-20 22:27:04.0590 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 108/156
+2026-08-20 22:27:04.0590 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 109/156
+2026-08-20 22:27:04.0591 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 110/156
+2026-08-20 22:27:04.0591 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 111/156
+2026-08-20 22:27:04.0593 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 112/156
+2026-08-20 22:27:04.0593 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 113/156
+2026-08-20 22:27:04.0594 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 114/156
+2026-08-20 22:27:04.0594 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 115/156
+2026-08-20 22:27:04.0594 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 116/156
+2026-08-20 22:27:04.0595 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 117/156
+2026-08-20 22:27:04.0595 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 118/156
+2026-08-20 22:27:04.0596 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 119/156
+2026-08-20 22:27:04.0596 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 120/156
+2026-08-20 22:27:04.0596 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 121/156
+2026-08-20 22:27:04.0597 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 122/156
+2026-08-20 22:27:04.0599 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 123/156
+2026-08-20 22:27:04.0599 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 124/156
+2026-08-20 22:27:04.0599 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 125/156
+2026-08-20 22:27:04.0600 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 126/156
+2026-08-20 22:27:04.0600 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 127/156
+2026-08-20 22:27:04.0602 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 128/156
+2026-08-20 22:27:04.0602 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 129/156
+2026-08-20 22:27:04.0603 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 130/156
+2026-08-20 22:27:04.0604 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 131/156
+2026-08-20 22:27:04.0605 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 132/156
+2026-08-20 22:27:04.0607 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 133/156
+2026-08-20 22:27:04.0608 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 134/156
+2026-08-20 22:27:04.0609 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 135/156
+2026-08-20 22:27:04.0610 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 136/156
+2026-08-20 22:27:04.0611 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 137/156
+2026-08-20 22:27:04.0613 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 138/156
+2026-08-20 22:27:04.0614 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 139/156
+2026-08-20 22:27:04.0614 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 140/156
+2026-08-20 22:27:04.0616 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 141/156
+2026-08-20 22:27:04.0616 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 142/156
+2026-08-20 22:27:04.0616 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 143/156
+2026-08-20 22:27:04.0617 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 144/156
+2026-08-20 22:27:04.0618 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 145/156
+2026-08-20 22:27:04.0618 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 146/156
+2026-08-20 22:27:04.0619 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 147/156
+2026-08-20 22:27:04.0621 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 148/156
+2026-08-20 22:27:04.0621 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 149/156
+2026-08-20 22:27:04.0623 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 150/156
+2026-08-20 22:27:04.0624 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 151/156
+2026-08-20 22:27:04.0624 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 152/156
+2026-08-20 22:27:04.0624 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 153/156
+2026-08-20 22:27:04.0624 - INFO - graphrag.logger.progress - Summarize entity/relationship description progress: 154/156
+2026-08-20 22:31:22.0817 - ERROR - graphrag_llm.middleware.with_logging - Async request failed after 7 retries with exception=litellm.RateLimitError: litellm.RateLimitError: geminiException - {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash-lite\nPlease retry in 37.079427016s.",
+    "status": "RESOURCE_EXHAUSTED",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.Help",
+        "links": [
+          {
+            "description": "Learn more about Gemini API quotas",
+            "url": "https://ai.google.dev/gemini-api/docs/rate-limits"
+          }
+        ]
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.QuotaFailure",
+        "violations": [
+          {
+            "quotaMetric": "generativelanguage.googleapis.com/generate_content_free_tier_requests",
+            "quotaId": "GenerateRequestsPerDayPerProjectPerModel-FreeTier",
+            "quotaDimensions": {
+              "model": "gemini-2.5-flash-lite",
+              "location": "global"
+            },
+            "quotaValue": "20"
+          }
+        ]
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.RetryInfo",
+        "retryDelay": "37s"
+      }
+    ]
+  }
+}
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/litellm/llms/vertex_ai/gemini/vertex_and_google_ai_studio_gemini.py", line 2837, in async_completion
+    response = await client.post(
+               ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/litellm/litellm_core_utils/logging_utils.py", line 289, in async_wrapper
+    result = await func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/litellm/llms/custom_httpx/http_handler.py", line 667, in post
+    await _raise_masked_async_error(e, stream)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/litellm/llms/custom_httpx/http_handler.py", line 454, in _raise_masked_async_error
+    raise MaskedHTTPStatusError(e, message=_text, text=_text) from None
+litellm.llms.custom_httpx.http_handler.MaskedHTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/litellm/main.py", line 639, in acompletion
+    response = await init_response
+               ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/litellm/llms/vertex_ai/gemini/vertex_and_google_ai_studio_gemini.py", line 2846, in async_completion
+    raise VertexAIError(
+litellm.llms.vertex_ai.common_utils.VertexAIError: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash-lite\nPlease retry in 37.079427016s.",
+    "status": "RESOURCE_EXHAUSTED",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.Help",
+        "links": [
+          {
+            "description": "Learn more about Gemini API quotas",
+            "url": "https://ai.google.dev/gemini-api/docs/rate-limits"
+          }
+        ]
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.QuotaFailure",
+        "violations": [
+          {
+            "quotaMetric": "generativelanguage.googleapis.com/generate_content_free_tier_requests",
+            "quotaId": "GenerateRequestsPerDayPerProjectPerModel-FreeTier",
+            "quotaDimensions": {
+              "model": "gemini-2.5-flash-lite",
+              "location": "global"
+            },
+            "quotaValue": "20"
+          }
+        ]
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.RetryInfo",
+        "retryDelay": "37s"
+      }
+    ]
+  }
+}
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag_llm/middleware/with_logging.py", line 64, in _request_count_middleware_async
+    return await async_middleware(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag_llm/middleware/with_request_count.py", line 72, in _request_count_middleware_async
+    result = await async_middleware(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag_llm/middleware/with_cache.py", line 145, in _cache_middleware_async
+    response = await async_middleware(**kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag_llm/middleware/with_retries.py", line 55, in _retry_middleware_async
+    return await retrier.retry_async(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag_llm/retry/exponential_retry.py", line 102, in retry_async
+    return await func(**input_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag_llm/middleware/with_metrics.py", line 80, in _metrics_middleware_async
+    response = await async_middleware(**kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag_llm/completion/lite_llm_completion.py", line 291, in _base_completion_async
+    response = await litellm.acompletion(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/litellm/utils.py", line 1870, in wrapper_async
+    raise e
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/litellm/utils.py", line 1689, in wrapper_async
+    result = await original_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/litellm/main.py", line 692, in acompletion
+    raise exception_type(
+          ^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 2499, in exception_type
+    raise e  # it's already mapped
+    ^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 2329, in exception_type
+    _map_vertex_exception(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 1158, in _map_vertex_exception
+    raise RateLimitError(
+litellm.exceptions.RateLimitError: litellm.RateLimitError: litellm.RateLimitError: geminiException - {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash-lite\nPlease retry in 37.079427016s.",
+    "status": "RESOURCE_EXHAUSTED",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.Help",
+        "links": [
+          {
+            "description": "Learn more about Gemini API quotas",
+            "url": "https://ai.google.dev/gemini-api/docs/rate-limits"
+          }
+        ]
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.QuotaFailure",
+        "violations": [
+          {
+            "quotaMetric": "generativelanguage.googleapis.com/generate_content_free_tier_requests",
+            "quotaId": "GenerateRequestsPerDayPerProjectPerModel-FreeTier",
+            "quotaDimensions": {
+              "model": "gemini-2.5-flash-lite",
+              "location": "global"
+            },
+            "quotaValue": "20"
+          }
+        ]
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.RetryInfo",
+        "retryDelay": "37s"
+      }
+    ]
+  }
+}
+
+2026-08-20 22:31:22.0848 - ERROR - graphrag.index.run.run_pipeline - error running workflow extract_graph
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/litellm/llms/vertex_ai/gemini/vertex_and_google_ai_studio_gemini.py", line 2837, in async_completion
+    response = await client.post(
+               ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/litellm/litellm_core_utils/logging_utils.py", line 289, in async_wrapper
+    result = await func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/litellm/llms/custom_httpx/http_handler.py", line 667, in post
+    await _raise_masked_async_error(e, stream)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/litellm/llms/custom_httpx/http_handler.py", line 454, in _raise_masked_async_error
+    raise MaskedHTTPStatusError(e, message=_text, text=_text) from None
+litellm.llms.custom_httpx.http_handler.MaskedHTTPStatusError: Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/litellm/main.py", line 639, in acompletion
+    response = await init_response
+               ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/litellm/llms/vertex_ai/gemini/vertex_and_google_ai_studio_gemini.py", line 2846, in async_completion
+    raise VertexAIError(
+litellm.llms.vertex_ai.common_utils.VertexAIError: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash-lite\nPlease retry in 37.079427016s.",
+    "status": "RESOURCE_EXHAUSTED",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.Help",
+        "links": [
+          {
+            "description": "Learn more about Gemini API quotas",
+            "url": "https://ai.google.dev/gemini-api/docs/rate-limits"
+          }
+        ]
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.QuotaFailure",
+        "violations": [
+          {
+            "quotaMetric": "generativelanguage.googleapis.com/generate_content_free_tier_requests",
+            "quotaId": "GenerateRequestsPerDayPerProjectPerModel-FreeTier",
+            "quotaDimensions": {
+              "model": "gemini-2.5-flash-lite",
+              "location": "global"
+            },
+            "quotaValue": "20"
+          }
+        ]
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.RetryInfo",
+        "retryDelay": "37s"
+      }
+    ]
+  }
+}
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag/index/run/run_pipeline.py", line 136, in _run_pipeline
+    result = await workflow_function(config, context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag/index/workflows/extract_graph.py", line 61, in run_workflow
+    entities, relationships, raw_entities, raw_relationships = await extract_graph(
+                                                               ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag/index/workflows/extract_graph.py", line 143, in extract_graph
+    entities, relationships = await get_summarized_entities_relationships(
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag/index/workflows/extract_graph.py", line 168, in get_summarized_entities_relationships
+    entity_summaries, relationship_summaries = await summarize_descriptions(
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag/index/operations/summarize_descriptions/summarize_descriptions.py", line 115, in summarize_descriptions
+    return await get_summarized(entities_df, relationships_df, semaphore)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag/index/operations/summarize_descriptions/summarize_descriptions.py", line 80, in get_summarized
+    edge_results = await asyncio.gather(*edge_futures)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/asyncio/tasks.py", line 385, in __wakeup
+    future.result()
+  File "/usr/local/python/3.12.1/lib/python3.12/asyncio/tasks.py", line 314, in __step_run_and_handle_result
+    result = coro.send(None)
+             ^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag/index/operations/summarize_descriptions/summarize_descriptions.py", line 102, in do_summarize_descriptions
+    results = await run_summarize_descriptions(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag/index/operations/summarize_descriptions/summarize_descriptions.py", line 139, in run_summarize_descriptions
+    result = await extractor(id=id, descriptions=descriptions)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag/index/operations/summarize_descriptions/description_summary_extractor.py", line 68, in __call__
+    result = await self._summarize_descriptions(id, descriptions)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag/index/operations/summarize_descriptions/description_summary_extractor.py", line 105, in _summarize_descriptions
+    result = await self._summarize_descriptions_with_llm(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag/index/operations/summarize_descriptions/description_summary_extractor.py", line 124, in _summarize_descriptions_with_llm
+    response: LLMCompletionResponse = await self._model.completion_async(
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag_llm/completion/lite_llm_completion.py", line 194, in completion_async
+    response = await self._completion_async(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag_llm/middleware/with_logging.py", line 64, in _request_count_middleware_async
+    return await async_middleware(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag_llm/middleware/with_request_count.py", line 72, in _request_count_middleware_async
+    result = await async_middleware(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag_llm/middleware/with_cache.py", line 145, in _cache_middleware_async
+    response = await async_middleware(**kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag_llm/middleware/with_retries.py", line 55, in _retry_middleware_async
+    return await retrier.retry_async(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag_llm/retry/exponential_retry.py", line 102, in retry_async
+    return await func(**input_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag_llm/middleware/with_metrics.py", line 80, in _metrics_middleware_async
+    response = await async_middleware(**kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag_llm/completion/lite_llm_completion.py", line 291, in _base_completion_async
+    response = await litellm.acompletion(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/litellm/utils.py", line 1870, in wrapper_async
+    raise e
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/litellm/utils.py", line 1689, in wrapper_async
+    result = await original_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/litellm/main.py", line 692, in acompletion
+    raise exception_type(
+          ^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 2499, in exception_type
+    raise e  # it's already mapped
+    ^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 2329, in exception_type
+    _map_vertex_exception(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 1158, in _map_vertex_exception
+    raise RateLimitError(
+litellm.exceptions.RateLimitError: litellm.RateLimitError: litellm.RateLimitError: geminiException - {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash-lite\nPlease retry in 37.079427016s.",
+    "status": "RESOURCE_EXHAUSTED",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.Help",
+        "links": [
+          {
+            "description": "Learn more about Gemini API quotas",
+            "url": "https://ai.google.dev/gemini-api/docs/rate-limits"
+          }
+        ]
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.QuotaFailure",
+        "violations": [
+          {
+            "quotaMetric": "generativelanguage.googleapis.com/generate_content_free_tier_requests",
+            "quotaId": "GenerateRequestsPerDayPerProjectPerModel-FreeTier",
+            "quotaDimensions": {
+              "model": "gemini-2.5-flash-lite",
+              "location": "global"
+            },
+            "quotaValue": "20"
+          }
+        ]
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.RetryInfo",
+        "retryDelay": "37s"
+      }
+    ]
+  }
+}
+
+2026-08-20 22:31:22.0856 - ERROR - graphrag.api.index - Workflow extract_graph completed with errors
+2026-08-20 22:31:22.0859 - INFO - graphrag_llm.metrics.log_metrics_writer - Metrics for gemini/gemini-embedding-2: {
+  "attempted_request_count": 1,
+  "successful_response_count": 1,
+  "failed_response_count": 0,
+  "failure_rate": 0.0,
+  "requests_with_retries": 0,
+  "retries": 0,
+  "retry_rate": 0.0,
+  "compute_duration_seconds": 0.26735424995422363,
+  "compute_duration_per_response_seconds": 0.26735424995422363,
+  "cache_hit_rate": 0.0,
+  "streaming_responses": 0,
+  "responses_with_tokens": 1,
+  "prompt_tokens": 9,
+  "total_tokens": 9,
+  "tokens_per_response": 9.0,
+  "responses_with_cost": 1,
+  "input_cost": 1.8e-06,
+  "total_cost": 1.8e-06,
+  "cost_per_response": 1.8e-06
+}
+2026-08-20 22:31:22.0859 - INFO - graphrag_llm.metrics.log_metrics_writer - Metrics for gemini/gemini-2.5-flash-lite: {
+  "attempted_request_count": 22,
+  "successful_response_count": 21,
+  "failed_response_count": 1,
+  "failure_rate": 0.045454545454545456,
+  "requests_with_retries": 9,
+  "retries": 47,
+  "retry_rate": 0.6811594202898551,
+  "compute_duration_seconds": 42.25091218948364,
+  "compute_duration_per_response_seconds": 2.011948199499221,
+  "cache_hit_rate": 0.0,
+  "streaming_responses": 0,
+  "responses_with_tokens": 21,
+  "prompt_tokens": 25742,
+  "completion_tokens": 13005,
+  "total_tokens": 38747,
+  "tokens_per_response": 1845.095238095238,
+  "responses_with_cost": 21,
+  "input_cost": 0.002574200000000001,
+  "output_cost": 0.005202000000000001,
+  "total_cost": 0.0077762000000000005,
+  "cost_per_response": 0.0003702952380952381
+}
