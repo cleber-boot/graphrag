@@ -4,28 +4,54 @@
 ### LLM settings ###
 ## There are a number of settings to tune the threading and token limits for LLM calls - check the docs.
 
+# completion_models:
+#   default_completion_model:
+#     model_provider: gemini                     # <- MUDADO: Direciona para a nuvem da Google
+#     model: gemini-2.5-flash-lite        # <- MUDADO: Formato de rota exigido pelo LiteLLM
+#     auth_method: api_key
+#     api_key: ${GRAPHRAG_API_KEY}
+#     retry:
+#       type: exponential_backoff
+
+# embedding_models:
+#   default_embedding_model:
+#     model_provider: gemini                     # <- MUDADO: Direciona o motor de vetores para a Google
+#     model: gemini-embedding-2          # <- MUDADO: Rota oficial de embeddings
+#     auth_method: api_key
+#     api_key: ${GRAPHRAG_API_KEY}
+#     retry:
+#       type: exponential_backoff
+
+### Document processing settings ###
+
+
+
+### LLM settings ###
+
 completion_models:
   default_completion_model:
-    model_provider: gemini                     # <- MUDADO: Direciona para a nuvem da Google
-    model: gemini-2.5-flash-lite        # <- MUDADO: Formato de rota exigido pelo LiteLLM
+    model_provider: openai                     
+    model: google/gemini-2.5-flash-lite        
     auth_method: api_key
-    api_key: ${GRAPHRAG_API_KEY}
+    api_key: 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
+    api_base: https://openrouter.ai
+    concurrent_requests: 4
     retry:
       type: exponential_backoff
 
 embedding_models:
   default_embedding_model:
-    model_provider: gemini                     # <- MUDADO: Direciona o motor de vetores para a Google
-    model: gemini-embedding-2          # <- MUDADO: Rota oficial de embeddings
+    model_provider: openai
+    model: google/gemini-embedding-2           
     auth_method: api_key
-    api_key: ${GRAPHRAG_API_KEY}
+    api_key: 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
+    api_base: https://openrouter.ai
+    concurrent_requests: 4
     retry:
       type: exponential_backoff
 
-### Document processing settings ###
-
 input:
-  type: text # [csv, text, json, jsonl]
+  type: text
 
 chunking:
   type: tokens
@@ -34,37 +60,36 @@ chunking:
   encoding_model: o200k_base
 
 ### Storage settings ###
-## If blob storage is specified in the following four sections,
-## connection_string and container_name must be provided
 
 input_storage:
-  type: file # [file, blob, cosmosdb]
+  type: file
   base_dir: "input"
 
 output_storage:
-  type: file # [file, blob, cosmosdb]
+  type: file
   base_dir: "output"
 
 reporting:
-  type: file # [file, blob]
+  type: file
   base_dir: "logs"
 
 cache:
-  type: json # [json, memory, none]
+  type: json
   storage:
-    type: file # [file, blob, cosmosdb]
+    type: file
     base_dir: "cache"
     
 vector_store:
   type: lancedb
   db_uri: output/lancedb
-  index_schema:                         # <- ADICIONE ESTE BLOCO ABAIXO DE DB_URI
+  index_schema:
     text_unit_text:
       vector_size: 3072
     entity_description:
       vector_size: 3072
     community_full_content:
       vector_size: 3072
+
 ### Workflow settings ###
 
 embed_text:
@@ -83,7 +108,7 @@ summarize_descriptions:
 
 extract_graph_nlp:
   text_analyzer:
-    extractor_type: regex_english # [regex_english, syntactic_parser, cfg]
+    extractor_type: regex_english
 
 cluster_graph:
   max_cluster_size: 10
@@ -107,8 +132,6 @@ snapshots:
   embeddings: false
 
 ### Query settings ###
-## The prompt locations are required here, but each search method has a number of optional knobs that can be tuned.
-## See the config docs: https://microsoft.github.io/graphrag/config/yaml/#query
 
 local_search:
   completion_model_id: default_completion_model
@@ -131,3 +154,4 @@ basic_search:
   completion_model_id: default_completion_model
   embedding_model_id: default_embedding_model
   prompt: "prompts/basic_search_system_prompt.txt"
+

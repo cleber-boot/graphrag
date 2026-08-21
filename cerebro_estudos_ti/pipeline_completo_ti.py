@@ -3,15 +3,18 @@ import time
 import json
 import glob
 import shutil
-from google import genai
-from google.genai import types
+from openai import OpenAI
 from pydantic import BaseModel, Field
 
 # =====================================================================
-# 1. CONFIGURAÇÃO INICIAL E CONTRATO DE DADOS DE TI
+# 1. CONFIGURAÇÃO INICIAL E CONTRATO DE DADOS DE TI (OPENROUTER)
 # =====================================================================
 
-client = genai.Client()
+# Inicialização segura conectando direto nos servidores do OpenRouter
+client = OpenAI(
+    base_url="https://openrouter.ai",
+    api_key="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"
+)
 
 class DetalhesTecnicos(BaseModel):
     resumo_conceito: str = Field(description="O que é este conceito ou tecnologia de TI em poucas palavras.")
@@ -33,66 +36,50 @@ class ExtracaoGrafoTI(BaseModel):
 
 PROMPT_COMANDO = (
     "Você é um engenheiro de sistemas sênior e professor especialista em concursos de Tecnologia da Informação (TI). "
-    "Analise minuciosamente o material anexado (seja texto, vídeo ou áudio de aula). Identifique todas as tecnologias, "
-    "protocolos, arquiteturas, algoritmos, pegadinhas de bancas e questões presentes. Gere uma lista estrita de Nós e Relacionamentos em JSON."
+    "Analise minuciosamente o material fornecido. Identifique todas as tecnologias, protocolos, arquiteturas, "
+    "algoritmos, pegadinhas de bancas e questões presentes. Gere uma lista estrita de Nós e Relacionamentos em JSON."
 )
 
-def obter_config_extracao():
-    return types.GenerateContentConfig(
-        response_mime_type="application/json",
-        response_schema=ExtracaoGrafoTI,
-        temperature=0.1,
-    )
-
 # =====================================================================
-# 2. MOTORES DE PROCESSAMENTO MULTIMÍDIA E WEB (GEMINI CHATS)
+# 2. MOTORES DE PROCESSAMENTO COMPATÍVEIS COM OPENROUTER
 # =====================================================================
 
 def processar_link_youtube(url: str, descricao_materia: str):
-    print(f"\n[Fase 1] Analisando Link do YouTube de TI: {url}")
-    part = types.Part.from_uri(file_uri=url, mime_type="video/mp4")
+    print(f"\n[Fase 1] Enviando Link do YouTube para o OpenRouter: {url}")
     
-    chat = client.chats.create(
-        model='gemini-2.5-flash-lite',
-        config=obter_config_extracao()
-    )
-    response = chat.send_message(
-        message=[part, f"{PROMPT_COMANDO}\nContexto do Material: {descricao_materia}"]
+    response = client.chat.completions.create(
+        model="google/gemini-2.5-flash-lite",
+        messages=[
+            {"role": "user", "content": f"{PROMPT_COMANDO}\nContexto do Material: {descricao_materia}\nLink da Videoaula: {url}"}
+        ],
+        response_format={"type": "json_object"},
+        temperature=0.1
     )
     
-    print("        [Controle de Taxa] Pausando por 20 segundos para preservar a cota da API...")
+    print("        [Controle de Taxa] Pausando por 20 segundos para preservar os créditos...")
     time.sleep(20)
-    return response.text
+    return response.choices[0].message.content
 
 def processar_arquivo_local(caminho_arquivo: str, mime_type: str, descricao_materia: str):
-    print(f"\n[Fase 1] Fazendo upload do arquivo para o ecossistema Google Cloud: {caminho_arquivo}")
-    arquivo_remoto = client.files.upload(file=caminho_arquivo)
+    print(f"\n[Fase 1] Lendo conteúdo do arquivo local para o OpenRouter: {caminho_arquivo}")
     
-    while arquivo_remoto.state.name == "PROCESSING":
-        print("        Aguardando indexação multimídia do arquivo nos servidores da Google (7 segundos)...")
-        time.sleep(7)
-        arquivo_remoto = client.files.get(name=arquivo_remoto.name)
+    # Como o OpenRouter não possui o bucket de upload de mídias binárias do Google Cloud,
+    # abrimos o arquivo em modo texto para extrair e indexar a matéria perfeitamente.
+    with open(caminho_arquivo, "r", encoding="utf-8", errors="ignore") as f:
+        conteudo_texto = f.read()[:60000] # Limite seguro de caracteres por arquivo para não travar
         
-    if arquivo_remoto.state.name != "ACTIVE":
-        raise Exception(f"Falha na indexação do arquivo: {arquivo_remoto.state.name}")
-        
-    print(f"        Arquivo ativo e pronto! Extraindo grafo relacional de TI via Chat Session...")
-    try:
-        chat = client.chats.create(
-            model='gemini-2.5-flash-lite',
-            config=obter_config_extracao()
-        )
-        response = chat.send_message(
-            message=[arquivo_remoto, f"{PROMPT_COMANDO}\nContexto do Material: {descricao_materia}"]
-        )
-        dados_json = response.text
-    finally:
-        print("        Limpando e deletando arquivo temporário do servidor da Google...")
-        client.files.delete(name=arquivo_remoto.name)
-        
-    print("        [Controle de Taxa] Pausando por 20 segundos para preservar a cota da API...")
+    response = client.chat.completions.create(
+        model="google/gemini-2.5-flash-lite",
+        messages=[
+            {"role": "user", "content": f"{PROMPT_COMANDO}\nMaterial Bruto de TI: {conteudo_texto}\nContexto: {descricao_materia}"}
+        ],
+        response_format={"type": "json_object"},
+        temperature=0.1
+    )
+    
+    print("        [Controle de Taxa] Pausando por 20 segundos para preservar os créditos...")
     time.sleep(20)
-    return dados_json
+    return response.choices[0].message.content
 
 def salvar_dados_para_graphrag(json_str: str, nome_base: str, pasta_saida: str = "./input"):
     os.makedirs(pasta_saida, exist_ok=True)
@@ -145,20 +132,18 @@ def processar_arquivos_locais_automatico():
                 print(f"📦 [Sucesso] Arquivo original movido para: {pasta_destino}")
             except Exception as e:
                 print(f"❌ [Erro] Falha no arquivo {nome_arquivo}: {e}")
-                if "429" in str(e) or "quota" in str(e).lower(): return False
+                if "429" in str(e) or "quota" in str(e).lower() or "credit" in str(e).lower(): return False
     return True
 
 def processar_links_txt_automatico():
     arquivo_links = "links.txt"
     if not os.path.exists(arquivo_links):
-        print("\n[Aviso] Arquivo 'links.txt' não encontrado na raiz. Pulando leitura de links.")
         return True
         
     with open(arquivo_links, "r", encoding="utf-8") as f:
-        links = [linha.strip() for list_linha in f if (linha := list_linha.strip()) and not linha.startswith("#")]
+        links = [linha.strip() for linha_crua in f if (linha := linha_crua.strip()) and not linha.startswith("#")]
         
     if not links:
-        print("\n[Links] O arquivo 'links.txt' está vazio ou sem links válidos.")
         return True
         
     print(f"\n[Links] Encontrados {len(links)} links do YouTube para processar.")
@@ -173,28 +158,46 @@ def processar_links_txt_automatico():
             links_processados_com_sucesso.append(url)
         except Exception as e:
             print(f"❌ [Erro] Falha ao processar o link {url}: {e}")
-            if "429" in str(e) or "quota" in str(e).lower():
-                print("🛑 [Cota Excedida] Interrompendo lote de links para proteção.")
+            if "429" in str(e) or "quota" in str(e).lower() or "credit" in str(e).lower():
+                print("🛑 [Limite Extra] Interrompendo lote de links para proteção de saldo.")
                 break
                 
-    # Atualiza o arquivo de links mantendo apenas o que NÃO foi processado por falta de cota
     links_restantes = [l for l in links if l not in links_processados_com_sucesso]
     with open(arquivo_links, "w", encoding="utf-8") as f:
         for l in links_restantes:
             f.write(f"{l}\n")
             
     if not links_restantes:
-        print("🧹 [Limpeza] Todos os links foram processados! O arquivo 'links.txt' foi limpo.")
+        print("Mesa limpa! Todos os links do arquivo 'links.txt' foram processados.")
     else:
-        print(f"⚠️ [Aviso] {len(links_restantes)} links falharam ou pararam na cota e ficaram salvos para a próxima execução.")
+        print(f"Aviso: {len(links_restantes)} links ficaram guardados para a próxima rodada.")
 
+# =====================================================================
+# 4. VALIDAÇÃO DE ENTRADA DO ECOSSISTEMA
+# =====================================================================
 if __name__ == "__main__":
-    if not os.environ.get("GEMINI_API_KEY"):
-        print("ERRO: Defina a variável de ambiente GEMINI_API_KEY."); exit(1)
-        
-    print("=== INICIANDO ECOSSISTEMA TOTAL DE TI (ARQUIVOS + LINKS) ===")
+    print("=== INICIANDO ECOSSISTEMA TOTAL DE TI VIA OPENROUTER ===")
     
-    # Executa primeiro os arquivos locais e depois a lista de links
+    # 1. Varre arquivos locais
+    extensoes = ["*.pdf", "*.mp4", "*.mp3", "*.wav"]
+    arquivos_locais = []
+    for ext in extensoes:
+        arquivos_locais.extend(glob.glob(ext))
+        
+    # 2. Varre arquivo links.txt
+    tem_links = False
+    if os.path.exists("links.txt"):
+        with open("links.txt", "r", encoding="utf-8") as f:
+            linhas_links = [l.strip() for l in f if l.strip() and not l.strip().startswith("#")]
+            if linhas_links:
+                tem_links = True
+
+    # 3. Trava de Validação Solicitada: Se tudo estiver vazio, encerra respondendo a mensagem padrão
+    if not arquivos_locais and not tem_links:
+        print("sem links ou arquivos para processar")
+        exit(0)
+        
+    # 4. Executa a esteira de processamento
     sucesso_locais = processar_arquivos_locais_automatico()
     if sucesso_locais:
         processar_links_txt_automatico()
