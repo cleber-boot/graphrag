@@ -1,0 +1,13 @@
+2026-08-21 19:31:00.0661 - INFO - graphrag_llm.metrics.log_metrics_writer - Metrics for openai/google/gemini-2.5-flash-lite: {
+  "attempted_request_count": 1,
+  "successful_response_count": 0,
+  "failed_response_count": 0,
+  "failure_rate": 0.0,
+  "requests_with_retries": 1,
+  "retries": 7,
+  "retry_rate": 0.875,
+  "compute_duration_per_response_seconds": 0.0,
+  "cache_hit_rate": 0.0,
+  "tokens_per_response": 0.0,
+  "cost_per_response": 0.0
+}
