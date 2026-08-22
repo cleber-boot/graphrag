@@ -17,7 +17,7 @@ load_dotenv()
 
 # Inicialização segura conectando direto nos servidores do OpenRouter
 client = OpenAI(
-    base_url="https://openrouter.ai",
+    base_url="https://openrouter.ai/api/v1",
     api_key=os.environ.get("GRAPHRAG_API_KEY")
 )
 
