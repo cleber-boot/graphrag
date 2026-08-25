@@ -217,7 +217,7 @@ with st.sidebar:
 
     banca = st.text_input("Banca", value="FGV", help="Ex: FGV, CESPE/CEBRASPE, FCC, VUNESP...")
     tema_simulado = st.text_input("Tema (opcional)", placeholder="Ex: redes de computadores, segurança da informação...")
-    quantidade_questoes = st.number_input("Quantidade de questões", min_value=1, max_value=20, value=5, step=1)
+    quantidade_questoes = st.number_input("Quantidade de questões", min_value=1, max_value=100, value=5, step=1)
     formato_questao = st.selectbox("Formato da questão", options=list(FORMATOS_QUESTAO.keys()))
 
     gerar_simulado_clicado = st.button("🎯 Gerar simulado agora", use_container_width=True, type="primary")
