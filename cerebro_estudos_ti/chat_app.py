@@ -25,12 +25,19 @@ import streamlit as st
 from openai import OpenAI
 from dotenv import load_dotenv
 
-load_dotenv()
+# set_page_config precisa ser sempre o primeiro comando Streamlit do script.
+st.set_page_config(page_title="Chat GraphRAG", page_icon="🧠", layout="centered")
+
+# Resolve os caminhos com base em ONDE ESTE ARQUIVO ESTÁ SALVO, não na pasta
+# de onde o comando `streamlit run` foi disparado. Isso evita quebrar quando
+# o app é executado a partir de um diretório diferente do projeto.
+SCRIPT_DIR = Path(__file__).resolve().parent
+load_dotenv(SCRIPT_DIR / ".env")
 
 # ---------------------------------------------------------------
 # Configuração
 # ---------------------------------------------------------------
-ROOT_DIR = "./cerebro_estudos_ti"
+ROOT_DIR = str(SCRIPT_DIR)
 SESSIONS_DIR = Path(ROOT_DIR) / "chat_sessions"
 SESSIONS_DIR.mkdir(exist_ok=True)
 
@@ -39,9 +46,17 @@ TIMEOUT_SECONDS = 300
 
 # Cliente direto para a OpenRouter, usado SÓ na etapa de geração do simulado
 # (a busca de contexto continua passando pelo GraphRAG via CLI).
+_api_key = os.environ.get("GRAPHRAG_API_KEY")
+if not _api_key:
+    st.error(
+        f"⚠️ Não encontrei a variável GRAPHRAG_API_KEY. Verifique se existe um "
+        f"arquivo `.env` com essa chave em: `{SCRIPT_DIR / '.env'}`"
+    )
+    st.stop()
+
 openrouter_client = OpenAI(
     base_url="https://openrouter.ai/api/v1",
-    api_key=os.environ.get("GRAPHRAG_API_KEY"),
+    api_key=_api_key,
 )
 MODELO_SIMULADO = "google/gemini-2.5-flash-lite"
 
@@ -105,8 +120,6 @@ PERGUNTA_BUSCA_CONTEXTO = (
     "Traga definições, características técnicas, comparações e detalhes relevantes com o máximo de profundidade "
     "possível, incluindo nomes específicos de normas, padrões e siglas."
 )
-
-st.set_page_config(page_title="Chat GraphRAG", page_icon="🧠", layout="centered")
 
 
 # ---------------------------------------------------------------
@@ -321,23 +334,33 @@ def gerar_simulado_via_llm(contexto: str, banca: str, tema: str, quantidade: int
 
 
 def formatar_simulado(texto: str) -> str:
-    """Rede de segurança: reformata em Markdown mesmo se o modelo devolver
-    tudo (ou parte) em bloco de texto corrido. Roda sempre, e os padrões usam
-    lookbehind para não bagunçar trechos que já estão formatados corretamente
-    (evita duplicar '##', '**', etc. em questões que já vieram certas)."""
+    """Reformata em Markdown de forma consistente. Em vez de tentar 'detectar'
+    o que já está formatado (abordagem anterior, que falhava quando o modelo
+    colocava negrito sem quebra de linha real), esta versão LIMPA toda
+    formatação prévia primeiro e depois reconstrói do zero, garantindo que
+    cada alternativa sempre comece em uma linha nova, na margem esquerda."""
 
-    # Quebra antes de cada "Questão N" (aceita maiúsc./minúsc.), exceto se já tiver "## " na frente
+    # 1) Remove formatação prévia (negrito, cabeçalhos, citação em bloco)
+    #    para não depender de o modelo ter formatado certo ou não.
+    texto = re.sub(r"\*\*", "", texto)
+    texto = re.sub(r"^#+\s*", "", texto, flags=re.MULTILINE)
+    texto = re.sub(r"^>\s*", "", texto, flags=re.MULTILINE)
+
+    # 2) Quebra antes de cada "Questão N" (aceita maiúsc./minúsc.)
     texto = re.sub(
-        r"(?<!#\s)[Qq]uest(?:ã|a)o\s+(\d+)\b\s*",
+        r"\s*[Qq]uest(?:ã|a)o\s+(\d+)\b\s*",
         r"\n\n---\n\n## Questão \1\n\n",
         texto,
     )
-    # Quebra antes de cada alternativa A) a E), exceto se já estiver em negrito ("**A)**")
-    texto = re.sub(r"(?<!\*)\s+([A-E])\)\s+", r"\n\n**\1)** ", texto)
-    # Destaca o gabarito em negrito, em linha própria (aceita "Gabarito:" ou "GABARITO:")
-    texto = re.sub(r"(?<!\*)\s*[Gg][Aa][Bb][Aa][Rr][Ii][Tt][Oo]:\s*", r"\n\n**Gabarito:** ", texto)
-    # Formata o comentário como citação em bloco (aceita "Comentário:" ou "comentário:")
-    texto = re.sub(r"(?<!\*)\s*[Cc]oment[áa]rio:\s*", r"\n\n> **Comentário:** ", texto)
+    # 3) Quebra SEMPRE antes de cada alternativa A) a E), garantindo que cada
+    #    uma comece em uma linha nova, na margem esquerda (sem indentação).
+    texto = re.sub(r"\s*\b([A-E])\)\s+", r"\n\n\1) ", texto)
+    # Negrito só na letra + parêntese, no início da linha
+    texto = re.sub(r"^([A-E])\) ", r"**\1)** ", texto, flags=re.MULTILINE)
+    # 4) Destaca o gabarito em negrito, em linha própria
+    texto = re.sub(r"\s*[Gg][Aa][Bb][Aa][Rr][Ii][Tt][Oo]:\s*", r"\n\n**Gabarito:** ", texto)
+    # 5) Formata o comentário como citação em bloco
+    texto = re.sub(r"\s*[Cc]oment[áa]rio:\s*", r"\n\n> **Comentário:** ", texto)
 
     return texto.strip()
 

@@ -1511,3 +1511,55 @@ json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
   "tokens_per_response": 16061.285714285714,
   "cost_per_response": 0.0
 }
+2026-08-25 00:54:56.0638 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:54:56.0817 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:54:57.0749 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:54:57.0926 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:54:58.0258 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:55:01.0689 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:55:01.0838 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:55:13.0924 - INFO - graphrag_llm.metrics.log_metrics_writer - Metrics for openai/google/gemini-2.5-flash-lite: {
+  "attempted_request_count": 8,
+  "successful_response_count": 8,
+  "failed_response_count": 0,
+  "failure_rate": 0.0,
+  "requests_with_retries": 0,
+  "retries": 0,
+  "retry_rate": 0.0,
+  "compute_duration_seconds": 57.665077686309814,
+  "compute_duration_per_response_seconds": 8.237868240901403,
+  "cache_hit_rate": 0.0,
+  "streaming_responses": 1,
+  "responses_with_tokens": 7,
+  "prompt_tokens": 90109,
+  "completion_tokens": 16770,
+  "total_tokens": 106879,
+  "tokens_per_response": 15268.42857142857,
+  "cost_per_response": 0.0
+}
+2026-08-25 00:59:53.0981 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:59:55.0068 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:59:55.0348 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:59:55.0928 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:59:56.0765 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:59:57.0284 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:59:57.0332 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 01:00:11.0428 - INFO - graphrag_llm.metrics.log_metrics_writer - Metrics for openai/google/gemini-2.5-flash-lite: {
+  "attempted_request_count": 8,
+  "successful_response_count": 8,
+  "failed_response_count": 0,
+  "failure_rate": 0.0,
+  "requests_with_retries": 0,
+  "retries": 0,
+  "retry_rate": 0.0,
+  "compute_duration_seconds": 53.704665184020996,
+  "compute_duration_per_response_seconds": 7.672095026288714,
+  "cache_hit_rate": 0.0,
+  "streaming_responses": 1,
+  "responses_with_tokens": 7,
+  "prompt_tokens": 90109,
+  "completion_tokens": 14470,
+  "total_tokens": 104579,
+  "tokens_per_response": 14939.857142857143,
+  "cost_per_response": 0.0
+}
