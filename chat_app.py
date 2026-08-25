@@ -25,7 +25,7 @@ import streamlit as st
 # ---------------------------------------------------------------
 # Configuração
 # ---------------------------------------------------------------
-ROOT_DIR = "./cerebro_estudos_ti"
+ROOT_DIR = "."
 SESSIONS_DIR = Path(ROOT_DIR) / "chat_sessions"
 SESSIONS_DIR.mkdir(exist_ok=True)
 
@@ -49,20 +49,36 @@ Com base no conteúdo do material indexado (sua base de conhecimento), crie um s
 - Reproduza o nível de dificuldade, a forma de redigir o enunciado e o estilo de pegadinha típicos dessa banca.
 - Use apenas conceitos, tecnologias e relações que estejam de fato presentes na base de conhecimento.
 
-Formato de cada questão:
-1. Um enunciado claro e objetivo.
-2. {formato_alternativas}
-3. Indique claramente o GABARITO ao final de cada questão.
-4. Logo abaixo do gabarito, escreva um "Comentário" curto explicando por que a alternativa correta está certa \
-e, quando fizer sentido, por que as demais (ou a inversa, no caso de Certo/Errado) estão erradas — destacando \
-eventuais pegadinhas típicas da banca {banca}.
+FORMATAÇÃO OBRIGATÓRIA (siga exatamente esta estrutura em Markdown, sem exceções):
 
-Numere as questões de 1 a {quantidade}. Responda em português do Brasil.
+## Questão 1
+
+(enunciado da questão em um parágrafo)
+
+{formato_alternativas}
+
+**Gabarito:** (letra ou CERTO/ERRADO)
+
+> **Comentário:** (explicação de por que a alternativa correta está certa e por que as demais estão erradas,
+> destacando pegadinhas típicas da banca {banca})
+
+---
+
+Repita exatamente esse padrão (título "## Questão N", linha em branco, enunciado, linha em branco, alternativas \
+cada uma em sua própria linha, linha em branco, Gabarito em negrito, linha em branco, Comentário como citação \
+em bloco, separador "---") para cada uma das {quantidade} questões, numerando de 1 a {quantidade}.
+
+Nunca escreva o enunciado, as alternativas, o gabarito e o comentário em um único parágrafo corrido — sempre \
+separados por linhas em branco como mostrado acima. Responda em português do Brasil.
 """
 
 FORMATOS_QUESTAO = {
-    "Múltipla escolha (A–E)": "Cinco alternativas (A a E), sendo apenas uma correta.",
-    "Certo ou Errado (CESPE-like)": "Uma afirmação única, a ser julgada como CERTO ou ERRADO.",
+    "Múltipla escolha (A–E)": (
+        "As cinco alternativas, cada uma em sua PRÓPRIA linha, no formato:\n"
+        "**A)** texto da alternativa\n**B)** texto da alternativa\n**C)** texto da alternativa\n"
+        "**D)** texto da alternativa\n**E)** texto da alternativa\n(apenas uma correta)"
+    ),
+    "Certo ou Errado (CESPE-like)": "Uma única afirmação, a ser julgada como CERTO ou ERRADO.",
 }
 
 st.set_page_config(page_title="Chat GraphRAG", page_icon="🧠", layout="centered")
@@ -257,6 +273,26 @@ def build_simulado_prompt(banca: str, tema: str, quantidade: int, formato_label:
     )
 
 
+def formatar_simulado(texto: str) -> str:
+    """Rede de segurança: reformata em Markdown mesmo se o modelo devolver
+    tudo em bloco de texto corrido, sem seguir a estrutura pedida no prompt."""
+
+    # Se o texto já tem cabeçalhos "## Questão", provavelmente já está bem formatado.
+    ja_formatado = bool(re.search(r"^##\s*Questão", texto, flags=re.MULTILINE))
+
+    if not ja_formatado:
+        # Quebra antes de cada "Questão N"
+        texto = re.sub(r"\s*Quest(?:ã|a)o\s+(\d+)\b\s*", r"\n\n---\n\n## Questão \1\n\n", texto)
+        # Quebra antes de cada alternativa A) a E)
+        texto = re.sub(r"\s+([A-E])\)\s+", r"\n\n**\1)** ", texto)
+        # Destaca o gabarito em negrito, em linha própria
+        texto = re.sub(r"\s*GABARITO:\s*", r"\n\n**Gabarito:** ", texto)
+        # Formata o comentário como citação em bloco
+        texto = re.sub(r"\s*Coment[áa]rio:\s*", r"\n\n> **Comentário:** ", texto)
+
+    return texto.strip()
+
+
 def run_graphrag_query(question: str, method: str, community_level: int) -> str:
     cmd = [
         "python", "-m", "graphrag", "query",
@@ -306,7 +342,8 @@ if gerar_simulado_clicado:
 
     with st.chat_message("assistant"):
         with st.spinner(f"Gerando simulado (método: {metodo_para_simulado})... isso pode levar um tempo."):
-            resposta_simulado = run_graphrag_query(prompt_simulado, metodo_para_simulado, community_level)
+            resposta_bruta = run_graphrag_query(prompt_simulado, metodo_para_simulado, community_level)
+            resposta_simulado = formatar_simulado(resposta_bruta)
         st.markdown(resposta_simulado)
 
     st.session_state.messages.append({"role": "assistant", "content": resposta_simulado})
