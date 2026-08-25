@@ -886,3 +886,628 @@ json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
   "tokens_per_response": 15761.285714285714,
   "cost_per_response": 0.0
 }
+2026-08-25 00:36:26.0213 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:36:26.0215 - ERROR - graphrag.query.llm.text_utils - error loading json, json=
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag/query/llm/text_utils.py", line 96, in try_parse_json_object
+    result = json.loads(input)
+             ^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2026-08-25 00:36:26.0699 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:36:26.0702 - ERROR - graphrag.query.llm.text_utils - error loading json, json=
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag/query/llm/text_utils.py", line 96, in try_parse_json_object
+    result = json.loads(input)
+             ^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2026-08-25 00:36:27.0851 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:36:27.0853 - ERROR - graphrag.query.llm.text_utils - error loading json, json=
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag/query/llm/text_utils.py", line 96, in try_parse_json_object
+    result = json.loads(input)
+             ^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2026-08-25 00:36:29.0102 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:36:29.0105 - ERROR - graphrag.query.llm.text_utils - error loading json, json=
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag/query/llm/text_utils.py", line 96, in try_parse_json_object
+    result = json.loads(input)
+             ^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2026-08-25 00:36:29.0471 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:36:29.0474 - ERROR - graphrag.query.llm.text_utils - error loading json, json=
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag/query/llm/text_utils.py", line 96, in try_parse_json_object
+    result = json.loads(input)
+             ^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2026-08-25 00:36:30.0014 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:36:30.0017 - ERROR - graphrag.query.llm.text_utils - error loading json, json=
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag/query/llm/text_utils.py", line 96, in try_parse_json_object
+    result = json.loads(input)
+             ^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2026-08-25 00:36:32.0534 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:36:32.0537 - ERROR - graphrag.query.llm.text_utils - error loading json, json=
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag/query/llm/text_utils.py", line 96, in try_parse_json_object
+    result = json.loads(input)
+             ^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2026-08-25 00:36:32.0545 - WARNING - graphrag.query.structured_search.global_search.search - Warning: All map responses have score 0 (i.e., no relevant information found from the dataset), returning a canned 'I do not know' answer. You can try enabling `allow_general_knowledge` to encourage the LLM to incorporate relevant general knowledge, at the risk of increasing hallucinations.
+2026-08-25 00:36:32.0546 - INFO - graphrag_llm.metrics.log_metrics_writer - Metrics for openai/google/gemini-2.5-flash-lite: {
+  "attempted_request_count": 7,
+  "successful_response_count": 7,
+  "failed_response_count": 0,
+  "failure_rate": 0.0,
+  "requests_with_retries": 0,
+  "retries": 0,
+  "retry_rate": 0.0,
+  "compute_duration_seconds": 90.68987798690796,
+  "compute_duration_per_response_seconds": 12.955696855272565,
+  "cache_hit_rate": 0.0,
+  "streaming_responses": 0,
+  "responses_with_tokens": 7,
+  "prompt_tokens": 92559,
+  "completion_tokens": 21627,
+  "total_tokens": 114186,
+  "tokens_per_response": 16312.285714285714,
+  "cost_per_response": 0.0
+}
+2026-08-25 00:37:01.0111 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:37:01.0115 - ERROR - graphrag.query.llm.text_utils - error loading json, json=
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag/query/llm/text_utils.py", line 96, in try_parse_json_object
+    result = json.loads(input)
+             ^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2026-08-25 00:37:01.0126 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:37:01.0128 - ERROR - graphrag.query.llm.text_utils - error loading json, json=
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag/query/llm/text_utils.py", line 96, in try_parse_json_object
+    result = json.loads(input)
+             ^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2026-08-25 00:37:01.0565 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:37:01.0568 - ERROR - graphrag.query.llm.text_utils - error loading json, json=
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag/query/llm/text_utils.py", line 96, in try_parse_json_object
+    result = json.loads(input)
+             ^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2026-08-25 00:37:01.0746 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:37:01.0749 - ERROR - graphrag.query.llm.text_utils - error loading json, json=
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag/query/llm/text_utils.py", line 96, in try_parse_json_object
+    result = json.loads(input)
+             ^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2026-08-25 00:37:03.0228 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:37:03.0231 - ERROR - graphrag.query.llm.text_utils - error loading json, json=
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag/query/llm/text_utils.py", line 96, in try_parse_json_object
+    result = json.loads(input)
+             ^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2026-08-25 00:37:03.0910 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:37:03.0913 - ERROR - graphrag.query.llm.text_utils - error loading json, json=
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag/query/llm/text_utils.py", line 96, in try_parse_json_object
+    result = json.loads(input)
+             ^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2026-08-25 00:37:04.0456 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:37:04.0458 - ERROR - graphrag.query.llm.text_utils - error loading json, json=
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag/query/llm/text_utils.py", line 96, in try_parse_json_object
+    result = json.loads(input)
+             ^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2026-08-25 00:37:04.0464 - WARNING - graphrag.query.structured_search.global_search.search - Warning: All map responses have score 0 (i.e., no relevant information found from the dataset), returning a canned 'I do not know' answer. You can try enabling `allow_general_knowledge` to encourage the LLM to incorporate relevant general knowledge, at the risk of increasing hallucinations.
+2026-08-25 00:37:04.0465 - INFO - graphrag_llm.metrics.log_metrics_writer - Metrics for openai/google/gemini-2.5-flash-lite: {
+  "attempted_request_count": 7,
+  "successful_response_count": 7,
+  "failed_response_count": 0,
+  "failure_rate": 0.0,
+  "requests_with_retries": 0,
+  "retries": 0,
+  "retry_rate": 0.0,
+  "compute_duration_seconds": 80.86296916007996,
+  "compute_duration_per_response_seconds": 11.55185273715428,
+  "cache_hit_rate": 0.0,
+  "streaming_responses": 0,
+  "responses_with_tokens": 7,
+  "prompt_tokens": 92559,
+  "completion_tokens": 19691,
+  "total_tokens": 112250,
+  "tokens_per_response": 16035.714285714286,
+  "cost_per_response": 0.0
+}
+2026-08-25 00:37:51.0883 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:37:51.0885 - ERROR - graphrag.query.llm.text_utils - error loading json, json=
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag/query/llm/text_utils.py", line 96, in try_parse_json_object
+    result = json.loads(input)
+             ^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2026-08-25 00:37:51.0994 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:37:51.0996 - ERROR - graphrag.query.llm.text_utils - error loading json, json=
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag/query/llm/text_utils.py", line 96, in try_parse_json_object
+    result = json.loads(input)
+             ^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2026-08-25 00:37:53.0697 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:37:53.0699 - ERROR - graphrag.query.llm.text_utils - error loading json, json=
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag/query/llm/text_utils.py", line 96, in try_parse_json_object
+    result = json.loads(input)
+             ^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2026-08-25 00:37:54.0537 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:37:54.0539 - ERROR - graphrag.query.llm.text_utils - error loading json, json=
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag/query/llm/text_utils.py", line 96, in try_parse_json_object
+    result = json.loads(input)
+             ^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2026-08-25 00:37:54.0760 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:37:54.0764 - ERROR - graphrag.query.llm.text_utils - error loading json, json=
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag/query/llm/text_utils.py", line 96, in try_parse_json_object
+    result = json.loads(input)
+             ^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2026-08-25 00:37:56.0806 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:37:56.0809 - ERROR - graphrag.query.llm.text_utils - error loading json, json=
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag/query/llm/text_utils.py", line 96, in try_parse_json_object
+    result = json.loads(input)
+             ^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2026-08-25 00:37:57.0197 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:37:57.0199 - ERROR - graphrag.query.llm.text_utils - error loading json, json=
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag/query/llm/text_utils.py", line 96, in try_parse_json_object
+    result = json.loads(input)
+             ^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2026-08-25 00:37:57.0205 - WARNING - graphrag.query.structured_search.global_search.search - Warning: All map responses have score 0 (i.e., no relevant information found from the dataset), returning a canned 'I do not know' answer. You can try enabling `allow_general_knowledge` to encourage the LLM to incorporate relevant general knowledge, at the risk of increasing hallucinations.
+2026-08-25 00:37:57.0206 - INFO - graphrag_llm.metrics.log_metrics_writer - Metrics for openai/google/gemini-2.5-flash-lite: {
+  "attempted_request_count": 7,
+  "successful_response_count": 7,
+  "failed_response_count": 0,
+  "failure_rate": 0.0,
+  "requests_with_retries": 0,
+  "retries": 0,
+  "retry_rate": 0.0,
+  "compute_duration_seconds": 87.33003520965576,
+  "compute_duration_per_response_seconds": 12.475719315665108,
+  "cache_hit_rate": 0.0,
+  "streaming_responses": 0,
+  "responses_with_tokens": 7,
+  "prompt_tokens": 92559,
+  "completion_tokens": 21709,
+  "total_tokens": 114268,
+  "tokens_per_response": 16324.0,
+  "cost_per_response": 0.0
+}
+2026-08-25 00:39:28.0382 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:39:28.0385 - ERROR - graphrag.query.llm.text_utils - error loading json, json=
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag/query/llm/text_utils.py", line 96, in try_parse_json_object
+    result = json.loads(input)
+             ^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2026-08-25 00:39:28.0539 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:39:28.0542 - ERROR - graphrag.query.llm.text_utils - error loading json, json=
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag/query/llm/text_utils.py", line 96, in try_parse_json_object
+    result = json.loads(input)
+             ^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2026-08-25 00:39:30.0035 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:39:30.0037 - ERROR - graphrag.query.llm.text_utils - error loading json, json=
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag/query/llm/text_utils.py", line 96, in try_parse_json_object
+    result = json.loads(input)
+             ^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2026-08-25 00:39:30.0210 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:39:30.0212 - ERROR - graphrag.query.llm.text_utils - error loading json, json=
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag/query/llm/text_utils.py", line 96, in try_parse_json_object
+    result = json.loads(input)
+             ^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2026-08-25 00:39:30.0451 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:39:30.0453 - ERROR - graphrag.query.llm.text_utils - error loading json, json=
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag/query/llm/text_utils.py", line 96, in try_parse_json_object
+    result = json.loads(input)
+             ^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2026-08-25 00:39:30.0931 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:39:30.0933 - ERROR - graphrag.query.llm.text_utils - error loading json, json=
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag/query/llm/text_utils.py", line 96, in try_parse_json_object
+    result = json.loads(input)
+             ^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2026-08-25 00:39:31.0042 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:39:31.0045 - ERROR - graphrag.query.llm.text_utils - error loading json, json=
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag/query/llm/text_utils.py", line 96, in try_parse_json_object
+    result = json.loads(input)
+             ^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2026-08-25 00:39:31.0052 - WARNING - graphrag.query.structured_search.global_search.search - Warning: All map responses have score 0 (i.e., no relevant information found from the dataset), returning a canned 'I do not know' answer. You can try enabling `allow_general_knowledge` to encourage the LLM to incorporate relevant general knowledge, at the risk of increasing hallucinations.
+2026-08-25 00:39:31.0053 - INFO - graphrag_llm.metrics.log_metrics_writer - Metrics for openai/google/gemini-2.5-flash-lite: {
+  "attempted_request_count": 7,
+  "successful_response_count": 7,
+  "failed_response_count": 0,
+  "failure_rate": 0.0,
+  "requests_with_retries": 0,
+  "retries": 0,
+  "retry_rate": 0.0,
+  "compute_duration_seconds": 80.28589177131653,
+  "compute_duration_per_response_seconds": 11.469413110188075,
+  "cache_hit_rate": 0.0,
+  "streaming_responses": 0,
+  "responses_with_tokens": 7,
+  "prompt_tokens": 92559,
+  "completion_tokens": 19746,
+  "total_tokens": 112305,
+  "tokens_per_response": 16043.57142857143,
+  "cost_per_response": 0.0
+}
+2026-08-25 00:40:11.0626 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:40:11.0628 - ERROR - graphrag.query.llm.text_utils - error loading json, json=
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag/query/llm/text_utils.py", line 96, in try_parse_json_object
+    result = json.loads(input)
+             ^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2026-08-25 00:40:11.0638 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:40:11.0640 - ERROR - graphrag.query.llm.text_utils - error loading json, json=
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag/query/llm/text_utils.py", line 96, in try_parse_json_object
+    result = json.loads(input)
+             ^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2026-08-25 00:40:12.0426 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:40:12.0428 - ERROR - graphrag.query.llm.text_utils - error loading json, json=
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag/query/llm/text_utils.py", line 96, in try_parse_json_object
+    result = json.loads(input)
+             ^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2026-08-25 00:40:12.0575 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:40:12.0578 - ERROR - graphrag.query.llm.text_utils - error loading json, json=
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag/query/llm/text_utils.py", line 96, in try_parse_json_object
+    result = json.loads(input)
+             ^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2026-08-25 00:40:13.0002 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:40:13.0005 - ERROR - graphrag.query.llm.text_utils - error loading json, json=
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag/query/llm/text_utils.py", line 96, in try_parse_json_object
+    result = json.loads(input)
+             ^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2026-08-25 00:40:14.0189 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:40:14.0192 - ERROR - graphrag.query.llm.text_utils - error loading json, json=
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag/query/llm/text_utils.py", line 96, in try_parse_json_object
+    result = json.loads(input)
+             ^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2026-08-25 00:40:15.0741 - WARNING - graphrag.query.llm.text_utils - Error decoding faulty json, attempting repair
+2026-08-25 00:40:15.0744 - ERROR - graphrag.query.llm.text_utils - error loading json, json=
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/graphrag/query/llm/text_utils.py", line 96, in try_parse_json_object
+    result = json.loads(input)
+             ^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2026-08-25 00:40:15.0750 - WARNING - graphrag.query.structured_search.global_search.search - Warning: All map responses have score 0 (i.e., no relevant information found from the dataset), returning a canned 'I do not know' answer. You can try enabling `allow_general_knowledge` to encourage the LLM to incorporate relevant general knowledge, at the risk of increasing hallucinations.
+2026-08-25 00:40:15.0752 - INFO - graphrag_llm.metrics.log_metrics_writer - Metrics for openai/google/gemini-2.5-flash-lite: {
+  "attempted_request_count": 7,
+  "successful_response_count": 7,
+  "failed_response_count": 0,
+  "failure_rate": 0.0,
+  "requests_with_retries": 0,
+  "retries": 0,
+  "retry_rate": 0.0,
+  "compute_duration_seconds": 78.83356714248657,
+  "compute_duration_per_response_seconds": 11.261938163212367,
+  "cache_hit_rate": 0.0,
+  "streaming_responses": 0,
+  "responses_with_tokens": 7,
+  "prompt_tokens": 92559,
+  "completion_tokens": 19870,
+  "total_tokens": 112429,
+  "tokens_per_response": 16061.285714285714,
+  "cost_per_response": 0.0
+}

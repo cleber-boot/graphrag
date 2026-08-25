@@ -17,10 +17,15 @@ import json
 import re
 import subprocess
 import uuid
+import os
 from datetime import datetime
 from pathlib import Path
 
 import streamlit as st
+from openai import OpenAI
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # ---------------------------------------------------------------
 # Configuração
@@ -31,6 +36,14 @@ SESSIONS_DIR.mkdir(exist_ok=True)
 
 MAX_HISTORY_TURNS = 4
 TIMEOUT_SECONDS = 300
+
+# Cliente direto para a OpenRouter, usado SÓ na etapa de geração do simulado
+# (a busca de contexto continua passando pelo GraphRAG via CLI).
+openrouter_client = OpenAI(
+    base_url="https://openrouter.ai/api/v1",
+    api_key=os.environ.get("GRAPHRAG_API_KEY"),
+)
+MODELO_SIMULADO = "google/gemini-2.5-flash-lite"
 
 METHOD_INFO = {
     "local": "Perguntas específicas sobre um conceito, entidade ou tópico pontual.",
@@ -44,10 +57,16 @@ METHOD_INFO = {
 PROMPT_SIMULADO = """Você é um elaborador de provas experiente, especializado em reproduzir fielmente o estilo \
 da banca {banca} em concursos públicos de Tecnologia da Informação.
 
-Com base no conteúdo do material indexado (sua base de conhecimento), crie um simulado com {quantidade} questões \
+MATERIAL DE REFERÊNCIA (extraído da base de conhecimento do candidato):
+\"\"\"
+{contexto}
+\"\"\"
+
+Com base EXCLUSIVAMENTE no material de referência acima, crie um simulado com {quantidade} questões \
 {sobre_tema}seguindo rigorosamente as características da banca {banca}:
 - Reproduza o nível de dificuldade, a forma de redigir o enunciado e o estilo de pegadinha típicos dessa banca.
-- Use apenas conceitos, tecnologias e relações que estejam de fato presentes na base de conhecimento.
+- Use apenas conceitos, tecnologias e relações que estejam de fato presentes no material de referência acima.
+- Não invente informações que não estejam no material.
 
 FORMATAÇÃO OBRIGATÓRIA (siga exatamente esta estrutura em Markdown, sem exceções):
 
@@ -80,6 +99,12 @@ FORMATOS_QUESTAO = {
     ),
     "Certo ou Errado (CESPE-like)": "Uma única afirmação, a ser julgada como CERTO ou ERRADO.",
 }
+
+PERGUNTA_BUSCA_CONTEXTO = (
+    "Quais são os principais conceitos, tecnologias, protocolos, arquiteturas e relações técnicas {sobre_tema}? "
+    "Traga definições, características técnicas, comparações e detalhes relevantes com o máximo de profundidade "
+    "possível, incluindo nomes específicos de normas, padrões e siglas."
+)
 
 st.set_page_config(page_title="Chat GraphRAG", page_icon="🧠", layout="centered")
 
@@ -263,14 +288,36 @@ def clean_output(raw: str) -> str:
     return "\n".join(cleaned).strip()
 
 
-def build_simulado_prompt(banca: str, tema: str, quantidade: int, formato_label: str) -> str:
+def build_simulado_prompt(banca: str, tema: str, quantidade: int, formato_label: str, contexto: str) -> str:
     sobre_tema = f"sobre o tema '{tema}' " if tema.strip() else ""
     return PROMPT_SIMULADO.format(
         banca=banca.strip() or "FGV",
         quantidade=quantidade,
         sobre_tema=sobre_tema,
         formato_alternativas=FORMATOS_QUESTAO[formato_label],
+        contexto=contexto,
     )
+
+
+def buscar_contexto_para_simulado(tema: str, method: str, community_level: int) -> str:
+    """Etapa 1: pergunta simples e natural ao GraphRAG, que ele sabe responder bem
+    (evita o prompt gigante de formatação confundir a busca)."""
+    sobre_tema = f"sobre o tema '{tema}'" if tema.strip() else "presentes no material"
+    pergunta = PERGUNTA_BUSCA_CONTEXTO.format(sobre_tema=sobre_tema)
+    return run_graphrag_query(pergunta, method, community_level)
+
+
+def gerar_simulado_via_llm(contexto: str, banca: str, tema: str, quantidade: int, formato_label: str) -> str:
+    """Etapa 2: chamada DIRETA à OpenRouter (fora do GraphRAG) para elaborar
+    as questões formatadas, usando o contexto já buscado na etapa 1."""
+    prompt = build_simulado_prompt(banca, tema, quantidade, formato_label, contexto)
+
+    response = openrouter_client.chat.completions.create(
+        model=MODELO_SIMULADO,
+        messages=[{"role": "user", "content": prompt}],
+        temperature=0.3,
+    )
+    return response.choices[0].message.content
 
 
 def formatar_simulado(texto: str) -> str:
@@ -336,16 +383,25 @@ if gerar_simulado_clicado:
     if len(st.session_state.messages) == 1 and st.session_state.title == "Nova conversa":
         st.session_state.title = f"Simulado {banca or 'FGV'} — {tema_label}"[:50]
 
-    prompt_simulado = build_simulado_prompt(banca, tema_simulado, quantidade_questoes, formato_questao)
-
     # Simulados se beneficiam de contexto amplo do material -> usa 'global' por padrão,
     # independente do método selecionado para o chat normal, a menos que o usuário já esteja em 'drift'.
     metodo_para_simulado = "drift" if method == "drift" else "global"
 
     with st.chat_message("assistant"):
-        with st.spinner(f"Gerando simulado (método: {metodo_para_simulado})... isso pode levar um tempo."):
-            resposta_bruta = run_graphrag_query(prompt_simulado, metodo_para_simulado, community_level)
-            resposta_simulado = formatar_simulado(resposta_bruta)
+        with st.spinner("Buscando conteúdo relevante na base de conhecimento..."):
+            contexto = buscar_contexto_para_simulado(tema_simulado, metodo_para_simulado, community_level)
+
+        if not contexto or "unable to answer" in contexto.lower() or "não foi possível" in contexto.lower():
+            resposta_simulado = (
+                "⚠️ Não encontrei conteúdo suficiente na base de conhecimento para gerar o simulado "
+                f"{'sobre *' + tema_simulado + '*' if tema_simulado.strip() else 'solicitado'}. "
+                "Tente um tema mais amplo, ou verifique se o índice do GraphRAG já foi gerado com o material desejado."
+            )
+        else:
+            with st.spinner("Elaborando as questões com base no material encontrado..."):
+                resposta_bruta = gerar_simulado_via_llm(contexto, banca, tema_simulado, quantidade_questoes, formato_questao)
+                resposta_simulado = formatar_simulado(resposta_bruta)
+
         st.markdown(resposta_simulado)
 
     st.session_state.messages.append({"role": "assistant", "content": resposta_simulado})
