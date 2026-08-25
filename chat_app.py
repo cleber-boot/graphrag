@@ -25,7 +25,7 @@ import streamlit as st
 # ---------------------------------------------------------------
 # Configuração
 # ---------------------------------------------------------------
-ROOT_DIR = "./cerebro_estudos_ti"
+ROOT_DIR = "."
 SESSIONS_DIR = Path(ROOT_DIR) / "chat_sessions"
 SESSIONS_DIR.mkdir(exist_ok=True)
 
@@ -36,6 +36,33 @@ METHOD_INFO = {
     "local": "Perguntas específicas sobre um conceito, entidade ou tópico pontual.",
     "global": "Perguntas amplas sobre o conjunto todo dos documentos (temas gerais).",
     "drift": "Meio-termo entre local e global — mais detalhado, porém mais lento/caro.",
+}
+
+# ---------------------------------------------------------------
+# Prompt para geração de simulados no estilo de banca de concurso
+# ---------------------------------------------------------------
+PROMPT_SIMULADO = """Você é um elaborador de provas experiente, especializado em reproduzir fielmente o estilo \
+da banca {banca} em concursos públicos de Tecnologia da Informação.
+
+Com base no conteúdo do material indexado (sua base de conhecimento), crie um simulado com {quantidade} questões \
+{sobre_tema}seguindo rigorosamente as características da banca {banca}:
+- Reproduza o nível de dificuldade, a forma de redigir o enunciado e o estilo de pegadinha típicos dessa banca.
+- Use apenas conceitos, tecnologias e relações que estejam de fato presentes na base de conhecimento.
+
+Formato de cada questão:
+1. Um enunciado claro e objetivo.
+2. {formato_alternativas}
+3. Indique claramente o GABARITO ao final de cada questão.
+4. Logo abaixo do gabarito, escreva um "Comentário" curto explicando por que a alternativa correta está certa \
+e, quando fizer sentido, por que as demais (ou a inversa, no caso de Certo/Errado) estão erradas — destacando \
+eventuais pegadinhas típicas da banca {banca}.
+
+Numere as questões de 1 a {quantidade}. Responda em português do Brasil.
+"""
+
+FORMATOS_QUESTAO = {
+    "Múltipla escolha (A–E)": "Cinco alternativas (A a E), sendo apenas uma correta.",
+    "Certo ou Errado (CESPE-like)": "Uma afirmação única, a ser julgada como CERTO ou ERRADO.",
 }
 
 st.set_page_config(page_title="Chat GraphRAG", page_icon="🧠", layout="centered")
@@ -132,6 +159,16 @@ with st.sidebar:
     use_memory = st.checkbox("Manter memória dentro da conversa", value=True)
 
     st.divider()
+    st.subheader("📝 Gerar simulado")
+
+    banca = st.text_input("Banca", value="FGV", help="Ex: FGV, CESPE/CEBRASPE, FCC, VUNESP...")
+    tema_simulado = st.text_input("Tema (opcional)", placeholder="Ex: redes de computadores, segurança da informação...")
+    quantidade_questoes = st.number_input("Quantidade de questões", min_value=1, max_value=20, value=5, step=1)
+    formato_questao = st.selectbox("Formato da questão", options=list(FORMATOS_QUESTAO.keys()))
+
+    gerar_simulado_clicado = st.button("🎯 Gerar simulado agora", use_container_width=True, type="primary")
+
+    st.divider()
     st.subheader("💬 Conversas salvas")
 
     if st.button("➕ Nova conversa", use_container_width=True):
@@ -210,6 +247,16 @@ def clean_output(raw: str) -> str:
     return "\n".join(cleaned).strip()
 
 
+def build_simulado_prompt(banca: str, tema: str, quantidade: int, formato_label: str) -> str:
+    sobre_tema = f"sobre o tema '{tema}' " if tema.strip() else ""
+    return PROMPT_SIMULADO.format(
+        banca=banca.strip() or "FGV",
+        quantidade=quantidade,
+        sobre_tema=sobre_tema,
+        formato_alternativas=FORMATOS_QUESTAO[formato_label],
+    )
+
+
 def run_graphrag_query(question: str, method: str, community_level: int) -> str:
     cmd = [
         "python", "-m", "graphrag", "query",
@@ -236,6 +283,35 @@ def run_graphrag_query(question: str, method: str, community_level: int) -> str:
 for msg in st.session_state.messages:
     with st.chat_message(msg["role"]):
         st.markdown(msg["content"])
+
+# ---------------------------------------------------------------
+# Geração de simulado (via botão na barra lateral)
+# ---------------------------------------------------------------
+if gerar_simulado_clicado:
+    tema_label = tema_simulado.strip() if tema_simulado.strip() else "conteúdo geral da base"
+    pedido_visivel = f"🎯 Gerar simulado — banca {banca or 'FGV'} · {quantidade_questoes} questões · {tema_label}"
+
+    st.session_state.messages.append({"role": "user", "content": pedido_visivel})
+    with st.chat_message("user"):
+        st.markdown(pedido_visivel)
+
+    if len(st.session_state.messages) == 1 and st.session_state.title == "Nova conversa":
+        st.session_state.title = f"Simulado {banca or 'FGV'} — {tema_label}"[:50]
+
+    prompt_simulado = build_simulado_prompt(banca, tema_simulado, quantidade_questoes, formato_questao)
+
+    # Simulados se beneficiam de contexto amplo do material -> usa 'global' por padrão,
+    # independente do método selecionado para o chat normal, a menos que o usuário já esteja em 'drift'.
+    metodo_para_simulado = "drift" if method == "drift" else "global"
+
+    with st.chat_message("assistant"):
+        with st.spinner(f"Gerando simulado (método: {metodo_para_simulado})... isso pode levar um tempo."):
+            resposta_simulado = run_graphrag_query(prompt_simulado, metodo_para_simulado, community_level)
+        st.markdown(resposta_simulado)
+
+    st.session_state.messages.append({"role": "assistant", "content": resposta_simulado})
+    save_session(st.session_state.session_id, st.session_state.title, st.session_state.messages)
+
 
 # ---------------------------------------------------------------
 # Input do usuário

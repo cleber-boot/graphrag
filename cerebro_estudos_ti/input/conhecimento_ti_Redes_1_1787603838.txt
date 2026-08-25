@@ -1,0 +1,438 @@
+=== CONCEITOS E ENTIDADES DE TI ===
+Tecnologia: cabeamento_estruturado | Categoria: Tecnologia | Resumo: Sistema padronizado de cabos, conectores e outros componentes de rede, projetado para fornecer uma infraestrutura de telecomunicações flexível e escalável. | Foco Concurso: Normas como ABNT NBR 14565, TIA-568, TIA-569, TIA-606, TIA-607 e TIA-570 definem os requisitos e as melhores práticas para cabeamento estruturado em diferentes ambientes (comercial, residencial, etc.).
+Tecnologia: abnt_nbr_14565 | Categoria: Tecnologia | Resumo: Norma brasileira que consolida e unifica conceitos e requisitos de diversas normas ANSI/TIA para cabeamento estruturado em edifícios comerciais. | Foco Concurso: É a norma brasileira de referência para cabeamento estruturado em edifícios comerciais, baseada em normas americanas como TIA-568, TIA-569, TIA-606 e TIA-607.
+Tecnologia: tia_568 | Categoria: Tecnologia | Resumo: Série de normas americanas que especificam o cabeamento estruturado em instalações comerciais. | Foco Concurso: A ABNT NBR 14565 baseia-se em grande parte nas normas da série TIA-568 (como TIA-568.0-D, TIA-568.1-D, TIA-568.3-D, TIA-568.4-D).
+Tecnologia: tia_569 | Categoria: Tecnologia | Resumo: Norma que especifica os caminhos, espaços e infraestrutura física para os sistemas de telecomunicações. | Foco Concurso: Aborda as diretrizes sobre encaminhamento de cabos, dutos, canaletas, bandejas, eletrodutos e calhas.
+Tecnologia: tia_606 | Categoria: Tecnologia | Resumo: Norma que trata da administração, rotulagem e documentação dos sistemas de cabeamento. | Foco Concurso: Define os padrões para identificação e gerenciamento da infraestrutura de telecomunicações, incluindo etiquetas para cabos e equipamentos.
+Tecnologia: tia_607 | Categoria: Tecnologia | Resumo: Norma que especifica os requisitos de aterramento e equipotencialização. | Foco Concurso: Aborda o sistema de aterramento e equipotencialização para garantir a segurança e o bom funcionamento dos sistemas de telecomunicações.
+Tecnologia: tia_570 | Categoria: Tecnologia | Resumo: Norma que especifica o cabeamento estruturado em instalações residenciais. | Foco Concurso: Diferente da norma para edifícios comerciais, a TIA-570 trata das particularidades do cabeamento em residências.
+Tecnologia: subsistemas_cabeamento_estruturado | Categoria: Arquitetura | Resumo: Componentes lógicos e físicos que formam um sistema de cabeamento estruturado. | Foco Concurso: Os principais subsistemas incluem: Área de Trabalho, Cabeamento Horizontal, Backbone (Vertical), Armário de Telecomunicações (Telecommunication Closet), Sala de Equipamentos (Equipment Room), Instalações de Entrada (Entrance Facilities) e Administração.
+Tecnologia: area_de_trabalho | Categoria: Arquitetura | Resumo: Local onde o usuário final acessa a rede, contendo os dispositivos de telecomunicações. | Foco Concurso: É o ponto de entrega dos serviços de telecomunicações ao usuário, onde se conectam computadores, telefones, etc.
+Tecnologia: cabeamento_horizontal | Categoria: Arquitetura | Resumo: Parte do cabeamento estruturado que conecta as tomadas de telecomunicações na área de trabalho aos armários de telecomunicações. | Foco Concurso: Também chamado de cabeamento secundário, conecta a área de trabalho ao Telecommunication Closet.
+Tecnologia: backbone | Categoria: Arquitetura | Resumo: Parte do cabeamento estruturado que interliga os armários de telecomunicações entre andares ou edifícios. | Foco Concurso: Também chamado de cabeamento vertical, interliga os Telecommunication Closets e as salas de equipamentos.
+Tecnologia: telecommunication_closet | Categoria: Arquitetura | Resumo: Armário ou sala destinada a conter equipamentos de telecomunicações, terminações de cabos e conexões. | Foco Concurso: Também conhecido como TR (Telecommunication Room) ou cabeamento secundário, é um ponto de transição entre o backbone e o cabeamento horizontal.
+Tecnologia: equipment_room | Categoria: Arquitetura | Resumo: Sala destinada a abrigar equipamentos de telecomunicações de grande porte, como servidores e ativos de rede. | Foco Concurso: Também conhecida como Data Center, é um ponto de partida para o sistema de backbone.
+Tecnologia: entrance_facilities | Categoria: Arquitetura | Resumo: Ponto de chegada dos serviços das operadoras (internet, telefonia) ao edifício. | Foco Concurso: É o ponto de interseção entre os sistemas de cabeamento externos e o sistema de cabeamento estruturado do edifício.
+Tecnologia: administracao_documentacao | Categoria: Tecnologia | Resumo: Conjunto de práticas para identificar, gerenciar e documentar a infraestrutura de telecomunicações. | Foco Concurso: Norma TIA-606 define padrões para etiquetagem, documentação e administração dos componentes do cabeamento.
+Tecnologia: aterramento_equipotencializacao | Categoria: Tecnologia | Resumo: Sistema de conexão elétrica à terra para garantir a segurança e o bom funcionamento dos equipamentos. | Foco Concurso: Norma TIA-607 especifica os requisitos para aterramento e equipotencialização, visando evitar diferenças de potencial e proteger contra descargas elétricas.
+Tecnologia: cabos_par_trancado | Categoria: Tecnologia | Resumo: Tipo de cabo de rede composto por pares de fios trançados, utilizado para transmissão de dados. | Foco Concurso: Classificado em categorias (Cat 5e, Cat 6, Cat 6A, etc.) que definem seu desempenho e frequência de operação.
+Tecnologia: fibra_optica | Categoria: Tecnologia | Resumo: Meio de transmissão que utiliza pulsos de luz para transmitir dados, oferecendo alta velocidade e imunidade a interferências. | Foco Concurso: Utilizada em aplicações que exigem alta largura de banda e segurança, como redes de alta velocidade e backbones.
+Tecnologia: cabo_coaxial | Categoria: Tecnologia | Resumo: Tipo de cabo com um condutor central, blindagem e isolamento, utilizado para transmissão de sinais de RF e dados. | Foco Concurso: Utilizado em sistemas de TV a cabo e, em algumas normas, para internet banda larga em residências.
+Tecnologia: patch_panel | Categoria: Tecnologia | Resumo: Painel de conexão que organiza e termina os cabos de rede, facilitando a interconexão com outros equipamentos. | Foco Concurso: Componente essencial no cabeamento horizontal, localizado no Telecommunication Closet, para gerenciar as conexões.
+Tecnologia: tomada_telecomunicacao | Categoria: Tecnologia | Resumo: Ponto de conexão na área de trabalho onde os dispositivos de telecomunicações são conectados. | Foco Concurso: Também conhecida como Outlet (TO), é o ponto final do cabeamento horizontal.
+Tecnologia: ponto_consolidacao | Categoria: Arquitetura | Resumo: Ponto intermediário no cabeamento horizontal que permite derivações e flexibilidade no layout. | Foco Concurso: Pode ser utilizado para otimizar o uso de cabos e facilitar futuras mudanças, mas não é obrigatório em todas as normas.
+Tecnologia: roteador | Categoria: Tecnologia | Resumo: Dispositivo de rede que interliga diferentes redes (LANs, WANs) e direciona o tráfego com base em endereços IP. | Foco Concurso: Opera na camada 3 do modelo OSI e é fundamental para a comunicação entre VLANs e o acesso à internet.
+Tecnologia: switch | Categoria: Tecnologia | Resumo: Dispositivo de rede que interliga dispositivos em uma mesma rede local (LAN), encaminhando o tráfego com base em endereços MAC. | Foco Concurso: Opera na camada 2 do modelo OSI e é essencial para a segmentação de redes em VLANs.
+Tecnologia: vlans | Categoria: Tecnologia | Resumo: Redes Locais Virtuais que permitem segmentar logicamente uma rede física em múltiplas redes virtuais. | Foco Concurso: Melhora a segurança, o gerenciamento e a escalabilidade da rede, isolando o tráfego entre diferentes grupos de dispositivos.
+Tecnologia: seguranca_wi-fi | Categoria: Tecnologia | Resumo: Conjunto de protocolos e mecanismos para proteger redes sem fio contra acessos não autorizados e garantir a confidencialidade e integridade dos dados. | Foco Concurso: Protocolos como WEP, WPA, WPA2 e WPA3 evoluíram ao longo do tempo, oferecendo níveis crescentes de segurança.
+Tecnologia: ieee_802.11 | Categoria: Protocolo | Resumo: Padrão que define as especificações para redes locais sem fio (WLAN), conhecido comercialmente como Wi-Fi. | Foco Concurso: Abrange diversas versões (802.11b, 802.11a, 802.11g, 802.11n, 802.11ac, 802.11ax, 802.11be) que trazem melhorias em velocidade, alcance, eficiência e segurança.
+Tecnologia: csma_ca | Categoria: Protocolo | Resumo: Protocolo de acesso ao meio utilizado em redes sem fio (Wi-Fi) para prevenir colisões. | Foco Concurso: Diferente do CSMA/CD (usado em redes cabeadas), o CSMA/CA atua preventivamente, paralisando a transmissão antes que a colisão ocorra.
+Tecnologia: wep | Categoria: Tecnologia | Resumo: Protocolo de segurança Wi-Fi original, considerado inseguro e obsoleto devido a falhas em seu projeto. | Foco Concurso: Utiliza o algoritmo RC4 e foi substituído por protocolos mais seguros como WPA, WPA2 e WPA3.
+Tecnologia: wpa | Categoria: Tecnologia | Resumo: Protocolo de segurança Wi-Fi criado como substituto temporário para o WEP, utilizando TKIP para criptografia. | Foco Concurso: Melhorou a segurança em relação ao WEP, mas também foi superado por ataques e considerado obsoleto.
+Tecnologia: wpa2 | Categoria: Tecnologia | Resumo: Protocolo de segurança Wi-Fi amplamente utilizado, que utiliza AES/CCMP para criptografia forte e moderna. | Foco Concurso: Oferece modos Personal (PSK) e Enterprise (802.1X com RADIUS), sendo o padrão mais robusto antes do WPA3.
+Tecnologia: wpa3 | Categoria: Tecnologia | Resumo: Protocolo de segurança Wi-Fi mais recente, projetado para corrigir vulnerabilidades do WPA2 e aumentar a segurança. | Foco Concurso: Utiliza SAE (Simultaneous Authentication of Equals) para autenticação mais segura e oferece criptografia reforçada, especialmente em redes públicas.
+Tecnologia: modem | Categoria: Tecnologia | Resumo: Dispositivo que converte sinais digitais em analógicos e vice-versa, permitindo a comunicação entre computadores e redes. | Foco Concurso: Essencial para conectar redes a diferentes meios de transmissão, como linhas telefônicas, cabos coaxiais ou fibra óptica.
+Tecnologia: modem_router | Categoria: Tecnologia | Resumo: Aparelho que combina as funções de modem e roteador, permitindo a conexão à internet e a criação de redes locais. | Foco Concurso: Dispositivo comum em residências e pequenos escritórios, simplificando a infraestrutura de rede.
+Tecnologia: gateway | Categoria: Tecnologia | Resumo: Dispositivo ou software que interconecta redes com protocolos diferentes, permitindo a comunicação entre sistemas distintos. | Foco Concurso: Funciona como um ponto de controle, tradutor de protocolos, roteador e firewall, possibilitando a comunicação entre redes heterogêneas.
+Tecnologia: transceiver | Categoria: Tecnologia | Resumo: Dispositivo que transmite e recebe sinais de comunicação em uma rede, convertendo-os entre formatos digitais e analógicos/elétricos/ópticos/rádio. | Foco Concurso: Utilizado em diversas tecnologias de rede, como Ethernet, Wi-Fi, Bluetooth e redes ópticas.
+Tecnologia: estacao_trabalho | Categoria: Tecnologia | Resumo: Computador ou dispositivo final projetado para uso individual, focado em desempenho gráfico, processamento e usabilidade. | Foco Concurso: É o ponto de acesso do usuário à rede, onde se conectam os dispositivos de telecomunicações.
+Tecnologia: servidor | Categoria: Tecnologia | Resumo: Computador ou dispositivo projetado para fornecer serviços e recursos a outras máquinas (clientes) em uma rede. | Foco Concurso: Atende múltiplos usuários simultaneamente, executando serviços como banco de dados, web, e-mail, arquivos, autenticação, etc.
+Tecnologia: placa_de_rede | Categoria: Tecnologia | Resumo: Componente de hardware que permite a um computador ou dispositivo se conectar a uma rede. | Foco Concurso: Responsável pela interface física entre o dispositivo e o meio de transmissão da rede.
+Tecnologia: repeater | Categoria: Tecnologia | Resumo: Dispositivo que regenera e retransmite sinais de rede para estender o alcance. | Foco Concurso: Opera na camada física (camada 1) do modelo OSI.
+Tecnologia: hub | Categoria: Tecnologia | Resumo: Dispositivo de rede que conecta múltiplos dispositivos em uma rede local, transmitindo dados para todas as portas. | Foco Concurso: Opera na camada física (camada 1) do modelo OSI e não possui inteligência para direcionar o tráfego, o que pode gerar colisões.
+Tecnologia: bridge | Categoria: Tecnologia | Resumo: Dispositivo de rede que conecta dois segmentos de rede, encaminhando o tráfego com base em endereços MAC. | Foco Concurso: Opera na camada de enlace (camada 2) do modelo OSI e ajuda a reduzir colisões e segmentar redes.
+Tecnologia: ethernet | Categoria: Protocolo | Resumo: Padrão de rede local (LAN) que define as especificações para redes cabeadas, incluindo o protocolo CSMA/CD. | Foco Concurso: É o padrão mais comum para redes locais cabeadas, operando na camada de enlace (camada 2) do modelo OSI.
+Tecnologia: bluetooth | Categoria: Protocolo | Resumo: Protocolo de comunicação sem fio de curto alcance para conectar dispositivos. | Foco Concurso: Utilizado em redes pessoais (PAN) e opera na banda de 2,4 GHz, competindo com o Wi-Fi.
+Tecnologia: modelo_osi | Categoria: Arquitetura | Resumo: Modelo conceitual que divide as funções de comunicação em rede em sete camadas distintas. | Foco Concurso: Ajuda a entender como os dados são transmitidos e processados em uma rede, desde a camada física até a camada de aplicação.
+Tecnologia: camada_enlace | Categoria: Arquitetura | Resumo: Segunda camada do modelo OSI, responsável pela transferência de dados entre nós adjacentes em uma rede. | Foco Concurso: Inclui o controle de acesso ao meio (MAC) e o controle de enlace lógico (LLC), utilizando endereços MAC para identificação.
+Tecnologia: subcamada_mac | Categoria: Arquitetura | Resumo: Subcamada da camada de enlace responsável pelo controle de acesso ao meio de transmissão. | Foco Concurso: Define como os dispositivos acessam o meio compartilhado, utilizando protocolos como CSMA/CD e CSMA/CA.
+Tecnologia: csma_cd | Categoria: Protocolo | Resumo: Protocolo de acesso ao meio utilizado em redes cabeadas (Ethernet) que permite o acesso ao meio e a detecção de colisões. | Foco Concurso: Utilizado em redes 802.3, onde os dispositivos 'ouvem' o canal antes de transmitir e, em caso de colisão, interrompem e tratam o problema.
+Tecnologia: rts_cts | Categoria: Protocolo | Resumo: Mecanismo de controle de acesso ao meio utilizado em redes Wi-Fi (802.11) para prevenir colisões. | Foco Concurso: Request to Send (RTS) e Clear to Send (CTS) são quadros de controle que reservam o acesso ao canal, melhorando o desempenho e reduzindo colisões.
+Tecnologia: banda_2.4ghz | Categoria: Tecnologia | Resumo: Faixa de frequência utilizada por redes Wi-Fi (802.11b/g/n), caracterizada por maior alcance, mas também maior interferência. | Foco Concurso: Apresenta sobreposição de canais e concorrência com outros dispositivos (Bluetooth, micro-ondas), o que pode causar interferência.
+Tecnologia: banda_5ghz | Categoria: Tecnologia | Resumo: Faixa de frequência utilizada por redes Wi-Fi (802.11a/n/ac/ax), caracterizada por menor alcance, mas maior velocidade e menor interferência. | Foco Concurso: Oferece canais mais amplos e sem sobreposição, proporcionando melhor desempenho em ambientes com obstáculos.
+Tecnologia: banda_6ghz | Categoria: Tecnologia | Resumo: Faixa de frequência introduzida pelo Wi-Fi 6E (802.11ax), oferecendo maior largura de banda e menos interferência. | Foco Concurso: Ideal para aplicações de realidade virtual, streaming 8K e jogos online, com mais canais disponíveis e sem sobreposição.
+Tecnologia: ieee_802.11ax | Categoria: Protocolo | Resumo: Padrão Wi-Fi 6, que introduz tecnologias como OFDMA e BSS Coloring para maior eficiência e menor latência. | Foco Concurso: Opera nas bandas de 2,4 GHz e 5 GHz, oferecendo velocidades agregadas de até 9,6 Gbps.
+Tecnologia: ieee_802.11be | Categoria: Protocolo | Resumo: Padrão Wi-Fi 7, que introduz MLO e canais de 320 MHz para velocidades teóricas de até 46 Gbps. | Foco Concurso: Oferece baixa latência extrema, ideal para aplicações de VR, AR e industriais.
+Tecnologia: mimo | Categoria: Tecnologia | Resumo: Multiple Input Multiple Output: tecnologia que utiliza múltiplas antenas para transmitir e receber vários sinais de dados simultaneamente. | Foco Concurso: Aumenta a velocidade e a eficiência das redes sem fio.
+Tecnologia: mu_mimo | Categoria: Tecnologia | Resumo: Multi-User Multiple Input Multiple Output: permite que o roteador se comunique com vários dispositivos ao mesmo tempo. | Foco Concurso: Torna o Wi-Fi mais rápido e eficiente em ambientes com muitos usuários.
+Tecnologia: beamforming | Categoria: Tecnologia | Resumo: Técnica que direciona o sinal sem fio de forma inteligente para cada dispositivo conectado. | Foco Concurso: Melhora a qualidade e a eficiência da comunicação, focando o sinal onde ele é necessário.
+Tecnologia: ofdma | Categoria: Tecnologia | Resumo: Orthogonal Frequency Division Multiple Access: divide o canal Wi-Fi em várias subfaixas menores para permitir a transmissão simultânea por vários dispositivos. | Foco Concurso: Aumenta a eficiência e reduz a latência, sendo uma inovação importante no Wi-Fi 6.
+Tecnologia: mlo | Categoria: Tecnologia | Resumo: Multi-Link Operation: permite que um dispositivo use múltiplos links Wi-Fi simultaneamente. | Foco Concurso: Inovação do Wi-Fi 7, que visa aumentar a velocidade e a estabilidade da conexão.
+Tecnologia: qam | Categoria: Tecnologia | Resumo: Quadrature Amplitude Modulation: técnica de modulação digital que combina modulação em amplitude e fase. | Foco Concurso: Aumenta a eficiência de modulação, sendo utilizada em tecnologias como o Wi-Fi 7 (4K-QAM).
+Tecnologia: wlan_controller | Categoria: Tecnologia | Resumo: Controlador centralizado para gerenciar múltiplos Access Points (APs) em uma rede sem fio. | Foco Concurso: Essencial em ambientes corporativos e grandes espaços públicos para garantir cobertura contínua, roaming e gerenciamento centralizado.
+Tecnologia: access_point | Categoria: Tecnologia | Resumo: Equipamento que cria uma rede sem fio, permitindo que dispositivos se conectem a ela. | Foco Concurso: Funciona como estação-base, transmitindo e recebendo dados para os dispositivos sem fio.
+Tecnologia: ssid | Categoria: Tecnologia | Resumo: Service Set Identifier: nome da rede sem fio que identifica um conjunto de Access Points. | Foco Concurso: Utilizado para que os dispositivos possam encontrar e se conectar à rede Wi-Fi desejada.
+Tecnologia: terminal_oculto | Categoria: Questao | Resumo: Problema em redes Wi-Fi onde um dispositivo não consegue detectar a presença de outro dispositivo na mesma rede. | Foco Concurso: Pode causar colisões e afetar o desempenho da rede. O uso de RTS/CTS e a correta localização do Access Point ajudam a mitigar esse problema.
+Tecnologia: gerenciamento_energia_wi-fi | Categoria: Tecnologia | Resumo: Recurso dos padrões 802.11 que permite aos nós da rede minimizarem o tempo de operação de suas funções, reduzindo o consumo energético. | Foco Concurso: Ajuda a otimizar o desempenho da comunicação e a prolongar a vida útil da bateria em dispositivos móveis.
+Tecnologia: adaptacao_taxa_wi-fi | Categoria: Tecnologia | Resumo: Capacidade de selecionar dinamicamente a técnica de modulação da camada física com base nas condições do canal. | Foco Concurso: Otimiza o desempenho da comunicação, adaptando-se às condições atuais do sinal e do ambiente.
+Tecnologia: identificacao_cabos_tia_606 | Categoria: Tecnologia | Resumo: Padrões de etiquetagem e codificação por cores definidos pela TIA-606 para identificar componentes de cabeamento. | Foco Concurso: Facilita a administração, manutenção e solução de problemas na infraestrutura de telecomunicações.
+Tecnologia: t568a_t568b | Categoria: Tecnologia | Resumo: Padrões de codificação de cores para a fiação de conectores RJ45, utilizados na terminação de cabos de par trançado. | Foco Concurso: Ambos os padrões são aceitos, mas o T568B é mais comum no Brasil. A diferença está na ordem dos pares verde e laranja.
+Tecnologia: cabos_balanceados_distancias | Categoria: Tecnologia | Resumo: Especificações de distância máxima permitida para diferentes segmentos de cabeamento de par trançado. | Foco Concurso: As distâncias são definidas para garantir a integridade do sinal e o desempenho elétrico, variando conforme o segmento (ex: FD-CP, CP-TO).
+Tecnologia: redes_sem_fio_aplicacoes | Categoria: Tecnologia | Resumo: Aplicações e padrões de redes sem fio (Wi-Fi), definindo largura de banda e raio de cobertura. | Foco Concurso: Normas como IEEE 802.11, 802.11a, 802.11b, 802.11g, 802.11n, 802.11ac, 802.11ax, 802.11be definem as características e capacidades das redes Wi-Fi.
+Tecnologia: cabos_par_trancado_categorias | Categoria: Tecnologia | Resumo: Classificação de cabos de par trançado com base em seu desempenho e frequência de operação. | Foco Concurso: Categorias como Cat 5e, Cat 6, Cat 6A, Cat 7 e Cat 8 definem a largura de banda e a taxa de transmissão suportadas.
+Tecnologia: mtpl | Categoria: Tecnologia | Resumo: Modular Plug Terminated Link: configuração de cabeamento onde o cabo horizontal é terminado diretamente com um conector RJ45 no dispositivo. | Foco Concurso: Alternativa ao cabeamento tradicional, utilizada para equipamentos fixos como Access Points e câmeras.
+Tecnologia: categoria_8 | Categoria: Tecnologia | Resumo: Categoria de cabeamento de par trançado que suporta velocidades de até 40 Gbps e frequências de até 2 GHz. | Foco Concurso: Incorporada à norma TIA-568.2-D, é utilizada em data centers e aplicações de alta performance.
+Tecnologia: patch_cord_28awg | Categoria: Tecnologia | Resumo: Patch cords com bitola de condutor 28 AWG, que oferecem maior flexibilidade e menor diâmetro. | Foco Concurso: Reconhecidos na norma TIA-568.2-D, podem apresentar desafios na organização de cabos e refrigeração de equipamentos.
+Tecnologia: poe | Categoria: Tecnologia | Resumo: Power over Ethernet: tecnologia que permite fornecer energia elétrica e dados através do mesmo cabo de rede. | Foco Concurso: Considerações sobre PoE e PoE++ (4PPoE) são abordadas nas normas, visando garantir a alimentação adequada dos dispositivos.
+Tecnologia: equipamentos_redes | Categoria: Tecnologia | Resumo: Dispositivos de hardware utilizados para construir e operar redes de computadores. | Foco Concurso: Exemplos incluem placas de rede, repeaters, hubs, bridges, switches, roteadores, modems, gateways, transceivers, servidores e estações de trabalho.
+Tecnologia: modelo_osi_camada_enlace | Categoria: Arquitetura | Resumo: Segunda camada do modelo OSI, responsável pela comunicação entre dispositivos na mesma rede local. | Foco Concurso: Abrange subcamadas como LLC e MAC, e protocolos como Ethernet, Wi-Fi e Bluetooth.
+Tecnologia: vlan_estatica | Categoria: Tecnologia | Resumo: Configuração manual de VLANs, onde cada porta do switch é associada a uma VLAN específica. | Foco Concurso: Método comum e simples de implementar, mas que exige configuração porta a porta.
+Tecnologia: vlan_dinamica | Categoria: Tecnologia | Resumo: Configuração automática de VLANs baseada no endereço MAC do dispositivo conectado à porta do switch. | Foco Concurso: Utiliza um software de gerenciamento de rede e um banco de dados para associar MACs a VLANs, tornando o processo menos trabalhoso.
+Tecnologia: dominios_broadcast | Categoria: Arquitetura | Resumo: Segmentos de rede onde os pacotes de broadcast são encaminhados. | Foco Concurso: As VLANs criam domínios de broadcast separados, isolando o tráfego e melhorando a segurança e o gerenciamento da rede.
+Tecnologia: comunicacao_entre_vlans | Categoria: Tecnologia | Resumo: Processo de permitir a comunicação entre diferentes VLANs, geralmente realizado por meio de roteadores. | Foco Concurso: Os roteadores operam na camada 3 do modelo OSI e são responsáveis por encaminhar o tráfego entre os domínios de broadcast das VLANs.
+Tecnologia: frame_tagging | Categoria: Tecnologia | Resumo: Mecanismo utilizado para identificar a qual VLAN um pacote pertence, adicionando uma tag ao cabeçalho. | Foco Concurso: Protocolos como ISL (Cisco) e 802.1Q (IEEE) são usados para o frame tagging, permitindo o controle do fluxo de broadcasts.
+Tecnologia: ieee_802.11_seguranca | Categoria: Tecnologia | Resumo: Conjunto de protocolos de segurança para redes Wi-Fi, definindo mecanismos de autenticação, criptografia e integridade. | Foco Concurso: Evolução de WEP para WPA, WPA2 e WPA3, com melhorias significativas em segurança e proteção contra ataques.
+Tecnologia: protocolos_seguranca_wi-fi | Categoria: Tecnologia | Resumo: Protocolos que garantem a segurança em redes Wi-Fi, como WEP, WPA, WPA2 e WPA3. | Foco Concurso: Cada protocolo oferece diferentes níveis de segurança, com o WPA3 sendo o mais recomendado atualmente.
+Tecnologia: autenticacao_wi-fi | Categoria: Tecnologia | Resumo: Processo de verificação da identidade de usuários ou dispositivos que tentam acessar uma rede Wi-Fi. | Foco Concurso: Pode ser realizada por meio de senhas (PSK) ou autenticação individual (802.1X com RADIUS).
+Tecnologia: criptografia_wi-fi | Categoria: Tecnologia | Resumo: Processo de embaralhar os dados transmitidos para garantir a confidencialidade, utilizando algoritmos como RC4, TKIP, AES e CCMP. | Foco Concurso: Essencial para proteger as informações contra interceptação e acesso não autorizado.
+Tecnologia: integridade_dados_wi-fi | Categoria: Tecnologia | Resumo: Mecanismo que verifica se os dados transmitidos foram alterados durante a comunicação. | Foco Concurso: Garantida por meio de códigos de verificação (ICV) e protocolos de criptografia.
+Tecnologia: isolamento_clientes_wi-fi | Categoria: Tecnologia | Resumo: Funcionalidade opcional que impede que dispositivos conectados a uma rede Wi-Fi se comuniquem entre si. | Foco Concurso: Aumenta a segurança em redes públicas, impedindo que um cliente acesse os dados de outro.
+Tecnologia: ataques_wi-fi | Categoria: Vulnerabilidade | Resumo: Vulnerabilidades em redes Wi-Fi que podem ser exploradas por atacantes para obter acesso não autorizado ou interceptar dados. | Foco Concurso: Exemplos incluem ataques de dicionário offline, ataques de desautenticação (DoS) e o ataque KRACK.
+Tecnologia: bandas_frequencia_wi-fi | Categoria: Tecnologia | Resumo: Faixas de frequência utilizadas pelas redes Wi-Fi para transmissão de dados. | Foco Concurso: As principais bandas são 2,4 GHz, 5 GHz e 6 GHz, cada uma com características distintas de alcance, velocidade e interferência.
+Tecnologia: canais_frequencia_wi-fi | Categoria: Tecnologia | Resumo: Divisões dentro das bandas de frequência utilizadas pelas redes Wi-Fi para a transmissão de dados. | Foco Concurso: A organização e o número de canais variam conforme a banda e a região, sendo importante o controle da sobreposição para evitar interferências.
+Tecnologia: varredura_passiva_wi-fi | Categoria: Tecnologia | Resumo: Processo em que um dispositivo sem fio escuta quadros de sinalização transmitidos pelos Access Points para identificar redes disponíveis. | Foco Concurso: Método utilizado para encontrar e se conectar a redes Wi-Fi.
+Tecnologia: varredura_ativa_wi-fi | Categoria: Tecnologia | Resumo: Processo em que um dispositivo sem fio envia quadros de investigação para solicitar informações sobre redes Wi-Fi disponíveis. | Foco Concurso: Permite que o dispositivo descubra ativamente os Access Points em sua área de cobertura.
+Tecnologia: roaming_wi-fi | Categoria: Tecnologia | Resumo: Capacidade de um dispositivo sem fio de manter a conectividade ao se mover entre diferentes Access Points. | Foco Concurso: Garantido pelo gerenciamento centralizado da rede Wi-Fi com controlador.
+Tecnologia: wlan_controller | Categoria: Tecnologia | Resumo: Controlador centralizado que gerencia múltiplos Access Points (APs) em uma rede Wi-Fi. | Foco Concurso: Centraliza configurações, segurança, políticas e roaming, sendo essencial para redes corporativas e de grande porte.
+Tecnologia: access_point_burro | Categoria: Tecnologia | Resumo: Access Point (AP) que não funciona de forma autônoma, sendo gerenciado por um controlador central. | Foco Concurso: Também chamados de 'lightweight APs' ou 'thin APs', encaminham o tráfego para o controlador e recebem suas instruções.
+Tecnologia: desvantagens_controlador_wi-fi | Categoria: Questao | Resumo: Desvantagens da utilização de um controlador central em redes Wi-Fi. | Foco Concurso: Incluem maior custo (infraestrutura e licenças), maior complexidade técnica, dependência da estabilidade do controlador e dependência do fornecedor.
+Tecnologia: normas_tia_assunto_tratado | Categoria: Tecnologia | Resumo: Tabela que relaciona as normas TIA com os assuntos que elas tratam. | Foco Concurso: Ajuda a entender o escopo de cada norma e sua importância no contexto do cabeamento estruturado.
+Tecnologia: cabos_balanceados_distancias_segmento | Categoria: Tecnologia | Resumo: Tabela que especifica as distâncias mínimas e máximas permitidas para diferentes segmentos de cabeamento de cabos balanceados. | Foco Concurso: Inclui segmentos como FD-CP, CP-TO, FD-TO, patch cords, etc., com valores em metros.
+Tecnologia: cabos_par_trancado_categorias_desempenho | Categoria: Tecnologia | Resumo: Tabela que relaciona as categorias de cabos de par trançado com suas características de transmissão e desempenho. | Foco Concurso: Mostra categorias como Cat 3, Cat 5e, Cat 6 e Cat 6A, com suas respectivas frequências e tipos de transmissão.
+Tecnologia: norma_tia_568_evolucao | Categoria: Tecnologia | Resumo: Evolução das normas TIA-568, desde as versões iniciais até as mais recentes (como a série C e D). | Foco Concurso: Destaca as mudanças e melhorias introduzidas em cada revisão, como a reorganização da numeração e a inclusão de novas tecnologias.
+Tecnologia: cabos_balanceados_distancias_maximas | Categoria: Tecnologia | Resumo: Tabela que apresenta as distâncias máximas permitidas para cabos balanceados em diferentes segmentos. | Foco Concurso: Valores em metros para segmentos como FD-CP, CP-TO, FD-TO, patch cords, etc.
+Tecnologia: norma_tia_568_c | Categoria: Tecnologia | Resumo: Divisão da norma TIA-568 em partes (C.0, C.1, C.2, C.3) para abranger cabeamento genérico, comercial, par trançado e fibra óptica. | Foco Concurso: Representou uma reorganização significativa, estabelecendo requisitos mais claros para cada área.
+Tecnologia: norma_tia_568_d | Categoria: Tecnologia | Resumo: Revisão da norma TIA-568 que introduziu uma numeração mais lógica (ex: 568.0-D) e focou em demandas modernas como PoE. | Foco Concurso: A série D abrange cabeamento genérico, de edifícios, par trançado, fibra óptica e coaxial, com foco em tecnologias atuais.
+Tecnologia: cabos_par_trancado_tipos | Categoria: Tecnologia | Resumo: Tipos de cabos de par trançado utilizados em cabeamento horizontal, como UTP, STP e FTP. | Foco Concurso: A escolha do tipo de cabo depende do ambiente e dos requisitos de desempenho, podendo ser blindado ou não blindado.
+Tecnologia: patch_panel_componentes | Categoria: Tecnologia | Resumo: Componentes de um patch panel, como conectores IDC e Keystone Jacks, utilizados para terminação e conexão de cabos. | Foco Concurso: Essenciais para a organização e o gerenciamento do cabeamento horizontal.
+Tecnologia: tomadas_telecomunicacoes_tipos | Categoria: Tecnologia | Resumo: Tipos de tomadas de telecomunicações utilizadas na área de trabalho, como RJ45 para cabos UTP e conectores SC para fibra óptica. | Foco Concurso: A escolha do tipo de tomada depende do meio de transmissão e dos requisitos de desempenho.
+Tecnologia: interconnection | Categoria: Tecnologia | Resumo: Tipo de conexão direta entre equipamentos sem passar por um patch panel intermediário. | Foco Concurso: Utilizada em conexões fixas e permanentes, onde não há necessidade de flexibilidade ou reorganização frequente.
+Tecnologia: cross_connection | Categoria: Tecnologia | Resumo: Tipo de conexão que utiliza um elemento passivo intermediário (patch panel) para conectar equipamentos. | Foco Concurso: Permite flexibilidade para mudanças de layout e é comumente usado em salas de equipamentos e racks.
+Tecnologia: cabos_manobra_patch_cords | Categoria: Tecnologia | Resumo: Cabos flexíveis utilizados para interligar equipamentos de rede e patch panels. | Foco Concurso: Devem ser de categoria igual ou superior ao cabeamento horizontal instalado e ter comprimento máximo de 5m (entre Telecommunication Closet e Work Area).
+Tecnologia: blocos_conexao_s110 | Categoria: Tecnologia | Resumo: Tipo de bloco de conexão que utiliza contato por deslocamento do isolante (IDC) para terminação de cabos. | Foco Concurso: Permite a conexão de cabos de par trançado com múltiplos pares, derivando conexões de 4 pares para o cabeamento horizontal.
+Tecnologia: patch_panel_manobra | Categoria: Tecnologia | Resumo: Painel de manobra montado em racks, utilizado para terminação e conexão dos cabos de rede. | Foco Concurso: Possui capacidade de 12 até 96 portas e recebe os patch cables na face externa, enquanto a face interna contém os contatos IDC para os cabos da rede horizontal.
+Tecnologia: mutoa | Categoria: Tecnologia | Resumo: Multi User Telecommunication Outlet Assembled: caixa de acesso à rede horizontal com várias tomadas de telecomunicação. | Foco Concurso: Utilizada quando há necessidade de um grande número de pontos de telecomunicações em uma área restrita.
+Tecnologia: consolidation_point | Categoria: Arquitetura | Resumo: Ponto de Cross-Connect instalado entre o Telecommunication Room (TR) e a Work Area. | Foco Concurso: Usado em locais onde existam mudanças, mas não frequentes, para adequar a rede horizontal com menor perda de cabo.
+Tecnologia: modelo_osi_camada_fisica | Categoria: Arquitetura | Resumo: Primeira camada do modelo OSI, responsável pela transmissão física dos bits através do meio de rede. | Foco Concurso: Trata de aspectos como cabos, conectores, sinais elétricos, ópticos ou de rádio.
+Tecnologia: modelo_osi_camada_rede | Categoria: Arquitetura | Resumo: Terceira camada do modelo OSI, responsável pelo endereçamento lógico e roteamento de pacotes entre redes. | Foco Concurso: Utiliza protocolos como IP e opera com endereços IP para direcionar o tráfego.
+Tecnologia: modelo_osi_camada_transporte | Categoria: Arquitetura | Resumo: Quarta camada do modelo OSI, responsável pela comunicação fim a fim entre aplicações. | Foco Concurso: Utiliza protocolos como TCP e UDP para garantir a entrega confiável ou rápida dos dados.
+Tecnologia: modelo_osi_camada_sessao | Categoria: Arquitetura | Resumo: Quinta camada do modelo OSI, responsável pelo estabelecimento, gerenciamento e encerramento de sessões de comunicação. | Foco Concurso: Coordena o diálogo entre as aplicações em diferentes dispositivos.
+Tecnologia: modelo_osi_camada_apresentacao | Categoria: Arquitetura | Resumo: Sexta camada do modelo OSI, responsável pela tradução, formatação e criptografia dos dados. | Foco Concurso: Garante que os dados sejam apresentados em um formato compreensível para as aplicações.
+Tecnologia: modelo_osi_camada_aplicacao | Categoria: Arquitetura | Resumo: Sétima camada do modelo OSI, responsável por fornecer serviços de rede diretamente às aplicações do usuário. | Foco Concurso: Inclui protocolos como HTTP, FTP, SMTP, DNS, etc.
+Tecnologia: subcamada_llc | Categoria: Arquitetura | Resumo: Subcamada da camada de enlace responsável pelo controle de enlace lógico e multiplexação de protocolos. | Foco Concurso: Permite que múltiplos protocolos de rede (como IP e IPX) utilizem o mesmo meio de transmissão.
+Tecnologia: enderecos_mac | Categoria: Tecnologia | Resumo: Identificador físico único atribuído a cada interface de rede, utilizado na camada de enlace para a comunicação local. | Foco Concurso: Também conhecido como endereço físico ou endereço de hardware, é usado pelos switches para encaminhar quadros dentro de uma LAN.
+Tecnologia: enderecos_ip | Categoria: Tecnologia | Resumo: Identificador lógico atribuído a cada dispositivo em uma rede IP, utilizado na camada de rede para o roteamento. | Foco Concurso: Permite a comunicação entre diferentes redes e a identificação única de dispositivos na internet.
+Tecnologia: arp | Categoria: Protocolo | Resumo: Address Resolution Protocol: protocolo que mapeia endereços IP para endereços MAC em uma rede local. | Foco Concurso: Utilizado na camada de rede para descobrir o endereço MAC correspondente a um determinado endereço IP.
+Tecnologia: ieee_802.11_quadro | Categoria: Tecnologia | Resumo: Estrutura de dados utilizada na comunicação de redes Wi-Fi (802.11), contendo campos como endereços MAC, tipo de quadro e carga útil. | Foco Concurso: O quadro 802.11 inclui campos para controle, duração, endereços, tipo, subtipo, carga útil e CRC, permitindo a comunicação eficiente e organizada.
+Tecnologia: gerenciamento_energia_802.11 | Categoria: Tecnologia | Resumo: Recursos do padrão 802.11 que permitem aos nós da rede minimizarem o tempo de operação de suas funções, reduzindo o consumo energético. | Foco Concurso: Ajuda a otimizar o desempenho da comunicação e a prolongar a vida útil da bateria em dispositivos móveis.
+Tecnologia: adaptacao_taxa_802.11 | Categoria: Tecnologia | Resumo: Capacidade de selecionar dinamicamente a técnica de modulação da camada física com base nas condições do canal. | Foco Concurso: Otimiza o desempenho da comunicação, adaptando-se às condições atuais do sinal e do ambiente.
+Tecnologia: banda_2.4ghz_canais | Categoria: Tecnologia | Resumo: Canais de frequência na banda de 2,4 GHz utilizados pelas redes Wi-Fi. | Foco Concurso: Possui 14 canais numerados, com sobreposição entre eles. Os canais não sobrepostos mais utilizados no Brasil são 1, 6 e 11.
+Tecnologia: banda_5ghz_canais | Categoria: Tecnologia | Resumo: Canais de frequência na banda de 5 GHz utilizados pelas redes Wi-Fi. | Foco Concurso: Oferece canais mais amplos (20, 40, 80 ou 160 MHz) e sem sobreposição, com exemplos de canais comuns como 36, 40, 44, 48 e 149, 153, 157, 165.
+Tecnologia: banda_6ghz_canais | Categoria: Tecnologia | Resumo: Canais de frequência na banda de 6 GHz introduzidos pelo Wi-Fi 6E. | Foco Concurso: Oferece uma quantidade significativamente maior de canais disponíveis, com larguras de 20 a 160 MHz, sem sobreposição.
+Tecnologia: ieee_802.11_geracoes | Categoria: Tecnologia | Resumo: Evolução dos padrões Wi-Fi, desde o Wi-Fi 4 (802.11n) até o Wi-Fi 7 (802.11be). | Foco Concurso: Cada geração traz inovações em velocidade, alcance, eficiência e segurança, como MIMO, MU-MIMO, Beamforming, OFDMA, MLO e 4K-QAM.
+Tecnologia: ieee_802.11_seguranca_comparativo | Categoria: Tecnologia | Resumo: Comparativo dos protocolos de segurança Wi-Fi (WEP, WPA, WPA2, WPA3) em termos de ano, status e observações. | Foco Concurso: Mostra a evolução da segurança Wi-Fi, destacando a obsolescência do WEP e a recomendação do uso de WPA3.
+Tecnologia: ieee_802.11_seguranca_recomendada | Categoria: Tecnologia | Resumo: Tabela que indica o padrão de segurança recomendado para diferentes versões do Wi-Fi. | Foco Concurso: Wi-Fi 4/5 recomendam WPA2, enquanto Wi-Fi 6/6E/7 recomendam WPA3.
+
+=== MAPA DE RELACIONAMENTOS ARQUITETURAIS ===
+Conexao: 'abnt_nbr_14565' --[BASEIA_SE_EM]--> 'tia_568'
+Conexao: 'abnt_nbr_14565' --[BASEIA_SE_EM]--> 'tia_569'
+Conexao: 'abnt_nbr_14565' --[BASEIA_SE_EM]--> 'tia_606'
+Conexao: 'abnt_nbr_14565' --[BASEIA_SE_EM]--> 'tia_607'
+Conexao: 'cabeamento_estruturado' --[DEFINIDO_POR]--> 'abnt_nbr_14565'
+Conexao: 'cabeamento_estruturado' --[DEFINIDO_POR]--> 'tia_568'
+Conexao: 'cabeamento_estruturado' --[DEFINIDO_POR]--> 'tia_569'
+Conexao: 'cabeamento_estruturado' --[DEFINIDO_POR]--> 'tia_606'
+Conexao: 'cabeamento_estruturado' --[DEFINIDO_POR]--> 'tia_607'
+Conexao: 'cabeamento_estruturado' --[DEFINIDO_POR]--> 'tia_570'
+Conexao: 'subsistemas_cabeamento_estruturado' --[COMPÕE]--> 'area_de_trabalho'
+Conexao: 'subsistemas_cabeamento_estruturado' --[COMPÕE]--> 'cabeamento_horizontal'
+Conexao: 'subsistemas_cabeamento_estruturado' --[COMPÕE]--> 'backbone'
+Conexao: 'subsistemas_cabeamento_estruturado' --[COMPÕE]--> 'telecommunication_closet'
+Conexao: 'subsistemas_cabeamento_estruturado' --[COMPÕE]--> 'equipment_room'
+Conexao: 'subsistemas_cabeamento_estruturado' --[COMPÕE]--> 'entrance_facilities'
+Conexao: 'subsistemas_cabeamento_estruturado' --[COMPÕE]--> 'administracao_documentacao'
+Conexao: 'cabeamento_horizontal' --[CONECTA]--> 'area_de_trabalho'
+Conexao: 'cabeamento_horizontal' --[CONECTA]--> 'telecommunication_closet'
+Conexao: 'backbone' --[INTERLIGA]--> 'telecommunication_closet'
+Conexao: 'backbone' --[INTERLIGA]--> 'equipment_room'
+Conexao: 'telecommunication_closet' --[CONTEM]--> 'patch_panel'
+Conexao: 'area_de_trabalho' --[CONTEM]--> 'tomada_telecomunicacao'
+Conexao: 'cabeamento_horizontal' --[UTILIZA]--> 'cabos_par_trancado'
+Conexao: 'cabeamento_horizontal' --[UTILIZA]--> 'fibra_optica'
+Conexao: 'backbone' --[UTILIZA]--> 'fibra_optica'
+Conexao: 'cabeamento_estruturado' --[UTILIZA]--> 'cabos_par_trancado'
+Conexao: 'cabeamento_estruturado' --[UTILIZA]--> 'fibra_optica'
+Conexao: 'cabeamento_estruturado' --[UTILIZA]--> 'cabo_coaxial'
+Conexao: 'aterramento_equipotencializacao' --[ESPECIFICADO_POR]--> 'tia_607'
+Conexao: 'administracao_documentacao' --[ESPECIFICADO_POR]--> 'tia_606'
+Conexao: 'abnt_nbr_14565' --[ABORDAR]--> 'administracao_documentacao'
+Conexao: 'abnt_nbr_14565' --[ABORDAR]--> 'aterramento_equipotencializacao'
+Conexao: 'cabeamento_horizontal' --[PODE_TER]--> 'ponto_consolidacao'
+Conexao: 'vlans' --[IMPLEMENTADO_POR]--> 'switch'
+Conexao: 'vlans' --[COMUNICA_VIA]--> 'roteador'
+Conexao: 'ieee_802.11' --[DEFINE]--> 'seguranca_wi-fi'
+Conexao: 'seguranca_wi-fi' --[EVOLUIU_PARA]--> 'wpa'
+Conexao: 'wpa' --[EVOLUIU_PARA]--> 'wpa2'
+Conexao: 'wpa2' --[EVOLUIU_PARA]--> 'wpa3'
+Conexao: 'ieee_802.11' --[UTILIZA]--> 'csma_ca'
+Conexao: 'csma_ca' --[PREVINE]--> 'ataques_wi-fi'
+Conexao: 'ieee_802.11' --[UTILIZA]--> 'bandas_frequencia_wi-fi'
+Conexao: 'bandas_frequencia_wi-fi' --[INCLUI]--> 'banda_2.4ghz'
+Conexao: 'bandas_frequencia_wi-fi' --[INCLUI]--> 'banda_5ghz'
+Conexao: 'bandas_frequencia_wi-fi' --[INCLUI]--> 'banda_6ghz'
+Conexao: 'ieee_802.11' --[INTRODUZ]--> 'mimo'
+Conexao: 'ieee_802.11' --[INTRODUZ]--> 'mu_mimo'
+Conexao: 'ieee_802.11' --[INTRODUZ]--> 'beamforming'
+Conexao: 'ieee_802.11ax' --[INTRODUZ]--> 'ofdma'
+Conexao: 'ieee_802.11be' --[INTRODUZ]--> 'mlo'
+Conexao: 'ieee_802.11be' --[UTILIZA]--> 'qam'
+Conexao: 'wlan_controller' --[GERENCIA]--> 'access_point'
+Conexao: 'access_point' --[UTILIZA]--> 'ssid'
+Conexao: 'access_point' --[UTILIZA]--> 'ieee_802.11'
+Conexao: 'terminal_oculto' --[MITIGADO_POR]--> 'rts_cts'
+Conexao: 'gerenciamento_energia_wi-fi' --[PARTE_DE]--> 'ieee_802.11'
+Conexao: 'adaptacao_taxa_wi-fi' --[PARTE_DE]--> 'ieee_802.11'
+Conexao: 'identificacao_cabos_tia_606' --[DEFINIDO_POR]--> 'tia_606'
+Conexao: 't568a_t568b' --[UTILIZADO_EM]--> 'cabos_par_trancado'
+Conexao: 'cabos_balanceados_distancias' --[ESPECIFICADO_EM]--> 'tia_568'
+Conexao: 'cabos_par_trancado_categorias_desempenho' --[DEFINIDO_POR]--> 'tia_568'
+Conexao: 'norma_tia_568_evolucao' --[ABORDAR]--> 'norma_tia_568_c'
+Conexao: 'norma_tia_568_evolucao' --[ABORDAR]--> 'norma_tia_568_d'
+Conexao: 'cabos_par_trancado_tipos' --[UTILIZADO_EM]--> 'cabeamento_horizontal'
+Conexao: 'patch_panel_componentes' --[PARTE_DE]--> 'patch_panel'
+Conexao: 'tomadas_telecomunicacoes_tipos' --[UTILIZADO_EM]--> 'area_de_trabalho'
+Conexao: 'interconnection' --[TIPO_DE]--> 'conexao_hardware'
+Conexao: 'cross_connection' --[TIPO_DE]--> 'conexao_hardware'
+Conexao: 'cabos_manobra_patch_cords' --[UTILIZADO_EM]--> 'area_de_trabalho'
+Conexao: 'cabos_manobra_patch_cords' --[UTILIZADO_EM]--> 'telecommunication_closet'
+Conexao: 'blocos_conexao_s110' --[TIPO_DE]--> 'bloco_conexao'
+Conexao: 'patch_panel_manobra' --[MONTADO_EM]--> 'rack'
+Conexao: 'mutoa' --[TIPO_DE]--> 'tomada_telecomunicacao'
+Conexao: 'consolidation_point' --[TIPO_DE]--> 'cross_connection'
+Conexao: 'modelo_osi_camada_enlace' --[ABORDAR]--> 'vlans'
+Conexao: 'modelo_osi_camada_enlace' --[ABORDAR]--> 'ieee_802.11'
+Conexao: 'modelo_osi_camada_enlace' --[ABORDAR]--> 'ethernet'
+Conexao: 'modelo_osi_camada_enlace' --[ABORDAR]--> 'bluetooth'
+Conexao: 'modelo_osi_camada_enlace' --[UTILIZA]--> 'enderecos_mac'
+Conexao: 'modelo_osi_camada_rede' --[UTILIZA]--> 'enderecos_ip'
+Conexao: 'modelo_osi_camada_rede' --[UTILIZA]--> 'roteador'
+Conexao: 'modelo_osi_camada_enlace' --[UTILIZA]--> 'switch'
+Conexao: 'modelo_osi_camada_enlace' --[UTILIZA]--> 'arp'
+Conexao: 'vlans' --[SEGMENTA]--> 'dominios_broadcast'
+Conexao: 'vlans' --[COMUNICA_VIA]--> 'roteador'
+Conexao: 'vlans' --[UTILIZA]--> 'frame_tagging'
+Conexao: 'vlans' --[CONFIGURADO_ESTATICAMENTE]--> 'vlan_estatica'
+Conexao: 'vlans' --[CONFIGURADO_DINAMICAMENTE]--> 'vlan_dinamica'
+Conexao: 'ieee_802.11' --[UTILIZA]--> 'csma_ca'
+Conexao: 'ieee_802.11' --[UTILIZA]--> 'rts_cts'
+Conexao: 'ieee_802.11' --[UTILIZA]--> 'gerenciamento_energia_802.11'
+Conexao: 'ieee_802.11' --[UTILIZA]--> 'adaptacao_taxa_802.11'
+Conexao: 'ieee_802.11' --[UTILIZA]--> 'banda_2.4ghz_canais'
+Conexao: 'ieee_802.11' --[UTILIZA]--> 'banda_5ghz_canais'
+Conexao: 'ieee_802.11ax' --[UTILIZA]--> 'banda_6ghz_canais'
+Conexao: 'ieee_802.11' --[EVOLUIU_EM]--> 'ieee_802.11_geracoes'
+Conexao: 'ieee_802.11_seguranca' --[COMPARATIVO]--> 'ieee_802.11_seguranca_comparativo'
+Conexao: 'ieee_802.11' --[RECOMENDA]--> 'ieee_802.11_seguranca_recomendada'
+Conexao: 'wpa2' --[UTILIZA]--> 'autenticacao_wi-fi'
+Conexao: 'wpa2' --[UTILIZA]--> 'criptografia_wi-fi'
+Conexao: 'wpa2' --[UTILIZA]--> 'integridade_dados_wi-fi'
+Conexao: 'wpa2' --[PODE_UTILIZAR]--> 'isolamento_clientes_wi-fi'
+Conexao: 'wpa3' --[PROTEGE_CONTRA]--> 'ataques_wi-fi'
+Conexao: 'wlan_controller' --[APRESENTA]--> 'desvantagens_controlador_wi-fi'
+Conexao: 'modem' --[CONVERTE]--> 'sinal_digital_analogico'
+Conexao: 'modem_router' --[COMBINA]--> 'modem'
+Conexao: 'modem_router' --[COMBINA]--> 'roteador'
+Conexao: 'gateway' --[INTERCONECTA]--> 'redes_diferentes'
+Conexao: 'gateway' --[REALIZA]--> 'traducao_protocolos'
+Conexao: 'gateway' --[REALIZA]--> 'roteamento_entre_redes'
+Conexao: 'gateway' --[REALIZA]--> 'seguranca_filtragem'
+Conexao: 'gateway' --[REALIZA]--> 'conversao_enderecos'
+Conexao: 'transceiver' --[CONVERTE]--> 'sinais_digitais_adequados'
+Conexao: 'transceiver' --[UTILIZADO_EM]--> 'ethernet'
+Conexao: 'transceiver' --[UTILIZADO_EM]--> 'wi-fi'
+Conexao: 'transceiver' --[UTILIZADO_EM]--> 'bluetooth'
+Conexao: 'transceiver' --[UTILIZADO_EM]--> 'redes_opticas'
+Conexao: 'estacao_trabalho' --[CONECTA_A]--> 'rede'
+Conexao: 'servidor' --[FORNECE]--> 'servicos_recursos'
+Conexao: 'placa_de_rede' --[PERMITE_CONEXAO]--> 'rede'
+Conexao: 'repeater' --[REGENERA]--> 'sinais_rede'
+Conexao: 'hub' --[CONECTA]--> 'dispositivos_rede'
+Conexao: 'bridge' --[CONECTA]--> 'segmentos_rede'
+Conexao: 'ethernet' --[PADRAO_PARA]--> 'redes_cabeadas'
+Conexao: 'bluetooth' --[PADRAO_PARA]--> 'redes_pessoais'
+Conexao: 'modelo_osi' --[DIVIDE_EM]--> 'camada_fisica'
+Conexao: 'modelo_osi' --[DIVIDE_EM]--> 'camada_enlace'
+Conexao: 'modelo_osi' --[DIVIDE_EM]--> 'camada_rede'
+Conexao: 'modelo_osi' --[DIVIDE_EM]--> 'camada_transporte'
+Conexao: 'modelo_osi' --[DIVIDE_EM]--> 'camada_sessao'
+Conexao: 'modelo_osi' --[DIVIDE_EM]--> 'camada_apresentacao'
+Conexao: 'modelo_osi' --[DIVIDE_EM]--> 'camada_aplicacao'
+Conexao: 'camada_enlace' --[ABORDAR]--> 'subcamada_llc'
+Conexao: 'camada_enlace' --[ABORDAR]--> 'subcamada_mac'
+Conexao: 'subcamada_mac' --[UTILIZA]--> 'csma_cd'
+Conexao: 'subcamada_mac' --[UTILIZA]--> 'csma_ca'
+Conexao: 'subcamada_mac' --[UTILIZA]--> 'ieee_802.11_quadro'
+Conexao: 'ieee_802.11_quadro' --[CONTEM]--> 'enderecos_mac'
+Conexao: 'ieee_802.11_quadro' --[CONTEM]--> 'arp'
+Conexao: 'ieee_802.11_quadro' --[CONTEM]--> 'enderecos_ip'
+Conexao: 'ieee_802.11_geracoes' --[INCLUI]--> 'mimo'
+Conexao: 'ieee_802.11_geracoes' --[INCLUI]--> 'mu_mimo'
+Conexao: 'ieee_802.11_geracoes' --[INCLUI]--> 'beamforming'
+Conexao: 'ieee_802.11ax' --[INCLUI]--> 'ofdma'
+Conexao: 'ieee_802.11be' --[INCLUI]--> 'mlo'
+Conexao: 'ieee_802.11be' --[INCLUI]--> 'qam'
+Conexao: 'wlan_controller' --[GERENCIA]--> 'access_point_burro'
+Conexao: 'wlan_controller' --[GERENCIA]--> 'ssid'
+Conexao: 'wlan_controller' --[GERENCIA]--> 'roaming_wi-fi'
+Conexao: 'wlan_controller' --[GERENCIA]--> 'seguranca_wi-fi'
+Conexao: 'wlan_controller' --[GERENCIA]--> 'vlans'
+Conexao: 'access_point' --[CRIA]--> 'rede_sem_fio'
+Conexao: 'access_point' --[CONECTADO_A]--> 'rede_cabeada'
+Conexao: 'access_point' --[CONECTADO_A]--> 'roteador'
+Conexao: 'varredura_passiva_wi-fi' --[IDENTIFICA]--> 'rede_sem_fio'
+Conexao: 'varredura_ativa_wi-fi' --[IDENTIFICA]--> 'rede_sem_fio'
+Conexao: 'roaming_wi-fi' --[POSSIBILITADO_POR]--> 'wlan_controller'
+Conexao: 'wpa3' --[UTILIZA]--> 'autenticacao_wi-fi'
+Conexao: 'wpa3' --[UTILIZA]--> 'criptografia_wi-fi'
+Conexao: 'wpa3' --[UTILIZA]--> 'seguranca_wi-fi'
+Conexao: 'normas_tia_assunto_tratado' --[RELACIONA]--> 'tia_568'
+Conexao: 'normas_tia_assunto_tratado' --[RELACIONA]--> 'tia_569'
+Conexao: 'normas_tia_assunto_tratado' --[RELACIONA]--> 'tia_606'
+Conexao: 'normas_tia_assunto_tratado' --[RELACIONA]--> 'tia_607'
+Conexao: 'normas_tia_assunto_tratado' --[RELACIONA]--> 'tia_570'
+Conexao: 'cabos_balanceados_distancias_segmento' --[ESPECIFICA]--> 'cabeamento_horizontal'
+Conexao: 'cabos_par_trancado_categorias_desempenho' --[CLASSIFICA]--> 'cabos_par_trancado'
+Conexao: 'mtpl' --[TIPO_DE]--> 'cabeamento_horizontal'
+Conexao: 'categoria_8' --[INCORPORADO_EM]--> 'norma_tia_568_d'
+Conexao: 'patch_cord_28awg' --[RECONHECIDO_EM]--> 'norma_tia_568_d'
+Conexao: 'poe' --[ABORDADO_EM]--> 'norma_tia_568_d'
+Conexao: 'equipamentos_redes' --[INCLUI]--> 'placa_de_rede'
+Conexao: 'equipamentos_redes' --[INCLUI]--> 'repeater'
+Conexao: 'equipamentos_redes' --[INCLUI]--> 'hub'
+Conexao: 'equipamentos_redes' --[INCLUI]--> 'bridge'
+Conexao: 'equipamentos_redes' --[INCLUI]--> 'switches'
+Conexao: 'equipamentos_redes' --[INCLUI]--> 'routers'
+Conexao: 'equipamentos_redes' --[INCLUI]--> 'modem'
+Conexao: 'equipamentos_redes' --[INCLUI]--> 'modem_router'
+Conexao: 'equipamentos_redes' --[INCLUI]--> 'gateways'
+Conexao: 'equipamentos_redes' --[INCLUI]--> 'transceiver'
+Conexao: 'equipamentos_redes' --[INCLUI]--> 'servidor'
+Conexao: 'equipamentos_redes' --[INCLUI]--> 'estacao_trabalho'
+Conexao: 'modelo_osi_camada_enlace' --[UTILIZA]--> 'ethernet'
+Conexao: 'modelo_osi_camada_enlace' --[UTILIZA]--> 'ieee_802.11'
+Conexao: 'modelo_osi_camada_enlace' --[UTILIZA]--> 'bluetooth'
+Conexao: 'modelo_osi_camada_enlace' --[UTILIZA]--> 'enderecos_mac'
+Conexao: 'modelo_osi_camada_rede' --[UTILIZA]--> 'enderecos_ip'
+Conexao: 'modelo_osi_camada_rede' --[UTILIZA]--> 'roteador'
+Conexao: 'modelo_osi_camada_enlace' --[UTILIZA]--> 'switch'
+Conexao: 'modelo_osi_camada_enlace' --[UTILIZA]--> 'arp'
+Conexao: 'ieee_802.11_quadro' --[UTILIZA]--> 'enderecos_mac'
+Conexao: 'ieee_802.11_quadro' --[UTILIZA]--> 'arp'
+Conexao: 'ieee_802.11_quadro' --[UTILIZA]--> 'enderecos_ip'
+Conexao: 'ieee_802.11_geracoes' --[INCLUI]--> 'mimo'
+Conexao: 'ieee_802.11_geracoes' --[INCLUI]--> 'mu_mimo'
+Conexao: 'ieee_802.11_geracoes' --[INCLUI]--> 'beamforming'
+Conexao: 'ieee_802.11ax' --[INCLUI]--> 'ofdma'
+Conexao: 'ieee_802.11be' --[INCLUI]--> 'mlo'
+Conexao: 'ieee_802.11be' --[INCLUI]--> 'qam'
+Conexao: 'wlan_controller' --[GERENCIA]--> 'access_point_burro'
+Conexao: 'wlan_controller' --[GERENCIA]--> 'ssid'
+Conexao: 'wlan_controller' --[GERENCIA]--> 'roaming_wi-fi'
+Conexao: 'wlan_controller' --[GERENCIA]--> 'seguranca_wi-fi'
+Conexao: 'wlan_controller' --[GERENCIA]--> 'vlans'
+Conexao: 'access_point' --[CRIA]--> 'rede_sem_fio'
+Conexao: 'access_point' --[CONECTADO_A]--> 'rede_cabeada'
+Conexao: 'access_point' --[CONECTADO_A]--> 'roteador'
+Conexao: 'varredura_passiva_wi-fi' --[IDENTIFICA]--> 'rede_sem_fio'
+Conexao: 'varredura_ativa_wi-fi' --[IDENTIFICA]--> 'rede_sem_fio'
+Conexao: 'roaming_wi-fi' --[POSSIBILITADO_POR]--> 'wlan_controller'
+Conexao: 'wpa3' --[UTILIZA]--> 'autenticacao_wi-fi'
+Conexao: 'wpa3' --[UTILIZA]--> 'criptografia_wi-fi'
+Conexao: 'wpa3' --[UTILIZA]--> 'seguranca_wi-fi'
+Conexao: 'normas_tia_assunto_tratado' --[RELACIONA]--> 'tia_568'
+Conexao: 'normas_tia_assunto_tratado' --[RELACIONA]--> 'tia_569'
+Conexao: 'normas_tia_assunto_tratado' --[RELACIONA]--> 'tia_606'
+Conexao: 'normas_tia_assunto_tratado' --[RELACIONA]--> 'tia_607'
+Conexao: 'normas_tia_assunto_tratado' --[RELACIONA]--> 'tia_570'
+Conexao: 'cabos_balanceados_distancias_segmento' --[ESPECIFICA]--> 'cabeamento_horizontal'
+Conexao: 'cabos_par_trancado_categorias_desempenho' --[CLASSIFICA]--> 'cabos_par_trancado'
+Conexao: 'mtpl' --[TIPO_DE]--> 'cabeamento_horizontal'
+Conexao: 'categoria_8' --[INCORPORADO_EM]--> 'norma_tia_568_d'
+Conexao: 'patch_cord_28awg' --[RECONHECIDO_EM]--> 'norma_tia_568_d'
+Conexao: 'poe' --[ABORDADO_EM]--> 'norma_tia_568_d'
+Conexao: 'equipamentos_redes' --[INCLUI]--> 'placa_de_rede'
+Conexao: 'equipamentos_redes' --[INCLUI]--> 'repeater'
+Conexao: 'equipamentos_redes' --[INCLUI]--> 'hub'
+Conexao: 'equipamentos_redes' --[INCLUI]--> 'bridge'
+Conexao: 'equipamentos_redes' --[INCLUI]--> 'switches'
+Conexao: 'equipamentos_redes' --[INCLUI]--> 'routers'
+Conexao: 'equipamentos_redes' --[INCLUI]--> 'modem'
+Conexao: 'equipamentos_redes' --[INCLUI]--> 'modem_router'
+Conexao: 'equipamentos_redes' --[INCLUI]--> 'gateways'
+Conexao: 'equipamentos_redes' --[INCLUI]--> 'transceiver'
+Conexao: 'equipamentos_redes' --[INCLUI]--> 'servidor'
+Conexao: 'equipamentos_redes' --[INCLUI]--> 'estacao_trabalho'
+Conexao: 'modelo_osi_camada_enlace' --[UTILIZA]--> 'ethernet'
+Conexao: 'modelo_osi_camada_enlace' --[UTILIZA]--> 'ieee_802.11'
+Conexao: 'modelo_osi_camada_enlace' --[UTILIZA]--> 'bluetooth'
+Conexao: 'modelo_osi_camada_enlace' --[UTILIZA]--> 'enderecos_mac'
+Conexao: 'modelo_osi_camada_rede' --[UTILIZA]--> 'enderecos_ip'
+Conexao: 'modelo_osi_camada_rede' --[UTILIZA]--> 'roteador'
+Conexao: 'modelo_osi_camada_enlace' --[UTILIZA]--> 'switch'
+Conexao: 'modelo_osi_camada_enlace' --[UTILIZA]--> 'arp'
+Conexao: 'vlans' --[SEGMENTA]--> 'dominios_broadcast'
+Conexao: 'vlans' --[COMUNICA_VIA]--> 'roteador'
+Conexao: 'vlans' --[UTILIZA]--> 'frame_tagging'
+Conexao: 'vlans' --[CONFIGURADO_ESTATICAMENTE]--> 'vlan_estatica'
+Conexao: 'vlans' --[CONFIGURADO_DINAMICAMENTE]--> 'vlan_dinamica'
+Conexao: 'ieee_802.11' --[UTILIZA]--> 'csma_ca'
+Conexao: 'ieee_802.11' --[UTILIZA]--> 'rts_cts'
+Conexao: 'ieee_802.11' --[UTILIZA]--> 'gerenciamento_energia_802.11'
+Conexao: 'ieee_802.11' --[UTILIZA]--> 'adaptacao_taxa_802.11'
+Conexao: 'ieee_802.11' --[UTILIZA]--> 'banda_2.4ghz_canais'
+Conexao: 'ieee_802.11' --[UTILIZA]--> 'banda_5ghz_canais'
+Conexao: 'ieee_802.11ax' --[UTILIZA]--> 'banda_6ghz_canais'
+Conexao: 'ieee_802.11' --[EVOLUIU_EM]--> 'ieee_802.11_geracoes'
+Conexao: 'ieee_802.11_seguranca' --[COMPARATIVO]--> 'ieee_802.11_seguranca_comparativo'
+Conexao: 'ieee_802.11' --[RECOMENDA]--> 'ieee_802.11_seguranca_recomendada'
+Conexao: 'wpa2' --[UTILIZA]--> 'autenticacao_wi-fi'
+Conexao: 'wpa2' --[UTILIZA]--> 'criptografia_wi-fi'
+Conexao: 'wpa2' --[UTILIZA]--> 'integridade_dados_wi-fi'
+Conexao: 'wpa2' --[PODE_UTILIZAR]--> 'isolamento_clientes_wi-fi'
+Conexao: 'wpa3' --[PROTEGE_CONTRA]--> 'ataques_wi-fi'
+Conexao: 'modem' --[CONVERTE]--> 'sinal_digital_analogico'
+Conexao: 'modem_router' --[COMBINA]--> 'modem'
+Conexao: 'modem_router' --[COMBINA]--> 'roteador'
+Conexao: 'gateway' --[INTERCONECTA]--> 'redes_diferentes'
+Conexao: 'gateway' --[REALIZA]--> 'traducao_protocolos'
+Conexao: 'gateway' --[REALIZA]--> 'roteamento_entre_redes'
+Conexao: 'gateway' --[REALIZA]--> 'seguranca_filtragem'
+Conexao: 'gateway' --[REALIZA]--> 'conversao_enderecos'
+Conexao: 'transceiver' --[CONVERTE]--> 'sinais_digitais_adequados'
+Conexao: 'transceiver' --[UTILIZADO_EM]--> 'ethernet'
+Conexao: 'transceiver' --[UTILIZADO_EM]--> 'wi-fi'
+Conexao: 'transceiver' --[UTILIZADO_EM]--> 'bluetooth'
+Conexao: 'transceiver' --[UTILIZADO_EM]--> 'redes_opticas'
+Conexao: 'estacao_trabalho' --[CONECTA_A]--> 'rede'
+Conexao: 'servidor' --[FORNECE]--> 'servicos_recursos'
+Conexao: 'placa_de_rede' --[PERMITE_CONEXAO]--> 'rede'
+Conexao: 'repeater' --[REGENERA]--> 'sinais_rede'
+Conexao: 'hub' --[CONECTA]--> 'dispositivos_rede'
+Conexao: 'bridge' --[CONECTA]--> 'segmentos_rede'
+Conexao: 'ethernet' --[PADRAO_PARA]--> 'redes_cabeadas'
+Conexao: 'bluetooth' --[PADRAO_PARA]--> 'redes_pessoais'
+Conexao: 'modelo_osi' --[DIVIDE_EM]--> 'camada_fisica'
+Conexao: 'modelo_osi' --[DIVIDE_EM]--> 'camada_enlace'
+Conexao: 'modelo_osi' --[DIVIDE_EM]--> 'camada_rede'
+Conexao: 'modelo_osi' --[DIVIDE_EM]--> 'camada_transporte'
+Conexao: 'modelo_osi' --[DIVIDE_EM]--> 'camada_sessao'
+Conexao: 'modelo_osi' --[DIVIDE_EM]--> 'camada_apresentacao'
+Conexao: 'modelo_osi' --[DIVIDE_EM]--> 'camada_aplicacao'
+Conexao: 'camada_enlace' --[ABORDAR]--> 'subcamada_llc'
+Conexao: 'camada_enlace' --[ABORDAR]--> 'subcamada_mac'
+Conexao: 'subcamada_mac' --[UTILIZA]--> 'csma_cd'
+Conexao: 'subcamada_mac' --[UTILIZA]--> 'csma_ca'
+Conexao: 'subcamada_mac' --[UTILIZA]--> 'ieee_802.11_quadro'
+Conexao: 'ieee_802.11_quadro' --[CONTEM]--> 'enderecos_mac'
+Conexao: 'ieee_802.11_quadro' --[CONTEM]--> 'arp'
+Conexao: 'ieee_802.11_quadro' --[CONTEM]--> 'enderecos_ip'
