@@ -275,20 +275,22 @@ def build_simulado_prompt(banca: str, tema: str, quantidade: int, formato_label:
 
 def formatar_simulado(texto: str) -> str:
     """Rede de segurança: reformata em Markdown mesmo se o modelo devolver
-    tudo em bloco de texto corrido, sem seguir a estrutura pedida no prompt."""
+    tudo (ou parte) em bloco de texto corrido. Roda sempre, e os padrões usam
+    lookbehind para não bagunçar trechos que já estão formatados corretamente
+    (evita duplicar '##', '**', etc. em questões que já vieram certas)."""
 
-    # Se o texto já tem cabeçalhos "## Questão", provavelmente já está bem formatado.
-    ja_formatado = bool(re.search(r"^##\s*Questão", texto, flags=re.MULTILINE))
-
-    if not ja_formatado:
-        # Quebra antes de cada "Questão N"
-        texto = re.sub(r"\s*Quest(?:ã|a)o\s+(\d+)\b\s*", r"\n\n---\n\n## Questão \1\n\n", texto)
-        # Quebra antes de cada alternativa A) a E)
-        texto = re.sub(r"\s+([A-E])\)\s+", r"\n\n**\1)** ", texto)
-        # Destaca o gabarito em negrito, em linha própria
-        texto = re.sub(r"\s*GABARITO:\s*", r"\n\n**Gabarito:** ", texto)
-        # Formata o comentário como citação em bloco
-        texto = re.sub(r"\s*Coment[áa]rio:\s*", r"\n\n> **Comentário:** ", texto)
+    # Quebra antes de cada "Questão N" (aceita maiúsc./minúsc.), exceto se já tiver "## " na frente
+    texto = re.sub(
+        r"(?<!#\s)[Qq]uest(?:ã|a)o\s+(\d+)\b\s*",
+        r"\n\n---\n\n## Questão \1\n\n",
+        texto,
+    )
+    # Quebra antes de cada alternativa A) a E), exceto se já estiver em negrito ("**A)**")
+    texto = re.sub(r"(?<!\*)\s+([A-E])\)\s+", r"\n\n**\1)** ", texto)
+    # Destaca o gabarito em negrito, em linha própria (aceita "Gabarito:" ou "GABARITO:")
+    texto = re.sub(r"(?<!\*)\s*[Gg][Aa][Bb][Aa][Rr][Ii][Tt][Oo]:\s*", r"\n\n**Gabarito:** ", texto)
+    # Formata o comentário como citação em bloco (aceita "Comentário:" ou "comentário:")
+    texto = re.sub(r"(?<!\*)\s*[Cc]oment[áa]rio:\s*", r"\n\n> **Comentário:** ", texto)
 
     return texto.strip()
 
