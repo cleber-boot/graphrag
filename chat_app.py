@@ -25,7 +25,7 @@ import streamlit as st
 # ---------------------------------------------------------------
 # Configuração
 # ---------------------------------------------------------------
-ROOT_DIR = "."
+ROOT_DIR = "./cerebro_estudos_ti"
 SESSIONS_DIR = Path(ROOT_DIR) / "chat_sessions"
 SESSIONS_DIR.mkdir(exist_ok=True)
 
