@@ -1,0 +1,161 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Sistema de Cabeamento Estruturado (SCS - Structured Cabling Systems) – TIA 568 A E B
+Idioma: pt-BR
+Tecnologias citadas no documento: Cabeamento Estruturado, TIA 568, ANSI, NBR 14565, Fibra Óptica, Par Trançado
+
+=== SECAO [TI_SEC_001]: Introdução ao Sistema de Cabeamento Estruturado ===
+O cabeamento estruturado é um sistema padronizado para redes de telecomunicações em edifícios, regido por normas internacionais (como ANSI) e nacionais (como a NBR 14565 brasileira). Ele evoluiu com a tecnologia, adaptando-se a novos dispositivos e meios de transmissão. As normas norte-americanas, detalhadas em várias publicações, são frequentemente adotadas no Brasil por sua especificidade. O objetivo é uniformizar produtos e serviços, garantindo interoperabilidade e alinhamento com características elétricas e mecânicas. O sistema, embora elétrico, foca na transmissão de dados (bits) e opera paralelamente à corrente elétrica, protegendo os dispositivos. Um Sistema de Cabeamento Estruturado (SCS) integra diversas aplicações de telecomunicações (voz, dados, imagem, vídeo) e é composto por produtos de conectividade padronizados.
+
+-- Conceitos-chave --
+Termo: Cabeamento Estruturado | Tipo: Padrão | Definicao: Um sistema padronizado de infraestrutura de cabos e componentes de rede que suporta diversas aplicações de telecomunicações em um edifício ou campus. Visa unificar e simplificar a instalação e manutenção de redes.
+  Vantagens de Cabeamento Estruturado: Padronização e interoperabilidade; Flexibilidade para novas tecnologias; Facilidade de gerenciamento e manutenção; Longevidade do sistema; Suporte a múltiplas aplicações (voz, dados, vídeo)
+  Desvantagens de Cabeamento Estruturado: Custo inicial de implementação; Necessidade de planejamento detalhado; Dependência de conformidade com normas
+  Casos de uso de Cabeamento Estruturado: Novas construções comerciais e residenciais; Renovação de infraestrutura de rede; Ambientes que exigem alta confiabilidade e escalabilidade; Data centers
+Termo: Norma ANSI | Tipo: Padrão | Definicao: Padrões desenvolvidos pelo American National Standards Institute, que servem como base para muitas normas de cabeamento estruturado, incluindo as da série TIA.
+  Vantagens de Norma ANSI: Estabelece diretrizes técnicas rigorosas; Promove interoperabilidade global; Base para certificação de produtos e instalações
+  Desvantagens de Norma ANSI: Podem ser complexas e extensas; Requerem atualização constante devido à evolução tecnológica
+  Casos de uso de Norma ANSI: Definição de padrões para cabeamento de telecomunicações; Especificação de performance de cabos e conectores; Guia para planejamento e instalação de redes
+Termo: NBR 14565 | Tipo: Padrão | Definicao: Norma brasileira que regulamenta o sistema de cabeamento estruturado, baseada em normas internacionais como as da ANSI/TIA.
+  Vantagens de NBR 14565: Adaptação das normas internacionais à realidade brasileira; Abrange administração, cabeamento e ambientes; Facilita a conformidade em licitações e contratações no Brasil
+  Desvantagens de NBR 14565: Pode ser menos detalhada que as normas norte-americanas em certos aspectos; Adoção de normas norte-americanas ainda é comum em contextos específicos
+  Casos de uso de NBR 14565: Instalações de cabeamento estruturado em edifícios comerciais e residenciais no Brasil; Licitações públicas e privadas para infraestrutura de rede
+
+-- Relacionamentos --
+Conexao: 'norma_nbr_14565' --[baseado_em]--> 'norma_ansi'. Motivo: A norma brasileira NBR 14565 foi elaborada com base em normas internacionais, com destaque para as associadas à ANSI.
+Conexao: 'cab_estru' --[definido_por]--> 'norma_ansi'. Motivo: O cabeamento estruturado é regido por normas internacionais, com destaque para as associadas à ANSI.
+Conexao: 'cab_estru' --[definido_por]--> 'norma_nbr_14565'. Motivo: O cabeamento estruturado é regido por normas nacionais, como a NBR 14565 no Brasil.
+
+=== SECAO [TI_SEC_002]: Características e Histórico do Cabeamento Estruturado ===
+O cabeamento estruturado possui características básicas como arquitetura aberta, que permite a participação de diversos fabricantes, meios de transmissão e disposição física padronizados, aderência a padrões internacionais e projeto e instalação sistematizados. A estrutura física da rede é concebida como um projeto com início, meio e fim, documentado conforme as normas. O desenvolvimento de sistemas de cabeamento para edifícios comerciais ganhou força em meados dos anos 80, impulsionado pela preocupação das indústrias de telecomunicações e informática com a falta de padronização. A Computer Communications Industry Association (CCIA) solicitou à EIA o desenvolvimento de um padrão, resultando na publicação da norma EIA/TIA-568 em 1991. A sigla EIA foi posteriormente descontinuada com a dissolução da Electronic Industries Alliance em 2010, deixando a TIA como mantenedora principal das normas. A EIA estava ligada a soluções elétricas, enquanto a TIA foca em telecomunicações. Ambas estão relacionadas à ANSI. A norma TIA-568 oferece longevidade e um padrão aberto, sem marca de fornecedor.
+
+-- Conceitos-chave --
+Termo: Arquitetura Aberta | Tipo: Princípio de Design | Definicao: Um princípio de design em sistemas de cabeamento estruturado que permite que produtos de diferentes fabricantes sejam utilizados em conjunto, promovendo a interoperabilidade e a escolha do consumidor.
+  Vantagens de Arquitetura Aberta: Maior flexibilidade na escolha de fornecedores; Potencial redução de custos através da concorrência; Evita o aprisionamento tecnológico (vendor lock-in)
+  Desvantagens de Arquitetura Aberta: Pode exigir maior esforço na integração de componentes de diferentes fornecedores; Necessidade de garantir a compatibilidade e conformidade com as normas
+  Casos de uso de Arquitetura Aberta: Implementação de infraestrutura de rede em larga escala; Projetos que buscam otimizar custos sem comprometer a qualidade; Ambientes corporativos com políticas de multi-fornecedor
+Termo: EIA/TIA-568 | Tipo: Padrão | Definicao: Uma série de normas desenvolvidas pela Electronic Industries Alliance (EIA) e pela Telecommunications Industry Association (TIA) que especificam os padrões para sistemas de cabeamento estruturado em edifícios comerciais.
+  Vantagens de EIA/TIA-568: Estabelece um padrão global para cabeamento de telecomunicações; Garante interoperabilidade entre componentes; Fornece diretrizes para projeto, instalação e teste; Promove longevidade e escalabilidade da infraestrutura
+  Desvantagens de EIA/TIA-568: A evolução das normas pode ser complexa e exigir atualizações; A conformidade total pode ser desafiadora em instalações legadas
+  Casos de uso de EIA/TIA-568: Projeto e instalação de cabeamento em edifícios comerciais; Especificação de requisitos para produtos de rede; Certificação de instalações de cabeamento
+Termo: EIA (Electronic Industries Alliance) | Tipo: Organização | Definicao: Associação que representava fabricantes de eletrônicos e telecomunicações nos EUA, co-desenvolvedora da série de normas TIA/EIA-568. Foi dissolvida em 2010.
+  Desvantagens de EIA (Electronic Industries Alliance): Não existe mais como entidade ativa
+  Casos de uso de EIA (Electronic Industries Alliance): Referência histórica no desenvolvimento de padrões de telecomunicações
+Termo: TIA (Telecommunications Industry Association) | Tipo: Organização | Definicao: Associação que representa a indústria de telecomunicações e tecnologia da informação, responsável pela manutenção e desenvolvimento das normas da série TIA-568 após a dissolução da EIA.
+  Vantagens de TIA (Telecommunications Industry Association): Lidera o desenvolvimento de padrões para a indústria de telecomunicações; Promove a inovação e a interoperabilidade
+  Casos de uso de TIA (Telecommunications Industry Association): Desenvolvimento e manutenção de normas técnicas para redes; Certificação de produtos e serviços de telecomunicações
+
+-- Relacionamentos --
+Conexao: 'eia_tia_568' --[desenvolvido_por]--> 'eia'. Motivo: A norma EIA/TIA-568 foi originalmente desenvolvida em conjunto pela EIA e TIA.
+Conexao: 'eia_tia_568' --[mantido_por]--> 'tia'. Motivo: Após a dissolução da EIA, a TIA passou a ser a principal mantenedora da série de normas TIA-568.
+Conexao: 'arquitetura_aberta' --[caracteristica_de]--> 'cab_estru'. Motivo: A arquitetura aberta é uma característica fundamental dos sistemas de cabeamento estruturado, permitindo a interoperabilidade entre diferentes fabricantes.
+
+=== SECAO [TI_SEC_003]: Subsistemas do Cabeamento Estruturado e Objetivos da TIA 568 ===
+Um sistema de cabeamento estruturado é composto por sete subsistemas principais: Cabeamento Horizontal, Distribuição Backbone, Área de Trabalho, Armário de Telecomunicações, Sala de Equipamentos, Instalações de Entrada e Administração. O Entrance Facilities é o ponto de entrada dos serviços de concessionárias (internet, telefonia), que são encaminhados para a Sala de Equipamentos, distribuídos pelo Backbone até os Armários de Telecomunicações e, finalmente, pelo Cabeamento Horizontal para as Áreas de Trabalho. Toda essa infraestrutura deve ser documentada para garantir continuidade e manutenção. Os objetivos da norma TIA 568 incluem especificar o sistema de cabeamento de telecomunicações, orientar fabricantes, auxiliar no planejamento e instalação em edifícios comerciais, e estabelecer critérios técnicos e de performance. As normas T568-A e T568-B definem a disposição dos filamentos nos cabos, sendo distintas das normas TIA-568-A e TIA-568-B que se referem ao sistema como um todo. A norma TIA-568-A é considerada defasada e foi substituída pela TIA-568-B, que incorporou avanços tecnológicos como a fibra óptica.
+
+-- Conceitos-chave --
+Termo: Subsistemas de Cabeamento Estruturado | Tipo: Componente de Arquitetura | Definicao: Componentes funcionais que compõem a infraestrutura de cabeamento estruturado, cada um com um papel específico na rede.
+  Vantagens de Subsistemas de Cabeamento Estruturado: Organização modular da infraestrutura; Facilita o planejamento, instalação e manutenção; Permite a segmentação e isolamento de falhas
+  Desvantagens de Subsistemas de Cabeamento Estruturado: Requer um entendimento claro de cada subsistema para a correta implementação
+  Casos de uso de Subsistemas de Cabeamento Estruturado: Projeto e implantação de redes de cabeamento em edifícios; Diagnóstico e solução de problemas em redes existentes
+Termo: Cabeamento Horizontal | Tipo: Subsistema | Definicao: Subsistema que conecta os armários de telecomunicações (TC) às tomadas nas áreas de trabalho dos usuários. É responsável pela distribuição final do serviço.
+  Vantagens de Cabeamento Horizontal: Flexibilidade para conectar dispositivos em áreas de trabalho; Padronizado para suportar diferentes tipos de mídia (cobre, fibra)
+  Desvantagens de Cabeamento Horizontal: Distância limitada (geralmente 100 metros); Pode ser afetado por interferências eletromagnéticas se não for bem protegido
+  Casos de uso de Cabeamento Horizontal: Conexão de computadores, telefones e outros dispositivos nas mesas dos usuários; Distribuição de rede em escritórios e salas
+Termo: Distribuição Backbone | Tipo: Subsistema | Definicao: Subsistema que interliga os armários de telecomunicações (TC) entre si e com a sala de equipamentos (ER) e as instalações de entrada (EF). Geralmente utiliza cabos de maior capacidade, como fibra óptica.
+  Vantagens de Distribuição Backbone: Alta capacidade de transmissão para interligar grandes áreas; Suporta a expansão da rede; Menos suscetível a interferências em comparação com o cabeamento horizontal
+  Desvantagens de Distribuição Backbone: Custo de instalação e manutenção pode ser mais elevado; Requer planejamento cuidadoso da topologia
+  Casos de uso de Distribuição Backbone: Interligação de andares em um edifício; Conexão entre edifícios em um campus; Backbone de data centers
+Termo: Área de Trabalho | Tipo: Área Física | Definicao: A área onde o usuário final acessa os serviços de telecomunicações, geralmente contendo tomadas de rede, telefonia e outros conectores.
+  Vantagens de Área de Trabalho: Ponto de acesso direto para o usuário; Flexibilidade para conectar diversos dispositivos
+  Desvantagens de Área de Trabalho: Pode ser um ponto de congestionamento se mal dimensionada; Necessidade de organização e padronização dos pontos de conexão
+  Casos de uso de Área de Trabalho: Escritórios, salas de reunião, estações de trabalho; Pontos de acesso público à rede
+Termo: Armário de Telecomunicações (TC) | Tipo: Local Físico | Definicao: Espaço dedicado em cada andar ou área para abrigar equipamentos de rede, como switches, patch panels e organizadores de cabos, que conectam o cabeamento horizontal ao backbone.
+  Vantagens de Armário de Telecomunicações (TC): Centraliza a distribuição de rede em um andar; Facilita a manutenção e o gerenciamento; Isola equipamentos de rede do ambiente de trabalho
+  Desvantagens de Armário de Telecomunicações (TC): Requer espaço físico adequado e climatização; Pode se tornar um gargalo se mal dimensionado
+  Casos de uso de Armário de Telecomunicações (TC): Distribuição de rede em edifícios de múltiplos andares; Segmentação da rede por área ou departamento
+Termo: Sala de Equipamentos (ER) | Tipo: Local Físico | Definicao: Local centralizado em um edifício que abriga os equipamentos de telecomunicações principais, como roteadores, servidores e equipamentos de backbone.
+  Vantagens de Sala de Equipamentos (ER): Centralização de equipamentos críticos; Controle de ambiente (temperatura, umidade, segurança); Facilita o gerenciamento centralizado da rede
+  Desvantagens de Sala de Equipamentos (ER): Alto custo de implementação e manutenção; Requer infraestrutura robusta (energia, refrigeração, segurança)
+  Casos de uso de Sala de Equipamentos (ER): Data centers; Edifícios corporativos de médio e grande porte; Pontos de presença (PoPs) de provedores de serviço
+Termo: Instalações de Entrada (EF) | Tipo: Local Físico | Definicao: Ponto onde os serviços de telecomunicações externos (provedores de internet, telefonia) entram no edifício e se conectam à infraestrutura interna.
+  Vantagens de Instalações de Entrada (EF): Ponto de interface com o mundo exterior; Permite a entrada de múltiplos serviços
+  Desvantagens de Instalações de Entrada (EF): Requer segurança e acesso controlado; Pode ser um ponto de falha se não for bem protegido
+  Casos de uso de Instalações de Entrada (EF): Conexão de edifícios à rede pública de telecomunicações; Entrada de cabos de fibra óptica e cobre
+Termo: Administração do Cabeamento | Tipo: Processo | Definicao: Processo de documentação, gerenciamento e manutenção de toda a infraestrutura de cabeamento estruturado, garantindo o controle e a rastreabilidade.
+  Vantagens de Administração do Cabeamento: Facilita a identificação de cabos e conexões; Agiliza a solução de problemas e a manutenção; Suporta o planejamento de expansões e alterações
+  Desvantagens de Administração do Cabeamento: Requer disciplina e ferramentas adequadas; Pode ser trabalhoso manter a documentação atualizada
+  Casos de uso de Administração do Cabeamento: Gerenciamento de redes em qualquer tipo de instalação; Auditorias de infraestrutura de rede; Planejamento de capacidade
+Termo: TIA 568-A vs TIA 568-B | Tipo: Padrão | Definicao: Refere-se às diferentes versões da norma TIA 568. T568-A e T568-B são padrões de pinagem de conectores RJ45, enquanto TIA-568-A e TIA-568-B são normas que evoluíram ao longo do tempo. A TIA-568-B é a versão mais recente e amplamente adotada.
+  Vantagens de TIA 568-A vs TIA 568-B: A TIA-568-B incorpora avanços tecnológicos e suporta novas mídias como fibra óptica.; A separação em normas B.1, B.2 e B.3 permite atualizações independentes.
+  Desvantagens de TIA 568-A vs TIA 568-B: A TIA-568-A é considerada defasada.; A coexistência de padrões de pinagem (A e B) pode gerar confusão se não houver padronização interna.
+  Casos de uso de TIA 568-A vs TIA 568-B: Instalação de cabeamento de rede em edifícios comerciais.; Seleção de cabos e conectores para redes de dados e voz.
+
+-- Figuras e diagramas --
+Figura 'Diagrama de Subsistemas de Cabeamento Estruturado' (Diagrama de Rede): O diagrama ilustra a interconexão dos sete subsistemas de cabeamento estruturado. Começa com a Entrada de Serviços (6) conectada à Sala de Equipamentos (5). Desta, o Backbone (2) se estende para os Armários de Telecomunicações (4) em diferentes andares. De cada Armário de Telecomunicações (4), o Cabeamento Horizontal (1) se ramifica para as Áreas de Trabalho (3), onde os dispositivos dos usuários são conectados. O Campus Backbone (não numerado explicitamente, mas implícito na conexão entre edifícios) pode interligar múltiplos edifícios. A Administração (7) é um processo transversal a todos os subsistemas.
+  Componentes visuais: Cabeamento Horizontal (1), Backbone (2), Área de Trabalho (3), Armário de Telecomunicações (4), Sala de Equipamentos (5), Entrada de Serviços (6), Campus Backbone, Conexões de Rede
+  Relacionado a: cab_horizontal, backbone_dist, area_trabalho, telecom_closet, equip_room, entrance_facilities, administracao_cab
+
+-- Relacionamentos --
+Conexao: 'cab_horizontal' --[conecta]--> 'area_trabalho'. Motivo: O cabeamento horizontal leva a conexão da rede da área de trabalho até o armário de telecomunicações.
+Conexao: 'backbone_dist' --[conecta]--> 'telecom_closet'. Motivo: O backbone distribui a conexão entre os armários de telecomunicações e a sala de equipamentos.
+Conexao: 'telecom_closet' --[recebe_de]--> 'backbone_dist'. Motivo: Os armários de telecomunicações recebem a conexão principal do backbone.
+Conexao: 'telecom_closet' --[distribui_para]--> 'cab_horizontal'. Motivo: Os armários de telecomunicações distribuem a conexão para o cabeamento horizontal.
+Conexao: 'entrance_facilities' --[conecta_a]--> 'equip_room'. Motivo: A entrada de serviços conecta os serviços externos à sala de equipamentos.
+Conexao: 'equip_room' --[distribui_para]--> 'backbone_dist'. Motivo: A sala de equipamentos distribui a conexão para o backbone.
+Conexao: 'administracao_cab' --[gerencia]--> 'subsistemas_cab_estru'. Motivo: A administração do cabeamento é responsável por gerenciar todos os subsistemas da infraestrutura.
+Conexao: 'tia_568_a_vs_b' --[substitui]--> 'TI_SEC_002:eia_tia_568'. Motivo: A norma TIA-568-B substituiu a norma TIA-568-A devido a avanços tecnológicos.
+
+=== SECAO [TI_SEC_004]: Normas TIA-568-A e TIA-568-B e suas Divisões ===
+A norma TIA-568-A fornecia especificações para o projeto e direção de instalações de telecomunicações em edifícios. A TIA-568-B, emitida em 2002, substituiu a TIA-568-A e especifica o 'Sistema de Cabeamento Genérico de Telecomunicações para Edifícios Comerciais'. A TIA-568-B foi dividida em três normas para permitir atualizações independentes: TIA/EIA-568-B.1 (Requisitos Gerais), TIA/EIA-568-B.2 (Componentes de Par Trançado Balanceado) e TIA/EIA-568-B.3 (Componentes de Fibra Óptica). A norma EIA/TIA-568-B.1 incorpora e remodela o conteúdo de várias normas técnicas anteriores (TSB e ANSI/TIA/EIA), cobrindo especificações de performance, testes e práticas. A TIA/EIA-568-B.2 detalha os padrões de performance para componentes de par trançado, incluindo categorias como Cat 6, e procedimentos de validação. A TIA/EIA-568-B.3 especifica os requisitos para componentes de fibra óptica, reconhecendo cabos multimodo e monomodo, e definindo parâmetros como perda de inserção e retorno, além de padronizar conectores como o SC.
+
+-- Conceitos-chave --
+Termo: TIA/EIA-568-B.1 – General Requirements | Tipo: Norma Técnica | Definicao: Parte da norma TIA-568-B que estabelece os requisitos gerais para sistemas de cabeamento estruturado, incluindo topologias, distâncias, cabos reconhecidos e configurações de conectores.
+  Vantagens de TIA/EIA-568-B.1 – General Requirements: Fornece uma base abrangente para o projeto de cabeamento; Inclui informações essenciais sobre topologia e limites físicos; Incorpora e atualiza normas técnicas anteriores
+  Casos de uso de TIA/EIA-568-B.1 – General Requirements: Planejamento inicial de sistemas de cabeamento estruturado; Definição de requisitos básicos para instalações comerciais
+Termo: TIA/EIA-568-B.2 – Balanced Twisted Pair Cabling Components | Tipo: Norma Técnica | Definicao: Parte da norma TIA-568-B que especifica os padrões mínimos de performance e os componentes de cabeamento de par trançado balanceado, como cabos e conectores.
+  Vantagens de TIA/EIA-568-B.2 – Balanced Twisted Pair Cabling Components: Define os requisitos de performance para cabos de par trançado; Permite a validação da qualidade dos componentes; Suporta o desenvolvimento de novas categorias de cabos (ex: Cat 6)
+  Desvantagens de TIA/EIA-568-B.2 – Balanced Twisted Pair Cabling Components: Foca apenas em componentes de par trançado
+  Casos de uso de TIA/EIA-568-B.2 – Balanced Twisted Pair Cabling Components: Seleção de cabos e conectores de par trançado para redes de dados; Certificação de performance de cabos de rede; Implementação de cabeamento horizontal e secundário
+Termo: TIA/EIA-568-B.3 – Optical Fiber Cabling Components Standard | Tipo: Norma Técnica | Definicao: Parte da norma TIA-568-B que especifica os requisitos mínimos para componentes de fibra óptica utilizados em sistemas de cabeamento estruturado, incluindo cabos, conectores e equipamentos de teste.
+  Vantagens de TIA/EIA-568-B.3 – Optical Fiber Cabling Components Standard: Define padrões para cabeamento de fibra óptica; Abrange diferentes tipos de cabos (multimodo, monomodo); Especifica parâmetros de performance como perda de inserção e retorno
+  Desvantagens de TIA/EIA-568-B.3 – Optical Fiber Cabling Components Standard: Requer conhecimento especializado para instalação e manutenção
+  Casos de uso de TIA/EIA-568-B.3 – Optical Fiber Cabling Components Standard: Implementação de backbone de alta velocidade; Conexões de longa distância; Redes que exigem alta largura de banda
+Termo: Padrão de Pinagem RJ45 (T568-A/B) | Tipo: Padrão | Definicao: Especifica a ordem dos fios em um conector RJ45 para cabos de par trançado. T568-A e T568-B são os dois padrões mais comuns, diferindo na posição de alguns pares.
+  Vantagens de Padrão de Pinagem RJ45 (T568-A/B): Permite a conexão de dispositivos de rede; A padronização garante interoperabilidade
+  Desvantagens de Padrão de Pinagem RJ45 (T568-A/B): A diferença entre T568-A e T568-B pode causar confusão se não houver padronização interna.; A escolha incorreta pode levar a cabos não funcionais (ex: cabo crossover não intencional).
+  Casos de uso de Padrão de Pinagem RJ45 (T568-A/B): Terminação de cabos de rede Ethernet; Conexão de computadores, switches, roteadores e outros dispositivos de rede.
+Termo: Conector SC | Tipo: Conector | Definicao: Um tipo de conector de fibra óptica com acoplamento por 'push-pull', conhecido por sua facilidade de uso e boa performance. Na norma TIA-568-B.3, é referenciado com posições A e B para as fibras.
+  Vantagens de Conector SC: Fácil de conectar e desconectar; Boa performance de perda de inserção e retorno; Robusto e confiável
+  Desvantagens de Conector SC: Ocupa um pouco mais de espaço que conectores menores (ex: LC)
+  Casos de uso de Conector SC: Backbones de fibra óptica; Conexões em data centers; Redes de telecomunicações
+
+-- Tabelas comparativas --
+Tabela 'Normas Incorporadas pela TIA/EIA-568-B.1': Esta tabela lista as normas técnicas (TSB e ANSI/TIA/EIA) cujo conteúdo foi incorporado e remodelado pela norma TIA/EIA-568-B.1, demonstrando a consolidação de padrões e especificações anteriores.
+  Linha L1: Norma = TIA/EIA TSB 67; Descrição = Transmission Performance Specifications for Field Testing of Unshielded Twisted Pair Cabling Systems
+    (Relacionado a: tia_568_b_par_trancado)
+  Linha L2: Norma = TIA/EIA TSB 72; Descrição = Centralized Optical Fiber Cabling
+    (Relacionado a: tia_568_b_fibra_optica)
+  Linha L3: Norma = TIA/EIA TSB 75; Descrição = Additional Horizontal Cabling Practices for Open Offices
+    (Relacionado a: cab_horizontal)
+  Linha L4: Norma = TIA/EIA TSB 95; Descrição = Additional Transmission Performance Guidelines for 4-Pair 100 Ohms Category 5 Cabling
+    (Relacionado a: tia_568_b_par_trancado)
+  Linha L5: Norma = ANSI/TIA/EIA 568-A-1; Descrição = Propagation Delay and Delay Skew Specifications for 100 Ohms 4 Pair Cable
+    (Relacionado a: tia_568_b_par_trancado)
+  Linha L6: Norma = ANSI/TIA/EIA-568-A-2; Descrição = Corrections and Additions to TIA/EIA-568-A
+    (Relacionado a: TI_SEC_002:eia_tia_568)
+  Linha L7: Norma = ANSI/TIA/EIA-568-A-3; Descrição = Performance Specifications for Hybrid Cables
+  Linha L8: Norma = ANSI/TIA/EIA-568-A-4; Descrição = Production Modular Cord NEXT Loss Test Method and Requirements for Unshielded Twisted Pair Cabling
+    (Relacionado a: tia_568_b_par_trancado)
+  Linha L9: Norma = ANSI/TIA/EIA-568-A-5; Descrição = Transmission Performance Specifications for 4 Pair 100 Ohms Category 5e Cabling
+    (Relacionado a: tia_568_b_par_trancado)
+  Linha L10: Norma = TIA/EIA/IS-729; Descrição = Technical Specifications for 100 Ohms Screened Twisted Pair Cabling
+    (Relacionado a: tia_568_b_par_trancado)
+
+-- Relacionamentos --
+Conexao: 'tia_568_b_geral' --[parte_de]--> 'TI_SEC_002:eia_tia_568'. Motivo: A norma TIA/EIA-568-B.1 é uma das três partes que compõem a série TIA-568-B.
+Conexao: 'tia_568_b_par_trancado' --[parte_de]--> 'TI_SEC_002:eia_tia_568'. Motivo: A norma TIA/EIA-568-B.2 é uma das três partes que compõem a série TIA-568-B.
+Conexao: 'tia_568_b_fibra_optica' --[parte_de]--> 'TI_SEC_002:eia_tia_568'. Motivo: A norma TIA/EIA-568-B.3 é uma das três partes que compõem a série TIA-568-B.
+Conexao: 'padrao_pinagem_rj45' --[definido_em]--> 'tia_568_b_par_trancado'. Motivo: Os padrões de pinagem T568-A e T568-B são relevantes para os componentes de par trançado especificados na TIA/EIA-568-B.2.
+Conexao: 'conector_sc' --[especificado_em]--> 'tia_568_b_fibra_optica'. Motivo: O conector SC é um exemplo de componente de fibra óptica cujos requisitos são especificados na norma TIA/EIA-568-B.3.
+Conexao: 'tia_568_b_par_trancado' --[valida]--> 'cab_estru'. Motivo: A norma TIA/EIA-568-B.2 fornece procedimentos para validação da performance dos componentes de cabeamento, que são essenciais para o sistema estruturado.
+

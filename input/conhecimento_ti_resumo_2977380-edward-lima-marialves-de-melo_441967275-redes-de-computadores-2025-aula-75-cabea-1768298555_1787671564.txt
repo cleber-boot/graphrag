@@ -1,0 +1,239 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Cabeamento Estruturado – Especificações Gerais para Encaminhamento de Cabos (Infraestrutura, Canaletas, Bandejas, Eletrodutos, Calhas) – ANSI EIA/TIA 569
+Idioma: pt-BR
+Tecnologias citadas no documento: ANSI/TIA 569, NBR 14.565, ANSI/TIA 568, ANSI/TIA 606, ANSI/TIA 607, ANSI/TIA 570
+
+=== SECAO [TI_SEC_001]: Introdução e Normas Relacionadas ===
+Este material aborda a norma ANSI/TIA 569, que trata das especificações gerais para o encaminhamento e acomodação de cabos em edificações comerciais, incluindo infraestrutura, canaletas, bandejas, eletrodutos e calhas. A norma brasileira NBR 14.565 é apresentada como um conjunto de normas ANSI/TIA. São listadas outras normas TIA relevantes: ANSI/TIA 568 (cabeamento estruturado em comerciais), ANSI/TIA 606 (administração de documentação), ANSI/TIA 607 (aterramento) e ANSI/TIA 570 (cabeamento estruturado em residenciais). A norma ANSI/TIA 569 visa padronizar projetos e práticas de construção de dutos e espaços para edifícios comerciais, garantindo adaptabilidade a mudanças e expansões futuras.
+
+-- Conceitos-chave --
+Termo: ANSI/TIA 569 | Tipo: Norma Técnica | Definicao: Norma que estabelece especificações gerais para o encaminhamento e acomodação de cabos em edificações comerciais, cobrindo infraestrutura, canaletas, bandejas, eletrodutos e calhas. Garante a padronização e a adaptabilidade das instalações de telecomunicações.
+  Vantagens de ANSI/TIA 569: Padronização de infraestrutura para telecomunicações.; Facilita a expansão e adaptação a futuras necessidades.; Garante a organização e segurança do cabeamento.
+  Desvantagens de ANSI/TIA 569: Foco em edificações comerciais, com norma específica para residenciais (ANSI/TIA 570).; Não aborda aspectos de segurança dos projetos dos edifícios.
+  Casos de uso de ANSI/TIA 569: Projeto e construção de infraestrutura de telecomunicações em prédios comerciais.; Planejamento de rotas de cabos, dutos e espaços.; Instalação de sistemas de cabeamento estruturado.
+Termo: NBR 14.565 | Tipo: Norma Técnica | Definicao: Norma brasileira que trata do cabeamento estruturado, sendo um conjunto de várias normas da ANSI/TIA. Ela abrange os aspectos técnicos e de instalação do cabeamento.
+  Vantagens de NBR 14.565: Adapta as normas internacionais ANSI/TIA à realidade brasileira.; Fornece um guia completo para cabeamento estruturado no Brasil.
+  Casos de uso de NBR 14.565: Implementação de cabeamento estruturado em edifícios no Brasil.; Referência para projetos e instalações de redes de telecomunicações.
+Termo: ANSI/TIA 568 | Tipo: Norma Técnica | Definicao: Norma que especifica o cabeamento estruturado em instalações comerciais, definindo padrões para a infraestrutura de rede.
+  Vantagens de ANSI/TIA 568: Estabelece padrões globais para cabeamento estruturado.; Garante interoperabilidade e desempenho.
+  Casos de uso de ANSI/TIA 568: Projeto de sistemas de cabeamento estruturado em edifícios comerciais.; Seleção de componentes de cabeamento.
+Termo: ANSI/TIA 606 | Tipo: Norma Técnica | Definicao: Norma que trata da administração da documentação de sistemas de cabeamento estruturado, garantindo um registro organizado e acessível das instalações.
+  Vantagens de ANSI/TIA 606: Facilita a manutenção e o gerenciamento da rede.; Melhora a rastreabilidade e a identificação de componentes.; Suporta auditorias e conformidade.
+  Desvantagens de ANSI/TIA 606: Requer disciplina e investimento em processos de documentação.
+  Casos de uso de ANSI/TIA 606: Documentação de instalações de cabeamento estruturado.; Gerenciamento de ativos de rede.; Manutenção e troubleshooting de infraestrutura de TI.
+Termo: ANSI/TIA 607 | Tipo: Norma Técnica | Definicao: Norma que especifica os requisitos de aterramento para sistemas de cabeamento estruturado, garantindo a segurança e a integridade dos equipamentos.
+  Vantagens de ANSI/TIA 607: Protege equipamentos contra surtos elétricos e interferências.; Garante a segurança dos usuários.; Melhora a integridade do sinal.
+  Desvantagens de ANSI/TIA 607: Requer instalação e manutenção adequadas.
+  Casos de uso de ANSI/TIA 607: Aterramento de infraestrutura de rede.; Instalação de sistemas de telecomunicações.; Garantia de conformidade com normas de segurança.
+Termo: ANSI/TIA 570 | Tipo: Norma Técnica | Definicao: Norma que especifica o cabeamento estruturado em instalações residenciais.
+  Vantagens de ANSI/TIA 570: Define padrões para cabeamento em residências.; Suporta a integração de serviços de telecomunicações em ambientes domésticos.
+  Casos de uso de ANSI/TIA 570: Projeto de cabeamento estruturado em novas construções residenciais.; Retrofit de infraestrutura de rede em casas.
+Termo: Padronização de infraestrutura de TI | Tipo: Processo | Definicao: Processo de definir e aplicar regras e diretrizes consistentes para a construção e organização de espaços e dutos destinados à infraestrutura de telecomunicações em edifícios comerciais.
+  Vantagens de Padronização de infraestrutura de TI: Facilita a instalação, manutenção e expansão de sistemas de TI.; Reduz custos a longo prazo.; Melhora a confiabilidade e o desempenho da rede.
+  Desvantagens de Padronização de infraestrutura de TI: Pode exigir um investimento inicial maior.; Requer planejamento detalhado.
+  Casos de uso de Padronização de infraestrutura de TI: Projetos de novos edifícios comerciais.; Reformas e expansões de infraestrutura de TI.; Implementação de sistemas de cabeamento estruturado.
+
+-- Figuras e diagramas --
+Figura 'Especificações gerais para encaminhamento de cabos (Infraestrutura, canaletas, bandejas, eletrodutos, calhas) – ANSI TIA 569' (Diagrama de Arquitetura): O diagrama ilustra os principais componentes de um sistema de cabeamento estruturado em um edifício comercial, mostrando a interconexão entre diferentes áreas. Os elementos representados são: 1. Cabeamento horizontal (conectando a área de trabalho ao centro de telecomunicações), 2. Backbone (cabeamento vertical, conectando andares ou áreas), 3. Área de trabalho (onde os usuários acessam a rede), 4. Centros de telecomunicações (locais de terminação do cabeamento horizontal), 5. Salas de equipamentos (onde ficam servidores e equipamentos de rede), 6. Facilidades de entrada (ponto de conexão com redes externas), e 7. Administração (local de gerenciamento).
+  Componentes visuais: Edifício com múltiplos andares, Setas indicando fluxo de cabeamento, Caixas representando áreas/salas, Legenda com numeração e descrição dos componentes
+  Relacionado a: ansi_tia_569, cabeamento_horizontal, backbone, area_de_trabalho, centro_telecomunicacoes, sala_equipamentos, facilidade_entrada, administracao_ti
+
+-- Relacionamentos --
+Conexao: 'nbr_14565' --[implementa]--> 'ansi_tia_569'. Motivo: A NBR 14.565 é a norma brasileira que trata do cabeamento estruturado e é um conjunto de normas da ANSI/TIA, incluindo a ANSI/TIA 569.
+Conexao: 'ansi_tia_569' --[define_requisitos_para]--> 'padronizacao_infraestrutura_ti'. Motivo: A ANSI/TIA 569 estabelece as especificações gerais para o encaminhamento e acomodação de cabos, definindo padrões para a infraestrutura de telecomunicações em edifícios comerciais.
+
+=== SECAO [TI_SEC_002]: Estrutura de Dutos e Espaços para Telecomunicações ===
+A norma ANSI/TIA 569 define a estrutura de dutos e espaços para telecomunicações em edificações comerciais, visando suportar uma ampla gama de serviços, não apenas voz e dados, mas também vídeo, áudio e CFTV. Esses requisitos são projetados para ambientes multiproduto e multifabricante. A norma regulamenta a fabricação, o encaminhamento e a acomodação dos cabos, proibindo que fiquem soltos. O objetivo é que esses padrões sejam aplicados desde a fase preliminar do projeto, permitindo futuras expansões e garantindo continuidade. Os padrões para edifícios comerciais incluem a definição de espaços, infraestrutura e encaminhamento para telecomunicações. O propósito é servir como referência para arquitetos, engenheiros e a indústria da construção, facilitando projetos, contratos e serviços, e garantindo uma infraestrutura adaptável.
+
+-- Conceitos-chave --
+Termo: Estrutura de dutos e espaços para telecomunicações | Tipo: Infraestrutura | Definicao: Conjunto de elementos físicos (dutos, canaletas, bandejas, etc.) e áreas designadas dentro de uma edificação para acomodar e encaminhar cabos de telecomunicações de forma organizada e segura.
+  Vantagens de Estrutura de dutos e espaços para telecomunicações: Organização e proteção dos cabos.; Facilita a manutenção e expansão.; Suporta diversos tipos de serviços de telecomunicações.; Garante conformidade com normas técnicas.
+  Desvantagens de Estrutura de dutos e espaços para telecomunicações: Requer planejamento detalhado na fase de projeto.; Pode aumentar o custo inicial da construção.
+  Casos de uso de Estrutura de dutos e espaços para telecomunicações: Instalação de cabeamento estruturado em edifícios comerciais.; Projetos de novas construções.; Reformas e atualizações de infraestrutura de TI.
+Termo: Ambiente multiproduto e multifabricante | Tipo: Contexto de Implementação | Definicao: Um ambiente de telecomunicações onde coexistem produtos e sistemas de diferentes fabricantes, exigindo que a infraestrutura seja projetada para garantir a interoperabilidade e o bom funcionamento.
+  Vantagens de Ambiente multiproduto e multifabricante: Flexibilidade na escolha de equipamentos.; Potencial para redução de custos através de concorrência.; Acesso a tecnologias inovadoras de diversos fornecedores.
+  Desvantagens de Ambiente multiproduto e multifabricante: Desafios de interoperabilidade.; Necessidade de padrões rigorosos para a infraestrutura.; Complexidade na gestão e manutenção.
+  Casos de uso de Ambiente multiproduto e multifabricante: Redes corporativas de grande porte.; Data centers.; Instalações que utilizam equipamentos de múltiplos fornecedores.
+Termo: Expansão e continuidade da infraestrutura | Tipo: Princípio de Projeto | Definicao: Capacidade da infraestrutura de telecomunicações de ser ampliada ou modificada ao longo do tempo, mantendo a funcionalidade e a integridade do sistema, sem a necessidade de grandes reestruturações.
+  Vantagens de Expansão e continuidade da infraestrutura: Reduz custos e interrupções futuras.; Adapta a infraestrutura às novas demandas tecnológicas.; Aumenta a vida útil do investimento em infraestrutura.
+  Desvantagens de Expansão e continuidade da infraestrutura: Requer planejamento antecipado e previsão de crescimento.; Pode implicar em maior espaço físico inicial.
+  Casos de uso de Expansão e continuidade da infraestrutura: Projetos de edifícios com expectativa de crescimento.; Instalações que preveem atualizações tecnológicas frequentes.; Infraestrutura de redes de longa duração.
+
+-- Relacionamentos --
+Conexao: 'ansi_tia_569' --[define]--> 'estrutura_dutos_espacos'. Motivo: A norma ANSI/TIA 569 define a estrutura de dutos e espaços para telecomunicações em edificações comerciais.
+Conexao: 'estrutura_dutos_espacos' --[suporta]--> 'ambiente_multiproduto_multifabricante'. Motivo: A estrutura de dutos e espaços é projetada para suportar um ambiente multiproduto e multifabricante, garantindo a acomodação de cabos de diversos fornecedores.
+Conexao: 'estrutura_dutos_espacos' --[permite]--> 'expansao_continuidade_infraestrutura'. Motivo: A estrutura de dutos e espaços, quando bem planejada, permite a expansão e a continuidade da infraestrutura de telecomunicações.
+
+=== SECAO [TI_SEC_003]: Alcance e Infraestrutura para Cabeamento Horizontal ===
+O alcance da norma ANSI/TIA 569 limita-se a telecomunicações em projetos e construção de edifícios comerciais, sendo a norma 507 aplicável a edifícios residenciais. A norma não cobre aspectos de segurança dos edifícios. A rota de um duto horizontal não deve exceder 90 metros do Telecommunication Closet até a Wall Place na Work Area. A soma total do cabeamento em um circuito (incluindo Cross-Connect, Hack e Work Area) não deve ultrapassar 100 metros para cabos par trançado (blindado ou não). A infraestrutura para cabeamento horizontal (horizontal cabling) é utilizada para instalar meios de transmissão do Telecommunication Closet até o Outlet na Work Area. O cabeamento horizontal é o nome usado na ANSI 568 e NBR 14.565. Inclui opções como esteiras suspensas, rotas perimetrais (canaletas, conduítes), malha de distribuição de teto, piso falso, bandejas e eletrocalhas. Os dutos horizontais devem cumprir as normas de aterramento (ANSI TIA 607). Cabos elétricos não devem compartilhar o mesmo duto com cabos de dados devido à interferência eletromagnética. As caixas de outlets devem ter dimensões mínimas específicas.
+
+-- Conceitos-chave --
+Termo: Alcance da norma ANSI/TIA 569 | Tipo: Escopo | Definicao: Refere-se aos tipos de edificações e sistemas para os quais a norma é aplicável. A ANSI/TIA 569 é primariamente voltada para telecomunicações em edifícios comerciais.
+  Vantagens de Alcance da norma ANSI/TIA 569: Foco claro nas necessidades de infraestrutura comercial.; Evita a aplicação inadequada em outros contextos.
+  Desvantagens de Alcance da norma ANSI/TIA 569: Necessidade de normas complementares para outros tipos de edificações (ex: residenciais).
+  Casos de uso de Alcance da norma ANSI/TIA 569: Determinar a aplicabilidade da norma em um projeto.; Diferenciar requisitos entre edifícios comerciais e residenciais.
+Termo: Limite de distância do cabeamento horizontal | Tipo: Parâmetro Técnico | Definicao: Distância máxima permitida para o cabeamento horizontal, que é de 90 metros do Telecommunication Closet até a estação de trabalho (Wall Place), com um adicional de 10 metros para patch cords e cross-connects, totalizando 100 metros.
+  Vantagens de Limite de distância do cabeamento horizontal: Garante o desempenho do sinal em cabos de par trançado.; Padroniza a arquitetura da rede.; Evita problemas de atenuação e ruído.
+  Desvantagens de Limite de distância do cabeamento horizontal: Limita a flexibilidade no layout físico dos escritórios.; Pode exigir múltiplos Telecommunication Closets em edifícios grandes.
+  Casos de uso de Limite de distância do cabeamento horizontal: Projeto de redes LAN.; Dimensionamento de infraestrutura de cabeamento.; Planejamento da localização de Telecommunication Closets.
+Termo: Infraestrutura de cabeamento horizontal | Tipo: Infraestrutura | Definicao: Conjunto de dutos, canaletas, bandejas, pisos falsos e outros elementos utilizados para encaminhar os cabos de telecomunicações do armário de telecomunicações (Telecommunication Closet) até os pontos de acesso na área de trabalho (Work Area).
+  Vantagens de Infraestrutura de cabeamento horizontal: Organiza e protege os cabos.; Facilita a instalação, manutenção e expansão.; Permite a separação de cabos de dados e energia.
+  Desvantagens de Infraestrutura de cabeamento horizontal: Requer planejamento e instalação cuidadosa.; Pode aumentar o custo da obra.
+  Casos de uso de Infraestrutura de cabeamento horizontal: Instalação de redes de dados e voz em escritórios.; Projetos de cabeamento estruturado.; Ambientes comerciais e corporativos.
+Termo: Separação de cabos de dados e energia | Tipo: Princípio de Projeto | Definicao: Princípio de instalação que exige que os cabos de telecomunicações (dados) sejam fisicamente separados dos cabos de energia elétrica para evitar interferências eletromagnéticas (EMI) que podem degradar o desempenho do sinal.
+  Vantagens de Separação de cabos de dados e energia: Previne interferência eletromagnética (EMI).; Garante a integridade e o desempenho do sinal de dados.; Aumenta a confiabilidade da rede.
+  Desvantagens de Separação de cabos de dados e energia: Pode exigir mais espaço e dutos separados.; Aumenta a complexidade da instalação.
+  Casos de uso de Separação de cabos de dados e energia: Instalação de cabeamento de rede em qualquer ambiente.; Proximidade de fontes de energia elétrica.; Ambientes com alta densidade de cabos.
+
+-- Relacionamentos --
+Conexao: 'ansi_tia_569' --[aplica_se_a]--> 'edificios_comerciais'. Motivo: A norma ANSI/TIA 569 é aplicável a telecomunicações em projetos e construção de edifícios comerciais.
+Conexao: 'ansi_tia_507' --[aplica_se_a]--> 'edificios_residenciais'. Motivo: A norma ANSI/TIA 507 aplica-se a edifícios residenciais.
+Conexao: 'infraestrutura_cabeamento_horizontal' --[conecta]--> 'centro_telecomunicacoes'. Motivo: A infraestrutura de cabeamento horizontal conecta o Telecommunication Closet (centro de telecomunicações) à área de trabalho.
+Conexao: 'infraestrutura_cabeamento_horizontal' --[conecta]--> 'area_de_trabalho'. Motivo: A infraestrutura de cabeamento horizontal conecta o Telecommunication Closet (centro de telecomunicações) à área de trabalho.
+Conexao: 'separacao_cabos_dados_energia' --[mitiga_risco]--> 'interferencia_eletromagnetica'. Motivo: A separação de cabos de dados e energia mitiga o risco de interferência eletromagnética (EMI) que pode afetar o desempenho dos cabos de dados.
+Conexao: 'ansi_tia_607' --[define_requisitos_para]--> 'aterramento_infraestrutura_ti'. Motivo: A norma ANSI/TIA 607 especifica os requisitos de aterramento para a infraestrutura de cabeamento horizontal e outros componentes.
+
+=== SECAO [TI_SEC_004]: Malha de Piso e Eletrodutos ===
+A malha de piso consiste na distribuição de dutos embutidos no concreto do piso, com seções retangulares, para encaminhamento de cabos. Os cabos não devem ficar soltos no chão, devendo ser acomodados nesta malha. É relevante para acessibilidade, com bordas para facilitar o trânsito. Eletrodutos em rotas horizontais devem ser utilizados quando a localização do ponto é permanente, a densidade de cabeamento é baixa e não se requer flexibilidade. Cada eletroduto deve atender a até 3 Work Areas (2 cabos por tomada), com 1 cabo de folga para futura expansão. Eletrodutos não são recomendados para áreas de intenso remanejamento, como halls de recepção. Um trecho de duto não deve exceder 30 metros ou conter mais de 2 ângulos de 90° sem caixas de passagem. Caixas de passagem são usadas para localizar cabos, em seções acessíveis e retas, não devendo ser usadas para emendas ou em locais com ângulos.
+
+-- Conceitos-chave --
+Termo: Malha de piso | Tipo: Infraestrutura | Definicao: Sistema de dutos embutidos no piso, geralmente de concreto, projetado para acomodar e encaminhar cabos de telecomunicações de forma organizada e protegida.
+  Vantagens de Malha de piso: Organização e proteção dos cabos.; Facilita o acesso para manutenção.; Melhora a estética do ambiente.; Suporta acessibilidade (com bordas).
+  Desvantagens de Malha de piso: Instalação complexa, geralmente feita durante a construção.; Menos flexível para mudanças de layout.
+  Casos de uso de Malha de piso: Instalação de cabeamento em escritórios com layout aberto.; Ambientes que exigem alta densidade de cabos no piso.; Projetos que priorizam a organização e estética.
+Termo: Eletroduto horizontal | Tipo: Infraestrutura | Definicao: Tubo utilizado para encaminhar cabos de telecomunicações horizontalmente, geralmente embutido em paredes ou pisos, quando a localização dos pontos é permanente e a densidade de cabos é baixa.
+  Vantagens de Eletroduto horizontal: Proteção física dos cabos.; Organização do cabeamento.; Adequado para locais com layout fixo.
+  Desvantagens de Eletroduto horizontal: Baixa flexibilidade para mudanças de layout.; Não recomendado para áreas com remanejamento frequente.; Limitações de capacidade e curvatura.
+  Casos de uso de Eletroduto horizontal: Instalação de pontos de rede em locais permanentes.; Ambientes com baixa necessidade de reconfiguração.; Halls de entrada onde o layout é estável.
+Termo: Caixa de passagem | Tipo: Componente de Infraestrutura | Definicao: Dispositivo instalado em um eletroduto para permitir o acesso, a manipulação e a identificação de cabos, além de possibilitar a mudança de direção ou a conexão de trechos, sem a necessidade de emendas.
+  Vantagens de Caixa de passagem: Facilita a instalação e manutenção.; Permite a organização do cabeamento.; Auxilia na identificação de cabos.; Permite a superação de limitações de comprimento e curvatura dos eletrodutos.
+  Desvantagens de Caixa de passagem: Adiciona custo e complexidade à instalação.; Requer espaço para instalação.
+  Casos de uso de Caixa de passagem: Pontos de acesso em eletrodutos longos.; Mudanças de direção em rotas de cabos.; Manutenção e troubleshooting de redes.
+
+-- Figuras e diagramas --
+Figura 'Diagrama de Limites de Eletroduto e Caixas de Passagem' (Diagrama de Fluxo/Layout): O diagrama ilustra as restrições de projeto para eletrodutos. Mostra que um trecho de duto não deve exceder 30 metros e não deve conter mais de dois ângulos de 90 graus sem a utilização de caixas de passagem. As caixas de passagem são indicadas como pontos de acesso e controle em rotas de eletrodutos.
+  Componentes visuais: Linhas representando eletrodutos, Retângulos representando caixas de passagem, Indicações de distância (30m), Indicações de ângulo (90°)
+  Relacionado a: eletroduto_horizontal, caixa_de_passagem
+
+-- Relacionamentos --
+Conexao: 'malha_de_piso' --[utilizado_para]--> 'encaminhamento_cabos'. Motivo: A malha de piso é utilizada para o encaminhamento organizado e protegido de cabos no chão.
+Conexao: 'eletroduto_horizontal' --[recomendado_para]--> 'localizacao_permanente_ponto'. Motivo: O eletroduto horizontal é recomendado para situações onde a localização do ponto de rede é permanente.
+Conexao: 'eletroduto_horizontal' --[nao_recomendado_para]--> 'area_intenso_remanejamento'. Motivo: O eletroduto horizontal não é recomendado para áreas que sofrem intensas alterações de layout.
+Conexao: 'eletroduto_horizontal' --[requer_uso_de]--> 'caixa_de_passagem'. Motivo: Eletrodutos horizontais requerem o uso de caixas de passagem quando excedem 30 metros de comprimento ou 2 ângulos de 90 graus.
+Conexao: 'caixa_de_passagem' --[utilizado_para]--> 'localizacao_manipulacao_cabos'. Motivo: Caixas de passagem são utilizadas para localizar, manipular e identificar cabos em eletrodutos.
+
+=== SECAO [TI_SEC_005]: Eletrocalhas e Rotas de Teto Falso ===
+Eletrocalhas são estruturas rígidas para contenção de cabos de telecomunicações, exigindo uma altura mínima de acesso de 30 cm. Elas devem ser galvanizadas e instaladas com espaço para manutenção. Rotas de teto falso são utilizadas para encaminhamento de cabos por cima do forro. As placas do forro devem ser móveis e instaladas a uma altura de aproximadamente 3,35m do piso. Áreas de teto falso inacessíveis não devem ser usadas para distribuição de cabos. A estrutura de sustentação do teto falso não deve servir de suporte para a infraestrutura de cabos; deve haver estruturas distintas. Cabos não devem cair diretamente sobre as lâminas do teto falso.
+
+-- Conceitos-chave --
+Termo: Eletrocalha | Tipo: Infraestrutura | Definicao: Estrutura metálica rígida, geralmente em forma de bandeja ou escada, utilizada para suportar e organizar cabos de telecomunicações e energia em instalações aéreas.
+  Vantagens de Eletrocalha: Alta capacidade de carga.; Boa ventilação para os cabos.; Facilita a organização e o acesso.; Durabilidade (se galvanizada).
+  Desvantagens de Eletrocalha: Custo mais elevado em comparação com canaletas.; Requer espaço para instalação.; Necessidade de aterramento.
+  Casos de uso de Eletrocalha: Grandes instalações de cabeamento em data centers.; Ambientes industriais.; Projetos que exigem alta densidade de cabos.
+Termo: Rota de teto falso | Tipo: Infraestrutura | Definicao: Caminho ou espaço criado acima do forro de um ambiente para a passagem e acomodação de cabos de telecomunicações e outros serviços.
+  Vantagens de Rota de teto falso: Oculta a infraestrutura de cabos, melhorando a estética.; Flexibilidade para modificações futuras.; Permite a passagem de cabos sem interferir no espaço útil do ambiente.
+  Desvantagens de Rota de teto falso: Acessibilidade pode ser limitada.; Requer cuidado para não sobrecarregar a estrutura do teto.; Necessidade de separação da estrutura do teto falso e da infraestrutura de cabos.
+  Casos de uso de Rota de teto falso: Instalação de cabeamento em escritórios modernos.; Ambientes comerciais onde a estética é importante.; Projetos que necessitam de flexibilidade no layout.
+
+-- Figuras e diagramas --
+Figura 'Eletrocalha para Cabos' (Fotografia de Produto): A imagem mostra uma eletrocalha metálica, parcialmente galvanizada, com perfurações para ventilação e fixação. A eletrocalha é apresentada em um layout curvo, indicando sua flexibilidade de instalação em diferentes trajetórias. A descrição textual complementa que a altura mínima de acesso deve ser de 30 cm e que a eletrocalha não pode estar colada à parede ou ao teto, necessitando de espaço para manutenção.
+  Componentes visuais: Eletrocalha metálica, Perfurada, Curvada, Galvanizada
+  Relacionado a: eletrocalha
+Figura 'Rotas de Teto Falso' (Fotografia de Instalação): A imagem exibe a infraestrutura de cabeamento instalada acima de um teto falso. Vemos dutos e cabos sendo encaminhados por um espaço entre o forro e a laje superior. A descrição textual enfatiza que os cabos não devem ficar soltos e que a infraestrutura de suporte para os cabos deve ser distinta da estrutura do teto falso.
+  Componentes visuais: Dutos de cabeamento, Cabos, Estrutura de suporte, Teto falso (vislumbre)
+  Relacionado a: rota_teto_falso
+
+-- Relacionamentos --
+Conexao: 'eletrocalha' --[utilizado_para]--> 'contencao_cabos'. Motivo: Eletrocalhas são utilizadas para a contenção e organização de cabos de telecomunicações.
+Conexao: 'rota_teto_falso' --[utilizado_para]--> 'encaminhamento_cabos'. Motivo: Rotas de teto falso são utilizadas para o encaminhamento de cabos acima do forro.
+Conexao: 'rota_teto_falso' --[requer_estrutura_distinta]--> 'estrutura_teto_falso'. Motivo: A infraestrutura de cabos em rotas de teto falso requer uma estrutura de suporte distinta da estrutura do próprio teto falso.
+
+=== SECAO [TI_SEC_006]: Rotas Perimetrais e Capacidade de Ocupação ===
+Rotas perimetrais incluem canaletas aparentes, dutos embutidos (conduítes), dutos tipo moldura (rodapé, rodateto) e dutos multicanal. A taxa de ocupação de canaletas deve estar entre 30% e 60%, dependendo do raio de curvatura do cabo. Em eletrodutos, a ocupação máxima é de 40% devido à tração. Canaletas podem ser abertas para acomodação e manuseio de cabos, enquanto eletrodutos não podem ser abertos. A capacidade de ocupação serve para permitir expansão e melhor acomodação.
+
+-- Conceitos-chave --
+Termo: Rota perimetral | Tipo: Infraestrutura | Definicao: Caminho de encaminhamento de cabos que segue o perímetro de uma sala ou corredor, utilizando elementos como canaletas, conduítes ou rodapés.
+  Vantagens de Rota perimetral: Facilita o acesso aos cabos.; Permite a organização ao longo das paredes.; Versátil em termos de tipos de dutos (canaletas, conduítes).
+  Desvantagens de Rota perimetral: Pode ocupar espaço nas paredes.; Estética pode ser um fator dependendo do tipo de rota.
+  Casos de uso de Rota perimetral: Instalação de cabeamento em escritórios.; Ambientes comerciais e residenciais.; Pontos de acesso próximos às paredes.
+Termo: Taxa de ocupação de canaleta | Tipo: Parâmetro Técnico | Definicao: Percentual máximo de um canaleta que pode ser preenchido com cabos, geralmente entre 30% e 60%, para permitir espaço para expansão, ventilação e facilidade de manuseio.
+  Vantagens de Taxa de ocupação de canaleta: Permite expansão futura sem necessidade de novas canaletas.; Facilita a instalação e manutenção.; Evita superaquecimento dos cabos.
+  Desvantagens de Taxa de ocupação de canaleta: Requer planejamento cuidadoso da quantidade de cabos.; Pode levar ao subutilização inicial do espaço.
+  Casos de uso de Taxa de ocupação de canaleta: Projeto de infraestrutura de cabeamento.; Instalação de cabos em canaletas.; Planejamento de capacidade para redes.
+Termo: Taxa de ocupação de eletroduto | Tipo: Parâmetro Técnico | Definicao: Percentual máximo de um eletroduto que pode ser preenchido com cabos, tipicamente 40%, devido à necessidade de permitir a tração e evitar danos aos cabos durante a instalação.
+  Vantagens de Taxa de ocupação de eletroduto: Protege os cabos contra danos durante a instalação.; Facilita o lançamento dos cabos.; Previne o superaquecimento.
+  Desvantagens de Taxa de ocupação de eletroduto: Menor capacidade em comparação com canaletas.; Requer mais eletrodutos para a mesma quantidade de cabos.
+  Casos de uso de Taxa de ocupação de eletroduto: Instalação de cabos em conduítes.; Projetos onde a proteção e a facilidade de instalação são críticas.; Rotas de cabeamento embutidas.
+
+-- Figuras e diagramas --
+Figura 'Tipos de Rotas Perimetrais' (Montagem de Imagens): A imagem apresenta três exemplos de rotas perimetrais para encaminhamento de cabos: 1. Uma canaleta aparente, com divisórias, instalada em um rodapé. 2. Um conduíte flexível laranja, típico para proteção de cabos. 3. Um perfil de PVC, possivelmente para rodapé ou rodateto, com compartimentos para cabos. A descrição textual lista canaletas aparentes, dutos embutidos (conduíte), dutos tipo moldura (rodapé, rodateto) e dutos multicanal como opções de rotas perimetrais.
+  Componentes visuais: Canaleta aparente com divisórias, Conduíte flexível laranja, Perfil de PVC
+  Relacionado a: rota_perimetral
+Figura 'Acomodação e Manuseio de Cabos em Canaletas e Eletrodutos' (Montagem de Imagens): A imagem superior mostra uma pessoa inserindo cabos em uma canaleta aberta, demonstrando a facilidade de acomodação e manuseio. A imagem inferior exibe uma canaleta com cabos organizados. O texto explica que canaletas podem ser abertas para acomodação, enquanto eletrodutos não podem, justificando a diferença na taxa de ocupação máxima (60% para canaletas vs. 40% para eletrodutos).
+  Componentes visuais: Canaleta aberta com cabos sendo inseridos, Canaleta com cabos organizados
+  Relacionado a: rota_perimetral, taxa_ocupacao_canaleta, taxa_ocupacao_eletroduto
+
+-- Relacionamentos --
+Conexao: 'rota_perimetral' --[inclui]--> 'canaleta_aparente'. Motivo: Rotas perimetrais incluem canaletas aparentes.
+Conexao: 'rota_perimetral' --[inclui]--> 'duto_embutido'. Motivo: Rotas perimetrais incluem dutos embutidos (conduítes).
+Conexao: 'rota_perimetral' --[inclui]--> 'duto_moldura'. Motivo: Rotas perimetrais incluem dutos tipo moldura (rodapé, rodateto).
+Conexao: 'rota_perimetral' --[inclui]--> 'duto_multicanal'. Motivo: Rotas perimetrais incluem dutos multicanal.
+Conexao: 'taxa_ocupacao_canaleta' --[define_limite_para]--> 'canaleta'. Motivo: A taxa de ocupação de canaleta define o limite de preenchimento para canaletas.
+Conexao: 'taxa_ocupacao_eletroduto' --[define_limite_para]--> 'eletroduto_horizontal'. Motivo: A taxa de ocupação de eletroduto define o limite de preenchimento para eletrodutos.
+Conexao: 'canaleta' --[permite]--> 'acomodacao_manuseio_cabos'. Motivo: Canaletas permitem acomodação e manuseio de cabos por serem abertas.
+Conexao: 'eletroduto_horizontal' --[nao_permite]--> 'acomodacao_manuseio_cabos'. Motivo: Eletrodutos não permitem acomodação e manuseio de cabos por serem fechados.
+
+=== SECAO [TI_SEC_007]: Infraestrutura para Backbone ===
+A infraestrutura para backbone (cabeamento vertical) é essencial para interligar diferentes partes de um edifício, como Equipamment Rooms, distribuidores gerais de entrada e Telecommunication Closets. Dutos não devem ser instalados em shafts de elevadores. Para cada 500 m² de área útil, deve-se prever um conduíte ou entrada de cabos de no mínimo 100 mm (4 polegadas), com duas facilidades adicionais como reserva. Dutos entre edifícios interligam áreas distintas. Em shafts com cabos de alta potência, deve haver uma separação de 1,20 m, sendo recomendado o uso de fibra óptica. Dutos de backbone devem possuir bloqueio contrafogo. A infraestrutura para backbone pode ser formada por estruturas verticais e/ou horizontais de Telecommunication Closets interligados.
+
+-- Conceitos-chave --
+Termo: Infraestrutura para Backbone | Tipo: Infraestrutura | Definicao: Conjunto de dutos, shafts e Telecommunication Closets interligados que formam a espinha dorsal (backbone) de um sistema de cabeamento, conectando os principais pontos de distribuição de rede dentro de um edifício ou entre edifícios.
+  Vantagens de Infraestrutura para Backbone: Suporta alta capacidade de tráfego.; Conecta diferentes segmentos da rede de forma eficiente.; Permite escalabilidade e crescimento.; Garante a interligação entre áreas críticas (salas de equipamentos, TCs).
+  Desvantagens de Infraestrutura para Backbone: Requer planejamento cuidadoso e espaço dedicado.; Instalação mais complexa e custosa.; Necessidade de conformidade com normas específicas (aterramento, contrafogo).
+  Casos de uso de Infraestrutura para Backbone: Redes de grande porte em edifícios corporativos.; Data centers.; Interligação de prédios em um campus.; Sistemas de cabeamento estruturado.
+Termo: Bloqueio contrafogo | Tipo: Medida de Segurança | Definicao: Medida de segurança utilizada em dutos e passagens de cabos para impedir ou retardar a propagação de fogo e fumaça entre diferentes compartimentos ou andares de um edifício.
+  Vantagens de Bloqueio contrafogo: Aumenta a segurança contra incêndios.; Retarda a propagação do fogo e da fumaça.; Protege a infraestrutura de rede em caso de incêndio.; Cumpre requisitos normativos de segurança.
+  Desvantagens de Bloqueio contrafogo: Aumenta o custo da instalação.; Requer instalação e manutenção adequadas.
+  Casos de uso de Bloqueio contrafogo: Instalação de dutos em shafts e passagens verticais.; Edifícios comerciais e residenciais com requisitos de segurança contra incêndio.; Infraestrutura de backbone.
+
+-- Figuras e diagramas --
+Figura 'Infraestrutura para Backbone' (Diagrama de Arquitetura): O diagrama ilustra a infraestrutura para backbone em um edifício, mostrando três dutos de 4 polegadas interligando diferentes níveis ou áreas. A área total servida por essa infraestrutura é indicada como 500 m². A legenda também sugere a necessidade de 2 facilidades adicionais como reserva. O diagrama enfatiza a separação entre a chegada de energia elétrica e a chegada de dados.
+  Componentes visuais: Estrutura de edifício com múltiplos níveis, Dutos verticais (3 de 4"), Área de serviço (500m²), Indicação de reserva (2 facilidades adicionais), Símbolos para chegada de dados e energia
+  Relacionado a: infraestrutura_backbone, duto_vertical
+
+-- Relacionamentos --
+Conexao: 'infraestrutura_backbone' --[interliga]--> 'equipament_room'. Motivo: A infraestrutura de backbone interliga os Equipamment Rooms.
+Conexao: 'infraestrutura_backbone' --[interliga]--> 'distribuidor_geral_entrada'. Motivo: A infraestrutura de backbone interliga os distribuidores gerais de entrada.
+Conexao: 'infraestrutura_backbone' --[interliga]--> 'telecommunication_closet'. Motivo: A infraestrutura de backbone interliga os Telecommunication Closets.
+Conexao: 'duto_backbone' --[deve_possuir]--> 'bloqueio_contrafogo'. Motivo: Dutos de backbone devem possuir bloqueio contrafogo para segurança.
+Conexao: 'cabos_alta_potencia' --[requer_separacao_de]--> 'cabos_fibra_optica'. Motivo: Em shafts com cabos de alta potência, é recomendado separar por 1,20m e usar cabos de Fibra Óptica para evitar interferências.
+
+=== SECAO [TI_SEC_008]: Infraestrutura para Backbone (Cabeamento Vertical) ===
+A infraestrutura para backbone (cabeamento vertical) consiste em um ou mais dutos destinados ao backbone dentro de um edifício. Geralmente é formada por uma estrutura vertical e/ou horizontal de Telecommunication Closets interligados. Os dutos para o backbone devem cumprir as normas de instalação e aterramento (ANSI TIA 607). Opções de infraestrutura vertical incluem piso falso (com painéis modulares apoiados por pedestais, suspensos ou de posição livre) e tubos de conduíte (eletrodutos metálicos/flexíveis ou de PVC rígido).
+
+-- Conceitos-chave --
+Termo: Cabeamento Vertical (Backbone) | Tipo: Infraestrutura | Definicao: Parte do sistema de cabeamento estruturado que interliga os diferentes andares ou áreas de um edifício, conectando os Telecommunication Closets de cada andar ao distribuidor principal.
+  Vantagens de Cabeamento Vertical (Backbone): Suporta alta densidade de tráfego entre andares.; Permite a expansão da rede verticalmente.; Centraliza a distribuição de rede.
+  Desvantagens de Cabeamento Vertical (Backbone): Requer planejamento cuidadoso do layout vertical.; Instalação pode ser complexa em edifícios existentes.; Necessidade de conformidade com normas de segurança (aterramento, contrafogo).
+  Casos de uso de Cabeamento Vertical (Backbone): Redes em edifícios de múltiplos andares.; Data centers.; Campus universitários ou empresariais.
+Termo: Piso falso modular | Tipo: Infraestrutura | Definicao: Sistema de piso elevado, composto por painéis modulares, que cria um espaço sob o piso principal para acomodar cabos, dutos e outras infraestruturas.
+  Vantagens de Piso falso modular: Excelente para acomodar e organizar cabos.; Facilita o acesso para manutenção e modificações.; Melhora a estética do ambiente.; Permite flexibilidade no layout.
+  Desvantagens de Piso falso modular: Aumenta a altura do piso.; Custo de instalação pode ser elevado.; Requer estrutura de suporte adequada.
+  Casos de uso de Piso falso modular: Data centers.; Salas de servidores.; Escritórios modernos.; Ambientes que exigem alta densidade de cabeamento.
+Termo: Conduíte metálico/PVC | Tipo: Infraestrutura | Definicao: Tubo rígido ou flexível, feito de metal ou PVC, utilizado para proteger e encaminhar cabos elétricos e de telecomunicações.
+  Vantagens de Conduíte metálico/PVC: Proteção física dos cabos contra danos.; Organização do cabeamento.; Conformidade com normas de segurança.; Variedade de materiais (metal, PVC) e flexibilidade.
+  Desvantagens de Conduíte metálico/PVC: Pode limitar a quantidade de cabos.; Requer instalação cuidadosa.; Eletrodutos metálicos necessitam de aterramento.
+  Casos de uso de Conduíte metálico/PVC: Instalação de cabeamento em paredes, pisos e tetos.; Proteção de cabos em ambientes industriais ou comerciais.; Rotas de cabeamento embutidas ou aparentes.
+
+-- Figuras e diagramas --
+Figura 'Piso Falso Modular e Cornerlock' (Fotografia de Produto/Instalação): A imagem mostra um sistema de piso falso modular, com painéis de piso apoiados em pedestais. Um detalhe de 'Cornerlock' é visível, indicando um tipo de encaixe ou fixação entre os painéis. O texto lista opções de piso falso como painéis modulares apoiados por pedestais, suspensos ou de posição livre, e menciona o Cornerlock como um exemplo de componente.
+  Componentes visuais: Painéis de piso falso, Pedestais de suporte, Cornerlock (sistema de fixação)
+  Relacionado a: piso_falso_modular
+
+-- Relacionamentos --
+Conexao: 'cabeamento_vertical' --[utiliza]--> 'duto_backbone'. Motivo: O cabeamento vertical utiliza dutos específicos para o backbone dentro de um edifício.
+Conexao: 'cabeamento_vertical' --[formado_por]--> 'telecommunication_closet_interligado'. Motivo: A infraestrutura de cabeamento vertical é formada por uma estrutura vertical e/ou horizontal de Telecommunication Closets interligados.
+Conexao: 'duto_backbone' --[deve_cumprir_normas_de]--> 'aterramento_ansi_tia_607'. Motivo: Os dutos para o backbone devem cumprir as normas de instalação e aterramento determinadas pela ANSI TIA 607.
+Conexao: 'cabeamento_vertical' --[pode_utilizar]--> 'piso_falso_modular'. Motivo: O cabeamento vertical pode utilizar piso falso modular como infraestrutura.
+Conexao: 'cabeamento_vertical' --[pode_utilizar]--> 'conduite_metalico_pvc'. Motivo: O cabeamento vertical pode utilizar tubos de conduíte (metálicos ou de PVC) como infraestrutura.
+

@@ -1,0 +1,187 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Cabeamento Estruturado - Norma Brasileira Cabeamento Estruturado para Edifícios Comerciais - ABNT NBR 14.565
+Idioma: pt-BR
+Tecnologias citadas no documento: ABNT NBR 14.565, TIA-568, TIA-569, TIA-606, TIA-607, ANSI/TIA, WLAN, IEEE 802.11, DECT, Bluetooth
+
+=== SECAO [TI_SEC_001]: Introdução à ABNT NBR 14.565 e sua relação com normas TIA ===
+A norma brasileira ABNT NBR 14.565 para cabeamento estruturado em edifícios comerciais consolida e unifica conceitos e requisitos de diversas normas norte-americanas da série ANSI/TIA, como TIA-568, TIA-569, TIA-606 e TIA-607. Diferentemente do modelo americano, que segmenta essas especificações em normas distintas, a NBR 14.565 as integra em um único documento. A norma é similar à TIA-568-D e abrange desde a estrutura e configuração mínima do cabeamento até requisitos de desempenho, conformidade, distâncias, áreas de cobertura sem fio e fornecimento de potência. Embora seja uma norma abrangente, sua adoção integral pode ser um desafio, pois partes como infraestrutura física e aterramento são frequentemente tratadas por engenheiros civis ou elétricos, levando engenheiros de redes a utilizarem diretamente a TIA-568 em muitos projetos.
+
+-- Conceitos-chave --
+Termo: ABNT NBR 14.565 | Tipo: Norma Técnica | Definicao: Norma brasileira que estabelece os requisitos para cabeamento estruturado em edifícios comerciais, consolidando diretrizes de diversas normas TIA em um único documento.
+  Vantagens de ABNT NBR 14.565: Unifica requisitos de diversas normas TIA em um único documento.; Abrangente, cobrindo desde a estrutura lógica até a física e aterramento.; Adapta terminologias internacionais para o contexto brasileiro.
+  Desvantagens de ABNT NBR 14.565: Pode ser complexa para adoção integral devido à sua abrangência.; A necessidade de conhecimento prévio de outras normas TIA para um entendimento completo.
+  Casos de uso de ABNT NBR 14.565: Projeto e implementação de cabeamento estruturado em edifícios comerciais no Brasil.; Referência para garantir a padronização e interoperabilidade de redes de telecomunicações.
+Termo: TIA-568 | Tipo: Norma Técnica | Definicao: Série de normas norte-americanas que definem os padrões para cabeamento estruturado, incluindo subsistemas, tipos de cabos e características.
+  Vantagens de TIA-568: Padrão amplamente reconhecido e utilizado internacionalmente.; Especificações detalhadas para diversos componentes e aplicações.
+  Desvantagens de TIA-568: Segmentada em múltiplas partes, o que pode tornar a consulta mais complexa.; Pode exigir adaptação para o contexto normativo brasileiro.
+  Casos de uso de TIA-568: Definição de layout de rede, dispositivos ativos e passivos.; Base para normas internacionais e adaptações locais como a NBR 14.565.
+Termo: TIA-569 | Tipo: Norma Técnica | Definicao: Norma TIA que aborda caminhos, espaços e infraestrutura física para sistemas de telecomunicações.
+  Vantagens de TIA-569: Define diretrizes essenciais para a instalação física dos cabos.; Contribui para a organização e segurança da infraestrutura de rede.
+  Desvantagens de TIA-569: Foco específico em infraestrutura física, necessitando de outras normas para aspectos de cabeamento.
+  Casos de uso de TIA-569: Planejamento de rotas de cabos, espaços para armários de telecomunicações e infraestrutura de conduítes.
+Termo: TIA-606 | Tipo: Norma Técnica | Definicao: Norma TIA que trata da administração, rotulagem e documentação de sistemas de cabeamento.
+  Vantagens de TIA-606: Promove a organização e o gerenciamento eficiente da infraestrutura de rede.; Facilita a identificação e solução de problemas.
+  Desvantagens de TIA-606: Requer disciplina e investimento em ferramentas de documentação.
+  Casos de uso de TIA-606: Implementação de sistemas de identificação por etiquetas para cabos e equipamentos.; Criação de documentação detalhada da rede.
+Termo: TIA-607 | Tipo: Norma Técnica | Definicao: Norma TIA que aborda aterramento e equipotencialização de sistemas de telecomunicações.
+  Vantagens de TIA-607: Garante a segurança e a integridade dos equipamentos contra surtos elétricos.; Essencial para a conformidade com normas de segurança elétrica.
+  Desvantagens de TIA-607: Requer conhecimento especializado em engenharia elétrica e de aterramento.
+  Casos de uso de TIA-607: Projeto e instalação de sistemas de aterramento para racks de telecomunicações e cabos.
+
+-- Tabelas comparativas --
+Tabela 'Relação entre Normas ABNT e TIA': Esta tabela compara as normas da ABNT e TIA, indicando quais normas TIA contribuem para a NBR 14.565 e quais assuntos são tratados.
+  Linha LIN_001: Norma ABNT = ABNT NBR 14.565; Assunto Tratado = NORMA DE CABEAMENTO BRASILEIRA
+    (Relacionado a: abnt_nbr_14565)
+  Linha LIN_002: Norma ABNT = Principais Referências Normas TIA; Assunto Tratado = Contribuição para a NBR 14565
+    (Relacionado a: tia_568, abnt_nbr_14565)
+  Linha LIN_003: Norma ABNT = TIA-568 (0/1/2/3); Assunto Tratado = Contribuição para a NBR 14565
+    (Relacionado a: tia_568)
+  Linha LIN_004: Norma ABNT = TIA-569; Assunto Tratado = Caminhos, espaços e infraestrutura física
+    (Relacionado a: tia_569)
+  Linha LIN_005: Norma ABNT = TIA-606; Assunto Tratado = Administração, rotulagem e documentação
+    (Relacionado a: tia_606)
+  Linha LIN_006: Norma ABNT = TIA-607; Assunto Tratado = Aterramento e equipotencialização
+    (Relacionado a: tia_607)
+Tabela 'Subsistemas de Cabeamento Estruturado': Lista os subsistemas que compõem o cabeamento estruturado, conforme definido pela norma.
+  Linha LIN_007: Subsistema = Work Area (Área de Trabalho)
+  Linha LIN_008: Subsistema = Horizontal Cabling (Cabeamento Horizontal)
+    (Relacionado a: cabeamento_horizontal)
+  Linha LIN_009: Subsistema = Telecommunication Closet (Armário de Telecomunicações)
+    (Relacionado a: telecommunication_closet)
+  Linha LIN_010: Subsistema = Backbone Distribution (Distribuição Vertical)
+    (Relacionado a: backbone)
+  Linha LIN_011: Subsistema = Equipment Room (Sala de Equipamentos)
+    (Relacionado a: equipment_room)
+  Linha LIN_012: Subsistema = Entrance Facilities (Distribuidores de Entrada)
+    (Relacionado a: entrance_facility)
+  Linha LIN_013: Subsistema = Administration (Administração)
+    (Relacionado a: administracao)
+Tabela 'Comparativo de Nomenclatura: ABNT NBR 14.565 vs. ANSI/TIA 568 B': Esta tabela compara a nomenclatura utilizada na norma brasileira ABNT NBR 14.565 com a norma norte-americana ANSI/TIA 568 B para os diferentes subsistemas e elementos de cabeamento estruturado.
+  Linha LIN_014: ABNT NBR 14.565 = Área de Trabalho; ANSI / TIA 568 B = Área de Trabalho
+    (Relacionado a: area_de_trabalho)
+  Linha LIN_015: ABNT NBR 14.565 = Cabeamento Primário; ANSI / TIA 568 B = Cabeamento Backbone
+    (Relacionado a: backbone)
+  Linha LIN_016: ABNT NBR 14.565 = Cabeamento Secundário; ANSI / TIA 568 B = Cabeamento Horizontal
+    (Relacionado a: cabeamento_horizontal)
+  Linha LIN_017: ABNT NBR 14.565 = Armário de Telecomunicações; ANSI / TIA 568 B = Sala de Telecomunicações
+    (Relacionado a: telecommunication_closet)
+  Linha LIN_018: ABNT NBR 14.565 = Sala de Entrada de Telecomunicações; ANSI / TIA 568 B = Entrada de Facilidade
+    (Relacionado a: entrance_facility)
+  Linha LIN_019: ABNT NBR 14.565 = Sala de Equipamentos; ANSI / TIA 568 B = Sala de Equipamentos
+    (Relacionado a: equipment_room)
+  Linha LIN_020: ABNT NBR 14.565 = Distribuidor Geral de Telecomunicações; ANSI / TIA 568 B = Main Cross Connect
+    (Relacionado a: main_cross_connect)
+  Linha LIN_021: ABNT NBR 14.565 = Distribuidor Intermediário; ANSI / TIA 568 B = Intermediate Cross Connect
+    (Relacionado a: intermediate_cross_connect)
+  Linha LIN_022: ABNT NBR 14.565 = Distribuidor Secundário; ANSI / TIA 568 B = Horizontal Cross Connect
+    (Relacionado a: horizontal_cross_connect)
+Tabela 'Normas da série ANSI/TIA-568-D': Esta tabela lista as diferentes partes da norma ANSI/TIA-568-D e seus respectivos escopos, detalhando os requisitos gerais, comerciais, ópticos e de cabos coaxiais.
+  Linha LIN_023: Norma = TIA-568.0-D; Descrição = Requisitos gerais de um cabeamento estruturado
+    (Relacionado a: tia_568_0_d)
+  Linha LIN_024: Norma = TIA-568.1-D; Descrição = Requisitos para cabeamento estruturado em ambientes comerciais
+    (Relacionado a: tia_568_1_d)
+  Linha LIN_025: Norma = TIA-568.3-D; Descrição = Requisitos para componentes e cabeamento óptico
+    (Relacionado a: tia_568_3_d)
+  Linha LIN_026: Norma = TIA-568.4-D; Descrição = Requisitos para componentes e cabeamento em cabos coaxiais de banda larga
+    (Relacionado a: tia_568_4_d)
+Tabela 'Categorias de Cabos Balanceados (Par Trançado)': Esta tabela classifica os cabos balanceados (par trançado) de acordo com suas categorias e classes de desempenho, especificando a frequência máxima suportada por cada uma.
+  Linha LIN_027: Categoria = Classe A; Frequência Máxima = até 100 kHz
+    (Relacionado a: cabo_balanceado)
+  Linha LIN_028: Categoria = Classe B; Frequência Máxima = até 1 MHz
+    (Relacionado a: cabo_balanceado)
+  Linha LIN_029: Categoria = Classe C/Categoria 3; Frequência Máxima = até 16 MHz
+    (Relacionado a: cabo_balanceado)
+  Linha LIN_030: Categoria = Classe D/Categoria 5e; Frequência Máxima = até 100 MHz
+    (Relacionado a: cabo_balanceado)
+  Linha LIN_031: Categoria = Classe E/Categoria 6; Frequência Máxima = até 250 MHz
+    (Relacionado a: cabo_balanceado)
+  Linha LIN_032: Categoria = Classe EA/Categoria 6A; Frequência Máxima = até 500 MHz
+    (Relacionado a: cabo_balanceado)
+  Linha LIN_033: Categoria = Classe F/Categoria 7; Frequência Máxima = até 600 MHz
+    (Relacionado a: cabo_balanceado)
+  Linha LIN_034: Categoria = Classe FA/Categoria 7A; Frequência Máxima = até 1 000 MHz
+    (Relacionado a: cabo_balanceado)
+  Linha LIN_035: Categoria = Categoria 8; Frequência Máxima = até 2 000 MHz
+    (Relacionado a: cabo_balanceado)
+Tabela 'Distâncias de Cabos Balanceados': Esta tabela detalha as distâncias mínimas e máximas permitidas para diferentes segmentos de cabos balanceados, incluindo FD-CP, CP-TO, FD-TO e patch cords.
+  Linha LIN_036: Segmento = FD - CP; Mínimo m = 15; Máximo m = 85
+    (Relacionado a: fd, cp)
+  Linha LIN_037: Segmento = CP - TO; Mínimo m = 5; Máximo m = 
+    (Relacionado a: cp, to)
+  Linha LIN_038: Segmento = FD - TO (sem CP); Mínimo m = 15; Máximo m = 90
+    (Relacionado a: fd, to)
+  Linha LIN_039: Segmento = Patch cord na área de trabalho a; Mínimo m = 2; Máximo m = 5
+    (Relacionado a: patch_cord, area_de_trabalho)
+  Linha LIN_040: Segmento = Patch cord de manobra; Mínimo m = 2; Máximo m = 
+    (Relacionado a: patch_cord)
+  Linha LIN_041: Segmento = Patch cord de equipamento b; Mínimo m = 2; Máximo m = 5
+    (Relacionado a: patch_cord, equipamento_terminal)
+  Linha LIN_042: Segmento = Todos os patch cords; Mínimo m = 5; Máximo m = 10
+    (Relacionado a: patch_cord)
+Tabela 'Rede Sem Fio – Aplicações': Esta tabela apresenta diferentes padrões de redes sem fio (WLAN, DECT, Bluetooth), suas descrições, larguras de banda e raios de cobertura interna.
+  Linha LIN_043: Norma = IEEE 802.11; Descrição = WLAN (2 Mb/s @ 2,4 GHz or Infrared); Largura de banda = 20 MHz; Raio de cobertura (para uso interno) = 20 m
+    (Relacionado a: ieee_802_11)
+  Linha LIN_044: Norma = IEEE 802.11a; Descrição = WLAN (54 Mb/s @ 5 GHz); Largura de banda = 20 MHz; Raio de cobertura (para uso interno) = 35 m
+    (Relacionado a: ieee_802_11a)
+  Linha LIN_045: Norma = IEEE 802.11b; Descrição = WLAN (11 Mb/s @ 2,4 GHz); Largura de banda = 20 MHz; Raio de cobertura (para uso interno) = 35 m
+    (Relacionado a: ieee_802_11b)
+  Linha LIN_046: Norma = IEEE 802.11g; Descrição = WLAN (54 Mb/s @ 2,4 GHz); Largura de banda = 20 MHz; Raio de cobertura (para uso interno) = 38 m
+    (Relacionado a: ieee_802_11g)
+  Linha LIN_047: Norma = IEEE 802.11n; Descrição = WLAN (72,2 Mb/s @ 2,4 GHz); Largura de banda = 20-40 MHz; Raio de cobertura (para uso interno) = 70 m
+    (Relacionado a: ieee_802_11n)
+  Linha LIN_048: Norma = IEEE 802.11n; Descrição = WLAN (150 Mb/s @ 5 GHz); Largura de banda = 20/40 MHz; Raio de cobertura (para uso interno) = 70 m
+    (Relacionado a: ieee_802_11n)
+  Linha LIN_049: Norma = IEEE 802.11ac; Descrição = WLAN (1,3 Gb/s @ 5 GHz); Largura de banda = 20/40/80/160 MHz; Raio de cobertura (para uso interno) = 35 m
+    (Relacionado a: ieee_802_11ac)
+  Linha LIN_050: Norma = IEEE 802.11ad; Descrição = WLAN (6,75 Gb/s @ 60 GHz); Largura de banda = 2160 MHz; Raio de cobertura (para uso interno) = 60 m
+    (Relacionado a: ieee_802_11ad)
+  Linha LIN_051: Norma = DECT; Descrição = Digital European Cordless Telephony (1 Mb/s @ 1,8 GHz); Largura de banda = 1,6 MHz; Raio de cobertura (para uso interno) = 30 m
+    (Relacionado a: dect)
+  Linha LIN_052: Norma = Bluetooth II; Descrição = ISM Band (1 Mb/s @ 2,4 GHz); Largura de banda = 10 MHz; Raio de cobertura (para uso interno) = 12 m
+    (Relacionado a: bluetooth)
+
+-- Figuras e diagramas --
+Figura 'Diagrama de Subsistemas de Cabeamento Estruturado' (Diagrama de Arquitetura de Rede): O diagrama ilustra a hierarquia dos subsistemas de cabeamento estruturado. Começa com o Cabeamento Horizontal (1) na área de trabalho, que se conecta a um Centro de Telecomunicações (4). O Cabeamento Vertical (2) interliga os Centros de Telecomunicações entre andares ou edifícios. A Área de Trabalho (3) contém as tomadas de rede. As Salas de Equipamentos (5) abrigam os equipamentos ativos. As Facilidades de Entrada (6) conectam a rede externa. A Administração (7) gerencia o sistema.
+  Componentes visuais: Cabeamento horizontal, Backbone (Cabeamento vertical), Área de trabalho, Centros de telecomunicações, Salas de equipamentos, Facilidades de entrada, Administração
+  Relacionado a: cabeamento_horizontal, backbone, area_de_trabalho, telecommunication_closet, equipment_room, entrance_facility, administracao
+Figura 'Estrutura Hierárquica de Subsistemas de Cabeamento' (Diagrama de Arquitetura de Rede): Este diagrama mostra a estrutura hierárquica dos subsistemas de cabeamento. No topo está o Distribuidor de Campus (CD), seguido pelo Distribuidor de Edifício (BD), depois o Distribuidor de Piso (FD). O Ponto de Consolidação (CP) pode existir no cabeamento horizontal. A Tomada de Telecomunicação (TO) é onde o Equipamento Terminal (TE) se conecta. O diagrama também indica o subsistema de cabeamento de backbone de campus, backbone de edifício e cabeamento horizontal, além de cabos opcionais.
+  Componentes visuais: CD (Distribuidor de Campos), BD (Distribuidor de Edifício), FD (Distribuidor de Piso), CP (Ponto de Consolidação), TO (Tomada de Telecomunicação), TE (Equipamento Terminal), Cabo opcional, Subsistema de cabeamento de backbone de campus, Subsistema de cabeamento de backbone de edifício, Subsistema de cabeamento horizontal
+  Relacionado a: cd, bd, fd, cp, to, te, backbone_campus, backbone_edificio, cabeamento_horizontal
+Figura 'Localização dos Elementos Funcionais' (Diagrama de Arquitetura de Rede): O diagrama ilustra a localização física dos elementos funcionais do cabeamento estruturado. Mostra a Sala de Telecomunicações com um Distribuidor de Piso (FD) e Tomadas (TO), interligados por um Ponto de Consolidação (CP). O cabeamento horizontal conecta o FD às TOs. O cabeamento de backbone conecta os FDs aos Distribuidores de Edifício (BD) e estes ao Distribuidor de Campus (CD). A Infraestrutura de Entrada e a Sala de Equipamentos também são mostradas.
+  Componentes visuais: Sala de telecomunicações, FD (Distribuidor de Piso), TO (Tomada de Telecomunicação), CP (Ponto de Consolidação), CD/BD (Distribuidor de Campus/Edifício), Cabo do backbone de campus, Rede externa, Sala de equipamentos, Infraestrutura de entrada
+  Relacionado a: telecommunication_closet, fd, to, cp, cd, bd, backbone_campus, entrance_facility, equipment_room
+Figura 'Configuração de Tomadas T568A e T568B' (Diagrama de Conexão Elétrica/Rede): Este diagrama mostra as configurações de pinagem para tomadas de rede T568A e T568B, indicando a cor do fio correspondente a cada par (1 a 4). A tabela anexa detalha a correspondência entre o número do par, o esquema T568A/T568B e a cor do fio (Branco, Azul, Laranja, Verde, Marrom).
+  Componentes visuais: Diagrama T568A, Diagrama T568B, Tabela de pinagem (Par, T568A, T568B, Cor)
+  Relacionado a: t568a, t568b, cabo_balanceado
+
+-- Relacionamentos --
+Conexao: 'abnt_nbr_14565' --[consolida]--> 'tia_568'. Motivo: A norma ABNT NBR 14.565 consolida os requisitos da norma TIA-568.
+Conexao: 'abnt_nbr_14565' --[consolida]--> 'tia_569'. Motivo: A norma ABNT NBR 14.565 consolida os requisitos da norma TIA-569.
+Conexao: 'abnt_nbr_14565' --[consolida]--> 'tia_606'. Motivo: A norma ABNT NBR 14.565 consolida os requisitos da norma TIA-606.
+Conexao: 'abnt_nbr_14565' --[consolida]--> 'tia_607'. Motivo: A norma ABNT NBR 14.565 consolida os requisitos da norma TIA-607.
+Conexao: 'abnt_nbr_14565' --[similar_a]--> 'tia_568_1_d'. Motivo: A norma ABNT NBR 14.565 é similar à norma norte-americana TIA-568-D em sua estrutura e escopo.
+Conexao: 'cabeamento_horizontal' --[parte_de]--> 'abnt_nbr_14565'. Motivo: O cabeamento horizontal é um subsistema definido pela norma ABNT NBR 14.565.
+Conexao: 'backbone' --[parte_de]--> 'abnt_nbr_14565'. Motivo: O backbone (distribuição vertical) é um subsistema definido pela norma ABNT NBR 14.565.
+Conexao: 'area_de_trabalho' --[parte_de]--> 'abnt_nbr_14565'. Motivo: A área de trabalho é um subsistema definido pela norma ABNT NBR 14.565.
+Conexao: 'telecommunication_closet' --[parte_de]--> 'abnt_nbr_14565'. Motivo: O armário de telecomunicações é um subsistema definido pela norma ABNT NBR 14.565.
+Conexao: 'equipment_room' --[parte_de]--> 'abnt_nbr_14565'. Motivo: A sala de equipamentos é um subsistema definido pela norma ABNT NBR 14.565.
+Conexao: 'entrance_facility' --[parte_de]--> 'abnt_nbr_14565'. Motivo: As facilidades de entrada são um subsistema definido pela norma ABNT NBR 14.565.
+Conexao: 'administracao' --[parte_de]--> 'abnt_nbr_14565'. Motivo: A administração é um subsistema definido pela norma ABNT NBR 14.565.
+Conexao: 'cabeamento_horizontal' --[corresponde_a]--> 'cabeamento_backbone'. Motivo: Na NBR 14.565, o 'cabeamento secundário' corresponde ao 'cabeamento horizontal' na TIA-568.
+Conexao: 'backbone' --[corresponde_a]--> 'cabeamento_primario'. Motivo: Na NBR 14.565, o 'cabeamento primário' corresponde ao 'cabeamento backbone' na TIA-568.
+Conexao: 'fd' --[corresponde_a]--> 'telecommunication_closet'. Motivo: O Distribuidor de Piso (FD) na NBR 14.565 corresponde à Sala de Telecomunicações (TR) na TIA-568.
+Conexao: 'cp' --[permite_derivacao_em]--> 'cabeamento_horizontal'. Motivo: O Ponto de Consolidação (CP) permite derivações no cabeamento horizontal, diferentemente da TIA-568.
+Conexao: 'cabo_balanceado' --[classificado_por]--> 'categoria'. Motivo: Cabos balanceados são classificados por categorias (ex: Cat 5e, Cat 6) que definem seu desempenho e frequência.
+Conexao: 'cabo_balanceado' --[tem_requisito_de]--> 'distancia'. Motivo: A norma estabelece distâncias máximas e mínimas para diferentes segmentos de cabos balanceados.
+Conexao: 't568a' --[padrao_de_codificacao_para]--> 'cabo_balanceado'. Motivo: O esquema T568A é um padrão de codificação de cores para cabos balanceados.
+Conexao: 't568b' --[padrao_de_codificacao_para]--> 'cabo_balanceado'. Motivo: O esquema T568B é um padrão de codificação de cores para cabos balanceados.
+Conexao: 'ieee_802_11' --[aplicacao_em]--> 'wlan'. Motivo: O padrão IEEE 802.11 é utilizado para redes WLAN (Wireless Local Area Network).
+Conexao: 'ieee_802_11a' --[aplicacao_em]--> 'wlan'. Motivo: O padrão IEEE 802.11a é utilizado para redes WLAN.
+Conexao: 'ieee_802_11b' --[aplicacao_em]--> 'wlan'. Motivo: O padrão IEEE 802.11b é utilizado para redes WLAN.
+Conexao: 'ieee_802_11g' --[aplicacao_em]--> 'wlan'. Motivo: O padrão IEEE 802.11g é utilizado para redes WLAN.
+Conexao: 'ieee_802_11n' --[aplicacao_em]--> 'wlan'. Motivo: O padrão IEEE 802.11n é utilizado para redes WLAN.
+Conexao: 'ieee_802_11ac' --[aplicacao_em]--> 'wlan'. Motivo: O padrão IEEE 802.11ac é utilizado para redes WLAN.
+Conexao: 'ieee_802_11ad' --[aplicacao_em]--> 'wlan'. Motivo: O padrão IEEE 802.11ad é utilizado para redes WLAN.
+Conexao: 'dect' --[aplicacao_em]--> 'telefonia_sem_fio'. Motivo: O padrão DECT é utilizado para telefonia digital sem fio.
+Conexao: 'bluetooth' --[aplicacao_em]--> 'conectividade_sem_fio'. Motivo: O padrão Bluetooth é utilizado para conectividade sem fio de curto alcance.
+

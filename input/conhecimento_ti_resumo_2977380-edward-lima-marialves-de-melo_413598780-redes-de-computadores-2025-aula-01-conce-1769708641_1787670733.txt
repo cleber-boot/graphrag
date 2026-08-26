@@ -1,0 +1,210 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Conceitos Sobre Redes de Computadores
+Idioma: pt-BR
+Tecnologias citadas no documento: Redes de Computadores, Telégrafo, Mainframes, UNIX, LAN, Internet, ADSL, Fibra Óptica
+
+=== SECAO [TI_SEC_001]: Conceitos Sobre Redes de Computadores ===
+A comunicação é uma necessidade humana fundamental, evoluindo desde sinais primitivos até sistemas computacionais complexos. Uma rede de computadores é definida como um conjunto de dois ou mais computadores interligados que compartilham recursos, dados e programas. Essa interconexão visa facilitar a troca de informações e o acesso a recursos compartilhados.
+
+-- Conceitos-chave --
+Termo: Rede de Computadores | Tipo: Conceito | Definicao: Um conjunto de dois ou mais computadores interligados que podem compartilhar recursos, dados e programas.
+  Vantagens de Rede de Computadores: Compartilhamento de recursos (dados, programas, hardware); Comunicação e colaboração entre usuários; Acesso a informações centralizadas ou distribuídas
+  Desvantagens de Rede de Computadores: Complexidade de configuração e gerenciamento; Riscos de segurança; Dependência de infraestrutura de rede
+  Casos de uso de Rede de Computadores: Compartilhamento de impressoras; Acesso a arquivos em servidores; Comunicação por e-mail ou mensagens instantâneas; Navegação na Internet
+Termo: Comunicação Humana | Tipo: Necessidade Humana | Definicao: A necessidade intrínseca do ser humano de trocar informações, que impulsionou o desenvolvimento de diversos meios de comunicação ao longo da história.
+  Vantagens de Comunicação Humana: Permite a transmissão de conhecimento; Facilita a colaboração e organização social; Promove o desenvolvimento cultural e tecnológico
+  Desvantagens de Comunicação Humana: Pode haver perda ou distorção da informação; Requer meios e infraestrutura para ocorrer; Barreiras linguísticas e culturais podem dificultar
+  Casos de uso de Comunicação Humana: Transmissão de avisos (sinais de fumaça); Envio de mensagens (pombo correio); Comunicação à distância (telégrafo, telefone); Compartilhamento de informações em larga escala (internet)
+
+=== SECAO [TI_SEC_002]: Evolução dos Sistemas de Computação - Década de 60 – Sistemas Centralizados ===
+Na década de 1960, os sistemas de computação eram centralizados, com um único computador principal (mainframe) servindo a múltiplos terminais. O processamento e a gerência eram concentrados, o que criava um ponto único de falha. Embora permitisse o compartilhamento de recursos, a escalabilidade era baixa e o acesso restrito a usuários especializados em ambientes confinados.
+
+-- Conceitos-chave --
+Termo: Sistema Centralizado | Tipo: Arquitetura | Definicao: Um modelo de computação onde o processamento e o controle são concentrados em um único servidor ou mainframe, ao qual terminais 'burros' se conectam para acessar recursos e funcionalidades.
+  Vantagens de Sistema Centralizado: Administração central simples; Segurança e controle de dados facilitados; Facilidade de backup e integridade dos dados
+  Desvantagens de Sistema Centralizado: Dependência de um único ponto de falha (o servidor central); Escalabilidade limitada (aumentar capacidade exige investimento no servidor central); Desempenho pode degradar com muitos usuários simultâneos; Custo elevado de infraestrutura central
+  Casos de uso de Sistema Centralizado: Mainframes IBM com terminais 3270; Sistemas bancários antigos; Computação em centros universitários nas décadas de 60 e 70
+Termo: Mainframe | Tipo: Hardware | Definicao: Um computador de grande porte, de alta performance, utilizado principalmente por grandes organizações para processamento de dados em massa e aplicações críticas.
+  Vantagens de Mainframe: Alta capacidade de processamento e armazenamento; Confiabilidade e disponibilidade elevadas; Suporte a um grande número de transações simultâneas
+  Desvantagens de Mainframe: Custo de aquisição e manutenção muito elevado; Requer infraestrutura especializada (ambiente climatizado, energia dedicada); Complexidade de operação e programação
+  Casos de uso de Mainframe: Processamento de transações bancárias em larga escala; Gerenciamento de sistemas de reservas aéreas; Grandes sistemas de processamento de dados governamentais
+Termo: Terminal Burro | Tipo: Hardware | Definicao: Um dispositivo de entrada/saída sem capacidade de processamento própria, que se conecta a um computador central para executar tarefas. Depende inteiramente do servidor para processar informações.
+  Vantagens de Terminal Burro: Baixo custo individual; Simplicidade de operação; Reduz a carga de processamento no dispositivo do usuário
+  Desvantagens de Terminal Burro: Total dependência do computador central; Funcionalidade limitada à capacidade do servidor; Não possui capacidade de processamento local
+  Casos de uso de Terminal Burro: Acesso a sistemas mainframe em décadas passadas; Terminais de caixa em supermercados (em sistemas mais antigos); Quiosques de informação simples
+
+-- Tabelas comparativas --
+Tabela 'Sistemas Centralizados - Vantagens e Desvantagens': Esta tabela compara os pontos fortes e fracos da arquitetura de sistemas centralizados, destacando os trade-offs em termos de administração, segurança, escalabilidade e custo.
+  Linha LIN_001: Aspecto = Administração e Controle; Vantagens = Centralizada, simples e facilitada.; Desvantagens = Dependência de um único ponto; se o servidor central falhar, todo o sistema para.
+    (Relacionado a: sistema_centralizado)
+  Linha LIN_002: Aspecto = Segurança e Integridade dos Dados; Vantagens = Facilitada devido à centralização; backups mais simples.; Desvantagens = Ponto único de falha pode comprometer todos os dados.
+    (Relacionado a: sistema_centralizado)
+  Linha LIN_003: Aspecto = Escalabilidade e Desempenho; Vantagens = Compartilhamento de recursos.; Desvantagens = Baixa escalabilidade; desempenho afetado com muitos usuários simultâneos; alto custo de infraestrutura central.
+    (Relacionado a: sistema_centralizado)
+
+-- Figuras e diagramas --
+Figura 'Diagrama de Sistema Centralizado' (Diagrama de Arquitetura): O diagrama ilustra um sistema centralizado onde um computador central (servidor) está conectado a vários dispositivos (terminais) através de uma linha de comunicação. Os terminais são mostrados como dispositivos simples, sem capacidade de processamento própria, indicando que toda a atividade ocorre no servidor central.
+  Componentes visuais: Computador Central (Servidor), Terminais (Dispositivos de Ponta), Linha de Comunicação
+  Relacionado a: sistema_centralizado, mainframe, terminal_burro
+
+-- Relacionamentos --
+Conexao: 'terminal_burro' --[depende_de]--> 'mainframe'. Motivo: Terminais burros não possuem capacidade de processamento e dependem inteiramente do mainframe para executar tarefas.
+Conexao: 'sistema_centralizado' --[caracterizado_por]--> 'ponto_unico_de_falha'. Motivo: A arquitetura centralizada cria um ponto único de falha, onde a falha do servidor central paralisa todo o sistema.
+Conexao: 'sistema_centralizado' --[permite]--> 'compartilhamento_de_recursos'. Motivo: Sistemas centralizados permitem que múltiplos usuários compartilhem os recursos do servidor principal.
+
+=== SECAO [TI_SEC_003]: Evolução dos Sistemas de Computação - Década de 70 e 80 – Sistemas de Tempo Compartilhado (Time Sharing) ===
+Nas décadas de 70 e 80, surgiram os sistemas de tempo compartilhado (Time Sharing), uma evolução dos sistemas centralizados. Eles permitiam que múltiplos usuários interagissem simultaneamente com o computador central, embora na prática o tempo de processamento fosse dividido entre eles (time slicing). Isso proporcionou uma melhor utilização dos recursos e maior interatividade, mas ainda apresentava complexidade na gestão e potencial lentidão com excesso de usuários.
+
+-- Conceitos-chave --
+Termo: Time Sharing | Tipo: Arquitetura | Definicao: Um sistema de computação que permite que múltiplos usuários utilizem um único computador central simultaneamente, dividindo o tempo de processamento da CPU entre eles.
+  Vantagens de Time Sharing: Otimização da utilização dos recursos do sistema; Melhora a produtividade dos usuários; Permite o uso interativo de computadores caros; Suporte a múltiplos usuários simultâneos
+  Desvantagens de Time Sharing: Alto custo de implementação inicial; Possibilidade de lentidão se o número de usuários exceder a capacidade do sistema; Complexidade na gestão de processos e segurança; Troca rápida de contexto pode consumir recursos
+  Casos de uso de Time Sharing: UNIX (versões iniciais); Sistemas de universidades nas décadas de 70 e 80; Mainframes adaptados com suporte a terminais interativos
+Termo: Time Slicing | Tipo: Técnica de Escalonamento | Definicao: Técnica de escalonamento de CPU onde o tempo de processamento é dividido em pequenas fatias (slices) e alocado a diferentes processos ou usuários, dando a ilusão de paralelismo.
+  Vantagens de Time Slicing: Proporciona interatividade ao usuário; Permite que múltiplos processos rodem 'simultaneamente'; Melhora a responsividade do sistema
+  Desvantagens de Time Slicing: Overhead de troca de contexto pode impactar o desempenho; Complexidade na implementação do escalonador; Pode levar a starvation de processos se não bem gerenciado
+  Casos de uso de Time Slicing: Sistemas operacionais multiusuário; Ambientes de tempo compartilhado; Sistemas em tempo real (com fatias de tempo garantidas)
+Termo: Multiprogramação | Tipo: Técnica de Sistema Operacional | Definicao: Capacidade de um sistema operacional de manter vários programas na memória principal simultaneamente, permitindo que a CPU alterne entre eles para maximizar sua utilização.
+  Vantagens de Multiprogramação: Aumenta a utilização da CPU; Reduz o tempo de espera dos usuários; Permite a execução de múltiplos trabalhos
+  Desvantagens de Multiprogramação: Requer gerenciamento de memória complexo; Pode levar a problemas de concorrência e deadlocks; Aumenta a complexidade do sistema operacional
+  Casos de uso de Multiprogramação: Sistemas operacionais modernos; Ambientes de tempo compartilhado; Servidores que lidam com múltiplas requisições
+
+-- Tabelas comparativas --
+Tabela 'Sistemas de Tempo Compartilhado - Vantagens e Desvantagens': Esta tabela resume os benefícios e limitações da abordagem de tempo compartilhado, contrastando com os sistemas puramente centralizados anteriores.
+  Linha LIN_004: Aspecto = Utilização de Recursos e Interatividade; Vantagens = Ótima utilização dos recursos do sistema; melhora a produtividade dos usuários; permite o uso interativo de computadores caros.; Desvantagens = Possibilidade de lentidão se o número de usuários ultrapassar a capacidade do sistema.
+    (Relacionado a: time_sharing, multiprogramacao)
+  Linha LIN_005: Aspecto = Implementação e Gerenciamento; Vantagens = Suporte a múltiplos usuários.; Desvantagens = Alto custo de implementação nos primórdios; complexidade na gestão de processos e segurança.
+    (Relacionado a: time_sharing)
+
+-- Figuras e diagramas --
+Figura 'Diagrama de Sistema de Tempo Compartilhado' (Diagrama de Arquitetura): O diagrama mostra um computador central conectado a múltiplos terminais interativos através de uma linha de comunicação. O conceito central é que o tempo de processamento do computador é compartilhado entre os usuários conectados, permitindo que todos interajam com o sistema.
+  Componentes visuais: Computador Central, Terminais Interativos, Linha de Comunicação, Processamento Compartilhado
+  Relacionado a: time_sharing, time_slicing, multiprogramacao
+
+-- Relacionamentos --
+Conexao: 'time_sharing' --[utiliza]--> 'time_slicing'. Motivo: O Time Sharing utiliza a técnica de Time Slicing para alocar o tempo da CPU entre múltiplos usuários.
+Conexao: 'time_sharing' --[melhora]--> 'utilizacao_de_recursos'. Motivo: O Time Sharing melhora a utilização dos recursos do sistema ao permitir que múltiplos usuários compartilhem o mesmo hardware.
+Conexao: 'time_sharing' --[evolucao_de]--> 'sistema_centralizado'. Motivo: Sistemas de Tempo Compartilhado são uma evolução dos sistemas centralizados, adicionando interatividade e multiprogramação.
+
+=== SECAO [TI_SEC_004]: Evolução dos Sistemas de Computação - Década de 90 – Sistemas Compartilhados ===
+A década de 1990 foi marcada pela explosão das redes locais (LANs), popularização dos PCs e o surgimento da Internet comercial. Os sistemas compartilhados permitiram que recursos como impressoras fossem adquiridos e disponibilizados na rede para múltiplos usuários, em vez de um por usuário. Essa transição levou a ambientes mais distribuídos, escaláveis e eficientes, com maior autonomia para as estações de trabalho, mas também introduziu maior complexidade de configuração e novos riscos de segurança.
+
+-- Conceitos-chave --
+Termo: Rede Local (LAN) | Tipo: Tipo de Rede | Definicao: Uma rede de computadores que interliga dispositivos em uma área geográfica limitada, como um escritório, um prédio ou um campus universitário.
+  Vantagens de Rede Local (LAN): Compartilhamento eficiente de recursos (impressoras, arquivos); Comunicação rápida entre dispositivos; Custo de implementação relativamente baixo em comparação com WANs; Maior autonomia das estações de trabalho
+  Desvantagens de Rede Local (LAN): Cobertura geográfica limitada; Requer infraestrutura física (cabos, switches); Potenciais riscos de segurança se não configurada corretamente
+  Casos de uso de Rede Local (LAN): Redes em escritórios; Redes domésticas; Redes em laboratórios de informática
+Termo: Modelo Cliente-Servidor | Tipo: Arquitetura de Rede | Definicao: Uma arquitetura de rede onde um ou mais computadores (clientes) solicitam serviços a um computador centralizado (servidor).
+  Vantagens de Modelo Cliente-Servidor: Centralização de dados e recursos; Segurança e controle aprimorados; Escalabilidade (adicionar mais clientes sem impactar o servidor); Manutenção e atualizações centralizadas
+  Desvantagens de Modelo Cliente-Servidor: Dependência do servidor (ponto único de falha); Custo do servidor pode ser alto; Sobrecarga do servidor com muitas requisições; Complexidade na configuração inicial
+  Casos de uso de Modelo Cliente-Servidor: Servidores de arquivos; Servidores web; Servidores de banco de dados; Aplicações corporativas
+Termo: Internet Comercial | Tipo: Rede Global | Definicao: A rede global de computadores acessível ao público em geral e utilizada para fins comerciais, de comunicação e informação, operando sob modelos de negócios e provedores de serviço.
+  Vantagens de Internet Comercial: Acesso global à informação e comunicação; Plataforma para comércio eletrônico e serviços online; Inovação e desenvolvimento de novas tecnologias e aplicações
+  Desvantagens de Internet Comercial: Riscos de segurança (malware, phishing, roubo de dados); Questões de privacidade; Dependência de infraestrutura e provedores; Desinformação e conteúdo de baixa qualidade
+  Casos de uso de Internet Comercial: Navegação na web; Envio de e-mails; Comércio eletrônico; Streaming de mídia; Redes sociais
+
+-- Tabelas comparativas --
+Tabela 'Sistemas Compartilhados (Década de 90) - Vantagens e Desvantagens': Esta tabela resume os benefícios e desafios introduzidos pela popularização das redes locais e do modelo cliente-servidor na década de 90.
+  Linha LIN_006: Aspecto = Autonomia e Eficiência; Vantagens = Maior autonomia das estações de trabalho; redes locais com compartilhamento eficiente; surgimento de ambientes mais distribuídos e escaláveis.; Desvantagens = Novos riscos de segurança devido ao aumento da conectividade.
+    (Relacionado a: rede_local_lan, modelo_cliente_servidor)
+  Linha LIN_007: Aspecto = Configuração e Gerenciamento; Vantagens = Permite o compartilhamento de recursos como impressoras.; Desvantagens = Maior complexidade de configuração e administração; necessidade de treinamento técnico específico.
+    (Relacionado a: rede_local_lan, modelo_cliente_servidor)
+
+-- Relacionamentos --
+Conexao: 'rede_local_lan' --[suporta]--> 'modelo_cliente_servidor'. Motivo: Redes Locais (LANs) frequentemente implementam o modelo Cliente-Servidor para gerenciar o acesso a recursos compartilhados.
+Conexao: 'internet_comercial' --[popularizou]--> 'rede_local_lan'. Motivo: A popularização da Internet comercial impulsionou a adoção de Redes Locais (LANs) para conectar usuários à rede mundial.
+Conexao: 'modelo_cliente_servidor' --[introduziu]--> 'seguranca_como_preocupacao'. Motivo: O modelo Cliente-Servidor, ao centralizar serviços, introduziu a segurança como uma preocupação mais latente devido à necessidade de proteger o servidor.
+
+=== SECAO [TI_SEC_005]: Evolução dos Sistemas de Computação - Década de 2000 – Interligação de Sistemas e Redes ===
+A partir da década de 2000, o foco se voltou para a interligação de sistemas e redes, onde componentes localizados em diferentes computadores se comunicam e coordenam ações através de troca de mensagens. Essa abordagem permite que um sistema inicie um processo em outro sistema e receba sua saída, criando fluxos de trabalho complexos e integrados.
+
+-- Conceitos-chave --
+Termo: Interligação de Sistemas | Tipo: Conceito de Arquitetura | Definicao: A conexão e coordenação de múltiplos sistemas computacionais, que podem estar distribuídos geograficamente, para trabalharem juntos e trocarem informações.
+  Vantagens de Interligação de Sistemas: Permite a criação de sistemas distribuídos complexos; Melhora a eficiência ao delegar processamento; Facilita a integração de funcionalidades de diferentes sistemas; Aumenta a resiliência (se um sistema falhar, outros podem continuar)
+  Desvantagens de Interligação de Sistemas: Complexidade na comunicação e coordenação; Requer protocolos de comunicação padronizados; Desafios de segurança na troca de dados entre sistemas; Gerenciamento e monitoramento mais complexos
+  Casos de uso de Interligação de Sistemas: Sistemas bancários integrados; Plataformas de e-commerce que se comunicam com sistemas de pagamento e logística; Sistemas de gestão empresarial (ERP) integrados com CRM; Internet das Coisas (IoT)
+Termo: Troca de Mensagens | Tipo: Protocolo/Mecanismo de Comunicação | Definicao: Um mecanismo de comunicação entre processos ou sistemas onde dados são enviados em unidades discretas (mensagens) através de uma rede ou middleware.
+  Vantagens de Troca de Mensagens: Desacoplamento entre remetente e destinatário; Permite comunicação assíncrona; Facilita a escalabilidade e resiliência; Suporta diferentes modelos de comunicação (ponto a ponto, publicação/assinatura)
+  Desvantagens de Troca de Mensagens: Latência pode ser maior que chamadas diretas; Gerenciamento de filas e ordenação de mensagens pode ser complexo; Necessidade de um broker de mensagens em alguns cenários
+  Casos de uso de Troca de Mensagens: Sistemas distribuídos; Microsserviços; Integração de aplicações legadas; Filas de tarefas
+
+-- Relacionamentos --
+Conexao: 'interligacao_de_sistemas' --[baseado_em]--> 'troca_de_mensagens'. Motivo: A interligação de sistemas frequentemente se baseia na troca de mensagens para coordenar ações e compartilhar dados.
+Conexao: 'interligacao_de_sistemas' --[permite]--> 'processamento_distribuido'. Motivo: A interligação de sistemas permite que o processamento seja distribuído entre múltiplos computadores.
+
+=== SECAO [TI_SEC_006]: Sistemas Banda Larga – Década de Surgimento: 1990 (Início), Mas Ampla Adoção Só Nos Anos 2000 ===
+O conceito de banda larga, com conexões de alta velocidade permanentes, surgiu nos anos 90, substituindo as lentas conexões discadas (dial-up). Tecnologias como ADSL, cabo e fibra óptica começaram a ser implantadas no final da década de 90, mas a ampla adoção ocorreu nos anos 2000, especialmente na América Latina. A banda larga viabilizou aplicações multimídia na web, como streaming de vídeo e videoconferências, e permitiu a interação cinética entre sistemas integrados.
+
+-- Conceitos-chave --
+Termo: Banda Larga | Tipo: Tecnologia de Rede | Definicao: Conexão de internet de alta velocidade e permanente, que substitui as conexões discadas (dial-up) lentas, permitindo a transmissão de grandes volumes de dados.
+  Vantagens de Banda Larga: Altas velocidades de download e upload; Conexão sempre ativa (sem necessidade de discagem); Viabiliza aplicações multimídia e serviços online intensivos; Melhora a produtividade e a experiência do usuário
+  Desvantagens de Banda Larga: Custo de implementação e manutenção da infraestrutura; Disponibilidade pode variar dependendo da localização e tecnologia; Requer equipamentos compatíveis (modems, roteadores)
+  Casos de uso de Banda Larga: Streaming de vídeo e música; Videoconferências; Jogos online; Download de arquivos grandes; Acesso a serviços em nuvem
+Termo: Conexão Discada (Dial-up) | Tipo: Tecnologia de Rede Legada | Definicao: Um método de conexão à internet que utiliza a linha telefônica para transmitir dados em baixa velocidade (tipicamente 56 kbps ou menos).
+  Vantagens de Conexão Discada (Dial-up): Utiliza infraestrutura telefônica existente; Baixo custo inicial (se já possuir linha telefônica)
+  Desvantagens de Conexão Discada (Dial-up): Velocidade extremamente baixa; Linha telefônica fica ocupada durante a conexão; Não suporta aplicações multimídia modernas; Instabilidade da conexão
+  Casos de uso de Conexão Discada (Dial-up): Acesso à internet em locais remotos com infraestrutura limitada (historicamente); Conexões de backup de emergência
+Termo: ADSL (Asymmetric Digital Subscriber Line) | Tipo: Tecnologia de Rede | Definicao: Uma tecnologia de banda larga que utiliza linhas telefônicas de cobre para fornecer acesso à internet de alta velocidade, com velocidades de download maiores que as de upload.
+  Vantagens de ADSL (Asymmetric Digital Subscriber Line): Velocidades de download significativamente maiores que dial-up; Permite uso simultâneo de telefone e internet; Utiliza infraestrutura telefônica existente
+  Desvantagens de ADSL (Asymmetric Digital Subscriber Line): Velocidade diminui com a distância da central telefônica; Velocidade de upload é limitada; Menos comum em áreas rurais ou remotas
+  Casos de uso de ADSL (Asymmetric Digital Subscriber Line): Acesso residencial à internet de banda larga; Pequenos escritórios
+Termo: Fibra Óptica | Tipo: Tecnologia de Rede | Definicao: Tecnologia de transmissão de dados que utiliza cabos de vidro ou plástico para enviar sinais de luz em alta velocidade, oferecendo a maior capacidade e velocidade de banda larga.
+  Vantagens de Fibra Óptica: Velocidades extremamente altas (simétricas ou assimétricas); Alta capacidade de transmissão; Imune a interferências eletromagnéticas; Menor atenuação do sinal em longas distâncias
+  Desvantagens de Fibra Óptica: Custo de instalação da infraestrutura pode ser alto; Cabos são mais frágeis que os de cobre; Requer equipamentos especializados (transceptores ópticos)
+  Casos de uso de Fibra Óptica: Backbone da Internet; Provedores de internet de alta velocidade; Redes corporativas de grande porte; Acesso residencial de altíssima velocidade (FTTH)
+
+-- Relacionamentos --
+Conexao: 'banda_larga' --[substituiu]--> 'conexao_discada'. Motivo: A banda larga substituiu a conexão discada como o principal meio de acesso à internet devido à sua velocidade e capacidade superiores.
+Conexao: 'adsl' --[exemplo_de]--> 'banda_larga'. Motivo: ADSL é uma das tecnologias que viabilizaram a banda larga.
+Conexao: 'fibra_optica' --[exemplo_de]--> 'banda_larga'. Motivo: Fibra óptica é uma tecnologia de ponta para banda larga, oferecendo as maiores velocidades.
+Conexao: 'banda_larga' --[viabilizou]--> 'aplicacoes_multimidia'. Motivo: A banda larga tornou viável o uso de aplicações multimídia na web, como streaming e videoconferências.
+
+=== SECAO [TI_SEC_007]: Standalone System – Sistema Isolado ===
+Um sistema isolado (standalone) é aquele em que o usuário opera sem comunicação com outras máquinas, sem compartilhar recursos ou arquivos. Embora tenha sido o modelo inicial, a tendência de compartilhamento e interconexão o tornou menos relevante. Uma rede de computadores, em contraste, é formada por módulos de processamento interconectados que trocam informações e compartilham recursos.
+
+-- Conceitos-chave --
+Termo: Sistema Isolado (Standalone) | Tipo: Configuração de Sistema | Definicao: Um sistema computacional que opera de forma independente, sem conexão com outras máquinas ou redes, e sem capacidade de compartilhar recursos ou dados.
+  Vantagens de Sistema Isolado (Standalone): Simplicidade de configuração e operação; Segurança inerente (não exposto a ameaças de rede); Não depende de infraestrutura de rede
+  Desvantagens de Sistema Isolado (Standalone): Impossibilidade de compartilhar recursos; Dificuldade de colaboração; Atualizações e backups podem ser mais trabalhosos; Acesso limitado a informações externas
+  Casos de uso de Sistema Isolado (Standalone): Computadores pessoais antigos sem conexão à internet; Dispositivos embarcados específicos (ex: um controlador de máquina industrial isolado); Sistemas de ponto de venda em estabelecimentos muito pequenos (historicamente)
+Termo: Rede de Computadores (Definição Formal) | Tipo: Conceito | Definicao: Um conjunto de módulos autônomos de processamento, interconectados por um sistema de comunicação, capazes de trocar informações e compartilhar recursos.
+  Vantagens de Rede de Computadores (Definição Formal): Compartilhamento de recursos e informações; Comunicação e colaboração; Escalabilidade; Redundância e tolerância a falhas (em redes bem projetadas)
+  Desvantagens de Rede de Computadores (Definição Formal): Complexidade de implementação e gerenciamento; Riscos de segurança; Dependência de infraestrutura
+  Casos de uso de Rede de Computadores (Definição Formal): Todas as aplicações de redes modernas (internet, LANs, WANs)
+Termo: Módulo Processador | Tipo: Componente de Rede | Definicao: Qualquer dispositivo capaz de processar informações, não se limitando apenas a computadores tradicionais, mas incluindo também outros equipamentos de rede.
+  Vantagens de Módulo Processador: Flexibilidade na arquitetura de rede; Permite a distribuição de tarefas de processamento
+  Desvantagens de Módulo Processador: Aumento da complexidade do sistema; Necessidade de gerenciamento e monitoramento individual
+  Casos de uso de Módulo Processador: Computadores (desktops, laptops, servidores); Smartphones e tablets; Roteadores e switches; Câmeras de segurança com processamento embarcado; Dispositivos IoT
+
+-- Relacionamentos --
+Conexao: 'sistema_isolado' --[contrasta_com]--> 'rede_de_computadores_definicao'. Motivo: O sistema isolado opera sem interconexão, enquanto uma rede de computadores é definida pela interconexão de módulos processadores.
+Conexao: 'rede_de_computadores_definicao' --[composto_por]--> 'modulo_processador'. Motivo: Uma rede de computadores é formada por um conjunto de módulos processadores interconectados.
+Conexao: 'modulo_processador' --[pode_ser]--> 'camera_de_monitoramento'. Motivo: Dispositivos como câmeras de monitoramento podem atuar como módulos processadores em uma rede.
+
+=== SECAO [TI_SEC_008]: Definições Adicionais de Redes de Computadores ===
+Redes de Computadores são sistemas finais conectados por enlaces de comunicação e comutadores de pacotes. Elas permitem o acesso à Internet através de Provedores de Serviços de Internet (ISPs), utilizando protocolos que controlam o envio e recebimento de informações. A abordagem Top Down de Kurose/Ross é citada como referência.
+
+-- Conceitos-chave --
+Termo: Enlace de Comunicação | Tipo: Componente de Rede | Definicao: O meio físico ou lógico que conecta dois ou mais dispositivos em uma rede, permitindo a transmissão de dados.
+  Vantagens de Enlace de Comunicação: Permite a transmissão de dados entre dispositivos; Pode ser de diferentes tipos (cabo, fibra, sem fio) para atender a diversas necessidades
+  Desvantagens de Enlace de Comunicação: Limitações de velocidade e distância; Susceptibilidade a interferências (dependendo do tipo); Custo de instalação e manutenção
+  Casos de uso de Enlace de Comunicação: Cabos Ethernet em LANs; Fibras ópticas em backbones; Ondas de rádio em redes Wi-Fi e celulares
+Termo: Comutador de Pacotes (Switch) | Tipo: Hardware de Rede | Definicao: Um dispositivo de rede que recebe pacotes de dados, examina o endereço de destino e os encaminha para a porta correta, conectando múltiplos dispositivos em uma rede local.
+  Vantagens de Comutador de Pacotes (Switch): Encaminhamento eficiente de dados em redes locais; Reduz colisões de rede em comparação com hubs; Permite comunicação simultânea entre múltiplos pares de portas
+  Desvantagens de Comutador de Pacotes (Switch): Custo maior que hubs; Pode se tornar um gargalo se sobrecarregado; Requer configuração em alguns cenários (switches gerenciáveis)
+  Casos de uso de Comutador de Pacotes (Switch): Conectar computadores, impressoras e outros dispositivos em uma LAN; Criar segmentos de rede para melhorar o desempenho
+Termo: Provedor de Serviços de Internet (ISP) | Tipo: Organização | Definicao: Uma empresa que fornece acesso à Internet e serviços relacionados a usuários finais e outras empresas.
+  Vantagens de Provedor de Serviços de Internet (ISP): Fornece acesso à rede global (Internet); Gerencia a infraestrutura de rede; Oferece diferentes planos de serviço e velocidades
+  Desvantagens de Provedor de Serviços de Internet (ISP): Custo mensal recorrente; Dependência do provedor para conectividade; Suporte técnico pode variar em qualidade
+  Casos de uso de Provedor de Serviços de Internet (ISP): Acesso residencial à Internet; Conectividade para empresas; Serviços de hospedagem e nuvem
+Termo: Protocolo de Rede | Tipo: Padrão/Regra | Definicao: Um conjunto de regras e convenções que governam a comunicação entre dispositivos em uma rede, definindo como os dados são formatados, transmitidos, recebidos e processados.
+  Vantagens de Protocolo de Rede: Garante a interoperabilidade entre diferentes sistemas e fabricantes; Padroniza a comunicação, tornando-a previsível; Permite a criação de serviços complexos sobre a rede
+  Desvantagens de Protocolo de Rede: Complexidade na implementação e entendimento; Pode haver sobrecarga (overhead) de dados para controle; Novos protocolos podem ser necessários para novas funcionalidades
+  Casos de uso de Protocolo de Rede: TCP/IP (base da Internet); HTTP (navegação web); SMTP (envio de e-mail); DNS (resolução de nomes de domínio)
+
+-- Relacionamentos --
+Conexao: 'rede_de_computadores_definicao' --[conectada_por]--> 'enlace_de_comunicacao'. Motivo: Sistemas finais em uma rede são conectados por enlaces de comunicação.
+Conexao: 'rede_de_computadores_definicao' --[utiliza]--> 'comutador_de_pacotes'. Motivo: Redes de computadores utilizam comutadores de pacotes para encaminhar dados.
+Conexao: 'rede_de_computadores_definicao' --[acessa]--> 'internet_comercial'. Motivo: Redes de computadores permitem o acesso à Internet através de ISPs.
+Conexao: 'rede_de_computadores_definicao' --[controlada_por]--> 'protocolo_de_rede'. Motivo: O envio e recebimento de informações em redes são controlados por protocolos de rede.
+

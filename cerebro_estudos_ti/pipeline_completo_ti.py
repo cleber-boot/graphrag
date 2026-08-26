@@ -7,6 +7,7 @@ import base64
 from openai import OpenAI
 from pydantic import BaseModel, Field
 from dotenv import load_dotenv
+from json_repair import repair_json  # pip install json-repair
 
 # Carrega as variáveis salvas no arquivo oculto .env
 load_dotenv()
@@ -23,23 +24,84 @@ client = OpenAI(
 
 MODELO = "google/gemini-2.5-flash-lite"  # modelo multimodal: aceita texto, PDF, áudio e vídeo
 
-class DetalhesTecnicos(BaseModel):
-    resumo_conceito: str = Field(description="O que é este conceito ou tecnologia de TI em poucas palavras.")
-    contexto_concurso: str = Field(description="Como este tema costuma cair em provas ou pegadinhas de bancas.")
+# Sem isso, a resposta pode ser cortada no meio de uma string do JSON em
+# PDFs densos (muitas tabelas/figuras/relações), causando os erros
+# "Unterminated string" / "Expecting property name..." no json.loads().
+# Suba esse valor se ainda cortar em documentos muito extensos.
+MAX_TOKENS_SAIDA = 32000
+
+class MetadadosDocumento(BaseModel):
+    titulo: str = Field(description="Nome do Livro/Artigo/Framework de TI abordado no material.")
+    tecnologias_citadas: list[str] = Field(description="Lista curta das principais tecnologias citadas no documento inteiro.")
+    idioma: str = Field(description="Idioma predominante do material. Ex: 'pt-BR'")
+
+
+class AtributosTecnicos(BaseModel):
+    vantagens: list[str] = Field(description="Pontos fortes / benefícios do conceito.")
+    desvantagens: list[str] = Field(description="Limitações, riscos ou trade-offs do conceito.")
+    casos_de_uso: list[str] = Field(description="Cenários em que faz sentido aplicar este conceito.")
+
+
+class ConceitoChave(BaseModel):
+    id_entidade: str = Field(description="ID único em minúsculas sem espaços ou acentos. Ex: 'api_gateway', 'idempotencia'")
+    termo: str = Field(description="Nome do conceito de TI. Ex: 'API Gateway', 'Idempotência'")
+    definicao: str = Field(description="O que é e qual problema de engenharia ele resolve.")
+    tipo_entidade: str = Field(description="Categoria. Ex: 'Protocolo', 'Arquitetura', 'Padrão', 'Ferramenta', 'Processo'")
+    atributos_tecnicos: AtributosTecnicos
+
+
+class ValorColuna(BaseModel):
+    coluna: str = Field(description="Nome da coluna (deve bater com um item de 'colunas' da tabela).")
+    valor: str = Field(description="Valor dessa coluna nesta linha.")
+
+
+class LinhaTabela(BaseModel):
+    id_linha: str
+    valores: list[ValorColuna] = Field(description="Pares coluna/valor desta linha, na mesma ordem de 'colunas'.")
+    entidades_relacionadas: list[str] = Field(description="IDs de entidades (id_entidade) ligadas a esta linha.")
+
+
+class Tabela(BaseModel):
+    tabela_id: str
+    titulo_tabela: str
+    descricao_contexto: str = Field(description="Análise comparativa: o que a tabela demonstra tecnicamente.")
+    colunas: list[str]
+    dados_linhas: list[LinhaTabela]
+
+
+class FiguraOuGrafico(BaseModel):
+    figura_id: str
+    titulo_figura: str
+    tipo_visual: str = Field(description="Ex: 'Arquitetura de Software', 'Fluxograma de Rede', 'Print de Código'")
+    dados_extraidos: str = Field(description="Descrição passo a passo do que a figura mostra.")
+    componentes_visuais: list[str] = Field(description="Elementos identificados na figura.")
+    entidades_relacionadas: list[str] = Field(description="IDs de entidades (id_entidade) ligadas a esta figura.")
+
+
+class RelacaoGrafo(BaseModel):
+    origem: str = Field(description="id_entidade de origem da conexão.")
+    tipo_relacao: str = Field(description="Ex: 'depende_de', 'implementa', 'mitiga_risco', 'substitui', 'comunica_com'")
+    destino: str = Field(description="id_entidade ou componente de destino da conexão.")
+    descricao_conexao: str = Field(description="Por que o componente A precisa/depende do componente B neste cenário.")
+
+
+class TextoBase(BaseModel):
+    resumo_narrativo: str = Field(description="Resumo denso do funcionamento técnico descrito na seção.")
+    conceitos_chave: list[ConceitoChave]
+
+
+class SecaoConteudo(BaseModel):
+    secao_id: str = Field(description="Ex: 'TI_SEC_001'")
+    titulo_secao: str = Field(description="Nome do capítulo/seção. Ex: 'Arquitetura de Microserviços'")
+    texto_base: TextoBase
+    tabelas: list[Tabela]
+    figuras_e_graficos: list[FiguraOuGrafico]
+    relacoes_grafo: list[RelacaoGrafo]
+
 
 class ExtracaoGrafoTI(BaseModel):
-    class NoTI(BaseModel):
-        id: str = Field(description="ID único em minúsculas sem espaços ou acentos. Ex: 'docker', 'protocolo_tcp'")
-        type: str = Field(description="Tipo da entidade. Deve ser: 'Tecnologia', 'Arquitetura', 'Protocolo', 'Algoritmo', 'Framework_Governanca', 'Vulnerabilidade' ou 'Questao'")
-        properties: DetalhesTecnicos = Field(description="Metadados técnicos obrigatórios estruturados.")
-
-    class RelacionamentoTI(BaseModel):
-        source: str = Field(description="ID do nó tecnológico de origem da conexão.")
-        relation_type: str = Field(description="Verbo de ligação em maiúsculo. Ex: 'EXECUTA_EM', 'IMPLEMENTA', 'VULNERAVEL_A'")
-        target: str = Field(description="ID do nó tecnológico de destino da conexão.")
-
-    nodes: list[NoTI] = Field(description="Lista contendo todos os nós conceituais de TI encontrados.")
-    relationships: list[RelacionamentoTI] = Field(description="Lista com as conexões lógicas encontradas.")
+    metadados_documento: MetadadosDocumento
+    conteudo_estruturado: list[SecaoConteudo]
 
 RESPONSE_FORMAT_ESTRUTURADO = {
     "type": "json_schema",
@@ -53,8 +115,11 @@ RESPONSE_FORMAT_ESTRUTURADO = {
 PROMPT_COMANDO = (
     "Você é um engenheiro de sistemas sênior e professor especialista em concursos de Tecnologia da Informação (TI). "
     "Analise minuciosamente o material fornecido (pode ser um PDF, um áudio, um vídeo ou texto). "
-    "Identifique todas as tecnologias, protocolos, arquiteturas, algoritmos, pegadinhas de bancas e questões presentes. "
-    "Gere uma lista estrita de Nós e Relacionamentos em JSON."
+    "Divida o conteúdo em seções lógicas (capítulos/tópicos). Para cada seção, extraia um resumo narrativo denso, "
+    "os conceitos-chave (com vantagens, desvantagens e casos de uso), tabelas comparativas presentes, "
+    "figuras/diagramas relevantes (descrevendo o que mostram passo a passo) e as relações de grafo entre as entidades "
+    "identificadas (dependência, implementação, mitigação de risco, substituição, comunicação etc.). "
+    "Preencha também os metadados gerais do documento. Gere a resposta seguindo estritamente o schema JSON fornecido."
 )
 
 MIME_POR_EXTENSAO = {
@@ -133,11 +198,19 @@ def extrair_grafo_de_arquivo(caminho_arquivo: str, extensao: str, descricao_mate
         ],
         response_format=RESPONSE_FORMAT_ESTRUTURADO,
         temperature=0.1,
+        max_tokens=MAX_TOKENS_SAIDA,
     )
+
+    escolha = response.choices[0]
+    if getattr(escolha, "finish_reason", None) == "length":
+        print(
+            f"        ⚠️  [Aviso] Resposta foi CORTADA por limite de tokens "
+            f"(max_tokens={MAX_TOKENS_SAIDA}). O JSON provavelmente virá truncado."
+        )
 
     print("        [Controle de Taxa] Pausando por 20 segundos para preservar os créditos...")
     time.sleep(20)
-    return response.choices[0].message.content
+    return escolha.message.content
 
 
 def extrair_grafo_de_youtube(url: str, descricao_materia: str) -> str:
@@ -157,31 +230,146 @@ def extrair_grafo_de_youtube(url: str, descricao_materia: str) -> str:
         ],
         response_format=RESPONSE_FORMAT_ESTRUTURADO,
         temperature=0.1,
+        max_tokens=MAX_TOKENS_SAIDA,
         extra_body={"provider": {"only": ["google-ai-studio"]}},  # exige provedor com suporte a link do YouTube
     )
 
+    escolha = response.choices[0]
+    if getattr(escolha, "finish_reason", None) == "length":
+        print(
+            f"        ⚠️  [Aviso] Resposta foi CORTADA por limite de tokens "
+            f"(max_tokens={MAX_TOKENS_SAIDA}). O JSON provavelmente virá truncado."
+        )
+
     print("        [Controle de Taxa] Pausando por 20 segundos para preservar os créditos...")
     time.sleep(20)
-    return response.choices[0].message.content
+    return escolha.message.content
 
 
 def salvar_dados_para_graphrag(json_str: str, nome_base: str, pasta_saida: str = "./input"):
+    """Achata o JSON estruturado (metadados + seções + conceitos + tabelas +
+    figuras + relações) em texto corrido denso, que é o formato que o
+    GraphRAG realmente consome (input: type: text). O GraphRAG não entende
+    JSON/tabelas/objetos — ele só chunkeia texto puro e extrai entidades
+    dele, então quanto mais explícito e narrativo o texto, melhor o grafo
+    final do GraphRAG fica."""
     os.makedirs(pasta_saida, exist_ok=True)
-    dados = json.loads(json_str)
+
+    try:
+        dados = json.loads(json_str)
+    except json.JSONDecodeError as erro_original:
+        # Fallback: tenta reparar JSON malformado (aspas não escapadas,
+        # string truncada por corte de tokens, vírgula sobrando, etc.)
+        # antes de desistir. Cobre os casos que o max_tokens mais alto
+        # não resolver sozinho.
+        print(
+            f"        ⚠️  [Aviso] JSON malformado ({erro_original}). "
+            f"Tentando reparo automático com json_repair..."
+        )
+        try:
+            json_str_reparado = repair_json(json_str)
+            dados = json.loads(json_str_reparado)
+            print("        ✅ [Reparo] JSON reparado com sucesso.")
+        except Exception:
+            # Salva o JSON bruto para inspeção manual em vez de só perder o conteúdo.
+            os.makedirs("./json_com_falha", exist_ok=True)
+            caminho_bruto = os.path.join("./json_com_falha", f"{nome_base}_{int(time.time())}.json")
+            with open(caminho_bruto, "w", encoding="utf-8") as f_bruto:
+                f_bruto.write(json_str)
+            print(f"        📄 [Diagnóstico] JSON bruto salvo em: {caminho_bruto}")
+            raise
 
     timestamp = int(time.time())
     nome_arquivo = f"conhecimento_ti_{nome_base}_{timestamp}.txt"
     caminho_final = os.path.join(pasta_saida, nome_arquivo)
 
-    with open(caminho_final, "w", encoding="utf-8") as f:
-        f.write("=== CONCEITOS E ENTIDADES DE TI ===\n")
-        for node in dados.get("nodes", []):
-            props = node['properties']
-            f.write(f"Tecnologia: {node['id']} | Categoria: {node['type']} | Resumo: {props['resumo_conceito']} | Foco Concurso: {props['contexto_concurso']}\n")
+    meta = dados.get("metadados_documento", {})
+    secoes = dados.get("conteudo_estruturado", [])
 
-        f.write("\n=== MAPA DE RELACIONAMENTOS ARQUITETURAIS ===\n")
-        for rel in dados.get("relationships", []):
-            f.write(f"Conexao: '{rel['source']}' --[{rel['relation_type']}]--> '{rel['target']}'\n")
+    with open(caminho_final, "w", encoding="utf-8") as f:
+        # --- Metadados do documento ---
+        f.write("=== METADADOS DO DOCUMENTO ===\n")
+        f.write(f"Titulo: {meta.get('titulo', '')}\n")
+        f.write(f"Idioma: {meta.get('idioma', '')}\n")
+        tecnologias = meta.get("tecnologias_citadas", [])
+        if tecnologias:
+            f.write(f"Tecnologias citadas no documento: {', '.join(tecnologias)}\n")
+        f.write("\n")
+
+        for secao in secoes:
+            titulo_secao = secao.get("titulo_secao", "")
+            secao_id = secao.get("secao_id", "")
+            f.write(f"=== SECAO [{secao_id}]: {titulo_secao} ===\n")
+
+            texto_base = secao.get("texto_base", {})
+            resumo = texto_base.get("resumo_narrativo", "")
+            if resumo:
+                f.write(f"{resumo}\n\n")
+
+            # --- Conceitos-chave ---
+            conceitos = texto_base.get("conceitos_chave", [])
+            if conceitos:
+                f.write("-- Conceitos-chave --\n")
+                for c in conceitos:
+                    f.write(
+                        f"Termo: {c.get('termo')} | Tipo: {c.get('tipo_entidade')} | "
+                        f"Definicao: {c.get('definicao')}\n"
+                    )
+                    atrib = c.get("atributos_tecnicos", {})
+                    vantagens = atrib.get("vantagens", [])
+                    desvantagens = atrib.get("desvantagens", [])
+                    casos_de_uso = atrib.get("casos_de_uso", [])
+                    if vantagens:
+                        f.write(f"  Vantagens de {c.get('termo')}: {'; '.join(vantagens)}\n")
+                    if desvantagens:
+                        f.write(f"  Desvantagens de {c.get('termo')}: {'; '.join(desvantagens)}\n")
+                    if casos_de_uso:
+                        f.write(f"  Casos de uso de {c.get('termo')}: {'; '.join(casos_de_uso)}\n")
+                f.write("\n")
+
+            # --- Tabelas (viram texto narrativo linha a linha) ---
+            tabelas = secao.get("tabelas", [])
+            if tabelas:
+                f.write("-- Tabelas comparativas --\n")
+                for t in tabelas:
+                    f.write(f"Tabela '{t.get('titulo_tabela')}': {t.get('descricao_contexto', '')}\n")
+                    for linha in t.get("dados_linhas", []):
+                        pares = "; ".join(
+                            f"{v.get('coluna')} = {v.get('valor')}" for v in linha.get("valores", [])
+                        )
+                        f.write(f"  Linha {linha.get('id_linha')}: {pares}\n")
+                        relacionadas = linha.get("entidades_relacionadas", [])
+                        if relacionadas:
+                            f.write(f"    (Relacionado a: {', '.join(relacionadas)})\n")
+                f.write("\n")
+
+            # --- Figuras e gráficos ---
+            figuras = secao.get("figuras_e_graficos", [])
+            if figuras:
+                f.write("-- Figuras e diagramas --\n")
+                for fig in figuras:
+                    f.write(
+                        f"Figura '{fig.get('titulo_figura')}' ({fig.get('tipo_visual')}): "
+                        f"{fig.get('dados_extraidos', '')}\n"
+                    )
+                    componentes = fig.get("componentes_visuais", [])
+                    if componentes:
+                        f.write(f"  Componentes visuais: {', '.join(componentes)}\n")
+                    relacionadas = fig.get("entidades_relacionadas", [])
+                    if relacionadas:
+                        f.write(f"  Relacionado a: {', '.join(relacionadas)}\n")
+                f.write("\n")
+
+            # --- Relações do grafo ---
+            relacoes = secao.get("relacoes_grafo", [])
+            if relacoes:
+                f.write("-- Relacionamentos --\n")
+                for rel in relacoes:
+                    f.write(
+                        f"Conexao: '{rel.get('origem')}' --[{rel.get('tipo_relacao')}]--> "
+                        f"'{rel.get('destino')}'. Motivo: {rel.get('descricao_conexao', '')}\n"
+                    )
+                f.write("\n")
 
     print(f"[Fase 2] Grafo textual salvo com sucesso para o GraphRAG: {caminho_final}")
 

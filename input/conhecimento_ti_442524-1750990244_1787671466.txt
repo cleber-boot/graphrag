@@ -1,0 +1,220 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Redes de Computadores
+Idioma: pt-BR
+Tecnologias citadas no documento: Ethernet, RM-OSI, Hub, Repeater, Switch, Router, Bridge, Modem
+
+=== SECAO [TI_SEC_001]: Equipamentos e Dispositivos de Redes de Computadores ===
+Esta seção introduz os componentes fundamentais que formam uma rede de computadores, detalhando exemplos de equipamentos e dispositivos essenciais para sua operação. Abrange desde as interfaces de conexão física, como placas de rede, até dispositivos de interconexão e comunicação, como repetidores, hubs, bridges, switches, roteadores, modems e gateways. Servidores e estações de trabalho são apresentados como os nós finais que utilizam a rede. A imagem ilustra uma topologia de rede com diversos desses componentes interconectados.
+
+-- Conceitos-chave --
+Termo: Placas de rede | Tipo: Hardware | Definicao: Componente de hardware que permite a um computador se conectar a uma rede, traduzindo dados em sinais que podem ser transmitidos pelo meio físico da rede e vice-versa.
+  Vantagens de Placas de rede: Permite a comunicação entre dispositivos em uma rede.
+  Desvantagens de Placas de rede: Pode ser um ponto de falha na rede.
+  Casos de uso de Placas de rede: Conectar qualquer dispositivo a uma rede local (LAN) ou remota.
+Termo: Repeaters | Tipo: Hardware | Definicao: Dispositivos de hardware utilizados para conectar dois ou mais segmentos de uma rede local, estendendo seu alcance. Eles recebem o sinal de um segmento, o amplificam e o retransmitem para outro segmento.
+  Vantagens de Repeaters: Estende o alcance físico de uma rede.; Permite a interconexão de segmentos de rede com diferentes meios físicos.
+  Desvantagens de Repeaters: Não inteligência de rede (não lê endereços MAC ou IP).; Amplifica ruídos junto com o sinal.; Limitação no número de repetidores por segmento (ex: 4 em Ethernet).
+  Casos de uso de Repeaters: Aumentar a distância de um cabo de rede.; Conectar segmentos de rede que usam tecnologias de cabo diferentes (ex: 10base2 e 10base5).
+Termo: Hubs | Tipo: Hardware | Definicao: Dispositivo de rede que conecta múltiplos dispositivos em uma LAN, funcionando como um repetidor multiportas. Ele retransmite qualquer pacote de dados recebido em uma porta para todas as outras portas.
+  Vantagens de Hubs: Simples e barato.; Facilita a conexão física de vários dispositivos.
+  Desvantagens de Hubs: Opera em modo half-duplex, reduzindo a eficiência.; Todos os dispositivos compartilham a mesma banda de rede.; Cria um único domínio de colisão, aumentando a probabilidade de colisões.; Não lê endereços MAC, retransmitindo para todas as portas (broadcasting).
+  Casos de uso de Hubs: Redes pequenas e simples onde o custo é um fator primordial.; Conectar dispositivos em uma LAN onde a performance não é crítica.
+Termo: Bridges / Switches | Tipo: Hardware | Definicao: Dispositivos de rede que conectam segmentos de rede e operam na camada de enlace (Camada 2 do modelo OSI). Eles aprendem os endereços MAC dos dispositivos conectados e encaminham pacotes apenas para o segmento de destino apropriado, reduzindo colisões e melhorando a performance.
+  Vantagens de Bridges / Switches: Reduzem colisões ao segmentar o tráfego.; Melhoram a performance da rede em comparação com hubs.; Operam em modo full-duplex (switches).
+  Desvantagens de Bridges / Switches: Mais caros que hubs.; Switches mais complexos podem ter limitações de processamento.
+  Casos de uso de Bridges / Switches: Segmentar redes locais para melhorar o desempenho.; Conectar diferentes segmentos de LAN.; Criar redes com maior número de dispositivos.
+Termo: Routers | Tipo: Hardware | Definicao: Dispositivos de rede que conectam diferentes redes (LANs ou WANs) e operam na camada de rede (Camada 3 do modelo OSI). Eles utilizam endereços IP para tomar decisões de encaminhamento de pacotes entre redes.
+  Vantagens de Routers: Conectam redes distintas.; Permitem o acesso à Internet.; Criar domínios de broadcast separados.; Podem implementar políticas de segurança e QoS.
+  Desvantagens de Routers: Mais complexos e caros que switches.; Podem introduzir latência devido ao processamento de pacotes.
+  Casos de uso de Routers: Conectar uma rede local à Internet.; Interconectar filiais de uma empresa.; Criar redes maiores e mais complexas.
+Termo: MoDem / Modem-Router | Tipo: Hardware | Definicao: Dispositivo que converte sinais digitais de um computador em sinais analógicos para transmissão por linhas telefônicas (modulação) e vice-versa (demodulação). Um modem-router combina as funcionalidades de um modem com as de um roteador.
+  Vantagens de MoDem / Modem-Router: Permite a conexão à Internet através de linhas telefônicas (DSL) ou cabo.; Modem-routers integram funções de roteamento e Wi-Fi.
+  Desvantagens de MoDem / Modem-Router: Velocidades podem ser limitadas dependendo da tecnologia (DSL).; Requer infraestrutura de provedor de serviços.
+  Casos de uso de MoDem / Modem-Router: Acesso à Internet em residências e pequenas empresas.; Conectar redes remotas através de linhas de comunicação.
+Termo: Gateways | Tipo: Hardware | Definicao: Um dispositivo de rede que conecta redes que utilizam protocolos de comunicação diferentes. Ele atua como um ponto de tradução entre os protocolos, permitindo a comunicação entre sistemas heterogêneos.
+  Vantagens de Gateways: Permite a comunicação entre redes com protocolos incompatíveis.; Pode atuar como ponto de segurança e controle de tráfego.
+  Desvantagens de Gateways: Complexidade na configuração e gerenciamento.; Pode ser um gargalo de performance se não dimensionado corretamente.
+  Casos de uso de Gateways: Conectar uma rede local a uma rede corporativa com diferentes arquiteturas.; Integrar sistemas legados com novas plataformas.; Acesso à Internet (o roteador doméstico frequentemente atua como gateway).
+Termo: Transceiver | Tipo: Hardware | Definicao: Um dispositivo que combina as funções de um transmissor e um receptor em um único módulo. Em redes, é frequentemente usado para converter sinais elétricos em sinais ópticos (em fibra óptica) ou vice-versa.
+  Vantagens de Transceiver: Permite a interconexão entre diferentes tipos de mídia de rede (ex: cobre e fibra).
+  Desvantagens de Transceiver: Adiciona um ponto de complexidade e custo.
+  Casos de uso de Transceiver: Conectar equipamentos de rede que utilizam diferentes tipos de cabos.; Converter sinais para transmissão em longa distância via fibra óptica.
+Termo: Servidores | Tipo: Hardware/Software | Definicao: Computadores ou programas que fornecem serviços a outros computadores (clientes) em uma rede. Podem ser dedicados a tarefas específicas como armazenamento de arquivos, hospedagem de sites, gerenciamento de e-mail, etc.
+  Vantagens de Servidores: Centralizam recursos e serviços.; Permitem o compartilhamento de dados e aplicações.; Oferecem alta disponibilidade e performance.
+  Desvantagens de Servidores: Custo de aquisição e manutenção.; Requerem administração especializada.; Ponto único de falha se não houver redundância.
+  Casos de uso de Servidores: Armazenamento de arquivos (File Server).; Hospedagem de sites (Web Server).; Gerenciamento de e-mail (Mail Server).; Autenticação de usuários (Authentication Server).
+Termo: Estações de Trabalho | Tipo: Hardware | Definicao: Computadores utilizados pelos usuários finais para acessar recursos da rede, executar aplicações e realizar tarefas. São os clientes em uma arquitetura cliente-servidor.
+  Vantagens de Estações de Trabalho: Permitem o acesso a recursos e serviços da rede.; Proporcionam a interface do usuário com a rede.
+  Desvantagens de Estações de Trabalho: Podem ser vetores de ataque se não protegidas.; Dependem da disponibilidade dos servidores e da rede.
+  Casos de uso de Estações de Trabalho: Navegação na web.; Uso de aplicações de escritório.; Comunicação por e-mail.; Acesso a sistemas corporativos.
+Termo: Domínio de colisão | Tipo: Conceito de Rede | Definicao: Uma área lógica em uma rede onde pacotes de dados podem colidir uns com os outros. Em redes baseadas em acesso compartilhado ao meio (como Ethernet com hubs), uma colisão em qualquer ponto do domínio afeta todos os dispositivos nele.
+  Vantagens de Domínio de colisão: Conceito fundamental para entender o funcionamento de redes mais antigas.
+  Desvantagens de Domínio de colisão: Reduz a eficiência da rede quando ocorrem muitas colisões.; Hubs criam grandes domínios de colisão.
+  Casos de uso de Domínio de colisão: Análise de performance em redes legadas.; Compreensão do funcionamento de hubs.
+
+-- Figuras e diagramas --
+Figura 'Diagrama de Rede com Equipamentos e Dispositivos' (Diagrama de Rede): O diagrama ilustra uma rede com múltiplos segmentos (LAN 1, LAN 2, LAN 3, LAN 4) interconectados. Um servidor de e-mail e um servidor web estão conectados a um switch na LAN 1. A LAN 1 também se conecta a um roteador. A LAN 3 e a LAN 4 são conectadas através de um switch e um repetidor, respectivamente, e ambas se conectam ao roteador. Uma impressora está conectada à LAN 2, que utiliza um hub. O roteador está conectado à Internet. Várias estações de trabalho estão distribuídas pelas LANs, conectadas a switches ou hubs.
+  Componentes visuais: Servidor e-mail, Servidor www, Switch, Roteador, Internet, LAN 1, LAN 3, Repetidor, Estação de Trabalho, Impressora, Hub, LAN 2, Bridge, LAN 4
+  Relacionado a: servidor, switch, router, internet, repeater, estacao_de_trabalho, impressora, hub, bridge
+Figura 'Representação de Domínios de Colisão e Tipos de Transmissão' (Diagrama Conceitual): À esquerda, são mostrados exemplos de domínios de colisão. Um domínio de colisão simples é ilustrado com vários dispositivos conectados a um hub. Um domínio de colisão estendido pelo repetidor mostra como um repetidor pode conectar dois segmentos, mas ambos ainda compartilham o mesmo domínio de colisão. À direita, são ilustrados os tipos de transmissão de pacotes: Unicast (um para um), Broadcast (um para todos) e Multicast (um para vários). Anycast (um para o mais próximo) também é mostrado.
+  Componentes visuais: Domínio de colisão, Domínio de Colisão estendido pelo Repetidor, Unicast, Broadcast, Multicast, Anycast
+  Relacionado a: dominio_de_colisao, repeater, hub
+
+-- Relacionamentos --
+Conexao: 'servidor_email' --[conectado_a]--> 'switch_lan1'. Motivo: O servidor de e-mail está conectado a um switch para comunicação dentro da LAN 1.
+Conexao: 'servidor_www' --[conectado_a]--> 'switch_lan1'. Motivo: O servidor web está conectado a um switch para comunicação dentro da LAN 1.
+Conexao: 'switch_lan1' --[conectado_a]--> 'router'. Motivo: O switch da LAN 1 está conectado ao roteador para permitir comunicação com outras redes.
+Conexao: 'router' --[conectado_a]--> 'internet'. Motivo: O roteador conecta a rede local à Internet.
+Conexao: 'repeater' --[conectado_a]--> 'lan4'. Motivo: O repetidor é usado para estender o alcance da LAN 4.
+Conexao: 'hub_lan2' --[conectado_a]--> 'impressora'. Motivo: A impressora está conectada a um hub na LAN 2.
+Conexao: 'estacao_de_trabalho' --[conectado_a]--> 'switch'. Motivo: Estações de trabalho se conectam a switches para acesso à rede.
+Conexao: 'estacao_de_trabalho' --[conectado_a]--> 'hub'. Motivo: Estações de trabalho se conectam a hubs em redes mais simples.
+Conexao: 'bridge' --[conectado_a]--> 'lan4'. Motivo: Uma bridge conecta a LAN 4 a outros segmentos de rede.
+Conexao: 'repeater' --[estende_dominio_colisao]--> 'dominio_de_colisao'. Motivo: Repetidores podem estender um domínio de colisão, mas não o segmentam.
+Conexao: 'hub' --[cria]--> 'dominio_de_colisao'. Motivo: Hubs criam um único e grande domínio de colisão para todos os dispositivos conectados.
+
+=== SECAO [TI_SEC_002]: Repetidores (Repeaters) ===
+Repetidores são dispositivos de hardware que operam na Camada Física (Camada 1) do modelo OSI. Sua função principal é receber um sinal elétrico, amplificá-lo e retransmiti-lo para estender o alcance de um segmento de rede. Eles são úteis para conectar dois ou mais segmentos de rede, inclusive aqueles que utilizam diferentes tipos de meios físicos, como cabos de par trançado (ex: 10base2) e cabos coaxiais (ex: 10base5). No entanto, repetidores não possuem inteligência de rede; eles simplesmente regeneram o sinal, incluindo ruídos, e não conseguem diferenciar tráfego ou segmentar redes. A regra 543 Ethernet, por exemplo, limita o número de repetidores em uma rede para evitar a propagação excessiva de colisões e atrasos.
+
+-- Conceitos-chave --
+Termo: Repetidores (Repeaters) | Tipo: Hardware | Definicao: Dispositivos de hardware que recebem, amplificam e retransmitem sinais elétricos para estender o alcance de uma rede. Operam na Camada 1 (Física) do modelo OSI.
+  Vantagens de Repetidores (Repeaters): Estendem o alcance físico de uma rede.; Permitem a interconexão de segmentos com diferentes meios físicos (ex: 10base2 e 10base5).
+  Desvantagens de Repetidores (Repeaters): Não possuem inteligência de rede (não leem endereços MAC/IP).; Amplificam ruídos junto com o sinal.; Aumentam o domínio de colisão.; Limitados em número por segmento (ex: máximo de 4 em Ethernet).
+  Casos de uso de Repetidores (Repeaters): Aumentar a distância de um cabo de rede.; Conectar segmentos de rede que usam tecnologias de cabo diferentes.
+Termo: Camada 1 do Modelo RM-OSI | Tipo: Modelo de Referência | Definicao: A camada física é a camada mais baixa do modelo OSI, responsável pela transmissão e recepção de bits brutos sobre um meio físico de comunicação. Ela define as características elétricas, mecânicas e funcionais da interface com o meio.
+  Vantagens de Camada 1 do Modelo RM-OSI: Define os padrões para a transmissão física de dados.
+  Desvantagens de Camada 1 do Modelo RM-OSI: Não lida com endereçamento lógico ou roteamento.
+  Casos de uso de Camada 1 do Modelo RM-OSI: Entender como os sinais são transmitidos pelo meio físico.; Especificar cabos, conectores e sinais elétricos/ópticos.
+Termo: 10base2 | Tipo: Padrão de Rede | Definicao: Um padrão de rede Ethernet que utiliza cabo coaxial fino (Thinnet), opera a 10 Mbps e pode cobrir segmentos de até 185 metros.
+  Vantagens de 10base2: Custo relativamente baixo para cabos.
+  Desvantagens de 10base2: Susceptível a interferências.; Difícil de solucionar problemas.; Topologia em barramento com limitações de comprimento e número de nós.
+  Casos de uso de 10base2: Redes locais mais antigas.
+Termo: 10base5 | Tipo: Padrão de Rede | Definicao: Um padrão de rede Ethernet que utiliza cabo coaxial grosso (Thicknet), opera a 10 Mbps e pode cobrir segmentos de até 500 metros. É mais robusto que o 10base2.
+  Vantagens de 10base5: Maior alcance e robustez que 10base2.; Mais fácil de identificar problemas na rede.
+  Desvantagens de 10base5: Cabo mais caro e difícil de instalar.; Topologia em barramento com limitações.
+  Casos de uso de 10base5: Redes locais mais antigas que necessitavam de maior alcance.
+Termo: IEEE (Institute of Electrical and Electronics Engineers) | Tipo: Organização | Definicao: Uma organização profissional global que desenvolve padrões em diversas áreas, incluindo redes de computadores (como os padrões Ethernet).
+  Vantagens de IEEE (Institute of Electrical and Electronics Engineers): Desenvolve padrões técnicos amplamente adotados.; Promove a interoperabilidade entre dispositivos.
+  Desvantagens de IEEE (Institute of Electrical and Electronics Engineers): O processo de padronização pode ser lento.
+  Casos de uso de IEEE (Institute of Electrical and Electronics Engineers): Definir especificações para tecnologias de rede.; Garantir a compatibilidade de equipamentos.
+Termo: Regra 543 Ethernet | Tipo: Regra/Padrão | Definicao: Uma regra estabelecida pelo IEEE que define limitações para o uso de repetidores em redes Ethernet, visando manter a integridade do sinal e evitar problemas de performance. Um exemplo comum é a regra '5-4-3' que limita o número de segmentos e repetidores.
+  Vantagens de Regra 543 Ethernet: Ajuda a manter a qualidade do sinal e a performance da rede.
+  Desvantagens de Regra 543 Ethernet: Limita a expansão física da rede.
+  Casos de uso de Regra 543 Ethernet: Dimensionar redes Ethernet para garantir a confiabilidade.
+
+-- Figuras e diagramas --
+Figura 'Repetidor no Modelo OSI e em Topologia de Rede' (Diagrama Conceitual e Topologia): A figura à esquerda mostra um repetidor posicionado na Camada Física (Física) do modelo OSI, indicando que ele opera apenas nesta camada. As camadas superiores (Enlace, Rede, Transporte, Sessão, Apresentação, Aplicação) não são processadas pelo repetidor. A figura também ilustra que um repetidor pode conectar dois nós de extremidade (Nó de extremidade) em uma rede. A figura à direita mostra um diagrama de topologia de rede onde um repetidor é usado para conectar dois segmentos de rede, com outros repetidores também presentes, ilustrando como eles podem ser encadeados ou interconectados.
+  Componentes visuais: Modelo OSI (Física, Enlace, Rede, Transporte, Sessão, Apresentação, Aplicação), Repetidor, Nó de extremidade, Diagrama de topologia de rede com repetidores
+  Relacionado a: repeater, camada_fisica_osi
+
+-- Relacionamentos --
+Conexao: 'repeater' --[opera_na_camada]--> 'camada_fisica_osi'. Motivo: Repetidores operam exclusivamente na Camada Física do modelo OSI.
+Conexao: 'repeater' --[conecta_segmentos]--> 'rede'. Motivo: Repetidores são usados para conectar diferentes segmentos de uma rede.
+Conexao: 'repeater' --[permite_interoperabilidade_entre]--> 'ethernet_10base2'. Motivo: Repetidores podem ser usados para conectar segmentos que utilizam diferentes tecnologias de meio físico, como 10base2.
+Conexao: 'repeater' --[permite_interoperabilidade_entre]--> 'ethernet_10base5'. Motivo: Repetidores podem ser usados para conectar segmentos que utilizam diferentes tecnologias de meio físico, como 10base5.
+Conexao: 'ieee' --[define]--> 'regra_543_ethernet'. Motivo: O IEEE define regras como a 543 para o uso de repetidores em redes Ethernet.
+Conexao: 'regra_543_ethernet' --[limita_uso_de]--> 'repeater'. Motivo: A regra 543 Ethernet impõe limitações no número de repetidores que podem ser usados em uma rede.
+
+=== SECAO [TI_SEC_003]: Domínio de Colisão ===
+Um domínio de colisão é uma área lógica em uma rede onde pacotes de dados podem colidir uns com os outros. Isso ocorre principalmente em redes que utilizam um meio de transmissão compartilhado, como as redes Ethernet mais antigas que empregavam hubs. Quando uma colisão acontece, ela afeta todas as estações dentro desse domínio, exigindo que os dispositivos retransmitam os dados. Domínios de colisão podem existir em um único segmento de rede, em uma porção dela ou até mesmo em toda a rede. Dispositivos como hubs promovem um domínio de colisão, enquanto switches e roteadores ajudam a segmentar esses domínios, reduzindo a probabilidade e o impacto das colisões. A gestão de domínios de colisão é crucial para a performance da rede.
+
+-- Conceitos-chave --
+Termo: Domínio de colisão | Tipo: Conceito de Rede | Definicao: Uma área lógica em uma rede onde pacotes de dados podem colidir uns com os outros. Em redes com acesso compartilhado ao meio, uma colisão em qualquer ponto afeta todas as estações dentro do domínio.
+  Vantagens de Domínio de colisão: Conceito fundamental para entender o funcionamento de redes mais antigas e o impacto de hubs.
+  Desvantagens de Domínio de colisão: Reduz a eficiência da rede quando ocorrem muitas colisões.; Hubs criam grandes domínios de colisão.; Pacotes broadcast atingem todas as estações dentro do domínio.
+  Casos de uso de Domínio de colisão: Análise de performance em redes legadas.; Compreensão do funcionamento de hubs.; Entender a necessidade de switches e roteadores para segmentação.
+Termo: Hub | Tipo: Hardware | Definicao: Um dispositivo de rede que conecta múltiplos dispositivos em uma LAN, operando como um repetidor multiportas. Ele retransmite qualquer pacote recebido em uma porta para todas as outras portas, criando um único domínio de colisão.
+  Vantagens de Hub: Simples e barato.
+  Desvantagens de Hub: Cria um único domínio de colisão.; Opera em half-duplex.; Todos os dispositivos compartilham a mesma banda.
+  Casos de uso de Hub: Redes pequenas e simples onde o custo é primordial.
+Termo: Repetidor | Tipo: Hardware | Definicao: Um dispositivo que regenera e retransmite sinais elétricos para estender o alcance de uma rede. Repetidores não segmentam domínios de colisão; eles os estendem.
+  Vantagens de Repetidor: Estende o alcance físico da rede.
+  Desvantagens de Repetidor: Estende o domínio de colisão.; Não segmenta o tráfego.
+  Casos de uso de Repetidor: Aumentar a distância de um cabo de rede.
+Termo: Switch | Tipo: Hardware | Definicao: Um dispositivo de rede que conecta múltiplos dispositivos em uma LAN, operando na Camada 2 (Enlace). Switches aprendem endereços MAC e encaminham pacotes apenas para a porta de destino, criando domínios de colisão menores (geralmente um por porta).
+  Vantagens de Switch: Segmenta domínios de colisão.; Opera em full-duplex.; Melhora a performance da rede.
+  Desvantagens de Switch: Mais caro que hubs.
+  Casos de uso de Switch: Segmentar redes locais para melhorar o desempenho.
+Termo: Roteador | Tipo: Hardware | Definicao: Um dispositivo de rede que conecta diferentes redes (Camada 3 - Rede). Roteadores criam barreiras para domínios de broadcast e, consequentemente, para domínios de colisão, pois cada interface de roteador representa um limite para um domínio de colisão.
+  Vantagens de Roteador: Segmenta domínios de broadcast e colisão.; Permite a interconexão de redes distintas.
+  Desvantagens de Roteador: Mais complexo e caro que switches.
+  Casos de uso de Roteador: Conectar redes locais à Internet.; Interconectar filiais de uma empresa.
+Termo: Pacotes broadcast | Tipo: Tipo de Pacote | Definicao: Mensagens de rede enviadas para todos os dispositivos em um determinado domínio de broadcast. Em um domínio de colisão, pacotes broadcast atingem todas as estações dentro desse domínio.
+  Vantagens de Pacotes broadcast: Útil para descoberta de serviços ou envio de mensagens para todos os hosts.
+  Desvantagens de Pacotes broadcast: Podem sobrecarregar a rede se usados excessivamente.
+  Casos de uso de Pacotes broadcast: Protocolos de descoberta de rede (ex: ARP).; Envio de mensagens de status para todos os dispositivos.
+Termo: Acesso compartilhado | Tipo: Método de Acesso | Definicao: Um método de acesso ao meio de transmissão onde múltiplos dispositivos compartilham o mesmo canal de comunicação. Isso frequentemente leva à necessidade de mecanismos de controle de acesso e pode resultar em colisões.
+  Vantagens de Acesso compartilhado: Simples de implementar em redes pequenas.
+  Desvantagens de Acesso compartilhado: Propenso a colisões e degradação de performance com mais dispositivos.; Requer mecanismos de detecção e recuperação de colisões.
+  Casos de uso de Acesso compartilhado: Redes Ethernet antigas com hubs.; Redes sem fio (embora com mecanismos mais sofisticados).
+
+-- Figuras e diagramas --
+Figura 'Domínio de Colisão e Tipos de Transmissão' (Diagrama Conceitual): A figura ilustra o conceito de domínio de colisão. Um domínio de colisão simples é mostrado com vários dispositivos conectados a um hub. Um repetidor é mostrado estendendo um domínio de colisão, conectando dois segmentos, mas ambos ainda compartilham o mesmo domínio. À direita, são apresentados os tipos de transmissão de pacotes: Unicast (um para um), Broadcast (um para todos) e Multicast (um para vários). Anycast (um para o mais próximo) também é ilustrado.
+  Componentes visuais: Domínio de colisão, Domínio de Colisão estendido pelo Repetidor, Unicast, Broadcast, Multicast, Anycast
+  Relacionado a: dominio_de_colisao, hub, repeater, pacote_broadcast
+
+-- Relacionamentos --
+Conexao: 'hub' --[cria]--> 'dominio_de_colisao'. Motivo: Hubs criam um único e grande domínio de colisão para todos os dispositivos conectados.
+Conexao: 'repeater' --[estende]--> 'dominio_de_colisao'. Motivo: Repetidores estendem um domínio de colisão existente, em vez de segmentá-lo.
+Conexao: 'switch' --[segmenta]--> 'dominio_de_colisao'. Motivo: Switches segmentam domínios de colisão, criando domínios menores (geralmente por porta).
+Conexao: 'router' --[segmenta]--> 'dominio_de_colisao'. Motivo: Roteadores criam barreiras para domínios de colisão, pois cada interface representa um limite.
+Conexao: 'dominio_de_colisao' --[afeta]--> 'pacote_broadcast'. Motivo: Pacotes broadcast atingem todas as estações dentro de um domínio de colisão.
+Conexao: 'acesso_compartilhado' --[promove]--> 'dominio_de_colisao'. Motivo: O acesso compartilhado ao meio de transmissão é uma causa comum para a existência de domínios de colisão.
+
+=== SECAO [TI_SEC_004]: Hub – Concentrador ou Multport Repeater ===
+O Hub, também conhecido como concentrador ou repetidor multiportas, é um dispositivo de rede que opera na Camada Física (Camada 1) do modelo OSI. Sua principal função é conectar múltiplos equipamentos em uma rede local (LAN), servindo como um ponto central de conexão física. Um hub não é capaz de 'ler' endereços MAC ou IP; ele simplesmente repete o sinal elétrico recebido em uma porta para todas as outras portas. Isso significa que todas as portas de um hub compartilham o mesmo segmento de rede e a mesma banda de comunicação, geralmente operando em velocidades de 10 ou 100 Mb/s em modo half-duplex. Essa característica faz com que todos os dispositivos conectados a um hub compartilhem o mesmo domínio de colisão. Consequentemente, muitos pontos conectados a um único hub podem levar a colisões excessivas, prejudicando a transmissão de dados. Apesar disso, hubs oferecem maior flexibilidade para LANs Ethernet, especialmente com cabos de par trançado ou fibra óptica, e são uma solução econômica para redes menores.
+
+-- Conceitos-chave --
+Termo: Hub – Concentrador ou Multport Repeater | Tipo: Hardware | Definicao: Dispositivo de rede que conecta múltiplos equipamentos em uma LAN, operando na Camada 1 (Física) do modelo OSI. Ele repete o sinal recebido em uma porta para todas as outras portas.
+  Vantagens de Hub – Concentrador ou Multport Repeater: Simples e barato.; Facilita a conexão física de vários dispositivos.; Oferece maior flexibilidade para LANs Ethernet (cabo par trançado ou fibra óptica).
+  Desvantagens de Hub – Concentrador ou Multport Repeater: Não lê endereços MAC ou IP.; Opera em modo half-duplex.; Todas as portas compartilham o mesmo segmento e banda.; Cria um único e grande domínio de colisão.; Pode causar colisões excessivas e prejudicar a transmissão de dados.
+  Casos de uso de Hub – Concentrador ou Multport Repeater: Redes pequenas e simples onde o custo é um fator primordial.; Conectar dispositivos em uma LAN onde a performance não é crítica.
+Termo: Camada 1 do RM-OSI | Tipo: Modelo de Referência | Definicao: A camada física é responsável pela transmissão e recepção de bits brutos sobre um meio físico. Hubs operam nesta camada, pois lidam apenas com a regeneração e retransmissão de sinais elétricos.
+  Vantagens de Camada 1 do RM-OSI: Define os padrões para a transmissão física de dados.
+  Desvantagens de Camada 1 do RM-OSI: Não lida com endereçamento lógico ou roteamento.
+  Casos de uso de Camada 1 do RM-OSI: Entender como os sinais são transmitidos pelo meio físico.; Especificar cabos, conectores e sinais elétricos/ópticos.
+Termo: LANs Ethernet | Tipo: Padrão de Rede | Definicao: Um padrão de rede local amplamente utilizado, que define as especificações para cabeamento, sinalização e protocolos de acesso ao meio.
+  Vantagens de LANs Ethernet: Amplamente adotado e suportado.; Oferece diversas opções de velocidade e meio físico.
+  Desvantagens de LANs Ethernet: Pode sofrer com colisões em configurações mais antigas (com hubs).
+  Casos de uso de LANs Ethernet: Redes locais em residências, escritórios e data centers.
+Termo: Cabo par trançado | Tipo: Meio Físico | Definicao: Um tipo de cabeamento de rede comum, onde pares de fios são trançados para reduzir interferências eletromagnéticas.
+  Vantagens de Cabo par trançado: Custo relativamente baixo.; Fácil instalação.; Suporta velocidades de até Gigabit Ethernet.
+  Desvantagens de Cabo par trançado: Limitado em distância (geralmente 100 metros).; Susceptível a interferências em ambientes com muito ruído elétrico.
+  Casos de uso de Cabo par trançado: Conexões de rede em escritórios e residências.
+Termo: Fibra óptica | Tipo: Meio Físico | Definicao: Um meio de transmissão que utiliza pulsos de luz para transmitir dados através de finos filamentos de vidro ou plástico. Oferece alta velocidade e longa distância.
+  Vantagens de Fibra óptica: Altíssima velocidade e largura de banda.; Imune a interferências eletromagnéticas.; Longas distâncias de transmissão.
+  Desvantagens de Fibra óptica: Custo mais elevado.; Instalação e manutenção mais complexas.
+  Casos de uso de Fibra óptica: Backbones de rede.; Conexões de longa distância.; Ambientes com alto risco de interferência eletromagnética.
+Termo: Modo half-duplex | Tipo: Modo de Comunicação | Definicao: Um modo de comunicação onde os dados podem ser transmitidos em ambas as direções, mas não simultaneamente. É como uma rua de mão única que pode ter o tráfego invertido.
+  Vantagens de Modo half-duplex: Requer menos complexidade de hardware do que full-duplex.
+  Desvantagens de Modo half-duplex: Reduz a eficiência da comunicação, pois os dispositivos precisam esperar sua vez para transmitir.; Aumenta a probabilidade de colisões em redes com acesso compartilhado.
+  Casos de uso de Modo half-duplex: Redes mais antigas com hubs.; Alguns dispositivos de rádio.
+Termo: Domínio de colisão | Tipo: Conceito de Rede | Definicao: Uma área lógica em uma rede onde pacotes de dados podem colidir uns com os outros. Hubs criam um único domínio de colisão para todos os dispositivos conectados a ele.
+  Vantagens de Domínio de colisão: Conceito fundamental para entender o funcionamento de redes mais antigas.
+  Desvantagens de Domínio de colisão: Reduz a eficiência da rede quando ocorrem muitas colisões.; Hubs criam grandes domínios de colisão.
+  Casos de uso de Domínio de colisão: Análise de performance em redes legadas.; Compreensão do funcionamento de hubs.
+Termo: Broadcasting | Tipo: Método de Transmissão | Definicao: O processo de enviar um pacote de dados para todos os dispositivos em uma rede ou segmento de rede. Em um hub, o sinal recebido é retransmitido para todas as portas, o que pode ser considerado uma forma de broadcasting de sinal.
+  Vantagens de Broadcasting: Útil para descoberta de serviços ou envio de mensagens para todos os hosts.
+  Desvantagens de Broadcasting: Pode sobrecarregar a rede se usado excessivamente.; Em hubs, contribui para colisões.
+  Casos de uso de Broadcasting: Protocolos de descoberta de rede (ex: ARP).; Envio de mensagens de status para todos os dispositivos.
+
+-- Figuras e diagramas --
+Figura 'Hub (Concentrador) e Diagrama de Rede com Hubs' (Hardware e Diagrama de Rede): A figura mostra um dispositivo físico de um hub de 8 portas. Uma imagem de um diagrama de rede ilustra como um hub é usado para conectar vários PCs e um servidor em uma LAN. A conexão é feita através de um cabo 'daisy-chain' (encadeado) entre os dispositivos e o hub. A imagem também destaca o conceito de 'Collision domain' associado ao uso de hubs.
+  Componentes visuais: Hub de 8 portas, PC, Server, Hub, Daisy-chain port, Collision domain, Hubs
+  Relacionado a: hub, dominio_de_colisao
+Figura 'Identificação de um Hub' (Hardware e Aviso): A imagem exibe um dispositivo de rede com a etiqueta '8 Port Nway Switch'. No entanto, um aviso destacado com linhas vermelhas e um balão de texto afirma: 'Atenção: Isto não é um switch, mas sim, um HUB!'. Isso serve para ilustrar que, visualmente, alguns dispositivos podem parecer switches, mas sua funcionalidade interna (e o impacto na rede) é de um hub.
+  Componentes visuais: Hub de 8 portas (etiquetado como Switch), PWR (Power), LINK/ACT (Link/Activity LEDs), Aviso: 'Isto não é um switch, mas sim, um HUB!'
+  Relacionado a: hub, switch
+
+-- Relacionamentos --
+Conexao: 'hub' --[opera_na_camada]--> 'camada_fisica_osi'. Motivo: Hubs operam na Camada 1 (Física) do modelo OSI.
+Conexao: 'hub' --[conecta]--> 'estacao_de_trabalho'. Motivo: Hubs são usados para conectar estações de trabalho e outros dispositivos em uma LAN.
+Conexao: 'hub' --[conecta]--> 'servidor'. Motivo: Hubs podem conectar servidores a uma LAN.
+Conexao: 'hub' --[utiliza_meio]--> 'cabo_par_trancado'. Motivo: Hubs são frequentemente usados com cabos de par trançado em LANs Ethernet.
+Conexao: 'hub' --[utiliza_meio]--> 'fibra_optica'. Motivo: Hubs podem ser usados com fibra óptica, embora menos comum que com par trançado.
+Conexao: 'hub' --[opera_em_modo]--> 'half_duplex'. Motivo: Hubs operam em modo half-duplex, o que limita a eficiência da comunicação.
+Conexao: 'hub' --[cria]--> 'dominio_de_colisao'. Motivo: Hubs criam um único e grande domínio de colisão para todos os dispositivos conectados.
+Conexao: 'hub' --[promove]--> 'broadcasting'. Motivo: A forma como um hub retransmite sinais para todas as portas pode ser vista como um tipo de broadcasting de sinal.
+Conexao: 'hub' --[pode_causar]--> 'colisao_excessiva'. Motivo: Muitos dispositivos conectados a um hub podem levar a colisões excessivas.
+Conexao: 'hub' --[diferente_de]--> 'switch'. Motivo: Apesar de visualmente semelhantes, hubs e switches têm funcionalidades e impactos na rede muito diferentes.
+

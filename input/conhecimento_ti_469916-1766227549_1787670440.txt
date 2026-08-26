@@ -1,0 +1,125 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Redes de Computadores - Cabeamento Estruturado - Administration (Administração) - ANSI/TIA 606 (A, B, C)
+Idioma: pt-BR
+Tecnologias citadas no documento: Cabeamento Estruturado, ANSI/TIA 606, Redes de Computadores, TIA-606-B, TIA-606-C
+
+=== SECAO [TI_SEC_001]: Introdução às Normas EIA/TIA para Cabeamento Estruturado ===
+Este material introduz as normas EIA/TIA relevantes para cabeamento estruturado em redes de computadores, com foco especial na norma ANSI/TIA 606, que trata da administração e documentação. As normas abordadas incluem a ANSI TIA 568 (especificação geral para instalações comerciais), ANSI TIA 569 (encaminhamento de cabos e infraestrutura), ANSI TIA 606 (administração da documentação), ANSI TIA 607 (aterramento) e ANSI TIA 570 (instalações residenciais). Uma figura ilustra os componentes de um sistema de cabeamento estruturado, como cabeamento horizontal, backbone vertical, áreas de trabalho, centros de telecomunicações, salas de equipamentos, facilidades de entrada e administração.
+
+-- Conceitos-chave --
+Termo: ANSI TIA 568 | Tipo: Padrão | Definicao: Norma que especifica os requisitos gerais para cabeamento estruturado em instalações comerciais, definindo a infraestrutura física e lógica necessária para redes de comunicação.
+  Vantagens de ANSI TIA 568: Padronização para instalações comerciais; Garante interoperabilidade e escalabilidade
+  Desvantagens de ANSI TIA 568: Pode ser complexa para pequenas instalações
+  Casos de uso de ANSI TIA 568: Projetos de cabeamento em escritórios; Data centers; Instalações industriais
+Termo: ANSI TIA 569 | Tipo: Padrão | Definicao: Norma que estabelece as especificações gerais para o encaminhamento de cabos, incluindo infraestrutura como canaletas, bandejas, eletrodutos e calhas, garantindo a proteção e organização dos cabos.
+  Vantagens de ANSI TIA 569: Proteção física dos cabos; Facilita a manutenção e expansão; Organização visual da infraestrutura
+  Desvantagens de ANSI TIA 569: Pode aumentar o custo inicial do projeto
+  Casos de uso de ANSI TIA 569: Instalação de cabos em edifícios; Gerenciamento de infraestrutura de telecomunicações
+Termo: ANSI TIA 606 | Tipo: Padrão | Definicao: Norma que define os requisitos para a administração da documentação de sistemas de cabeamento estruturado, incluindo identificação e etiquetagem de componentes para facilitar o gerenciamento.
+  Vantagens de ANSI TIA 606: Facilita a identificação e localização de cabos e equipamentos; Melhora a eficiência na manutenção e solução de problemas; Padroniza a documentação
+  Desvantagens de ANSI TIA 606: Requer disciplina na aplicação das regras de etiquetagem
+  Casos de uso de ANSI TIA 606: Gerenciamento de redes em qualquer tipo de instalação; Documentação de infraestrutura de telecomunicações
+Termo: ANSI TIA 607 | Tipo: Padrão | Definicao: Norma que especifica os requisitos para o sistema de aterramento em instalações de telecomunicações, garantindo a segurança e o bom funcionamento dos equipamentos.
+  Vantagens de ANSI TIA 607: Segurança contra choques elétricos; Proteção contra surtos eletromagnéticos; Melhora a integridade do sinal
+  Desvantagens de ANSI TIA 607: Requer instalação e manutenção adequadas
+  Casos de uso de ANSI TIA 607: Instalações de redes de computadores; Sistemas de telecomunicações
+Termo: ANSI TIA 570 | Tipo: Padrão | Definicao: Norma que define as especificações gerais para cabeamento estruturado em instalações residenciais, adaptando os padrões comerciais para o ambiente doméstico.
+  Vantagens de ANSI TIA 570: Adequado para redes domésticas; Facilita a instalação de serviços de comunicação em residências
+  Desvantagens de ANSI TIA 570: Menos robusto que os padrões comerciais
+  Casos de uso de ANSI TIA 570: Instalação de redes em casas e apartamentos; Sistemas de automação residencial
+
+-- Tabelas comparativas --
+Tabela 'Normas EIA/TIA para Cabeamento Estruturado': Tabela que resume as principais normas EIA/TIA relacionadas a cabeamento estruturado, indicando o assunto tratado por cada uma.
+  Linha LIN_001: Normas EIA/TIA = ANSI TIA 568; Assunto Tratado = Especificação geral sobre cabeamento estruturado em instalações comerciais
+    (Relacionado a: ansi_tia_568)
+  Linha LIN_002: Normas EIA/TIA = ANSI TIA 569; Assunto Tratado = Especificações gerais para encaminhamento de cabos (Infra-estrutura, canaletas, bandejas, eletrodutos, calhas)
+    (Relacionado a: ansi_tia_569)
+  Linha LIN_003: Normas EIA/TIA = ANSI TIA 606; Assunto Tratado = Administração da Documentação
+    (Relacionado a: ansi_tia_606)
+  Linha LIN_004: Normas EIA/TIA = ANSI TIA 607; Assunto Tratado = Especificação de Aterramento
+    (Relacionado a: ansi_tia_607)
+  Linha LIN_005: Normas EIA/TIA = ANSI TIA 570; Assunto Tratado = Especificação geral sobre cabeamento estruturado em instalações residenciais
+    (Relacionado a: ansi_tia_570)
+
+-- Figuras e diagramas --
+Figura 'Componentes do Cabeamento Estruturado' (Diagrama de Rede): O diagrama ilustra os diferentes níveis e áreas de um sistema de cabeamento estruturado. Começando com a facilidade de entrada (6) e a área de trabalho (3) com tomadas (3). O cabeamento horizontal (1) conecta as áreas de trabalho aos centros de telecomunicações (4). O backbone vertical (2) conecta os centros de telecomunicações entre andares ou edifícios. Salas de equipamentos (5) abrigam dispositivos de rede. A administração (7) é um componente transversal que gerencia toda a infraestrutura.
+  Componentes visuais: Cabeamento horizontal, Backbone (Cabeamento vertical), Área de trabalho, Centros de telecomunicações, Salas de equipamentos, Facilidades de entrada, Administração
+  Relacionado a: ansi_tia_568, ansi_tia_569, ansi_tia_606
+
+=== SECAO [TI_SEC_002]: Administração da Documentação - ANSI TIA 606 ===
+A norma ANSI/TIA 606, especificamente suas revisões A, B e C, estabelece um padrão para a administração da infraestrutura de telecomunicações, focando na identificação e documentação de componentes. O objetivo é uniformizar o esquema de administração, principalmente através de etiquetas padronizadas que mapeiam cabos, salas de telecomunicações e posições em painéis. A norma evoluiu ao longo do tempo, com a versão TIA-606-B (2012) cobrindo diversas classes de instalações e a TIA-606-C (2017) refinando essas especificações. A documentação gerada, conhecida como 'AS BUILT', é crucial para manutenção, expansão e solução de problemas, incluindo relatórios, desenhos e ordens de serviço.
+
+-- Conceitos-chave --
+Termo: ANSI TIA 606-A | Tipo: Padrão | Definicao: Primeiro padrão voluntário estabelecido pela TIA em 2002 para a administração da infraestrutura de telecomunicações, com foco na criação de um nível mínimo de informações em etiquetas de cabos.
+  Vantagens de ANSI TIA 606-A: Estabeleceu um ponto de partida para a padronização da documentação; Introduziu o conceito de etiquetagem mapeada
+  Desvantagens de ANSI TIA 606-A: Limitado em escopo comparado às versões posteriores
+  Casos de uso de ANSI TIA 606-A: Projetos de cabeamento implementados após 2002
+Termo: ANSI TIA 606-B | Tipo: Padrão | Definicao: Atualização do padrão em 2012, que incluiu especificações para identificação e melhores práticas administrativas em todas as classes de sistemas de rede, cobrindo desde pequenos edifícios comerciais até grandes empresas e data centers.
+  Vantagens de ANSI TIA 606-B: Abrangência maior, aplicável a diversos tamanhos de instalações; Melhorou as práticas administrativas
+  Desvantagens de ANSI TIA 606-B: Ainda em evolução para atender novas tecnologias
+  Casos de uso de ANSI TIA 606-B: Gerenciamento de infraestrutura em campus corporativos; Data centers; Grandes redes empresariais
+Termo: ANSI TIA 606-C | Tipo: Padrão | Definicao: Revisão do padrão em junho de 2017, especificando sistemas de administração para infraestrutura de telecomunicações em edifícios (comerciais, industriais, residenciais, data centers) e entre edifícios.
+  Vantagens de ANSI TIA 606-C: Atualizado com as necessidades modernas de infraestrutura; Especifica detalhadamente a identificação de componentes
+  Desvantagens de ANSI TIA 606-C: Requer adesão rigorosa para ser eficaz
+  Casos de uso de ANSI TIA 606-C: Projetos de infraestrutura de telecomunicações em edifícios; Gerenciamento de redes complexas
+Termo: "AS BUILT" | Tipo: Documentação | Definicao: Documentação final de um projeto de rede que reflete o estado real da instalação após a conclusão. Inclui todos os detalhes técnicos, desenhos, relatórios de testes, lista de materiais e especificações.
+  Vantagens de "AS BUILT": Essencial para manutenção e expansão futura; Permite compreensão detalhada da rede; Facilita a solução de problemas
+  Desvantagens de "AS BUILT": Pode se tornar desatualizada se não for mantida; Requer esforço contínuo para ser precisa
+  Casos de uso de "AS BUILT": Gerenciamento de infraestrutura de TI; Planejamento de atualizações de rede; Auditorias de rede
+Termo: Etiquetagem Padronizada | Tipo: Processo | Definicao: Uso de códigos alfanuméricos e de cores para identificar de forma única e consistente todos os componentes da infraestrutura de telecomunicações, conforme definido pela norma TIA-606.
+  Vantagens de Etiquetagem Padronizada: Facilita a identificação rápida de cabos e conexões; Reduz erros de manutenção; Melhora a eficiência operacional
+  Desvantagens de Etiquetagem Padronizada: Requer um sistema de etiquetagem bem definido e aplicado; Pode ser um processo demorado inicialmente
+  Casos de uso de Etiquetagem Padronizada: Identificação de cabos em data centers; Marcação de painéis de conexão; Documentação de rotas de cabos
+Termo: Codificação de Cores | Tipo: Padrão | Definicao: Utilização de cores específicas em etiquetas ou nos próprios cabos para indicar o tipo de conexão, o local de terminação ou a função do circuito, conforme especificado pela norma TIA-606.
+  Vantagens de Codificação de Cores: Auxilia na identificação visual rápida; Complementa a codificação alfanumérica; Reduz a ambiguidade
+  Desvantagens de Codificação de Cores: A interpretação das cores pode variar se não houver padronização clara; Pode ser limitada em ambientes com muitas cores já presentes
+  Casos de uso de Codificação de Cores: Diferenciação de tipos de cabos (dados, voz, energia); Identificação de terminações em painéis; Sinalização de circuitos de segurança
+
+-- Tabelas comparativas --
+Tabela 'Exemplo de Etiquetagem de Cabo (TIA-606-C)': Esta tabela ilustra um exemplo de como um cabo é identificado de acordo com a norma TIA-606-C, mostrando a estrutura da etiqueta que inclui informações sobre o ponto de origem e destino, bem como o tipo de link.
+  Linha LIN_006: Componente = Link Identificador Original; Identificador = 1A - B01
+    (Relacionado a: etiquetagem_padronizada, ansi_tia_606_c)
+  Linha LIN_007: Componente = Link Identificador Horizontal; Identificador = 1A.1-35.08.LNK
+    (Relacionado a: etiquetagem_padronizada, ansi_tia_606_c)
+Tabela 'Codificação de Cores ANSI TIA 606': Tabela que detalha a codificação de cores conforme a norma ANSI TIA 606, associando cada cor a um tipo específico de terminação ou circuito, facilitando a identificação visual rápida.
+  Linha LIN_008: Cor = Laranja; Código = 150C; Descrição = Ponto de demarcação (terminação do escritório central)
+    (Relacionado a: codificacao_cores, ansi_tia_606)
+  Linha LIN_009: Cor = Verde; Código = 353C; Descrição = Terminação de conexões de rede no ponto de demarcação (lado cliente)
+    (Relacionado a: codificacao_cores, ansi_tia_606)
+  Linha LIN_010: Cor = Rosa; Código = ; Descrição = Terminação de cabos originada de equipamentos comuns (PBXs, computadores, LANs e multiplex)
+    (Relacionado a: codificacao_cores, ansi_tia_606)
+  Linha LIN_011: Cor = Branco; Código = ; Descrição = Primeiro nível da terminação de mídia do backbone de telecomunicações no edifício contendo a conexão cruzada principal (conexão cruzada principal ao TC ou conexão cruzada principal ao local intermediário da conexão cruzada)
+    (Relacionado a: codificacao_cores, ansi_tia_606)
+  Linha LIN_012: Cor = Cinza; Código = 422C; Descrição = Segundo nível da terminação de mídia do backbone de telecomunicações no edifício contendo a conexão cruzada principal (local intermediário da conexão cruzada ao TC)
+    (Relacionado a: codificacao_cores, ansi_tia_606)
+  Linha LIN_013: Cor = Azul; Código = 291C; Descrição = Terminação da mídia da estação de telecomunicações; exigido somente no TC e sala de equipamentos ao final do cabo, e não no outlet de telecomunicações.
+    (Relacionado a: codificacao_cores, ansi_tia_606)
+  Linha LIN_014: Cor = Marrom; Código = 465C; Descrição = Terminações do cabo do backbone inter-edifícios (conexão cruzada principal à conexão cruzada intermediária remota)
+    (Relacionado a: codificacao_cores, ansi_tia_606)
+  Linha LIN_015: Cor = Amarelo; Código = 101C; Descrição = Terminação de circuitos auxiliares, alarmes, manutenção, segurança e outros circuitos menores.
+    (Relacionado a: codificacao_cores, ansi_tia_606)
+  Linha LIN_016: Cor = Vermelho; Código = 184C; Descrição = Terminação dos principais sistemas de telefonia
+    (Relacionado a: codificacao_cores, ansi_tia_606)
+
+-- Figuras e diagramas --
+Figura 'Exemplo de Identificação de Link Horizontal' (Diagrama de Rede): O diagrama mostra um exemplo de como um link horizontal é identificado. Começa com um 'Link Identificador original' (1A - B01) que se conecta a um 'Patch Panel B' na 'Entrada 1' da 'Sala Telecom A' no 'Piso 1'. Em outro cenário, um 'Link identificador não terminado no mesmo espaço' é mostrado, conectando um 'Patch Panel na prateleira 35' no 'Rack 1' da 'Sala Telecom 1A' à 'Port 8', com o identificador de link horizontal sendo '1A.1-35.08.LNK'.
+  Componentes visuais: Link Identificador original, Sala Telecom A, Piso 1, Patch Panel B, Entrada 1, Link identificador não terminado no mesmo espaço, Patch Panel na prateleira 35, Rack 1, Sala Telecom 1A, Port 8, Identificador de link horizontal
+  Relacionado a: etiquetagem_padronizada, ansi_tia_606_c
+Figura 'Exemplo de Identificação de Patch Panel e Cabos' (Diagrama de Rede): Este diagrama ilustra a identificação de um patch panel e seus cabos associados. Um 'Link identificador terminado no mesmo espaço' é mostrado, conectando um 'Patch Panel at Rack Unit 42' no 'Cabinet BB13' a um 'Patch Panel na prateleira 41' no 'Gabinete KB13' na 'Porta06'. A etiqueta do cabo é 'BB13-42:06/KB13-41:06'. Abaixo, um patch panel com portas numeradas de 1 a 6 é exibido, com a etiqueta 'BB13-42 p 01-06 to KB13-41 p 01-06', indicando a conexão entre os gabinetes BB13 e KB13.
+  Componentes visuais: Link identificador terminado no mesmo espaço, Patch Panel at Rack Unit 42, Cabinet BB13, Gabinete KB13, Patch Panel na prateleira 41, Porta06, Patch Panel, Gabinete BB13, Gabinete KB13, Portas 01-06
+  Relacionado a: etiquetagem_padronizada, ansi_tia_606_c
+Figura 'Diagrama de Infraestrutura de Telecomunicações' (Diagrama de Rede): O diagrama representa a infraestrutura de telecomunicações em um edifício. Inclui um 'Armário de telecomunicações (TC)' e uma 'Área de trabalho' com uma 'Estação' (tomada). Outro 'Armário de telecomunicações (TC)' está conectado a dutos e cabos horizontais. Uma 'Sala de entrada de telecom. (EF)' também é mostrada, conectada a dutos e cabos entre prédios e a um eletrodo de aterramento. Elementos como 'Cross-connect', 'Aterramento' e 'Tomada' são indicados. Uma 'Sala de equipamentos - ER' também é representada.
+  Componentes visuais: Armário de telecomunicações (TC), Área de trabalho, Estação, Dutos e cabos horizontais, Sala de entrada de telecom. (EF), Dutos e cabos entre prédios, Eletrodo de aterramento, Cross-connect, Aterramento, Tomada, Sala de equipamentos - ER
+  Relacionado a: ansi_tia_569, ansi_tia_607
+
+-- Relacionamentos --
+Conexao: 'ansi_tia_606' --[define]--> 'etiquetagem_padronizada'. Motivo: A norma ANSI/TIA 606 define os padrões e diretrizes para a etiquetagem padronizada de componentes de infraestrutura de telecomunicações.
+Conexao: 'ansi_tia_606' --[define]--> 'codificacao_cores'. Motivo: A norma ANSI/TIA 606 especifica o uso de codificação de cores como parte do sistema de identificação.
+Conexao: 'etiquetagem_padronizada' --[utiliza]--> 'codificacao_cores'. Motivo: A etiquetagem padronizada frequentemente utiliza a codificação de cores para facilitar a identificação.
+Conexao: 'ansi_tia_606_c' --[atualiza]--> 'ansi_tia_606_b'. Motivo: A versão TIA-606-C é uma atualização da versão TIA-606-B.
+Conexao: 'ansi_tia_606_b' --[atualiza]--> 'ansi_tia_606_a'. Motivo: A versão TIA-606-B é uma atualização da versão TIA-606-A.
+Conexao: 'as_built' --[essencial_para]--> 'manutencao_rede'. Motivo: A documentação 'AS BUILT' é fundamental para a manutenção eficaz da rede.
+Conexao: 'as_built' --[essencial_para]--> 'expansao_rede'. Motivo: A documentação 'AS BUILT' é crucial para planejar e executar a expansão da rede.
+Conexao: 'ansi_tia_569' --[define]--> 'infraestrutura_fisica_cabos'. Motivo: A norma TIA-569 define os padrões para a infraestrutura física por onde os cabos passam.
+Conexao: 'ansi_tia_607' --[define]--> 'aterramento_telecomunicacoes'. Motivo: A norma TIA-607 estabelece os requisitos para o sistema de aterramento em instalações de telecomunicações.
+

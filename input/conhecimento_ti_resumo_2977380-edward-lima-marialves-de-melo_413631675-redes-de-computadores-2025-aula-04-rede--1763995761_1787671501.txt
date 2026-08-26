@@ -1,0 +1,122 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Rede de Computadores - Topologia de Rede Quanto a Disposição Física dos Equipamentos de Rede
+Idioma: pt-BR
+Tecnologias citadas no documento: Ponto a Ponto, Estrela, Anel, Barra, Árvore, Mista/Híbrida, Hub, Switch, Token Ring
+
+=== SECAO [TI_SEC_001]: Introdução à Topologia de Rede ===
+A topologia de rede, no contexto da disposição física dos equipamentos, descreve como as estações (computadores) estão fisicamente distribuídas e a rota utilizada pelos cabos para interligar os nós (hosts). As topologias básicas incluem Ponto a Ponto, Estrela, Anel ou Ring, Barra, Árvore e Estrutura Mista ou Híbrida.
+
+-- Conceitos-chave --
+Termo: Topologia de Rede (Física) | Tipo: Conceito de Rede | Definicao: Define a forma como os equipamentos de rede estão fisicamente distribuídos e a rota dos cabos para interligar os nós.
+  Vantagens de Topologia de Rede (Física): Permite visualizar a estrutura física da rede.
+  Desvantagens de Topologia de Rede (Física): Não descreve o fluxo lógico dos dados.
+  Casos de uso de Topologia de Rede (Física): Planejamento e instalação de redes.; Identificação de cabos e equipamentos.; Resolução de problemas físicos.
+
+=== SECAO [TI_SEC_002]: Topologia Ponto a Ponto ===
+A topologia Ponto a Ponto é a mais simples, conectando diretamente dois dispositivos sem intermediários. Em redes maiores, pode envolver um retransmissor (hub ou switch) onde cada dispositivo se conecta a ele ponto a ponto.
+
+-- Conceitos-chave --
+Termo: Topologia Ponto a Ponto | Tipo: Topologia de Rede | Definicao: Conexão direta entre dois dispositivos, sem a necessidade de outros dispositivos intermediários.
+  Vantagens de Topologia Ponto a Ponto: Simplicidade.; Conexão dedicada.
+  Desvantagens de Topologia Ponto a Ponto: Escalabilidade limitada para redes grandes.; Custo elevado se muitos dispositivos precisarem se comunicar entre si.
+  Casos de uso de Topologia Ponto a Ponto: Conexão direta entre dois computadores.; Conexão de um dispositivo a um switch/hub.
+Termo: Hub/Switch | Tipo: Equipamento de Rede | Definicao: Dispositivo de rede que atua como um ponto central de conexão em topologias como Estrela ou Ponto a Ponto (em redes maiores). O switch é mais inteligente que o hub, direcionando o tráfego apenas para o destino correto.
+  Vantagens de Hub/Switch: Centraliza a conexão.; Facilita a adição/remoção de dispositivos.; Switch: direcionamento eficiente do tráfego.
+  Desvantagens de Hub/Switch: Hub: ponto único de falha.; Hub: pode gerar congestionamento.; Switch: custo geralmente maior que hub.
+  Casos de uso de Hub/Switch: Conectar múltiplos dispositivos em uma rede local (LAN).; Criar a estrutura central em topologia Estrela.
+
+-- Figuras e diagramas --
+Figura 'Diagrama de Topologia Ponto a Ponto com Retransmissor' (Diagrama de Rede): A figura ilustra dois computadores conectados a um dispositivo central (representado como um switch ou hub). Cada computador tem uma conexão ponto a ponto com este dispositivo central, que gerencia a comunicação entre eles.
+  Componentes visuais: Computador 1, Computador 2, Hub/Switch, Cabos de rede
+  Relacionado a: ponto_a_ponto, hub_switch
+
+-- Relacionamentos --
+Conexao: 'ponto_a_ponto' --[implementa]--> 'hub_switch'. Motivo: Em redes maiores, a topologia ponto a ponto é frequentemente implementada através de um hub ou switch central.
+
+=== SECAO [TI_SEC_003]: Topologia em Estrela ===
+Na topologia em Estrela, todos os computadores são conectados a um componente centralizado (hub ou switch) através de segmentos de cabo. Os dados trafegam por este componente central, que os redireciona ao destino. Cada conexão de um nó ao central é um link ponto a ponto. Esta topologia foi uma das primeiras utilizadas.
+
+-- Conceitos-chave --
+Termo: Topologia em Estrela | Tipo: Topologia de Rede | Definicao: Todos os dispositivos são conectados a um ponto central (hub ou switch), formando uma estrutura semelhante a uma estrela.
+  Vantagens de Topologia em Estrela: Facilidade em isolar falhas (cada estação ligada ao concentrador).; Facilidade de inclusão/remoção de novas estações.; Direcionamento simples pelo concentrador.; Baixo investimento a médio/longo prazo.
+  Desvantagens de Topologia em Estrela: Confiabilidade: falha no concentrador derruba a rede (sem redundância).; Concentrador pode ser um ponto de congestionamento.
+  Casos de uso de Topologia em Estrela: Redes locais (LANs) em escritórios e residências.; Redes que necessitam de fácil expansão e gerenciamento.
+
+-- Relacionamentos --
+Conexao: 'estrela' --[depende_de]--> 'hub_switch'. Motivo: A topologia em Estrela requer um dispositivo centralizado (hub ou switch) para conectar todos os nós.
+Conexao: 'estrela' --[implementa]--> 'ponto_a_ponto'. Motivo: Cada conexão individual de um nó ao hub/switch na topologia Estrela é um link ponto a ponto.
+
+=== SECAO [TI_SEC_004]: Topologia Anel ou Ring ===
+Na topologia Anel (Ring), cada dispositivo é conectado ao próximo, formando um círculo fechado. Os dados percorrem os nós em uma única direção (ou em ambas em anéis duplos) até chegar ao destino. Cada dispositivo tem dois vizinhos, e não há um computador central. Pode-se usar um 'token' para controle de acesso, como no Token Ring da IBM.
+
+-- Conceitos-chave --
+Termo: Topologia em Anel (Ring) | Tipo: Topologia de Rede | Definicao: Dispositivos conectados em um círculo fechado, onde os dados circulam em uma direção (ou ambas em anel duplo).
+  Vantagens de Topologia em Anel (Ring): Organização simples e estruturada.; Evita colisões de dados quando usa token.; Boa performance sob cargas moderadas e previsíveis.
+  Desvantagens de Topologia em Anel (Ring): Único ponto de falha pode derrubar toda a rede (exceto anel redundante).; Dificuldade de manutenção (adicionar/remover dispositivos interrompe a comunicação).; Diagnóstico de falhas mais complicado.
+  Casos de uso de Topologia em Anel (Ring): Redes que necessitam de controle de acesso determinístico.; Ambientes onde colisões de dados precisam ser evitadas.
+Termo: Token Ring | Tipo: Protocolo/Tecnologia de Rede | Definicao: Tecnologia de rede em anel (criada pela IBM) que utiliza um 'token' (sinal pequeno) para controlar quem pode transmitir dados, evitando colisões. Apenas o dispositivo com o token pode transmitir.
+  Vantagens de Token Ring: Evita colisões de dados.; Comunicação organizada.; Boa performance sob cargas moderadas.
+  Desvantagens de Token Ring: Complexidade de implementação.; Ponto único de falha no anel (sem redundância).; Manutenção pode ser complexa.
+  Casos de uso de Token Ring: Redes corporativas que exigem alta confiabilidade e controle de acesso.; Ambientes com tráfego de dados previsível.
+
+-- Figuras e diagramas --
+Figura 'Diagrama de Topologia em Anel' (Diagrama de Rede): A figura mostra vários computadores conectados em um círculo fechado, onde cada computador está ligado ao seu vizinho anterior e posterior. Isso forma um anel contínuo para a transmissão de dados.
+  Componentes visuais: Computador 1, Computador 2, Computador 3, Computador 4, Computador 5, Computador 6, Cabos de rede
+  Relacionado a: anel
+
+-- Relacionamentos --
+Conexao: 'token_ring' --[implementa]--> 'anel'. Motivo: O Token Ring é uma implementação específica da topologia em Anel, utilizando um token para controle de acesso.
+
+=== SECAO [TI_SEC_005]: Topologia Barra ===
+A Topologia em Barra (ou Barramento/Bus Topology) conecta todos os dispositivos a um único cabo central (o barramento), que serve como canal de comunicação compartilhado. Todos os nós compartilham o mesmo meio de transmissão, e apenas um dispositivo pode transmitir por vez para evitar colisões. Utiliza terminadores nas extremidades do cabo e a comunicação é unidirecional com broadcast.
+
+-- Conceitos-chave --
+Termo: Topologia em Barra (Bus Topology) | Tipo: Topologia de Rede | Definicao: Todos os dispositivos são conectados a um único cabo central (barramento), que atua como meio de transmissão compartilhado.
+  Vantagens de Topologia em Barra (Bus Topology): Fácil de instalar e baixo custo em redes pequenas.; Requer menos cabos que Estrela ou Malha.; Simples para conectar dispositivos adicionais.
+  Desvantagens de Topologia em Barra (Bus Topology): Baixo desempenho com muitos dispositivos (colisões aumentam).; Difícil de isolar falhas.; Um problema no cabo principal derruba toda a rede.; Obsoleta na maioria dos cenários modernos.
+  Casos de uso de Topologia em Barra (Bus Topology): Redes pequenas e simples (historicamente).; Ambientes onde o custo é um fator primordial e a escalabilidade não é crítica.
+
+-- Figuras e diagramas --
+Figura 'Diagrama de Topologia em Barra' (Diagrama de Rede): A figura ilustra um cabo principal (barramento) ao qual vários computadores são conectados. Os computadores estão distribuídos ao longo do cabo, e terminadores são visíveis nas extremidades do barramento.
+  Componentes visuais: Computador 1, Computador 2, Computador 3, Barramento (cabo central), Terminadores
+  Relacionado a: barra
+
+=== SECAO [TI_SEC_006]: Topologia em Árvore ===
+A Topologia em Árvore combina características das topologias em Estrela e Barramento. Possui uma estrutura hierárquica com um nó central (raiz) que se ramifica em nós intermediários (ramos) e terminais (folhas). É uma topologia híbrida, geralmente composta por redes em estrela conectadas a um barramento central. Facilita a segmentação e o gerenciamento, sendo adequada para organizações em camadas.
+
+-- Conceitos-chave --
+Termo: Topologia em Árvore (Tree Topology) | Tipo: Topologia de Rede | Definicao: Estrutura de rede hierárquica que combina características de Estrela e Barramento, com um nó central que se ramifica em nós intermediários e terminais.
+  Vantagens de Topologia em Árvore (Tree Topology): Fácil expansão pela adição de novos ramos.; Melhor gerenciamento e organização hierárquica.; Facilidade de isolamento de falhas em segmentos (se o backbone estiver íntegro).; Adequada para redes de grande porte.
+  Desvantagens de Topologia em Árvore (Tree Topology): Dependência do backbone: falha no tronco central afeta vários ramos.; Maior complexidade de cabeamento e configuração.; Custo pode ser elevado em infraestruturas grandes.; Requer equipamentos como switches ou hubs hierárquicos.
+  Casos de uso de Topologia em Árvore (Tree Topology): Redes corporativas com filiais.; Organizações com estrutura em camadas.; Redes de grande porte que necessitam de segmentação.
+
+-- Figuras e diagramas --
+Figura 'Diagrama de Topologia em Árvore' (Diagrama de Rede): A figura mostra uma estrutura hierárquica onde um nó central (raiz) se conecta a nós intermediários (ramos), que por sua vez se conectam a nós terminais (folhas). Essa estrutura se assemelha a uma árvore invertida.
+  Componentes visuais: Nó central (Raiz), Nós intermediários (Ramos), Nós terminais (Folhas), Conexões (Cabos)
+  Relacionado a: arvore
+
+-- Relacionamentos --
+Conexao: 'arvore' --[combina]--> 'estrela'. Motivo: A topologia em Árvore combina características da topologia em Estrela.
+Conexao: 'arvore' --[combina]--> 'barra'. Motivo: A topologia em Árvore combina características da topologia em Barramento.
+Conexao: 'arvore' --[depende_de]--> 'hub_switch'. Motivo: A topologia em Árvore, especialmente em suas ramificações, pode requerer hubs ou switches hierárquicos.
+
+=== SECAO [TI_SEC_007]: Topologia Mista ou Híbrida ===
+A Topologia Mista ou Híbrida combina duas ou mais topologias básicas (estrela, anel, barra, árvore) em uma única infraestrutura de rede. Permite flexibilidade e escalabilidade, adaptando-se a necessidades específicas de desempenho, custo e redundância. É comum em redes corporativas complexas e pode integrar diferentes tecnologias e protocolos.
+
+-- Conceitos-chave --
+Termo: Topologia Mista ou Híbrida | Tipo: Topologia de Rede | Definicao: Combinação de duas ou mais topologias básicas em uma única infraestrutura de rede para atender a requisitos variados.
+  Vantagens de Topologia Mista ou Híbrida: Alta flexibilidade, adapta-se a ambientes variados.; Expansão facilitada, permitindo adição de novos segmentos com diferentes topologias.; Combina o desempenho de uma topologia com a resiliência de outra.; Ideal para redes de grande porte e distribuídas.
+  Desvantagens de Topologia Mista ou Híbrida: Maior complexidade de projeto e gerenciamento.; Custo pode ser elevado devido à variedade de equipamentos e interconexões.; Requer cuidado com a compatibilidade entre protocolos e dispositivos.
+  Casos de uso de Topologia Mista ou Híbrida: Redes corporativas, industriais e educacionais complexas.; Redes governamentais com diferentes departamentos e necessidades.; Grandes data centers.
+
+-- Figuras e diagramas --
+Figura 'Diagrama Conceitual de Topologia Mista/Híbrida' (Diagrama de Rede): A figura ilustra uma rede onde diferentes topologias estão interconectadas. Pode mostrar, por exemplo, uma rede principal em estrela conectando sub-redes em anel ou árvore, demonstrando a integração de múltiplos layouts.
+  Componentes visuais: Dispositivos de rede, Diferentes topologias (Estrela, Anel, etc.), Pontos de interconexão
+  Relacionado a: mista_hibrida
+
+-- Relacionamentos --
+Conexao: 'mista_hibrida' --[combina]--> 'estrela'. Motivo: A topologia híbrida pode integrar redes em estrela como parte de sua estrutura.
+Conexao: 'mista_hibrida' --[combina]--> 'anel'. Motivo: A topologia híbrida pode integrar redes em anel como parte de sua estrutura.
+Conexao: 'mista_hibrida' --[combina]--> 'barra'. Motivo: A topologia híbrida pode integrar redes em barra como parte de sua estrutura.
+Conexao: 'mista_hibrida' --[combina]--> 'arvore'. Motivo: A topologia híbrida pode integrar redes em árvore como parte de sua estrutura.
+

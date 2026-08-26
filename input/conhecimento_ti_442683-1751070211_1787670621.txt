@@ -1,0 +1,187 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Redes de Computadores
+Idioma: pt-BR
+Tecnologias citadas no documento: Placas de rede, Repeaters, Hubs, Bridges, Switches, Routers, Modem, Gateways, Transceiver, Servidores, Estações de Trabalho, MAC Address Table, RM-OSI, IP, MAC
+
+=== SECAO [TI_SEC_001]: Equipamentos e Dispositivos de Redes de Computadores ===
+Esta seção introduz os componentes fundamentais que compõem uma rede de computadores, listando exemplos de equipamentos e dispositivos essenciais para sua operação. Abrange desde os pontos de acesso dos usuários (estações de trabalho) até os dispositivos de infraestrutura que gerenciam o tráfego e a conectividade.
+
+-- Conceitos-chave --
+Termo: Placas de rede | Tipo: Hardware | Definicao: Componente de hardware que permite a um computador se conectar a uma rede.
+  Vantagens de Placas de rede: Permite a comunicação entre dispositivos em uma rede.
+  Desvantagens de Placas de rede: Pode ser um ponto de falha.
+  Casos de uso de Placas de rede: Conectar qualquer dispositivo a uma rede local ou remota.
+Termo: Repeaters | Tipo: Hardware | Definicao: Dispositivo que regenera e retransmite um sinal de rede para estender seu alcance.
+  Vantagens de Repeaters: Aumenta o alcance físico de um segmento de rede.
+  Desvantagens de Repeaters: Não filtra tráfego, retransmite tudo, incluindo erros.; Opera na camada física (camada 1 do modelo OSI).
+  Casos de uso de Repeaters: Estender cabos de rede em distâncias maiores que o especificado.
+Termo: Hubs | Tipo: Hardware | Definicao: Dispositivo de rede que conecta múltiplos dispositivos em uma rede local, transmitindo dados recebidos em uma porta para todas as outras portas.
+  Vantagens de Hubs: Simples e barato para conectar múltiplos dispositivos.
+  Desvantagens de Hubs: Cria um único domínio de colisão, onde todos os dispositivos compartilham o mesmo meio e podem colidir.; Opera na camada física (camada 1 do modelo OSI).; Ineficiente em redes com alto tráfego.
+  Casos de uso de Hubs: Redes pequenas e simples onde o tráfego é baixo.
+Termo: Bridges / Switches | Tipo: Hardware | Definicao: Dispositivos de rede que conectam segmentos de rede e filtram o tráfego com base em endereços MAC, operando na camada de enlace (camada 2 do modelo OSI). Switches são versões mais avançadas de bridges.
+  Vantagens de Bridges / Switches: Segmentam redes em domínios de colisão menores, reduzindo colisões.; Melhoram a eficiência da rede ao encaminhar tráfego apenas para o segmento de destino.; Permitem comunicação simultânea entre diferentes pares de portas (switches).
+  Desvantagens de Bridges / Switches: Não segmentam domínios de broadcast.; Switches mais antigos podem ter limitações de desempenho.
+  Casos de uso de Bridges / Switches: Conectar diferentes segmentos de uma LAN.; Reduzir congestionamento em redes.; Criar redes locais eficientes.
+Termo: Routers | Tipo: Hardware | Definicao: Dispositivo de rede que conecta diferentes redes (incluindo a Internet) e encaminha pacotes de dados entre elas com base em endereços IP, operando na camada de rede (camada 3 do modelo OSI).
+  Vantagens de Routers: Permitem a comunicação entre redes distintas.; Podem segmentar domínios de broadcast.; Oferecem funcionalidades de segurança como firewall.
+  Desvantagens de Routers: Mais complexos e caros que bridges/switches.; Podem introduzir latência.
+  Casos de uso de Routers: Conectar uma rede local à Internet.; Interligar diferentes sub-redes.; Roteamento de tráfego entre redes.
+Termo: MoDem / Modem-Router | Tipo: Hardware | Definicao: Dispositivo que converte sinais digitais em analógicos (modulação) e vice-versa (demodulação) para permitir a comunicação através de linhas telefônicas ou outros meios analógicos. Um modem-router combina as funções de modem e roteador.
+  Vantagens de MoDem / Modem-Router: Permite acesso à Internet através de infraestrutura de linha telefônica.; Modem-routers integram funcionalidades.
+  Desvantagens de MoDem / Modem-Router: Velocidades de conexão geralmente inferiores a outras tecnologias (fibra, cabo).; Dependente da qualidade da linha telefônica.
+  Casos de uso de MoDem / Modem-Router: Conexão à Internet em áreas onde outras tecnologias não estão disponíveis.; Serviços de DSL.
+Termo: Gateways | Tipo: Hardware | Definicao: Dispositivo que atua como ponto de entrada e saída entre redes diferentes, muitas vezes traduzindo protocolos para permitir a comunicação entre sistemas incompatíveis.
+  Vantagens de Gateways: Permite a interconexão de redes com diferentes arquiteturas e protocolos.; Pode fornecer serviços de segurança e tradução.
+  Desvantagens de Gateways: Pode ser um gargalo de desempenho.; Complexidade na configuração e gerenciamento.
+  Casos de uso de Gateways: Conectar uma rede corporativa a uma rede externa (ex: Internet).; Integrar sistemas legados com novas redes.
+Termo: Transceiver | Tipo: Hardware | Definicao: Dispositivo que combina as funções de transmissor e receptor, geralmente usado em interfaces de rede para converter sinais elétricos em sinais ópticos ou de rádio e vice-versa.
+  Vantagens de Transceiver: Permite a comunicação em diferentes mídias (fibra óptica, rádio).
+  Desvantagens de Transceiver: Pode ser um ponto de falha.; Requer compatibilidade com o meio de transmissão.
+  Casos de uso de Transceiver: Conectar dispositivos de rede usando fibra óptica.; Interfaces sem fio.
+Termo: Servidores | Tipo: Hardware/Software | Definicao: Computadores ou programas que fornecem serviços a outros computadores (clientes) em uma rede.
+  Vantagens de Servidores: Centralizam recursos e dados.; Permitem o compartilhamento de informações e serviços.
+  Desvantagens de Servidores: Requerem manutenção e gerenciamento.; Ponto único de falha se não houver redundância.
+  Casos de uso de Servidores: Servidores de arquivos, web, e-mail, banco de dados, autenticação.
+Termo: Estações de Trabalho | Tipo: Hardware | Definicao: Computadores utilizados por usuários finais para acessar recursos da rede e realizar tarefas.
+  Vantagens de Estações de Trabalho: Permitem o acesso individual aos recursos da rede.
+  Desvantagens de Estações de Trabalho: Podem ser vetores de ataque se não forem protegidas.
+  Casos de uso de Estações de Trabalho: Uso geral por usuários em escritórios, residências, etc.
+
+-- Figuras e diagramas --
+Figura 'Diagrama de Rede com Equipamentos e Dispositivos' (Diagrama de Rede): O diagrama ilustra uma rede de computadores com vários segmentos (LANs) interconectados. Temos um servidor de e-mail e um servidor WWW conectados a um switch na LAN 1. A LAN 1 também se conecta a um roteador. A LAN 3 é conectada ao roteador, com estações de trabalho e um repetidor. A LAN 2 possui um hub e impressoras. A LAN 4 é conectada a um bridge, que por sua vez se conecta a um repetidor e estações de trabalho. O roteador está conectado à Internet. O diagrama mostra como diferentes dispositivos (switches, hubs, roteadores, bridges, repetidores) conectam estações de trabalho, servidores e impressoras em diferentes segmentos de rede e à Internet.
+  Componentes visuais: Servidor WWW, Servidor e-mail, Switch, Roteador, Internet, LAN 1, LAN 3, Repetidor, Estação de Trabalho, Impressora, Hub, LAN 2, Bridge, LAN 4
+  Relacionado a: servidor, servidor_email, switch, router, internet, lan, repeater, estacao_de_trabalho, impressora, hub, bridge
+
+-- Relacionamentos --
+Conexao: 'estacao_de_trabalho' --[conectado_a]--> 'placa_de_rede'. Motivo: Estações de trabalho necessitam de placas de rede para se conectar a qualquer tipo de rede.
+Conexao: 'hub' --[implementa]--> 'placa_de_rede'. Motivo: Hubs utilizam placas de rede para se conectar a outros dispositivos.
+Conexao: 'bridge_switch' --[implementa]--> 'placa_de_rede'. Motivo: Bridges e Switches utilizam placas de rede para se conectar a outros dispositivos e segmentos de rede.
+Conexao: 'router' --[implementa]--> 'placa_de_rede'. Motivo: Roteadores utilizam placas de rede (interfaces de rede) para se conectar a diferentes redes.
+Conexao: 'modem' --[implementa]--> 'placa_de_rede'. Motivo: Modems (ou modem-routers) utilizam interfaces de rede para se conectar a dispositivos e à linha de comunicação.
+Conexao: 'gateway' --[implementa]--> 'router'. Motivo: Um gateway frequentemente é implementado por um roteador, especialmente quando se trata de conectar redes diferentes.
+Conexao: 'transceiver' --[conectado_a]--> 'placa_de_rede'. Motivo: Transceivers são frequentemente usados em conjunto com placas de rede para adaptar a mídia de transmissão.
+Conexao: 'servidor' --[conectado_a]--> 'bridge_switch'. Motivo: Servidores são tipicamente conectados a switches para alta disponibilidade e performance.
+Conexao: 'estacao_de_trabalho' --[conectado_a]--> 'bridge_switch'. Motivo: Estações de trabalho se conectam a switches para acesso à rede local.
+Conexao: 'bridge_switch' --[conectado_a]--> 'router'. Motivo: Switches podem ser conectados a roteadores para acesso a outras redes ou à Internet.
+Conexao: 'router' --[conectado_a]--> 'internet'. Motivo: Roteadores são o principal meio de conectar redes locais à Internet.
+Conexao: 'hub' --[conectado_a]--> 'estacao_de_trabalho'. Motivo: Hubs conectam múltiplas estações de trabalho em uma rede.
+Conexao: 'bridge_switch' --[segmenta]--> 'dominio_de_colisao'. Motivo: Switches segmentam a rede em domínios de colisão menores.
+Conexao: 'repeater' --[estende]--> 'sinal_de_rede'. Motivo: Repetidores retransmitem sinais para estender o alcance da rede.
+
+=== SECAO [TI_SEC_002]: Bridges ou Pontes (Switches) ===
+Esta seção detalha o funcionamento e as características dos Bridges (ou Pontes) e Switches, dispositivos que operam na Camada 2 (Enlace) do modelo OSI. Eles evoluíram dos hubs, oferecendo maior eficiência ao aprender endereços MAC e encaminhar tráfego de forma inteligente entre segmentos de rede. São capazes de segmentar domínios de colisão, mas não domínios de broadcast, e utilizam tabelas de endereços MAC para tomar decisões de encaminhamento. O processo de 'aprendizagem de MACs' e o 'flooding' são mecanismos chave para o seu funcionamento.
+
+-- Conceitos-chave --
+Termo: Bridges ou Pontes (Switches) | Tipo: Hardware | Definicao: Dispositivos de rede que conectam segmentos de rede e filtram o tráfego com base em endereços MAC, operando na camada de enlace (camada 2 do modelo OSI). Switches são versões mais avançadas de bridges.
+  Vantagens de Bridges ou Pontes (Switches): Segmentam redes em domínios de colisão menores, reduzindo colisões.; Melhoram a eficiência da rede ao encaminhar tráfego apenas para o segmento de destino.; Permitem comunicação simultânea entre diferentes pares de portas (switches).; Operam na camada 2 (Enlace) do modelo OSI.; Possuem barramentos internos comutáveis para conexões dedicadas.; Capazes de ler endereços MAC de origem e destino.; Multiplicam capacidades de LANs.; Atuam como pontes seletivas de alta velocidade.; Evitam interferência entre segmentos distintos.
+  Desvantagens de Bridges ou Pontes (Switches): Não segmentam domínios de broadcast.; Podem ter limitações de desempenho em modelos mais antigos.; Não 'leem' endereços IP (operam na camada 2).
+  Casos de uso de Bridges ou Pontes (Switches): Conectar diferentes segmentos de uma LAN.; Reduzir congestionamento em redes.; Criar redes locais eficientes.; Aumentar a taxa de transmissão.; Melhorar a utilização dos meios físicos.
+Termo: Aprendizagem de MACs | Tipo: Processo | Definicao: Processo pelo qual um switch aprende os endereços MAC dos dispositivos conectados a cada uma de suas portas, registrando-os em uma tabela de endereços MAC.
+  Vantagens de Aprendizagem de MACs: Permite o encaminhamento eficiente de pacotes apenas para a porta de destino correta.; Reduz o tráfego desnecessário na rede.
+  Desvantagens de Aprendizagem de MACs: Requer tempo inicial para 'aprender' os MACs.; A tabela pode ficar desatualizada se os dispositivos mudarem de porta ou forem desconectados.
+  Casos de uso de Aprendizagem de MACs: Funcionamento básico de switches.; Otimização do tráfego em redes Ethernet.
+Termo: Tabela de Endereços MAC (MAC Address Table) | Tipo: Estrutura de Dados | Definicao: Tabela mantida por um switch que mapeia endereços MAC de dispositivos para as portas do switch às quais eles estão conectados.
+  Vantagens de Tabela de Endereços MAC (MAC Address Table): Permite o encaminhamento direcionado de pacotes.; Melhora a performance da rede.
+  Desvantagens de Tabela de Endereços MAC (MAC Address Table): Ocupa memória no switch.; Precisa ser atualizada (aging timer).
+  Casos de uso de Tabela de Endereços MAC (MAC Address Table): Armazenar informações de mapeamento MAC-porta para encaminhamento de tráfego.
+Termo: Aging Timer | Tipo: Parâmetro de Configuração | Definicao: Tempo limite (geralmente 300 segundos) após o qual uma entrada de endereço MAC é removida da tabela de endereços MAC de um switch se não for atualizada por atividade de rede.
+  Vantagens de Aging Timer: Garante que a tabela de MACs seja mantida atualizada, removendo entradas de dispositivos que não estão mais ativos ou mudaram de porta.
+  Desvantagens de Aging Timer: Um valor muito baixo pode causar remoção prematura de entradas válidas.; Um valor muito alto pode manter entradas desatualizadas por mais tempo.
+  Casos de uso de Aging Timer: Gerenciamento dinâmico da Tabela de Endereços MAC em switches.
+Termo: Flooding (Inundação) | Tipo: Processo | Definicao: Processo em que um switch encaminha uma cópia de um quadro recebido para todas as portas, exceto para a porta de origem, quando o endereço MAC de destino não é encontrado na tabela de endereços MAC.
+  Vantagens de Flooding (Inundação): Garante que o quadro alcance o destino mesmo que o switch ainda não tenha aprendido o MAC.; É um mecanismo de fallback para descoberta de dispositivos.
+  Desvantagens de Flooding (Inundação): Pode gerar tráfego desnecessário e aumentar a carga na rede.; Não é eficiente para tráfego unicast frequente.
+  Casos de uso de Flooding (Inundação): Primeira vez que um switch recebe tráfego para um determinado destino.; Descoberta de novos dispositivos na rede.
+Termo: Domínio de Colisão | Tipo: Conceito de Rede | Definicao: Um conjunto de dispositivos em uma rede que podem transmitir dados simultaneamente e onde colisões de dados podem ocorrer. Switches criam múltiplos domínios de colisão, um para cada porta.
+  Vantagens de Domínio de Colisão: Reduz a probabilidade de colisões de dados.; Melhora a performance da rede.
+  Desvantagens de Domínio de Colisão: Não resolve problemas de broadcast.
+  Casos de uso de Domínio de Colisão: Segmentar redes para otimizar o tráfego.; Reduzir a latência causada por colisões.
+Termo: Domínio de Broadcast | Tipo: Conceito de Rede | Definicao: Um conjunto de dispositivos em uma rede que recebem pacotes de broadcast enviados por qualquer dispositivo dentro desse domínio. Pontes e switches não segmentam domínios de broadcast.
+  Vantagens de Domínio de Broadcast: Permite a comunicação eficiente de mensagens para todos os dispositivos em um segmento.
+  Desvantagens de Domínio de Broadcast: Pode gerar tráfego excessivo se não for gerenciado.; Pacotes de broadcast atravessam pontes e switches.
+  Casos de uso de Domínio de Broadcast: Envio de mensagens de descoberta (ARP, DHCP) para todos os dispositivos em uma sub-rede.
+
+-- Figuras e diagramas --
+Figura 'Diagrama de Operação de Hub vs. Switch' (Diagrama Comparativo de Operação): O diagrama compara a operação de um Hub com a de um Switch. No Hub, um sinal enviado por uma estação (A) é recebido por todas as outras estações (B, C, D), indicando um único domínio de colisão e compartilhamento de meio. No Switch, o tráfego é direcionado de forma mais inteligente. Um quadro recebido com um endereço MAC de destino específico é encaminhado apenas para a porta correspondente, demonstrando a segmentação em domínios de colisão menores e o uso da tabela MAC (representada como 'Memória' no diagrama).
+  Componentes visuais: Hub - operação, Estações A, B, C, D, Seta indicando transmissão para todas as portas, Switch - operação, Memória (Tabela MAC), Estações conectadas ao Switch, Seta indicando transmissão direcionada
+  Relacionado a: hub, switch, tabela_mac, dominio_de_colisao
+Figura 'Domínio de Colisão com Bridges e Repetidores' (Diagrama de Rede): Este diagrama ilustra como bridges (ou switches) e repetidores afetam os domínios de colisão. Cada segmento conectado a uma porta de um switch é um domínio de colisão separado. Repetidores, por outro lado, estendem um domínio de colisão existente. A figura mostra dois domínios de colisão distintos, cada um contendo um repetidor e estações de trabalho, interligados por uma bridge. Isso demonstra que a bridge segmenta os domínios de colisão, enquanto os repetidores dentro de um segmento não criam novos domínios de colisão.
+  Componentes visuais: Collision Domain, Bridge, Repeater, Estações de Trabalho
+  Relacionado a: dominio_de_colisao, bridge_switch, repeater, estacao_de_trabalho
+Figura 'Domínio de Broadcast com Pontes e Hubs' (Diagrama de Rede): O diagrama ilustra o conceito de domínio de broadcast e como pontes (bridges/switches) interagem com ele. Ele mostra um 'Domínio de Broadcast' que abrange dois segmentos de rede (Segmento 1 e Segmento 2), interligados por uma ponte. Dentro de cada segmento, há hubs conectando estações de trabalho. A característica principal destacada é que 'Pontes não têm qualquer efeito no domínio de broadcast', o que significa que pacotes de broadcast enviados em um segmento atravessam a ponte e chegam ao outro segmento, expandindo o domínio de broadcast.
+  Componentes visuais: Domínio de Broadcast, Segmento 1, Segmento 2, Estações 123, 124, 125, Estações 126, 127, 128, Hub, Bridge, Intranet Corporativa
+  Relacionado a: dominio_de_broadcast, bridge_switch, hub, estacao_de_trabalho
+
+-- Relacionamentos --
+Conexao: 'bridge_switch' --[opera_em]--> 'camada_2_enlace'. Motivo: Bridges e Switches operam na Camada 2 (Enlace) do modelo OSI.
+Conexao: 'bridge_switch' --[utiliza]--> 'tabela_mac'. Motivo: Switches utilizam a Tabela de Endereços MAC para tomar decisões de encaminhamento.
+Conexao: 'bridge_switch' --[segmenta]--> 'dominio_de_colisao'. Motivo: Switches criam múltiplos domínios de colisão, um por porta.
+Conexao: 'bridge_switch' --[nao_segmenta]--> 'dominio_de_broadcast'. Motivo: Bridges e Switches não dividem domínios de broadcast; pacotes de broadcast atravessam esses dispositivos.
+Conexao: 'aprendizagem_mac' --[preenche]--> 'tabela_mac'. Motivo: O processo de Aprendizagem de MACs é responsável por popular a Tabela de Endereços MAC.
+Conexao: 'tabela_mac' --[influencia]--> 'encaminhamento_de_pacotes'. Motivo: A Tabela MAC determina para qual porta um pacote deve ser encaminhado.
+Conexao: 'aging_timer' --[gerencia]--> 'tabela_mac'. Motivo: O Aging Timer é usado para remover entradas antigas ou inativas da Tabela MAC.
+Conexao: 'flooding' --[ocorre_quando]--> 'mac_destino_desconhecido'. Motivo: O Flooding ocorre quando o switch não encontra o MAC de destino na Tabela MAC.
+Conexao: 'hub' --[cria]--> 'unico_dominio_de_colisao'. Motivo: Hubs criam um único domínio de colisão para todos os dispositivos conectados.
+Conexao: 'hub' --[nao_segmenta]--> 'dominio_de_colisao'. Motivo: Hubs não segmentam domínios de colisão.
+Conexao: 'repeater' --[estende]--> 'dominio_de_colisao'. Motivo: Repetidores estendem um domínio de colisão existente.
+Conexao: 'bridge_switch' --[melhora]--> 'taxa_de_transmissao'. Motivo: Switches melhoram as taxas de transmissão ao permitir comunicação full-duplex e reduzir colisões.
+Conexao: 'bridge_switch' --[multiplica]--> 'capacidade_lan'. Motivo: Switches aumentam a capacidade total de uma LAN ao segmentá-la e permitir tráfego simultâneo.
+
+=== SECAO [TI_SEC_003]: Tipos de Switches e Arquiteturas de Rede ===
+Esta seção explora diferentes tipos de switches (SOHO, Workgroup, Enterprise, Backbone, Edge) e como eles se encaixam em arquiteturas de rede maiores, como redes privadas e públicas. Destaca as características de cada tipo de switch, como número de portas, gerenciabilidade e capacidade de banda (full-duplex), e ilustra como esses dispositivos são interconectados para formar redes complexas, desde pequenas redes domésticas até infraestruturas corporativas robustas.
+
+-- Conceitos-chave --
+Termo: Switch SOHO (Small Office Home Office) | Tipo: Hardware | Definicao: Switches projetados para pequenos escritórios ou uso doméstico, geralmente com 5 a 8 portas e não gerenciáveis.
+  Vantagens de Switch SOHO (Small Office Home Office): Custo acessível.; Fácil instalação e uso (plug-and-play).
+  Desvantagens de Switch SOHO (Small Office Home Office): Número limitado de portas.; Não gerenciáveis, oferecendo pouca visibilidade ou controle.; Menos robustos para ambientes de alta demanda.
+  Casos de uso de Switch SOHO (Small Office Home Office): Redes domésticas.; Pequenos escritórios com poucos computadores.
+Termo: Switch Workgroup (Corporativos) | Tipo: Hardware | Definicao: Switches voltados para grupos de trabalho em ambientes corporativos, oferecendo maior disponibilidade de portas e a opção de serem gerenciáveis ou não.
+  Vantagens de Switch Workgroup (Corporativos): Maior número de portas disponíveis.; Opção de gerenciamento para controle e monitoramento.; Melhor desempenho para grupos de trabalho.
+  Desvantagens de Switch Workgroup (Corporativos): Custo mais elevado que switches SOHO.; Switches não gerenciáveis oferecem menos controle.
+  Casos de uso de Switch Workgroup (Corporativos): Conectar grupos de usuários em departamentos.; Redes de escritórios de médio porte.
+Termo: Enterprise Switch | Tipo: Hardware | Definicao: Switches de alta capacidade e desempenho, projetados para redes corporativas maiores, frequentemente com funcionalidades avançadas de gerenciamento, segurança e redundância.
+  Vantagens de Enterprise Switch: Alta densidade de portas.; Recursos avançados de gerenciamento (VLANs, QoS, SNMP).; Alta performance e confiabilidade.; Suporte a full-duplex em todas as portas.
+  Desvantagens de Enterprise Switch: Custo significativamente mais alto.; Requer conhecimento técnico para configuração e gerenciamento.
+  Casos de uso de Enterprise Switch: Redes de data centers.; Backbones de redes corporativas.; Conexão de múltiplos segmentos de rede de alta demanda.
+Termo: Backbone Switch | Tipo: Hardware | Definicao: Switches de alta performance que formam o núcleo (backbone) de uma rede, interconectando outros switches (como switches de acesso ou distribuição) e lidando com grandes volumes de tráfego agregado.
+  Vantagens de Backbone Switch: Capacidade de processamento e throughput extremamente altos.; Alta velocidade de interconexão.; Essencial para a escalabilidade e desempenho da rede.
+  Desvantagens de Backbone Switch: Muito caros.; Complexos de implementar e gerenciar.
+  Casos de uso de Backbone Switch: Núcleo de redes corporativas grandes.; Interconexão de campus universitários.; Provedores de serviços de Internet.
+Termo: Edge Switch | Tipo: Hardware | Definicao: Switches localizados na borda da rede, conectando a rede interna a redes externas (como a Internet) ou servindo como ponto de agregação para switches de acesso.
+  Vantagens de Edge Switch: Ponto de controle e segurança na borda da rede.; Podem realizar funções de roteamento ou firewall.; Agregam tráfego de múltiplos switches de acesso.
+  Desvantagens de Edge Switch: Podem se tornar um gargalo se não dimensionados corretamente.; Requerem configuração cuidadosa.
+  Casos de uso de Edge Switch: Conexão de redes locais à Internet.; Ponto de agregação para switches de acesso em grandes redes.
+Termo: Rede Privada | Tipo: Arquitetura de Rede | Definicao: Uma rede cujos recursos são acessíveis apenas por usuários autorizados dentro de uma organização ou local específico, como uma rede corporativa ou doméstica.
+  Vantagens de Rede Privada: Maior controle sobre segurança e acesso.; Desempenho otimizado para usuários internos.; Custos de comunicação interna geralmente menores.
+  Desvantagens de Rede Privada: Acesso limitado a recursos externos.; Requer infraestrutura própria.
+  Casos de uso de Rede Privada: Redes corporativas.; Redes domésticas.; Redes de campus.
+Termo: Rede Pública | Tipo: Arquitetura de Rede | Definicao: Uma rede acessível ao público em geral, sendo a Internet o exemplo mais proeminente.
+  Vantagens de Rede Pública: Acesso global a informações e serviços.; Facilita a comunicação e o comércio em larga escala.
+  Desvantagens de Rede Pública: Menor controle sobre segurança.; Exposição a ameaças externas.; Desempenho variável.
+  Casos de uso de Rede Pública: Acesso à World Wide Web.; Serviços de e-mail globais.; Comunicação via Internet.
+Termo: Full-duplex | Tipo: Modo de Operação | Definicao: Modo de comunicação em redes onde os dados podem ser transmitidos e recebidos simultaneamente em ambas as direções, dobrando a capacidade teórica do meio.
+  Vantagens de Full-duplex: Elimina colisões de dados.; Aumenta significativamente a taxa de transferência efetiva.; Melhora a performance geral da rede.
+  Desvantagens de Full-duplex: Requer hardware compatível em ambos os lados da conexão (ex: switch e estação de trabalho).
+  Casos de uso de Full-duplex: Comunicação entre switches e estações de trabalho.; Conexões de alta performance em redes.
+
+-- Figuras e diagramas --
+Figura 'Arquitetura de Rede com Diferentes Tipos de Switches' (Diagrama de Arquitetura de Rede): Este diagrama ilustra uma arquitetura de rede hierárquica utilizando diversos tipos de switches. Uma rede privada é mostrada, conectando um 'hub' a um 'Workgroup Switch'. Este, por sua vez, se conecta a um 'Enterprise Switch'. O Enterprise Switch atua como um ponto de agregação e se conecta a um 'Backbone Switch', que forma o núcleo da rede. O Backbone Switch também se conecta a um 'Edge Switch', que serve como interface para a 'Rede Pública' (Internet). A figura demonstra como switches de diferentes categorias (SOHO implícito no hub, Workgroup, Enterprise, Backbone, Edge) são interconectados para construir uma infraestrutura de rede escalável e robusta.
+  Componentes visuais: Hub, Workgroup Switch, Enterprise Switch, Backbone Switch, Edge Switch, Rede Privada, Rede Pública, Setas indicando conexões e fluxo de dados
+  Relacionado a: hub, switch_workgroup, switch_enterprise, switch_backbone, switch_edge, rede_privada, rede_publica
+
+-- Relacionamentos --
+Conexao: 'switch_soho' --[usado_em]--> 'rede_domestica'. Motivo: Switches SOHO são ideais para redes domésticas devido ao seu baixo custo e simplicidade.
+Conexao: 'switch_workgroup' --[usado_em]--> 'rede_corporativa_pequena_media'. Motivo: Switches Workgroup são adequados para grupos de trabalho em empresas de pequeno a médio porte.
+Conexao: 'switch_enterprise' --[usado_em]--> 'rede_corporativa_grande'. Motivo: Enterprise Switches são projetados para redes corporativas de grande escala, oferecendo alta performance e gerenciamento.
+Conexao: 'switch_backbone' --[forma]--> 'nucleo_rede'. Motivo: Backbone Switches formam o núcleo de alta capacidade de redes extensas.
+Conexao: 'switch_edge' --[conecta]--> 'rede_publica'. Motivo: Edge Switches conectam a rede privada à rede pública (Internet).
+Conexao: 'switch_enterprise' --[conecta_a]--> 'switch_backbone'. Motivo: Enterprise Switches frequentemente se conectam a um Backbone Switch para agregar tráfego.
+Conexao: 'switch_workgroup' --[conecta_a]--> 'switch_enterprise'. Motivo: Workgroup Switches podem se conectar a um Enterprise Switch para escalar a rede.
+Conexao: 'rede_privada' --[utiliza]--> 'switch_workgroup'. Motivo: Redes privadas utilizam switches como Workgroup Switches para conectar usuários.
+Conexao: 'rede_privada' --[utiliza]--> 'switch_enterprise'. Motivo: Redes privadas de maior porte utilizam Enterprise Switches.
+Conexao: 'rede_publica' --[acessada_via]--> 'switch_edge'. Motivo: O acesso à rede pública é geralmente feito através de um Edge Switch.
+Conexao: 'full_duplex' --[suportado_por]--> 'switch_enterprise'. Motivo: Enterprise Switches suportam comunicação full-duplex em suas portas para alta performance.
+Conexao: 'full_duplex' --[suportado_por]--> 'switch_workgroup'. Motivo: Switches Workgroup modernos também suportam full-duplex.
+Conexao: 'full_duplex' --[elimina]--> 'colisao_de_dados'. Motivo: A comunicação full-duplex elimina colisões de dados.
+

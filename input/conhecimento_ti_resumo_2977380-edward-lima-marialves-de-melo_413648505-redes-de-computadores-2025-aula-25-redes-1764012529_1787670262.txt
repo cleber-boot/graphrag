@@ -1,0 +1,303 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Redes de Computadores Modelo OSI - Sub Camada MAC – WIFI (IEEE 802.11)
+Idioma: pt-BR
+Tecnologias citadas no documento: OSI Model, IEEE 802.11, Wi-Fi, LLC, MAC, Ethernet, Bluetooth, WLC, RADIUS
+
+=== SECAO [TI_SEC_001]: Modelos OSI – Camada ou Nível de Enlace ===
+Esta seção introduz o Modelo OSI, focando na segunda camada, a Camada de Enlace. Esta camada é subdividida em duas subcamadas: LLC (Logical Link Control) e MAC (Media Access Control), com ênfase na subcamada MAC. O Modelo OSI, recomendado pela ISO, possui 7 camadas e foi projetado para estruturar soluções, serviços e protocolos de fabricantes de redes de computadores. A Camada de Enlace (Camada 2) interage diretamente com os meios físicos (Camada 1) e é responsável por gerenciar o acesso ao meio de comunicação, especialmente em redes locais.
+
+-- Conceitos-chave --
+Termo: Modelo OSI | Tipo: Modelo de Referência | Definicao: Um modelo conceitual de comunicação em rede que divide as funções de rede em sete camadas. Foi desenvolvido pela ISO para padronizar a comunicação entre sistemas heterogêneos.
+  Vantagens de Modelo OSI: Padronização; Modularidade; Facilita o aprendizado e a compreensão de redes
+  Desvantagens de Modelo OSI: Complexidade; Não reflete totalmente a arquitetura da Internet (que usa o modelo TCP/IP)
+  Casos de uso de Modelo OSI: Ensino e aprendizado de redes de computadores; Análise e design de protocolos de rede
+Termo: Camada de Enlace | Tipo: Camada OSI | Definicao: A segunda camada do Modelo OSI, responsável pela transferência confiável de dados através de um meio físico. Divide-se em subcamadas LLC e MAC.
+  Vantagens de Camada de Enlace: Gerencia o acesso ao meio físico; Detecção e correção de erros básicos; Endereçamento físico (MAC)
+  Desvantagens de Camada de Enlace: Depende da camada física; Pode introduzir latência
+  Casos de uso de Camada de Enlace: Comunicação entre dispositivos na mesma rede local; Controle de acesso ao meio compartilhado
+Termo: LLC (Logical Link Control) | Tipo: Subcamada OSI | Definicao: A subcamada superior da Camada de Enlace, responsável por fornecer uma interface para a camada de rede e por multiplexar protocolos de rede sobre o mesmo enlace.
+  Vantagens de LLC (Logical Link Control): Suporta múltiplos protocolos de rede; Fornece controle de fluxo e de erros (opcional)
+  Desvantagens de LLC (Logical Link Control): Menos foco em controle de acesso ao meio; Pode adicionar complexidade
+  Casos de uso de LLC (Logical Link Control): Interoperabilidade entre diferentes protocolos de rede na camada de enlace; Redes que necessitam de controle de fluxo mais robusto
+Termo: MAC (Media Access Control) | Tipo: Subcamada OSI | Definicao: A subcamada inferior da Camada de Enlace, responsável por controlar como os dispositivos acessam o meio de transmissão compartilhado e por endereçamento físico (endereço MAC).
+  Vantagens de MAC (Media Access Control): Gerencia o acesso ao meio físico; Evita colisões (em alguns métodos); Fornece endereçamento único (MAC Address)
+  Desvantagens de MAC (Media Access Control): Pode ser complexo em redes sem fio; A performance depende do método de acesso ao meio
+  Casos de uso de MAC (Media Access Control): Redes Ethernet; Redes Wi-Fi; Controle de acesso a meios compartilhados
+
+-- Figuras e diagramas --
+Figura 'Estrutura do Modelo OSI e Subcamadas da Camada de Enlace' (Diagrama de Camadas): O diagrama mostra as 7 camadas do Modelo OSI (Aplicação, Apresentação, Sessão, Transporte, Rede, Enlace, Físico). A Camada de Enlace é destacada e subdividida em duas subcamadas: LLC (acima) e MAC (abaixo). Abaixo da Camada MAC, são mostrados exemplos de tecnologias como 802.3 Ethernet, 802.11 Wi-Fi e 802.15 Bluetooth, indicando que a subcamada MAC é específica para cada tipo de tecnologia de rede local.
+  Componentes visuais: Camadas do Modelo OSI, Subcamadas LLC e MAC, Exemplos de tecnologias de rede (Ethernet, Wi-Fi, Bluetooth)
+  Relacionado a: modelo_osi, camada_enlace, llc, mac
+
+-- Relacionamentos --
+Conexao: 'camada_enlace' --[contem]--> 'llc'. Motivo: A Camada de Enlace é composta pelas subcamadas LLC e MAC.
+Conexao: 'camada_enlace' --[contem]--> 'mac'. Motivo: A Camada de Enlace é composta pelas subcamadas LLC e MAC.
+Conexao: 'mac' --[implementa]--> '802.11_wifi'. Motivo: A subcamada MAC é a base para tecnologias como o Wi-Fi (IEEE 802.11).
+Conexao: 'mac' --[implementa]--> '802.3_ethernet'. Motivo: A subcamada MAC é a base para tecnologias como o Ethernet (IEEE 802.3).
+Conexao: 'modelo_osi' --[possui_camada]--> 'camada_enlace'. Motivo: O Modelo OSI possui a Camada de Enlace como sua segunda camada.
+
+=== SECAO [TI_SEC_002]: IEEE 802.11 - Wi-Fi: Introdução ===
+Esta seção introduz a tecnologia Wi-Fi (IEEE 802.11), descrevendo seus elementos e características. Uma rede Wi-Fi cobre uma área específica onde os hospedeiros (dispositivos sem fio) se conectam a pontos de acesso (APs). A mobilidade é permitida, com a possibilidade de sobreposição de áreas de cobertura. Os elementos essenciais incluem hospedeiros sem fio, enlaces sem fio (com diferentes taxas de transmissão e alcance), estações-base (APs) que gerenciam a comunicação e a infraestrutura de rede maior. O meio de acesso é aberto e não guiado, exigindo equidade e orquestração ativa para a comunicação. A abrangência e a qualidade da transmissão são afetadas por interferências e obstáculos. A comunicação é ativa e orquestrada.
+
+-- Conceitos-chave --
+Termo: IEEE 802.11 | Tipo: Padrão de Rede | Definicao: Um conjunto de especificações para redes locais sem fio (WLANs), comumente conhecidas como Wi-Fi. Define os protocolos para a camada física e MAC.
+  Vantagens de IEEE 802.11: Mobilidade; Conveniência; Ampla adoção e compatibilidade; Velocidades de transmissão crescentes
+  Desvantagens de IEEE 802.11: Segurança (requer configuração adequada); Interferência; Alcance limitado; Menor confiabilidade comparado a redes cabeadas
+  Casos de uso de IEEE 802.11: Redes domésticas; Redes corporativas; Redes públicas (hotspots); Conexão de dispositivos móveis
+Termo: Hospedeiro sem fio | Tipo: Dispositivo de Rede | Definicao: Qualquer dispositivo final (laptop, smartphone, tablet, etc.) que se conecta a uma rede sem fio para executar aplicações.
+  Vantagens de Hospedeiro sem fio: Mobilidade; Conectividade sem cabos
+  Desvantagens de Hospedeiro sem fio: Dependência de bateria; Potencialmente menor desempenho que dispositivos com fio
+  Casos de uso de Hospedeiro sem fio: Acesso à internet em qualquer lugar coberto pela rede Wi-Fi; Comunicação entre dispositivos móveis
+Termo: Enlace sem fio | Tipo: Conexão de Rede | Definicao: A conexão de comunicação entre dispositivos sem fio, caracterizada por diferentes tecnologias que oferecem variadas taxas de transmissão e alcances.
+  Vantagens de Enlace sem fio: Flexibilidade; Mobilidade
+  Desvantagens de Enlace sem fio: Suscetível a interferências; Taxas de transmissão geralmente menores que enlaces com fio; Alcance limitado
+  Casos de uso de Enlace sem fio: Conectar dispositivos a um Access Point; Comunicação direta entre dispositivos (ad-hoc)
+Termo: Estação-base (Access Point - AP) | Tipo: Dispositivo de Rede | Definicao: Um dispositivo que atua como um ponto central para a comunicação em uma rede sem fio, permitindo que hospedeiros sem fio se conectem à rede e à infraestrutura.
+  Vantagens de Estação-base (Access Point - AP): Centraliza a comunicação; Estende o alcance da rede; Gerencia o acesso ao meio
+  Desvantagens de Estação-base (Access Point - AP): Ponto único de falha (em redes simples); Requer configuração; Pode ser um gargalo de performance
+  Casos de uso de Estação-base (Access Point - AP): Criar redes Wi-Fi em residências, escritórios e locais públicos; Conectar dispositivos sem fio a redes cabeadas
+Termo: Infraestrutura de rede | Tipo: Componente de Rede | Definicao: A rede maior (geralmente cabeada) à qual um hospedeiro sem fio pode desejar se comunicar, incluindo roteadores, switches e servidores.
+  Vantagens de Infraestrutura de rede: Permite acesso a recursos globais (internet); Conecta redes sem fio a redes cabeadas
+  Desvantagens de Infraestrutura de rede: Pode ser complexa de gerenciar; Requer cabeamento estruturado
+  Casos de uso de Infraestrutura de rede: Acesso à Internet a partir de dispositivos Wi-Fi; Comunicação entre redes sem fio e redes corporativas
+Termo: Meio não guiado | Tipo: Meio de Transmissão | Definicao: Refere-se a meios de transmissão que não utilizam um condutor físico, como o ar, onde os sinais se propagam livremente. Redes Wi-Fi utilizam o ar como meio.
+  Vantagens de Meio não guiado: Mobilidade; Flexibilidade de instalação
+  Desvantagens de Meio não guiado: Suscetível a interferências; Menor segurança; Alcance limitado; Perda de sinal
+  Casos de uso de Meio não guiado: Redes sem fio (Wi-Fi, Bluetooth, celular); Comunicações por rádio e micro-ondas
+
+-- Figuras e diagramas --
+Figura 'Diagrama de Rede Wi-Fi' (Arquitetura de Rede): O diagrama ilustra uma rede Wi-Fi com uma 'Infraestrutura de rede' centralizada (representada por um roteador/switch conectado à Internet). Vários 'Pontos de acesso sem fio' (APs) estão conectados a essa infraestrutura. Cada AP cobre uma 'Área de cobertura' onde 'Hospedeiros sem fio' (representados por laptops e smartphones) se conectam. Alguns hospedeiros são mostrados como 'Hospedeiros sem fio em movimento', indicando a capacidade de roaming. A legenda explica os símbolos utilizados.
+  Componentes visuais: Infraestrutura de rede, Ponto de acesso sem fio (AP), Hospedeiro sem fio, Hospedeiro sem fio em movimento, Área de cobertura, Internet, Legenda
+  Relacionado a: ieee_802.11, estacao_base_ap, hospedeiro_sem_fio, infraestrutura_rede_sem_fio, meio_nao_guiado
+
+-- Relacionamentos --
+Conexao: 'hospedeiro_sem_fio' --[conecta_a]--> 'estacao_base_ap'. Motivo: Hospedeiros sem fio se conectam a uma rede através de um Access Point.
+Conexao: 'estacao_base_ap' --[conecta_a]--> 'infraestrutura_rede_sem_fio'. Motivo: Access Points conectam a rede sem fio à infraestrutura de rede maior.
+Conexao: 'hospedeiro_sem_fio' --[utiliza]--> 'meio_nao_guiado'. Motivo: Hospedeiros sem fio utilizam o ar (meio não guiado) para comunicação.
+Conexao: 'ieee_802.11' --[define_protocolo_para]--> 'mac'. Motivo: O padrão IEEE 802.11 define os protocolos para a subcamada MAC em redes Wi-Fi.
+Conexao: 'ieee_802.11' --[define_protocolo_para]--> 'camada_fisica'. Motivo: O padrão IEEE 802.11 define os protocolos para a Camada Física em redes Wi-Fi.
+
+=== SECAO [TI_SEC_003]: Diferenças entre Enlaces com e sem Fio, e Problemas Comuns ===
+Esta seção compara enlaces com e sem fio, destacando as desvantagens inerentes às redes sem fio, como a redução da força do sinal, interferência de outras fontes e propagação multivias. Ao contrário dos enlaces com fio, que são dedicados e seguros, os enlaces sem fio enfrentam insegurança, perda de sinal, qualidade e abrangência. O ruído (interferência eletromagnética) pode corromper os dados transmitidos (bits 0 e 1). Problemas adicionais em redes sem fio incluem o 'terminal oculto' (um dispositivo que transmite mas não é detectado por outro dispositivo que está recebendo) e a interferência de múltiplos transmissores/receptores. A atenuação do sinal e a potência do sinal são fatores cruciais, e a localização do Access Point é fundamental para uma boa distribuição de sinal e acesso.
+
+-- Conceitos-chave --
+Termo: Enlace com fio | Tipo: Conexão de Rede | Definicao: Conexão de rede que utiliza cabos físicos (como Ethernet) para transmitir dados. Geralmente oferece maior segurança, velocidade e confiabilidade.
+  Vantagens de Enlace com fio: Maior segurança; Maior velocidade e largura de banda; Menor suscetibilidade a interferências; Conexão dedicada
+  Desvantagens de Enlace com fio: Mobilidade restrita; Instalação de cabos pode ser complexa e custosa; Menos flexível
+  Casos de uso de Enlace com fio: Conexão de servidores e desktops em escritórios; Redes de alta performance; Conexões de backbone
+Termo: Enlace sem fio | Tipo: Conexão de Rede | Definicao: Conexão de rede que utiliza ondas de rádio ou outras formas de radiação eletromagnética para transmitir dados, como Wi-Fi. Oferece mobilidade, mas é mais suscetível a problemas.
+  Vantagens de Enlace sem fio: Mobilidade; Flexibilidade; Facilidade de instalação (sem cabos)
+  Desvantagens de Enlace sem fio: Menor segurança; Menor velocidade e largura de banda (comparado a fio); Suscetível a interferências e ruído; Alcance limitado; Perda de sinal
+  Casos de uso de Enlace sem fio: Redes domésticas e corporativas; Dispositivos móveis; Hotspots públicos
+Termo: Redução da força do sinal | Tipo: Fenômeno de Rede | Definicao: A diminuição da intensidade do sinal de rádio à medida que ele se propaga pelo meio, devido a fatores como distância, absorção e dispersão.
+  Desvantagens de Redução da força do sinal: Reduz o alcance da rede; Aumenta a taxa de erros; Pode levar à perda de conexão
+  Casos de uso de Redução da força do sinal: Explica a limitação de alcance de redes Wi-Fi; Impacta a performance em áreas com sinal fraco
+Termo: Interferência de outras fontes | Tipo: Fenômeno de Rede | Definicao: Sinais indesejados de outros dispositivos (micro-ondas, telefones sem fio, outras redes Wi-Fi) que competem com o sinal da rede desejada, degradando a qualidade da comunicação.
+  Desvantagens de Interferência de outras fontes: Aumenta a taxa de erros; Reduz a velocidade de transmissão; Pode causar interrupções na comunicação
+  Casos de uso de Interferência de outras fontes: Explica problemas de performance em ambientes com muitos dispositivos sem fio; Justifica a necessidade de seleção de canais em Wi-Fi
+Termo: Propagação multivias (Multipath) | Tipo: Fenômeno de Rede | Definicao: Ocorre quando o sinal de rádio se propaga por múltiplos caminhos (refletindo em objetos) antes de chegar ao receptor, causando interferência construtiva ou destrutiva e distorção.
+  Desvantagens de Propagação multivias (Multipath): Causa fading (flutuações no sinal); Aumenta a taxa de erros; Dificulta a sincronização do receptor
+  Casos de uso de Propagação multivias (Multipath): Explica a degradação do sinal em ambientes com muitos obstáculos; Impacta a performance de redes sem fio em ambientes internos
+Termo: Ruído | Tipo: Fenômeno de Rede | Definicao: Qualquer sinal eletromagnético indesejado que interfere na transmissão de dados, podendo corromper a informação transmitida.
+  Desvantagens de Ruído: Corrompe dados (bits 0 e 1); Aumenta a taxa de erros; Reduz a confiabilidade da comunicação
+  Casos de uso de Ruído: Explica a necessidade de técnicas de correção de erros; Impacta a performance de redes sem fio
+Termo: Terminal Oculto | Tipo: Problema de Rede | Definicao: Um problema em redes sem fio onde um dispositivo (A) pode se comunicar com um Access Point (AP), e outro dispositivo (B) também pode se comunicar com o mesmo AP, mas A e B não conseguem se detectar mutuamente. Isso pode levar a colisões.
+  Desvantagens de Terminal Oculto: Causa colisões de dados; Reduz a eficiência da rede; Dificulta o controle de acesso ao meio
+  Casos de uso de Terminal Oculto: Explica a necessidade de mecanismos como o RTS/CTS no Wi-Fi; Ocorre em cenários onde dispositivos estão fora do alcance direto uns dos outros, mas dentro do alcance do AP
+Termo: Múltiplos transmissores e receptores | Tipo: Problema de Rede | Definicao: A presença de vários dispositivos transmitindo e recebendo sinais simultaneamente em uma área, o que pode levar a interferências e colisões se não for gerenciado adequadamente.
+  Desvantagens de Múltiplos transmissores e receptores: Aumenta a probabilidade de interferência e colisões; Requer mecanismos eficientes de acesso ao meio; Pode saturar o meio de comunicação
+  Casos de uso de Múltiplos transmissores e receptores: Ambientes com alta densidade de dispositivos sem fio; Redes Wi-Fi públicas ou corporativas
+
+-- Tabelas comparativas --
+Tabela 'Comparativo: Enlace com Fio vs. Enlace Sem Fio': A tabela resume as principais diferenças e desafios associados aos enlaces com fio e sem fio, destacando a segurança, a força do sinal, a interferência e a propagação como pontos cruciais de distinção.
+  Linha L001: Característica = Segurança; Enlace com Fio = Garantia de meio seguro e dedicado; Enlace Sem Fio = Insegurança inerente (meio aberto)
+    (Relacionado a: enlace_com_fio, enlace_sem_fio)
+  Linha L002: Característica = Força do Sinal; Enlace com Fio = Constante (dentro dos limites do cabo); Enlace Sem Fio = Redução da força do sinal (distância, obstáculos)
+    (Relacionado a: enlace_com_fio, enlace_sem_fio, reducao_forca_sinal)
+  Linha L003: Característica = Interferência; Enlace com Fio = Baixa (protegido por cabos); Enlace Sem Fio = Alta (outras fontes, ruído)
+    (Relacionado a: enlace_com_fio, enlace_sem_fio, interferencia_fontes_externas, ruido)
+  Linha L004: Característica = Propagação; Enlace com Fio = Direta (pelo cabo); Enlace Sem Fio = Multivias (reflexões, difrações)
+    (Relacionado a: enlace_com_fio, enlace_sem_fio, propagacao_multivias)
+
+-- Figuras e diagramas --
+Figura 'Gráfico de Taxa de Erro de Bits (BER) vs. Relação Sinal-Ruído (SNR)' (Gráfico de Performance): O gráfico mostra a relação entre a Taxa de Erro de Bits (BER) no eixo Y (logarítmico, de 10^-1 a 10^-7) e a Relação Sinal-Ruído (SNR) em dB no eixo X (de 0 a 40 dB). Várias curvas representam diferentes esquemas de modulação (BPSK, QAM16, QAM256) e suas respectivas taxas de dados (1 Mbit/s, 4 Mbit/s, 8 Mbit/s). Para uma dada taxa de erro (ex: 10^-5), um SNR maior é necessário para esquemas de modulação mais complexos (QAM256) em comparação com esquemas mais simples (BPSK). Isso ilustra como o ruído (SNR baixo) afeta a qualidade da transmissão.
+  Componentes visuais: Eixo X (SNR em dB), Eixo Y (BER), Curvas de modulação (BPSK, QAM16, QAM256), Taxas de dados (1 Mbit/s, 4 Mbit/s, 8 Mbit/s), Legenda (BER, SNR)
+  Relacionado a: ruido, ieee_802.11
+Figura 'Diagrama Ilustrando Problemas de Terminal Oculto e Atenuação' (Diagrama de Rede Conceitual): O diagrama mostra três dispositivos (A, B, C) e um Access Point (AP). O dispositivo A está próximo ao AP e tem um sinal forte. O dispositivo C também está próximo ao AP e tem um sinal forte. No entanto, o dispositivo B está mais distante e pode ter um sinal mais fraco. A linha tracejada entre A e B indica que eles podem não se 'ver' diretamente (terminal oculto), embora ambos se comuniquem com o AP. A curva de 'Atenuação do sinal' mostra como a potência do sinal diminui com a distância, afetando a capacidade de comunicação. A 'potência do sinal de A' e a 'potência do sinal de C' são mostradas como altas em relação ao AP.
+  Componentes visuais: Dispositivos A, B, C, Access Point (AP), Linhas de comunicação, Gráfico de Atenuação do Sinal vs. Distância, Curvas de Potência do Sinal
+  Relacionado a: terminal_oculto, reducao_forca_sinal, estacao_base_ap
+
+-- Relacionamentos --
+Conexao: 'enlace_sem_fio' --[sofre_de]--> 'reducao_forca_sinal'. Motivo: Enlaces sem fio são inerentemente sujeitos à redução da força do sinal devido à propagação.
+Conexao: 'enlace_sem_fio' --[sofre_de]--> 'interferencia_fontes_externas'. Motivo: Enlaces sem fio são mais suscetíveis a interferências de outros dispositivos.
+Conexao: 'enlace_sem_fio' --[sofre_de]--> 'propagacao_multivias'. Motivo: A propagação multivias é um fenômeno comum em enlaces sem fio.
+Conexao: 'enlace_sem_fio' --[sofre_de]--> 'ruido'. Motivo: O ruído é uma interferência eletromagnética que afeta a qualidade dos enlaces sem fio.
+Conexao: 'terminal_oculto' --[causa]--> 'colisao_dados'. Motivo: O problema do terminal oculto pode levar a colisões de dados na rede sem fio.
+Conexao: 'estacao_base_ap' --[influencia]--> 'reducao_forca_sinal'. Motivo: A localização do AP é crucial para otimizar a força do sinal e minimizar a atenuação.
+Conexao: 'ieee_802.11' --[mitiga_risco]--> 'terminal_oculto'. Motivo: O padrão IEEE 802.11 inclui mecanismos (como RTS/CTS) para mitigar o problema do terminal oculto.
+
+=== SECAO [TI_SEC_004]: Seleção de AP e Associação de Estações ===
+Em redes Wi-Fi (IEEE 802.11), a potência do sinal é um fator chave para minimizar erros. Cada estação sem fio deve se associar a um Access Point (AP) antes de trocar dados. Ao instalar um AP, um administrador define um Identificador de Conjunto de Serviços (SSID) e um número de canal. Em locais com múltiplos APs (uma 'selva de Wi-Fis'), uma estação sem fio seleciona o AP que oferece o sinal mais forte. O processo de varredura para encontrar APs pode ser passivo (ouvir quadros de sinalização) ou ativo (enviar quadros de investigação). O Access Point opera com múltiplos canais, e a sobreposição de canais é importante para garantir boa abrangência, mas pode causar concorrência entre APs.
+
+-- Conceitos-chave --
+Termo: Potência do sinal Wi-Fi | Tipo: Parâmetro de Rede | Definicao: A intensidade do sinal de rádio transmitido por um Access Point ou estação sem fio. Uma maior potência geralmente resulta em menor taxa de erros e maior alcance.
+  Vantagens de Potência do sinal Wi-Fi: Melhora a taxa de erro (BER); Aumenta o alcance da rede; Melhora a estabilidade da conexão
+  Desvantagens de Potência do sinal Wi-Fi: Pode causar interferência em canais adjacentes se muito alta; Consumo de energia
+  Casos de uso de Potência do sinal Wi-Fi: Otimização de cobertura em redes Wi-Fi; Seleção de AP pelo cliente
+Termo: Associação com AP | Tipo: Processo de Rede | Definicao: O processo pelo qual uma estação sem fio se conecta e se autentica com um Access Point para poder participar da rede Wi-Fi.
+  Vantagens de Associação com AP: Permite a comunicação com a rede; Estabelece a identidade do cliente; Permite a aplicação de políticas de segurança
+  Desvantagens de Associação com AP: Requer autenticação; Pode falhar se houver problemas de sinal ou credenciais
+  Casos de uso de Associação com AP: Conexão inicial de um dispositivo a uma rede Wi-Fi; Roaming entre APs
+Termo: SSID (Service Set Identifier) | Tipo: Identificador de Rede | Definicao: O nome de uma rede Wi-Fi. É usado para identificar e diferenciar redes sem fio.
+  Vantagens de SSID (Service Set Identifier): Permite que usuários identifiquem redes; Facilita a seleção da rede desejada
+  Desvantagens de SSID (Service Set Identifier): Pode ser facilmente descoberto (se não oculto); Não garante segurança por si só
+  Casos de uso de SSID (Service Set Identifier): Nomear redes Wi-Fi domésticas e corporativas; Permitir que dispositivos se conectem à rede correta
+Termo: Canal Wi-Fi | Tipo: Parâmetro de Rede | Definicao: Uma faixa de frequência específica dentro da banda de operação do Wi-Fi (ex: 2.4 GHz ou 5 GHz) utilizada por um Access Point para transmitir e receber dados.
+  Vantagens de Canal Wi-Fi: Permite a coexistência de múltiplas redes na mesma área; Otimiza o uso do espectro
+  Desvantagens de Canal Wi-Fi: Canais sobrepostos podem causar interferência; Número limitado de canais não sobrepostos
+  Casos de uso de Canal Wi-Fi: Configuração de APs para minimizar interferência; Seleção de canal para melhor performance
+Termo: Selva de Wi-Fis | Tipo: Cenário de Rede | Definicao: Uma localização física onde uma estação sem fio recebe sinais fortes de dois ou mais Access Points simultaneamente.
+  Vantagens de Selva de Wi-Fis: Potencial para melhor cobertura e redundância
+  Desvantagens de Selva de Wi-Fis: Requer que o cliente selecione o melhor AP; Pode levar a problemas de roaming se a seleção não for suave
+  Casos de uso de Selva de Wi-Fis: Ambientes corporativos densos; Prédios de apartamentos; Locais públicos com múltiplos APs
+Termo: Varredura Passiva | Tipo: Processo de Rede | Definicao: Método de descoberta de redes Wi-Fi onde a estação sem fio escuta passivamente os quadros de sinalização (beacons) transmitidos pelos Access Points.
+  Vantagens de Varredura Passiva: Simples de implementar; Não consome muita energia da estação
+  Desvantagens de Varredura Passiva: Pode ser mais lenta para descobrir redes; Depende da frequência dos beacons
+  Casos de uso de Varredura Passiva: Descoberta inicial de redes Wi-Fi disponíveis; Processo padrão de associação
+Termo: Varredura Ativa | Tipo: Processo de Rede | Definicao: Método de descoberta de redes Wi-Fi onde a estação sem fio envia quadros de 'Probe Request' para encontrar APs, e os APs respondem com 'Probe Response'.
+  Vantagens de Varredura Ativa: Geralmente mais rápida que a varredura passiva; Permite solicitar informações específicas
+  Desvantagens de Varredura Ativa: Consome mais energia da estação; Pode gerar mais tráfego na rede
+  Casos de uso de Varredura Ativa: Descoberta rápida de redes; Situações onde a varredura passiva não é suficiente
+
+-- Figuras e diagramas --
+Figura 'Diagrama de Cobertura de APs e Seleção pelo Host' (Diagrama de Rede): O diagrama mostra dois Basic Service Sets (BSS 1 e BSS 2), cada um com um Access Point (AP 1 e AP 2). Vários hospedeiros (H1) estão dentro das áreas de cobertura. O diagrama ilustra que um hospedeiro (H1) pode receber sinais de múltiplos APs (neste caso, AP 1 e AP 2). A legenda indica que o hospedeiro geralmente escolhe o AP com o sinal mais forte. O diagrama também mostra a conexão dos APs a um switch/roteador e, subsequentemente, à Internet.
+  Componentes visuais: Basic Service Set (BSS 1, BSS 2), Access Point (AP 1, AP 2), Hospedeiro (H1), Áreas de cobertura, Switch/Roteador, Internet
+  Relacionado a: estacao_base_ap, hospedeiro_sem_fio, ssid, selva_wifi, potencia_sinal_wifi, associacao_ap
+
+-- Relacionamentos --
+Conexao: 'hospedeiro_sem_fio' --[seleciona]--> 'estacao_base_ap'. Motivo: O hospedeiro sem fio seleciona o AP com base na força do sinal recebido.
+Conexao: 'hospedeiro_sem_fio' --[realiza]--> 'associacao_ap'. Motivo: Antes de transmitir dados, o hospedeiro sem fio deve realizar o processo de associação com um AP.
+Conexao: 'estacao_base_ap' --[utiliza]--> 'canal_wifi'. Motivo: Cada AP utiliza um canal Wi-Fi específico para comunicação.
+Conexao: 'hospedeiro_sem_fio' --[realiza]--> 'varredura_passiva'. Motivo: O hospedeiro pode usar varredura passiva para descobrir APs.
+Conexao: 'hospedeiro_sem_fio' --[realiza]--> 'varredura_ativa'. Motivo: O hospedeiro pode usar varredura ativa para descobrir APs.
+Conexao: 'administrador_rede' --[configura]--> 'ssid'. Motivo: O administrador de rede configura o SSID para cada AP.
+Conexao: 'administrador_rede' --[configura]--> 'canal_wifi'. Motivo: O administrador de rede configura o canal para cada AP.
+Conexao: 'selva_wifi' --[requer]--> 'hospedeiro_sem_fio'. Motivo: Em uma 'selva de Wi-Fis', o hospedeiro precisa selecionar o AP mais adequado.
+
+=== SECAO [TI_SEC_005]: IEEE 802.11 – Wi-Fi – Uso de Controlador (WLC) ===
+Em cenários com múltiplos Access Points (APs), especialmente em ambientes corporativos, escolares ou públicos, é necessário um gerenciamento centralizado através de um Controlador de Rede Local Sem Fio (WLC - Wireless LAN Controller). O WLC atua como o 'cérebro' da rede Wi-Fi, centralizando o gerenciamento de todos os APs (configurações, segurança, políticas, canais, potência). Os APs, neste modelo, são 'burros' ou 'lightweight', pois dependem do controlador para suas operações. O controlador define canais para evitar interferência, gerencia o roaming (handover) entre APs e aplica políticas de QoS, VLAN e autenticação. O roaming permite que usuários móveis transitem entre áreas de cobertura sem perder conectividade. O WLC pode ser físico, virtual ou integrado a um roteador.
+
+-- Conceitos-chave --
+Termo: Controlador (WLC - Wireless LAN Controller) | Tipo: Dispositivo de Rede | Definicao: Um dispositivo central que gerencia múltiplos Access Points em uma rede Wi-Fi corporativa ou de grande escala. Centraliza configurações, políticas, segurança e roaming.
+  Vantagens de Controlador (WLC - Wireless LAN Controller): Gerenciamento centralizado e simplificado; Melhora a segurança e a consistência das políticas; Facilita o roaming; Otimiza o uso de canais e recursos
+  Desvantagens de Controlador (WLC - Wireless LAN Controller): Ponto único de falha (se não houver redundância); Custo adicional (hardware/software/licenças); Complexidade de configuração inicial
+  Casos de uso de Controlador (WLC - Wireless LAN Controller): Redes Wi-Fi empresariais; Campus universitários; Hospitais; Grandes espaços públicos
+Termo: Access Point Leve (Lightweight AP / Thin AP) | Tipo: Dispositivo de Rede | Definicao: Um Access Point que opera sob o controle de um WLC. Possui funcionalidades limitadas e encaminha o tráfego e as instruções para o controlador.
+  Vantagens de Access Point Leve (Lightweight AP / Thin AP): Custo unitário menor; Gerenciamento centralizado simplifica a implantação e manutenção
+  Desvantagens de Access Point Leve (Lightweight AP / Thin AP): Não funciona de forma autônoma; Depende do WLC para operar
+  Casos de uso de Access Point Leve (Lightweight AP / Thin AP): Redes Wi-Fi gerenciadas centralmente; Substituição de APs autônomos em ambientes corporativos
+Termo: Roaming Wi-Fi | Tipo: Funcionalidade de Rede | Definicao: A capacidade de um dispositivo móvel de se mover entre diferentes Access Points dentro da mesma rede sem fio sem perder a conectividade ou interromper as aplicações em andamento.
+  Vantagens de Roaming Wi-Fi: Mobilidade contínua para usuários; Experiência de usuário aprimorada
+  Desvantagens de Roaming Wi-Fi: Requer suporte do cliente e do AP/WLC; Pode introduzir uma pequena latência durante o handover
+  Casos de uso de Roaming Wi-Fi: Usuários se movendo em escritórios, hospitais, campus; Aplicações que exigem conectividade ininterrupta (VoIP, videoconferência)
+Termo: Gerenciamento Centralizado | Tipo: Arquitetura de Rede | Definicao: Abordagem de administração de rede onde um único ponto de controle (como um WLC) gerencia múltiplos dispositivos (APs) e recursos, garantindo consistência e eficiência.
+  Vantagens de Gerenciamento Centralizado: Simplifica a administração; Aplica políticas uniformes; Melhora a visibilidade e o controle; Facilita atualizações e configurações
+  Desvantagens de Gerenciamento Centralizado: Dependência do sistema central; Custo inicial pode ser maior; Complexidade do sistema central
+  Casos de uso de Gerenciamento Centralizado: Redes Wi-Fi empresariais com muitos APs; Gerenciamento de frotas de dispositivos; Ambientes que exigem alta segurança e conformidade
+Termo: Varredura Passiva e Ativa | Tipo: Processo de Rede | Definicao: Métodos utilizados por estações sem fio para descobrir Access Points disponíveis. A varredura passiva envolve ouvir beacons, enquanto a varredura ativa envia probe requests.
+  Vantagens de Varredura Passiva e Ativa: Permite a descoberta de redes e APs; Essencial para associação e roaming
+  Desvantagens de Varredura Passiva e Ativa: Consumo de energia e tempo; Pode ser afetada por interferências
+  Casos de uso de Varredura Passiva e Ativa: Conexão inicial a uma rede Wi-Fi; Seleção de AP durante o roaming
+
+-- Tabelas comparativas --
+Tabela 'Vantagens e Desvantagens do Gerenciamento Centralizado com WLC': A tabela detalha os benefícios e os inconvenientes de se adotar uma arquitetura de rede Wi-Fi com gerenciamento centralizado por meio de um WLC, comparando com abordagens descentralizadas.
+  Linha L005: Benefício/Desvantagem = Gerenciamento central; Descrição = Uma única interface controla todos os APs
+    (Relacionado a: gerenciamento_centralizado, wlc)
+  Linha L006: Benefício/Desvantagem = Roaming eficiente; Descrição = Dispositivos móveis mudam de AP sem cair a conexão
+    (Relacionado a: roaming_wifi, wlc)
+  Linha L007: Benefício/Desvantagem = Monitoramento fácil; Descrição = Alertas, desempenho e uso em tempo real
+    (Relacionado a: wlc)
+  Linha L008: Benefício/Desvantagem = Escalabilidade; Descrição = Adicionar mais APs não exige reconfiguração manual individual
+    (Relacionado a: wlc)
+  Linha L009: Benefício/Desvantagem = Segurança unificada; Descrição = Políticas padronizadas, autenticação 802.1X, VLANs
+    (Relacionado a: wlc, ieee_802.11)
+  Linha L010: Benefício/Desvantagem = Custo mais alto; Descrição = (Infraestrutura + licenças)
+    (Relacionado a: wlc)
+  Linha L011: Benefício/Desvantagem = Mais complexidade técnica; Descrição = Na instalação e manutenção
+    (Relacionado a: wlc)
+  Linha L012: Benefício/Desvantagem = Depende da estabilidade; Descrição = Do controlador central
+    (Relacionado a: wlc)
+  Linha L013: Benefício/Desvantagem = Dependência de fornecedor; Descrição = 
+    (Relacionado a: wlc)
+
+-- Figuras e diagramas --
+Figura 'Diagrama de Varredura Passiva e Ativa para Pontos de Acesso' (Fluxograma de Processo): O diagrama ilustra dois cenários: a. Varredura Passiva e b. Varredura Ativa. No cenário passivo, o hospedeiro (H1) recebe quadros de sinalização dos APs (AP 1, AP 2) e, em seguida, envia um quadro de solicitação de associação para o AP selecionado, que responde. No cenário ativo, H1 difunde um quadro de solicitação de investigação, recebe respostas dos APs, e então envia uma solicitação de associação para o AP selecionado, que responde. Ambos os cenários mostram a comunicação entre hospedeiros e APs em diferentes Basic Service Sets (BBS 1, BBS 2).
+  Componentes visuais: Hospedeiro (H1), Access Point (AP 1, AP 2), Basic Service Set (BBS 1, BBS 2), Quadro de Sinalização (Beacon), Quadro de Solicitação de Associação, Quadro de Resposta de Associação, Quadro de Solicitação de Investigação, Quadro de Resposta de Investigações
+  Relacionado a: hospedeiro_sem_fio, estacao_base_ap, varredura_passiva, varredura_ativa, associacao_ap
+
+-- Relacionamentos --
+Conexao: 'wlc' --[gerencia]--> 'ap_leve'. Motivo: O WLC gerencia o funcionamento dos Access Points leves.
+Conexao: 'wlc' --[centraliza]--> 'gerenciamento_centralizado'. Motivo: O WLC é a peça central para implementar o gerenciamento centralizado de redes Wi-Fi.
+Conexao: 'ap_leve' --[depende_de]--> 'wlc'. Motivo: APs leves não funcionam autonomamente e dependem do WLC para instruções e gerenciamento.
+Conexao: 'roaming_wifi' --[facilitado_por]--> 'wlc'. Motivo: O WLC gerencia o handover entre APs para garantir um roaming eficiente.
+Conexao: 'wlc' --[aplica_politica]--> 'seguranca_wifi'. Motivo: O WLC aplica políticas de segurança unificadas, como autenticação 802.1X.
+Conexao: 'wlc' --[aplica_politica]--> 'qos'. Motivo: O WLC pode aplicar políticas de Qualidade de Serviço (QoS).
+Conexao: 'wlc' --[aplica_politica]--> 'vlan'. Motivo: O WLC pode gerenciar VLANs para segmentação de rede.
+Conexao: 'wlc' --[define]--> 'canal_wifi'. Motivo: O WLC define os canais de operação dos APs para evitar interferência.
+Conexao: 'hospedeiro_sem_fio' --[utiliza]--> 'varredura_passiva_ativa'. Motivo: O hospedeiro utiliza varredura passiva e ativa para encontrar APs.
+
+=== SECAO [TI_SEC_006]: Componentes de Rede Gerenciada e Considerações Finais ===
+Em uma rede Wi-Fi gerenciada por um controlador (WLC), os Access Points (APs) são considerados 'burros' ou 'lightweight', pois não operam de forma autônoma, mas sim recebem instruções do controlador sobre canal, potência e autenticação. Todos os APs se conectam ao controlador via cabo Ethernet. O controlador define canais para evitar sobreposição, gerencia o roaming (handover) e aplica políticas de QoS, VLAN e autenticação (ex: RADIUS). Um exemplo prático é um campus universitário com 30 APs gerenciados por um controlador que atribui canais, monitora banda, permite roaming e aplica autenticação única. É crucial que a rede sem fio seja montada sobre um cabeamento estruturado com fio. Uma observação importante é que soluções entregues por fornecedores específicos podem ter compatibilidade limitada com controladores de terceiros, e APs mais antigos podem perder suporte e atualizações.
+
+-- Conceitos-chave --
+Termo: Access Point Leve (Lightweight AP / Thin AP) | Tipo: Dispositivo de Rede | Definicao: Um Access Point que depende de um controlador central (WLC) para a maior parte de sua configuração e operação. Encaminha tráfego e recebe instruções do controlador.
+  Vantagens de Access Point Leve (Lightweight AP / Thin AP): Custo unitário menor; Gerenciamento centralizado simplifica a implantação e manutenção
+  Desvantagens de Access Point Leve (Lightweight AP / Thin AP): Não funciona de forma autônoma; Depende do WLC para operar
+  Casos de uso de Access Point Leve (Lightweight AP / Thin AP): Redes Wi-Fi corporativas e de grande escala; Ambientes que exigem controle centralizado
+Termo: Controlador (WLC - Wireless LAN Controller) | Tipo: Dispositivo de Rede | Definicao: Dispositivo central que gerencia múltiplos APs leves, definindo configurações, políticas, canais, segurança e facilitando o roaming.
+  Vantagens de Controlador (WLC - Wireless LAN Controller): Gerenciamento centralizado; Segurança unificada; Roaming eficiente; Escalabilidade
+  Desvantagens de Controlador (WLC - Wireless LAN Controller): Custo mais alto; Complexidade técnica; Dependência de estabilidade e fornecedor
+  Casos de uso de Controlador (WLC - Wireless LAN Controller): Redes Wi-Fi empresariais, educacionais, hospitalares; Grandes espaços públicos
+Termo: Cabeamento Estruturado | Tipo: Infraestrutura de Rede | Definicao: Um sistema padronizado de cabos, conectores e infraestrutura de rede que suporta múltiplos sistemas de comunicação, incluindo redes de dados. Essencial para a conectividade dos APs com o controlador.
+  Vantagens de Cabeamento Estruturado: Organização e padronização; Flexibilidade e escalabilidade; Facilidade de manutenção e troubleshooting; Suporte a múltiplos serviços (voz, dados, vídeo)
+  Desvantagens de Cabeamento Estruturado: Custo inicial de instalação; Requer planejamento e projeto adequados
+  Casos de uso de Cabeamento Estruturado: Instalação de redes em edifícios comerciais e residenciais; Data centers; Redes corporativas
+Termo: Autenticação Única (Single Sign-On - SSO) | Tipo: Protocolo de Segurança | Definicao: Um método de autenticação que permite a um usuário fazer login uma única vez para acessar múltiplos sistemas ou recursos relacionados. Em redes Wi-Fi, frequentemente implementado via RADIUS.
+  Vantagens de Autenticação Única (Single Sign-On - SSO): Melhora a experiência do usuário; Aumenta a segurança (reduz senhas fracas ou reutilizadas); Simplifica o gerenciamento de acesso
+  Desvantagens de Autenticação Única (Single Sign-On - SSO): Complexidade na implementação inicial; Ponto único de falha (se o sistema de autenticação central falhar)
+  Casos de uso de Autenticação Única (Single Sign-On - SSO): Acesso a redes corporativas Wi-Fi; Login em múltiplos aplicativos e serviços online
+Termo: Compatibilidade de Fornecedor | Tipo: Restrição de Sistema | Definicao: A capacidade de dispositivos de diferentes fabricantes interoperarem ou funcionarem juntos. Em redes Wi-Fi gerenciadas, APs e controladores de diferentes fornecedores podem não ser compatíveis.
+  Desvantagens de Compatibilidade de Fornecedor: Limita a escolha de equipamentos; Pode aumentar custos; Dificulta a substituição de componentes
+  Casos de uso de Compatibilidade de Fornecedor: Escolha de equipamentos para redes Wi-Fi corporativas; Planejamento de atualizações de infraestrutura
+
+-- Tabelas comparativas --
+Tabela 'Vantagens do Gerenciamento Centralizado com WLC': Esta tabela resume os benefícios de se utilizar um controlador centralizado (WLC) para gerenciar múltiplos Access Points (APs) em uma rede Wi-Fi, destacando a eficiência operacional e a segurança.
+  Linha L014: Benefício = Gerenciamento central; Descrição = Uma única interface controla todos os APs
+    (Relacionado a: wlc, gerenciamento_centralizado)
+  Linha L015: Benefício = Roaming eficiente; Descrição = Dispositivos móveis mudam de AP sem cair a conexão
+    (Relacionado a: roaming_wifi, wlc)
+  Linha L016: Benefício = Monitoramento fácil; Descrição = Alertas, desempenho e uso em tempo real
+    (Relacionado a: wlc)
+  Linha L017: Benefício = Escalabilidade; Descrição = Adicionar mais APs não exige reconfiguração manual individual
+    (Relacionado a: wlc)
+  Linha L018: Benefício = Segurança unificada; Descrição = Políticas padronizadas, autenticação 802.1X, VLANs
+    (Relacionado a: wlc, ieee_802.11, seguranca_wifi)
+Tabela 'Desvantagens do Gerenciamento Centralizado com WLC': Esta tabela lista as desvantagens associadas à implementação de uma rede Wi-Fi gerenciada por controlador (WLC), focando nos aspectos de custo, complexidade e dependência.
+  Linha L019: Desvantagem = Custo mais alto; Descrição = (Infraestrutura + licenças)
+    (Relacionado a: wlc)
+  Linha L020: Desvantagem = Mais complexidade técnica; Descrição = Na instalação e manutenção
+    (Relacionado a: wlc)
+  Linha L021: Desvantagem = Depende da estabilidade; Descrição = Do controlador central
+    (Relacionado a: wlc)
+  Linha L022: Desvantagem = Dependência de fornecedor; Descrição = 
+    (Relacionado a: compatibilidade_fornecedor, wlc)
+
+-- Relacionamentos --
+Conexao: 'ap_leve' --[conectado_via]--> 'cabeamento_estruturado'. Motivo: APs leves são conectados ao controlador via cabeamento estruturado (Ethernet).
+Conexao: 'wlc' --[define]--> 'canal_wifi'. Motivo: O WLC define os canais dos APs para evitar interferência e sobreposição.
+Conexao: 'wlc' --[gerencia]--> 'roaming_wifi'. Motivo: O WLC gerencia o handover entre APs para permitir o roaming.
+Conexao: 'wlc' --[aplica_politica]--> 'autenticacao_unica'. Motivo: O WLC pode aplicar políticas de autenticação única, como via RADIUS.
+Conexao: 'wlc' --[aplica_politica]--> 'qos'. Motivo: O WLC aplica políticas de QoS para priorização de tráfego.
+Conexao: 'wlc' --[aplica_politica]--> 'vlan'. Motivo: O WLC gerencia VLANs para segmentação de rede.
+Conexao: 'solucao_fornecedor' --[pode_ter_limitacao]--> 'compatibilidade_fornecedor'. Motivo: Soluções de um único fornecedor podem ter problemas de compatibilidade com controladores de terceiros.
+

@@ -1,0 +1,174 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Redes de Computadores
+Idioma: pt-BR
+Tecnologias citadas no documento: Placa de Rede, NIC, Ethernet, MAC Address, OUI, Half-duplex, Full-duplex, Simplex
+
+=== SECAO [TI_SEC_001]: Equipamentos e Dispositivos de Redes de Computadores ===
+Para o funcionamento de uma rede de computadores, é essencial a presença de meios de comunicação, dispositivos de hardware e software que gerenciem a comunicação entre os componentes. As características comuns desses dispositivos incluem o controle e interpretação de sinais digitais, o encaminhamento de dados seguindo padrões e protocolos, e a função específica de cada componente. Exemplos comuns incluem placas de rede, repetidores, hubs, bridges/switches, roteadores, modems, gateways, transceivers, servidores e estações de trabalho.
+
+-- Conceitos-chave --
+Termo: Placa de Rede | Tipo: Hardware | Definicao: Hardware que permite a comunicação entre computadores em uma rede. Também conhecida como NIC (Network Interface Card), possui uma lógica 'queimada' na memória ROM (BIAs - Burned-in Addresses) que é copiada para a RAM na inicialização. Sua função principal é controlar o envio e recebimento de dados na rede.
+  Vantagens de Placa de Rede: Permite a comunicação entre dispositivos em rede.; Possui um identificador único (MAC Address).
+  Desvantagens de Placa de Rede: NICs menos velozes podem interferir na velocidade da rede.; Requer compatibilidade com a rede (taxa de transmissão, cabos, barramento).
+  Casos de uso de Placa de Rede: Conectar computadores a uma rede local (LAN).; Permitir a comunicação entre dispositivos em redes com fio ou sem fio.
+Termo: NIC (Network Interface Card) | Tipo: Hardware | Definicao: Sinônimo de Placa de Rede, é o hardware responsável pela interface de um computador com a rede, controlando o fluxo de dados.
+  Vantagens de NIC (Network Interface Card): Essencial para a conectividade de rede.
+  Desvantagens de NIC (Network Interface Card): Desempenho limitado pode impactar a rede.
+  Casos de uso de NIC (Network Interface Card): Conexão de computadores a redes Ethernet, Wi-Fi, etc.
+Termo: Endereço MAC (MAC Address) | Tipo: Identificador | Definicao: Identificador único e permanente atribuído a cada placa de rede Ethernet, gravado na memória ROM. É composto por 48 bits (6 octetos) expressos em hexadecimal. Os três primeiros octetos identificam o fabricante (OUI), e os três últimos identificam a placa específica.
+  Vantagens de Endereço MAC (MAC Address): Garante unicidade na rede local.; Permite a identificação do fabricante do hardware.; Usado para controle de acesso e filtragem em redes.
+  Desvantagens de Endereço MAC (MAC Address): Pode ser falsificado (MAC spoofing).; Não é roteável entre redes diferentes.
+  Casos de uso de Endereço MAC (MAC Address): Identificação única de dispositivos em redes Ethernet.; Configuração de listas de controle de acesso (ACLs) em switches.; Rastreamento de dispositivos em redes locais.
+Termo: OUI (Organizationally Unique Identifier) | Tipo: Identificador | Definicao: Os três primeiros octetos de um endereço MAC, que identificam de forma única o fabricante do hardware de rede. É atribuído pelo IEEE.
+  Vantagens de OUI (Organizationally Unique Identifier): Permite identificar o fabricante de um dispositivo de rede.; Ajuda na organização e padronização de endereços MAC.
+  Casos de uso de OUI (Organizationally Unique Identifier): Verificação de origem de hardware de rede.; Análise de inventário de rede.
+Termo: Comunicação Simplex | Tipo: Modo de Comunicação | Definicao: Modo de comunicação onde a transmissão de dados ocorre em apenas uma direção. Um dispositivo é apenas transmissor e o outro é apenas receptor.
+  Vantagens de Comunicação Simplex: Simplicidade na implementação.; Menor complexidade de hardware.
+  Desvantagens de Comunicação Simplex: Não permite resposta ou confirmação do receptor.; Limitado a cenários unidirecionais.
+  Casos de uso de Comunicação Simplex: Transmissão de rádio ou TV.; Envio de comandos para um dispositivo sem necessidade de retorno.
+Termo: Comunicação Half-duplex | Tipo: Modo de Comunicação | Definicao: Modo de comunicação onde a transmissão de dados pode ocorrer em ambas as direções, mas não simultaneamente. Os dispositivos podem atuar como transmissor e receptor, mas não ao mesmo tempo.
+  Vantagens de Comunicação Half-duplex: Permite comunicação bidirecional.; Mais flexível que o simplex.
+  Desvantagens de Comunicação Half-duplex: Menos eficiente que o full-duplex devido à necessidade de alternar direções.; Pode haver colisões se ambos tentarem transmitir ao mesmo tempo.
+  Casos de uso de Comunicação Half-duplex: Rádios comunicadores (walkie-talkies).; Redes antigas com hubs.
+Termo: Comunicação Full-duplex | Tipo: Modo de Comunicação | Definicao: Modo de comunicação onde a transmissão de dados pode ocorrer em ambas as direções simultaneamente. Os dispositivos podem enviar e receber dados ao mesmo tempo.
+  Vantagens de Comunicação Full-duplex: Maior eficiência e velocidade de comunicação.; Elimina colisões de transmissão.
+  Desvantagens de Comunicação Full-duplex: Requer hardware mais complexo (ex: switches).
+  Casos de uso de Comunicação Full-duplex: Redes Ethernet modernas com switches.; Chamadas telefônicas.
+
+-- Figuras e diagramas --
+Figura 'Diagrama de Rede com Equipamentos' (Diagrama de Rede): O diagrama ilustra uma rede de computadores com diversos dispositivos interconectados. Começando pela Internet, que se conecta a um Roteador. O Roteador, por sua vez, conecta-se a um Switch (LAN 3). Há também um outro Switch (LAN 1) conectado a um Servidor e-mail e a um Roteador (LAN 3). Um Hub está conectado a um Switch (LAN 2), que por sua vez está conectado a uma Impressora e a um Servidor. A LAN 4 mostra um Bridge conectando dispositivos. Várias Estações de Trabalho estão conectadas aos Switches e Hubs. Um Repetidor é mostrado isoladamente, indicando sua função de regenerar o sinal.
+  Componentes visuais: Internet, Roteador, Switch, Servidor e-mail, Hub, LAN 1, LAN 2, LAN 3, LAN 4, Impressora, Servidor, Estação de Trabalho, Bridge, Repetidor
+  Relacionado a: placa_de_rede, roteador, switch, hub, bridge, repetidor, servidor, estacao_de_trabalho
+
+-- Relacionamentos --
+Conexao: 'placa_de_rede' --[implementa]--> 'nic'. Motivo: NIC é o termo técnico para Placa de Rede.
+Conexao: 'placa_de_rede' --[comunica_com]--> 'mac_address'. Motivo: Cada placa de rede possui um endereço MAC único para identificação.
+Conexao: 'mac_address' --[depende_de]--> 'oui'. Motivo: Os primeiros octetos do MAC Address (OUI) identificam o fabricante.
+Conexao: 'placa_de_rede' --[suporta]--> 'simplex'. Motivo: Placas de rede podem operar em modo simplex, embora seja menos comum em redes modernas.
+Conexao: 'placa_de_rede' --[suporta]--> 'half_duplex'. Motivo: Placas de rede podem operar em modo half-duplex.
+Conexao: 'placa_de_rede' --[suporta]--> 'full_duplex'. Motivo: Placas de rede modernas suportam comunicação full-duplex para maior eficiência.
+
+=== SECAO [TI_SEC_002]: Placas de Rede ou NIC – Network Interface Card ===
+As Placas de Rede (NICs) são o hardware que permite a comunicação entre computadores em uma rede. Elas possuem um identificador único chamado Endereço MAC, gravado em sua memória ROM, que é copiado para a RAM na inicialização. O MAC Address é composto por 48 bits, onde os 3 primeiros octetos (OUI) identificam o fabricante e os 3 últimos identificam a placa. As NICs são responsáveis por controlar o envio e recebimento de dados, devendo ser compatíveis com a rede em termos de taxa de transmissão, cabos e barramento. As placas Ethernet (Fast/Giga) são as mais comuns. As NICs podem operar em modos de comunicação Simplex, Half-duplex e Full-duplex, sendo o Full-duplex o mais eficiente.
+
+-- Conceitos-chave --
+Termo: Placa de Rede | Tipo: Hardware | Definicao: Hardware que permite a comunicação entre computadores em uma rede. Também conhecida como NIC (Network Interface Card), possui uma lógica 'queimada' na memória ROM (BIAs - Burned-in Addresses) que é copiada para a RAM na inicialização. Sua função principal é controlar o envio e recebimento de dados na rede.
+  Vantagens de Placa de Rede: Permite a comunicação entre dispositivos em rede.; Possui um identificador único (MAC Address).
+  Desvantagens de Placa de Rede: NICs menos velozes podem interferir na velocidade da rede.; Requer compatibilidade com a rede (taxa de transmissão, cabos, barramento).
+  Casos de uso de Placa de Rede: Conectar computadores a uma rede local (LAN).; Permitir a comunicação entre dispositivos em redes com fio ou sem fio.
+Termo: NIC (Network Interface Card) | Tipo: Hardware | Definicao: Sinônimo de Placa de Rede, é o hardware responsável pela interface de um computador com a rede, controlando o fluxo de dados.
+  Vantagens de NIC (Network Interface Card): Essencial para a conectividade de rede.
+  Desvantagens de NIC (Network Interface Card): Desempenho limitado pode impactar a rede.
+  Casos de uso de NIC (Network Interface Card): Conexão de computadores a redes Ethernet, Wi-Fi, etc.
+Termo: Endereço MAC (MAC Address) | Tipo: Identificador | Definicao: Identificador único e permanente atribuído a cada placa de rede Ethernet, gravado na memória ROM. É composto por 48 bits (6 octetos) expressos em hexadecimal. Os três primeiros octetos identificam o fabricante (OUI), e os três últimos identificam a placa específica.
+  Vantagens de Endereço MAC (MAC Address): Garante unicidade na rede local.; Permite a identificação do fabricante do hardware.; Usado para controle de acesso e filtragem em redes.
+  Desvantagens de Endereço MAC (MAC Address): Pode ser falsificado (MAC spoofing).; Não é roteável entre redes diferentes.
+  Casos de uso de Endereço MAC (MAC Address): Identificação única de dispositivos em redes Ethernet.; Configuração de listas de controle de acesso (ACLs) em switches.; Rastreamento de dispositivos em redes locais.
+Termo: OUI (Organizationally Unique Identifier) | Tipo: Identificador | Definicao: Os três primeiros octetos de um endereço MAC, que identificam de forma única o fabricante do hardware de rede. É atribuído pelo IEEE.
+  Vantagens de OUI (Organizationally Unique Identifier): Permite identificar o fabricante de um dispositivo de rede.; Ajuda na organização e padronização de endereços MAC.
+  Casos de uso de OUI (Organizationally Unique Identifier): Verificação de origem de hardware de rede.; Análise de inventário de rede.
+Termo: Ethernet | Tipo: Padrão de Rede | Definicao: Padrão de rede local (LAN) amplamente utilizado, que define especificações para cabeamento e sinalização. As placas de rede Ethernet mais comuns são as Fast Ethernet (100 Mbps) e Gigabit Ethernet (1000 Mbps).
+  Vantagens de Ethernet: Alto desempenho e confiabilidade.; Ampla compatibilidade e suporte.; Custo-benefício.
+  Desvantagens de Ethernet: Pode exigir infraestrutura de cabeamento específica.
+  Casos de uso de Ethernet: Redes locais corporativas e domésticas.; Conexão de servidores, computadores e outros dispositivos.
+Termo: Comunicação Simplex | Tipo: Modo de Comunicação | Definicao: Modo de comunicação onde a transmissão de dados ocorre em apenas uma direção. Um dispositivo é apenas transmissor e o outro é apenas receptor.
+  Vantagens de Comunicação Simplex: Simplicidade na implementação.; Menor complexidade de hardware.
+  Desvantagens de Comunicação Simplex: Não permite resposta ou confirmação do receptor.; Limitado a cenários unidirecionais.
+  Casos de uso de Comunicação Simplex: Transmissão de rádio ou TV.; Envio de comandos para um dispositivo sem necessidade de retorno.
+Termo: Comunicação Half-duplex | Tipo: Modo de Comunicação | Definicao: Modo de comunicação onde a transmissão de dados pode ocorrer em ambas as direções, mas não simultaneamente. Os dispositivos podem atuar como transmissor e receptor, mas não ao mesmo tempo.
+  Vantagens de Comunicação Half-duplex: Permite comunicação bidirecional.; Mais flexível que o simplex.
+  Desvantagens de Comunicação Half-duplex: Menos eficiente que o full-duplex devido à necessidade de alternar direções.; Pode haver colisões se ambos tentarem transmitir ao mesmo tempo.
+  Casos de uso de Comunicação Half-duplex: Rádios comunicadores (walkie-talkies).; Redes antigas com hubs.
+Termo: Comunicação Full-duplex | Tipo: Modo de Comunicação | Definicao: Modo de comunicação onde a transmissão de dados pode ocorrer em ambas as direções simultaneamente. Os dispositivos podem enviar e receber dados ao mesmo tempo.
+  Vantagens de Comunicação Full-duplex: Maior eficiência e velocidade de comunicação.; Elimina colisões de transmissão.
+  Desvantagens de Comunicação Full-duplex: Requer hardware mais complexo (ex: switches).
+  Casos de uso de Comunicação Full-duplex: Redes Ethernet modernas com switches.; Chamadas telefônicas.
+
+-- Figuras e diagramas --
+Figura 'Exemplos de Placas de Rede (NICs)' (Diagrama de Componentes): A figura exibe diversos tipos de placas de rede (NICs). Inclui uma NIC PCMCIA USB, uma NIC PCMCIA padrão, uma NIC Wireless para redes sem fio, uma NIC USB Wireless, uma Porta Gigabit 1000Mbps para Fibra Óptica e uma placa 10/100 Base T Ethernet. As especificações de velocidade (10/100/1000Mbps) e tipo de conexão (Ethernet, Fibra Óptica, Wireless) são visíveis em alguns componentes.
+  Componentes visuais: NIC PCMCIA USB, NIC PCMCIA, NIC Wireless, NIC USB Wireless, Porta Gigabit 1000Mbps Fibra Óptica, Placa 10/100 Base T Ethernet
+  Relacionado a: placa_de_rede, nic, ethernet, wireless
+
+-- Relacionamentos --
+Conexao: 'placa_de_rede' --[implementa]--> 'nic'. Motivo: NIC é o termo técnico para Placa de Rede.
+Conexao: 'placa_de_rede' --[comunica_com]--> 'mac_address'. Motivo: Cada placa de rede possui um endereço MAC único para identificação.
+Conexao: 'mac_address' --[depende_de]--> 'oui'. Motivo: Os primeiros octetos do MAC Address (OUI) identificam o fabricante.
+Conexao: 'placa_de_rede' --[usa_padrao]--> 'ethernet'. Motivo: Placas de rede Ethernet são as mais comuns e utilizam o padrão Ethernet.
+Conexao: 'placa_de_rede' --[suporta]--> 'simplex'. Motivo: Placas de rede podem operar em modo simplex, embora seja menos comum em redes modernas.
+Conexao: 'placa_de_rede' --[suporta]--> 'half_duplex'. Motivo: Placas de rede podem operar em modo half-duplex.
+Conexao: 'placa_de_rede' --[suporta]--> 'full_duplex'. Motivo: Placas de rede modernas suportam comunicação full-duplex para maior eficiência.
+
+=== SECAO [TI_SEC_003]: Endereços MAC ===
+Cada placa Ethernet possui um endereço MAC único, um identificador permanente de 48 bits (hexadecimal) que permite aos computadores se identificarem na rede local. Os três primeiros octetos formam o OUI (Organizationally Unique Identifier), que identifica o fabricante, enquanto os três últimos octetos identificam a placa específica. O fabricante é responsável por garantir a unicidade desses endereços. Os endereços MAC são gravados na memória ROM da placa e identificam a origem e o destino dos quadros Ethernet.
+
+-- Conceitos-chave --
+Termo: Endereço MAC (MAC Address) | Tipo: Identificador | Definicao: Identificador único e permanente atribuído a cada placa de rede Ethernet, gravado na memória ROM. É composto por 48 bits (6 octetos) expressos em hexadecimal. Os três primeiros octetos identificam o fabricante (OUI), e os três últimos identificam a placa específica.
+  Vantagens de Endereço MAC (MAC Address): Garante unicidade na rede local.; Permite a identificação do fabricante do hardware.; Usado para controle de acesso e filtragem em redes.
+  Desvantagens de Endereço MAC (MAC Address): Pode ser falsificado (MAC spoofing).; Não é roteável entre redes diferentes.
+  Casos de uso de Endereço MAC (MAC Address): Identificação única de dispositivos em redes Ethernet.; Configuração de listas de controle de acesso (ACLs) em switches.; Rastreamento de dispositivos em redes locais.
+Termo: OUI (Organizationally Unique Identifier) | Tipo: Identificador | Definicao: Os três primeiros octetos de um endereço MAC, que identificam de forma única o fabricante do hardware de rede. É atribuído pelo IEEE.
+  Vantagens de OUI (Organizationally Unique Identifier): Permite identificar o fabricante de um dispositivo de rede.; Ajuda na organização e padronização de endereços MAC.
+  Casos de uso de OUI (Organizationally Unique Identifier): Verificação de origem de hardware de rede.; Análise de inventário de rede.
+Termo: Placa de Rede | Tipo: Hardware | Definicao: Hardware que permite a comunicação entre computadores em uma rede. Também conhecida como NIC (Network Interface Card), possui uma lógica 'queimada' na memória ROM (BIAs - Burned-in Addresses) que é copiada para a RAM na inicialização. Sua função principal é controlar o envio e recebimento de dados na rede.
+  Vantagens de Placa de Rede: Permite a comunicação entre dispositivos em rede.; Possui um identificador único (MAC Address).
+  Desvantagens de Placa de Rede: NICs menos velozes podem interferir na velocidade da rede.; Requer compatibilidade com a rede (taxa de transmissão, cabos, barramento).
+  Casos de uso de Placa de Rede: Conectar computadores a uma rede local (LAN).; Permitir a comunicação entre dispositivos em redes com fio ou sem fio.
+
+-- Figuras e diagramas --
+Figura 'Exemplo de Consulta de Endereço MAC' (Print de Tela (Website)): A figura mostra duas capturas de tela de um site (macaddress.io) que permite consultar informações sobre endereços MAC. A primeira tela exibe um campo de busca para 'MAC address vendor lookup' com um exemplo de endereço MAC (F4-8E-38-FE-2C-C3). A segunda tela mostra os detalhes de consulta para este endereço MAC, indicando o OUI (F4:8E:38), que é privado (False), o nome da empresa (Dell Inc), o endereço da empresa e o código do país (US). A legenda reforça que os 3 primeiros octetos identificam o fabricante (OUI) e os 3 últimos a placa.
+  Componentes visuais: Campo de busca, Endereço MAC, Botão de busca, Detalhes do endereço MAC, OUI, Is private, Company name, Company address, Country code
+  Relacionado a: mac_address, oui, placa_de_rede
+
+-- Relacionamentos --
+Conexao: 'mac_address' --[contem]--> 'oui'. Motivo: O endereço MAC é composto pelos 3 primeiros octetos (OUI) e os 3 últimos.
+Conexao: 'mac_address' --[atribuido_a]--> 'placa_de_rede'. Motivo: Cada placa de rede possui um endereço MAC único.
+Conexao: 'oui' --[identifica]--> 'fabricante'. Motivo: O OUI identifica o fabricante da placa de rede.
+
+=== SECAO [TI_SEC_004]: Características das NICs e Modos de Comunicação ===
+As placas de rede (NICs) possuem características como auto-negociação para determinar a máxima taxa de comunicação (Mbps/Gbps) e o modo de operação (half ou full-duplex). Elas também suportam ativação remota via LAN para gerenciamento centralizado. Exemplos de NICs incluem placas Ethernet, ópticas e wireless. A comunicação pode ser Simplex (unidirecional), Half-duplex (bidirecional não simultânea) ou Full-duplex (bidirecional simultânea), sendo esta última a mais eficiente.
+
+-- Conceitos-chave --
+Termo: Placa de Rede | Tipo: Hardware | Definicao: Hardware que permite a comunicação entre computadores em uma rede. Também conhecida como NIC (Network Interface Card), possui uma lógica 'queimada' na memória ROM (BIAs - Burned-in Addresses) que é copiada para a RAM na inicialização. Sua função principal é controlar o envio e recebimento de dados na rede.
+  Vantagens de Placa de Rede: Permite a comunicação entre dispositivos em rede.; Possui um identificador único (MAC Address).
+  Desvantagens de Placa de Rede: NICs menos velozes podem interferir na velocidade da rede.; Requer compatibilidade com a rede (taxa de transmissão, cabos, barramento).
+  Casos de uso de Placa de Rede: Conectar computadores a uma rede local (LAN).; Permitir a comunicação entre dispositivos em redes com fio ou sem fio.
+Termo: NIC (Network Interface Card) | Tipo: Hardware | Definicao: Sinônimo de Placa de Rede, é o hardware responsável pela interface de um computador com a rede, controlando o fluxo de dados.
+  Vantagens de NIC (Network Interface Card): Essencial para a conectividade de rede.
+  Desvantagens de NIC (Network Interface Card): Desempenho limitado pode impactar a rede.
+  Casos de uso de NIC (Network Interface Card): Conexão de computadores a redes Ethernet, Wi-Fi, etc.
+Termo: Auto-negociação | Tipo: Processo | Definicao: Processo em que dois dispositivos de rede (como NICs) comunicam-se para determinar automaticamente a melhor taxa de transmissão (velocidade) e o modo de operação (half-duplex ou full-duplex) que ambos suportam.
+  Vantagens de Auto-negociação: Simplifica a configuração da rede.; Garante a melhor performance possível entre dispositivos heterogêneos.
+  Desvantagens de Auto-negociação: Pode falhar se um dos dispositivos não suportar o processo corretamente.
+  Casos de uso de Auto-negociação: Conexão de computadores a switches.; Conexão de roteadores a modems.
+Termo: Ativação Remota | Tipo: Funcionalidade | Definicao: Funcionalidade que permite ligar ou gerenciar um computador remotamente através da rede local (LAN), mesmo que o sistema operacional não esteja iniciado. Geralmente requer suporte de hardware (como Wake-on-LAN) e configuração na BIOS/UEFI.
+  Vantagens de Ativação Remota: Facilita o gerenciamento de múltiplos computadores.; Permite atualizações e manutenções sem intervenção física.
+  Desvantagens de Ativação Remota: Requer configuração específica.; Pode apresentar riscos de segurança se não for bem protegida.
+  Casos de uso de Ativação Remota: Atualização de sistemas em horário comercial.; Reinicialização remota de máquinas.; Gerenciamento de parques computacionais.
+Termo: Comunicação Simplex | Tipo: Modo de Comunicação | Definicao: Modo de comunicação onde a transmissão de dados ocorre em apenas uma direção. Um dispositivo é apenas transmissor e o outro é apenas receptor.
+  Vantagens de Comunicação Simplex: Simplicidade na implementação.; Menor complexidade de hardware.
+  Desvantagens de Comunicação Simplex: Não permite resposta ou confirmação do receptor.; Limitado a cenários unidirecionais.
+  Casos de uso de Comunicação Simplex: Transmissão de rádio ou TV.; Envio de comandos para um dispositivo sem necessidade de retorno.
+Termo: Comunicação Half-duplex | Tipo: Modo de Comunicação | Definicao: Modo de comunicação onde a transmissão de dados pode ocorrer em ambas as direções, mas não simultaneamente. Os dispositivos podem atuar como transmissor e receptor, mas não ao mesmo tempo.
+  Vantagens de Comunicação Half-duplex: Permite comunicação bidirecional.; Mais flexível que o simplex.
+  Desvantagens de Comunicação Half-duplex: Menos eficiente que o full-duplex devido à necessidade de alternar direções.; Pode haver colisões se ambos tentarem transmitir ao mesmo tempo.
+  Casos de uso de Comunicação Half-duplex: Rádios comunicadores (walkie-talkies).; Redes antigas com hubs.
+Termo: Comunicação Full-duplex | Tipo: Modo de Comunicação | Definicao: Modo de comunicação onde a transmissão de dados pode ocorrer em ambas as direções simultaneamente. Os dispositivos podem enviar e receber dados ao mesmo tempo.
+  Vantagens de Comunicação Full-duplex: Maior eficiência e velocidade de comunicação.; Elimina colisões de transmissão.
+  Desvantagens de Comunicação Full-duplex: Requer hardware mais complexo (ex: switches).
+  Casos de uso de Comunicação Full-duplex: Redes Ethernet modernas com switches.; Chamadas telefônicas.
+
+-- Figuras e diagramas --
+Figura 'Ilustração dos Modos de Comunicação' (Diagrama Conceitual): O diagrama ilustra os três modos de comunicação: Simplex, Half-duplex e Full-duplex. No Simplex, a comunicação é unidirecional, de um transmissor para um receptor. No Half-duplex, a comunicação é bidirecional, mas não simultânea, onde um dispositivo pode ser receptor ou transmissor, mas não ambos ao mesmo tempo. No Full-duplex, a comunicação é bidirecional e simultânea, onde um dispositivo pode ser receptor e transmissor ao mesmo tempo.
+  Componentes visuais: Somente transmissor, Somente receptor, Receptor ou Transmissor, Receptor e Transmissor, Setas indicando direção e simultaneidade da comunicação
+  Relacionado a: simplex, half_duplex, full_duplex
+
+-- Relacionamentos --
+Conexao: 'placa_de_rede' --[suporta]--> 'auto_negociacao'. Motivo: Placas de rede utilizam auto-negociação para definir parâmetros de comunicação.
+Conexao: 'placa_de_rede' --[suporta]--> 'ativacao_remota'. Motivo: Algumas placas de rede suportam ativação remota.
+Conexao: 'placa_de_rede' --[suporta]--> 'simplex'. Motivo: Placas de rede podem operar em modo simplex.
+Conexao: 'placa_de_rede' --[suporta]--> 'half_duplex'. Motivo: Placas de rede podem operar em modo half-duplex.
+Conexao: 'placa_de_rede' --[suporta]--> 'full_duplex'. Motivo: Placas de rede modernas suportam comunicação full-duplex.
+Conexao: 'simplex' --[contrasta_com]--> 'half_duplex'. Motivo: Simplex é unidirecional, enquanto Half-duplex é bidirecional não simultâneo.
+Conexao: 'simplex' --[contrasta_com]--> 'full_duplex'. Motivo: Simplex é unidirecional, enquanto Full-duplex é bidirecional simultâneo.
+Conexao: 'half_duplex' --[contrasta_com]--> 'full_duplex'. Motivo: Half-duplex é bidirecional não simultâneo, enquanto Full-duplex é bidirecional simultâneo.
+

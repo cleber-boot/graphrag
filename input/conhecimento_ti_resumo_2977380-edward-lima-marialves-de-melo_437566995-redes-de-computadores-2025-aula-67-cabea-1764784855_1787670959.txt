@@ -1,0 +1,181 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Cabeamento Estruturado - Work Area (Área de Trabalho)
+Idioma: pt-BR
+Tecnologias citadas no documento: UTP, STP, Fibra Óptica, RJ45, TIA 568, NBR 14565, Patch Cord
+
+=== SECAO [TI_SEC_001]: Introdução ao Subsistema Work Area ===
+O subsistema Work Area, ou área de trabalho, é um componente crucial do cabeamento estruturado, pois é onde os usuários finais interagem diretamente com a rede. Ele se inicia na Telecommunication Outlet e abrange a área restrita ao usuário, incluindo dispositivos, conectores e soluções de telecomunicações. Este subsistema é o ponto de entrega dos serviços de comunicação e telecomunicações para o usuário.
+
+-- Conceitos-chave --
+Termo: Work Area (Área de Trabalho) | Tipo: Subsistema de Rede | Definicao: É o subsistema do cabeamento estruturado onde o usuário final acessa a rede. Inclui os dispositivos, conectores e soluções de telecomunicações utilizados pelo usuário. É o ponto de entrega dos serviços de comunicação e telecomunicações.
+  Vantagens de Work Area (Área de Trabalho): Ponto de acesso direto do usuário à rede.; Centraliza os dispositivos de telecomunicações do usuário.
+  Desvantagens de Work Area (Área de Trabalho): Pode se tornar um gargalo se não dimensionado corretamente.; Requer manutenção e organização constantes.
+  Casos de uso de Work Area (Área de Trabalho): Escritórios corporativos.; Ambientes de trabalho com múltiplos usuários.; Instalações de telecomunicações em edifícios comerciais.
+Termo: Telecommunication Outlet | Tipo: Componente de Rede | Definicao: Ponto de conexão na Work Area onde os equipamentos do usuário são ligados à rede. Marca o início da Work Area e o fim do cabeamento horizontal.
+  Vantagens de Telecommunication Outlet: Ponto padronizado de conexão.; Facilita a identificação e manutenção dos pontos de rede.
+  Desvantagens de Telecommunication Outlet: Pode se tornar um ponto de falha se mal instalado.
+  Casos de uso de Telecommunication Outlet: Conexão de computadores, telefones, impressoras e outros dispositivos.; Ponto de terminação do cabeamento horizontal.
+Termo: Cabeamento Horizontal | Tipo: Componente de Rede | Definicao: Parte do cabeamento estruturado que liga a Telecommunication Outlet ao armário de telecomunicações. Também conhecido como cabeamento secundário.
+  Vantagens de Cabeamento Horizontal: Permite a distribuição flexível dos pontos de rede.; Padronizado para facilitar a instalação e manutenção.
+  Desvantagens de Cabeamento Horizontal: Limitado em comprimento (geralmente 90 metros).; Pode ser afetado por interferências eletromagnéticas se não for blindado.
+  Casos de uso de Cabeamento Horizontal: Conexão entre a área de trabalho do usuário e o armário de telecomunicações.; Distribuição de rede em andares de edifícios.
+Termo: Balun | Tipo: Adaptador | Definicao: Dispositivo que adapta impedâncias, frequentemente usado para converter sinais balanceados em não balanceados ou vice-versa. Um exemplo é o Video Balun para CFTV, que permite a transmissão de sinal de vídeo e alimentação através de cabo UTP.
+  Vantagens de Balun: Permite o uso de cabos UTP para transmissão de sinais que normalmente exigiriam cabos coaxiais.; Reduz custos de cabeamento.
+  Desvantagens de Balun: Pode introduzir alguma perda de sinal ou degradação da qualidade.; Requer um balun em cada extremidade.
+  Casos de uso de Balun: Transmissão de vídeo em sistemas de CFTV sobre cabo UTP.; Adaptação de sinais em sistemas de áudio e vídeo.; Extensão de sinais de rede.
+
+-- Figuras e diagramas --
+Figura 'Subsistemas do Cabeamento Estruturado' (Diagrama de Arquitetura): O diagrama ilustra os sete subsistemas do cabeamento estruturado. Ele mostra a interconexão entre o Campus Backbone (1), o Backbone (2), as Áreas de Trabalho (3), o Armário de Telecomunicações (4), a Sala de Equipamentos (5) e a Entrada de Serviços (6). As áreas de trabalho (3) são os pontos onde os usuários interagem com a rede.
+  Componentes visuais: Campus Backbone, Backbone, Área de Trabalho, Armário de Telecomunicações, Sala de Equipamentos, Entrada de Serviços
+  Relacionado a: work_area, cabeamento_horizontal
+
+-- Relacionamentos --
+Conexao: 'work_area' --[depende_de]--> 'telecommunication_outlet'. Motivo: A Work Area inicia-se na Telecommunication Outlet.
+Conexao: 'telecommunication_outlet' --[termina]--> 'cabeamento_horizontal'. Motivo: A Telecommunication Outlet é o ponto final do cabeamento horizontal.
+Conexao: 'work_area' --[contem]--> 'balun'. Motivo: Baluns podem ser utilizados como adaptadores dentro da área de trabalho para conectar dispositivos.
+
+=== SECAO [TI_SEC_002]: Normas e Especificações da Work Area ===
+A Work Area é definida pelas normas TIA 568 (americana) e NBR 14565 (brasileira), que consolidam as normas americanas. A área de trabalho inicia-se no espelho da tomada (outlet) e abrange o espaço de uso do usuário. Recomenda-se uma Work Area para cada 10m² de área útil, com no mínimo duas tomadas identificadas: uma RJ45 (Cat 5e ou superior) e outra para fibra óptica multimodo. Os cabos UTP devem ser de categoria compatível ou superior ao da tomada, e o desempenho geral é limitado pela categoria mais baixa. Adaptadores devem ser externos ao sistema de cabeamento.
+
+-- Conceitos-chave --
+Termo: TIA 568 | Tipo: Padrão | Definicao: Norma americana para cabeamento estruturado, dividida em subseções como B1 (geral), B2 (par trançado) e B3 (fibra óptica). É amplamente referenciada em projetos e licitações.
+  Vantagens de TIA 568: Padrão internacionalmente reconhecido.; Abrange diversos aspectos do cabeamento estruturado.; Permite interoperabilidade entre equipamentos de diferentes fabricantes.
+  Desvantagens de TIA 568: Pode ser complexa devido às suas diversas subdivisões.; A norma brasileira NBR 14565 consolida e adapta as normas americanas.
+  Casos de uso de TIA 568: Projeto e instalação de redes de cabeamento estruturado em edifícios comerciais e corporativos.; Especificação de requisitos em licitações públicas e privadas.
+Termo: NBR 14565 | Tipo: Padrão | Definicao: Norma brasileira para cabeamento estruturado, que consolida e adapta diversas normas norte-americanas, incluindo referências a aterramento e outras questões específicas.
+  Vantagens de NBR 14565: Norma nacional que facilita a conformidade em projetos no Brasil.; Consolida diversas normas internacionais em um único documento.
+  Desvantagens de NBR 14565: Pode exigir referências a outras normas para detalhes específicos.; Em licitações, a TIA 568 pode ser exigida explicitamente.
+  Casos de uso de NBR 14565: Projeto e instalação de redes de cabeamento estruturado no Brasil.; Garantia de conformidade com as regulamentações locais.
+Termo: RJ45 | Tipo: Conector | Definicao: Conector padrão para cabos de par trançado (UTP/STP) em redes Ethernet, com 8 posições para 8 pinos. Utilizado nas tomadas da Work Area.
+  Vantagens de RJ45: Padrão universal para redes Ethernet.; Permite a conexão de até 4 pares de fios.; Confiável e amplamente disponível.
+  Desvantagens de RJ45: Pode ser danificado com uso excessivo ou manuseio incorreto.; Requer ferramentas específicas para crimpagem correta.
+  Casos de uso de RJ45: Conexão de computadores, roteadores, switches e outros dispositivos de rede.; Terminação de cabos de rede em tomadas e patch panels.
+Termo: Fibra Óptica Multimodo | Tipo: Tecnologia de Rede | Definicao: Tipo de fibra óptica com núcleo de maior diâmetro, permitindo múltiplos caminhos de luz. Utilizada em distâncias menores e com menor custo que a monomodo.
+  Vantagens de Fibra Óptica Multimodo: Maior facilidade de conexão e menor custo de componentes.; Adequada para distâncias de até alguns quilômetros (dependendo da categoria).; Imune a interferências eletromagnéticas.
+  Desvantagens de Fibra Óptica Multimodo: Maior dispersão modal, limitando a largura de banda e a distância.; Menor largura de banda comparada à fibra monomodo.
+  Casos de uso de Fibra Óptica Multimodo: Backbones de edifícios.; Conexões entre prédios em um campus.; Redes de data centers.; Uma das tomadas na Work Area.
+Termo: Categoria de Cabeamento (Cat 5e, Cat 6, Cat 6A, etc.) | Tipo: Padrão | Definicao: Classificação de cabos de par trançado que define suas características elétricas e de desempenho, como frequência de operação, largura de banda e taxa de transferência de dados.
+  Vantagens de Categoria de Cabeamento (Cat 5e, Cat 6, Cat 6A, etc.): Garante um nível mínimo de desempenho para a rede.; Permite a evolução da rede sem a necessidade de substituir toda a infraestrutura física.; Facilita a especificação de requisitos em projetos.
+  Desvantagens de Categoria de Cabeamento (Cat 5e, Cat 6, Cat 6A, etc.): O desempenho geral da rede é limitado pela categoria mais baixa instalada.; Cabos de categorias superiores podem ter custo mais elevado.
+  Casos de uso de Categoria de Cabeamento (Cat 5e, Cat 6, Cat 6A, etc.): Especificação de cabos para redes Ethernet.; Garantia de suporte a aplicações de alta velocidade (Gigabit Ethernet, 10 Gigabit Ethernet).; Dimensionamento de infraestrutura de rede para o futuro.
+
+-- Relacionamentos --
+Conexao: 'tia_568' --[referencia]--> 'nbr_14565'. Motivo: A NBR 14565 consolida e adapta as normas TIA 568.
+Conexao: 'work_area' --[requer]--> 'rj45'. Motivo: Uma das tomadas na Work Area deve ser equipada com conector RJ45.
+Conexao: 'work_area' --[requer]--> 'fibra_optica_multimodo'. Motivo: A segunda tomada na Work Area deve ser conectada com cabo e conector de fibra óptica multimodo.
+Conexao: 'rj45' --[usa_cabo]--> 'categoria_cabeamento'. Motivo: O conector RJ45 na Work Area deve ser conectado a um cabo UTP de categoria compatível ou superior.
+Conexao: 'fibra_optica_multimodo' --[usa_cabo]--> 'categoria_cabeamento'. Motivo: A conexão de fibra óptica multimodo na Work Area deve seguir padrões de categoria e conector.
+
+=== SECAO [TI_SEC_003]: Conectores e Padrões de Fiação (T568A/T568B) ===
+As normas TIA 568B.3 especificam conectores como RJ45 para UTP, Data Connector para STP e 568 SC para fibra óptica. Todos os 4 pares do cabo UTP devem ser terminados nas 8 posições do conector RJ45 fêmea. A TIA 568 possui subdivisões B1, B2 e B3. Os padrões T568A e T568B definem a ordem das cores dos fios nos conectores RJ45. Ambos são permitidos pela ANSI/TIA-568.2-D. O T568A é preferencial para a norma americana (usado pelo governo dos EUA), enquanto o T568B é mais comum no Brasil e corresponde ao antigo padrão AT&T 258A. A diferença elétrica é mínima, sendo a principal a troca dos pares verde e laranja. Cabos diretos usam o mesmo padrão nas duas pontas (AA ou BB), enquanto cabos crossover usam um padrão em cada ponta (AB).
+
+-- Conceitos-chave --
+Termo: T568A | Tipo: Padrão de Fiação | Definicao: Padrão de fiação de cores para conectores RJ45, com uma sequência específica de cores para os 8 fios. É o padrão preferencial na norma TIA 568A e usado pelo governo dos EUA.
+  Vantagens de T568A: Retrocompatibilidade com esquemas USOC de 1 e 2 pares.; Padrão preferencial em algumas normas e exigências governamentais (EUA).
+  Desvantagens de T568A: Menos comum no Brasil que o T568B.; A diferença para o T568B reside na posição dos pares verde e laranja.
+  Casos de uso de T568A: Instalação de cabeamento em contratos federais nos EUA.; Criação de cabos crossover (em combinação com T568B).
+Termo: T568B | Tipo: Padrão de Fiação | Definicao: Padrão de fiação de cores para conectores RJ45, amplamente utilizado no Brasil e correspondente ao antigo padrão AT&T 258A. É permitido pela norma ANSI/TIA-568.2-D.
+  Vantagens de T568B: Padrão mais comum e amplamente utilizado no Brasil.; Eletricamente equivalente ao T568A.; Permitido pela norma ANSI/TIA-568.2-D.
+  Desvantagens de T568B: Não oferece a mesma retrocompatibilidade USOC que o T568A.; A diferença para o T568A reside na posição dos pares verde e laranja.
+  Casos de uso de T568B: Instalação de cabeamento em redes corporativas e residenciais no Brasil.; Criação de cabos diretos (AA ou BB) e cabos crossover (AB).
+Termo: Cabo Direto | Tipo: Tipo de Cabo | Definicao: Cabo de rede onde o mesmo padrão de fiação (T568A ou T568B) é utilizado em ambas as extremidades. Usado para conectar dispositivos de diferentes tipos (ex: PC a switch).
+  Vantagens de Cabo Direto: Simples de fabricar.; Padrão para a maioria das conexões em redes modernas (com switches auto-MDI/MDIX).
+  Desvantagens de Cabo Direto: Não funciona para conectar dois dispositivos do mesmo tipo (ex: PC a PC) em redes mais antigas.
+  Casos de uso de Cabo Direto: Conectar um computador a um switch.; Conectar um roteador a um switch.; Conectar um switch a um patch panel.
+Termo: Cabo Crossover | Tipo: Tipo de Cabo | Definicao: Cabo de rede onde um padrão de fiação (ex: T568A) é usado em uma extremidade e o outro padrão (ex: T568B) é usado na outra. Usado para conectar dispositivos do mesmo tipo (ex: PC a PC, switch a switch) em redes mais antigas.
+  Vantagens de Cabo Crossover: Permite a conexão direta entre dispositivos do mesmo tipo sem a necessidade de um hub ou switch intermediário (em redes mais antigas).
+  Desvantagens de Cabo Crossover: Menos comum hoje em dia devido à adoção de switches com Auto-MDI/MDIX.; Pode causar confusão na instalação se não for identificado corretamente.
+  Casos de uso de Cabo Crossover: Conectar dois computadores diretamente.; Conectar dois switches diretamente (em equipamentos sem Auto-MDI/MDIX).
+Termo: Fibra Óptica Monomodo | Tipo: Tecnologia de Rede | Definicao: Tipo de fibra óptica com núcleo de menor diâmetro, permitindo apenas um caminho de luz. Ideal para transmissões de longa distância e alta largura de banda.
+  Vantagens de Fibra Óptica Monomodo: Suporta distâncias muito maiores (dezenas ou centenas de quilômetros).; Maior largura de banda e menor dispersão.; Ideal para aplicações de alta velocidade e longa distância.
+  Desvantagens de Fibra Óptica Monomodo: Componentes (conectores, adaptadores) são mais caros.; Requer maior precisão na instalação e alinhamento.
+  Casos de uso de Fibra Óptica Monomodo: Backbones de longa distância.; Conexões entre cidades ou continentes.; Redes de telecomunicações de alta capacidade.
+
+-- Tabelas comparativas --
+Tabela 'Padrões de Fiação T568A e T568B': A tabela compara os padrões T568A e T568B, mostrando a disposição dos pares de fios nos pinos do conector RJ45. A diferença principal está na troca dos pares verde e laranja entre os dois padrões.
+  Linha L001: Pino = 1; Par T568A = Branco/Laranja; Par T568B = Branco/Verde
+    (Relacionado a: t568a, t568b)
+  Linha L002: Pino = 2; Par T568A = Laranja; Par T568B = Verde
+    (Relacionado a: t568a, t568b)
+  Linha L003: Pino = 3; Par T568A = Branco/Verde; Par T568B = Branco/Laranja
+    (Relacionado a: t568a, t568b)
+  Linha L004: Pino = 4; Par T568A = Azul; Par T568B = Azul
+    (Relacionado a: t568a, t568b)
+  Linha L005: Pino = 5; Par T568A = Branco/Azul; Par T568B = Branco/Azul
+    (Relacionado a: t568a, t568b)
+  Linha L006: Pino = 6; Par T568A = Verde; Par T568B = Laranja
+    (Relacionado a: t568a, t568b)
+  Linha L007: Pino = 7; Par T568A = Branco/Marrom; Par T568B = Branco/Marrom
+    (Relacionado a: t568a, t568b)
+  Linha L008: Pino = 8; Par T568A = Marrom; Par T568B = Marrom
+    (Relacionado a: t568a, t568b)
+
+-- Figuras e diagramas --
+Figura 'Diagrama de Fiação T568A e T568B' (Diagrama de Conexão): A figura ilustra os padrões de fiação T568A e T568B para conectores RJ45. Mostra a disposição dos pares de cores (verde e laranja trocados entre os padrões) nos pinos 1 a 8. Também indica os pares correspondentes a cada pino.
+  Componentes visuais: Conector RJ45, Pinos 1-8, Pares de cores (verde, laranja, azul, marrom), Diagrama T568A, Diagrama T568B
+  Relacionado a: t568a, t568b, rj45
+
+-- Relacionamentos --
+Conexao: 't568a' --[diferente_de]--> 't568b'. Motivo: Os padrões T568A e T568B diferem na posição dos pares verde e laranja.
+Conexao: 'cabo_direto' --[usa_padrao]--> 't568a'. Motivo: Um cabo direto pode ser feito usando T568A em ambas as pontas (AA).
+Conexao: 'cabo_direto' --[usa_padrao]--> 't568b'. Motivo: Um cabo direto pode ser feito usando T568B em ambas as pontas (BB).
+Conexao: 'cabo_crossover' --[usa_padrao]--> 't568a'. Motivo: Um cabo crossover utiliza T568A em uma ponta.
+Conexao: 'cabo_crossover' --[usa_padrao]--> 't568b'. Motivo: Um cabo crossover utiliza T568B na outra ponta.
+Conexao: 'rj45' --[usa_fiação]--> 't568a'. Motivo: O conector RJ45 pode ser fiação com o padrão T568A.
+Conexao: 'rj45' --[usa_fiação]--> 't568b'. Motivo: O conector RJ45 pode ser fiação com o padrão T568B.
+Conexao: 'fibra_optica_monomodo' --[usa_conector]--> '568_sc'. Motivo: Conectores 568 SC são utilizados para fibra óptica monomodo.
+
+=== SECAO [TI_SEC_004]: Cabos de Fibra Óptica e Patch Cords ===
+Para cabos de fibra óptica, adaptadores e conectores seguem padronização de cores: bege para multimodo e azul para monomodo. O ciclo de vida mínimo para adaptadores e conectores é de 500 inserções. Patch cords ópticos são cordões flexíveis com duas fibras, terminados com conectores 568SC, e podem ser multimodo ou monomodo. Cabos de manobra (patch cords) UTP/STP na área de trabalho devem ser flexíveis, multifilares, de categoria igual ou superior ao cabeamento horizontal, e com comprimento máximo de 5 metros. O lançamento total do cabo metálico (horizontal + patch cords) não deve exceder 100 metros, sendo 90m para o horizontal e 10m para os patch cords.
+
+-- Conceitos-chave --
+Termo: Patch Cord | Tipo: Cabo de Rede | Definicao: Cabo de rede flexível utilizado para conectar dispositivos a tomadas de rede ou para interligar equipamentos em racks (patch panels). Podem ser de par trançado (UTP/STP) ou fibra óptica.
+  Vantagens de Patch Cord: Flexibilidade para conexões temporárias ou em áreas de alta movimentação.; Facilita a organização e manutenção de cabos.; Disponível em diversas categorias e tipos de conectores.
+  Desvantagens de Patch Cord: Comprimento limitado (geralmente até 5 metros na área de trabalho e 3 metros no armário de telecomunicações).; Pode ser um ponto de falha se de baixa qualidade ou danificado.
+  Casos de uso de Patch Cord: Conectar um computador a uma tomada de rede.; Conectar um switch a um patch panel.; Interligar equipamentos em um rack.; Conexões em mesas de trabalho.
+Termo: Cores de Fibra Óptica Multimodo | Tipo: Padrão de Cor | Definicao: Padrão de cores para adaptadores e conectores de fibra óptica multimodo, geralmente na cor bege.
+  Vantagens de Cores de Fibra Óptica Multimodo: Facilita a identificação visual do tipo de fibra.; Ajuda a evitar erros de conexão.
+  Desvantagens de Cores de Fibra Óptica Multimodo: Pode haver variações em cores de alguns fabricantes.
+  Casos de uso de Cores de Fibra Óptica Multimodo: Identificação de cabos e conectores multimodo em instalações de rede.; Manutenção e expansão de redes de fibra óptica.
+Termo: Cores de Fibra Óptica Monomodo | Tipo: Padrão de Cor | Definicao: Padrão de cores para adaptadores e conectores de fibra óptica monomodo, geralmente na cor azul.
+  Vantagens de Cores de Fibra Óptica Monomodo: Facilita a identificação visual do tipo de fibra.; Ajuda a evitar erros de conexão.
+  Desvantagens de Cores de Fibra Óptica Monomodo: Pode haver variações em cores de alguns fabricantes.
+  Casos de uso de Cores de Fibra Óptica Monomodo: Identificação de cabos e conectores monomodo em instalações de rede.; Manutenção e expansão de redes de fibra óptica de longa distância.
+Termo: Ciclo de Vida do Conector | Tipo: Especificação Técnica | Definicao: Número mínimo de inserções e remoções que um conector (óptico ou de par trançado) deve suportar sem degradação significativa de desempenho. Para conectores ópticos, o mínimo é de 500 inserções.
+  Vantagens de Ciclo de Vida do Conector: Garante a durabilidade e confiabilidade dos pontos de conexão.; Ajuda a prever a vida útil da infraestrutura.
+  Desvantagens de Ciclo de Vida do Conector: Conectores de maior durabilidade podem ter custo mais elevado.
+  Casos de uso de Ciclo de Vida do Conector: Seleção de conectores para instalações que exigem muitas reconexões.; Garantia de qualidade em projetos de cabeamento.
+
+-- Figuras e diagramas --
+Figura 'Conectores de Fibra Óptica' (Diagrama de Componentes): A figura mostra dois tipos de conectores de fibra óptica: um conector duplo e um conector simples. Ambos ilustram o 'lado cabeamento' e o 'lado usuário', indicando como a fibra se conecta ao conector.
+  Componentes visuais: Conector Duplo, Conector Simples, Lado Cabeamento, Lado Usuário
+  Relacionado a: fibra_optica_multimodo, fibra_optica_monomodo, patch_cord
+
+-- Relacionamentos --
+Conexao: 'fibra_optica_multimodo' --[usa_cor]--> 'fibra_optica_multimodo_cores'. Motivo: A fibra óptica multimodo utiliza conectores e adaptadores na cor bege.
+Conexao: 'fibra_optica_monomodo' --[usa_cor]--> 'fibra_optica_monomodo_cores'. Motivo: A fibra óptica monomodo utiliza conectores e adaptadores na cor azul.
+Conexao: 'patch_cord' --[requer]--> 'ciclo_vida_conector'. Motivo: Patch cords ópticos utilizam conectores que devem ter um ciclo de vida mínimo de 500 inserções.
+Conexao: 'patch_cord' --[usa_conector]--> '568_sc'. Motivo: Patch cords ópticos devem ser terminados com conectores 568 SC.
+Conexao: 'patch_cord' --[limite_comprimento]--> 'work_area'. Motivo: Patch cords na Work Area devem ter no máximo 5 metros.
+Conexao: 'patch_cord' --[limite_comprimento]--> 'telecommunication_closet'. Motivo: Patch cords no Telecommunication Closet devem ter no máximo 5 metros.
+Conexao: 'cabeamento_horizontal' --[limite_comprimento]--> '100_metros'. Motivo: O lançamento total do cabo metálico (horizontal + patch cords) não deve exceder 100 metros.
+Conexao: 'cabeamento_horizontal' --[limite_comprimento]--> '90_metros'. Motivo: O cabeamento horizontal não deve exceder 90 metros.
+
+=== SECAO [TI_SEC_005]: Cálculo da Área Útil para Áreas de Trabalho ===
+A quantidade de áreas de trabalho (work areas) é definida a partir da área útil total do ambiente. Para calcular a área útil, subtrai-se a área total do pavimento pelas áreas comuns (corredores, banheiros, depósitos, etc.). A recomendação é de uma Work Area para cada 10m² de área útil. Portanto, o dimensionamento dos pontos de telecomunicações depende diretamente do cálculo da área útil.
+
+-- Conceitos-chave --
+Termo: Área Útil | Tipo: Métrica de Planejamento | Definicao: Espaço de um edifício comercial ou escritório que pode ser efetivamente utilizado para postos de trabalho ou atividades produtivas, excluindo áreas comuns como corredores, banheiros, salas de reunião, etc.
+  Vantagens de Área Útil: Permite um dimensionamento mais preciso da infraestrutura de rede.; Evita o desperdício de pontos de telecomunicações em áreas não utilizadas.; Base para o cálculo da quantidade de áreas de trabalho.
+  Desvantagens de Área Útil: Requer um levantamento detalhado do layout do edifício.; Pode variar dependendo da finalidade de cada espaço.
+  Casos de uso de Área Útil: Planejamento de cabeamento estruturado.; Dimensionamento de pontos de rede.; Cálculo da quantidade de estações de trabalho.
+Termo: Work Area por m² | Tipo: Recomendação de Dimensionamento | Definicao: Recomendação de densidade de pontos de telecomunicações, onde se prevê uma Work Area para cada 10 metros quadrados de área útil.
+  Vantagens de Work Area por m²: Estabelece um padrão para garantir cobertura adequada da rede.; Facilita o planejamento e a estimativa de custos.
+  Desvantagens de Work Area por m²: Pode precisar de ajustes dependendo da demanda específica do local.; A área útil deve ser calculada corretamente para a aplicação desta regra.
+  Casos de uso de Work Area por m²: Dimensionamento de pontos de rede em projetos de cabeamento estruturado.; Planejamento de infraestrutura para novos escritórios ou expansões.
+
+-- Relacionamentos --
+Conexao: 'work_area' --[calculado_com_base_em]--> 'area_util'. Motivo: A quantidade de Work Areas é definida a partir da área útil total.
+Conexao: 'area_util' --[calculado_por]--> 'subtracao_areas_comuns'. Motivo: A Área Útil é calculada subtraindo as áreas comuns da área total.
+Conexao: 'work_area' --[densidade]--> 'work_area_por_m2'. Motivo: A recomendação é de uma Work Area para cada 10m² de área útil.
+

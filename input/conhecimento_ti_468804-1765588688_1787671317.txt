@@ -1,0 +1,74 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Redes de Computadores - Cabeamento Estruturado: Evolução das normas ANSI/TIA 568 - C e ANSI/TIA 568 - D
+Idioma: pt-BR
+Tecnologias citadas no documento: Cabeamento Estruturado, ANSI/TIA 568, Par Trançado, Fibra Óptica, Coaxial, PoE, Ethernet, Categoria 3, Categoria 5e, Categoria 6, Categoria 6A, Categoria 8, MPTL, UTP, STP
+
+=== SECAO [TI_SEC_001]: Evolução da Norma ANSI/TIA 568 ===
+A norma ANSI/TIA 568, que rege o cabeamento estruturado, passou por diversas revisões ao longo dos anos, culminando nas versões 'C' e 'D'. A transição da série 'C' para a série 'D' representou uma reorganização e atualização significativa dos padrões. A série 'D' introduziu uma numeração mais lógica (como 568.0-D, 568.1-D) para abranger de forma mais eficiente os componentes de cobre (par trançado, coaxial) e fibra óptica, além de cabeamento genérico. A letra 'D' indica a quarta revisão, com foco em demandas modernas como Power over Ethernet (PoE) de alta potência e novas tecnologias, substituindo o modelo mais antigo da série 'C' para garantir suporte futuro e longevidade da infraestrutura de rede. A revisão 'D' também inverteu os indicadores de parte e revisão para um formato mais consistente (ex: TIA-568.2-D), facilitando a identificação das partes e componentes.
+
+-- Conceitos-chave --
+Termo: ANSI/TIA 568 | Tipo: Padrão | Definicao: Um conjunto de normas desenvolvidas pela Telecommunications Industry Association (TIA) e pelo American National Standards Institute (ANSI) que estabelece os padrões para cabeamento de telecomunicações em edifícios comerciais e residenciais. Abrange desde o cabeamento genérico até componentes específicos como par trançado, fibra óptica e coaxial.
+  Vantagens de ANSI/TIA 568: Padronização e interoperabilidade entre fabricantes.; Garante desempenho e confiabilidade da rede.; Facilita o planejamento e a instalação de infraestrutura de rede.; Suporte a diversas tecnologias de rede.
+  Desvantagens de ANSI/TIA 568: Pode se tornar obsoleto com o rápido avanço tecnológico.; Requer atualização constante para atender novas demandas.; A complexidade das normas pode exigir conhecimento especializado.
+  Casos de uso de ANSI/TIA 568: Projeto e instalação de redes de computadores em edifícios comerciais.; Implementação de infraestrutura de telecomunicações em data centers.; Redes residenciais que buscam alta performance e confiabilidade.; Garantia de compatibilidade entre diferentes equipamentos de rede.
+Termo: ANSI/TIA 568-C | Tipo: Padrão | Definicao: Uma série de normas de cabeamento estruturado que sucedeu a série B. Foi dividida em partes (C.0, C.1, C.2, C.3) para abranger requisitos de cabeamento genérico, edifícios comerciais, par trançado e fibra óptica, respectivamente.
+  Vantagens de ANSI/TIA 568-C: Organização modular das normas.; Cobertura abrangente de diferentes tipos de cabeamento.; Estabelecimento de requisitos claros para edifícios comerciais.
+  Desvantagens de ANSI/TIA 568-C: Modelo mais antigo, pode não cobrir totalmente as demandas mais recentes.; Menos focado em tecnologias emergentes como PoE de alta potência.
+  Casos de uso de ANSI/TIA 568-C: Infraestrutura de rede em edifícios comerciais estabelecidos.; Projetos de cabeamento que seguem padrões anteriores à série D.; Implementação de sistemas de par trançado e fibra óptica.
+Termo: ANSI/TIA 568-D | Tipo: Padrão | Definicao: A quarta revisão da norma ANSI/TIA 568, que reorganizou e atualizou os padrões de cabeamento estruturado. Introduziu uma numeração mais lógica e focou em demandas modernas como PoE de alta potência e novas tecnologias, garantindo suporte futuro e longevidade da infraestrutura.
+  Vantagens de ANSI/TIA 568-D: Numeração mais lógica e consistente.; Foco em tecnologias modernas como PoE de alta potência.; Melhor suporte a futuras tecnologias.; Maior longevidade da infraestrutura de rede.
+  Desvantagens de ANSI/TIA 568-D: Pode exigir a substituição de componentes mais antigos.; Curva de aprendizado para profissionais acostumados com a série C.
+  Casos de uso de ANSI/TIA 568-D: Novos projetos de cabeamento estruturado.; Atualização de infraestruturas de rede existentes.; Implementação de soluções que demandam alta potência via PoE.; Ambientes que necessitam de infraestrutura de rede de longa duração.
+Termo: Power over Ethernet (PoE) | Tipo: Tecnologia | Definicao: Tecnologia que permite que cabos de rede Ethernet transmitam energia elétrica para dispositivos, eliminando a necessidade de fontes de alimentação separadas. As normas mais recentes, como a série D, consideram o suporte a PoE de alta potência.
+  Vantagens de Power over Ethernet (PoE): Simplifica a instalação de dispositivos de rede (APs, câmeras, telefones IP).; Reduz a necessidade de pontos de energia próximos aos dispositivos.; Economia de custos em instalação e infraestrutura elétrica.
+  Desvantagens de Power over Ethernet (PoE): Pode gerar calor adicional nos cabos, exigindo considerações de projeto.; Limitações de potência dependendo da categoria do cabo e do padrão PoE.; Risco de danos a dispositivos não compatíveis com PoE.
+  Casos de uso de Power over Ethernet (PoE): Alimentação de Access Points (APs) sem fio.; Uso em câmeras de segurança IP (CFTV).; Telefones IP.; Dispositivos IoT (Internet das Coisas).
+
+-- Tabelas comparativas --
+Tabela 'Categorias de Cabo e Características de Transmissão (Norma ANSI/TIA 568-C.2)': Esta tabela compara diferentes categorias de cabos de par trançado, especificando o tipo de cabo e a faixa de frequência (característica de transmissão) suportada por cada uma, conforme a norma ANSI/TIA 568-C.2. As categorias apresentadas são 3, 5e, 6 e 6A.
+  Linha LIN_001: CATEGORIA DE CABO = CATEGORIA 3; Tipo de cabo = 100Ω par trançado balanceado; Característica de transmissão = 1 a 16MHz
+    (Relacionado a: categoria_3)
+  Linha LIN_002: CATEGORIA DE CABO = CATEGORIA 5E; Tipo de cabo = 100Ω par trançado balanceado; Característica de transmissão = 1 a 100MHz
+    (Relacionado a: categoria_5e)
+  Linha LIN_003: CATEGORIA DE CABO = CATEGORIA 6; Tipo de cabo = 100Ω par trançado balanceado; Característica de transmissão = 1 a 250MHz
+    (Relacionado a: categoria_6)
+  Linha LIN_004: CATEGORIA DE CABO = CATEGORIA 6A; Tipo de cabo = 100Ω par trançado balanceado; Característica de transmissão = 1 a 500MHz
+    (Relacionado a: categoria_6a)
+Tabela 'Distâncias Máximas Suportadas para Aplicações de Cabeamento de Par Trançado Balanceado': Esta tabela lista as distâncias máximas suportadas para diversas aplicações de rede que utilizam cabeamento de cobre (par trançado balanceado). As distâncias são baseadas nos requisitos mínimos de desempenho estabelecidos pela norma ANSI/TIA/EIA-568-B.2 e são apresentadas em metros (pés). As aplicações são identificadas por nomes padrão da indústria.
+  Linha LIN_005: Application = Ethernet 10BASE-T; Media = category 3, 5e, 6, 6A; Distance m (ft) = 100 (328); Comments = 
+    (Relacionado a: ethernet_10base_t, categoria_3, categoria_5e, categoria_6, categoria_6a)
+  Linha LIN_006: Application = Ethernet 100BASE-TX; Media = category 5e, 6, 6A; Distance m (ft) = 100 (328); Comments = 
+    (Relacionado a: ethernet_100base_tx, categoria_5e, categoria_6, categoria_6a)
+  Linha LIN_007: Application = Ethernet 1000BASE-T; Media = category 5e, 6, 6A; Distance m (ft) = 100 (328); Comments = 
+    (Relacionado a: ethernet_1000base_t, categoria_5e, categoria_6, categoria_6a)
+  Linha LIN_008: Application = Ethernet 10GBASE-T; Media = category 6A; Distance m (ft) = 100 (328); Comments = 
+    (Relacionado a: ethernet_10gbase_t, categoria_6a)
+
+-- Figuras e diagramas --
+Figura 'Configuração MPTL (Modular Plug Terminated Link)' (Diagrama de Rede): O diagrama ilustra a configuração MPTL, onde o cabo horizontal é terminado diretamente com um conector RJ45 (macho) no dispositivo terminal em campo. Isso é aplicável a equipamentos fixos como forros, Access Points wireless e câmeras de vigilância (CFTV). A distância máxima do link permanente é de 90m, com um canal total (do equipamento ativo até o terminal) de até 100m, incluindo um cabo de equipamento de até 5m.
+  Componentes visuais: Equipamento ativo (ex switch), Patch panel, Cabo horizontal, Ponto de consolidação (opcional), Tomada da área de trabalho, Cabo do equipamento (+ patch cord = 5 m), Equipamento terminal, RJ45 (macho)
+  Relacionado a: mptl, ansi_tia_568_2_d, poe
+
+-- Relacionamentos --
+Conexao: 'ansi_tia_568_d' --[substitui]--> 'ansi_tia_568_c'. Motivo: A série D representa uma evolução e atualização da série C, focando em novas tecnologias e melhor organização.
+Conexao: 'ansi_tia_568_d' --[implementa]--> 'poe'. Motivo: A norma ANSI/TIA 568-D considera e especifica requisitos para o suporte de Power over Ethernet (PoE) de alta potência.
+Conexao: 'ansi_tia_568_d' --[define]--> 'mptl'. Motivo: A norma ANSI/TIA 568-D introduziu a configuração MPTL (Modular Plug Terminated Link) como uma nova opção de terminação.
+Conexao: 'ansi_tia_568_c' --[divide_em]--> 'ansi_tia_568_c_0'. Motivo: A norma ANSI/TIA 568-C é dividida em partes, sendo C.0 referente ao cabeamento genérico.
+Conexao: 'ansi_tia_568_c' --[divide_em]--> 'ansi_tia_568_c_1'. Motivo: A norma ANSI/TIA 568-C é dividida em partes, sendo C.1 referente ao cabeamento para edifícios comerciais.
+Conexao: 'ansi_tia_568_c' --[divide_em]--> 'ansi_tia_568_c_2'. Motivo: A norma ANSI/TIA 568-C é dividida em partes, sendo C.2 referente ao cabeamento em par balanceado.
+Conexao: 'ansi_tia_568_c' --[divide_em]--> 'ansi_tia_568_c_3'. Motivo: A norma ANSI/TIA 568-C é dividida em partes, sendo C.3 referente aos componentes de cabeamento em fibra óptica.
+Conexao: 'ansi_tia_568_c_2' --[especifica]--> 'categoria_3'. Motivo: A norma ANSI/TIA 568-C.2 especifica requisitos para cabos de par trançado, incluindo a Categoria 3.
+Conexao: 'ansi_tia_568_c_2' --[especifica]--> 'categoria_5e'. Motivo: A norma ANSI/TIA 568-C.2 especifica requisitos para cabos de par trançado, incluindo a Categoria 5e.
+Conexao: 'ansi_tia_568_c_2' --[especifica]--> 'categoria_6'. Motivo: A norma ANSI/TIA 568-C.2 especifica requisitos para cabos de par trançado, incluindo a Categoria 6.
+Conexao: 'ansi_tia_568_c_2' --[especifica]--> 'categoria_6a'. Motivo: A norma ANSI/TIA 568-C.2 especifica requisitos para cabos de par trançado, incluindo a Categoria 6A.
+Conexao: 'ansi_tia_568_2_d' --[adiciona]--> 'mptl'. Motivo: A norma ANSI/TIA 568.2-D adicionou a configuração MPTL (Modular Plug Terminated Link).
+Conexao: 'ansi_tia_568_2_d' --[incorpora]--> 'categoria_8'. Motivo: A norma ANSI/TIA 568.2-D incorporou a Categoria 8 ao corpo da norma.
+Conexao: 'ansi_tia_568_2_d' --[reconhece]--> 'patch_cord_28awg'. Motivo: A norma ANSI/TIA 568.2-D reconhece patch cords com bitola de condutor 28 AWG.
+Conexao: 'ansi_tia_568_2_d' --[considera]--> 'poe'. Motivo: A norma ANSI/TIA 568.2-D inclui considerações sobre o suporte ao PoE (Power over Ethernet).
+Conexao: 'categoria_8' --[suporta]--> 'ethernet_40gbps'. Motivo: A Categoria 8 suporta Ethernet a 40 Gbps.
+Conexao: 'patch_cord_28awg' --[tem_desvantagem]--> 'atenuacao_sinal'. Motivo: Patch cords 28 AWG podem ter maior atenuação de sinal em comparação com cabos de bitola mais grossa.
+Conexao: 'patch_cord_28awg' --[tem_desvantagem]--> 'resistencia_eletrica'. Motivo: Patch cords 28 AWG podem ter maior resistência à corrente elétrica.
+Conexao: 'poe_4p' --[entrega]--> 'potencia_100w'. Motivo: O PoE++ (4PPoE) pode entregar quase 100W de potência pelo switch.
+Conexao: 'poe_4p' --[garante]--> 'potencia_71w_remota'. Motivo: O PoE++ (4PPoE) garante um mínimo de 71W no dispositivo remoto.
+Conexao: 'ansi_tsb_184_a' --[fornece_diretrizes]--> 'poe'. Motivo: O boletim técnico ANSI/TSB-184-A fornece diretrizes para o suporte de entrega de energia (PoE) sobre cabeamento de par trançado balanceado.
+

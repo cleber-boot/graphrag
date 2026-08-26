@@ -1,0 +1,219 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Redes de Computadores
+Idioma: pt-BR
+Tecnologias citadas no documento: Roteador, Switch, Hub, Bridge, LAN, WAN, Internet, IP, OSI, RIPv1, RIPv2, OSPF, EIGRP, BGP, IS-IS
+
+=== SECAO [TI_SEC_001]: Equipamentos e Dispositivos de Redes de Computadores ===
+Esta seção introduz os componentes essenciais para a construção de redes de computadores, listando exemplos de equipamentos e dispositivos. O foco principal recai sobre os roteadores, detalhando suas funcionalidades, importância na interconexão de redes locais (LANs) e redes remotas (WANs), e seu papel na decisão do melhor caminho para o tráfego de dados. São abordadas as camadas do modelo OSI em que operam e a base de suas decisões (endereços IP). A seção também menciona a configuração de roteadores, seja estática ou dinâmica através de protocolos de roteamento, e ilustra o funcionamento com diagramas de rede.
+
+-- Conceitos-chave --
+Termo: Roteador | Tipo: Equipamento de Rede | Definicao: Dispositivo de rede responsável por interligar diferentes redes (LANs e WANs), encaminhando pacotes de dados entre elas com base em endereços lógicos (IP). Atua como um filtro e direcionador de informações, decidindo o melhor caminho para a comunicação e dividindo redes logicamente.
+  Vantagens de Roteador: Interconexão de redes heterogêneas; Segmentação lógica de redes; Otimização de rotas de tráfego; Suporte a múltiplos protocolos de rede
+  Desvantagens de Roteador: Requer configuração (não é plug-and-play); Pode ser um gargalo de desempenho se subdimensionado; Complexidade na configuração e gerenciamento
+  Casos de uso de Roteador: Conectar uma rede local à Internet; Interligar filiais de uma empresa; Criar sub-redes dentro de uma rede maior; Gerenciar tráfego entre diferentes segmentos de rede
+Termo: Tabela de Roteamento | Tipo: Estrutura de Dados | Definicao: Estrutura de dados utilizada por roteadores para armazenar informações sobre as redes conhecidas e os caminhos para alcançá-las. Contém entradas que mapeiam destinos de rede para interfaces de saída ou próximos saltos, permitindo que o roteador tome decisões de encaminhamento.
+  Vantagens de Tabela de Roteamento: Permite a tomada de decisão eficiente para encaminhamento de pacotes; Suporta a hierarquização de redes; Facilita a descoberta e manutenção de rotas
+  Desvantagens de Tabela de Roteamento: Pode se tornar grande e complexa em redes extensas; Requer atualização constante para refletir mudanças na topologia da rede
+  Casos de uso de Tabela de Roteamento: Determinar o melhor caminho para um pacote IP; Gerenciar a conectividade entre redes diferentes; Implementar políticas de roteamento
+Termo: Protocolo de Roteamento | Tipo: Protocolo | Definicao: Conjunto de regras e algoritmos que os roteadores utilizam para trocar informações sobre a topologia da rede e construir suas tabelas de roteamento. Exemplos incluem RIP, OSPF, EIGRP e BGP.
+  Vantagens de Protocolo de Roteamento: Automatiza a descoberta e atualização de rotas; Adapta-se a mudanças na topologia da rede; Otimiza a escolha de caminhos
+  Desvantagens de Protocolo de Roteamento: Adiciona complexidade à rede; Consome recursos de processamento e largura de banda; Requer compatibilidade entre roteadores
+  Casos de uso de Protocolo de Roteamento: Manter tabelas de roteamento atualizadas em redes dinâmicas; Descobrir rotas para redes remotas; Adaptar-se a falhas de links ou roteadores
+Termo: Modelo OSI | Tipo: Modelo de Referência | Definicao: Modelo conceitual que padroniza as funções de um sistema de telecomunicação ou de computação em sete camadas de abstração. Roteadores operam principalmente nas camadas Física (1), Enlace (2) e de Rede (3).
+  Vantagens de Modelo OSI: Facilita a compreensão e o ensino de redes; Promove a interoperabilidade entre diferentes tecnologias; Permite o desenvolvimento modular de protocolos
+  Desvantagens de Modelo OSI: É um modelo conceitual, não uma implementação direta; Algumas camadas podem ter funcionalidades sobrepostas; Pode ser considerado complexo para iniciantes
+  Casos de uso de Modelo OSI: Analisar e solucionar problemas de rede; Desenvolver novos protocolos e tecnologias de rede; Entender a arquitetura de comunicação em rede
+Termo: Endereço IP | Tipo: Endereçamento | Definicao: Identificador numérico único atribuído a cada dispositivo em uma rede que utiliza o Protocolo de Internet para comunicação. É fundamental para o roteamento de pacotes.
+  Vantagens de Endereço IP: Permite a identificação única de dispositivos em redes; Base para o roteamento de pacotes; Suporta a hierarquização de redes (sub-redes)
+  Desvantagens de Endereço IP: Gerenciamento de endereços pode ser complexo; Necessidade de NAT para redes privadas se conectarem à Internet pública; Endereços IPv4 estão se esgotando
+  Casos de uso de Endereço IP: Identificar um host em uma rede; Encaminhar pacotes de dados entre redes; Configurar serviços de rede
+
+-- Figuras e diagramas --
+Figura 'Diagrama de Rede com Equipamentos' (Diagrama de Rede): O diagrama ilustra uma rede de computadores com vários componentes. Temos um servidor de e-mail e um servidor WWW conectados a um Switch, que por sua vez faz parte da LAN 1. A LAN 1 também contém estações de trabalho. Um Router interliga a LAN 1 à Internet. Outra LAN, a LAN 2, utiliza um Hub e contém impressoras e estações de trabalho. Um Bridge conecta a LAN 2 a outra parte da rede. A LAN 3 e a LAN 4 são mostradas com estações de trabalho conectadas a Switches. Um repetidor é também mencionado, embora não explicitamente conectado no diagrama principal. O diagrama demonstra a interconexão de diferentes segmentos de rede e dispositivos.
+  Componentes visuais: Servidor WWW, Servidor e-mail, Estações de Trabalho, Impressora, Switch, Hub, Bridge, Roteador, Repetidor, Internet, LAN 1, LAN 2, LAN 3, LAN 4
+  Relacionado a: roteador, switch, hub, bridge, servidor, estacao_de_trabalho, impressora, internet, lan, wan
+
+-- Relacionamentos --
+Conexao: 'roteador' --[comunica_com]--> 'internet'. Motivo: Roteadores são essenciais para conectar redes locais à Internet, permitindo o tráfego de dados entre elas.
+Conexao: 'roteador' --[implementa]--> 'tabela_roteamento'. Motivo: Roteadores utilizam tabelas de roteamento para tomar decisões sobre o encaminhamento de pacotes.
+Conexao: 'tabela_roteamento' --[gerenciada_por]--> 'protocolo_roteamento'. Motivo: Protocolos de roteamento são responsáveis por construir e manter as tabelas de roteamento dinamicamente.
+Conexao: 'roteador' --[opera_em_camada]--> 'modelo_osi'. Motivo: Roteadores operam principalmente nas camadas Física, Enlace e de Rede do modelo OSI.
+Conexao: 'roteador' --[utiliza]--> 'endereco_ip'. Motivo: Roteadores tomam decisões de encaminhamento baseadas nos endereços IP de rede.
+Conexao: 'switch' --[conecta]--> 'estacao_de_trabalho'. Motivo: Switches conectam dispositivos dentro de uma mesma rede local (LAN).
+Conexao: 'hub' --[conecta]--> 'estacao_de_trabalho'. Motivo: Hubs conectam dispositivos dentro de uma mesma rede local (LAN), embora de forma menos eficiente que switches.
+Conexao: 'bridge' --[interliga]--> 'lan'. Motivo: Bridges podem interligar diferentes segmentos de rede local (LANs).
+
+=== SECAO [TI_SEC_002]: Roteadores / Router ===
+Esta seção detalha a função e as características dos roteadores. São descritos como dispositivos cruciais para a interligação de redes locais entre si e com redes remotas em tempo integral. Os roteadores são apresentados como componentes tradicionais em backbones de intranets e da Internet, permitindo que máquinas em diferentes LANs se comuniquem como se estivessem na mesma rede. Sua principal função é decidir o melhor caminho para os pacotes de dados, dividindo logicamente as redes e mantendo a identidade de cada sub-rede. A seção também inclui uma imagem de um roteador TP-Link específico, destacando suas portas WAN e LAN.
+
+-- Conceitos-chave --
+Termo: Roteador | Tipo: Equipamento de Rede | Definicao: Dispositivo de rede responsável por interligar diferentes redes (LANs e WANs), encaminhando pacotes de dados entre elas com base em endereços lógicos (IP). Atua como um filtro e direcionador de informações, decidindo o melhor caminho para a comunicação e dividindo redes logicamente.
+  Vantagens de Roteador: Interconexão de redes heterogêneas; Segmentação lógica de redes; Otimização de rotas de tráfego; Suporte a múltiplos protocolos de rede
+  Desvantagens de Roteador: Requer configuração (não é plug-and-play); Pode ser um gargalo de desempenho se subdimensionado; Complexidade na configuração e gerenciamento
+  Casos de uso de Roteador: Conectar uma rede local à Internet; Interligar filiais de uma empresa; Criar sub-redes dentro de uma rede maior; Gerenciar tráfego entre diferentes segmentos de rede
+
+-- Figuras e diagramas --
+Figura 'Roteador TP-Link SafeStream Gigabit Multi-WAN VPN Router' (Imagem de Equipamento): A imagem mostra um roteador TP-Link modelo TL-ER7206, um SafeStream Gigabit Multi-WAN VPN Router. Destacam-se as portas na parte traseira: SFP WAN (duas), WAN/LAN (quatro) e LAN (uma). Há também indicadores LED para Link/Act e PWR, além de um botão de Reset. A presença de múltiplas portas WAN sugere capacidade para balanceamento de carga ou failover.
+  Componentes visuais: Roteador TP-Link TL-ER7206, Porta SFP WAN, Porta WAN/LAN, Porta LAN, Indicadores LED (Link/Act, PWR), Botão Reset
+  Relacionado a: roteador
+
+=== SECAO [TI_SEC_003]: Roteadores / Router - Funcionalidades e Protocolos ===
+Esta seção aprofunda as capacidades dos roteadores, destacando que são dispositivos com programas sofisticados para prover interconectividade entre LANs e entre LAN e WAN. Eles estendem os limites das LANs para MANs e WANs, sendo úteis para interligar redes com diferentes protocolos e a Internet. Operam nas camadas Física, Enlace e de Rede (principalmente Camada 3 do OSI), tomando decisões baseadas em endereços IP. Os roteadores escolhem os melhores caminhos através de tabelas de roteamento e troca de informações com outros roteadores via protocolos de roteamento como RIPv1, RIPv2, OSPF, EIGRP e IS-IS. É possível configurar tabelas de roteamento estaticamente, mas geralmente são mantidas dinamicamente pelos protocolos.
+
+-- Conceitos-chave --
+Termo: Roteador | Tipo: Equipamento de Rede | Definicao: Dispositivo de rede responsável por interligar diferentes redes (LANs e WANs), encaminhando pacotes de dados entre elas com base em endereços lógicos (IP). Atua como um filtro e direcionador de informações, decidindo o melhor caminho para a comunicação e dividindo redes logicamente.
+  Vantagens de Roteador: Interconexão de redes heterogêneas; Segmentação lógica de redes; Otimização de rotas de tráfego; Suporte a múltiplos protocolos de rede
+  Desvantagens de Roteador: Requer configuração (não é plug-and-play); Pode ser um gargalo de desempenho se subdimensionado; Complexidade na configuração e gerenciamento
+  Casos de uso de Roteador: Conectar uma rede local à Internet; Interligar filiais de uma empresa; Criar sub-redes dentro de uma rede maior; Gerenciar tráfego entre diferentes segmentos de rede
+Termo: Modelo OSI | Tipo: Modelo de Referência | Definicao: Modelo conceitual que padroniza as funções de um sistema de telecomunicação ou de computação em sete camadas de abstração. Roteadores operam principalmente nas camadas Física (1), Enlace (2) e de Rede (3).
+  Vantagens de Modelo OSI: Facilita a compreensão e o ensino de redes; Promove a interoperabilidade entre diferentes tecnologias; Permite o desenvolvimento modular de protocolos
+  Desvantagens de Modelo OSI: É um modelo conceitual, não uma implementação direta; Algumas camadas podem ter funcionalidades sobrepostas; Pode ser considerado complexo para iniciantes
+  Casos de uso de Modelo OSI: Analisar e solucionar problemas de rede; Desenvolver novos protocolos e tecnologias de rede; Entender a arquitetura de comunicação em rede
+Termo: Endereço IP | Tipo: Endereçamento | Definicao: Identificador numérico único atribuído a cada dispositivo em uma rede que utiliza o Protocolo de Internet para comunicação. É fundamental para o roteamento de pacotes.
+  Vantagens de Endereço IP: Permite a identificação única de dispositivos em redes; Base para o roteamento de pacotes; Suporta a hierarquização de redes (sub-redes)
+  Desvantagens de Endereço IP: Gerenciamento de endereços pode ser complexo; Necessidade de NAT para redes privadas se conectarem à Internet pública; Endereços IPv4 estão se esgotando
+  Casos de uso de Endereço IP: Identificar um host em uma rede; Encaminhar pacotes de dados entre redes; Configurar serviços de rede
+Termo: Tabela de Roteamento | Tipo: Estrutura de Dados | Definicao: Estrutura de dados utilizada por roteadores para armazenar informações sobre as redes conhecidas e os caminhos para alcançá-las. Contém entradas que mapeiam destinos de rede para interfaces de saída ou próximos saltos, permitindo que o roteador tome decisões de encaminhamento.
+  Vantagens de Tabela de Roteamento: Permite a tomada de decisão eficiente para encaminhamento de pacotes; Suporta a hierarquização de redes; Facilita a descoberta e manutenção de rotas
+  Desvantagens de Tabela de Roteamento: Pode se tornar grande e complexa em redes extensas; Requer atualização constante para refletir mudanças na topologia da rede
+  Casos de uso de Tabela de Roteamento: Determinar o melhor caminho para um pacote IP; Gerenciar a conectividade entre redes diferentes; Implementar políticas de roteamento
+Termo: Protocolo de Roteamento | Tipo: Protocolo | Definicao: Conjunto de regras e algoritmos que os roteadores utilizam para trocar informações sobre a topologia da rede e construir suas tabelas de roteamento. Exemplos incluem RIP, OSPF, EIGRP e BGP.
+  Vantagens de Protocolo de Roteamento: Automatiza a descoberta e atualização de rotas; Adapta-se a mudanças na topologia da rede; Otimiza a escolha de caminhos
+  Desvantagens de Protocolo de Roteamento: Adiciona complexidade à rede; Consome recursos de processamento e largura de banda; Requer compatibilidade entre roteadores
+  Casos de uso de Protocolo de Roteamento: Manter tabelas de roteamento atualizadas em redes dinâmicas; Descobrir rotas para redes remotas; Adaptar-se a falhas de links ou roteadores
+Termo: RIPv1 | Tipo: Protocolo de Roteamento | Definicao: Protocolo de roteamento vetorial de distância (distance-vector) que utiliza o número de saltos (hops) como métrica. É um protocolo de classeful, o que significa que não suporta VLSM (Variable Length Subnet Masking).
+  Vantagens de RIPv1: Simples de configurar e entender
+  Desvantagens de RIPv1: Convergência lenta; Não suporta VLSM; Limitação de 15 saltos; Consome largura de banda com atualizações completas da tabela
+  Casos de uso de RIPv1: Redes pequenas e simples onde a complexidade não é um fator; Ambientes de aprendizado
+Termo: RIPv2 | Tipo: Protocolo de Roteamento | Definicao: Versão aprimorada do RIP que suporta VLSM (Variable Length Subnet Masking) e atualizações multicast, reduzindo o consumo de banda em comparação com o RIPv1.
+  Vantagens de RIPv2: Suporta VLSM; Atualizações multicast reduzem o uso de banda; Mais eficiente que RIPv1
+  Desvantagens de RIPv2: Convergência ainda pode ser lenta comparada a outros protocolos; Limitação de 15 saltos; Ainda é um protocolo vetorial de distância
+  Casos de uso de RIPv2: Redes de pequeno a médio porte; Substituição do RIPv1 em redes que necessitam de VLSM
+Termo: OSPF | Tipo: Protocolo de Roteamento | Definicao: Protocolo de roteamento de estado de link (link-state) que utiliza o custo como métrica. É um protocolo de classeless, amplamente utilizado em redes corporativas e provedores de serviço.
+  Vantagens de OSPF: Convergência rápida; Suporta VLSM e CIDR; Escalável; Algoritmo Dijkstra eficiente para cálculo de rotas; Suporta sumarização de rotas
+  Desvantagens de OSPF: Mais complexo de configurar e gerenciar que RIP; Requer mais recursos de CPU e memória nos roteadores
+  Casos de uso de OSPF: Redes corporativas de médio a grande porte; Backbones de provedores de serviço; Redes que exigem convergência rápida
+Termo: EIGRP | Tipo: Protocolo de Roteamento | Definicao: Protocolo de roteamento proprietário da Cisco (agora aberto) que combina características de protocolos vetoriais de distância e de estado de link. Utiliza o algoritmo DUAL (Diffusing Update Algorithm) para garantir convergência rápida.
+  Vantagens de EIGRP: Convergência muito rápida; Suporta VLSM e CIDR; Escalável; Eficiente no uso de banda; Suporta sumarização de rotas
+  Desvantagens de EIGRP: Originalmente proprietário da Cisco (embora agora aberto); Pode ser complexo de configurar em cenários avançados
+  Casos de uso de EIGRP: Redes predominantemente Cisco; Redes que necessitam de convergência rápida e eficiência
+Termo: BGP | Tipo: Protocolo de Roteamento | Definicao: Protocolo de roteamento de vetor de caminho (path-vector) utilizado principalmente entre Sistemas Autônomos (AS) na Internet. É focado em políticas de roteamento e escalabilidade.
+  Vantagens de BGP: Altamente escalável para a Internet; Suporta políticas de roteamento complexas; Permite controle granular sobre o tráfego
+  Desvantagens de BGP: Extremamente complexo de configurar e gerenciar; Convergência lenta; Requer conhecimento profundo de redes
+  Casos de uso de BGP: Roteamento entre provedores de Internet (AS); Conexão de grandes corporações à Internet; Implementação de políticas de trânsito e peering
+Termo: IS-IS | Tipo: Protocolo de Roteamento | Definicao: Protocolo de roteamento de estado de link (link-state) semelhante ao OSPF, mas projetado para operar em redes maiores e mais complexas, especialmente em ambientes de provedores de serviço.
+  Vantagens de IS-IS: Altamente escalável; Convergência rápida; Suporta múltiplos protocolos de camada 3 (IP, CLNS); Eficiente em redes grandes
+  Desvantagens de IS-IS: Complexidade de configuração; Menos comum em redes corporativas que OSPF
+  Casos de uso de IS-IS: Backbones de provedores de serviço; Redes de telecomunicações; Grandes redes corporativas com requisitos de escalabilidade
+
+-- Relacionamentos --
+Conexao: 'roteador' --[opera_em_camada]--> 'modelo_osi'. Motivo: Roteadores operam nas camadas Física (1), Enlace (2) e de Rede (3) do modelo OSI, com foco principal na Camada 3.
+Conexao: 'roteador' --[utiliza]--> 'endereco_ip'. Motivo: Decisões de roteamento são baseadas nos endereços IP de rede.
+Conexao: 'roteador' --[implementa]--> 'tabela_roteamento'. Motivo: Roteadores utilizam tabelas de roteamento para determinar os melhores caminhos.
+Conexao: 'tabela_roteamento' --[gerenciada_por]--> 'protocolo_roteamento'. Motivo: Protocolos de roteamento (RIPv1, RIPv2, OSPF, EIGRP, BGP, IS-IS) trocam informações para construir e atualizar tabelas de roteamento.
+Conexao: 'protocolo_roteamento' --[exemplo]--> 'ripv1'. Motivo: RIPv1 é um exemplo de protocolo de roteamento.
+Conexao: 'protocolo_roteamento' --[exemplo]--> 'ripv2'. Motivo: RIPv2 é um exemplo de protocolo de roteamento.
+Conexao: 'protocolo_roteamento' --[exemplo]--> 'ospf'. Motivo: OSPF é um exemplo de protocolo de roteamento.
+Conexao: 'protocolo_roteamento' --[exemplo]--> 'eigrp'. Motivo: EIGRP é um exemplo de protocolo de roteamento.
+Conexao: 'protocolo_roteamento' --[exemplo]--> 'bgp'. Motivo: BGP é um exemplo de protocolo de roteamento.
+Conexao: 'protocolo_roteamento' --[exemplo]--> 'isis'. Motivo: IS-IS é um exemplo de protocolo de roteamento.
+
+=== SECAO [TI_SEC_004]: Roteadores e Tabelas de Roteamento ===
+Esta seção explica como os roteadores utilizam tabelas de roteamento para operar. O endereçamento lógico (IP) permite a hierarquização das redes. É enfatizado que roteadores não são 'plug and play' e requerem configuração. Eles usam as informações contidas nas tabelas de roteamento para identificar os melhores caminhos. O diagrama ilustra duas redes (Rede 1.0 e Rede 4.0) interconectadas através da Rede 2.0, com roteadores em cada ponto de interconexão. Tabelas de roteamento são apresentadas para dois roteadores, mostrando as redes de destino, a interface de saída (INT) e a métrica associada a cada rota.
+
+-- Conceitos-chave --
+Termo: Roteador | Tipo: Equipamento de Rede | Definicao: Dispositivo de rede responsável por interligar diferentes redes (LANs e WANs), encaminhando pacotes de dados entre elas com base em endereços lógicos (IP). Atua como um filtro e direcionador de informações, decidindo o melhor caminho para a comunicação e dividindo redes logicamente.
+  Vantagens de Roteador: Interconexão de redes heterogêneas; Segmentação lógica de redes; Otimização de rotas de tráfego; Suporte a múltiplos protocolos de rede
+  Desvantagens de Roteador: Requer configuração (não é plug-and-play); Pode ser um gargalo de desempenho se subdimensionado; Complexidade na configuração e gerenciamento
+  Casos de uso de Roteador: Conectar uma rede local à Internet; Interligar filiais de uma empresa; Criar sub-redes dentro de uma rede maior; Gerenciar tráfego entre diferentes segmentos de rede
+Termo: Tabela de Roteamento | Tipo: Estrutura de Dados | Definicao: Estrutura de dados utilizada por roteadores para armazenar informações sobre as redes conhecidas e os caminhos para alcançá-las. Contém entradas que mapeiam destinos de rede para interfaces de saída ou próximos saltos, permitindo que o roteador tome decisões de encaminhamento.
+  Vantagens de Tabela de Roteamento: Permite a tomada de decisão eficiente para encaminhamento de pacotes; Suporta a hierarquização de redes; Facilita a descoberta e manutenção de rotas
+  Desvantagens de Tabela de Roteamento: Pode se tornar grande e complexa em redes extensas; Requer atualização constante para refletir mudanças na topologia da rede
+  Casos de uso de Tabela de Roteamento: Determinar o melhor caminho para um pacote IP; Gerenciar a conectividade entre redes diferentes; Implementar políticas de roteamento
+Termo: Endereço IP | Tipo: Endereçamento | Definicao: Identificador numérico único atribuído a cada dispositivo em uma rede que utiliza o Protocolo de Internet para comunicação. É fundamental para o roteamento de pacotes.
+  Vantagens de Endereço IP: Permite a identificação única de dispositivos em redes; Base para o roteamento de pacotes; Suporta a hierarquização de redes (sub-redes)
+  Desvantagens de Endereço IP: Gerenciamento de endereços pode ser complexo; Necessidade de NAT para redes privadas se conectarem à Internet pública; Endereços IPv4 estão se esgotando
+  Casos de uso de Endereço IP: Identificar um host em uma rede; Encaminhar pacotes de dados entre redes; Configurar serviços de rede
+
+-- Tabelas comparativas --
+Tabela 'Tabela de Roteamento (Exemplo Roteador 1)': Esta tabela mostra as rotas conhecidas por um roteador. Para cada rede de destino (NET), indica a interface de saída (INT) e a métrica associada. Por exemplo, para alcançar a Rede 1, o roteador usa a interface E0 com métrica 0. Para a Rede 4, usa a interface S0 com métrica 1.
+  Linha TI_TAB_001_L01: NET = 1; INT = E0; Métrica = 0
+  Linha TI_TAB_001_L02: NET = 2; INT = S0; Métrica = 0
+  Linha TI_TAB_001_L03: NET = 4; INT = S0; Métrica = 1
+Tabela 'Tabela de Roteamento (Exemplo Roteador 2)': Esta tabela mostra as rotas conhecidas por outro roteador. Para cada rede de destino (NET), indica a interface de saída (INT) e a métrica associada. Por exemplo, para alcançar a Rede 1, o roteador usa a interface S0 com métrica 1. Para a Rede 4, usa a interface E0 com métrica 0.
+  Linha TI_TAB_002_L01: NET = 1; INT = S0; Métrica = 1
+  Linha TI_TAB_002_L02: NET = 2; INT = S0; Métrica = 0
+  Linha TI_TAB_002_L03: NET = 4; INT = E0; Métrica = 0
+
+-- Figuras e diagramas --
+Figura 'Diagrama de Interconexão de Redes com Roteadores e Tabelas de Roteamento' (Diagrama de Rede): O diagrama mostra a interconexão de quatro redes (Rede 1.0, Rede 2.0, Rede 4.0) através de roteadores. A Rede 1.0 é composta pelos hosts 1.1 e 1.2, e conectada ao roteador R (com interfaces E0 e S0) que também se conecta à Rede 2.0 (com interfaces 2.1 e 2.2). A Rede 4.0 é composta pelos hosts 4.1 e 4.2, e conectada ao roteador R (com interfaces E0 e S0) que também se conecta à Rede 2.0. Abaixo de cada rede principal, são exibidas tabelas de roteamento que detalham as redes alcançáveis, a interface de saída do roteador e a métrica para chegar a cada uma delas. Por exemplo, o roteador que conecta a Rede 1.0 e a Rede 2.0 tem uma rota para a Rede 1 via E0 com métrica 0, e para a Rede 4 via S0 com métrica 1.
+  Componentes visuais: Roteador (R), Host (ex: 1.1, 1.2, 4.1, 4.2), Interface de Roteador (E0, S0), Rede (Rede 1.0, Rede 2.0, Rede 4.0), Tabela de Roteamento, Nuvem (representando a Rede 2.0)
+  Relacionado a: roteador, tabela_roteamento, endereco_ip
+
+-- Relacionamentos --
+Conexao: 'roteador' --[utiliza]--> 'tabela_roteamento'. Motivo: Roteadores consultam tabelas de roteamento para determinar o melhor caminho para encaminhar pacotes.
+Conexao: 'tabela_roteamento' --[contem_informacao_sobre]--> 'endereco_ip'. Motivo: As tabelas de roteamento mapeiam destinos de rede (baseados em endereços IP) para interfaces de saída ou próximos saltos.
+Conexao: 'roteador' --[requer]--> 'configuracao'. Motivo: Roteadores necessitam de configuração manual ou automática para operar corretamente, não sendo dispositivos 'plug and play'.
+Conexao: 'roteador' --[interliga]--> 'rede'. Motivo: Roteadores são responsáveis por conectar diferentes redes (LANs, WANs).
+
+=== SECAO [TI_SEC_005]: Roteadores como Filtros e Direcionadores de Informações ===
+Esta seção descreve os roteadores como dispositivos que direcionam pacotes entre redes remotas, atuando como 'filtros' e 'direcionadores' de informações. O diagrama ilustra duas LANs (LAN 1 e LAN 2) interconectadas por um link remoto através de roteadores em cada extremidade. Isso demonstra a capacidade dos roteadores de gerenciar o tráfego entre redes geograficamente distintas ou logicamente separadas.
+
+-- Conceitos-chave --
+Termo: Roteador | Tipo: Equipamento de Rede | Definicao: Dispositivo de rede responsável por interligar diferentes redes (LANs e WANs), encaminhando pacotes de dados entre elas com base em endereços lógicos (IP). Atua como um filtro e direcionador de informações, decidindo o melhor caminho para a comunicação e dividindo redes logicamente.
+  Vantagens de Roteador: Interconexão de redes heterogêneas; Segmentação lógica de redes; Otimização de rotas de tráfego; Suporte a múltiplos protocolos de rede
+  Desvantagens de Roteador: Requer configuração (não é plug-and-play); Pode ser um gargalo de desempenho se subdimensionado; Complexidade na configuração e gerenciamento
+  Casos de uso de Roteador: Conectar uma rede local à Internet; Interligar filiais de uma empresa; Criar sub-redes dentro de uma rede maior; Gerenciar tráfego entre diferentes segmentos de rede
+
+-- Figuras e diagramas --
+Figura 'Interconexão de LANs via Roteadores e Ligação Remota' (Diagrama de Rede): O diagrama ilustra duas redes locais, LAN 1 e LAN 2, conectadas por uma 'Ligação Remota'. Cada LAN possui estações de trabalho e um roteador. O roteador da LAN 1 se conecta à LAN 1 e à ligação remota. O roteador da LAN 2 se conecta à LAN 2 e à ligação remota. Isso demonstra como os roteadores são usados para estender a conectividade entre redes separadas, atuando como pontos de entrada e saída para o tráfego que atravessa a ligação remota.
+  Componentes visuais: LAN 1, LAN 2, Roteador, Estação de Trabalho, Ligação Remota
+  Relacionado a: roteador, lan, wan
+
+-- Relacionamentos --
+Conexao: 'roteador' --[direciona]--> 'pacote'. Motivo: Roteadores direcionam pacotes de dados entre redes remotas, atuando como filtros e direcionadores de informação.
+Conexao: 'roteador' --[interliga]--> 'lan'. Motivo: Roteadores conectam redes locais (LANs) entre si e a redes remotas (WANs).
+Conexao: 'roteador' --[utiliza]--> 'ligacao_remota'. Motivo: Roteadores são os pontos de terminação e origem para tráfego que atravessa ligações remotas entre redes.
+
+=== SECAO [TI_SEC_006]: Roteadores: Exemplos de Usos e Conexões ===
+Esta seção apresenta exemplos práticos de como os roteadores são utilizados. Inclui a comunicação Internet/Intranet e LAN-to-LAN (como ligações matriz-filial), a conexão de sites de provedores à Internet, e a conexão de provedores a sub-provedores. O diagrama ilustra essas aplicações, mostrando a Internet conectada a um 'SITE DO PROVEDOR' que, por sua vez, se conecta a uma 'LAN MATRIZ' e a uma 'LAN FILIAL'. Também é mostrado um cenário de provedor conectando-se a sub-provedores. Dispositivos como RAS (Remote Access Server) e LP (Linha Privada ou Link de Pacotes) são mencionados em contextos de acesso remoto e conexão de dados/voz.
+
+-- Conceitos-chave --
+Termo: Roteador | Tipo: Equipamento de Rede | Definicao: Dispositivo de rede responsável por interligar diferentes redes (LANs e WANs), encaminhando pacotes de dados entre elas com base em endereços lógicos (IP). Atua como um filtro e direcionador de informações, decidindo o melhor caminho para a comunicação e dividindo redes logicamente.
+  Vantagens de Roteador: Interconexão de redes heterogêneas; Segmentação lógica de redes; Otimização de rotas de tráfego; Suporte a múltiplos protocolos de rede
+  Desvantagens de Roteador: Requer configuração (não é plug-and-play); Pode ser um gargalo de desempenho se subdimensionado; Complexidade na configuração e gerenciamento
+  Casos de uso de Roteador: Conectar uma rede local à Internet; Interligar filiais de uma empresa; Criar sub-redes dentro de uma rede maior; Gerenciar tráfego entre diferentes segmentos de rede
+Termo: Internet | Tipo: Rede Global | Definicao: Rede global de computadores interconectados que utilizam o conjunto de protocolos TCP/IP para se comunicar. É a maior rede de computadores do mundo.
+  Vantagens de Internet: Acesso global à informação e serviços; Plataforma para comunicação e colaboração; Oportunidades de negócios e entretenimento
+  Desvantagens de Internet: Riscos de segurança (malware, phishing, etc.); Dependência de infraestrutura e conectividade; Sobrecarga de informação e desinformação
+  Casos de uso de Internet: Navegação na web; Envio de e-mails; Comunicação por vídeo e voz; Acesso a serviços em nuvem; Comércio eletrônico
+Termo: Intranet | Tipo: Rede Privada | Definicao: Rede privada interna de uma organização, utilizando tecnologias da Internet (como navegadores web e protocolos TCP/IP), mas acessível apenas por membros autorizados da organização.
+  Vantagens de Intranet: Compartilhamento seguro de informações internas; Melhora a comunicação e colaboração interna; Centralização de recursos e aplicações corporativas
+  Desvantagens de Intranet: Requer infraestrutura de rede e segurança; Manutenção e atualização podem ser custosas; Acesso limitado a usuários internos
+  Casos de uso de Intranet: Portal corporativo; Compartilhamento de documentos; Sistemas de RH; Ferramentas de colaboração interna
+Termo: LAN | Tipo: Rede Local | Definicao: Rede de área local (Local Area Network), que conecta dispositivos em uma área geográfica limitada, como um escritório ou um prédio.
+  Vantagens de LAN: Alta velocidade de transferência de dados; Baixo custo de implementação e manutenção; Compartilhamento de recursos (impressoras, arquivos)
+  Desvantagens de LAN: Cobertura geográfica limitada; Segurança pode ser um desafio se não bem gerenciada
+  Casos de uso de LAN: Redes domésticas; Redes de escritórios; Redes em campus universitários
+Termo: WAN | Tipo: Rede Ampla | Definicao: Rede de área ampla (Wide Area Network), que abrange uma grande área geográfica, como cidades, países ou continentes. A Internet é o maior exemplo de WAN.
+  Vantagens de WAN: Conecta localizações geograficamente distantes; Permite comunicação e acesso a dados em larga escala
+  Desvantagens de WAN: Custos de implementação e manutenção mais elevados; Velocidades de transferência geralmente menores que LANs; Maior complexidade de gerenciamento e segurança
+  Casos de uso de WAN: Interligar filiais de empresas; Acesso à Internet; Redes de telecomunicações globais
+Termo: RAS (Remote Access Server) | Tipo: Servidor | Definicao: Servidor que permite que usuários remotos se conectem a uma rede privada (como uma intranet corporativa) através de uma conexão de acesso discado, VPN ou outra tecnologia de acesso remoto.
+  Vantagens de RAS (Remote Access Server): Permite acesso remoto seguro a recursos da rede; Flexibilidade para trabalhadores remotos e em trânsito
+  Desvantagens de RAS (Remote Access Server): Requer configuração e gerenciamento de segurança; Pode ser um ponto de vulnerabilidade se não protegido adequadamente; Desempenho pode depender da qualidade da conexão remota
+  Casos de uso de RAS (Remote Access Server): Acesso de funcionários remotos à rede corporativa; Suporte técnico remoto; Conexão de dispositivos móveis à rede
+
+-- Figuras e diagramas --
+Figura 'Arquitetura de Rede com Roteadores Conectando Internet, Provedores e LANs' (Diagrama de Rede): O diagrama ilustra um cenário complexo de rede. No topo, a INTERNET está conectada a um 'SITE DO PROVEDOR'. Dentro do site do provedor, há roteadores, servidores e um RAS. O provedor se conecta a uma 'LAN MATRIZ' (com estação e servidor) e a uma 'LAN FILIAL' (com estação e servidor), ambas através de roteadores. Há também uma conexão de um provedor a sub-provedores. São mostrados 'LP (voz ou dados)' e 'Rede de Pacotes' como tipos de conexão. O diagrama demonstra como roteadores são centrais para conectar diferentes níveis de redes, desde a Internet global até redes locais específicas, incluindo cenários de acesso remoto e interconexão de provedores.
+  Componentes visuais: INTERNET, SITE DO PROVEDOR, Roteador, Servidor, RAS (Remote Access Server), LAN MATRIZ, LAN FILIAL, Estação, LP (voz ou dados), Rede de Pacotes, Provedor, Sub-provedor
+  Relacionado a: roteador, internet, provedor, lan, wan, ras
+
+-- Relacionamentos --
+Conexao: 'roteador' --[conecta]--> 'internet'. Motivo: Roteadores são essenciais para conectar redes locais e corporativas à Internet.
+Conexao: 'roteador' --[conecta]--> 'intranet'. Motivo: Roteadores podem ser usados para conectar diferentes segmentos de uma intranet ou para conectar a intranet à Internet.
+Conexao: 'roteador' --[interliga]--> 'lan'. Motivo: Roteadores conectam redes locais (LANs) entre si, como em cenários de matriz-filial.
+Conexao: 'roteador' --[conecta]--> 'wan'. Motivo: Roteadores são a base para a construção de redes de longa distância (WANs) e para a conexão a elas.
+Conexao: 'provedor' --[utiliza]--> 'roteador'. Motivo: Provedores de serviço utilizam roteadores para gerenciar o tráfego de seus clientes e para se conectar à Internet.
+Conexao: 'ras' --[permite_acesso_a]--> 'rede'. Motivo: RAS permite acesso remoto a redes corporativas ou de provedores.
+

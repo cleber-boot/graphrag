@@ -1,0 +1,228 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Redes de Computadores Modelo OSI - Sub Camada MAC WIFI (IEEE 802.11) III
+Idioma: pt-BR
+Tecnologias citadas no documento: Wi-Fi, IEEE 802.11, WLAN, MAC, OSI, MIMO, MU-MIMO, Beamforming, OFDMA, MLO, QAM, WEP, WPA, WPA2, WPA3
+
+=== SECAO [TI_SEC_001]: Introdução ao Wi-Fi (IEEE 802.11) ===
+Este material introduz o padrão IEEE 802.11, conhecido comercialmente como Wi-Fi, que define um conjunto de padrões para redes locais sem fio (WLAN). Explica o funcionamento básico do Wi-Fi, onde um Access Point (AP) cria a rede sem fio. Em ambientes com múltiplos APs, uma controladora gerencia esses pontos de acesso, que devem ser da mesma fabricante. Os dispositivos (estações) se conectam ao AP para trocar dados, e o AP, por sua vez, está conectado à rede cabeada (LAN) e ao roteador para acesso à internet. O foco é entender as frequências de banda, as tecnologias e as gerações do Wi-Fi, destacando suas características e evoluções.
+
+-- Conceitos-chave --
+Termo: Wi-Fi | Tipo: Padrão | Definicao: Nome comercial de um conjunto de padrões de redes locais sem fio (WLAN) definidos pelo IEEE na família 802.11. Permite a comunicação de dispositivos sem a necessidade de cabos.
+  Vantagens de Wi-Fi: Mobilidade; Conveniência; Facilidade de implantação em comparação com redes cabeadas
+  Desvantagens de Wi-Fi: Menor velocidade em comparação com redes cabeadas; Menor alcance; Maior suscetibilidade a interferências; Questões de segurança podem ser mais complexas
+  Casos de uso de Wi-Fi: Redes domésticas; Redes corporativas; Pontos de acesso público (hotspots); Conexão de dispositivos móveis
+Termo: Access Point (AP) | Tipo: Hardware | Definicao: Dispositivo que cria uma rede sem fio, atuando como um ponto de acesso para dispositivos se conectarem à rede. Ele conecta a rede sem fio à rede cabeada.
+  Vantagens de Access Point (AP): Expande a conectividade sem fio; Permite a conexão de múltiplos dispositivos
+  Desvantagens de Access Point (AP): Pode se tornar um gargalo de desempenho; Requer configuração e gerenciamento
+  Casos de uso de Access Point (AP): Criar redes Wi-Fi em residências, escritórios e locais públicos; Estender o alcance de uma rede sem fio existente
+Termo: Controladora Wi-Fi | Tipo: Hardware/Software | Definicao: Servidor centralizado que gerencia e auxilia a operação de múltiplos Access Points, especialmente em ambientes maiores. Garante que os APs sejam compatíveis e operem de forma coordenada.
+  Vantagens de Controladora Wi-Fi: Gerenciamento centralizado de múltiplos APs; Otimização do desempenho da rede sem fio; Facilita a configuração e a manutenção
+  Desvantagens de Controladora Wi-Fi: Ponto único de falha se não houver redundância; Custo adicional; Requer compatibilidade entre APs e controladora (geralmente da mesma fabricante)
+  Casos de uso de Controladora Wi-Fi: Redes corporativas com muitos APs; Ambientes de grande porte como shoppings, aeroportos, universidades
+
+-- Figuras e diagramas --
+Figura 'Modelo OSI e Subcamada MAC Wi-Fi' (Diagrama de Arquitetura): O diagrama mostra a estrutura das camadas do modelo OSI, com destaque para a camada de Enlace de Dados, que é dividida nas subcamadas LLC (Logical Link Control) e MAC (Media Access Control). Abaixo da subcamada MAC, são listados exemplos de tecnologias como 802.3 Ethernet, 802.11 Wi-Fi e 802.15 Bluetooth, indicando que o Wi-Fi opera na subcamada MAC.
+  Componentes visuais: Camadas do Modelo OSI (Aplicação, Apresentação, Sessão, Transporte, Rede, Enlace de Dados, Físico), Subcamada LLC, Subcamada MAC, Tecnologias: 802.3 Ethernet, 802.11 Wi-Fi, 802.15 Bluetooth
+  Relacionado a: wifi, ieee_802_11
+
+=== SECAO [TI_SEC_002]: Bandas de Frequência e Padrões Wi-Fi ===
+Esta seção detalha as bandas de frequência utilizadas pelo Wi-Fi e a evolução dos padrões IEEE 802.11, que visam melhorar velocidade, alcance, eficiência e segurança. As bandas de 2.4 GHz e 5 GHz são as mais comuns, com a 2.4 GHz oferecendo maior alcance mas menor velocidade e mais interferência, enquanto a 5 GHz proporciona menor alcance, maior velocidade e menos interferência. A banda de 6 GHz, introduzida no Wi-Fi 6E, permite ainda mais canais e velocidade. A tabela de padrões Wi-Fi mostra a progressão desde o 802.11b (Wi-Fi 1) até o futuro 802.11be (Wi-Fi 7), destacando as tecnologias introduzidas em cada geração, como MIMO, MU-MIMO, Beamforming, OFDMA e MLO, e o aumento significativo nas velocidades máximas teóricas.
+
+-- Conceitos-chave --
+Termo: Banda 2.4 GHz | Tipo: Frequência | Definicao: Faixa de frequência de rádio utilizada por muitas tecnologias sem fio, incluindo o Wi-Fi. Oferece maior alcance, mas é mais suscetível a interferências de outros dispositivos.
+  Vantagens de Banda 2.4 GHz: Maior alcance; Melhor penetração em obstáculos
+  Desvantagens de Banda 2.4 GHz: Menor velocidade; Alta interferência (Bluetooth, micro-ondas, etc.); Menos canais disponíveis
+  Casos de uso de Banda 2.4 GHz: Dispositivos mais antigos; Ambientes onde o alcance é prioritário; Compatibilidade com dispositivos legados
+Termo: Banda 5 GHz | Tipo: Frequência | Definicao: Faixa de frequência de rádio que oferece maior largura de banda e menos interferência em comparação com a banda de 2.4 GHz, resultando em velocidades mais altas e conexões mais estáveis.
+  Vantagens de Banda 5 GHz: Maior velocidade; Menos interferência; Mais canais disponíveis
+  Desvantagens de Banda 5 GHz: Menor alcance; Menor penetração em obstáculos
+  Casos de uso de Banda 5 GHz: Streaming de vídeo em alta definição; Jogos online; Aplicações que exigem alta largura de banda; Ambientes com alta densidade de dispositivos Wi-Fi
+Termo: Banda 6 GHz | Tipo: Frequência | Definicao: Faixa de frequência mais recente introduzida no Wi-Fi 6E e Wi-Fi 7, oferecendo ainda mais canais e menor interferência, ideal para aplicações de alta demanda.
+  Vantagens de Banda 6 GHz: Extremamente baixa interferência; Grande quantidade de canais; Altíssima velocidade
+  Desvantagens de Banda 6 GHz: Alcance limitado; Requer dispositivos compatíveis com Wi-Fi 6E/7
+  Casos de uso de Banda 6 GHz: Realidade Virtual (VR); Realidade Aumentada (AR); Streaming 8K; Aplicações industriais de baixa latência
+Termo: IEEE 802.11b | Tipo: Padrão | Definicao: Primeira versão popular do padrão Wi-Fi, lançada em 1999, operando na banda de 2.4 GHz com velocidade máxima de 11 Mbps.
+  Vantagens de IEEE 802.11b: Ampla compatibilidade com dispositivos antigos
+  Desvantagens de IEEE 802.11b: Baixa velocidade; Alta interferência
+  Casos de uso de IEEE 802.11b: Redes legadas
+Termo: IEEE 802.11a | Tipo: Padrão | Definicao: Padrão Wi-Fi lançado em 1999, operando na banda de 5 GHz com velocidade máxima de 54 Mbps. Oferece menos interferência, mas tem alcance menor.
+  Vantagens de IEEE 802.11a: Maior velocidade que 802.11b; Menos interferência
+  Desvantagens de IEEE 802.11a: Menor alcance que 802.11b; Menor compatibilidade inicial
+  Casos de uso de IEEE 802.11a: Redes que necessitam de mais velocidade e menos interferência
+Termo: IEEE 802.11g | Tipo: Padrão | Definicao: Padrão Wi-Fi lançado em 2003, operando na banda de 2.4 GHz com velocidade máxima de 54 Mbps. É compatível com o padrão 802.11b.
+  Vantagens de IEEE 802.11g: Velocidade maior que 802.11b; Compatibilidade com 802.11b; Opera na banda de 2.4 GHz (maior alcance)
+  Desvantagens de IEEE 802.11g: Ainda sujeito à interferência da banda de 2.4 GHz
+  Casos de uso de IEEE 802.11g: Atualização de redes 802.11b para maior velocidade mantendo compatibilidade
+Termo: IEEE 802.11n (Wi-Fi 4) | Tipo: Padrão | Definicao: Padrão Wi-Fi lançado em 2009, que introduziu o MIMO (Multiple Input Multiple Output), permitindo o uso de múltiplas antenas para aumentar a velocidade e o alcance. Opera nas bandas de 2.4 e 5 GHz, com velocidade máxima de até 600 Mbps.
+  Vantagens de IEEE 802.11n (Wi-Fi 4): Introdução do MIMO; Maior velocidade e alcance; Suporte a múltiplas bandas (2.4 e 5 GHz)
+  Desvantagens de IEEE 802.11n (Wi-Fi 4): Complexidade maior que padrões anteriores
+  Casos de uso de IEEE 802.11n (Wi-Fi 4): Redes domésticas e corporativas que buscam melhor desempenho
+Termo: IEEE 802.11ac (Wi-Fi 5) | Tipo: Padrão | Definicao: Padrão Wi-Fi lançado em 2013, focado na banda de 5 GHz, introduziu o MU-MIMO (Multi-User Multiple Input Multiple Output) e Beamforming, alcançando velocidades de até 3.5 Gbps. Melhora significativamente o throughput e a eficiência em ambientes com múltiplos usuários.
+  Vantagens de IEEE 802.11ac (Wi-Fi 5): Introdução do MU-MIMO e Beamforming; Velocidades muito mais altas; Melhor desempenho em ambientes com muitos usuários
+  Desvantagens de IEEE 802.11ac (Wi-Fi 5): Opera primariamente na banda de 5 GHz (menor alcance)
+  Casos de uso de IEEE 802.11ac (Wi-Fi 5): Ambientes com alta densidade de dispositivos; Aplicações de streaming e jogos
+Termo: IEEE 802.11ax (Wi-Fi 6) | Tipo: Padrão | Definicao: Padrão Wi-Fi lançado em 2019, que introduziu o OFDMA (Orthogonal Frequency Division Multiple Access) e BSS Coloring, focando em maior eficiência e menor latência, especialmente em ambientes densos. Opera nas bandas de 2.4 e 5 GHz, com velocidades teóricas de até 9.6 Gbps.
+  Vantagens de IEEE 802.11ax (Wi-Fi 6): Introdução do OFDMA e BSS Coloring; Maior eficiência e menor latência; Melhor desempenho em ambientes densos; Maior eficiência energética (Target Wake Time)
+  Desvantagens de IEEE 802.11ax (Wi-Fi 6): Complexidade de implementação
+  Casos de uso de IEEE 802.11ax (Wi-Fi 6): Ambientes com alta densidade de dispositivos (estádios, centros de convenções); Internet das Coisas (IoT); Aplicações que exigem baixa latência
+Termo: IEEE 802.11ax (6 GHz) (Wi-Fi 6E) | Tipo: Padrão | Definicao: Extensão do padrão Wi-Fi 6 que adiciona suporte à banda de 6 GHz. Oferece mais canais e menos interferência, mantendo as melhorias do Wi-Fi 6.
+  Vantagens de IEEE 802.11ax (6 GHz) (Wi-Fi 6E): Acesso à banda de 6 GHz (menos interferência); Mais canais disponíveis; Mantém as melhorias do Wi-Fi 6
+  Desvantagens de IEEE 802.11ax (6 GHz) (Wi-Fi 6E): Requer hardware compatível com 6 GHz
+  Casos de uso de IEEE 802.11ax (6 GHz) (Wi-Fi 6E): Aplicações de alta demanda como VR, AR e streaming 8K; Ambientes com alta densidade de redes Wi-Fi
+Termo: IEEE 802.11be (Wi-Fi 7) | Tipo: Padrão | Definicao: O mais recente padrão Wi-Fi, previsto para 2024, que introduz MLO (Multi-Link Operation), canais de 320 MHz e 4K-QAM, visando velocidades máximas teóricas de até 46 Gbps e estabilidade extrema. Opera nas bandas de 2.4, 5 e 6 GHz.
+  Vantagens de IEEE 802.11be (Wi-Fi 7): Velocidades extremamente altas; MLO para agregação de links; Canais mais largos (320 MHz); Modulação mais eficiente (4K-QAM); Baixa latência extrema
+  Desvantagens de IEEE 802.11be (Wi-Fi 7): Requer hardware de ponta compatível
+  Casos de uso de IEEE 802.11be (Wi-Fi 7): Aplicações industriais; Realidade Virtual e Aumentada imersivas; Streaming de altíssima resolução; Aplicações que exigem latência mínima e máxima estabilidade
+Termo: MIMO (Multiple Input Multiple Output) | Tipo: Tecnologia | Definicao: Tecnologia que utiliza múltiplas antenas tanto no transmissor quanto no receptor para enviar e receber múltiplos fluxos de dados simultaneamente, aumentando a taxa de transferência e a confiabilidade do sinal.
+  Vantagens de MIMO (Multiple Input Multiple Output): Aumento significativo da velocidade; Melhora da robustez do sinal; Maior alcance efetivo
+  Desvantagens de MIMO (Multiple Input Multiple Output): Requer múltiplas antenas em ambos os lados; Aumenta a complexidade do hardware
+  Casos de uso de MIMO (Multiple Input Multiple Output): Melhorar o desempenho de redes Wi-Fi; Aumentar a capacidade de comunicação em sistemas sem fio
+Termo: MU-MIMO (Multi-User Multiple Input Multiple Output) | Tipo: Tecnologia | Definicao: Extensão do MIMO que permite que um ponto de acesso (AP) se comunique com múltiplos dispositivos simultaneamente, em vez de um de cada vez. Isso melhora a eficiência e o desempenho em redes com muitos usuários.
+  Vantagens de MU-MIMO (Multi-User Multiple Input Multiple Output): Aumenta a capacidade da rede; Reduz a latência para múltiplos usuários; Melhora a experiência do usuário em ambientes densos
+  Desvantagens de MU-MIMO (Multi-User Multiple Input Multiple Output): Requer suporte tanto no AP quanto nos dispositivos clientes; Ainda pode haver limitações dependendo do número de fluxos espaciais
+  Casos de uso de MU-MIMO (Multi-User Multiple Input Multiple Output): Redes Wi-Fi de alta densidade; Ambientes corporativos e residenciais com muitos dispositivos conectados
+Termo: Beamforming | Tipo: Tecnologia | Definicao: Técnica que direciona o sinal Wi-Fi de forma inteligente para dispositivos específicos, em vez de transmitir o sinal igualmente em todas as direções. Isso melhora a força e a estabilidade do sinal para o dispositivo alvo.
+  Vantagens de Beamforming: Sinal mais forte e estável para o dispositivo alvo; Reduz interferência para outros dispositivos; Melhora a eficiência energética
+  Desvantagens de Beamforming: Requer suporte tanto no AP quanto no dispositivo cliente; Pode ser menos eficaz se o dispositivo estiver em movimento constante
+  Casos de uso de Beamforming: Melhorar a qualidade da conexão para dispositivos específicos; Aumentar o alcance efetivo do sinal
+Termo: OFDMA (Orthogonal Frequency Division Multiple Access) | Tipo: Tecnologia | Definicao: Tecnologia que divide um canal Wi-Fi em subcanais menores (Resource Units - RUs), permitindo que múltiplos dispositivos transmitam ou recebam dados simultaneamente dentro do mesmo canal. Aumenta a eficiência e reduz a latência.
+  Vantagens de OFDMA (Orthogonal Frequency Division Multiple Access): Maior eficiência espectral; Menor latência; Melhor desempenho em ambientes com muitos dispositivos pequenos
+  Desvantagens de OFDMA (Orthogonal Frequency Division Multiple Access): Complexidade de implementação; Pode não ser tão vantajoso para um único dispositivo com alta demanda
+  Casos de uso de OFDMA (Orthogonal Frequency Division Multiple Access): Redes com muitos dispositivos IoT; Aplicações que se beneficiam de baixa latência e alta eficiência
+Termo: MLO (Multi-Link Operation) | Tipo: Tecnologia | Definicao: Funcionalidade introduzida no Wi-Fi 7 que permite que um dispositivo utilize múltiplos links Wi-Fi (em diferentes bandas e/ou canais) simultaneamente para comunicação. Isso aumenta a velocidade, a confiabilidade e reduz a latência.
+  Vantagens de MLO (Multi-Link Operation): Agregação de banda para maior velocidade; Maior confiabilidade através de links redundantes; Menor latência
+  Desvantagens de MLO (Multi-Link Operation): Requer dispositivos e APs compatíveis com Wi-Fi 7; Maior consumo de energia
+  Casos de uso de MLO (Multi-Link Operation): Aplicações de missão crítica; Streaming de altíssima qualidade; Jogos online com baixa latência
+Termo: QAM (Quadrature Amplitude Modulation) | Tipo: Tecnologia | Definicao: Técnica de modulação digital usada para codificar dados em sinais de rádio. O Wi-Fi 7 utiliza 4K-QAM, que permite codificar mais bits por símbolo, aumentando a eficiência espectral e a velocidade.
+  Vantagens de QAM (Quadrature Amplitude Modulation): Maior taxa de transferência de dados; Melhor utilização do espectro
+  Desvantagens de QAM (Quadrature Amplitude Modulation): Mais sensível a ruído e interferência; Requer hardware mais sofisticado
+  Casos de uso de QAM (Quadrature Amplitude Modulation): Aumentar a velocidade máxima em padrões Wi-Fi mais recentes
+
+-- Tabelas comparativas --
+Tabela 'Bandas de Frequência Wi-Fi': Esta tabela compara as principais bandas de frequência utilizadas pelo Wi-Fi, detalhando suas características de alcance, velocidade e interferência.
+  Linha LINHA_001: Banda = 2.4 GHz; Características = Maior alcance, menor velocidade, mais interferência (Bluetooth, micro-ondas, controles remotos). Tem maior acesso, mas sua transmissão é menor. A interferência é sentida através de sinais concorrentes. A rede Wi-Fi trabalha com uma transmissão não guiada - ela fica no ar, concorrendo com todos os outros sinais e frequências.
+    (Relacionado a: banda_2_4ghz)
+  Linha LINHA_002: Banda = 5 GHz; Características = Menor alcance, maior velocidade, menos interferência – tem uma frequência mais otimizada.
+    (Relacionado a: banda_5ghz)
+  Linha LINHA_003: Banda = 6 GHz; Características = Introduzida no Wi-Fi 6E, permite muito mais canais e velocidade.
+    (Relacionado a: banda_6ghz, ieee_802_11ax_6ghz)
+Tabela 'Padrões Wi-Fi (IEEE 802.11) – Evolução': Esta tabela compara os diferentes padrões IEEE 802.11, mostrando o ano de introdução, a frequência de operação, a velocidade máxima teórica e as características principais de cada um, evidenciando a evolução tecnológica do Wi-Fi.
+  Linha LINHA_004: Padrão IEEE = 802.11b; Nome comercial = Wi-Fi 1; Ano = 1999; Frequência = 2.4 GHz; Velocidade máxima = 11 Mbps; Características principais = Primeira versão popular
+    (Relacionado a: ieee_802_11b, banda_2_4ghz)
+  Linha LINHA_005: Padrão IEEE = 802.11a; Nome comercial = Wi-Fi 2; Ano = 1999; Frequência = 5 GHz; Velocidade máxima = 54 Mbps; Características principais = Menos interferência, curto alcance
+    (Relacionado a: ieee_802_11a, banda_5ghz)
+  Linha LINHA_006: Padrão IEEE = 802.11g; Nome comercial = Wi-Fi 3; Ano = 2003; Frequência = 2.4 GHz; Velocidade máxima = 54 Mbps; Características principais = Compatível com 11b
+    (Relacionado a: ieee_802_11g, ieee_802_11b, banda_2_4ghz)
+  Linha LINHA_007: Padrão IEEE = 802.11n; Nome comercial = Wi-Fi 4; Ano = 2009; Frequência = 2.4 e 5 GHz; Velocidade máxima = 600 Mbps; Características principais = Introduz MIMO (múltiplas antenas)
+    (Relacionado a: ieee_802_11n, mimo, banda_2_4ghz, banda_5ghz)
+  Linha LINHA_008: Padrão IEEE = 802.11ac; Nome comercial = Wi-Fi 5; Ano = 2013; Frequência = 5 GHz; Velocidade máxima = 3,5 Gbps; Características principais = Beamforming e MU-MIMO
+    (Relacionado a: ieee_802_11ac, beamforming, mu_mimo, banda_5ghz)
+  Linha LINHA_009: Padrão IEEE = 802.11ax; Nome comercial = Wi-Fi 6; Ano = 2019; Frequência = 2.4 e 5 GHz; Velocidade máxima = 9,6 Gbps; Características principais = OFDMA, eficiência e menor latência
+    (Relacionado a: ieee_802_11ax, ofdm, banda_2_4ghz, banda_5ghz)
+  Linha LINHA_010: Padrão IEEE = 802.11ax (6 GHz); Nome comercial = Wi-Fi 6E; Ano = 2021; Frequência = 6 GHz; Velocidade máxima = 9,6 Gbps; Características principais = Mais canais, menos interferência
+    (Relacionado a: ieee_802_11ax_6ghz, banda_6ghz)
+  Linha LINHA_011: Padrão IEEE = 802.11be; Nome comercial = Wi-Fi 7; Ano = 2024; Frequência = 2,4/5/6 GHz; Velocidade máxima = Até 46 Gbps; Características principais = MLO (Multi-Link), 320 MHz e 4K-QAM
+    (Relacionado a: ieee_802_11be, mlo, qam, banda_2_4ghz, banda_5ghz, banda_6ghz)
+
+-- Relacionamentos --
+Conexao: 'ieee_802_11' --[opera_em]--> 'banda_2_4ghz'. Motivo: O padrão IEEE 802.11 opera em diversas bandas de frequência, incluindo a de 2.4 GHz.
+Conexao: 'ieee_802_11' --[opera_em]--> 'banda_5ghz'. Motivo: O padrão IEEE 802.11 opera em diversas bandas de frequência, incluindo a de 5 GHz.
+Conexao: 'ieee_802_11' --[opera_em]--> 'banda_6ghz'. Motivo: O padrão IEEE 802.11 (especificamente Wi-Fi 6E e 7) opera na banda de 6 GHz.
+Conexao: 'ieee_802_11ax' --[introduz]--> 'ofdm'. Motivo: O padrão Wi-Fi 6 (IEEE 802.11ax) introduziu a tecnologia OFDMA para maior eficiência.
+Conexao: 'ieee_802_11ax' --[introduz]--> 'bssid_coloring'. Motivo: O padrão Wi-Fi 6 (IEEE 802.11ax) introduziu o BSS Coloring para reduzir interferências.
+Conexao: 'ieee_802_11ac' --[introduz]--> 'mu_mimo'. Motivo: O padrão Wi-Fi 5 (IEEE 802.11ac) introduziu o MU-MIMO para comunicação simultânea com múltiplos usuários.
+Conexao: 'ieee_802_11ac' --[introduz]--> 'beamforming'. Motivo: O padrão Wi-Fi 5 (IEEE 802.11ac) introduziu o Beamforming para direcionar o sinal.
+Conexao: 'ieee_802_11n' --[introduz]--> 'mimo'. Motivo: O padrão Wi-Fi 4 (IEEE 802.11n) introduziu o MIMO para uso de múltiplas antenas.
+Conexao: 'ieee_802_11be' --[introduz]--> 'mlo'. Motivo: O padrão Wi-Fi 7 (IEEE 802.11be) introduz o Multi-Link Operation (MLO).
+Conexao: 'ieee_802_11be' --[introduz]--> 'qam'. Motivo: O padrão Wi-Fi 7 (IEEE 802.11be) utiliza 4K-QAM para maior eficiência de modulação.
+Conexao: 'ieee_802_11be' --[opera_em]--> 'banda_2_4ghz'. Motivo: O padrão Wi-Fi 7 opera nas bandas de 2.4 GHz, 5 GHz e 6 GHz.
+Conexao: 'ieee_802_11be' --[opera_em]--> 'banda_5ghz'. Motivo: O padrão Wi-Fi 7 opera nas bandas de 2.4 GHz, 5 GHz e 6 GHz.
+Conexao: 'ieee_802_11be' --[opera_em]--> 'banda_6ghz'. Motivo: O padrão Wi-Fi 7 opera nas bandas de 2.4 GHz, 5 GHz e 6 GHz.
+
+=== SECAO [TI_SEC_003]: Resumo de Protocolos e Inovações Tecnológicas Wi-Fi ===
+Esta seção detalha os principais protocolos e tecnologias associados ao Wi-Fi, como MIMO, MU-MIMO, Beamforming, OFDMA, MLO e QAM, explicando seu funcionamento e benefícios. Em seguida, resume as principais inovações introduzidas pelas gerações Wi-Fi 5 (802.11ac), Wi-Fi 6 (802.11ax) e Wi-Fi 6E, destacando as tecnologias chave e os ganhos de desempenho. Por fim, apresenta uma tabela comparativa dos saltos tecnológicos entre as gerações Wi-Fi 4-5, 5-6/6E e 6-7, enfatizando as melhorias em velocidade, uso de bandas, eficiência e novas funcionalidades.
+
+-- Conceitos-chave --
+Termo: BSS Coloring | Tipo: Tecnologia | Definicao: Técnica utilizada no Wi-Fi 6 para reduzir a interferência entre redes Wi-Fi vizinhas. Atribui um 'cor' a cada rede, permitindo que os dispositivos ignorem sinais de redes com cores diferentes, mesmo que estejam no mesmo canal.
+  Vantagens de BSS Coloring: Redução de interferência em ambientes densos; Melhora a eficiência da rede; Permite maior reutilização de canais
+  Desvantagens de BSS Coloring: Requer suporte no hardware (AP e clientes)
+  Casos de uso de BSS Coloring: Apartamentos com muitas redes Wi-Fi; Escritórios com múltiplos Access Points
+Termo: Target Wake Time (TWT) | Tipo: Tecnologia | Definicao: Funcionalidade introduzida no Wi-Fi 6 que permite que os dispositivos programem horários específicos para 'acordar' e se comunicar com o AP. Isso melhora a eficiência energética, especialmente para dispositivos IoT.
+  Vantagens de Target Wake Time (TWT): Economia de energia significativa para dispositivos clientes; Melhora a gestão do tráfego de rede
+  Desvantagens de Target Wake Time (TWT): Requer suporte no AP e nos dispositivos clientes
+  Casos de uso de Target Wake Time (TWT): Dispositivos IoT alimentados por bateria; Sensores sem fio; Dispositivos vestíveis
+
+-- Tabelas comparativas --
+Tabela 'Principais Saltos Tecnológicos entre Gerações Wi-Fi': Esta tabela compara as evoluções tecnológicas entre as gerações Wi-Fi 4, 5, 6, 6E e 7, destacando as principais melhorias em velocidade, uso de bandas, introdução de novas tecnologias e eficiência.
+  Linha LINHA_012: Do Wi-Fi 4 -> 5 = + Aumento de velocidade (de 600 Mbps → 3,5 Gbps)
++ Introdução do beamforming e MU-MIMO; Do Wi-Fi 5 -> 6/6E = + Uso simultâneo das bandas 2,4 e 5 GHz
++ OFDMA (divisão de canal entre usuários)
++ BSS Coloring (reduz interferência entre redes vizinhas)
++ TWT (economia de energia); Do Wi-Fi 6 -> 7 = + Uso simultâneo das 3 bandas (2,4 + 5 + 6 GHz)
++ MLO (liga várias conexões ao mesmo tempo)
++ 320 MHz de largura de canal
++ 4K-QAM (maior eficiência espectral)
+    (Relacionado a: ieee_802_11n, ieee_802_11ac, beamforming, mu_mimo, ieee_802_11ax, ofdm, bssid_coloring, target_wake_time, ieee_802_11ax_6ghz, ieee_802_11be, mlo, qam, banda_2_4ghz, banda_5ghz, banda_6ghz)
+
+-- Relacionamentos --
+Conexao: 'mimo' --[precede]--> 'mu_mimo'. Motivo: MU-MIMO é uma evolução do MIMO, permitindo a comunicação simultânea com múltiplos usuários.
+Conexao: 'ieee_802_11n' --[implementa]--> 'mimo'. Motivo: O padrão IEEE 802.11n foi o primeiro a introduzir a tecnologia MIMO.
+Conexao: 'ieee_802_11ac' --[implementa]--> 'mu_mimo'. Motivo: O padrão IEEE 802.11ac introduziu o MU-MIMO.
+Conexao: 'ieee_802_11ac' --[implementa]--> 'beamforming'. Motivo: O padrão IEEE 802.11ac introduziu o Beamforming.
+Conexao: 'ieee_802_11ax' --[implementa]--> 'ofdm'. Motivo: O padrão IEEE 802.11ax introduziu o OFDMA.
+Conexao: 'ieee_802_11ax' --[implementa]--> 'bssid_coloring'. Motivo: O padrão IEEE 802.11ax introduziu o BSS Coloring.
+Conexao: 'ieee_802_11ax' --[implementa]--> 'target_wake_time'. Motivo: O padrão IEEE 802.11ax introduziu o Target Wake Time (TWT).
+Conexao: 'ieee_802_11be' --[implementa]--> 'mlo'. Motivo: O padrão IEEE 802.11be introduziu o Multi-Link Operation (MLO).
+Conexao: 'ieee_802_11be' --[implementa]--> 'qam'. Motivo: O padrão IEEE 802.11be utiliza 4K-QAM.
+
+=== SECAO [TI_SEC_004]: Segurança nas Redes Wi-Fi ===
+Esta seção aborda a evolução dos protocolos de segurança para redes Wi-Fi, começando com o WEP, que se mostrou inseguro e facilmente quebrável. O WPA foi uma melhoria temporária. O WPA2, baseado em AES, tornou-se o padrão consolidado por muitos anos. Atualmente, o WPA3 é o protocolo mais seguro, utilizando SAE (Simultaneous Authentication of Equals) para oferecer maior proteção contra ataques de força bruta. A última tabela resume as recomendações de padrões de segurança para diferentes versões de Wi-Fi, indicando WPA2 para Wi-Fi 4/5 e WPA3 para Wi-Fi 6/6E/7.
+
+-- Conceitos-chave --
+Termo: WEP (Wired Equivalent Privacy) | Tipo: Protocolo de Segurança | Definicao: Protocolo de segurança Wi-Fi original, introduzido em 1999. Utilizava o algoritmo RC4 e apresentava falhas graves de segurança, sendo facilmente quebrado.
+  Vantagens de WEP (Wired Equivalent Privacy): Foi o primeiro protocolo de segurança Wi-Fi
+  Desvantagens de WEP (Wired Equivalent Privacy): Inseguro; Vulnerável a ataques de força bruta; Facilmente quebrável
+  Casos de uso de WEP (Wired Equivalent Privacy): Redes legadas muito antigas (não recomendado)
+Termo: WPA (Wi-Fi Protected Access) | Tipo: Protocolo de Segurança | Definicao: Protocolo de segurança Wi-Fi introduzido em 2003 como uma melhoria sobre o WEP. Utilizava TKIP (Temporal Key Integrity Protocol) para criptografia, oferecendo uma segurança temporária melhor que o WEP.
+  Vantagens de WPA (Wi-Fi Protected Access): Melhoria em relação ao WEP
+  Desvantagens de WPA (Wi-Fi Protected Access): Considerado obsoleto; Ainda possuía vulnerabilidades herdadas do WEP
+  Casos de uso de WPA (Wi-Fi Protected Access): Redes legadas que não suportam WPA2/WPA3 (não recomendado)
+Termo: WPA2 (Wi-Fi Protected Access II) | Tipo: Protocolo de Segurança | Definicao: Protocolo de segurança Wi-Fi introduzido em 2004, que se tornou o padrão consolidado por muitos anos. Utiliza o algoritmo de criptografia AES (Advanced Encryption Standard), oferecendo um nível de segurança robusto.
+  Vantagens de WPA2 (Wi-Fi Protected Access II): Segurança forte com AES; Amplamente suportado por dispositivos
+  Desvantagens de WPA2 (Wi-Fi Protected Access II): Pode ser vulnerável a certos ataques (ex: KRACK) se não for atualizado; Menos seguro que WPA3 em alguns aspectos
+  Casos de uso de WPA2 (Wi-Fi Protected Access II): Redes domésticas e corporativas; Aplicações gerais de Wi-Fi
+Termo: WPA3 (Wi-Fi Protected Access III) | Tipo: Protocolo de Segurança | Definicao: O protocolo de segurança Wi-Fi mais recente, introduzido em 2018. Oferece maior segurança, incluindo proteção aprimorada contra ataques de força bruta através do uso de SAE (Simultaneous Authentication of Equals) e criptografia individualizada em redes abertas.
+  Vantagens de WPA3 (Wi-Fi Protected Access III): Proteção robusta contra ataques de força bruta (SAE); Criptografia individualizada em redes abertas (Wi-Fi Enhanced Open); Maior segurança para redes corporativas (WPA3-Enterprise)
+  Desvantagens de WPA3 (Wi-Fi Protected Access III): Requer hardware compatível; Pode não ser suportado por dispositivos muito antigos
+  Casos de uso de WPA3 (Wi-Fi Protected Access III): Redes domésticas e corporativas que buscam o mais alto nível de segurança; Redes públicas (hotspots) com Wi-Fi Enhanced Open
+Termo: SAE (Simultaneous Authentication of Equals) | Tipo: Protocolo de Autenticação | Definicao: Protocolo de autenticação utilizado no WPA3 que substitui o PSK (Pre-Shared Key) do WPA2. Ele oferece proteção contra ataques de dicionário e força bruta, mesmo que a senha seja fraca.
+  Vantagens de SAE (Simultaneous Authentication of Equals): Proteção contra ataques de força bruta; Autenticação mais segura que PSK
+  Desvantagens de SAE (Simultaneous Authentication of Equals): Requer suporte no hardware
+  Casos de uso de SAE (Simultaneous Authentication of Equals): Autenticação em redes WPA3
+
+-- Tabelas comparativas --
+Tabela 'Segurança nas Redes Wi-Fi': Esta tabela compara os diferentes protocolos de segurança utilizados em redes Wi-Fi, detalhando o ano de introdução, o status de segurança e observações importantes sobre cada um.
+  Linha LINHA_013: Protocolo = WEP; Ano = 1997; Status = Inseguro; Observações = Usa RC4; facilmente quebrado
+    (Relacionado a: wep)
+  Linha LINHA_014: Protocolo = WPA; Ano = 2003; Status = Obsoleto; Observações = Melhoria temporária sobre WEP
+    (Relacionado a: wpa)
+  Linha LINHA_015: Protocolo = WPA2; Ano = 2004; Status = Padrão consolidado; Observações = Baseado em AES
+    (Relacionado a: wpa2)
+  Linha LINHA_016: Protocolo = WPA3; Ano = 2018; Status = Atual; Observações = Usa SAE, mais proteção contra ataques de força bruta
+    (Relacionado a: wpa3, sae)
+Tabela 'Recomendação de Padrão de Segurança por Versão Wi-Fi': Esta tabela sugere o padrão de segurança recomendado para diferentes versões de Wi-Fi, indicando a adequação e segurança de cada combinação.
+  Linha LINHA_017: Versão Wi-Fi = Wi-Fi 4/5; Padrão de segurança recomendado = WPA2; Observação = Ainda amplamente suportado, mas menos seguro
+    (Relacionado a: wifi, wpa2)
+  Linha LINHA_018: Versão Wi-Fi = Wi-Fi 6/6E/7; Padrão de segurança recomendado = WPA3; Observação = Requer autenticação mais forte (SAE), proteção contra ataques de força bruta
+    (Relacionado a: wifi, wpa3, sae)
+
+-- Relacionamentos --
+Conexao: 'wpa' --[substitui]--> 'wep'. Motivo: WPA foi criado para substituir o WEP, oferecendo melhorias de segurança.
+Conexao: 'wpa2' --[substitui]--> 'wpa'. Motivo: WPA2 substituiu o WPA como padrão de segurança mais robusto.
+Conexao: 'wpa3' --[substitui]--> 'wpa2'. Motivo: WPA3 é o sucessor do WPA2, oferecendo segurança aprimorada.
+Conexao: 'wpa3' --[implementa]--> 'sae'. Motivo: O WPA3 utiliza o protocolo SAE para autenticação segura.
+Conexao: 'wpa2' --[usa]--> 'aes'. Motivo: WPA2 utiliza o algoritmo de criptografia AES.
+Conexao: 'wep' --[usa]--> 'rc4'. Motivo: WEP utilizava o algoritmo RC4, que se mostrou inseguro.
+Conexao: 'wifi' --[recomendado_seguranca]--> 'wpa2'. Motivo: Para versões Wi-Fi 4/5, o WPA2 é o padrão de segurança recomendado.
+Conexao: 'wifi' --[recomendado_seguranca]--> 'wpa3'. Motivo: Para versões Wi-Fi 6/6E/7, o WPA3 é o padrão de segurança recomendado.
+

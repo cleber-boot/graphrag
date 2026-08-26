@@ -1,0 +1,100 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Redes de Computadores - Classificação das Redes Quanto a Abrangência Geográfica
+Idioma: pt-BR
+Tecnologias citadas no documento: LAN, MAN, WAN, PAN, Wi-Fi, Ethernet, MPLS, VPN, TCP/IP, Bluetooth, IrDA, USB, ZigBee, Wi-Fi Direct, WiMAX, 3G, 4G, 5G, LTE
+
+=== SECAO [TI_SEC_001]: Introdução à Classificação de Redes por Abrangência Geográfica ===
+As redes de computadores são classificadas com base na abrangência geográfica que seus equipamentos cobrem. As categorias principais incluem redes locais (LAN), redes metropolitanas (MAN), redes de grande abrangência (WAN) e redes pessoais (PAN). Existem também variantes sem fio dessas redes. A classificação por distância é importante, mas deve considerar as tecnologias empregadas, pois o uso de recursos de longa distância pode descaracterizar uma rede como local, mesmo que geograficamente próxima.
+
+-- Conceitos-chave --
+Termo: Rede Local (LAN) | Tipo: Arquitetura | Definicao: Permite a interconexão de equipamentos de comunicação de dados dentro de uma pequena região geográfica, sem a necessidade de dispositivos de longo alcance.
+  Vantagens de Rede Local (LAN): Alta taxa de transmissão de dados; Baixa latência; Custo relativamente baixo de instalação e manutenção; Controle e gerenciamento local
+  Desvantagens de Rede Local (LAN): Cobertura geográfica limitada
+  Casos de uso de Rede Local (LAN): Redes domésticas; Redes de escritórios; Redes em prédios; Redes em campus universitários
+Termo: Rede Metropolitana (MAN) | Tipo: Arquitetura | Definicao: Abrange uma área geográfica maior que uma LAN, mas menor que uma WAN, tipicamente cobrindo uma cidade ou região metropolitana, interconectando diversas LANs.
+  Vantagens de Rede Metropolitana (MAN): Interconexão de múltiplas LANs; Alta velocidade de transmissão (frequentemente com fibra óptica)
+  Desvantagens de Rede Metropolitana (MAN): Custo de implementação e manutenção mais elevado que LANs; Gerenciamento mais complexo
+  Casos de uso de Rede Metropolitana (MAN): Interligação de filiais de uma empresa em uma cidade; Redes de câmeras de segurança municipais; Redes de órgãos públicos em uma região metropolitana
+Termo: Rede de Grande Abrangência (WAN) | Tipo: Arquitetura | Definicao: Cobre grandes distâncias geográficas, interligando cidades, estados, países ou continentes, conectando LANs e MANs em escala global.
+  Vantagens de Rede de Grande Abrangência (WAN): Cobertura geográfica extensa, global; Interconexão de múltiplas redes menores
+  Desvantagens de Rede de Grande Abrangência (WAN): Menor velocidade e maior latência comparada a LANs; Custo de implementação e manutenção alto; Complexidade de gerenciamento
+  Casos de uso de Rede de Grande Abrangência (WAN): Internet; Redes corporativas globais; Conexão entre escritórios em diferentes países
+Termo: Rede Pessoal (PAN) | Tipo: Arquitetura | Definicao: Rede de curtíssimo alcance, projetada para conectar dispositivos pessoais em torno de um único usuário, geralmente em um raio de até 10 metros.
+  Vantagens de Rede Pessoal (PAN): Baixa potência e consumo de energia; Instalação simples; Uso pessoal e individualizado
+  Desvantagens de Rede Pessoal (PAN): Alcance muito curto
+  Casos de uso de Rede Pessoal (PAN): Conexão de smartphones, notebooks, fones de ouvido, smartwatches; Compartilhamento de dados entre dispositivos próximos
+Termo: Latência | Tipo: Métrica | Definicao: Tempo entre a ação de clicar e a resposta recebida, representando o intervalo entre a transmissão de um pacote na origem e sua chegada ao destino. É influenciada pela distância e pelo número de dispositivos intermediários.
+  Desvantagens de Latência: Atraso na comunicação; Pode ser percebida como 'delay'
+  Casos de uso de Latência: Avaliação de performance de redes; Identificação de gargalos em redes de longa distância
+Termo: Largura de Banda | Tipo: Métrica | Definicao: Capacidade de um canal para transmitir dados. Quanto maior a largura de banda, maior a quantidade de transmissões possíveis no mesmo intervalo de tempo.
+  Vantagens de Largura de Banda: Maior volume de dados transmitidos; Melhor performance em aplicações que demandam alta taxa de transferência
+  Casos de uso de Largura de Banda: Streaming de vídeo; Transferência de arquivos grandes; Comunicação em tempo real
+
+-- Tabelas comparativas --
+Tabela 'Classificação das redes quanto a abrangência geográfica': Tabela comparativa que detalha as características de Redes Locais (LAN), Redes Metropolitanas (MAN) e Redes de Grande Abrangência (WAN) em termos de abrangência geográfica, velocidade de transmissão, custo de implementação, tecnologias comuns, propriedade, manutenção, exemplos típicos, latência e interconexão entre redes.
+  Linha LIN_001: Característica = Abrangência geográfica; LAN (Local Area Network) = Pequena (ex: casa, prédio, campus); MAN (Metropolitan Area Network) = Média (ex: cidade ou região metropolitana); WAN (Wide Area Network) = Grande (ex: países, continentes)
+    (Relacionado a: rede_local, rede_metropolitana, rede_ampla_alcance)
+  Linha LIN_002: Característica = Velocidade de transmissão; LAN (Local Area Network) = Alta; MAN (Metropolitan Area Network) = Alta a média; WAN (Wide Area Network) = Média a baixa (comparada à LAN)
+    (Relacionado a: rede_local, rede_metropolitana, rede_ampla_alcance)
+  Linha LIN_003: Característica = Custo de implementação; LAN (Local Area Network) = Baixo; MAN (Metropolitan Area Network) = Médio; WAN (Wide Area Network) = Alto
+    (Relacionado a: rede_local, rede_metropolitana, rede_ampla_alcance)
+  Linha LIN_004: Característica = Tecnologias comuns; LAN (Local Area Network) = Ethernet, Wi-Fi; MAN (Metropolitan Area Network) = Fibra óptica, redes de alta capacidade; WAN (Wide Area Network) = Satélites, fibra óptica, links dedicados
+    (Relacionado a: rede_local, rede_metropolitana, rede_ampla_alcance, wifi, ethernet)
+  Linha LIN_005: Característica = Propriedade; LAN (Local Area Network) = Privada; MAN (Metropolitan Area Network) = Pública ou privada; WAN (Wide Area Network) = Geralmente pública (operadoras)
+    (Relacionado a: rede_local, rede_metropolitana, rede_ampla_alcance)
+  Linha LIN_006: Característica = Manutenção; LAN (Local Area Network) = Local; MAN (Metropolitan Area Network) = Regional; WAN (Wide Area Network) = Complexa e distribuída
+    (Relacionado a: rede_local, rede_metropolitana, rede_ampla_alcance)
+  Linha LIN_007: Característica = Exemplo típico; LAN (Local Area Network) = Rede doméstica ou de escritório; MAN (Metropolitan Area Network) = Rede de câmeras da prefeitura; WAN (Wide Area Network) = Internet ou rede corporativa global
+    (Relacionado a: rede_local, rede_metropolitana, rede_ampla_alcance)
+  Linha LIN_008: Característica = Latência; LAN (Local Area Network) = Baixa; MAN (Metropolitan Area Network) = Média; WAN (Wide Area Network) = Alta
+    (Relacionado a: rede_local, rede_metropolitana, rede_ampla_alcance, latencia)
+  Linha LIN_009: Característica = Interconexão entre redes; LAN (Local Area Network) = Dispositivos em um local; MAN (Metropolitan Area Network) = Várias LANs dentro de uma cidade; WAN (Wide Area Network) = LANs e MANs distribuídas globalmente
+    (Relacionado a: rede_local, rede_metropolitana, rede_ampla_alcance)
+
+-- Figuras e diagramas --
+Figura 'Representação de Redes de Computadores (LAN, MAN, WAN)' (Diagrama de Rede): A figura ilustra a relação de abrangência geográfica entre LAN, MAN e WAN. A LAN é representada como um conjunto de edifícios interconectados em uma área pequena. A MAN abrange uma área maior, conectando várias LANs em uma cidade. A WAN cobre uma área ainda maior, mostrando a interconexão global de redes.
+  Componentes visuais: Globo terrestre, Edifícios, Antenas, Cabos, Ícones de rede (LAN, MAN, WAN)
+  Relacionado a: rede_local, rede_metropolitana, rede_ampla_alcance
+Figura 'Exemplo de Rede Local (LAN)' (Diagrama de Rede): O diagrama mostra uma Rede Local (LAN) com vários computadores, um servidor e um roteador interconectados dentro de um ambiente que parece ser um escritório ou prédio. A representação enfatiza a proximidade dos dispositivos e a infraestrutura local.
+  Componentes visuais: Computadores, Servidor, Roteador, Cabos de rede, Ícone LAN (Local Area Network)
+  Relacionado a: rede_local
+Figura 'Exemplo de Rede Metropolitana (MAN)' (Diagrama de Rede): O diagrama ilustra uma Rede Metropolitana (MAN) conectando diversas Redes Locais (LANs) dentro de uma área urbana. Mostra a interconexão de diferentes pontos (representados por ícones de LAN) através de uma infraestrutura centralizada na cidade.
+  Componentes visuais: Ícones de LAN, Ícone MAN (Metropolitan Area Network), Infraestrutura de rede urbana
+  Relacionado a: rede_local, rede_metropolitana
+Figura 'Exemplo de Rede de Grande Abrangência (WAN)' (Diagrama de Rede): O diagrama representa uma Rede de Grande Abrangência (WAN) conectando diferentes partes do globo. Mostra a interconexão de redes menores (LANs e MANs) através de satélites e cabos, indicando a cobertura global.
+  Componentes visuais: Globo terrestre, Ícones de rede (LAN, MAN), Satélites, Cabos submarinos, Ícone WAN (Wide Area Network)
+  Relacionado a: rede_local, rede_metropolitana, rede_ampla_alcance
+Figura 'Exemplo de Rede Pessoal (PAN)' (Diagrama de Rede): O diagrama ilustra uma Rede Pessoal (PAN) conectando dispositivos próximos a um usuário, como um laptop, smartphone, fones de ouvido e um smartwatch. A representação enfatiza o curto alcance e a conexão entre dispositivos individuais.
+  Componentes visuais: Laptop, Smartphone, Fones de ouvido, Smartwatch, Ícone PAN
+  Relacionado a: rede_pessoal
+
+-- Relacionamentos --
+Conexao: 'rede_local' --[pode_ser_parte_de]--> 'rede_metropolitana'. Motivo: Uma rede metropolitana é formada pela interconexão de várias redes locais.
+Conexao: 'rede_metropolitana' --[pode_ser_parte_de]--> 'rede_ampla_alcance'. Motivo: Uma rede de grande abrangência conecta redes metropolitanas e locais.
+Conexao: 'wifi' --[depende_de]--> 'rede_local'. Motivo: Redes Wi-Fi (WLAN) estão vinculadas a uma rede cabeada (LAN) dentro de uma organização, necessitando de infraestrutura LAN para funcionar.
+Conexao: 'wlan' --[implementa]--> 'rede_local'. Motivo: WLAN é uma Rede Local Sem Fio que opera dentro de um espaço limitado como casa, escritório ou escola.
+Conexao: 'wman' --[implementa]--> 'rede_metropolitana'. Motivo: WMAN é uma Rede Metropolitana Sem Fio que abrange uma cidade ou área metropolitana, conectando múltiplas redes locais.
+Conexao: 'wwan' --[implementa]--> 'rede_ampla_alcance'. Motivo: WWAN é uma Rede de Longa Distância Sem Fio de ampla abrangência, cobrindo estados, países ou continentes.
+Conexao: 'rede_local' --[pode_usar]--> 'ethernet'. Motivo: LANs com fio geralmente utilizam cabos Ethernet.
+Conexao: 'rede_local' --[pode_usar]--> 'wifi'. Motivo: LANs sem fio utilizam Wi-Fi.
+Conexao: 'rede_ampla_alcance' --[pode_usar]--> 'mpls'. Motivo: WANs requerem tecnologias de roteamento especializadas como MPLS.
+Conexao: 'rede_ampla_alcance' --[pode_usar]--> 'vpn'. Motivo: WANs requerem tecnologias de roteamento especializadas como VPN.
+Conexao: 'rede_ampla_alcance' --[pode_usar]--> 'tcp_ip'. Motivo: WANs requerem protocolos especializados da pilha TCP/IP.
+Conexao: 'rede_pessoal' --[pode_usar]--> 'bluetooth'. Motivo: PANs utilizam tecnologias comuns como Bluetooth.
+Conexao: 'rede_pessoal' --[pode_usar]--> 'irda'. Motivo: PANs utilizam tecnologias comuns como IrDA (infravermelho).
+Conexao: 'rede_pessoal' --[pode_usar]--> 'usb'. Motivo: PANs utilizam tecnologias comuns como USB.
+Conexao: 'rede_pessoal' --[pode_usar]--> 'zigbee'. Motivo: PANs utilizam tecnologias comuns como ZigBee.
+Conexao: 'rede_pessoal' --[pode_usar]--> 'wifi_direct'. Motivo: PANs utilizam tecnologias comuns como Wi-Fi Direct.
+Conexao: 'rede_ampla_alcance' --[mitiga_risco]--> 'latencia'. Motivo: Embora WANs tenham maior latência, o uso de tecnologias como fibra óptica e protocolos especializados visa mitigar esse impacto.
+Conexao: 'rede_local' --[mitiga_risco]--> 'latencia'. Motivo: LANs possuem baixa latência devido à curta distância e poucos dispositivos intermediários.
+Conexao: 'rede_metropolitana' --[mitiga_risco]--> 'latencia'. Motivo: MANs apresentam latência média, sendo um meio termo entre LANs e WANs.
+Conexao: 'rede_ampla_alcance' --[depende_de]--> 'infraestrutura_telecomunicacoes'. Motivo: WANs utilizam infraestrutura pública ou privada de telecomunicações como linhas telefônicas, satélites, cabos submarinos, etc.
+Conexao: 'rede_ampla_alcance' --[comunica_com]--> 'internet'. Motivo: A Internet é um exemplo de WAN que conecta redes globalmente.
+Conexao: 'rede_ampla_alcance' --[comunica_com]--> 'rede_corporativa_global'. Motivo: WANs são usadas para criar redes corporativas globais.
+Conexao: 'rede_ampla_alcance' --[pode_usar]--> '3g'. Motivo: Redes móveis 3G são exemplos de WWAN.
+Conexao: 'rede_ampla_alcance' --[pode_usar]--> '4g'. Motivo: Redes móveis 4G são exemplos de WWAN.
+Conexao: 'rede_ampla_alcance' --[pode_usar]--> '5g'. Motivo: Redes móveis 5G são exemplos de WWAN.
+Conexao: 'rede_ampla_alcance' --[pode_usar]--> 'lte'. Motivo: Dispositivos com modems LTE são exemplos de WWAN.
+Conexao: 'rede_ampla_alcance' --[pode_usar]--> 'conexao_via_satelite'. Motivo: Conexões via satélite são usadas em WWANs para áreas rurais ou marítimas.
+Conexao: 'rede_ampla_alcance' --[pode_usar]--> 'wimax'. Motivo: WiMAX é usado para fornecer internet de alta velocidade em áreas urbanas, sendo uma forma de WWAN.
+

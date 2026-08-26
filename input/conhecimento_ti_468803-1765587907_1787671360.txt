@@ -1,0 +1,129 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Redes de Computadores - Cabeamento Estruturado
+Idioma: pt-BR
+Tecnologias citadas no documento: Equipment Room, Telecommunication Closet, Entrance Facilities, PABX, Roteadores, Modens, WAN, LAN, Backbone, Campus Backbone, Cross-Connect, Fibras Ópticas, DIOs
+
+=== SECAO [TI_SEC_001]: Equipment Room (Sala de Equipamentos) ===
+A Equipment Room (ER) é um espaço crucial em redes de computadores, diferenciando-se do Telecommunication Closet por abrigar equipamentos de maior porte e complexidade, como PABX, roteadores e modens, servindo como ponto de entrada e saída para redes WAN e LAN. Ela funciona como o ponto de partida para as redes Backbone e Campus Backbone. Embora possa compartilhar funções com um Telecommunication Closet, o inverso não é verdadeiro. A ER oferece um ambiente controlado para equipamentos de telecomunicações, hardware de conexão, gabinetes de emendas de fibra óptica, aterramento, eletricidade e elementos de proteção. Pode conter Main Cross-Connect ou Intermediate Cross-Connect, e em alguns casos, elementos de Horizontal Cross-Connect para atender a uma porção do pavimento. As práticas de cabeamento são similares às do Telecommunication Closet, com requisitos ambientais rigorosos: temperatura entre 18-24°C, umidade entre 30-50%, e pressão positiva (ar insuflado). Deve ser localizada em áreas que permitam expansões futuras e acesso para movimentação de equipamentos grandes, evitando fontes de interferência eletromagnética. O dimensionamento é baseado no número de estações de trabalho, com um mínimo de 14 m².
+
+-- Conceitos-chave --
+Termo: Equipment Room | Tipo: Instalação Física | Definicao: Sala dedicada em uma infraestrutura de rede para abrigar equipamentos de telecomunicações de grande porte, servindo como ponto central de conexão e distribuição para redes locais e de longa distância.
+  Vantagens de Equipment Room: Centralização de equipamentos de grande porte.; Ambiente controlado para operação e manutenção.; Ponto de partida para redes Backbone e Campus Backbone.; Facilita a expansão futura da infraestrutura.
+  Desvantagens de Equipment Room: Requer espaço físico considerável.; Exige controle ambiental rigoroso (temperatura, umidade, pressão).; Necessidade de localização estratégica para acesso e minimização de interferências.
+  Casos de uso de Equipment Room: Data Centers.; Grandes edifícios corporativos.; Campus universitários.; Infraestruturas de telecomunicações.
+Termo: Telecommunication Closet | Tipo: Instalação Física | Definicao: Espaço menor e mais distribuído em um edifício, projetado para abrigar equipamentos de telecomunicações de menor porte, como switches e patch panels, servindo como ponto de terminação para o cabeamento horizontal.
+  Vantagens de Telecommunication Closet: Distribuição mais granular da rede.; Redução da extensão do cabeamento horizontal.; Facilita a manutenção em nível de andar ou área.
+  Desvantagens de Telecommunication Closet: Menor capacidade para equipamentos de grande porte.; Pode exigir mais unidades distribuídas pelo edifício.; Menos centralizado que uma ER.
+  Casos de uso de Telecommunication Closet: Andares de escritórios.; Áreas de trabalho específicas.; Pontos de distribuição em edifícios de médio porte.
+Termo: Cross-Connect | Tipo: Componente de Rede | Definicao: Ponto de interconexão onde cabos de rede são terminados e podem ser conectados a outros cabos ou equipamentos através de patch panels ou outros dispositivos de conexão.
+  Vantagens de Cross-Connect: Flexibilidade na reconfiguração da rede.; Facilita a adição ou remoção de conexões.; Organização e gerenciamento do cabeamento.
+  Desvantagens de Cross-Connect: Pode se tornar um ponto de falha se mal gerenciado.; Requer patch cords e organização cuidadosa.
+  Casos de uso de Cross-Connect: Terminação de cabos Backbone.; Interconexão entre diferentes segmentos de rede.; Conexão de equipamentos ativos a cabos estruturados.
+Termo: Backbone | Tipo: Arquitetura de Rede | Definicao: A infraestrutura principal de rede que interliga diferentes segmentos de rede ou edifícios, geralmente utilizando cabos de alta capacidade e velocidade.
+  Vantagens de Backbone: Alta capacidade de transmissão de dados.; Suporte a grandes volumes de tráfego.; Confiabilidade e redundância.
+  Desvantagens de Backbone: Custo de implementação e manutenção elevado.; Complexidade na instalação e gerenciamento.
+  Casos de uso de Backbone: Interligação de prédios em um campus.; Conexão de data centers.; Redes metropolitanas (MAN) e de longa distância (WAN).
+Termo: Controle Ambiental | Tipo: Processo | Definicao: Conjunto de práticas e sistemas para manter condições ideais de temperatura, umidade e pressão em salas de equipamentos de TI, garantindo a longevidade e o bom funcionamento dos dispositivos.
+  Vantagens de Controle Ambiental: Previne falhas de hardware causadas por calor excessivo ou umidade.; Aumenta a vida útil dos equipamentos.; Garante a estabilidade e performance da rede.
+  Desvantagens de Controle Ambiental: Custo de instalação e operação de sistemas de climatização e monitoramento.; Necessidade de manutenção regular.
+  Casos de uso de Controle Ambiental: Salas de servidores.; Data Centers.; Equipment Rooms.; Telecommunication Closets.
+
+-- Tabelas comparativas --
+Tabela 'Medidas de Área para Equipment Room': Esta tabela define a área mínima necessária para uma Equipment Room com base no número de estações de trabalho que ela suportará, garantindo espaço adequado para equipamentos e circulação.
+  Linha LINHA_ER_DIM_001: Número de estações de trabalho = 1 à 100; Área em m² do Equipment. Room = 14
+    (Relacionado a: equipment_room)
+  Linha LINHA_ER_DIM_002: Número de estações de trabalho = 101 à 400; Área em m² do Equipment. Room = 38
+    (Relacionado a: equipment_room)
+  Linha LINHA_ER_DIM_003: Número de estações de trabalho = 401 à 800; Área em m² do Equipment. Room = 75
+    (Relacionado a: equipment_room)
+  Linha LINHA_ER_DIM_004: Número de estações de trabalho = 801 à 1200; Área em m² do Equipment. Room = 112
+    (Relacionado a: equipment_room)
+
+-- Figuras e diagramas --
+Figura 'Diagrama de Cabeamento Estruturado' (Diagrama de Rede): O diagrama ilustra a topologia de um cabeamento estruturado, mostrando a interconexão entre diferentes áreas. O Cabeamento Horizontal (1) conecta as Áreas de Trabalho (3) a um Armário de Telecomunicações (4). O Backbone (2) interliga o Armário de Telecomunicações à Sala de Equipamentos (5), que por sua vez se conecta à Entrada de Serviços (6). O Campus Backbone estende essa interconexão para além de um único edifício.
+  Componentes visuais: Cabeamento Horizontal, Área de Trabalho, Armário de Telecomunicações, Backbone, Sala de Equipamentos (ER), Entrada de Serviços, Campus Backbone
+  Relacionado a: equipment_room, telecommunication_closet, backbone_network, horizontal_cabling
+Figura 'Exemplo de Equipment Room' (Fotografia): A imagem exibe um ambiente típico de uma Equipment Room, com múltiplos racks de servidores e equipamentos de rede, monitores exibindo informações de sistema e um ambiente organizado, sugerindo um alto nível de infraestrutura de TI.
+  Componentes visuais: Racks de servidores, Equipamentos de rede (roteadores, switches), Monitores, Cabeamento organizado
+  Relacionado a: equipment_room
+
+-- Relacionamentos --
+Conexao: 'equipment_room' --[contem]--> 'cross_connect'. Motivo: A Equipment Room pode conter Main Cross-Connect ou Intermediate Cross-Connect para gerenciar as conexões de backbone.
+Conexao: 'equipment_room' --[depende_de]--> 'backbone_network'. Motivo: A Equipment Room é um ponto central para a rede Backbone e Campus Backbone.
+Conexao: 'equipment_room' --[requer]--> 'environmental_control'. Motivo: A Equipment Room necessita de controle ambiental rigoroso para garantir a operação dos equipamentos.
+Conexao: 'equipment_room' --[diferente_de]--> 'telecommunication_closet'. Motivo: A Equipment Room difere do Telecommunication Closet por abrigar equipamentos de maior porte e complexidade.
+Conexao: 'equipment_room' --[utiliza]--> 'fibra_optica'. Motivo: A Equipment Room pode conter gabinetes de emendas de fibras ópticas.
+
+=== SECAO [TI_SEC_002]: Entrance Facilities (Instalações de Entrada) ===
+As Entrance Facilities (EF) são o ponto de interface entre a infraestrutura de cabeamento estruturado de um edifício e os serviços externos de telecomunicações. Elas consistem em cabos, hardware de conexão, equipamentos de proteção e outros elementos necessários para essa transição. Podem ser utilizadas por operadoras públicas ou redes privadas. O ponto de demarcação entre o provedor de serviços e o sistema de cabeamento estruturado faz parte das EF. Sua localização é definida pela operadora local e deve ser em área seca, próxima aos dutos do Backbone, podendo estar dentro da própria sala de equipamentos ou em um espaço dedicado. As práticas de cabeamento são as mesmas do Telecommunication Closet. É crucial considerar a possibilidade de entradas duplicadas para garantir continuidade de serviço em instalações críticas (aeroportos, hospitais, etc.). Um sistema de proteção e aterramento adequado é essencial para evitar danos por induções eletromagnéticas. Cabos com malha de aterramento devem ser aterrados, e cabos geleados requerem contenção de geléia e transição para cabos não propagantes de chama. Caixas de emendas ou DIOs podem ser utilizados. O dimensionamento pode ser em área aberta (espaço em parede) ou fechada (sala), com critérios baseados em segurança, quantidade e tipo de equipamentos.
+
+-- Conceitos-chave --
+Termo: Entrance Facilities | Tipo: Instalação Física | Definicao: Ponto de entrada e interface na edificação onde os cabos e serviços de telecomunicações externos se conectam ao sistema de cabeamento estruturado interno.
+  Vantagens de Entrance Facilities: Ponto de demarcação claro entre provedores e a rede interna.; Permite a conexão segura de serviços externos.; Facilita a implementação de redundância de entrada.
+  Desvantagens de Entrance Facilities: Requer planejamento cuidadoso de localização e acesso.; Necessidade de conformidade com normas de operadoras.; Pode exigir espaço físico considerável dependendo do porte.
+  Casos de uso de Entrance Facilities: Conexão de provedores de internet e telefonia.; Entrada de cabos de fibra óptica.; Instalações que exigem alta disponibilidade de serviço.
+Termo: Ponto de Demarcação | Tipo: Conceito de Rede | Definicao: Local físico onde a responsabilidade pela infraestrutura de rede muda de um provedor de serviços para o cliente ou vice-versa.
+  Vantagens de Ponto de Demarcação: Define claramente a responsabilidade pela infraestrutura.; Simplifica a resolução de problemas e disputas.; Essencial para contratos de serviço (SLA).
+  Desvantagens de Ponto de Demarcação: Pode ser um ponto de conflito se não bem definido.; Requer acesso controlado.
+  Casos de uso de Ponto de Demarcação: Contratos com provedores de internet (ISP).; Serviços de telefonia.; Conexões de redes corporativas.
+Termo: Interferência Eletromagnética (EMI) | Tipo: Fenômeno Físico | Definicao: Perturbação causada por campos eletromagnéticos que podem degradar o desempenho ou causar falhas em equipamentos eletrônicos e cabos de rede.
+  Desvantagens de Interferência Eletromagnética (EMI): Corrupção de dados.; Redução da velocidade de transmissão.; Falhas intermitentes ou permanentes em equipamentos.
+  Casos de uso de Interferência Eletromagnética (EMI): Identificação de fontes de ruído em ambientes de TI.; Planejamento de blindagem e aterramento.; Seleção de locais para instalação de equipamentos sensíveis.
+Termo: Sistema de Aterramento | Tipo: Sistema de Segurança | Definicao: Conexão elétrica de equipamentos e cabos a um ponto de referência comum (terra), essencial para segurança, proteção contra surtos e mitigação de interferências eletromagnéticas.
+  Vantagens de Sistema de Aterramento: Proteção contra choques elétricos.; Mitigação de EMI e RFI.; Proteção contra surtos de tensão (descargas atmosféricas, falhas de equipamento).; Melhora a integridade do sinal em redes.
+  Desvantagens de Sistema de Aterramento: Requer instalação e manutenção adequadas.; Pode ser complexo em grandes instalações.
+  Casos de uso de Sistema de Aterramento: Instalações elétricas em geral.; Data Centers e salas de servidores.; Equipamentos de telecomunicações.; Sistemas de cabeamento estruturado.
+Termo: Cabos Não Propagantes de Chama | Tipo: Material de Rede | Definicao: Cabos projetados para retardar a propagação do fogo, emitindo menos fumaça e gases tóxicos em caso de incêndio, crucial para segurança em edifícios.
+  Vantagens de Cabos Não Propagantes de Chama: Aumenta a segurança em caso de incêndio.; Reduz a emissão de fumaça e gases tóxicos.; Cumpre normas de segurança contra incêndio.
+  Desvantagens de Cabos Não Propagantes de Chama: Geralmente mais caros que cabos não certificados.; Podem ter características de desempenho ligeiramente inferiores em alguns casos.
+  Casos de uso de Cabos Não Propagantes de Chama: Instalações em edifícios comerciais e residenciais.; Espaços confinados e com pouca ventilação.; Rotas de fuga e áreas de evacuação.
+
+-- Tabelas comparativas --
+Tabela 'Espaço Mínimo em Parede para Entrance Facilities (Área Aberta)': Esta tabela especifica o comprimento mínimo de parede necessário para a montagem de terminações e equipamentos de entrada em uma área aberta, considerando uma altura padrão de 2,5m, com base na área geral do local.
+  Linha LINHA_EF_PAREDE_001: ÁREA GERAL (m²) = 500; COMPRIM. DA PAREDE (m) = 0,99
+    (Relacionado a: entrance_facilities)
+  Linha LINHA_EF_PAREDE_002: ÁREA GERAL (m²) = 1.000; COMPRIM. DA PAREDE (m) = 0,99
+    (Relacionado a: entrance_facilities)
+  Linha LINHA_EF_PAREDE_003: ÁREA GERAL (m²) = 2.000; COMPRIM. DA PAREDE (m) = 1,06
+    (Relacionado a: entrance_facilities)
+  Linha LINHA_EF_PAREDE_004: ÁREA GERAL (m²) = 4.000; COMPRIM. DA PAREDE (m) = 1,725
+    (Relacionado a: entrance_facilities)
+  Linha LINHA_EF_PAREDE_005: ÁREA GERAL (m²) = 5.000; COMPRIM. DA PAREDE (m) = 2,295
+    (Relacionado a: entrance_facilities)
+  Linha LINHA_EF_PAREDE_006: ÁREA GERAL (m²) = 6.000; COMPRIM. DA PAREDE (m) = 2,40
+    (Relacionado a: entrance_facilities)
+  Linha LINHA_EF_PAREDE_007: ÁREA GERAL (m²) = 8.000; COMPRIM. DA PAREDE (m) = 3,015
+    (Relacionado a: entrance_facilities)
+  Linha LINHA_EF_PAREDE_008: ÁREA GERAL (m²) = 10.000; COMPRIM. DA PAREDE (m) = 3,63
+    (Relacionado a: entrance_facilities)
+Tabela 'Dimensões Mínimas para Sala de Entrada (Área Fechada)': Esta tabela define as dimensões mínimas de uma sala fechada para abrigar terminações e equipamentos de entrada, utilizando racks, com base na área geral do local.
+  Linha LINHA_EF_SALA_001: ÁREA GERAL (m²) = 7.000; DIMENSÕES DA SALA (m) = 3,66 x 1,93
+    (Relacionado a: entrance_facilities)
+  Linha LINHA_EF_SALA_002: ÁREA GERAL (m²) = 10.000; DIMENSÕES DA SALA (m) = 3,66 x 1,93
+    (Relacionado a: entrance_facilities)
+  Linha LINHA_EF_SALA_003: ÁREA GERAL (m²) = 20.000; DIMENSÕES DA SALA (m) = 3,66 x 2,75
+    (Relacionado a: entrance_facilities)
+  Linha LINHA_EF_SALA_004: ÁREA GERAL (m²) = 40.000; DIMENSÕES DA SALA (m) = 3,66 x 3,97
+    (Relacionado a: entrance_facilities)
+  Linha LINHA_EF_SALA_005: ÁREA GERAL (m²) = 50.000; DIMENSÕES DA SALA (m) = 3,66 x 4,77
+    (Relacionado a: entrance_facilities)
+  Linha LINHA_EF_SALA_006: ÁREA GERAL (m²) = 60.000; DIMENSÕES DA SALA (m) = 3,66 x 5,59
+    (Relacionado a: entrance_facilities)
+  Linha LINHA_EF_SALA_007: ÁREA GERAL (m²) = 80.000; DIMENSÕES DA SALA (m) = 3,66 x 6,81
+    (Relacionado a: entrance_facilities)
+  Linha LINHA_EF_SALA_008: ÁREA GERAL (m²) = 100.000; DIMENSÕES DA SALA (m) = 3,66 x 8,44
+    (Relacionado a: entrance_facilities)
+
+-- Figuras e diagramas --
+Figura 'Exemplo de Entrance Facilities' (Fotografia): A imagem mostra um painel de conexão típico de Entrance Facilities, com múltiplos blocos de terminais e cabos organizados, indicando a interface entre a rede externa e a infraestrutura interna do edifício.
+  Componentes visuais: Painel de conexão, Blocos de terminais, Cabeamento organizado, Equipamentos de telecomunicações
+  Relacionado a: entrance_facilities
+
+-- Relacionamentos --
+Conexao: 'entrance_facilities' --[conecta]--> 'cabeamento_estruturado'. Motivo: As Entrance Facilities conectam os sistemas de cabeamento externos ao sistema de cabeamento estruturado interno.
+Conexao: 'entrance_facilities' --[define]--> 'demarc_point'. Motivo: O ponto de demarcação entre provedores de serviços e o sistema de cabeamento estruturado faz parte das Entrance Facilities.
+Conexao: 'entrance_facilities' --[requer]--> 'grounding_system'. Motivo: As Entrance Facilities necessitam de um sistema de proteção e aterramento adequados para mitigar interferências eletromagnéticas.
+Conexao: 'entrance_facilities' --[utiliza]--> 'fire_retardant_cabling'. Motivo: Cabos geleados em Entrance Facilities devem ter transição para cabos não propagantes de chama.
+Conexao: 'entrance_facilities' --[pode_ser_localizado_em]--> 'equipment_room'. Motivo: As instalações de entrada podem ser localizadas dentro da sala de equipamentos.
+Conexao: 'entrance_facilities' --[mitiga_risco]--> 'electromagnetic_interference'. Motivo: O aterramento adequado nas Entrance Facilities ajuda a mitigar os efeitos da interferência eletromagnética.
+
