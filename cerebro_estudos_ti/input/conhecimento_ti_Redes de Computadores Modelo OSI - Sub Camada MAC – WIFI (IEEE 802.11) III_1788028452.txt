@@ -1,0 +1,177 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Redes de Computadores - Modelo OSI - Sub Camada MAC – WIFI (IEEE 802.11)
+Idioma: pt-BR
+Tecnologias citadas no documento: Wi-Fi, IEEE 802.11, 2.4 GHz, 5 GHz, 6 GHz, WPA3, OFDM, MIMO, MU-MIMO, OFDMA
+
+=== SECAO [TI_SEC_001]: Introdução ao Wi-Fi e Padrões IEEE 802.11 ===
+Este bloco introduz a família de padrões IEEE 802.11, conhecida popularmente como Wi-Fi, focando na subcamada MAC. Explica que o Wi-Fi é um nome comercial para redes locais sem fio (WLANs) e que a família 802.11 abrange diversas gerações e tecnologias, operando em diferentes faixas de frequência (2.4 GHz, 5 GHz e 6 GHz). Detalha a evolução dos padrões, desde as primeiras versões até as mais recentes, destacando as melhorias em velocidade, alcance e eficiência. Aborda a estrutura básica de uma rede Wi-Fi, com Access Points (APs) e estações, e a importância dos controladores para gerenciar múltiplos APs. Enfatiza a diferença entre as faixas de frequência e suas características de alcance e velocidade, além de introduzir tecnologias como MIMO, MU-MIMO e OFDMA.
+
+-- Conceitos-chave --
+Termo: IEEE 802.11 | Tipo: Padrão | Definicao: Família de padrões de comunicação para redes locais sem fio (WLANs), definindo os protocolos para a camada física e MAC. É a base tecnológica do Wi-Fi.
+  Vantagens de IEEE 802.11: Padronização global para redes sem fio; Ampla compatibilidade entre dispositivos; Evolução contínua com melhorias de desempenho
+  Desvantagens de IEEE 802.11: Complexidade devido a múltiplas versões e subpadrões; Potencial para interferência em certas faixas de frequência; Questões de segurança que evoluíram com o tempo
+  Casos de uso de IEEE 802.11: Conectividade doméstica; Redes corporativas sem fio; Pontos de acesso públicos (hotspots); Internet das Coisas (IoT)
+Termo: Wi-Fi | Tipo: Tecnologia | Definicao: Nome comercial para redes locais sem fio (WLANs) baseadas nos padrões IEEE 802.11. Refere-se à tecnologia de acesso sem fio.
+  Vantagens de Wi-Fi: Conveniência e mobilidade; Facilidade de implantação em comparação com redes cabeadas; Alta taxa de adoção e disponibilidade de dispositivos
+  Desvantagens de Wi-Fi: Menor alcance e velocidade em comparação com redes cabeadas (Ethernet); Vulnerabilidade a interferências e ataques de segurança; Gerenciamento de interferência e congestionamento
+  Casos de uso de Wi-Fi: Acesso à internet em residências, escritórios e locais públicos; Compartilhamento de recursos em rede local; Conexão de dispositivos móveis e IoT
+Termo: Subcamada MAC (Media Access Control) | Tipo: Componente de Protocolo | Definicao: Parte da camada de Enlace (Data Link Layer) responsável por controlar o acesso ao meio físico compartilhado, definindo como os dispositivos transmitem e recebem dados em um meio sem fio.
+  Vantagens de Subcamada MAC (Media Access Control): Permite o compartilhamento eficiente do meio sem fio; Gerencia colisões e garante a entrega ordenada dos pacotes; Implementa mecanismos de segurança e controle de acesso
+  Desvantagens de Subcamada MAC (Media Access Control): Complexidade na gestão de múltiplos acessos e interferências; Overhead de controle pode reduzir a taxa de transferência efetiva; Desempenho pode degradar em ambientes com alta densidade de dispositivos
+  Casos de uso de Subcamada MAC (Media Access Control): Controle de acesso ao canal sem fio em Wi-Fi; Endereçamento e controle de quadros na rede local; Detecção e tratamento de colisões
+Termo: Access Point (AP) | Tipo: Hardware | Definicao: Dispositivo que atua como um ponto central de comunicação em uma rede sem fio, conectando dispositivos sem fio à rede cabeada e gerenciando o tráfego.
+  Vantagens de Access Point (AP): Expande a cobertura da rede sem fio; Permite a conexão de múltiplos dispositivos; Pode oferecer funcionalidades de segurança e gerenciamento
+  Desvantagens de Access Point (AP): Ponto único de falha se não houver redundância; Pode se tornar um gargalo de desempenho se sobrecarregado; Requer configuração e manutenção
+  Casos de uso de Access Point (AP): Criar redes Wi-Fi em residências e escritórios; Expandir a cobertura de redes existentes; Fornecer acesso à rede em locais públicos
+Termo: Controlador de Access Point | Tipo: Hardware/Software | Definicao: Dispositivo centralizado que gerencia múltiplos Access Points em uma rede sem fio corporativa, facilitando a configuração, o monitoramento e a mobilidade dos usuários.
+  Vantagens de Controlador de Access Point: Gerenciamento centralizado e simplificado de múltiplos APs; Melhora a mobilidade do usuário (roaming); Permite políticas de segurança unificadas
+  Desvantagens de Controlador de Access Point: Ponto único de falha se não houver redundância; Custo adicional de hardware e software; Pode introduzir latência adicional
+  Casos de uso de Controlador de Access Point: Redes Wi-Fi em grandes empresas, campus universitários, hospitais; Ambientes que exigem roaming contínuo e gerenciamento centralizado
+
+-- Tabelas comparativas --
+Tabela 'Evolução dos Padrões Wi-Fi (IEEE 802.11)': Esta tabela compara as principais gerações de padrões Wi-Fi, destacando o ano de introdução, as frequências de operação, as taxas de dados máximas e as tecnologias chave empregadas.
+  Linha 802.11b: Padrão = 802.11b; Ano = 1999; Frequência = 2.4 GHz; Taxa Máxima (Mbps) = 11; Tecnologias Chave = DSSS
+    (Relacionado a: ieee_802_11)
+  Linha 802.11a: Padrão = 802.11a; Ano = 1999; Frequência = 5 GHz; Taxa Máxima (Mbps) = 54; Tecnologias Chave = OFDM
+    (Relacionado a: ieee_802_11, ofdm)
+  Linha 802.11g: Padrão = 802.11g; Ano = 2003; Frequência = 2.4 GHz; Taxa Máxima (Mbps) = 54; Tecnologias Chave = OFDM
+    (Relacionado a: ieee_802_11, ofdm)
+  Linha 802.11n: Padrão = 802.11n; Ano = 2009; Frequência = 2.4 GHz / 5 GHz; Taxa Máxima (Mbps) = 600; Tecnologias Chave = MIMO, OFDM
+    (Relacionado a: ieee_802_11, mimo, ofdm)
+  Linha 802.11ac: Padrão = 802.11ac; Ano = 2013; Frequência = 5 GHz; Taxa Máxima (Mbps) = 3.5 Gbps; Tecnologias Chave = MU-MIMO, OFDM
+    (Relacionado a: ieee_802_11, mu_mimo, ofdm)
+  Linha 802.11ax: Padrão = 802.11ax; Ano = 2019; Frequência = 2.4 GHz / 5 GHz / 6 GHz; Taxa Máxima (Mbps) = 9.6 Gbps; Tecnologias Chave = OFDMA, MU-MIMO, 1024-QAM
+    (Relacionado a: ieee_802_11, ofdma, mu_mimo)
+  Linha 802.11be: Padrão = 802.11be; Ano = 2024 (previsto); Frequência = 2.4 GHz / 5 GHz / 6 GHz; Taxa Máxima (Mbps) = 46 Gbps; Tecnologias Chave = MLO (Multi-Link Operation), OFDMA, MU-MIMO
+    (Relacionado a: ieee_802_11, mlo, ofdma, mu_mimo)
+Tabela 'Comparativo de Frequências Wi-Fi': Esta tabela compara as características das principais faixas de frequência utilizadas pelo Wi-Fi: 2.4 GHz, 5 GHz e 6 GHz, em termos de alcance, velocidade e suscetibilidade à interferência.
+  Linha 2.4_ghz: Frequência = 2.4 GHz; Alcance = Maior; Velocidade = Menor; Interferência = Alta (micro-ondas, Bluetooth, outros dispositivos)
+  Linha 5_ghz: Frequência = 5 GHz; Alcance = Médio; Velocidade = Alta; Interferência = Média (menos congestionada que 2.4 GHz)
+  Linha 6_ghz: Frequência = 6 GHz; Alcance = Menor; Velocidade = Muito Alta; Interferência = Baixa (faixa nova, menos congestionada)
+
+-- Figuras e diagramas --
+Figura 'Arquitetura Básica de Rede Wi-Fi' (Diagrama de Rede): O diagrama ilustra a estrutura típica de uma rede Wi-Fi. Um roteador (ou Access Point) está conectado a um modem/gateway de internet via cabo. Vários dispositivos sem fio (laptops, smartphones, tablets) se conectam ao roteador/AP via Wi-Fi. Em redes maiores, múltiplos APs podem ser gerenciados por um controlador centralizado, que por sua vez se conecta à rede cabeada principal.
+  Componentes visuais: Roteador/Access Point, Dispositivos sem fio (laptop, smartphone, tablet), Conexão cabeada (Ethernet), Modem/Gateway de Internet, Controlador de AP (opcional)
+  Relacionado a: access_point, controlador_ap, wifi
+
+-- Relacionamentos --
+Conexao: 'ieee_802_11' --[define]--> 'wifi'. Motivo: Os padrões IEEE 802.11 são a base técnica que define o funcionamento do Wi-Fi.
+Conexao: 'subcamada_mac' --[implementa]--> 'ieee_802_11'. Motivo: A subcamada MAC é uma parte essencial dos padrões IEEE 802.11, responsável pelo controle de acesso ao meio.
+Conexao: 'access_point' --[utiliza]--> 'ieee_802_11'. Motivo: Access Points operam seguindo os padrões IEEE 802.11 para fornecer conectividade sem fio.
+Conexao: 'controlador_ap' --[gerencia]--> 'access_point'. Motivo: Controladores de AP gerenciam múltiplos Access Points em redes maiores.
+Conexao: 'wifi' --[opera_em]--> '2.4_ghz'. Motivo: O Wi-Fi opera na faixa de frequência de 2.4 GHz, oferecendo maior alcance mas menor velocidade e maior interferência.
+Conexao: 'wifi' --[opera_em]--> '5_ghz'. Motivo: O Wi-Fi opera na faixa de frequência de 5 GHz, oferecendo menor alcance mas maior velocidade e menor interferência.
+Conexao: 'wifi' --[opera_em]--> '6_ghz'. Motivo: O Wi-Fi opera na faixa de frequência de 6 GHz, oferecendo o menor alcance, a maior velocidade e a menor interferência.
+
+=== SECAO [TI_SEC_002]: Tecnologias e Evolução dos Padrões Wi-Fi (802.11b/a/g/n/ac/ax/be) ===
+Esta seção detalha a evolução dos padrões Wi-Fi, começando com os pioneiros 802.11b e 802.11a, que introduziram as faixas de 2.4 GHz e 5 GHz, respectivamente. O 802.11g unificou a velocidade do 802.11a com a faixa de 2.4 GHz. O 802.11n trouxe o MIMO e o OFDM para ambas as faixas, aumentando significativamente a taxa de dados. O 802.11ac focou exclusivamente nos 5 GHz, introduzindo MU-MIMO e canais mais largos. O 802.11ax (Wi-Fi 6) otimizou o desempenho em ambientes densos com OFDMA e melhorias em ambas as faixas, incluindo 6 GHz. Finalmente, o 802.11be (Wi-Fi 7) promete velocidades ainda maiores com MLO e canais mais largos, operando em todas as três faixas.
+
+-- Conceitos-chave --
+Termo: DSSS (Direct Sequence Spread Spectrum) | Tipo: Técnica de Modulação | Definicao: Técnica de modulação utilizada em padrões Wi-Fi mais antigos (como 802.11b) para espalhar o sinal em uma banda de frequência mais larga, aumentando a robustez contra interferências.
+  Vantagens de DSSS (Direct Sequence Spread Spectrum): Robustez contra interferências; Simplicidade de implementação em comparação com OFDM
+  Desvantagens de DSSS (Direct Sequence Spread Spectrum): Menor eficiência espectral e taxas de dados limitadas; Menos adequado para altas velocidades
+  Casos de uso de DSSS (Direct Sequence Spread Spectrum): Padrões Wi-Fi iniciais (802.11b)
+Termo: OFDM (Orthogonal Frequency-Division Multiplexing) | Tipo: Técnica de Modulação | Definicao: Técnica de modulação que divide um canal de comunicação em múltiplos sub-canais ortogonais, permitindo maior taxa de dados e melhor resistência a multipercurso.
+  Vantagens de OFDM (Orthogonal Frequency-Division Multiplexing): Alta eficiência espectral; Excelente desempenho em ambientes com multipercurso; Permite altas taxas de dados
+  Desvantagens de OFDM (Orthogonal Frequency-Division Multiplexing): Sensível a variações de frequência e fase; Pode ser mais complexo de implementar que DSSS
+  Casos de uso de OFDM (Orthogonal Frequency-Division Multiplexing): 802.11a, 802.11g, 802.11n, 802.11ac, 802.11ax, 802.11be
+Termo: MIMO (Multiple-Input Multiple-Output) | Tipo: Tecnologia de Antena | Definicao: Tecnologia que utiliza múltiplas antenas tanto no transmissor quanto no receptor para aumentar a taxa de transferência e a confiabilidade do link sem fio, através de caminhos de propagação independentes.
+  Vantagens de MIMO (Multiple-Input Multiple-Output): Aumento significativo da taxa de dados; Melhora da robustez do link; Aumento da cobertura
+  Desvantagens de MIMO (Multiple-Input Multiple-Output): Aumento da complexidade do hardware e do processamento; Requer múltiplos fluxos espaciais
+  Casos de uso de MIMO (Multiple-Input Multiple-Output): 802.11n, 802.11ac, 802.11ax, 802.11be
+Termo: MU-MIMO (Multi-User Multiple-Input Multiple-Output) | Tipo: Tecnologia de Antena | Definicao: Extensão do MIMO que permite que um Access Point se comunique simultaneamente com múltiplos usuários (dispositivos), melhorando a eficiência do espectro em ambientes com muitos clientes.
+  Vantagens de MU-MIMO (Multi-User Multiple-Input Multiple-Output): Aumento da capacidade total da rede; Melhora a experiência do usuário em redes densas; Permite comunicação simultânea com múltiplos dispositivos
+  Desvantagens de MU-MIMO (Multi-User Multiple-Input Multiple-Output): Complexidade de implementação e gerenciamento; Requer suporte tanto do AP quanto dos dispositivos clientes; Geralmente mais eficaz para downlink
+  Casos de uso de MU-MIMO (Multi-User Multiple-Input Multiple-Output): 802.11ac (Wave 2), 802.11ax, 802.11be
+Termo: OFDMA (Orthogonal Frequency-Division Multiple Access) | Tipo: Técnica de Acesso ao Meio | Definicao: Técnica de acesso ao meio que divide um canal OFDM em sub-canais menores (Resource Units - RUs), permitindo que múltiplos usuários transmitam dados simultaneamente em diferentes RUs, otimizando a eficiência em cenários de tráfego variado.
+  Vantagens de OFDMA (Orthogonal Frequency-Division Multiple Access): Melhora a eficiência em ambientes com tráfego de pacotes pequenos e variados; Reduz a latência; Aumenta a capacidade da rede em cenários densos
+  Desvantagens de OFDMA (Orthogonal Frequency-Division Multiple Access): Complexidade de implementação; Pode não ser tão vantajoso para fluxos de dados contínuos e grandes
+  Casos de uso de OFDMA (Orthogonal Frequency-Division Multiple Access): 802.11ax, 802.11be
+Termo: MLO (Multi-Link Operation) | Tipo: Tecnologia de Rede | Definicao: Tecnologia introduzida no 802.11be que permite que um dispositivo se conecte e transmita dados simultaneamente em múltiplos links (diferentes bandas de frequência e/ou canais), aumentando a taxa de transferência e a confiabilidade.
+  Vantagens de MLO (Multi-Link Operation): Aumento drástico da taxa de transferência; Melhora da confiabilidade e resiliência do link; Redução da latência
+  Desvantagens de MLO (Multi-Link Operation): Alta complexidade de hardware e software; Requer suporte de todos os dispositivos na rede; Consumo de energia potencialmente maior
+  Casos de uso de MLO (Multi-Link Operation): 802.11be (Wi-Fi 7)
+Termo: WPA3 | Tipo: Protocolo de Segurança | Definicao: O mais recente padrão de segurança para redes Wi-Fi, oferecendo melhorias significativas em relação ao WPA2, como criptografia individualizada de dados e proteção contra ataques de força bruta.
+  Vantagens de WPA3: Segurança aprimorada contra ataques; Criptografia mais robusta; Melhor proteção para redes públicas
+  Desvantagens de WPA3: Requer hardware e software compatíveis; Pode exigir atualizações de dispositivos existentes; Algumas funcionalidades podem ser complexas de configurar
+  Casos de uso de WPA3: Proteger redes Wi-Fi domésticas e corporativas; Garantir a segurança em redes públicas (hotspots)
+
+-- Tabelas comparativas --
+Tabela 'Evolução Detalhada dos Padrões Wi-Fi': Esta tabela apresenta uma visão mais detalhada da evolução dos padrões Wi-Fi, incluindo o nome comercial (Wi-Fi X), as tecnologias chave e as principais melhorias introduzidas em cada geração.
+  Linha 802.11b: Padrão IEEE = 802.11b; Nome Wi-Fi = Wi-Fi 1; Ano = 1999; Frequência = 2.4 GHz; Taxa Máxima Teórica = 11 Mbps; Tecnologias Chave = DSSS; Principais Melhorias = Primeiro padrão amplamente adotado para WLANs.
+    (Relacionado a: dsss)
+  Linha 802.11a: Padrão IEEE = 802.11a; Nome Wi-Fi = Wi-Fi 2; Ano = 1999; Frequência = 5 GHz; Taxa Máxima Teórica = 54 Mbps; Tecnologias Chave = OFDM; Principais Melhorias = Maior taxa de dados e menos interferência que 802.11b.
+    (Relacionado a: ofdm)
+  Linha 802.11g: Padrão IEEE = 802.11g; Nome Wi-Fi = Wi-Fi 3; Ano = 2003; Frequência = 2.4 GHz; Taxa Máxima Teórica = 54 Mbps; Tecnologias Chave = OFDM; Principais Melhorias = Compatibilidade com 802.11b e taxas de dados do 802.11a na banda de 2.4 GHz.
+    (Relacionado a: ofdm)
+  Linha 802.11n: Padrão IEEE = 802.11n; Nome Wi-Fi = Wi-Fi 4; Ano = 2009; Frequência = 2.4 GHz / 5 GHz; Taxa Máxima Teórica = 600 Mbps; Tecnologias Chave = MIMO, OFDM; Principais Melhorias = Introdução de MIMO e canais mais largos, aumento significativo de velocidade e alcance.
+    (Relacionado a: mimo, ofdm)
+  Linha 802.11ac: Padrão IEEE = 802.11ac; Nome Wi-Fi = Wi-Fi 5; Ano = 2013; Frequência = 5 GHz; Taxa Máxima Teórica = 3.5 Gbps; Tecnologias Chave = MU-MIMO, OFDM, Canais de 80/160 MHz; Principais Melhorias = Foco na banda de 5 GHz, introdução de MU-MIMO, canais mais largos para maior velocidade.
+    (Relacionado a: mu_mimo, ofdm)
+  Linha 802.11ax: Padrão IEEE = 802.11ax; Nome Wi-Fi = Wi-Fi 6/6E; Ano = 2019; Frequência = 2.4 GHz / 5 GHz / 6 GHz (6E); Taxa Máxima Teórica = 9.6 Gbps; Tecnologias Chave = OFDMA, MU-MIMO, 1024-QAM, BSS Coloring; Principais Melhorias = Otimização para alta densidade de dispositivos, maior eficiência e capacidade, introdução da banda de 6 GHz (Wi-Fi 6E).
+    (Relacionado a: ofdma, mu_mimo, wpa3)
+  Linha 802.11be: Padrão IEEE = 802.11be; Nome Wi-Fi = Wi-Fi 7; Ano = 2024 (previsto); Frequência = 2.4 GHz / 5 GHz / 6 GHz; Taxa Máxima Teórica = 46 Gbps; Tecnologias Chave = MLO, OFDMA, MU-MIMO, 4096-QAM, Canais de 320 MHz; Principais Melhorias = Velocidades extremamente altas, latência ultrabaixa, maior confiabilidade com MLO, otimização para aplicações imersivas e industriais.
+    (Relacionado a: mlo, ofdma, mu_mimo)
+
+-- Relacionamentos --
+Conexao: 'ieee_802_11' --[evolui_para]--> 'ieee_802_11'. Motivo: Cada nova versão do padrão IEEE 802.11 representa uma evolução da tecnologia Wi-Fi, introduzindo melhorias de desempenho e novas funcionalidades.
+Conexao: 'ofdm' --[substitui]--> 'dsss'. Motivo: OFDM substituiu DSSS em padrões Wi-Fi mais recentes devido à sua maior eficiência e capacidade de atingir taxas de dados mais altas.
+Conexao: 'mimo' --[complementa]--> 'ofdm'. Motivo: MIMO é frequentemente usado em conjunto com OFDM para maximizar as taxas de dados e a robustez do link.
+Conexao: 'mu_mimo' --[extensao_de]--> 'mimo'. Motivo: MU-MIMO é uma evolução do MIMO que permite a comunicação simultânea com múltiplos usuários.
+Conexao: 'ofdma' --[melhora_eficiencia_de]--> 'ofdm'. Motivo: OFDMA aprimora a eficiência do acesso ao meio em redes OFDM, especialmente em cenários com tráfego variado.
+Conexao: 'mlo' --[introduzido_em]--> 'ieee_802_11be'. Motivo: MLO é uma tecnologia chave introduzida no padrão 802.11be (Wi-Fi 7) para aumentar a taxa de transferência e a confiabilidade.
+Conexao: 'wpa3' --[padrao_seguranca_para]--> 'wifi'. Motivo: WPA3 é o padrão de segurança mais recente para redes Wi-Fi, oferecendo proteção aprimorada.
+
+=== SECAO [TI_SEC_003]: Tecnologias Avançadas e Segurança Wi-Fi ===
+Esta seção explora tecnologias avançadas como MIMO, MU-MIMO, OFDMA e MLO, que impulsionam o desempenho dos padrões Wi-Fi mais recentes. Detalha como essas tecnologias aumentam a taxa de transferência, a eficiência e a capacidade da rede. Além disso, aborda a evolução dos protocolos de segurança Wi-Fi, desde o WEP (descontinuado e inseguro) até o WPA3, destacando as melhorias em criptografia e autenticação para proteger as redes contra ameaças. Menciona a descontinuação do WEP e WPA, e a recomendação do WPA3 para novas implementações.
+
+-- Conceitos-chave --
+Termo: WEP (Wired Equivalent Privacy) | Tipo: Protocolo de Segurança | Definicao: Protocolo de segurança Wi-Fi original, projetado para fornecer um nível de privacidade equivalente ao de uma rede cabeada. Foi amplamente criticado por suas falhas de segurança.
+  Vantagens de WEP (Wired Equivalent Privacy): Foi o primeiro protocolo de segurança para Wi-Fi.
+  Desvantagens de WEP (Wired Equivalent Privacy): Vulnerabilidades graves e facilmente exploráveis; Criptografia fraca (RC4 com chaves estáticas); Descontinuado e considerado inseguro
+  Casos de uso de WEP (Wired Equivalent Privacy): Redes Wi-Fi antigas (não recomendado para uso atual)
+Termo: WPA (Wi-Fi Protected Access) | Tipo: Protocolo de Segurança | Definicao: Protocolo de segurança que sucedeu o WEP, introduzindo o TKIP para melhorar a criptografia e a autenticação. Foi uma solução temporária até o desenvolvimento do WPA2.
+  Vantagens de WPA (Wi-Fi Protected Access): Melhoria significativa em relação ao WEP; Introduziu o TKIP para criptografia dinâmica
+  Desvantagens de WPA (Wi-Fi Protected Access): Ainda considerado vulnerável em comparação com WPA2/WPA3; TKIP tem limitações de desempenho e segurança
+  Casos de uso de WPA (Wi-Fi Protected Access): Redes Wi-Fi legadas (substituído por WPA2/WPA3)
+Termo: WPA2 (Wi-Fi Protected Access II) | Tipo: Protocolo de Segurança | Definicao: Padrão de segurança Wi-Fi amplamente adotado, baseado no padrão IEEE 802.11i. Utiliza AES para criptografia forte e oferece modos robustos para redes domésticas e corporativas.
+  Vantagens de WPA2 (Wi-Fi Protected Access II): Criptografia forte (AES); Modos robustos (PSK para doméstico, Enterprise para corporativo); Ampla compatibilidade e adoção
+  Desvantagens de WPA2 (Wi-Fi Protected Access II): Vulnerável a ataques de dicionário offline (PSK); Vulnerabilidades descobertas ao longo do tempo (ex: KRACK)
+  Casos de uso de WPA2 (Wi-Fi Protected Access II): Segurança padrão para a maioria das redes Wi-Fi atuais
+Termo: WPA3 (Wi-Fi Protected Access III) | Tipo: Protocolo de Segurança | Definicao: O mais recente padrão de segurança para redes Wi-Fi, oferecendo melhorias significativas em relação ao WPA2, como criptografia individualizada de dados e proteção contra ataques de força bruta.
+  Vantagens de WPA3 (Wi-Fi Protected Access III): Segurança aprimorada contra ataques; Criptografia mais robusta; Melhor proteção para redes públicas
+  Desvantagens de WPA3 (Wi-Fi Protected Access III): Requer hardware e software compatíveis; Pode exigir atualizações de dispositivos existentes; Algumas funcionalidades podem ser complexas de configurar
+  Casos de uso de WPA3 (Wi-Fi Protected Access III): Proteger redes Wi-Fi domésticas e corporativas; Garantir a segurança em redes públicas (hotspots)
+Termo: WAP (Wireless Application Protocol) | Tipo: Protocolo de Aplicação | Definicao: Protocolo antigo para acesso à internet em dispositivos móveis, amplamente substituído por tecnologias mais modernas como HTTP/HTTPS sobre redes celulares e Wi-Fi.
+  Vantagens de WAP (Wireless Application Protocol): Permitiu o acesso à internet em dispositivos móveis primitivos.
+  Desvantagens de WAP (Wireless Application Protocol): Protocolo obsoleto e com funcionalidades limitadas; Substituído por tecnologias mais eficientes e seguras
+  Casos de uso de WAP (Wireless Application Protocol): Dispositivos móveis muito antigos (não utilizado atualmente)
+Termo: WAP2 | Tipo: Protocolo de Segurança | Definicao: Refere-se ao WPA2, o protocolo de segurança Wi-Fi.
+  Vantagens de WAP2: Criptografia forte (AES); Modos robustos (PSK para doméstico, Enterprise para corporativo); Ampla compatibilidade e adoção
+  Desvantagens de WAP2: Vulnerável a ataques de dicionário offline (PSK); Vulnerabilidades descobertas ao longo do tempo (ex: KRACK)
+  Casos de uso de WAP2: Segurança padrão para a maioria das redes Wi-Fi atuais
+Termo: WAP3 | Tipo: Protocolo de Segurança | Definicao: Refere-se ao WPA3, o protocolo de segurança Wi-Fi mais recente.
+  Vantagens de WAP3: Segurança aprimorada contra ataques; Criptografia mais robusta; Melhor proteção para redes públicas
+  Desvantagens de WAP3: Requer hardware e software compatíveis; Pode exigir atualizações de dispositivos existentes; Algumas funcionalidades podem ser complexas de configurar
+  Casos de uso de WAP3: Proteger redes Wi-Fi domésticas e corporativas; Garantir a segurança em redes públicas (hotspots)
+
+-- Tabelas comparativas --
+Tabela 'Evolução da Segurança Wi-Fi': Esta tabela compara os principais protocolos de segurança Wi-Fi, destacando suas características, vantagens e desvantagens, e o motivo de sua descontinuação ou recomendação.
+  Linha WEP: Protocolo = WEP; Ano de Introdução = 1999; Criptografia = RC4 (40-bit ou 104-bit); Autenticação = Chave compartilhada estática; Status Atual = Descontinuado (Inseguro); Principais Vulnerabilidades/Limitações = Chaves estáticas, falhas na geração de vetores de inicialização (IVs), fácil de quebrar.
+    (Relacionado a: wep)
+  Linha WPA: Protocolo = WPA; Ano de Introdução = 2003; Criptografia = TKIP (RC4 com melhorias); Autenticação = PSK (Pre-Shared Key) ou EAP (Enterprise); Status Atual = Legado (Substituído por WPA2/WPA3); Principais Vulnerabilidades/Limitações = TKIP é menos seguro que AES, vulnerável a ataques de dicionário.
+    (Relacionado a: wpa)
+  Linha WPA2: Protocolo = WPA2; Ano de Introdução = 2004; Criptografia = AES (CCMP); Autenticação = PSK ou EAP (802.1X); Status Atual = Amplamente utilizado (Recomendado WPA3); Principais Vulnerabilidades/Limitações = Vulnerável a ataques de dicionário offline (PSK), vulnerabilidade KRACK.
+    (Relacionado a: wpa2, wap2)
+  Linha WPA3: Protocolo = WPA3; Ano de Introdução = 2018; Criptografia = AES (CCMP) com SAÉ (Simultaneous Authentication of Equals); Autenticação = PSK (com proteção contra ataques de dicionário) ou 192-bit Enterprise; Status Atual = Recomendado para novas implementações; Principais Vulnerabilidades/Limitações = Requer hardware compatível, pode ser complexo de configurar em alguns cenários.
+    (Relacionado a: wpa3, wap3)
+
+-- Relacionamentos --
+Conexao: 'wep' --[substituido_por]--> 'wpa'. Motivo: WEP foi substituído por WPA devido às suas graves falhas de segurança.
+Conexao: 'wpa' --[substituido_por]--> 'wpa2'. Motivo: WPA foi uma solução temporária e foi substituído por WPA2 com criptografia AES.
+Conexao: 'wpa2' --[substituido_por]--> 'wpa3'. Motivo: WPA3 oferece melhorias de segurança significativas sobre WPA2 e é recomendado para novas redes.
+Conexao: 'mimo' --[melhora_desempenho_de]--> 'ieee_802_11n'. Motivo: MIMO é uma tecnologia chave que melhora o desempenho do padrão 802.11n.
+Conexao: 'mu_mimo' --[melhora_desempenho_de]--> 'ieee_802_11ac'. Motivo: MU-MIMO é uma tecnologia chave que melhora o desempenho do padrão 802.11ac.
+Conexao: 'ofdma' --[melhora_desempenho_de]--> 'ieee_802_11ax'. Motivo: OFDMA é uma tecnologia chave que melhora o desempenho do padrão 802.11ax em ambientes densos.
+Conexao: 'mlo' --[melhora_desempenho_de]--> 'ieee_802_11be'. Motivo: MLO é uma tecnologia chave que melhora o desempenho do padrão 802.11be.
+

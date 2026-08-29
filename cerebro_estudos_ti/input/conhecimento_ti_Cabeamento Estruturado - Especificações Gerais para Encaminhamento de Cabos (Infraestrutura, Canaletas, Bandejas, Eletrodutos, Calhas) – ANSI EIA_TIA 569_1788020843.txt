@@ -1,0 +1,198 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Cabeamento Estruturado - Especificações Gerais para Encaminhamento de Cabos (Infraestrutura, Canaletas, Bandejas, Eletrodutos, Calhas) – ANSI EIA/TIA 569
+Idioma: pt-BR
+Tecnologias citadas no documento: Cabeamento Estruturado, ANSI/TIA 569, NBR 14555, Eletrodutos, Canaletas, Bandejas, Calhas
+
+=== SECAO [TI_SEC_001]: Introdução à Norma ANSI/TIA 569 ===
+O material introduz a norma ANSI/TIA 569, focando em suas especificações gerais para o encaminhamento de cabos em infraestruturas de TI. Abrange desde a infraestrutura física, como canaletas, bandejas, eletrodutos e calhas, até a acomodação e encaminhamento de cabos em edifícios comerciais. A norma é apresentada como um guia para garantir a organização, segurança e desempenho do cabeamento estruturado, considerando os diferentes ambientes e os tipos de cabos utilizados. É feita uma conexão com a norma brasileira NBR 14555, destacando que a norma americana serve de base para a brasileira, que consolida diversas normas da TIA.
+
+-- Conceitos-chave --
+Termo: ANSI/TIA 569 | Tipo: Padrão | Definicao: Norma que estabelece as especificações gerais para o encaminhamento de cabos em infraestruturas de telecomunicações em edifícios comerciais, cobrindo a infraestrutura física e os métodos de instalação para garantir o desempenho e a organização do cabeamento.
+  Vantagens de ANSI/TIA 569: Padronização de instalações de cabeamento.; Garante desempenho e confiabilidade da rede.; Facilita a manutenção e expansão da infraestrutura.; Promove segurança e organização dos cabos.
+  Desvantagens de ANSI/TIA 569: Pode ser complexa para implementações simples.; Requer planejamento detalhado e materiais específicos.
+  Casos de uso de ANSI/TIA 569: Projetos de cabeamento estruturado em edifícios comerciais.; Instalação de infraestrutura para redes de dados e voz.; Planejamento de rotas de cabos em novas construções ou reformas.
+Termo: NBR 14555 | Tipo: Padrão | Definicao: Norma brasileira que consolida e adapta normas da TIA (como a 569) para o cabeamento estruturado, servindo como referência nacional para projetos e instalações.
+  Vantagens de NBR 14555: Adaptação das melhores práticas internacionais à realidade brasileira.; Facilita a conformidade com regulamentações locais.; Integração de diversas normas em um único documento.
+  Desvantagens de NBR 14555: Pode ter requisitos específicos que diferem de outras normas internacionais.
+  Casos de uso de NBR 14555: Projetos de cabeamento estruturado no Brasil.; Certificação de instalações de rede no território nacional.
+Termo: Infraestrutura de Cabeamento | Tipo: Componente de Infraestrutura | Definicao: Conjunto de elementos físicos (eletrodutos, canaletas, bandejas, calhas, etc.) que suportam e protegem os cabos de telecomunicações em um edifício.
+  Vantagens de Infraestrutura de Cabeamento: Organização e proteção dos cabos.; Facilita a identificação e manutenção.; Permite expansão futura da rede.; Minimiza interferências eletromagnéticas.
+  Desvantagens de Infraestrutura de Cabeamento: Custo inicial de instalação.; Requer planejamento cuidadoso.
+  Casos de uso de Infraestrutura de Cabeamento: Instalação de redes de dados, voz e vídeo.; Ambientes com alta densidade de cabos.; Edifícios comerciais e corporativos.
+Termo: Eletroduto | Tipo: Componente de Infraestrutura | Definicao: Conduto utilizado para abrigar e proteger cabos elétricos e de telecomunicações, geralmente embutido em paredes ou lajes.
+  Vantagens de Eletroduto: Alta proteção mecânica e contra agentes externos.; Pode ser utilizado em diversas aplicações (embutido, aparente).; Facilita a passagem de cabos.
+  Desvantagens de Eletroduto: Menos flexível para alterações futuras comparado a bandejas.; Pode exigir mais trabalho de instalação (abrir paredes).
+  Casos de uso de Eletroduto: Passagem de cabos em paredes, pisos e tetos.; Proteção de cabos em áreas de risco.; Instalações que exigem maior robustez.
+Termo: Canaleta | Tipo: Componente de Infraestrutura | Definicao: Conduto, geralmente aparente, utilizado para encaminhar e organizar cabos em superfícies de paredes, pisos ou tetos.
+  Vantagens de Canaleta: Fácil acesso para instalação e manutenção.; Flexibilidade para adicionar ou remover cabos.; Estética organizada.
+  Desvantagens de Canaleta: Menor proteção mecânica que eletrodutos.; Pode ser mais suscetível a danos físicos.
+  Casos de uso de Canaleta: Organização de cabos em escritórios e salas de reunião.; Encaminhamento de cabos em ambientes comerciais.; Soluções de cabeamento aparente.
+Termo: Bandeja de Cabeamento | Tipo: Componente de Infraestrutura | Definicao: Estrutura metálica aberta, utilizada para suportar e organizar grandes volumes de cabos em rotas aéreas ou suspensas.
+  Vantagens de Bandeja de Cabeamento: Alta capacidade de suporte para cabos.; Excelente ventilação para os cabos.; Flexibilidade para rotas complexas.
+  Desvantagens de Bandeja de Cabeamento: Exige estrutura de suporte robusta.; Pode requerer proteção adicional contra poeira ou danos.
+  Casos de uso de Bandeja de Cabeamento: Data centers.; Grandes instalações de rede.; Rotas de cabeamento em forros e subsolos.
+Termo: Calha de Cabeamento | Tipo: Componente de Infraestrutura | Definicao: Conduto fechado, similar a uma canaleta, mas geralmente mais robusto e com maior capacidade, utilizado para encaminhar e proteger cabos.
+  Vantagens de Calha de Cabeamento: Boa proteção para os cabos.; Organização e estética.; Pode ser utilizada em diversas aplicações.
+  Desvantagens de Calha de Cabeamento: Menos flexível que bandejas.; Pode ter custo mais elevado.
+  Casos de uso de Calha de Cabeamento: Encaminhamento de cabos em pisos elevados.; Proteção de cabos em áreas de tráfego intenso.; Instalações que necessitam de um conduto fechado e robusto.
+Termo: Acomodação de Cabos | Tipo: Processo | Definicao: Processo de organizar, suportar e proteger os cabos dentro da infraestrutura de encaminhamento (eletrodutos, canaletas, bandejas, etc.).
+  Vantagens de Acomodação de Cabos: Previne danos aos cabos.; Facilita a identificação e manutenção.; Garante o desempenho do cabeamento.; Otimiza o uso do espaço.
+  Desvantagens de Acomodação de Cabos: Requer planejamento e atenção aos detalhes.
+  Casos de uso de Acomodação de Cabos: Instalação de novos cabos.; Manutenção e reorganização de infraestruturas existentes.; Garantia de conformidade com normas técnicas.
+
+=== SECAO [TI_SEC_002]: Especificações Gerais para Encaminhamento de Cabos ===
+Esta seção detalha as especificações gerais para o encaminhamento de cabos, conforme a norma ANSI/TIA 569. São abordados limites de distância para o lançamento de cabos em eletrodutos horizontais (até 90 metros), a necessidade de considerar a expansão futura da rede e a importância de não estrangular os dutos com excesso de cabos. A norma também especifica requisitos para a acomodação de cabos em diferentes ambientes, como a necessidade de pelo menos três cabos por estação de trabalho e a área mínima de ocupação. Além disso, enfatiza a separação de cabos elétricos e de dados para evitar interferências eletromagnéticas e detalha as dimensões mínimas para caixas de tomada (outlets).
+
+-- Conceitos-chave --
+Termo: Limite de Distância em Eletroduto | Tipo: Regra de Instalação | Definicao: Estabelece a distância máxima permitida para o lançamento de cabos em um único eletroduto horizontal, visando garantir a integridade do sinal e a facilidade de manuseio.
+  Vantagens de Limite de Distância em Eletroduto: Garante a qualidade do sinal em longas distâncias.; Facilita a identificação e a substituição de cabos.; Previne sobrecarga e danos aos cabos.
+  Desvantagens de Limite de Distância em Eletroduto: Pode exigir mais pontos de passagem ou caixas de emenda.; Aumenta a complexidade do projeto em edifícios muito grandes.
+  Casos de uso de Limite de Distância em Eletroduto: Planejamento de rotas de cabeamento em edifícios comerciais.; Instalação de cabos de rede em pisos e tetos.; Garantia de conformidade com normas técnicas.
+Termo: Densidade de Cabos | Tipo: Regra de Instalação | Definicao: Refere-se à quantidade de cabos que podem ser acomodados em um determinado espaço de infraestrutura (eletroduto, canaleta, bandeja), sem comprometer o desempenho ou causar danos.
+  Vantagens de Densidade de Cabos: Previne o superaquecimento dos cabos.; Facilita a instalação e manutenção.; Evita danos físicos aos cabos.; Garante a integridade dos sinais.
+  Desvantagens de Densidade de Cabos: Pode limitar a quantidade de cabos em um espaço.; Requer planejamento cuidadoso da capacidade dos dutos.
+  Casos de uso de Densidade de Cabos: Dimensionamento de eletrodutos e canaletas.; Planejamento de infraestrutura para redes futuras.; Instalação em áreas com alta densidade de conexões.
+Termo: Separação de Cabos Elétricos e de Dados | Tipo: Regra de Instalação | Definicao: Princípio de manter os cabos de energia elétrica fisicamente separados dos cabos de dados para minimizar a interferência eletromagnética (EMI) e garantir a integridade dos sinais de rede.
+  Vantagens de Separação de Cabos Elétricos e de Dados: Reduz interferências eletromagnéticas (EMI).; Melhora a qualidade e a confiabilidade dos sinais de dados.; Aumenta a segurança da instalação.
+  Desvantagens de Separação de Cabos Elétricos e de Dados: Pode exigir rotas de cabeamento mais longas ou complexas.; Aumenta a necessidade de espaço para infraestrutura.
+  Casos de uso de Separação de Cabos Elétricos e de Dados: Instalação de cabeamento em edifícios comerciais e industriais.; Ambientes com equipamentos eletrônicos sensíveis.; Projetos que visam alta performance de rede.
+Termo: Dimensões de Caixa de Tomada (Outlet) | Tipo: Especificação de Componente | Definicao: Especificações mínimas de tamanho (largura, altura, profundidade) para as caixas que abrigam as tomadas de rede no ambiente de trabalho (work area).
+  Vantagens de Dimensões de Caixa de Tomada (Outlet): Garante espaço suficiente para conectores e cabos.; Facilita a instalação e manutenção das tomadas.; Permite a acomodação de múltiplos conectores.
+  Desvantagens de Dimensões de Caixa de Tomada (Outlet): Pode aumentar o custo e o volume da instalação.; Requer atenção ao design do ambiente.
+  Casos de uso de Dimensões de Caixa de Tomada (Outlet): Instalação de pontos de rede em mesas e paredes.; Ambientes de trabalho com múltiplas conexões.; Projetos que exigem padronização de tomadas.
+Termo: Planejamento para Expansão | Tipo: Princípio de Projeto | Definicao: Consideração de futuras necessidades de rede e capacidade de crescimento da infraestrutura de cabeamento durante o projeto inicial.
+  Vantagens de Planejamento para Expansão: Reduz custos de futuras atualizações.; Garante a escalabilidade da rede.; Evita a necessidade de grandes reformas.
+  Desvantagens de Planejamento para Expansão: Pode aumentar o custo inicial do projeto.; Requer previsão de crescimento.
+  Casos de uso de Planejamento para Expansão: Projetos de novas construções.; Planejamento de infraestrutura de TI de longo prazo.; Ambientes que preveem aumento de usuários ou serviços.
+
+-- Relacionamentos --
+Conexao: 'ansi_tia_569' --[define]--> 'limite_distancia_eletroduto'. Motivo: A norma ANSI/TIA 569 estabelece os limites de distância para o lançamento de cabos em eletrodutos.
+Conexao: 'ansi_tia_569' --[define]--> 'densidade_cabos'. Motivo: A norma ANSI/TIA 569 especifica regras para a densidade de cabos em infraestruturas de encaminhamento.
+Conexao: 'ansi_tia_569' --[define]--> 'separacao_cabos_eletricos_dados'. Motivo: A norma ANSI/TIA 569 exige a separação física entre cabos elétricos e de dados.
+Conexao: 'ansi_tia_569' --[define]--> 'dimensoes_caixa_tomada'. Motivo: A norma ANSI/TIA 569 especifica as dimensões mínimas para caixas de tomada (outlets).
+Conexao: 'ansi_tia_569' --[incentiva]--> 'planejamento_expansao'. Motivo: A norma ANSI/TIA 569 considera a necessidade de planejamento para futuras expansões da rede.
+Conexao: 'nbr_14555' --[baseada_em]--> 'ansi_tia_569'. Motivo: A NBR 14555 é baseada nas normas da TIA, como a 569, adaptando-as para o contexto brasileiro.
+
+=== SECAO [TI_SEC_003]: Considerações sobre Eletrodutos e Distâncias ===
+Esta seção aborda especificamente o uso de eletrodutos e as limitações de distância impostas pela norma. Destaca-se que o lançamento de cabos em eletrodutos horizontais não deve exceder 90 metros, partindo do ponto de telecomunicações (telecommunication closet) até o ponto de usuário (work area). Essa limitação considera a soma das distâncias do cabeamento horizontal e do patch cord. A norma também estabelece que a soma total do cabeamento, incluindo o backbone e o horizontal, não deve ultrapassar 100 metros. A necessidade de considerar a demanda futura e a capacidade de expansão é reforçada, indicando que os dutos devem ser dimensionados para acomodar não apenas os cabos atuais, mas também futuras adições.
+
+-- Conceitos-chave --
+Termo: Limite de 90m em Eletroduto | Tipo: Regra de Instalação | Definicao: Distância máxima de 90 metros para o lançamento de cabos em um único eletroduto horizontal, desde o armário de telecomunicações até o ponto de rede do usuário.
+  Vantagens de Limite de 90m em Eletroduto: Garante a integridade do sinal e o desempenho da rede.; Previne problemas de atenuação e ruído.; Facilita a identificação e o gerenciamento de cabos.
+  Desvantagens de Limite de 90m em Eletroduto: Pode exigir mais pontos de interconexão.; Aumenta a complexidade do projeto em edifícios extensos.
+  Casos de uso de Limite de 90m em Eletroduto: Planejamento de rotas de cabeamento horizontal.; Instalação de cabos de rede em edifícios comerciais.; Garantia de conformidade com padrões de telecomunicações.
+Termo: Limite Total de 100m de Cabeamento | Tipo: Regra de Instalação | Definicao: Distância máxima total permitida para um canal de cabeamento, incluindo backbone e cabeamento horizontal, para garantir a qualidade do sinal.
+  Vantagens de Limite Total de 100m de Cabeamento: Assegura a performance da rede em toda a sua extensão.; Evita degradação do sinal em longas distâncias.; Padroniza a arquitetura de cabeamento.
+  Desvantagens de Limite Total de 100m de Cabeamento: Pode limitar o alcance em instalações muito grandes.; Requer planejamento cuidadoso da topologia da rede.
+  Casos de uso de Limite Total de 100m de Cabeamento: Projetos de cabeamento estruturado em edifícios de qualquer porte.; Definição de limites para segmentos de rede.; Garantia de compatibilidade com equipamentos de rede.
+Termo: Capacidade de Duto para Futuro | Tipo: Princípio de Projeto | Definicao: Princípio de dimensionamento de eletrodutos e outros condutos para acomodar não apenas os cabos atuais, mas também futuras adições e expansões da rede.
+  Vantagens de Capacidade de Duto para Futuro: Reduz custos e transtornos com futuras instalações.; Permite escalabilidade da infraestrutura.; Evita a necessidade de abrir paredes ou refazer rotas.
+  Desvantagens de Capacidade de Duto para Futuro: Aumenta o custo inicial da infraestrutura.; Requer estimativa precisa do crescimento futuro.
+  Casos de uso de Capacidade de Duto para Futuro: Projetos de cabeamento em novas construções.; Planejamento de infraestrutura de TI de longo prazo.; Ambientes com expectativa de crescimento rápido.
+
+-- Relacionamentos --
+Conexao: 'limite_90m_eletroduto' --[parte_de]--> 'ansi_tia_569'. Motivo: O limite de 90m em eletroduto é uma especificação definida pela norma ANSI/TIA 569.
+Conexao: 'limite_100m_total' --[parte_de]--> 'ansi_tia_569'. Motivo: O limite total de 100m de cabeamento é uma diretriz da norma ANSI/TIA 569.
+Conexao: 'capacidade_duto_futuro' --[relacionado_a]--> 'infraestrutura_cabeamento'. Motivo: O planejamento para capacidade futura de dutos é essencial para a infraestrutura de cabeamento.
+
+=== SECAO [TI_SEC_004]: Separação de Cabos e Acomodação em Ambientes ===
+Esta seção detalha a importância da separação física entre cabos de energia e cabos de dados para evitar interferências eletromagnéticas (EMI). A norma ANSI/TIA 569 estabelece que esses tipos de cabos devem ser encaminhados em condutos separados ou com distanciamento adequado. Também são apresentados requisitos para a acomodação de cabos em diferentes áreas, como a necessidade de pelo menos três cabos por estação de trabalho (work area) e a área mínima de ocupação para esses espaços. A norma visa garantir a integridade dos sinais e a organização da infraestrutura.
+
+-- Conceitos-chave --
+Termo: Separação Física de Cabos | Tipo: Regra de Instalação | Definicao: Princípio que exige que cabos de diferentes tipos (energia, dados, vídeo) sejam instalados em condutos separados ou com distanciamento mínimo para prevenir interferências eletromagnéticas (EMI) e garantir a integridade dos sinais.
+  Vantagens de Separação Física de Cabos: Minimiza interferências eletromagnéticas (EMI) e de radiofrequência (RFI).; Garante a qualidade e a confiabilidade dos sinais de dados.; Aumenta a segurança da instalação.; Facilita a identificação e manutenção.
+  Desvantagens de Separação Física de Cabos: Pode exigir mais espaço e infraestrutura de encaminhamento.; Aumenta a complexidade do projeto em ambientes com limitações de espaço.
+  Casos de uso de Separação Física de Cabos: Instalação de cabeamento em data centers.; Ambientes com equipamentos eletrônicos sensíveis.; Projetos que exigem alta performance e confiabilidade de rede.
+Termo: Área Mínima de Work Area | Tipo: Especificação de Ambiente | Definicao: Espaço designado para a estação de trabalho do usuário, onde os cabos de rede terminam em tomadas (outlets), com requisitos mínimos de espaço para acomodação e acesso.
+  Vantagens de Área Mínima de Work Area: Garante espaço adequado para a instalação de tomadas e equipamentos.; Facilita o acesso para manutenção e futuras expansões.; Promove organização e segurança no ponto de acesso.
+  Desvantagens de Área Mínima de Work Area: Pode aumentar o custo de construção ou reforma.; Requer planejamento cuidadoso do layout do escritório.
+  Casos de uso de Área Mínima de Work Area: Definição de locais para pontos de rede em escritórios.; Planejamento de layouts de estações de trabalho.; Instalação de infraestrutura de TI em novos edifícios.
+Termo: Requisito de Cabos por Estação | Tipo: Regra de Projeto | Definicao: Número mínimo de cabos de telecomunicações (geralmente dados e voz) que devem ser previstos para cada estação de trabalho (work area).
+  Vantagens de Requisito de Cabos por Estação: Garante conectividade suficiente para as necessidades atuais e futuras.; Evita a necessidade de novas instalações de cabos.; Padroniza a infraestrutura de rede.
+  Desvantagens de Requisito de Cabos por Estação: Pode levar a um excesso de cabos em algumas situações.; Requer estimativa precisa do número de conexões por estação.
+  Casos de uso de Requisito de Cabos por Estação: Planejamento de pontos de rede em escritórios.; Definição da quantidade de cabos por estação de trabalho.; Projetos que visam alta densidade de conexões.
+
+-- Relacionamentos --
+Conexao: 'separacao_fisica_cabos' --[mitiga_risco]--> 'interferencia_eletromagnetica'. Motivo: A separação física de cabos é crucial para mitigar o risco de interferência eletromagnética (EMI) em cabos de dados.
+Conexao: 'area_minima_work_area' --[relacionado_a]--> 'dimensoes_caixa_tomada'. Motivo: A área mínima de work area influencia as dimensões e a quantidade de caixas de tomada a serem instaladas.
+Conexao: 'requisito_cabos_por_estacao' --[influencia]--> 'infraestrutura_cabeamento'. Motivo: O requisito de cabos por estação determina a capacidade necessária da infraestrutura de cabeamento.
+
+=== SECAO [TI_SEC_005]: Aterramento e Proteção contra Interferências ===
+Esta seção aborda a importância do aterramento para a infraestrutura de cabeamento, especialmente para componentes metálicos como eletrodutos, canaletas e bandejas. A norma NBR 61707 (referenciada indiretamente pela menção à NBR 14555 que se baseia em normas internacionais) é citada como referência para aterramento. É enfatizado que cabos elétricos e de dados devem ser mantidos separados para evitar interferências eletromagnéticas. Em casos onde a separação física não é possível, o aterramento adequado se torna ainda mais crítico. A norma também trata da proteção contra surtos e descargas, embora não detalhada neste trecho.
+
+-- Conceitos-chave --
+Termo: Aterramento da Infraestrutura | Tipo: Procedimento de Segurança | Definicao: Conexão elétrica de componentes metálicos da infraestrutura de cabeamento (eletrodutos, bandejas, calhas) ao sistema de aterramento do edifício, para proteção contra choques elétricos e interferências.
+  Vantagens de Aterramento da Infraestrutura: Proteção contra choques elétricos.; Redução de interferências eletromagnéticas (EMI).; Proteção contra surtos e descargas atmosféricas.; Melhora a integridade dos sinais de dados.
+  Desvantagens de Aterramento da Infraestrutura: Requer conhecimento técnico especializado.; Pode aumentar o custo da instalação.
+  Casos de uso de Aterramento da Infraestrutura: Instalação de cabeamento estruturado em qualquer ambiente.; Proteção de equipamentos de rede sensíveis.; Ambientes com risco de descargas elétricas.
+Termo: Proteção contra Surtos | Tipo: Medida de Segurança | Definicao: Medidas e dispositivos para proteger o cabeamento e os equipamentos de rede contra picos de tensão e correntes causados por surtos elétricos, como descargas atmosféricas ou falhas na rede elétrica.
+  Vantagens de Proteção contra Surtos: Previne danos a equipamentos caros.; Garante a continuidade do serviço.; Aumenta a segurança da instalação.
+  Desvantagens de Proteção contra Surtos: Custo adicional para instalação de dispositivos de proteção.; Requer manutenção e verificação periódica.
+  Casos de uso de Proteção contra Surtos: Instalação em áreas com alta incidência de raios.; Proteção de data centers e salas de servidores.; Edifícios com sistemas elétricos complexos.
+Termo: Interferência Eletromagnética (EMI) | Tipo: Fenômeno Físico | Definicao: Ruído indesejado gerado por campos eletromagnéticos que pode afetar negativamente o desempenho e a integridade dos sinais de dados transmitidos pelos cabos.
+  Vantagens de Interferência Eletromagnética (EMI): A compreensão da EMI permite a adoção de medidas preventivas.; A mitigação da EMI garante a qualidade da rede.
+  Desvantagens de Interferência Eletromagnética (EMI): Pode causar erros de transmissão, lentidão e falhas na rede.; Difícil de diagnosticar e solucionar sem conhecimento técnico.
+  Casos de uso de Interferência Eletromagnética (EMI): Instalação de cabos próximos a fontes de EMI (motores, transformadores).; Uso de cabos blindados e infraestrutura adequada.; Projetos de rede em ambientes industriais.
+
+-- Relacionamentos --
+Conexao: 'aterramento_infraestrutura' --[essencial_para]--> 'interferencia_eletromagnetica'. Motivo: O aterramento adequado da infraestrutura é essencial para minimizar a interferência eletromagnética.
+Conexao: 'separacao_fisica_cabos' --[complementa]--> 'aterramento_infraestrutura'. Motivo: A separação física de cabos e o aterramento da infraestrutura trabalham juntos para proteger contra EMI.
+Conexao: 'protecao_contra_surtos' --[relacionado_a]--> 'interferencia_eletromagnetica'. Motivo: A proteção contra surtos é uma medida adicional para garantir a integridade dos sinais contra eventos elétricos anômalos.
+
+=== SECAO [TI_SEC_006]: Rotas de Encaminhamento e Acomodação de Cabos ===
+Esta seção explora as diversas rotas e métodos para o encaminhamento e acomodação de cabos, incluindo eletrodutos, canaletas, bandejas, calhas e dutos de piso. São detalhadas as especificações para cada tipo de infraestrutura, como limites de ocupação (30-60% para canaletas, 40% para eletrodutos), a necessidade de aterramento para componentes metálicos, e as dimensões mínimas para caixas de tomada. A norma também aborda o uso de rotas perimetrais, a instalação em pisos falsos e a consideração de futuras expansões. A separação entre cabos elétricos e de dados é reforçada, e a importância de não estrangular os cabos é destacada.
+
+-- Conceitos-chave --
+Termo: Ocupação de Canaleta | Tipo: Regra de Instalação | Definicao: Percentual máximo de preenchimento de uma canaleta com cabos, visando garantir espaço para ventilação, manuseio e futuras adições.
+  Vantagens de Ocupação de Canaleta: Previne danos aos cabos por compressão.; Facilita a adição ou remoção de cabos.; Garante a integridade dos sinais.
+  Desvantagens de Ocupação de Canaleta: Pode exigir canaletas de maior dimensão.; Requer planejamento cuidadoso da capacidade.
+  Casos de uso de Ocupação de Canaleta: Instalação de cabos em escritórios.; Organização de cabos em paredes e pisos.; Projetos que preveem expansão da rede.
+Termo: Ocupação de Eletroduto | Tipo: Regra de Instalação | Definicao: Percentual máximo de preenchimento de um eletroduto com cabos, considerando fatores como aquecimento e facilidade de passagem.
+  Vantagens de Ocupação de Eletroduto: Evita o superaquecimento dos cabos.; Facilita a instalação e a retirada de cabos.; Previne danos mecânicos.
+  Desvantagens de Ocupação de Eletroduto: Pode limitar a quantidade de cabos em um eletroduto.; Requer dimensionamento correto.
+  Casos de uso de Ocupação de Eletroduto: Instalação de cabos embutidos em paredes e lajes.; Proteção de cabos em áreas de risco.; Projetos que exigem alta densidade de cabos.
+Termo: Rota Perimetral | Tipo: Método de Instalação | Definicao: Método de encaminhamento de cabos ao longo do perímetro de um ambiente, geralmente utilizando canaletas ou calhas fixadas nas paredes.
+  Vantagens de Rota Perimetral: Organização e fácil acesso aos cabos.; Minimiza a interferência com o layout do espaço.; Flexibilidade para expansão.
+  Desvantagens de Rota Perimetral: Pode ser visualmente intrusivo se não bem planejado.; Requer espaço nas paredes.
+  Casos de uso de Rota Perimetral: Cabeamento em salas de aula e auditórios.; Organização de cabos em escritórios.; Instalações onde o piso não pode ser alterado.
+Termo: Piso Falso (ou Elevado) | Tipo: Componente de Infraestrutura | Definicao: Estrutura de piso elevada que cria um espaço oco abaixo, utilizado para acomodar e encaminhar cabos, dutos e sistemas de climatização.
+  Vantagens de Piso Falso (ou Elevado): Excelente para acomodar grandes volumes de cabos e infraestrutura.; Facilita o acesso para manutenção e modificações.; Melhora a estética do ambiente.
+  Desvantagens de Piso Falso (ou Elevado): Custo elevado de instalação.; Reduz a altura útil do pé-direito.; Pode exigir sistemas de climatização específicos.
+  Casos de uso de Piso Falso (ou Elevado): Data centers.; Salas de controle e servidores.; Edifícios corporativos modernos.
+Termo: Duto de Piso | Tipo: Componente de Infraestrutura | Definicao: Conduto instalado sob o piso (elevado ou convencional) para encaminhamento de cabos, permitindo acesso em diferentes pontos do ambiente.
+  Vantagens de Duto de Piso: Flexibilidade para acesso a cabos em múltiplos pontos.; Organização e proteção dos cabos.; Integração com pisos elevados.
+  Desvantagens de Duto de Piso: Custo de instalação.; Requer planejamento cuidadoso da localização dos acessos.
+  Casos de uso de Duto de Piso: Cabeamento em grandes escritórios e áreas abertas.; Instalações que exigem flexibilidade de acesso.; Ambientes com necessidade de reorganização frequente.
+
+-- Relacionamentos --
+Conexao: 'ocupacao_canaleta' --[limita]--> 'canaleta'. Motivo: A ocupação de canaleta limita a quantidade de cabos que podem ser instalados em uma canaleta.
+Conexao: 'ocupacao_eletroduto' --[limita]--> 'eletroduto'. Motivo: A ocupação de eletroduto limita a quantidade de cabos que podem ser instalados em um eletroduto.
+Conexao: 'rota_perimetral' --[utiliza]--> 'canaleta'. Motivo: A rota perimetral frequentemente utiliza canaletas para o encaminhamento de cabos.
+Conexao: 'piso_falso' --[utilizado_para]--> 'acomodacao_cabos'. Motivo: O piso falso é utilizado para a acomodação e encaminhamento de cabos.
+Conexao: 'duto_piso' --[parte_de]--> 'piso_falso'. Motivo: Dutos de piso podem ser parte integrante de um sistema de piso falso.
+
+=== SECAO [TI_SEC_007]: Requisitos para Caixas de Tomada e Acomodação em Ambientes ===
+Esta seção detalha os requisitos para as caixas de tomada (outlets) e a acomodação de cabos em diferentes ambientes. As caixas de tomada devem ter dimensões mínimas (50mm de largura, 75mm de altura, 64mm de profundidade) para garantir espaço para conectores e cabos. A norma também especifica que os cabos de dados e de energia devem ser separados, e que em eletrodutos, a ocupação máxima é de 40%. Para canaletas, a ocupação deve ser entre 30% e 60%. A norma é aplicável a edifícios comerciais e empresariais, não cobrindo especificamente instalações residenciais.
+
+-- Conceitos-chave --
+Termo: Dimensão Mínima de Caixa de Tomada | Tipo: Especificação Técnica | Definicao: Especificações de tamanho (largura, altura, profundidade) para as caixas que abrigam as tomadas de rede, garantindo espaço para conectores e cabos.
+  Vantagens de Dimensão Mínima de Caixa de Tomada: Espaço adequado para conectores e cabos.; Facilidade de instalação e manutenção.; Compatibilidade com diferentes tipos de conectores.
+  Desvantagens de Dimensão Mínima de Caixa de Tomada: Pode aumentar o custo e o volume da instalação.; Requer planejamento do layout.
+  Casos de uso de Dimensão Mínima de Caixa de Tomada: Instalação de pontos de rede em escritórios.; Ambientes com múltiplas conexões.; Projetos que exigem padronização.
+Termo: Ocupação Máxima de 40% em Eletroduto | Tipo: Regra de Instalação | Definicao: Limite de 40% de preenchimento de um eletroduto com cabos, conforme especificado pela norma para garantir a integridade e o desempenho.
+  Vantagens de Ocupação Máxima de 40% em Eletroduto: Previne superaquecimento e danos aos cabos.; Facilita a instalação e manutenção.; Garante a qualidade do sinal.
+  Desvantagens de Ocupação Máxima de 40% em Eletroduto: Pode exigir eletrodutos de maior diâmetro.; Requer planejamento cuidadoso.
+  Casos de uso de Ocupação Máxima de 40% em Eletroduto: Instalação de cabos embutidos.; Proteção de cabos em áreas de risco.; Projetos que exigem alta densidade de cabos.
+Termo: Ocupação de Canaleta (30-60%) | Tipo: Regra de Instalação | Definicao: Faixa de preenchimento recomendada para canaletas, entre 30% e 60%, para acomodar cabos de forma organizada e segura.
+  Vantagens de Ocupação de Canaleta (30-60%): Flexibilidade para adicionar ou remover cabos.; Boa ventilação e acesso.; Organização estética.
+  Desvantagens de Ocupação de Canaleta (30-60%): Menor proteção mecânica que eletrodutos.; Requer atenção ao limite inferior para evitar subutilização.
+  Casos de uso de Ocupação de Canaleta (30-60%): Organização de cabos em escritórios.; Instalação de cabeamento aparente.; Ambientes comerciais.
+Termo: Aplicabilidade Comercial e Empresarial | Tipo: Escopo da Norma | Definicao: Indica que a norma ANSI/TIA 569 se aplica primariamente a edifícios comerciais e empresariais, com especificações distintas para outros tipos de edificações.
+  Vantagens de Aplicabilidade Comercial e Empresarial: Foco em necessidades específicas de ambientes corporativos.; Padronização para infraestruturas de TI em larga escala.
+  Desvantagens de Aplicabilidade Comercial e Empresarial: Não cobre diretamente instalações residenciais ou industriais.; Pode requerer adaptações para outros tipos de edificações.
+  Casos de uso de Aplicabilidade Comercial e Empresarial: Projetos de cabeamento em prédios de escritórios.; Instalações em centros comerciais.; Infraestrutura de TI para empresas.
+
+-- Relacionamentos --
+Conexao: 'dimensao_minima_caixa_tomada' --[especifica]--> 'caixa_tomada'. Motivo: A dimensão mínima de caixa de tomada é especificada pela norma para garantir espaço adequado.
+Conexao: 'ocupacao_maxima_eletrod' --[None]--> 'None'. Motivo: 
+

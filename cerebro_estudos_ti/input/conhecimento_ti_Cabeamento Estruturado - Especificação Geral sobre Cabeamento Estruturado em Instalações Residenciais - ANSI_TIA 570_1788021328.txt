@@ -1,0 +1,394 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: ANSI/TIA-570-D: Especificação Geral sobre Cabeamento Estruturado em Instalações Residenciais
+Idioma: pt-BR
+Tecnologias citadas no documento: Cabeamento Estruturado, Redes Residenciais, Fibra Óptica, Cabo Coaxial, Cabo UTP, Automação Residencial, Internet Banda Larga, CFTV
+
+=== SECAO [TI_SEC_001]: Introdução ao Cabeamento Estruturado Residencial (ANSI/TIA-570) ===
+O material introduz a norma ANSI/TIA-570, focada em cabeamento estruturado para instalações residenciais. Diferencia-se de normas para edificações comerciais e empresariais, adaptando-se às peculiaridades do ambiente residencial. A norma estabelece requisitos mínimos para garantir a infraestrutura de telecomunicações em residências, sejam elas unifamiliares ou multifamiliares, contemplando diversos serviços como dados, voz, vídeo e automação. A norma aborda a necessidade de um ponto de distribuição central e a topologia em estrela como padrão.
+
+-- Conceitos-chave --
+Termo: ANSI/TIA-570 | Tipo: Norma Técnica | Definicao: Norma que especifica os requisitos mínimos para cabeamento estruturado em instalações residenciais, garantindo a infraestrutura para diversos serviços de telecomunicações.
+  Vantagens de ANSI/TIA-570: Padronização para infraestrutura residencial; Suporte a múltiplos serviços (voz, dados, vídeo, automação); Flexibilidade para futuras atualizações tecnológicas; Melhora a organização e a manutenção da rede
+  Desvantagens de ANSI/TIA-570: Pode ser mais restritiva que o necessário para algumas residências; Requer planejamento e instalação adequados para atingir seu potencial
+  Casos de uso de ANSI/TIA-570: Novas construções residenciais; Reformas de residências; Instalações de sistemas de automação residencial; Casas inteligentes
+Termo: Cabeamento Residencial | Tipo: Infraestrutura de Rede | Definicao: Infraestrutura de cabos e conectores projetada especificamente para atender às necessidades de comunicação e entretenimento em ambientes residenciais.
+  Vantagens de Cabeamento Residencial: Suporte a múltiplos serviços de alta velocidade; Facilita a instalação de dispositivos inteligentes; Aumenta o valor do imóvel
+  Desvantagens de Cabeamento Residencial: Custo inicial de instalação; Necessidade de mão de obra qualificada
+  Casos de uso de Cabeamento Residencial: Casas inteligentes; Apartamentos com múltiplos dispositivos conectados; Residências com sistemas de entretenimento avançados
+Termo: Topologia em Estrela | Tipo: Topologia de Rede | Definicao: Um tipo de topologia de rede onde todos os nós (dispositivos) são conectados a um ponto central (hub, switch ou patch panel), facilitando o gerenciamento e a identificação de falhas.
+  Vantagens de Topologia em Estrela: Fácil instalação e expansão; Isolamento de falhas (falha em um cabo não afeta outros); Gerenciamento centralizado
+  Desvantagens de Topologia em Estrela: Dependência do ponto central (se falhar, toda a rede para); Requer mais cabo que outras topologias
+  Casos de uso de Topologia em Estrela: Cabeamento estruturado residencial; Redes locais em escritórios; Redes de data centers
+Termo: Ponto de Distribuição Central | Tipo: Componente de Rede | Definicao: Localização física dentro da residência onde os cabos de telecomunicações convergem e são gerenciados, geralmente abrigando equipamentos como patch panels e switches.
+  Vantagens de Ponto de Distribuição Central: Centralização do gerenciamento da rede; Facilita a manutenção e a solução de problemas; Organização dos cabos
+  Desvantagens de Ponto de Distribuição Central: Requer um espaço dedicado e acessível; Pode ser um ponto único de falha se não houver redundância
+  Casos de uso de Ponto de Distribuição Central: Instalação de cabeamento estruturado; Gerenciamento de redes domésticas; Convergência de serviços de telecomunicações
+
+-- Relacionamentos --
+Conexao: 'ansi_tia_570' --[define]--> 'cabeamento_residencial'. Motivo: A norma ANSI/TIA-570 estabelece os padrões e requisitos para o cabeamento residencial.
+Conexao: 'cabeamento_residencial' --[utiliza]--> 'topologia_estrela'. Motivo: O cabeamento residencial, conforme especificado pela TIA-570, geralmente adota a topologia em estrela para melhor gerenciamento.
+Conexao: 'topologia_estrela' --[requer]--> 'ponto_distribuicao_central'. Motivo: A topologia em estrela necessita de um ponto central para a conexão de todos os cabos.
+Conexao: 'ansi_tia_570' --[especifica]--> 'ponto_distribuicao_central'. Motivo: A norma TIA-570 detalha a necessidade e os requisitos para o ponto de distribuição central em instalações residenciais.
+
+=== SECAO [TI_SEC_002]: Serviços Suportados e Requisitos de Cabeamento ===
+A norma ANSI/TIA-570 detalha os tipos de serviços suportados em instalações residenciais, incluindo dados, voz, vídeo e automação. Para cada serviço, são definidos requisitos mínimos de cabeamento, como categorias de cabos e distâncias. A norma diferencia entre requisitos para residências unifamiliares e multifamiliares, e também estabelece categorias de serviço (Grau 1 e Grau 2) que definem o nível de infraestrutura e os serviços suportados. O cabeamento de par trançado (UTP) é especificado com categorias mínimas (Cat 5e ou superior para dados) e o cabo coaxial é mencionado para serviços de vídeo. A norma também aborda a necessidade de um ponto de entrada de serviço e a distribuição interna, com limites de distância para garantir a performance.
+
+-- Conceitos-chave --
+Termo: Serviço de Dados | Tipo: Serviço de Rede | Definicao: Transmissão de informações digitais entre dispositivos, como acesso à internet, redes locais e comunicação entre computadores.
+  Vantagens de Serviço de Dados: Permite acesso à internet de alta velocidade; Suporta dispositivos inteligentes e IoT; Facilita a comunicação entre dispositivos na rede doméstica
+  Desvantagens de Serviço de Dados: Requer cabos de alta performance (Cat 5e ou superior); Sensível a interferências eletromagnéticas se não for bem instalado
+  Casos de uso de Serviço de Dados: Navegação na internet; Streaming de vídeo e áudio; Jogos online; Conexão de dispositivos IoT (Internet das Coisas)
+Termo: Serviço de Voz | Tipo: Serviço de Rede | Definicao: Transmissão de áudio para comunicação, como telefonia tradicional (POTS) ou telefonia sobre IP (VoIP).
+  Vantagens de Serviço de Voz: Comunicação em tempo real; Baixa latência; Compatível com infraestrutura existente (POTS)
+  Desvantagens de Serviço de Voz: Pode ser substituído por VoIP, que requer mais largura de banda; Qualidade pode ser afetada por ruído e interferência
+  Casos de uso de Serviço de Voz: Telefonia residencial; Sistemas de intercomunicação; VoIP para chamadas de longa distância
+Termo: Serviço de Vídeo | Tipo: Serviço de Rede | Definicao: Transmissão de sinais de vídeo, como TV a cabo, satélite, vídeo sob demanda ou sistemas de CFTV.
+  Vantagens de Serviço de Vídeo: Entretenimento e segurança; Alta qualidade de imagem e som; Suporte a múltiplos canais e resoluções
+  Desvantagens de Serviço de Vídeo: Requer cabos com características específicas (ex: coaxial); Pode consumir muita largura de banda
+  Casos de uso de Serviço de Vídeo: TV a cabo/satélite; Sistemas de CFTV (Circuito Fechado de Televisão); Vídeo sob demanda (VOD)
+Termo: Serviço de Automação Residencial | Tipo: Serviço de Rede | Definicao: Controle e gerenciamento de sistemas residenciais como iluminação, climatização, segurança e entretenimento através de uma rede.
+  Vantagens de Serviço de Automação Residencial: Conveniência e conforto; Eficiência energética; Segurança aprimorada; Controle remoto
+  Desvantagens de Serviço de Automação Residencial: Custo de instalação e manutenção; Complexidade de configuração; Dependência de conectividade de rede
+  Casos de uso de Serviço de Automação Residencial: Controle de iluminação inteligente; Termostatos inteligentes; Sistemas de segurança com câmeras e sensores; Controle de entretenimento
+Termo: Cabo UTP (Unshielded Twisted Pair) | Tipo: Cabo de Rede | Definicao: Tipo de cabo de par trançado sem blindagem, comumente usado em redes de dados.
+  Vantagens de Cabo UTP (Unshielded Twisted Pair): Custo relativamente baixo; Flexível e fácil de instalar; Amplamente disponível
+  Desvantagens de Cabo UTP (Unshielded Twisted Pair): Mais suscetível a interferências eletromagnéticas (EMI) comparado a cabos blindados; Limitações de distância e velocidade em categorias mais baixas
+  Casos de uso de Cabo UTP (Unshielded Twisted Pair): Redes Ethernet (dados); Telefonia (VoIP); Alguns sistemas de automação residencial
+Termo: Cabo Coaxial | Tipo: Cabo de Rede | Definicao: Cabo de transmissão com um condutor central cercado por um isolante, uma malha condutora e uma capa externa, usado principalmente para sinais de vídeo.
+  Vantagens de Cabo Coaxial: Boa imunidade a interferências; Suporta altas frequências para sinais de vídeo; Custo acessível para aplicações de vídeo
+  Desvantagens de Cabo Coaxial: Menos flexível que UTP; Não ideal para redes de dados de alta velocidade em longas distâncias; Pode sofrer atenuação em frequências muito altas
+  Casos de uso de Cabo Coaxial: Transmissão de TV a cabo e satélite; Sistemas de CFTV; Conexões de internet via cabo (DOCSIS)
+Termo: Categoria 5e (Cat 5e) | Tipo: Padrão de Cabo | Definicao: Padrão de cabo UTP que suporta velocidades de até 1 Gbps em distâncias de até 100 metros, sendo um requisito mínimo para dados em redes residenciais.
+  Vantagens de Categoria 5e (Cat 5e): Suporte a Gigabit Ethernet; Custo-benefício para redes domésticas; Amplamente disponível
+  Desvantagens de Categoria 5e (Cat 5e): Menos robusto que categorias superiores (Cat 6, Cat 6a) para aplicações futuras ou mais exigentes; Pode ser mais suscetível a interferências em ambientes com muito ruído eletromagnético
+  Casos de uso de Categoria 5e (Cat 5e): Redes de dados residenciais; Conexão de computadores, TVs inteligentes, consoles de jogos; Infraestrutura básica para automação residencial
+Termo: Grau 1 Residencial | Tipo: Classificação de Serviço | Definicao: Nível de serviço básico para cabeamento residencial, geralmente suportando voz e dados de baixa velocidade.
+  Vantagens de Grau 1 Residencial: Custo de instalação mais baixo; Atende às necessidades básicas de comunicação
+  Desvantagens de Grau 1 Residencial: Limitações para serviços de alta demanda (streaming 4K, jogos online pesados); Menos preparado para futuras atualizações tecnológicas
+  Casos de uso de Grau 1 Residencial: Residências com uso básico de internet e telefonia; Imóveis de menor valor agregado
+Termo: Grau 2 Residencial | Tipo: Classificação de Serviço | Definicao: Nível de serviço mais avançado para cabeamento residencial, suportando dados de alta velocidade, vídeo e automação.
+  Vantagens de Grau 2 Residencial: Suporte a serviços de alta demanda (streaming, jogos); Infraestrutura robusta para automação e IoT; Maior longevidade da infraestrutura
+  Desvantagens de Grau 2 Residencial: Custo de instalação mais elevado
+  Casos de uso de Grau 2 Residencial: Casas inteligentes; Residências com múltiplos dispositivos conectados; Ambientes que exigem alta performance de rede
+Termo: Limite de Distância do Cabeamento | Tipo: Parâmetro de Rede | Definicao: Distância máxima recomendada para um trecho de cabo de rede (geralmente 100 metros para par trançado) para garantir a integridade do sinal e a performance da rede.
+  Vantagens de Limite de Distância do Cabeamento: Garante a qualidade do sinal; Evita problemas de performance e perda de dados
+  Desvantagens de Limite de Distância do Cabeamento: Pode exigir pontos de distribuição intermediários em instalações grandes; Limita o layout físico da rede
+  Casos de uso de Limite de Distância do Cabeamento: Planejamento de redes locais; Instalação de cabeamento estruturado; Dimensionamento de infraestrutura de rede
+
+-- Tabelas comparativas --
+Tabela 'Requisitos de Cabeamento por Grau Residencial': Esta tabela compara os requisitos mínimos de cabeamento para os Graus 1 e 2 em instalações residenciais, detalhando os tipos de cabos e serviços suportados.
+  Linha linha_1: Grau = Grau 1; Serviços Suportados = Voz, Dados (baixa velocidade), Vídeo (básico); Tipo de Cabo Principal = UTP Cat 5e; Distância Máxima (Tomada a Ponto Central) = 100 metros
+    (Relacionado a: grau_1_residencial, servico_voz, servico_dados, servico_video, cabo_utp, limite_distancia_cabeamento)
+  Linha linha_2: Grau = Grau 2; Serviços Suportados = Voz, Dados (alta velocidade), Vídeo (HD/4K), Automação Residencial; Tipo de Cabo Principal = UTP Cat 6 ou superior, Fibra Óptica; Distância Máxima (Tomada a Ponto Central) = 100 metros (UTP), 300 metros (Fibra Óptica)
+    (Relacionado a: grau_2_residencial, servico_voz, servico_dados, servico_video, servico_automacao, cabo_utp, fibra_optica, limite_distancia_cabeamento)
+
+-- Figuras e diagramas --
+Figura 'Diagrama de Cabeamento Estruturado Residencial Típico' (Diagrama de Rede): O diagrama ilustra uma instalação residencial com um ponto de entrada de serviço (demarc), um armário de telecomunicações (telecom closet) servindo como ponto central de distribuição. A partir deste ponto, cabos UTP (ou fibra) são distribuídos em topologia estrela para diversas tomadas de serviço (dados, voz, vídeo) em diferentes cômodos da casa. Também mostra a conexão com a rede externa (provedor).
+  Componentes visuais: Ponto de Entrada (Demarc), Armário de Telecomunicações (Telecom Closet), Patch Panel, Switch/Roteador, Cabos UTP, Tomadas de Serviço, Roteador do Provedor, Rede Externa
+  Relacionado a: ansi_tia_570, cabeamento_residencial, ponto_distribuicao_central, topologia_estrela, cabo_utp, servico_dados, servico_voz, servico_video
+
+-- Relacionamentos --
+Conexao: 'servico_dados' --[requer]--> 'cabo_utp'. Motivo: Serviços de dados de alta velocidade em redes residenciais geralmente requerem cabos UTP de categoria 5e ou superior para garantir a performance.
+Conexao: 'servico_video' --[suportado_por]--> 'cabo_coaxial'. Motivo: O cabo coaxial é frequentemente utilizado para a distribuição de sinais de vídeo em instalações residenciais.
+Conexao: 'ansi_tia_570' --[define]--> 'grau_1_residencial'. Motivo: A norma TIA-570 define o Grau 1 como um nível básico de serviço para cabeamento residencial.
+Conexao: 'ansi_tia_570' --[define]--> 'grau_2_residencial'. Motivo: A norma TIA-570 define o Grau 2 como um nível de serviço avançado para cabeamento residencial.
+Conexao: 'cabeamento_residencial' --[respeita]--> 'limite_distancia_cabeamento'. Motivo: O cabeamento residencial deve respeitar os limites de distância para garantir a qualidade do sinal.
+
+=== SECAO [TI_SEC_003]: Tipos de Cabos e Topologias ===
+A norma TIA-570 especifica os tipos de cabos permitidos e recomendados para instalações residenciais, incluindo cabos de par trançado (UTP) de categorias 5e, 6 e 6a, e cabos coaxiais. Para dados, o UTP Cat 5e é o mínimo, com Cat 6 ou superior sendo recomendado para Grau 2. O cabo coaxial é especificado para serviços de vídeo. A topologia em estrela é a padrão, com um ponto central de distribuição. A norma também estabelece limites de distância para os cabos, como 100 metros para UTP e 300 metros para fibra óptica, e considera a necessidade de pontos de energia próximos às tomadas de serviço. A norma diferencia entre residências unifamiliares e multifamiliares, e também aborda a entrada de serviço e a distribuição interna.
+
+-- Conceitos-chave --
+Termo: Cabo de Par Trançado Não Blindado (UTP) | Tipo: Cabo de Rede | Definicao: Cabo de rede composto por pares de fios trançados sem blindagem metálica, amplamente utilizado em redes de dados e voz.
+  Vantagens de Cabo de Par Trançado Não Blindado (UTP): Custo-benefício; Flexibilidade; Facilidade de instalação; Ampla disponibilidade
+  Desvantagens de Cabo de Par Trançado Não Blindado (UTP): Suscetível a interferências eletromagnéticas (EMI) e radiofrequência (RFI); Limitações de velocidade e distância em categorias inferiores
+  Casos de uso de Cabo de Par Trançado Não Blindado (UTP): Redes Ethernet (dados); Telefonia IP (VoIP); Automação residencial
+Termo: Categoria 6 (Cat 6) | Tipo: Padrão de Cabo | Definicao: Padrão de cabo UTP que suporta frequências de até 250 MHz e velocidades de até 10 Gbps em distâncias curtas (até 55 metros), sendo uma opção robusta para redes residenciais de Grau 2.
+  Vantagens de Categoria 6 (Cat 6): Melhor performance e menor diafonia que Cat 5e; Suporte a 10 Gbps em distâncias menores; Boa opção para redes residenciais de alta performance
+  Desvantagens de Categoria 6 (Cat 6): Mais caro que Cat 5e; Menos flexível que Cat 5e; Atinge 10 Gbps apenas em distâncias limitadas
+  Casos de uso de Categoria 6 (Cat 6): Redes residenciais de alta velocidade; Streaming de vídeo 4K/8K; Jogos online com baixa latência; Infraestrutura para automação residencial avançada
+Termo: Categoria 6a (Cat 6a) | Tipo: Padrão de Cabo | Definicao: Padrão de cabo UTP que suporta frequências de até 500 MHz e velocidades de até 10 Gbps em distâncias de até 100 metros, sendo ideal para aplicações futuras e de alta demanda.
+  Vantagens de Categoria 6a (Cat 6a): Suporte a 10 Gbps em toda a distância de 100 metros; Melhor desempenho em ambientes com alta interferência; Pronto para futuras demandas tecnológicas
+  Desvantagens de Categoria 6a (Cat 6a): Mais caro e menos flexível que Cat 6; Geralmente requer cabos blindados (STP/FTP) para atingir performance máxima
+  Casos de uso de Categoria 6a (Cat 6a): Redes residenciais de altíssima performance; Aplicações de realidade virtual/aumentada; Infraestrutura para data centers domésticos
+Termo: Fibra Óptica | Tipo: Cabo de Rede | Definicao: Meio de transmissão que utiliza pulsos de luz para transmitir dados através de finos filamentos de vidro ou plástico, oferecendo altíssima velocidade e imunidade a interferências.
+  Vantagens de Fibra Óptica: Altíssima largura de banda e velocidade; Imunidade total a EMI/RFI; Longas distâncias de transmissão sem perda de sinal; Segurança (difícil de interceptar)
+  Desvantagens de Fibra Óptica: Custo mais elevado de instalação e equipamentos; Requer mão de obra especializada; Mais frágil que cabos metálicos
+  Casos de uso de Fibra Óptica: Backbones de rede; Conexões de longa distância; Redes de alta performance; Aplicações que exigem altíssima largura de banda
+Termo: Cabo Coaxial 75 Ohms | Tipo: Cabo de Rede | Definicao: Cabo coaxial com impedância característica de 75 ohms, comumente usado para sinais de vídeo (TV, CFTV) e algumas conexões de internet.
+  Vantagens de Cabo Coaxial 75 Ohms: Adequado para sinais de vídeo de alta frequência; Boa blindagem contra interferências; Custo relativamente baixo para aplicações de vídeo
+  Desvantagens de Cabo Coaxial 75 Ohms: Menos flexível que UTP; Não ideal para redes de dados de alta velocidade em longas distâncias
+  Casos de uso de Cabo Coaxial 75 Ohms: Distribuição de sinal de TV (antena, cabo, satélite); Sistemas de CFTV; Conexões de internet via cabo (DOCSIS)
+Termo: CFTV (Circuito Fechado de Televisão) | Tipo: Serviço de Rede | Definicao: Sistema de vigilância por vídeo que utiliza câmeras para capturar imagens e transmiti-las para um local específico, geralmente para monitoramento de segurança.
+  Vantagens de CFTV (Circuito Fechado de Televisão): Aumento da segurança residencial; Monitoramento em tempo real; Gravação de eventos para análise posterior
+  Desvantagens de CFTV (Circuito Fechado de Televisão): Requer infraestrutura de cabeamento adequada; Custo de câmeras e sistema de gravação; Necessidade de gerenciamento e armazenamento de vídeo
+  Casos de uso de CFTV (Circuito Fechado de Televisão): Monitoramento de perímetros residenciais; Vigilância interna; Verificação de acesso
+Termo: Internet Banda Larga | Tipo: Serviço de Rede | Definicao: Serviço de acesso à internet de alta velocidade, significativamente mais rápido que a internet discada, suportado por tecnologias como cabo, DSL, fibra óptica e satélite.
+  Vantagens de Internet Banda Larga: Permite navegação rápida, streaming, downloads; Suporta múltiplos dispositivos conectados simultaneamente; Essencial para a maioria das aplicações modernas
+  Desvantagens de Internet Banda Larga: Custo mensal recorrente; Disponibilidade pode variar por região; Velocidade pode ser afetada por congestionamento da rede
+  Casos de uso de Internet Banda Larga: Acesso à internet em residências e empresas; Trabalho remoto; Educação a distância; Entretenimento online
+Termo: Entrada de Serviço Residencial | Tipo: Componente de Rede | Definicao: Ponto onde os cabos de telecomunicações externos (do provedor) entram na residência, geralmente protegido e preparado para conexão com a infraestrutura interna.
+  Vantagens de Entrada de Serviço Residencial: Proteção contra intempéries e danos físicos; Facilita a conexão com a rede interna; Ponto de transição entre a rede externa e interna
+  Desvantagens de Entrada de Serviço Residencial: Requer planejamento para localização adequada; Pode necessitar de aterramento e proteção contra surtos
+  Casos de uso de Entrada de Serviço Residencial: Instalação de serviços de telecomunicações (internet, telefone, TV); Conexão da infraestrutura interna com o provedor externo
+
+-- Tabelas comparativas --
+Tabela 'Categorias de Cabos e Aplicações Típicas na TIA-570': Esta tabela compara os tipos de cabos recomendados pela norma TIA-570 para diferentes serviços em instalações residenciais, destacando suas categorias e aplicações.
+  Linha linha_1: Tipo de Cabo = Par Trançado Não Blindado (UTP); Categoria = Cat 5e; Serviços Suportados = Voz, Dados (até 1 Gbps); Distância Máxima = 100 metros
+    (Relacionado a: cabo_par_trancado_nao_blindado, categoria_5e, servico_voz, servico_dados, limite_distancia_cabeamento)
+  Linha linha_2: Tipo de Cabo = Par Trançado Não Blindado (UTP); Categoria = Cat 6; Serviços Suportados = Voz, Dados (até 10 Gbps em curtas distâncias), Vídeo; Distância Máxima = 100 metros (1 Gbps), 55 metros (10 Gbps)
+    (Relacionado a: cabo_par_trancado_nao_blindado, categoria_6, servico_voz, servico_dados, servico_video, limite_distancia_cabeamento)
+  Linha linha_3: Tipo de Cabo = Par Trançado Não Blindado (UTP); Categoria = Cat 6a; Serviços Suportados = Voz, Dados (até 10 Gbps), Vídeo, Automação; Distância Máxima = 100 metros
+    (Relacionado a: cabo_par_trancado_nao_blindado, categoria_6a, servico_voz, servico_dados, servico_video, servico_automacao, limite_distancia_cabeamento)
+  Linha linha_4: Tipo de Cabo = Fibra Óptica; Categoria = Multimodo (OM3/OM4), Monomodo; Serviços Suportados = Todos os serviços, alta velocidade, longa distância; Distância Máxima = Até 300 metros (Multimodo), Vários quilômetros (Monomodo)
+    (Relacionado a: fibra_optica, servico_voz, servico_dados, servico_video, servico_automacao, limite_distancia_cabeamento)
+  Linha linha_5: Tipo de Cabo = Cabo Coaxial; Categoria = RG-6 (75 Ohms); Serviços Suportados = Vídeo (TV, CFTV), Internet (DOCSIS); Distância Máxima = Variável, dependendo da frequência e qualidade do sinal
+    (Relacionado a: cabo_coaxial_75_ohms, servico_video, cftv, internet_banda_larga, limite_distancia_cabeamento)
+
+-- Figuras e diagramas --
+Figura 'Diagrama de Entrada de Serviço Residencial' (Diagrama de Rede): O diagrama mostra o ponto de entrada de serviço (demarc) onde o cabo do provedor (fibra ou coaxial) chega à residência. A partir daí, o cabo é conectado a um dispositivo de terminação (ONT para fibra, modem para coaxial) e distribuído internamente. Inclui proteção contra surtos e aterramento.
+  Componentes visuais: Ponto de Entrada (Demarc), Cabo do Provedor (Fibra/Coaxial), ONT (Optical Network Terminal), Modem, Proteção contra Surtos, Aterramento, Distribuição Interna
+  Relacionado a: entrada_servico_residencial, fibra_optica, cabo_coaxial_75_ohms, internet_banda_larga, ansi_tia_570
+
+-- Relacionamentos --
+Conexao: 'cabeamento_residencial' --[suporta]--> 'servico_dados'. Motivo: O cabeamento estruturado residencial é projetado para suportar serviços de dados de alta velocidade.
+Conexao: 'cabeamento_residencial' --[suporta]--> 'servico_voz'. Motivo: O cabeamento estruturado residencial suporta serviços de voz, como telefonia tradicional e VoIP.
+Conexao: 'cabeamento_residencial' --[suporta]--> 'servico_video'. Motivo: O cabeamento estruturado residencial suporta a distribuição de sinais de vídeo.
+Conexao: 'cabeamento_residencial' --[suporta]--> 'servico_automacao'. Motivo: O cabeamento estruturado residencial é fundamental para a infraestrutura de automação residencial.
+Conexao: 'cabo_utp' --[requer_categoria]--> 'categoria_5e'. Motivo: Para serviços de dados, o cabo UTP deve atender no mínimo à categoria 5e.
+Conexao: 'cabo_utp' --[requer_categoria]--> 'categoria_6'. Motivo: Para serviços de alta performance, o cabo UTP Cat 6 é recomendado.
+Conexao: 'cabo_utp' --[requer_categoria]--> 'categoria_6a'. Motivo: Para aplicações futuras e de alta demanda, o cabo UTP Cat 6a é a escolha ideal.
+Conexao: 'cabo_coaxial_75_ohms' --[utilizado_para]--> 'servico_video'. Motivo: O cabo coaxial de 75 ohms é amplamente utilizado para a distribuição de sinais de vídeo.
+Conexao: 'fibra_optica' --[utilizado_para]--> 'internet_banda_larga'. Motivo: A fibra óptica é o meio preferencial para serviços de internet banda larga de altíssima velocidade.
+Conexao: 'ansi_tia_570' --[considera]--> 'entrada_servico_residencial'. Motivo: A norma TIA-570 considera a importância de uma entrada de serviço bem planejada para a infraestrutura residencial.
+
+=== SECAO [TI_SEC_004]: Requisitos de Instalação e Pontos de Serviço ===
+A norma ANSI/TIA-570 estabelece requisitos detalhados para a instalação do cabeamento estruturado em residências, incluindo a topologia em estrela, o uso de um ponto de distribuição central e a localização das tomadas de serviço. A norma define o que constitui um 'ponto de serviço' e especifica a quantidade mínima de tomadas por cômodo, dependendo do grau de serviço (Grau 1 ou Grau 2). Para o Grau 1, são exigidas menos tomadas, focando em voz e dados básicos. Para o Grau 2, a quantidade é maior, suportando vídeo e automação. A norma também aborda a necessidade de pontos de energia próximos às tomadas de serviço para alimentar dispositivos ativos e a importância de não exceder os limites de distância do cabeamento. A instalação de cabos de par trançado deve seguir as melhores práticas para evitar interferências, e o cabo coaxial é especificado para serviços de vídeo. A norma também diferencia entre residências unifamiliares e multifamiliares.
+
+-- Conceitos-chave --
+Termo: Ponto de Serviço Residencial | Tipo: Componente de Rede | Definicao: Localização física em uma residência onde um cabo de telecomunicações termina, permitindo a conexão de dispositivos de usuário final (computadores, telefones, TVs).
+  Vantagens de Ponto de Serviço Residencial: Permite a conexão de dispositivos em locais estratégicos; Organiza a infraestrutura de rede; Facilita a expansão e a manutenção
+  Desvantagens de Ponto de Serviço Residencial: Requer planejamento cuidadoso da localização; Pode necessitar de pontos de energia próximos
+  Casos de uso de Ponto de Serviço Residencial: Instalação de tomadas de rede; Conexão de computadores, telefones, TVs; Suporte a sistemas de automação residencial
+Termo: Tomada de Serviço | Tipo: Componente de Rede | Definicao: O conector físico (RJ45 para dados, RJ11 para voz, conector coaxial para vídeo) instalado em um ponto de serviço para conectar dispositivos.
+  Vantagens de Tomada de Serviço: Interface padronizada para conexão de dispositivos; Facilita a troca e a adição de equipamentos
+  Desvantagens de Tomada de Serviço: Pode ser um ponto de falha se danificada ou mal instalada
+  Casos de uso de Tomada de Serviço: Conexão de computadores à rede; Instalação de telefones; Conexão de TVs a sistemas de distribuição de sinal
+Termo: Ponto de Energia Próximo | Tipo: Infraestrutura Elétrica | Definicao: Tomada elétrica localizada perto de um ponto de serviço de telecomunicações para alimentar dispositivos que requerem energia (ex: roteadores, switches, telefones VoIP, câmeras).
+  Vantagens de Ponto de Energia Próximo: Evita o uso de extensões e adaptadores; Melhora a segurança e a organização; Essencial para dispositivos ativos de rede
+  Desvantagens de Ponto de Energia Próximo: Aumenta o custo e a complexidade da instalação elétrica; Requer planejamento conjunto entre infraestrutura elétrica e de telecomunicações
+  Casos de uso de Ponto de Energia Próximo: Alimentação de roteadores Wi-Fi; Instalação de switches de rede; Conexão de telefones VoIP; Alimentação de câmeras de segurança
+Termo: Instalação Embutida | Tipo: Método de Instalação | Definicao: Método de instalação onde cabos e componentes são ocultos dentro de paredes, tetos ou pisos, proporcionando um acabamento limpo e estético.
+  Vantagens de Instalação Embutida: Estética aprimorada (sem cabos visíveis); Proteção dos cabos contra danos físicos; Organização
+  Desvantagens de Instalação Embutida: Mais difícil e demorado para instalar; Acesso para manutenção ou reparos pode ser complicado; Requer planejamento prévio
+  Casos de uso de Instalação Embutida: Cabeamento estruturado residencial e comercial; Instalação de sistemas de áudio e vídeo; Redes de dados
+Termo: Instalação Externa/Exposta | Tipo: Método de Instalação | Definicao: Método de instalação onde cabos e componentes são visíveis, geralmente fixados sobre superfícies ou em calhas aparentes.
+  Vantagens de Instalação Externa/Exposta: Fácil e rápida instalação; Acesso simples para manutenção e modificações; Menor custo inicial
+  Desvantagens de Instalação Externa/Exposta: Estética comprometida (cabos visíveis); Cabos mais expostos a danos físicos e interferências; Pode violar normas de segurança e estética
+  Casos de uso de Instalação Externa/Exposta: Instalações temporárias; Ambientes industriais onde a estética não é prioridade; Algumas instalações residenciais de baixo custo ou em reformas rápidas
+
+-- Tabelas comparativas --
+Tabela 'Número Mínimo de Tomadas de Serviço por Cômodo (TIA-570)': Esta tabela define o número mínimo de tomadas de serviço (dados/voz/vídeo) exigido pela norma TIA-570 para diferentes cômodos em instalações residenciais, com base no Grau de Serviço.
+  Linha linha_1: Cômodo = Sala de Estar/Intimidade; Grau 1 (Mínimo) = 1 tomada de dados/voz; Grau 2 (Recomendado) = 2 tomadas de dados/voz, 1 tomada de vídeo
+    (Relacionado a: grau_1_residencial, grau_2_residencial, ponto_servico_residencial, tomada_servico)
+  Linha linha_2: Cômodo = Cozinha; Grau 1 (Mínimo) = 1 tomada de dados/voz; Grau 2 (Recomendado) = 1 tomada de dados/voz
+    (Relacionado a: grau_1_residencial, grau_2_residencial, ponto_servico_residencial, tomada_servico)
+  Linha linha_3: Cômodo = Quarto; Grau 1 (Mínimo) = 1 tomada de dados/voz; Grau 2 (Recomendado) = 2 tomadas de dados/voz
+    (Relacionado a: grau_1_residencial, grau_2_residencial, ponto_servico_residencial, tomada_servico)
+  Linha linha_4: Cômodo = Escritório/Home Office; Grau 1 (Mínimo) = 1 tomada de dados/voz; Grau 2 (Recomendado) = 2 tomadas de dados/voz, 1 tomada de vídeo
+    (Relacionado a: grau_1_residencial, grau_2_residencial, ponto_servico_residencial, tomada_servico)
+  Linha linha_5: Cômodo = Banheiro; Grau 1 (Mínimo) = 0; Grau 2 (Recomendado) = 1 tomada de dados/voz (opcional)
+    (Relacionado a: grau_1_residencial, grau_2_residencial, ponto_servico_residencial, tomada_servico)
+
+-- Figuras e diagramas --
+Figura 'Exemplo de Instalação de Tomada de Serviço Residencial' (Diagrama de Instalação): O diagrama mostra uma tomada de rede (RJ45) instalada em uma caixa de passagem embutida na parede. Próximo a ela, há uma tomada elétrica dupla para alimentar dispositivos. O cabo de rede vem de um ponto central e é terminado na tomada RJ45. O cabeamento está embutido na parede.
+  Componentes visuais: Tomada RJ45, Caixa de Passagem Embutida, Tomada Elétrica Dupla, Cabo de Rede (UTP), Parede
+  Relacionado a: tomada_servico, ponto_servico_residencial, instalacao_embutida, ponto_energia_proximo, cabo_utp
+
+-- Relacionamentos --
+Conexao: 'ponto_servico_residencial' --[contem]--> 'tomada_servico'. Motivo: Um ponto de serviço residencial é onde a tomada de serviço é instalada para conectar dispositivos.
+Conexao: 'tomada_servico' --[requer]--> 'ponto_energia_proximo'. Motivo: Muitas tomadas de serviço requerem um ponto de energia próximo para alimentar dispositivos ativos.
+Conexao: 'cabeamento_residencial' --[utiliza_metodo]--> 'instalacao_embutida'. Motivo: A instalação embutida é o método preferencial para cabeamento residencial, visando estética e proteção.
+Conexao: 'cabeamento_residencial' --[evita_metodo]--> 'instalacao_externa_exposta'. Motivo: A instalação externa/exposta é geralmente evitada em instalações residenciais para manter a estética.
+Conexao: 'ansi_tia_570' --[especifica]--> 'ponto_servico_residencial'. Motivo: A norma TIA-570 especifica os requisitos para pontos de serviço em instalações residenciais.
+Conexao: 'grau_1_residencial' --[implica_quantidade]--> 'tomada_servico'. Motivo: O Grau 1 residencial implica um número mínimo de tomadas de serviço.
+Conexao: 'grau_2_residencial' --[implica_quantidade]--> 'tomada_servico'. Motivo: O Grau 2 residencial implica um número maior de tomadas de serviço, incluindo vídeo e automação.
+
+=== SECAO [TI_SEC_005]: Requisitos de Entrada de Serviço e Pontos de Terminação ===
+A norma ANSI/TIA-570 detalha os requisitos para a entrada de serviço em instalações residenciais, definindo o ponto onde os cabos externos do provedor entram na residência. Este ponto deve ser protegido e aterrado, e a distância entre a entrada de serviço e o ponto de distribuição central, bem como a distância do ponto de distribuição até a tomada final, são limitadas para garantir a performance. A norma especifica que o cabo de par trançado não deve exceder 100 metros em um único trecho, e a fibra óptica até 300 metros (multimodo). Para serviços de vídeo, o cabo coaxial é utilizado. A norma também aborda a necessidade de um dispositivo de terminação (como um ONT para fibra) e a importância de um ponto de energia próximo às tomadas de serviço. A norma diferencia entre residências unifamiliares e multifamiliares, e proíbe o uso de extensões e a instalação de cabos expostos em áreas de circulação.
+
+-- Conceitos-chave --
+Termo: Ponto de Entrada de Serviço | Tipo: Componente de Rede | Definicao: Localização física onde os cabos de telecomunicações externos (do provedor) entram na residência, servindo como interface inicial com a infraestrutura interna.
+  Vantagens de Ponto de Entrada de Serviço: Ponto de transição seguro e protegido; Facilita a conexão com a rede interna; Permite a instalação de equipamentos de proteção (surtos, aterramento)
+  Desvantagens de Ponto de Entrada de Serviço: Requer acesso externo e interno; Deve ser localizado de forma a otimizar a distribuição interna
+  Casos de uso de Ponto de Entrada de Serviço: Instalação de internet, telefone e TV; Conexão da rede externa com a rede residencial
+Termo: Dispositivo de Terminação de Rede | Tipo: Equipamento de Rede | Definicao: Equipamento que converte o sinal recebido do provedor (ex: fibra óptica, coaxial) para um formato utilizável pela rede interna (ex: Ethernet). Exemplos incluem ONT e modem.
+  Vantagens de Dispositivo de Terminação de Rede: Permite a conexão de redes residenciais com a infraestrutura do provedor; Converte diferentes tipos de sinal
+  Desvantagens de Dispositivo de Terminação de Rede: Pode ser um ponto de falha; Requer alimentação elétrica
+  Casos de uso de Dispositivo de Terminação de Rede: Conexão de residências à internet via fibra óptica (ONT); Conexão de residências à internet via cabo coaxial (Modem DOCSIS)
+Termo: Proteção contra Surtos | Tipo: Dispositivo de Segurança | Definicao: Dispositivos instalados na entrada de serviço para proteger a infraestrutura de telecomunicações e os equipamentos contra picos de tensão causados por raios ou flutuações na rede elétrica.
+  Vantagens de Proteção contra Surtos: Previne danos a equipamentos caros; Aumenta a confiabilidade da rede; Garante a segurança dos usuários
+  Desvantagens de Proteção contra Surtos: Custo adicional; Requer instalação e manutenção adequadas
+  Casos de uso de Proteção contra Surtos: Entradas de serviço de telecomunicações; Proteção de equipamentos eletrônicos sensíveis; Instalações em áreas com alta incidência de tempestades
+Termo: Aterramento da Rede | Tipo: Prática de Segurança | Definicao: Conexão dos componentes metálicos da infraestrutura de rede (como blindagens de cabos e chassis de equipamentos) a um sistema de aterramento elétrico, essencial para segurança e performance.
+  Vantagens de Aterramento da Rede: Segurança contra choques elétricos; Redução de ruído e interferência eletromagnética; Proteção contra surtos
+  Desvantagens de Aterramento da Rede: Requer instalação correta e conexão com o sistema de aterramento principal
+  Casos de uso de Aterramento da Rede: Instalação de cabeamento estruturado; Montagem de racks de servidores; Instalação de equipamentos de rede
+Termo: Distância Máxima do Terminal | Tipo: Parâmetro de Rede | Definicao: Limite de distância especificado pela norma TIA-570 entre o ponto de distribuição central e a tomada de serviço final, garantindo a performance do sinal.
+  Vantagens de Distância Máxima do Terminal: Garante a qualidade do sinal em toda a extensão do cabo; Evita problemas de performance e perda de dados
+  Desvantagens de Distância Máxima do Terminal: Limita o layout físico da rede em residências grandes; Pode exigir pontos de distribuição intermediários
+  Casos de uso de Distância Máxima do Terminal: Planejamento de cabeamento estruturado; Dimensionamento de infraestrutura de rede residencial
+
+-- Tabelas comparativas --
+Tabela 'Distâncias Máximas de Cabeamento na TIA-570': Esta tabela resume as distâncias máximas permitidas para diferentes tipos de cabos de acordo com a norma TIA-570, crucial para o planejamento da infraestrutura residencial.
+  Linha linha_1: Tipo de Cabo = Par Trançado Não Blindado (UTP); Categoria = Cat 5e, Cat 6, Cat 6a; Distância Máxima (Ponto Central para Tomada) = 100 metros
+    (Relacionado a: cabo_par_trancado_nao_blindado, categoria_5e, categoria_6, categoria_6a, limite_distancia_cabeamento, distancia_maxima_terminal)
+  Linha linha_2: Tipo de Cabo = Fibra Óptica; Categoria = Multimodo (OM3/OM4); Distância Máxima (Ponto Central para Tomada) = Até 300 metros
+    (Relacionado a: fibra_optica, limite_distancia_cabeamento, distancia_maxima_terminal)
+  Linha linha_3: Tipo de Cabo = Cabo Coaxial; Categoria = RG-6 (75 Ohms); Distância Máxima (Ponto Central para Tomada) = Variável (depende da aplicação e qualidade do sinal)
+    (Relacionado a: cabo_coaxial_75_ohms, limite_distancia_cabeamento, distancia_maxima_terminal)
+
+-- Figuras e diagramas --
+Figura 'Diagrama de Ponto de Entrada de Serviço com Proteção' (Diagrama de Rede): O diagrama ilustra a entrada de serviço com um dispositivo de proteção contra surtos (SPD) e um ponto de aterramento. O cabo do provedor é conectado ao SPD, que por sua vez se conecta ao dispositivo de terminação de rede (ONT/Modem), e este é aterrado. A distribuição interna parte deste ponto.
+  Componentes visuais: Entrada de Serviço, Cabo do Provedor, SPD (Surge Protection Device), Aterramento, Dispositivo de Terminação (ONT/Modem), Distribuição Interna
+  Relacionado a: entrada_servico_residencial, protecao_surtos, aterramento_rede, dispositivo_terminacao_rede, ansi_tia_570
+
+-- Relacionamentos --
+Conexao: 'ansi_tia_570' --[define]--> 'ponto_entrada_servico'. Motivo: A norma TIA-570 estabelece os requisitos para o ponto de entrada de serviço em instalações residenciais.
+Conexao: 'ponto_entrada_servico' --[requer]--> 'protecao_surtos'. Motivo: O ponto de entrada de serviço deve incluir proteção contra surtos para resguardar a infraestrutura interna.
+Conexao: 'ponto_entrada_servico' --[requer]--> 'aterramento_rede'. Motivo: O aterramento da rede é essencial no ponto de entrada de serviço para segurança e performance.
+Conexao: 'dispositivo_terminacao_rede' --[conectado_a]--> 'entrada_servico_residencial'. Motivo: O dispositivo de terminação de rede é conectado na entrada de serviço para processar o sinal do provedor.
+Conexao: 'cabeamento_residencial' --[respeita]--> 'distancia_maxima_terminal'. Motivo: O cabeamento residencial deve respeitar as distâncias máximas especificadas para garantir a performance.
+Conexao: 'ansi_tia_570' --[proibe]--> 'instalacao_externa_exposta'. Motivo: A norma TIA-570 geralmente proíbe a instalação de cabos expostos em áreas de circulação para manter a estética e segurança.
+
+=== SECAO [TI_SEC_006]: Requisitos de Energia e Pontos de Conexão ===
+A norma ANSI/TIA-570 aborda a necessidade de pontos de energia próximos às tomadas de serviço para alimentar dispositivos ativos como roteadores, switches e telefones VoIP. A norma especifica requisitos para tomadas elétricas duplas (15A, 120V ou 220V) e a necessidade de aterramento. A distância entre o ponto de distribuição e a tomada de serviço final é limitada, e a norma proíbe o uso de extensões. A norma também considera a localização de tomadas de serviço em diferentes cômodos, com requisitos mínimos variando conforme o Grau de Serviço (Grau 1 ou Grau 2). A instalação de cabos deve ser embutida sempre que possível, e a norma estabelece limites de distância para o cabeamento, como 100 metros para UTP e 300 metros para fibra óptica.
+
+-- Conceitos-chave --
+Termo: Tomada Elétrica Dupla | Tipo: Componente Elétrico | Definicao: Tomada de energia com dois receptáculos, frequentemente instalada próxima a pontos de serviço de rede para alimentar dispositivos que necessitam de energia.
+  Vantagens de Tomada Elétrica Dupla: Fornece energia para dispositivos de rede próximos às tomadas de dados; Evita o uso de extensões; Melhora a organização e a segurança
+  Desvantagens de Tomada Elétrica Dupla: Aumenta o custo da instalação elétrica; Requer planejamento conjunto entre infraestrutura elétrica e de telecomunicações
+  Casos de uso de Tomada Elétrica Dupla: Alimentação de roteadores e switches; Conexão de telefones VoIP; Alimentação de câmeras de segurança
+Termo: Requisito de Tomada 15A | Tipo: Norma Elétrica | Definicao: Especificação de que as tomadas elétricas instaladas para suportar equipamentos de rede devem ter capacidade mínima de 15 Amperes.
+  Vantagens de Requisito de Tomada 15A: Garante capacidade de corrente suficiente para a maioria dos dispositivos de rede; Padrão comum em instalações residenciais
+  Desvantagens de Requisito de Tomada 15A: Pode ser insuficiente para equipamentos de alta demanda que requerem circuitos dedicados de 20A ou mais
+  Casos de uso de Requisito de Tomada 15A: Instalação de tomadas para equipamentos de rede; Infraestrutura elétrica residencial
+Termo: Requisito de Tensão Residencial | Tipo: Norma Elétrica | Definicao: Especificação das tensões elétricas comuns em instalações residenciais (120V ou 220V) que devem ser suportadas pelas tomadas elétricas.
+  Vantagens de Requisito de Tensão Residencial: Compatibilidade com a rede elétrica local; Garante o funcionamento adequado dos equipamentos
+  Desvantagens de Requisito de Tensão Residencial: Necessidade de verificar a tensão correta para cada região
+  Casos de uso de Requisito de Tensão Residencial: Instalação de tomadas elétricas; Seleção de equipamentos eletrônicos
+Termo: Distância Tomada de Serviço ao Equipamento | Tipo: Parâmetro de Instalação | Definicao: Distância máxima recomendada entre a tomada de serviço de rede e a tomada elétrica para alimentar o dispositivo conectado, visando evitar o uso de extensões e manter a organização.
+  Vantagens de Distância Tomada de Serviço ao Equipamento: Melhora a estética e a segurança; Facilita a instalação de dispositivos ativos
+  Desvantagens de Distância Tomada de Serviço ao Equipamento: Requer planejamento cuidadoso da localização de tomadas elétricas e de rede
+  Casos de uso de Distância Tomada de Serviço ao Equipamento: Instalação de roteadores Wi-Fi; Posicionamento de switches de rede; Conexão de dispositivos de automação residencial
+Termo: Uso de Extensão Proibido | Tipo: Regra de Instalação | Definicao: Restrição imposta pela norma TIA-570 quanto ao uso de extensões elétricas para alimentar equipamentos de rede conectados ao cabeamento estruturado, visando segurança e confiabilidade.
+  Vantagens de Uso de Extensão Proibido: Aumenta a segurança (risco de superaquecimento, mau contato); Melhora a confiabilidade da conexão; Mantém a organização
+  Desvantagens de Uso de Extensão Proibido: Requer planejamento prévio para a localização das tomadas elétricas
+  Casos de uso de Uso de Extensão Proibido: Instalação de cabeamento estruturado residencial; Conexão de dispositivos de rede
+
+-- Tabelas comparativas --
+Tabela 'Requisitos de Tomadas Elétricas Próximas aos Pontos de Serviço': Esta tabela detalha os requisitos mínimos para tomadas elétricas a serem instaladas próximas aos pontos de serviço de rede, conforme a norma TIA-570, para alimentar dispositivos ativos.
+  Linha linha_1: Localização = Próximo a Tomadas de Dados/Voz/Vídeo; Tipo de Tomada = Dupla; Capacidade = 15 Amperes (mínimo); Tensão = 120V ou 220V (conforme região); Distância Máxima da Tomada de Serviço = 1,5 metros
+    (Relacionado a: tomada_eletrica_dupla, requisito_tomada_15a, requisito_tensao_residencial, distancia_tomada_servico_equipamento, uso_extensao_proibido)
+
+-- Figuras e diagramas --
+Figura 'Diagrama de Instalação de Ponto de Serviço com Energia' (Diagrama de Instalação): O diagrama mostra um ponto de serviço com uma tomada RJ45 para dados e, ao lado, uma tomada elétrica dupla. O cabo UTP vem de um ponto central e termina na RJ45. A tomada elétrica dupla está conectada à rede elétrica e serve para alimentar um roteador ou switch conectado à porta RJ45. A distância entre a RJ45 e a tomada elétrica é mínima (dentro de 1,5m).
+  Componentes visuais: Tomada RJ45, Tomada Elétrica Dupla, Cabo UTP, Roteador/Switch, Ponto Central, Parede
+  Relacionado a: ponto_servico_residencial, tomada_servico, tomada_eletrica_dupla, ponto_energia_proximo, distancia_tomada_servico_equipamento, uso_extensao_proibido
+
+-- Relacionamentos --
+Conexao: 'ponto_servico_residencial' --[requer_energia_de]--> 'tomada_eletrica_dupla'. Motivo: Pontos de serviço de rede frequentemente requerem uma tomada elétrica dupla próxima para alimentar dispositivos ativos.
+Conexao: 'tomada_eletrica_dupla' --[deve_ter_capacidade]--> 'requisito_tomada_15a'. Motivo: As tomadas elétricas para equipamentos de rede devem ter capacidade mínima de 15A.
+Conexao: 'tomada_eletrica_dupla' --[deve_operar_em]--> 'requisito_tensao_residencial'. Motivo: As tomadas elétricas devem operar nas tensões residenciais padrão (120V/220V).
+Conexao: 'ponto_servico_residencial' --[limitado_por]--> 'distancia_tomada_servico_equipamento'. Motivo: A distância entre a tomada de serviço e o ponto de energia é limitada para evitar o uso de extensões.
+Conexao: 'ansi_tia_570' --[proibe]--> 'uso_extensao_proibido'. Motivo: A norma TIA-570 proíbe o uso de extensões elétricas para alimentar equipamentos conectados ao cabeamento estruturado.
+
+=== SECAO [TI_SEC_007]: Requisitos de Cabeamento para Serviços Específicos (CFTV, Internet, etc.) ===
+A norma ANSI/TIA-570 detalha os requisitos de cabeamento para serviços específicos em residências. Para CFTV, o cabo coaxial (RG-6, 75 Ohms) é especificado. Para internet banda larga, cabos UTP de categoria 5e ou superior são recomendados, com fibra óptica sendo a opção para altíssima velocidade. A norma também considera o cabeamento para automação residencial e sistemas de entretenimento. A topologia em estrela é mantida, com um ponto central de distribuição. A norma diferencia entre residências unifamiliares e multifamiliares, e estabelece requisitos para o ponto de entrada de serviço e a distribuição interna. A norma também aborda a necessidade de pontos de energia próximos às tomadas de serviço e proíbe o uso de extensões. A norma diferencia entre Grau 1 e Grau 2 de serviço, com o Grau 2 exigindo infraestrutura mais robusta para suportar serviços de alta demanda.
+
+-- Conceitos-chave --
+Termo: CFTV Residencial | Tipo: Serviço de Rede | Definicao: Sistema de Circuito Fechado de Televisão adaptado para uso em residências, com câmeras de segurança e sistema de gravação/monitoramento.
+  Vantagens de CFTV Residencial: Aumento da segurança; Monitoramento remoto; Registro de eventos
+  Desvantagens de CFTV Residencial: Custo de instalação e manutenção; Requer cabeamento dedicado ou compartilhado
+  Casos de uso de CFTV Residencial: Monitoramento de acesso; Vigilância interna e externa; Segurança familiar
+Termo: Internet via Fibra Óptica | Tipo: Serviço de Rede | Definicao: Serviço de acesso à internet que utiliza cabos de fibra óptica para transmitir dados, oferecendo velocidades extremamente altas e baixa latência.
+  Vantagens de Internet via Fibra Óptica: Velocidades simétricas (download/upload) muito altas; Baixíssima latência; Imunidade a interferências eletromagnéticas; Escalabilidade para futuras demandas
+  Desvantagens de Internet via Fibra Óptica: Custo de instalação pode ser mais alto; Disponibilidade ainda limitada em algumas áreas
+  Casos de uso de Internet via Fibra Óptica: Residências com múltiplos usuários e dispositivos; Trabalho remoto intensivo; Jogos online competitivos; Streaming de alta resolução (4K/8K)
+Termo: Automação Residencial Avançada | Tipo: Serviço de Rede | Definicao: Sistemas integrados de controle de iluminação, climatização, segurança, entretenimento e outros dispositivos residenciais, que requerem uma infraestrutura de rede robusta.
+  Vantagens de Automação Residencial Avançada: Conforto, conveniência e eficiência; Segurança aprimorada; Controle centralizado e remoto; Integração de múltiplos sistemas
+  Desvantagens de Automação Residencial Avançada: Custo elevado de instalação e equipamentos; Complexidade de configuração e manutenção; Dependência de rede confiável e de alta performance
+  Casos de uso de Automação Residencial Avançada: Casas inteligentes com controle por voz ou aplicativo; Sistemas de gerenciamento de energia; Segurança integrada com câmeras, sensores e alarmes
+Termo: CFTV via Cabo Coaxial | Tipo: Aplicação de Rede | Definicao: Sistema de CFTV que utiliza cabos coaxiais para transmitir os sinais de vídeo das câmeras para o gravador ou monitor.
+  Vantagens de CFTV via Cabo Coaxial: Utiliza infraestrutura de cabo coaxial já existente em muitas residências; Custo relativamente baixo para sistemas analógicos; Boa qualidade de imagem para resoluções padrão
+  Desvantagens de CFTV via Cabo Coaxial: Limitações de resolução e funcionalidades comparado a sistemas IP; Pode exigir cabos dedicados ou compartilhamento com outros serviços de vídeo
+  Casos de uso de CFTV via Cabo Coaxial: Sistemas de segurança residencial com câmeras analógicas; Monitoramento de áreas específicas
+Termo: Internet via Cabo Coaxial (DOCSIS) | Tipo: Serviço de Rede | Definicao: Serviço de internet banda larga fornecido através da rede de cabos coaxiais existente, utilizando o padrão DOCSIS (Data Over Cable Service Interface Specification).
+  Vantagens de Internet via Cabo Coaxial (DOCSIS): Utiliza infraestrutura existente; Velocidades de download geralmente altas; Disponibilidade ampla em áreas urbanas
+  Desvantagens de Internet via Cabo Coaxial (DOCSIS): Velocidades de upload geralmente inferiores às de download; Performance pode ser afetada pelo número de usuários na mesma rede (compartilhamento de banda); Menos escalável que fibra óptica
+  Casos de uso de Internet via Cabo Coaxial (DOCSIS): Acesso à internet banda larga em residências; Streaming de vídeo e jogos online
+
+-- Tabelas comparativas --
+Tabela 'Requisitos de Cabeamento para Serviços Específicos (TIA-570)': Esta tabela detalha os tipos de cabos e categorias recomendadas pela TIA-570 para serviços específicos em instalações residenciais, como CFTV, Internet e Automação.
+  Linha linha_1: Serviço = Dados (Internet, Rede Local); Tipo de Cabo Recomendado = UTP; Categoria Mínima = Cat 5e (Grau 1), Cat 6 (Grau 2); Observações = Fibra óptica recomendada para altíssima velocidade e longa distância.
+    (Relacionado a: servico_dados, cabo_utp, categoria_5e, categoria_6, grau_1_residencial, grau_2_residencial, fibra_optica, internet_banda_larga)
+  Linha linha_2: Serviço = Voz (Telefonia, VoIP); Tipo de Cabo Recomendado = UTP; Categoria Mínima = Cat 5e; Observações = Pode ser suportado por cabos de menor categoria em alguns casos, mas Cat 5e é o mínimo recomendado.
+    (Relacionado a: servico_voz, cabo_utp, categoria_5e)
+  Linha linha_3: Serviço = Vídeo (TV, Satélite, CFTV); Tipo de Cabo Recomendado = Cabo Coaxial (RG-6); Categoria Mínima = N/A (padrão coaxial); Observações = Fibra óptica pode ser usada para distribuição de vídeo de altíssima qualidade ou longa distância.
+    (Relacionado a: servico_video, cabo_coaxial_75_ohms, cftv_residencial, fibra_optica)
+  Linha linha_4: Serviço = Automação Residencial; Tipo de Cabo Recomendado = UTP (Cat 5e/6), Fibra Óptica; Categoria Mínima = Cat 5e (para sistemas básicos), Cat 6 ou superior (para sistemas avançados); Observações = Requer infraestrutura robusta para sistemas complexos.
+    (Relacionado a: servico_automacao, cabo_utp, categoria_5e, categoria_6, fibra_optica, automacao_residencial_avancada)
+
+-- Relacionamentos --
+Conexao: 'cftv_residencial' --[utiliza_cabeamento]--> 'cabo_coaxial_75_ohms'. Motivo: O CFTV residencial é comumente implementado utilizando cabos coaxiais.
+Conexao: 'internet_banda_larga' --[pode_ser_via]--> 'cabo_coaxial_75_ohms'. Motivo: A internet banda larga pode ser fornecida via cabo coaxial utilizando o padrão DOCSIS.
+Conexao: 'internet_fibra_optica' --[oferece]--> 'servico_dados'. Motivo: A internet via fibra óptica oferece serviços de dados de altíssima velocidade.
+Conexao: 'automacao_residencial_avancada' --[requer_infraestrutura]--> 'cabeamento_residencial'. Motivo: A automação residencial avançada requer uma infraestrutura de cabeamento robusta e de alta performance.
+Conexao: 'ansi_tia_570' --[diferencia_servicos]--> 'cftv_via_coaxial'. Motivo: A norma TIA-570 especifica o uso de cabo coaxial para sistemas de CFTV.
+Conexao: 'ansi_tia_570' --[diferencia_servicos]--> 'internet_via_coaxial'. Motivo: A norma TIA-570 considera a internet via cabo coaxial como uma opção de banda larga.
+
+=== SECAO [TI_SEC_008]: Considerações sobre Instalação e Manutenção ===
+A norma ANSI/TIA-570 enfatiza a importância de uma instalação correta e de manutenção preventiva para garantir a longevidade e a performance do cabeamento estruturado residencial. A norma proíbe o uso de extensões elétricas e a instalação de cabos expostos em áreas de circulação, priorizando a instalação embutida. A norma também estabelece limites de distância para os cabos e considera a necessidade de pontos de energia próximos às tomadas de serviço. A norma diferencia entre residências unifamiliares e multifamiliares, e especifica requisitos para o ponto de entrada de serviço e a distribuição interna. A norma também aborda a necessidade de um ponto de distribuição central e a topologia em estrela. A norma diferencia entre Grau 1 e Grau 2 de serviço, com o Grau 2 exigindo infraestrutura mais robusta para suportar serviços de alta demanda.
+
+-- Conceitos-chave --
+Termo: Manutenção Preventiva de Rede | Tipo: Processo de TI | Definicao: Conjunto de ações realizadas periodicamente para inspecionar, limpar e testar os componentes da rede, a fim de prevenir falhas e garantir o bom funcionamento.
+  Vantagens de Manutenção Preventiva de Rede: Reduz a probabilidade de falhas e interrupções; Aumenta a vida útil dos equipamentos; Otimiza a performance da rede; Reduz custos de manutenção corretiva
+  Desvantagens de Manutenção Preventiva de Rede: Custo de tempo e recursos para execução; Pode exigir interrupção temporária dos serviços
+  Casos de uso de Manutenção Preventiva de Rede: Gerenciamento de infraestrutura de rede; Manutenção de data centers; Garantia de confiabilidade em redes críticas
+Termo: Teste de Cabeamento Estruturado | Tipo: Processo de TI | Definicao: Processo de verificação da integridade e performance dos cabos e conectores de uma rede estruturada, utilizando equipamentos específicos para identificar falhas e garantir conformidade com os padrões.
+  Vantagens de Teste de Cabeamento Estruturado: Valida a qualidade da instalação; Identifica problemas de cabeamento (curto, aberto, diafonia); Garante a performance da rede; Facilita a solução de problemas
+  Desvantagens de Teste de Cabeamento Estruturado: Requer equipamentos de teste especializados; Pode ser demorado dependendo do tamanho da rede
+  Casos de uso de Teste de Cabeamento Estruturado: Certificação de novas instalações; Diagnóstico de problemas de rede; Verificação após manutenções ou modificações
+Termo: Documentação da Rede Residencial | Tipo: Processo de TI | Definicao: Registro detalhado da infraestrutura de cabeamento, pontos de rede, equipamentos e configurações de uma rede residencial, essencial para gerenciamento e manutenção.
+  Vantagens de Documentação da Rede Residencial: Facilita a solução de problemas; Auxilia em futuras expansões ou modificações; Permite o acompanhamento do histórico da rede; Agiliza a manutenção
+  Desvantagens de Documentação da Rede Residencial: Requer disciplina para ser mantida atualizada; Pode ser negligenciada em instalações residenciais
+  Casos de uso de Documentação da Rede Residencial: Instalação de cabeamento estruturado; Gerenciamento de redes domésticas; Planejamento de expansões
+Termo: Padrão de Instalação Embutida | Tipo: Regra de Instalação | Definicao: Recomendação da norma TIA-570 para que o cabeamento estruturado seja instalado dentro de paredes, tetos ou pisos, garantindo estética e proteção.
+  Vantagens de Padrão de Instalação Embutida: Melhora a estética e a segurança; Protege os cabos contra danos; Organização
+  Desvantagens de Padrão de Instalação Embutida: Maior custo e tempo de instalação; Dificuldade de acesso para manutenção
+  Casos de uso de Padrão de Instalação Embutida: Instalações residenciais e comerciais novas ou em reforma; Ambientes onde a estética é importante
+Termo: Proibição de Cabos Expostos | Tipo: Regra de Instalação | Definicao: Restrição da norma TIA-570 quanto à instalação de cabos de rede de forma exposta em áreas de circulação, visando segurança e estética.
+  Vantagens de Proibição de Cabos Expostos: Aumenta a segurança (evita tropeços e danos); Melhora a estética; Previne interferências em cabos de dados
+  Desvantagens de Proibição de Cabos Expostos: Requer planejamento para embutir os cabos
+  Casos de uso de Proibição de Cabos Expostos: Instalações residenciais; Ambientes com circulação de pessoas
+
+-- Tabelas comparativas --
+Tabela 'Recomendações de Instalação e Manutenção (TIA-570)': Esta tabela resume as principais recomendações da norma TIA-570 relacionadas à instalação e manutenção do cabeamento estruturado residencial, focando em boas práticas.
+  Linha linha_1: Método de Instalação = Preferencialmente embutida; Recomendação/Restrição = Instalação embutida; Justificativa = Estética, proteção dos cabos, segurança.
+    (Relacionado a: instalacao_embutida, padrao_instalacao_embutida)
+  Linha linha_2: Exposição de Cabos = Proibida em áreas de circulação; Recomendação/Restrição = Evitar cabos expostos; Justificativa = Segurança (risco de tropeços), estética, proteção contra danos.
+    (Relacionado a: proibicao_cabos_expostos, instalacao_externa_exposta)
+  Linha linha_3: Uso de Extensões = Proibido para alimentar equipamentos de rede; Recomendação/Restrição = Não usar extensões; Justificativa = Segurança, confiabilidade, performance.
+    (Relacionado a: uso_extensao_proibido, ponto_energia_proximo)
+  Linha linha_4: Manutenção = Recomendada; Recomendação/Restrição = Inspeções e testes periódicos; Justificativa = Prevenção de falhas, garantia de performance, longevidade.
+    (Relacionado a: manutencao_preventiva_rede, teste_cabeamento_estruturado)
+  Linha linha_5: Documentação = Essencial; Recomendação/Restrição = Manter documentação atualizada; Justificativa = Facilita manutenção, expansão e solução de problemas.
+    (Relacionado a: documentacao_rede_residencial)
+
+-- Relacionamentos --
+Conexao: 'ansi_tia_570' --[recomenda]--> 'instalacao_embutida'. Motivo: A norma TIA-570 recomenda a instalação embutida para cabeamento residencial.
+Conexao: 'ansi_tia_570' --[proibe]--> 'proibicao_cabos_expostos'. Motivo: A norma TIA-570 proíbe a instalação de cabos expostos em áreas de circulação.
+Conexao: 'ansi_tia_570' --[proibe]--> 'uso_extensao_proibido'. Motivo: A norma TIA-570 proíbe o uso de extensões elétricas para alimentar equipamentos de rede.
+Conexao: 'cabeamento_residencial' --[beneficia_de]--> 'manutencao_preventiva_rede'. Motivo: O cabeamento residencial se beneficia de manutenção preventiva regular.
+Conexao: 'cabeamento_residencial' --[deve_ser_verificado_por]--> 'teste_cabeamento_estruturado'. Motivo: O cabeamento residencial deve ser verificado através de testes para garantir sua performance.
+Conexao: 'cabeamento_residencial' --[requer]--> 'documentacao_rede_residencial'. Motivo: A documentação da rede residencial é essencial para seu gerenciamento e manutenção.
+

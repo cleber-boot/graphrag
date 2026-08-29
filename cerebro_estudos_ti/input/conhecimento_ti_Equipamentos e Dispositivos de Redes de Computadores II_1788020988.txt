@@ -1,0 +1,469 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Equipamentos e Dispositivos de Redes de Computadores II - Mídia Local
+Idioma: pt-BR
+Tecnologias citadas no documento: Repetidor, Hub, Switch, Ethernet, IEEE 802.3
+
+=== SECAO [TI_SEC_001]: Introdução e Revisão ===
+Este bloco é uma continuação do material anterior, focando em dispositivos de rede. A introdução revisita a composição das redes de computadores, que envolvem meios de comunicação e dispositivos/equipamentos que possibilitam a transmissão de dados. São mencionados os 'hosts' (ou nós) e os equipamentos intermediários, como repetidores e pontes. A discussão anterior abordou placas de rede, e este bloco se concentrará em repetidores.
+
+-- Conceitos-chave --
+Termo: Placa de Rede | Tipo: Hardware | Definicao: Dispositivo de hardware que conecta um computador a uma rede, permitindo a comunicação.
+  Vantagens de Placa de Rede: Permite a conexão física à rede.
+  Desvantagens de Placa de Rede: Limitada à sua porta física.
+  Casos de uso de Placa de Rede: Conexão de dispositivos a redes locais (LANs).
+Termo: Dispositivo de Rede | Tipo: Hardware | Definicao: Equipamento que possibilita a comunicação e o tráfego de dados em uma rede de computadores.
+  Vantagens de Dispositivo de Rede: Facilitam a interconexão e o fluxo de informações.
+  Desvantagens de Dispositivo de Rede: Podem introduzir latência ou pontos de falha.
+  Casos de uso de Dispositivo de Rede: Construção e expansão de redes de computadores.
+
+=== SECAO [TI_SEC_002]: Repetidores (Repeaters) ===
+Repetidores são dispositivos de hardware utilizados para estender o alcance de um segmento de rede. Eles recebem um sinal, o regeneram (amplificando e limpando ruídos) e o retransmitem. Isso é crucial porque os meios de transmissão (cabos, por exemplo) possuem limites de distância para a propagação do sinal. Repetidores são úteis para conectar segmentos de rede que usam meios físicos diferentes ou para superar a atenuação do sinal em longas distâncias. No entanto, eles operam na camada física (Camada 1 do modelo OSI) e não possuem inteligência para analisar pacotes ou endereços, retransmitindo tudo que recebem, incluindo ruídos e colisões. Isso pode levar à propagação de colisões e a um domínio de colisão maior. A regra 5-4-3 do Ethernet (que limitava o número de repetidores em uma rede) é mencionada como uma restrição histórica, hoje superada por tecnologias como switches.
+
+-- Conceitos-chave --
+Termo: Repetidor (Repeater) | Tipo: Hardware | Definicao: Dispositivo de rede que recebe um sinal, o regenera (amplifica e limpa) e o retransmite para estender o alcance de um segmento de rede. Opera na Camada 1 (Física) do modelo OSI.
+  Vantagens de Repetidor (Repeater): Estende o alcance físico de um segmento de rede.; Permite a interconexão de segmentos com diferentes meios físicos.; Regenera o sinal, combatendo a atenuação.
+  Desvantagens de Repetidor (Repeater): Não analisa pacotes, retransmite tudo (incluindo ruídos e colisões).; Aumenta o domínio de colisão.; Pode propagar problemas de rede (colisões, ruídos).; Limitado pela regra 5-4-3 do Ethernet (historicamente).
+  Casos de uso de Repetidor (Repeater): Estender o alcance de cabos Ethernet em redes locais.; Conectar dois segmentos de rede usando o mesmo protocolo, mas com limites de distância.; Em redes mais antigas, para superar a atenuação do sinal.
+Termo: Domínio de Colisão | Tipo: Conceito de Rede | Definicao: Uma área em uma rede onde pacotes de dados transmitidos simultaneamente podem colidir e interferir uns com os outros, exigindo retransmissão. Repetidores e hubs aumentam o domínio de colisão.
+  Vantagens de Domínio de Colisão: N/A (é uma característica inerente a certas tecnologias de rede).
+  Desvantagens de Domínio de Colisão: Reduz a eficiência da rede.; Aumenta a latência.; Pode levar a congestionamento.
+  Casos de uso de Domínio de Colisão: Identificar áreas problemáticas em redes legadas (ex: Ethernet com hubs).
+Termo: Ruído (Sinal) | Tipo: Fenômeno de Rede | Definicao: Interferência indesejada em um sinal de comunicação que degrada sua qualidade e pode levar a erros de transmissão. Repetidores podem amplificar ruído se não forem bem projetados.
+  Vantagens de Ruído (Sinal): N/A
+  Desvantagens de Ruído (Sinal): Corrompe dados.; Exige retransmissão de pacotes.; Reduz a taxa de transferência efetiva.
+  Casos de uso de Ruído (Sinal): Entender a degradação de sinais em meios de transmissão.
+Termo: Regra 5-4-3 do Ethernet | Tipo: Regra/Padrão Histórico | Definicao: Uma regra histórica para redes Ethernet que limitava o número de repetidores e segmentos de cabo para garantir a integridade do sinal e evitar problemas de colisão em redes mais extensas.
+  Vantagens de Regra 5-4-3 do Ethernet: Ajudou a padronizar e garantir o funcionamento de redes Ethernet em distâncias maiores na época.
+  Desvantagens de Regra 5-4-3 do Ethernet: Restritiva e complexa de gerenciar.; Obsoleta com o advento de switches e outras tecnologias.
+  Casos de uso de Regra 5-4-3 do Ethernet: Compreender a evolução das redes Ethernet e as limitações de tecnologias mais antigas.
+Termo: Switch | Tipo: Hardware | Definicao: Dispositivo de rede mais inteligente que um repetidor ou hub, que opera na Camada 2 (Enlace) do modelo OSI. Ele aprende os endereços MAC dos dispositivos conectados e encaminha pacotes apenas para a porta de destino correta, reduzindo colisões e segmentando domínios de colisão.
+  Vantagens de Switch: Reduz colisões e melhora a eficiência da rede.; Segmenta domínios de colisão.; Encaminha tráfego de forma inteligente.; Suporta comunicação full-duplex.
+  Desvantagens de Switch: Mais caro que hubs ou repetidores.; Pode ser um ponto de falha único se não houver redundância.
+  Casos de uso de Switch: Redes locais (LANs) modernas.; Conectar múltiplos dispositivos em um mesmo segmento de rede.; Criar redes mais eficientes e com menor latência.
+
+-- Tabelas comparativas --
+Tabela 'Distâncias de Transmissão Típicas para Cabos Ethernet': Esta tabela compara as distâncias máximas de lançamento para diferentes tipos de cabos Ethernet, ilustrando a necessidade de repetidores ou outros dispositivos para estender o alcance.
+  Linha LINHA_10BASE2: Tipo de Cabo = 10BASE2 (Coaxial Fino); Velocidade = 10 Mbps; Distância Máxima = 185 metros
+    (Relacionado a: repetidor)
+  Linha LINHA_10BASE5: Tipo de Cabo = 10BASE5 (Coaxial Grosso); Velocidade = 10 Mbps; Distância Máxima = 500 metros
+    (Relacionado a: repetidor)
+
+-- Figuras e diagramas --
+Figura 'Diagrama de Rede com Repetidor' (Diagrama de Rede): O diagrama mostra duas redes locais (LANs) conectadas por um repetidor. A primeira LAN tem dispositivos A, B, C. A segunda LAN tem dispositivos D, E, F. O repetidor está posicionado entre os dois segmentos, recebendo sinais de um lado e retransmitindo para o outro, permitindo que dispositivos de segmentos diferentes se comuniquem.
+  Componentes visuais: Dispositivo A, Dispositivo B, Dispositivo C, Repetidor, Dispositivo D, Dispositivo E, Dispositivo F, Segmento de Rede 1, Segmento de Rede 2
+  Relacionado a: repetidor
+Figura 'Funcionamento de um Repetidor' (Diagrama de Bloco): O diagrama ilustra o processo de um repetidor. Um sinal de entrada (possivelmente atenuado ou com ruído) entra no repetidor. Internamente, o sinal é recebido, regenerado (amplificado e limpo) e, em seguida, retransmitido como um sinal de saída mais forte e limpo para o próximo segmento da rede.
+  Componentes visuais: Sinal de Entrada (Atenuado/Ruído), Repetidor (Bloco), Recepção, Regeneração, Transmissão, Sinal de Saída (Regenerado)
+  Relacionado a: repetidor, ruido_sinal
+
+-- Relacionamentos --
+Conexao: 'repetidor' --[estende_alcance_de]--> 'segmento_de_rede'. Motivo: Repetidores são usados para aumentar a distância física que um sinal pode percorrer em um segmento de rede.
+Conexao: 'repetidor' --[opera_em_camada]--> 'camada_fisica_osi'. Motivo: Repetidores operam na Camada 1 do modelo OSI, lidando apenas com sinais elétricos ou ópticos, sem interpretar dados.
+Conexao: 'repetidor' --[aumenta]--> 'dominio_de_colisao'. Motivo: Ao retransmitir sinais sem inteligência de rede, repetidores podem propagar colisões, aumentando o domínio de colisão.
+Conexao: 'repetidor' --[pode_amplificar]--> 'ruido_sinal'. Motivo: Se o sinal de entrada contiver ruído, o repetidor pode amplificá-lo junto com o sinal útil, degradando a comunicação.
+Conexao: 'switch' --[substitui_funcionalidade_de]--> 'repetidor'. Motivo: Switches são mais avançados que repetidores, operando na Camada 2 e segmentando domínios de colisão, tornando o uso de repetidores menos comum em redes modernas.
+Conexao: 'switch' --[opera_em_camada]--> 'camada_enlace_osi'. Motivo: Switches operam na Camada 2 do modelo OSI, utilizando endereços MAC para encaminhamento inteligente.
+
+=== SECAO [TI_SEC_003]: Hubs (Concentradores) ===
+Hubs, também conhecidos como concentradores, são dispositivos de rede que operam na Camada 1 (Física) do modelo OSI. Eles funcionam essencialmente como repetidores multi-porta. Quando um pacote de dados chega a uma porta do hub, ele é retransmitido para todas as outras portas, independentemente do destino. Isso cria um único domínio de colisão e um único domínio de broadcast para todos os dispositivos conectados ao hub. Essa característica os torna ineficientes, pois todos os dispositivos compartilham a mesma largura de banda e estão sujeitos a colisões. Atualmente, hubs são considerados obsoletos e foram amplamente substituídos por switches.
+
+-- Conceitos-chave --
+Termo: Hub (Concentrador) | Tipo: Hardware | Definicao: Dispositivo de rede que opera na Camada 1 (Física) do modelo OSI, funcionando como um repetidor multi-porta. Ele retransmite todos os pacotes recebidos para todas as outras portas, criando um único domínio de colisão e broadcast.
+  Vantagens de Hub (Concentrador): Simples e barato (historicamente).; Permite conectar múltiplos dispositivos em um ponto central.
+  Desvantagens de Hub (Concentrador): Cria um único domínio de colisão.; Todos os dispositivos compartilham a mesma largura de banda.; Ineficiente em redes com tráfego intenso.; Retransmite ruídos e colisões.; Obsoleto.
+  Casos de uso de Hub (Concentrador): Redes muito pequenas e simples (uso histórico).; Ferramenta de aprendizado para entender redes legadas.
+Termo: Domínio de Broadcast | Tipo: Conceito de Rede | Definicao: Uma área em uma rede onde um pacote de broadcast (enviado para todos os dispositivos) é recebido por todos os nós. Hubs criam um único domínio de broadcast para todos os dispositivos conectados a eles.
+  Vantagens de Domínio de Broadcast: N/A (característica inerente a certos protocolos/dispositivos).
+  Desvantagens de Domínio de Broadcast: Pode gerar tráfego desnecessário se muitos broadcasts ocorrerem.; Consome recursos de todos os dispositivos na rede.
+  Casos de uso de Domínio de Broadcast: Entender como pacotes de broadcast se propagam em diferentes topologias de rede.
+Termo: Switch | Tipo: Hardware | Definicao: Dispositivo de rede mais inteligente que um hub, que opera na Camada 2 (Enlace) do modelo OSI. Ele aprende os endereços MAC dos dispositivos conectados e encaminha pacotes apenas para a porta de destino correta, reduzindo colisões e segmentando domínios de colisão.
+  Vantagens de Switch: Reduz colisões e melhora a eficiência da rede.; Segmenta domínios de colisão.; Encaminha tráfego de forma inteligente.; Suporta comunicação full-duplex.
+  Desvantagens de Switch: Mais caro que hubs ou repetidores.; Pode ser um ponto de falha único se não houver redundância.
+  Casos de uso de Switch: Redes locais (LANs) modernas.; Conectar múltiplos dispositivos em um mesmo segmento de rede.; Criar redes mais eficientes e com menor latência.
+
+-- Tabelas comparativas --
+Tabela 'Comparativo: Hub vs. Switch': Esta tabela compara as características fundamentais de hubs e switches, destacando suas diferenças em termos de operação, inteligência e impacto na rede.
+  Linha LINHA_CAMADA_OSI: Característica = Camada OSI; Hub = Camada 1 (Física); Switch = Camada 2 (Enlace)
+    (Relacionado a: hub, switch)
+  Linha LINHA_INTELIGENCIA: Característica = Inteligência; Hub = Nenhuma (Repetidor de sinal); Switch = Aprende endereços MAC e encaminha inteligentemente
+    (Relacionado a: hub, switch)
+  Linha LINHA_DOMINIO_COLISAO: Característica = Domínio de Colisão; Hub = Único (todos os dispositivos); Switch = Por porta (segmentado)
+    (Relacionado a: hub, switch, dominio_de_colisao)
+  Linha LINHA_DOMINIO_BROADCAST: Característica = Domínio de Broadcast; Hub = Único (todos os dispositivos); Switch = Único (todos os dispositivos, mas pode ser segmentado com VLANs)
+    (Relacionado a: hub, switch, dominio_de_broadcast)
+  Linha LINHA_LARGURA_BANDA: Característica = Largura de Banda; Hub = Compartilhada entre todas as portas; Switch = Dedicada por porta (em full-duplex)
+    (Relacionado a: hub, switch)
+
+-- Figuras e diagramas --
+Figura 'Diagrama de Rede com Hub' (Diagrama de Rede): O diagrama mostra um hub central conectado a vários dispositivos (computadores). Uma seta indica que um pacote enviado de um dispositivo para outro é recebido pelo hub e retransmitido para todas as outras portas, incluindo a porta do remetente e a porta do destinatário. Isso ilustra o conceito de broadcast e domínio de colisão único.
+  Componentes visuais: Hub (Central), Dispositivo 1, Dispositivo 2, Dispositivo 3, Dispositivo 4, Seta de transmissão, Seta de retransmissão
+  Relacionado a: hub, dominio_de_colisao, dominio_de_broadcast
+
+-- Relacionamentos --
+Conexao: 'hub' --[opera_em_camada]--> 'camada_fisica_osi'. Motivo: Hubs operam na Camada 1 do modelo OSI, apenas retransmitindo sinais elétricos.
+Conexao: 'hub' --[cria_unico_dominio]--> 'dominio_de_colisao'. Motivo: Hubs criam um único domínio de colisão, onde todos os dispositivos competem pelo meio de transmissão.
+Conexao: 'hub' --[cria_unico_dominio]--> 'dominio_de_broadcast'. Motivo: Hubs criam um único domínio de broadcast, retransmitindo pacotes de broadcast para todos os dispositivos conectados.
+Conexao: 'switch' --[substitui]--> 'hub'. Motivo: Switches substituíram hubs na maioria das redes modernas devido à sua maior eficiência e inteligência.
+Conexao: 'hub' --[compartilha_largura_de_banda]--> 'dispositivo_rede'. Motivo: Todos os dispositivos conectados a um hub compartilham a mesma largura de banda total, o que pode causar gargalos.
+
+=== SECAO [TI_SEC_004]: Regra 5-4-3 e Limitações de Domínio de Colisão ===
+A regra 5-4-3 do Ethernet era uma diretriz para redes baseadas em repetidores, limitando o número de segmentos de cabo e repetidores para garantir que o tempo de propagação do sinal não excedesse os limites do protocolo, evitando colisões. Especificamente, em uma rede Ethernet com 5 segmentos de cabo, não poderiam haver mais de 4 repetidores, e não mais de 3 segmentos poderiam ser preenchidos com cabos ativos entre quaisquer dois nós. Essa regra era crucial para gerenciar o domínio de colisão em redes mais antigas. Com o advento dos switches, que criam domínios de colisão por porta e operam em full-duplex, essa regra se tornou obsoleta, pois os switches gerenciam colisões de forma muito mais eficiente.
+
+-- Conceitos-chave --
+Termo: Regra 5-4-3 do Ethernet | Tipo: Regra/Padrão Histórico | Definicao: Uma regra histórica para redes Ethernet que limitava o número de segmentos de cabo e repetidores para garantir a integridade do sinal e evitar problemas de colisão em redes mais extensas.
+  Vantagens de Regra 5-4-3 do Ethernet: Ajudou a padronizar e garantir o funcionamento de redes Ethernet em distâncias maiores na época.
+  Desvantagens de Regra 5-4-3 do Ethernet: Restritiva e complexa de gerenciar.; Obsoleta com o advento de switches e outras tecnologias.
+  Casos de uso de Regra 5-4-3 do Ethernet: Compreender a evolução das redes Ethernet e as limitações de tecnologias mais antigas.
+Termo: Domínio de Colisão | Tipo: Conceito de Rede | Definicao: Uma área em uma rede onde pacotes de dados transmitidos simultaneamente podem colidir e interferir uns com os outros, exigindo retransmissão. Repetidores e hubs aumentam o domínio de colisão.
+  Vantagens de Domínio de Colisão: N/A (é uma característica inerente a certas tecnologias de rede).
+  Desvantagens de Domínio de Colisão: Reduz a eficiência da rede.; Aumenta a latência.; Pode levar a congestionamento.
+  Casos de uso de Domínio de Colisão: Identificar áreas problemáticas em redes legadas (ex: Ethernet com hubs).
+Termo: Switch | Tipo: Hardware | Definicao: Dispositivo de rede mais inteligente que um repetidor ou hub, que opera na Camada 2 (Enlace) do modelo OSI. Ele aprende os endereços MAC dos dispositivos conectados e encaminha pacotes apenas para a porta de destino correta, reduzindo colisões e segmentando domínios de colisão.
+  Vantagens de Switch: Reduz colisões e melhora a eficiência da rede.; Segmenta domínios de colisão.; Encaminha tráfego de forma inteligente.; Suporta comunicação full-duplex.
+  Desvantagens de Switch: Mais caro que hubs ou repetidores.; Pode ser um ponto de falha único se não houver redundância.
+  Casos de uso de Switch: Redes locais (LANs) modernas.; Conectar múltiplos dispositivos em um mesmo segmento de rede.; Criar redes mais eficientes e com menor latência.
+Termo: Ethernet (IEEE 802.3) | Tipo: Padrão de Rede | Definicao: Um padrão de rede de área local (LAN) que define as camadas física e de enlace do modelo OSI. Historicamente, utilizava tecnologias como hubs e repetidores, sujeitas a domínios de colisão.
+  Vantagens de Ethernet (IEEE 802.3): Amplamente adotado e padronizado.; Versátil em termos de velocidade e meio físico.
+  Desvantagens de Ethernet (IEEE 802.3): Versões mais antigas (com hubs/repetidores) sofriam com colisões e limitações de distância.; A complexidade da regra 5-4-3.
+  Casos de uso de Ethernet (IEEE 802.3): Redes locais com fio (wired LANs).
+
+-- Tabelas comparativas --
+Tabela 'Estrutura da Regra 5-4-3 do Ethernet': Esta tabela detalha a regra 5-4-3 do Ethernet, explicando a limitação de segmentos de cabo e repetidores para garantir a integridade do sinal em redes baseadas em repetidores.
+  Linha LINHA_SEGMENTOS_CABO: Componente = Segmentos de Cabo (Ativos); Quantidade Máxima Permitida = 5
+    (Relacionado a: regra_5_4_3_ethernet)
+  Linha LINHA_REPETIDORES: Componente = Repetidores; Quantidade Máxima Permitida = 4
+    (Relacionado a: regra_5_4_3_ethernet, repetidor)
+  Linha LINHA_SEGMENTOS_ATIVOS_ENTRE_NOS: Componente = Segmentos de Cabo Ativos entre quaisquer dois nós; Quantidade Máxima Permitida = 3
+    (Relacionado a: regra_5_4_3_ethernet, dominio_de_colisao)
+
+-- Figuras e diagramas --
+Figura 'Domínio de Colisão em Rede com Hub' (Diagrama de Rede): O diagrama mostra um hub central conectado a vários dispositivos. Uma única área é destacada como 'Domínio de Colisão'. Isso indica que qualquer colisão que ocorra em qualquer ponto dentro dessa área afetará todos os dispositivos conectados ao hub, pois o sinal de colisão é retransmitido para todas as portas.
+  Componentes visuais: Hub, Dispositivos conectados, Domínio de Colisão (Área Única)
+  Relacionado a: hub, dominio_de_colisao, repetidor
+
+-- Relacionamentos --
+Conexao: 'regra_5_4_3_ethernet' --[foi_criada_para_gerenciar]--> 'dominio_de_colisao'. Motivo: A regra 5-4-3 foi estabelecida para limitar o tamanho do domínio de colisão em redes Ethernet legadas que utilizavam repetidores.
+Conexao: 'switch' --[elimina_necessidade_de]--> 'regra_5_4_3_ethernet'. Motivo: Switches, ao segmentar domínios de colisão por porta, tornaram a regra 5-4-3 obsoleta.
+Conexao: 'ethernet_ieee_802.3' --[utilizava_historicamente]--> 'repetidor'. Motivo: Versões antigas do padrão Ethernet utilizavam repetidores, o que exigia regras como a 5-4-3 para gerenciar o alcance e colisões.
+Conexao: 'ethernet_ieee_802.3' --[utilizava_historicamente]--> 'hub'. Motivo: Versões antigas do padrão Ethernet utilizavam hubs, que também criavam grandes domínios de colisão.
+
+=== SECAO [TI_SEC_005]: Modelos de Transmissão: Unicast, Broadcast e Multicast ===
+O material discute os diferentes modos de transmissão de dados em redes: Unicast, Broadcast e Multicast. Unicast é a comunicação ponto a ponto, de um remetente para um destinatário específico. Broadcast é a comunicação para todos os dispositivos em um segmento de rede ou domínio de broadcast. Multicast é a comunicação para um grupo específico de dispositivos. Repetidores e hubs, por sua natureza, operam principalmente em broadcast, retransmitindo tudo para todos. Switches, por outro lado, podem direcionar o tráfego de forma mais inteligente, permitindo comunicação unicast eficiente e, com configurações adequadas (como IGMP snooping), otimizando o tráfego multicast.
+
+-- Conceitos-chave --
+Termo: Unicast | Tipo: Modo de Transmissão | Definicao: Modo de transmissão de dados onde um pacote é enviado de um único remetente para um único destinatário específico.
+  Vantagens de Unicast: Eficiente para comunicação ponto a ponto.; Não gera tráfego desnecessário para outros nós.
+  Desvantagens de Unicast: Não é adequado para enviar a mesma informação para múltiplos destinatários simultaneamente.
+  Casos de uso de Unicast: Navegação na web.; Envio de e-mails.; Transferência de arquivos entre dois computadores.
+Termo: Broadcast | Tipo: Modo de Transmissão | Definicao: Modo de transmissão de dados onde um pacote é enviado de um único remetente para todos os dispositivos em um determinado domínio de rede (como uma LAN ou sub-rede).
+  Vantagens de Broadcast: Útil para enviar informações para todos os nós de uma rede (ex: descoberta de serviços, atualizações de roteamento em redes pequenas).
+  Desvantagens de Broadcast: Gera tráfego desnecessário para dispositivos que não precisam da informação.; Pode sobrecarregar a rede.; Repetidores e hubs retransmitem broadcasts para todos os segmentos conectados.
+  Casos de uso de Broadcast: Protocolos de resolução de endereços (ARP).; Alguns protocolos de descoberta de rede.; Atualizações de roteamento em redes pequenas (RIPv1).
+Termo: Multicast | Tipo: Modo de Transmissão | Definicao: Modo de transmissão de dados onde um pacote é enviado de um único remetente para um grupo específico de destinatários que se inscreveram para receber esse tipo de tráfego.
+  Vantagens de Multicast: Mais eficiente que broadcast para enviar dados para múltiplos destinatários.; Reduz o tráfego de rede em comparação com o envio unicast para cada membro do grupo.
+  Desvantagens de Multicast: Requer infraestrutura de rede (roteadores e switches com suporte a IGMP) para gerenciar os grupos multicast.; Pode ser complexo de configurar e gerenciar.
+  Casos de uso de Multicast: Streaming de vídeo e áudio para múltiplos usuários.; Distribuição de atualizações de software para grupos de servidores.; Jogos online multiplayer.
+Termo: Hub (Concentrador) | Tipo: Hardware | Definicao: Dispositivo de rede que opera na Camada 1 (Física) do modelo OSI, funcionando como um repetidor multi-porta. Ele retransmite todos os pacotes recebidos para todas as outras portas, criando um único domínio de colisão e broadcast.
+  Vantagens de Hub (Concentrador): Simples e barato (historicamente).; Permite conectar múltiplos dispositivos em um ponto central.
+  Desvantagens de Hub (Concentrador): Cria um único domínio de colisão.; Todos os dispositivos compartilham a mesma largura de banda.; Ineficiente em redes com tráfego intenso.; Retransmite ruídos e colisões.; Obsoleto.
+  Casos de uso de Hub (Concentrador): Redes muito pequenas e simples (uso histórico).; Ferramenta de aprendizado para entender redes legadas.
+Termo: Switch | Tipo: Hardware | Definicao: Dispositivo de rede mais inteligente que um repetidor ou hub, que opera na Camada 2 (Enlace) do modelo OSI. Ele aprende os endereços MAC dos dispositivos conectados e encaminha pacotes apenas para a porta de destino correta, reduzindo colisões e segmentando domínios de colisão.
+  Vantagens de Switch: Reduz colisões e melhora a eficiência da rede.; Segmenta domínios de colisão.; Encaminha tráfego de forma inteligente.; Suporta comunicação full-duplex.
+  Desvantagens de Switch: Mais caro que hubs ou repetidores.; Pode ser um ponto de falha único se não houver redundância.
+  Casos de uso de Switch: Redes locais (LANs) modernas.; Conectar múltiplos dispositivos em um mesmo segmento de rede.; Criar redes mais eficientes e com menor latência.
+Termo: IGMP Snooping | Tipo: Funcionalidade de Rede | Definicao: Um recurso de switches que permite que eles 'escutem' o tráfego do protocolo IGMP (Internet Group Management Protocol) para otimizar a entrega de tráfego multicast. O switch aprende quais portas estão conectadas a dispositivos que solicitaram um determinado grupo multicast e encaminha o tráfego apenas para essas portas, em vez de enviá-lo para todas as portas.
+  Vantagens de IGMP Snooping: Melhora a eficiência da rede ao reduzir o tráfego multicast desnecessário.; Diminui a carga de processamento nos dispositivos finais.
+  Desvantagens de IGMP Snooping: Requer suporte do switch e dos roteadores na rede.; Pode adicionar complexidade à configuração da rede.
+  Casos de uso de IGMP Snooping: Redes com grande quantidade de tráfego multicast (streaming de vídeo, IPTV).; Otimização de redes corporativas com múltiplos grupos multicast.
+
+-- Figuras e diagramas --
+Figura 'Ilustração dos Modos de Transmissão' (Diagrama de Rede): O diagrama compara os três modos de transmissão. No Unicast, uma seta vai de um remetente para um único destinatário. No Broadcast, uma seta sai do remetente e se ramifica para todos os outros dispositivos na rede. No Multicast, uma seta sai do remetente e se ramifica para um subconjunto específico de dispositivos que pertencem a um grupo.
+  Componentes visuais: Remetente, Destinatário Único (Unicast), Todos os Dispositivos (Broadcast), Grupo Específico (Multicast), Setas de transmissão
+  Relacionado a: unicast, broadcast, multicast
+
+-- Relacionamentos --
+Conexao: 'hub' --[opera_em]--> 'broadcast'. Motivo: Hubs retransmitem todo o tráfego, incluindo broadcasts, para todas as portas conectadas.
+Conexao: 'switch' --[pode_otimizar_entrega_de]--> 'multicast'. Motivo: Switches com IGMP snooping podem direcionar tráfego multicast apenas para os dispositivos que o solicitaram, em vez de broadcast.
+Conexao: 'switch' --[facilita_comunicacao]--> 'unicast'. Motivo: Switches encaminham tráfego unicast diretamente para a porta do destinatário, aumentando a eficiência.
+Conexao: 'broadcast' --[geralmente_enviado_para]--> 'todos_dispositivos_em_dominio'. Motivo: Pacotes broadcast são destinados a todos os dispositivos dentro de um domínio de rede.
+Conexao: 'multicast' --[enviado_para]--> 'grupo_especifico_dispositivos'. Motivo: Tráfego multicast é direcionado a um grupo de dispositivos inscritos.
+
+=== SECAO [TI_SEC_006]: Domínio de Colisão vs. Domínio de Broadcast ===
+O texto diferencia claramente os conceitos de domínio de colisão e domínio de broadcast. Um domínio de colisão é uma área onde pacotes podem colidir, exigindo retransmissão. Repetidores e hubs criam um único e grande domínio de colisão. Switches, ao segmentarem o tráfego por porta, criam domínios de colisão menores (idealmente, um por porta em full-duplex). Um domínio de broadcast é a área onde um pacote de broadcast é recebido. Hubs e switches (sem VLANs) criam um único domínio de broadcast. Roteadores são os dispositivos que segmentam domínios de broadcast. A discussão enfatiza que o uso de hubs e repetidores em redes Ethernet antigas resultava em grandes domínios de colisão, o que era problemático e levava à necessidade de regras como a 5-4-3. Switches modernos resolvem a questão das colisões de forma muito mais eficaz.
+
+-- Conceitos-chave --
+Termo: Domínio de Colisão | Tipo: Conceito de Rede | Definicao: Uma área em uma rede onde pacotes de dados transmitidos simultaneamente podem colidir e interferir uns com os outros, exigindo retransmissão. Repetidores e hubs aumentam o domínio de colisão.
+  Vantagens de Domínio de Colisão: N/A (é uma característica inerente a certas tecnologias de rede).
+  Desvantagens de Domínio de Colisão: Reduz a eficiência da rede.; Aumenta a latência.; Pode levar a congestionamento.
+  Casos de uso de Domínio de Colisão: Identificar áreas problemáticas em redes legadas (ex: Ethernet com hubs).
+Termo: Domínio de Broadcast | Tipo: Conceito de Rede | Definicao: Uma área em uma rede onde um pacote de broadcast (enviado para todos os dispositivos) é recebido por todos os nós. Hubs criam um único domínio de broadcast para todos os dispositivos conectados a eles.
+  Vantagens de Domínio de Broadcast: Útil para enviar informações para todos os nós de uma rede (ex: descoberta de serviços, atualizações de roteamento em redes pequenas).
+  Desvantagens de Domínio de Broadcast: Gera tráfego desnecessário para dispositivos que não precisam da informação.; Pode sobrecarregar a rede.; Repetidores e hubs retransmitem broadcasts para todos os segmentos conectados.
+  Casos de uso de Domínio de Broadcast: Protocolos de resolução de endereços (ARP).; Alguns protocolos de descoberta de rede.; Atualizações de roteamento em redes pequenas (RIPv1).
+Termo: Switch | Tipo: Hardware | Definicao: Dispositivo de rede mais inteligente que um repetidor ou hub, que opera na Camada 2 (Enlace) do modelo OSI. Ele aprende os endereços MAC dos dispositivos conectados e encaminha pacotes apenas para a porta de destino correta, reduzindo colisões e segmentando domínios de colisão.
+  Vantagens de Switch: Reduz colisões e melhora a eficiência da rede.; Segmenta domínios de colisão.; Encaminha tráfego de forma inteligente.; Suporta comunicação full-duplex.
+  Desvantagens de Switch: Mais caro que hubs ou repetidores.; Pode ser um ponto de falha único se não houver redundância.
+  Casos de uso de Switch: Redes locais (LANs) modernas.; Conectar múltiplos dispositivos em um mesmo segmento de rede.; Criar redes mais eficientes e com menor latência.
+Termo: Roteador | Tipo: Hardware | Definicao: Dispositivo de rede que opera na Camada 3 (Rede) do modelo OSI. Sua principal função é encaminhar pacotes entre diferentes redes (ou sub-redes), utilizando endereços IP. Roteadores segmentam domínios de broadcast.
+  Vantagens de Roteador: Segmenta domínios de broadcast, melhorando a eficiência da rede.; Permite a interconexão de redes diferentes.; Toma decisões de encaminhamento baseadas em endereços IP.
+  Desvantagens de Roteador: Mais complexo e caro que switches ou hubs.; Pode introduzir latência adicional.
+  Casos de uso de Roteador: Conectar uma rede local à Internet.; Criar sub-redes dentro de uma rede corporativa.; Roteamento entre diferentes segmentos de rede.
+Termo: Hub (Concentrador) | Tipo: Hardware | Definicao: Dispositivo de rede que opera na Camada 1 (Física) do modelo OSI, funcionando como um repetidor multi-porta. Ele retransmite todos os pacotes recebidos para todas as outras portas, criando um único domínio de colisão e broadcast.
+  Vantagens de Hub (Concentrador): Simples e barato (historicamente).; Permite conectar múltiplos dispositivos em um ponto central.
+  Desvantagens de Hub (Concentrador): Cria um único domínio de colisão.; Todos os dispositivos compartilham a mesma largura de banda.; Ineficiente em redes com tráfego intenso.; Retransmite ruídos e colisões.; Obsoleto.
+  Casos de uso de Hub (Concentrador): Redes muito pequenas e simples (uso histórico).; Ferramenta de aprendizado para entender redes legadas.
+
+-- Tabelas comparativas --
+Tabela 'Domínios de Colisão vs. Domínios de Broadcast': Esta tabela compara os domínios de colisão e broadcast criados por diferentes dispositivos de rede, destacando como switches e roteadores ajudam a segmentá-los.
+  Linha LINHA_HUB: Dispositivo = Hub; Domínio de Colisão = Único (grande); Domínio de Broadcast = Único (grande)
+    (Relacionado a: hub, dominio_de_colisao, dominio_de_broadcast)
+  Linha LINHA_REPETIDOR: Dispositivo = Repetidor; Domínio de Colisão = Expande o domínio existente; Domínio de Broadcast = Não segmenta (expande o domínio existente)
+    (Relacionado a: repetidor, dominio_de_colisao, dominio_de_broadcast)
+  Linha LINHA_SWITCH: Dispositivo = Switch; Domínio de Colisão = Por porta (pequeno); Domínio de Broadcast = Único (a menos que use VLANs)
+    (Relacionado a: switch, dominio_de_colisao, dominio_de_broadcast)
+  Linha LINHA_ROTEADOR: Dispositivo = Roteador; Domínio de Colisão = Não cria/segmenta (opera em Camada 3); Domínio de Broadcast = Segmenta
+    (Relacionado a: roteador, dominio_de_colisao, dominio_de_broadcast)
+
+-- Figuras e diagramas --
+Figura 'Segmentação de Domínio de Broadcast por Roteador' (Diagrama de Rede): O diagrama mostra duas redes locais (LANs) conectadas por um roteador. Cada LAN é um domínio de broadcast separado. Um pacote de broadcast enviado em uma LAN não atravessa o roteador para a outra LAN. Isso demonstra como roteadores segmentam domínios de broadcast.
+  Componentes visuais: LAN 1 (Domínio de Broadcast 1), LAN 2 (Domínio de Broadcast 2), Roteador, Dispositivos em LAN 1, Dispositivos em LAN 2, Pacote de Broadcast
+  Relacionado a: roteador, dominio_de_broadcast
+
+-- Relacionamentos --
+Conexao: 'hub' --[cria_unico_dominio]--> 'dominio_de_colisao'. Motivo: Hubs criam um único e grande domínio de colisão, onde todos os dispositivos competem pelo meio.
+Conexao: 'hub' --[cria_unico_dominio]--> 'dominio_de_broadcast'. Motivo: Hubs criam um único domínio de broadcast, retransmitindo pacotes para todos os nós.
+Conexao: 'switch' --[segmenta]--> 'dominio_de_colisao'. Motivo: Switches criam domínios de colisão por porta, reduzindo a probabilidade de colisões.
+Conexao: 'roteador' --[segmenta]--> 'dominio_de_broadcast'. Motivo: Roteadores são os dispositivos que dividem a rede em múltiplos domínios de broadcast.
+Conexao: 'repetidor' --[expande]--> 'dominio_de_colisao'. Motivo: Repetidores estendem o alcance de um domínio de colisão existente.
+
+=== SECAO [TI_SEC_007]: Hubs vs. Switches: Uma Comparação Detalhada ===
+Esta seção aprofunda a comparação entre hubs e switches. Hubs são dispositivos de Camada 1 que operam em modo half-duplex, compartilham a largura de banda e criam um grande domínio de colisão e broadcast. Eles retransmitem tudo para todas as portas. Switches, por outro lado, operam em Camada 2, aprendem endereços MAC e encaminham pacotes de forma inteligente para a porta de destino correta. Eles criam domínios de colisão por porta e, em modo full-duplex, eliminam colisões. Embora switches também criem um único domínio de broadcast (a menos que usem VLANs), sua capacidade de segmentar colisões e encaminhar seletivamente os torna muito mais eficientes. O texto também menciona que alguns dispositivos comercializados como 'switches' de baixo custo podem, na verdade, ser hubs disfarçados, operando em modo half-duplex e com características de hub.
+
+-- Conceitos-chave --
+Termo: Hub (Concentrador) | Tipo: Hardware | Definicao: Dispositivo de rede que opera na Camada 1 (Física) do modelo OSI, funcionando como um repetidor multi-porta. Ele retransmite todos os pacotes recebidos para todas as outras portas, criando um único domínio de colisão e broadcast.
+  Vantagens de Hub (Concentrador): Simples e barato (historicamente).; Permite conectar múltiplos dispositivos em um ponto central.
+  Desvantagens de Hub (Concentrador): Cria um único domínio de colisão.; Todos os dispositivos compartilham a mesma largura de banda.; Ineficiente em redes com tráfego intenso.; Retransmite ruídos e colisões.; Obsoleto.
+  Casos de uso de Hub (Concentrador): Redes muito pequenas e simples (uso histórico).; Ferramenta de aprendizado para entender redes legadas.
+Termo: Switch | Tipo: Hardware | Definicao: Dispositivo de rede mais inteligente que um repetidor ou hub, que opera na Camada 2 (Enlace) do modelo OSI. Ele aprende os endereços MAC dos dispositivos conectados e encaminha pacotes apenas para a porta de destino correta, reduzindo colisões e segmentando domínios de colisão.
+  Vantagens de Switch: Reduz colisões e melhora a eficiência da rede.; Segmenta domínios de colisão.; Encaminha tráfego de forma inteligente.; Suporta comunicação full-duplex.
+  Desvantagens de Switch: Mais caro que hubs ou repetidores.; Pode ser um ponto de falha único se não houver redundância.
+  Casos de uso de Switch: Redes locais (LANs) modernas.; Conectar múltiplos dispositivos em um mesmo segmento de rede.; Criar redes mais eficientes e com menor latência.
+Termo: Half-Duplex | Tipo: Modo de Comunicação | Definicao: Modo de comunicação onde os dados podem ser transmitidos em ambas as direções, mas não simultaneamente. Um dispositivo deve esperar que o outro termine de transmitir antes de poder enviar seus próprios dados.
+  Vantagens de Half-Duplex: Requer menos complexidade de hardware e fiação do que full-duplex.
+  Desvantagens de Half-Duplex: Menos eficiente, pois a comunicação é serial.; Pode levar a colisões se ambos os dispositivos tentarem transmitir ao mesmo tempo.
+  Casos de uso de Half-Duplex: Comunicação em redes legadas com hubs.; Alguns dispositivos sem fio mais antigos.
+Termo: Full-Duplex | Tipo: Modo de Comunicação | Definicao: Modo de comunicação onde os dados podem ser transmitidos e recebidos simultaneamente em ambas as direções. Isso dobra a largura de banda teórica e elimina colisões.
+  Vantagens de Full-Duplex: Maior eficiência e velocidade de comunicação.; Elimina colisões.; Melhora o desempenho geral da rede.
+  Desvantagens de Full-Duplex: Requer hardware e fiação compatíveis.; Pode ser mais caro em implementações muito básicas.
+  Casos de uso de Full-Duplex: Comunicação entre switches e dispositivos finais em redes modernas.; Conexões de alta velocidade.
+Termo: VLAN (Virtual Local Area Network) | Tipo: Tecnologia de Rede | Definicao: Uma rede local virtual que agrupa dispositivos de forma lógica, independentemente de sua localização física. VLANs permitem segmentar uma rede física em múltiplas redes virtuais, melhorando a segurança e o gerenciamento do tráfego, incluindo a segmentação de domínios de broadcast.
+  Vantagens de VLAN (Virtual Local Area Network): Melhora a segurança, isolando grupos de usuários.; Aumenta o desempenho, reduzindo o tráfego de broadcast.; Flexibilidade na organização da rede.; Facilita o gerenciamento.
+  Desvantagens de VLAN (Virtual Local Area Network): Requer switches gerenciáveis e configuração adequada.; Pode adicionar complexidade à rede.
+  Casos de uso de VLAN (Virtual Local Area Network): Segmentar redes corporativas por departamento ou função.; Isolar tráfego de voz (VoIP) do tráfego de dados.; Melhorar a segurança em redes com múltiplos usuários.
+
+-- Tabelas comparativas --
+Tabela 'Comparativo Detalhado: Hub vs. Switch': Esta tabela oferece uma comparação mais aprofundada entre hubs e switches, detalhando suas características operacionais, inteligência, modos de operação e impacto na rede.
+  Linha LINHA_CAMADA_OSI_DET: Característica = Camada OSI; Hub = Camada 1 (Física); Switch = Camada 2 (Enlace)
+    (Relacionado a: hub, switch)
+  Linha LINHA_MODO_OPERACAO: Característica = Modo de Operação; Hub = Half-Duplex; Switch = Full-Duplex (geralmente)
+    (Relacionado a: hub, switch, half_duplex, full_duplex)
+  Linha LINHA_ENCAMINHAMENTO: Característica = Encaminhamento de Pacotes; Hub = Retransmite para todas as portas (Broadcast); Switch = Encaminha para porta de destino específica (baseado em MAC)
+    (Relacionado a: hub, switch, broadcast)
+  Linha LINHA_COLISAO_DET: Característica = Domínio de Colisão; Hub = Único e grande; Switch = Por porta (segmentado)
+    (Relacionado a: hub, switch, dominio_de_colisao)
+  Linha LINHA_BROADCAST_DET: Característica = Domínio de Broadcast; Hub = Único; Switch = Único (a menos que use VLANs)
+    (Relacionado a: hub, switch, dominio_de_broadcast, vlan)
+  Linha LINHA_LARGURA_BANDA_DET: Característica = Largura de Banda; Hub = Compartilhada; Switch = Dedicada por porta (em full-duplex)
+    (Relacionado a: hub, switch)
+
+-- Figuras e diagramas --
+Figura 'Diagrama Comparativo: Hub vs. Switch' (Diagrama de Rede): O diagrama mostra um hub central conectado a vários computadores, com uma seta indicando que um pacote enviado de um PC é retransmitido para todos os outros. Em contraste, um switch é mostrado com um PC conectado a uma porta, e o switch encaminha o pacote diretamente para a porta do PC de destino, sem retransmitir para as outras. Isso ilustra a diferença no encaminhamento e na segmentação de tráfego.
+  Componentes visuais: Hub, Switch, Computadores, Setas de transmissão (Hub), Setas de encaminhamento (Switch)
+  Relacionado a: hub, switch
+
+-- Relacionamentos --
+Conexao: 'switch' --[opera_em_modo]--> 'full_duplex'. Motivo: Switches modernos geralmente operam em modo full-duplex, permitindo comunicação simultânea em ambas as direções e eliminando colisões.
+Conexao: 'hub' --[opera_em_modo]--> 'half_duplex'. Motivo: Hubs operam em modo half-duplex, onde a transmissão e recepção não podem ocorrer simultaneamente.
+Conexao: 'switch' --[segmenta]--> 'dominio_de_colisao'. Motivo: Switches criam domínios de colisão por porta, isolando o tráfego e reduzindo colisões.
+Conexao: 'hub' --[cria_unico_dominio]--> 'dominio_de_colisao'. Motivo: Hubs criam um único domínio de colisão, afetando todos os dispositivos conectados.
+Conexao: 'switch' --[utiliza_para_encaminhamento]--> 'endereco_mac'. Motivo: Switches utilizam endereços MAC para aprender a topologia da rede e encaminhar pacotes de forma inteligente.
+Conexao: 'hub' --[retransmite_sem_analise]--> 'pacote_de_dados'. Motivo: Hubs retransmitem pacotes de dados para todas as portas sem analisar seu conteúdo ou destino.
+
+=== SECAO [TI_SEC_008]: Hubs como Repetidores Multi-Porta e o Problema do Domínio de Colisão ===
+O texto reitera que hubs são essencialmente repetidores com múltiplas portas. Eles não possuem inteligência para analisar pacotes ou endereços (MAC ou IP), simplesmente retransmitindo o sinal recebido em uma porta para todas as outras. Isso cria um único e grande domínio de colisão, onde qualquer dispositivo que transmita simultaneamente com outro pode causar uma colisão que será propagada para todos. Isso degrada o desempenho da rede, pois os dispositivos precisam esperar por janelas de tempo livres para transmitir. A discussão sobre o 'domínio de colisão' é central aqui, contrastando com o 'domínio de broadcast'. O texto também alerta sobre dispositivos vendidos como 'switches' que, na verdade, são hubs disfarçados, operando em half-duplex e com características de hub, o que pode enganar usuários menos experientes.
+
+-- Conceitos-chave --
+Termo: Hub (Concentrador) | Tipo: Hardware | Definicao: Dispositivo de rede que opera na Camada 1 (Física) do modelo OSI, funcionando como um repetidor multi-porta. Ele retransmite todos os pacotes recebidos para todas as outras portas, criando um único domínio de colisão e broadcast.
+  Vantagens de Hub (Concentrador): Simples e barato (historicamente).; Permite conectar múltiplos dispositivos em um ponto central.
+  Desvantagens de Hub (Concentrador): Cria um único domínio de colisão.; Todos os dispositivos compartilham a mesma largura de banda.; Ineficiente em redes com tráfego intenso.; Retransmite ruídos e colisões.; Obsoleto.
+  Casos de uso de Hub (Concentrador): Redes muito pequenas e simples (uso histórico).; Ferramenta de aprendizado para entender redes legadas.
+Termo: Domínio de Colisão | Tipo: Conceito de Rede | Definicao: Uma área em uma rede onde pacotes de dados transmitidos simultaneamente podem colidir e interferir uns com os outros, exigindo retransmissão. Repetidores e hubs aumentam o domínio de colisão.
+  Vantagens de Domínio de Colisão: N/A (é uma característica inerente a certas tecnologias de rede).
+  Desvantagens de Domínio de Colisão: Reduz a eficiência da rede.; Aumenta a latência.; Pode levar a congestionamento.
+  Casos de uso de Domínio de Colisão: Identificar áreas problemáticas em redes legadas (ex: Ethernet com hubs).
+Termo: Half-Duplex | Tipo: Modo de Comunicação | Definicao: Modo de comunicação onde os dados podem ser transmitidos em ambas as direções, mas não simultaneamente. Um dispositivo deve esperar que o outro termine de transmitir antes de poder enviar seus próprios dados.
+  Vantagens de Half-Duplex: Requer menos complexidade de hardware e fiação do que full-duplex.
+  Desvantagens de Half-Duplex: Menos eficiente, pois a comunicação é serial.; Pode levar a colisões se ambos os dispositivos tentarem transmitir ao mesmo tempo.
+  Casos de uso de Half-Duplex: Comunicação em redes legadas com hubs.; Alguns dispositivos sem fio mais antigos.
+Termo: Switch Disfarçado (Hub) | Tipo: Hardware (Enganoso) | Definicao: Um dispositivo comercializado como switch, mas que na verdade opera como um hub, com características de Camada 1, modo half-duplex e criação de um grande domínio de colisão.
+  Vantagens de Switch Disfarçado (Hub): Baixo custo (comparado a switches reais).
+  Desvantagens de Switch Disfarçado (Hub): Desempenho muito inferior ao de um switch real.; Cria problemas de colisão e lentidão.; Engana o consumidor.
+  Casos de uso de Switch Disfarçado (Hub): Redes domésticas de baixo custo (onde o desempenho não é crítico).; Situações onde o vendedor não é confiável.
+
+-- Figuras e diagramas --
+Figura 'Retransmissão de Sinal em um Hub' (Diagrama de Fluxo): O diagrama mostra um pacote de dados chegando a uma porta de um hub. Uma seta indica que o hub retransmite este pacote para todas as outras portas conectadas, independentemente do endereço de destino original do pacote. Isso ilustra a operação de broadcast e a falta de inteligência do hub.
+  Componentes visuais: Pacote de Dados de Entrada, Porta de Entrada do Hub, Hub (Processamento), Portas de Saída do Hub, Pacotes de Dados de Saída (para todas as portas)
+  Relacionado a: hub, broadcast
+
+-- Relacionamentos --
+Conexao: 'hub' --[funciona_como]--> 'repetidor_multiporta'. Motivo: Um hub é essencialmente um repetidor com várias portas, retransmitindo sinais sem inteligência.
+Conexao: 'hub' --[cria_grande_dominio]--> 'dominio_de_colisao'. Motivo: A operação de um hub resulta em um único e grande domínio de colisão, afetando todos os dispositivos conectados.
+Conexao: 'hub' --[opera_em]--> 'half_duplex'. Motivo: Hubs operam em modo half-duplex, o que contribui para a possibilidade de colisões.
+Conexao: 'switch_disfarcado' --[tem_caracteristicas_de]--> 'hub'. Motivo: Dispositivos vendidos como switches, mas que operam como hubs, compartilham as desvantagens de um grande domínio de colisão.
+Conexao: 'hub' --[retransmite_sem_analise]--> 'endereco_mac'. Motivo: Hubs não analisam endereços MAC, retransmitindo pacotes indiscriminadamente.
+
+=== SECAO [TI_SEC_009]: O Papel dos Switches e a Evolução para Domínios de Colisão por Porta ===
+Esta seção destaca a transição de hubs para switches e como os switches revolucionaram o gerenciamento de redes. Ao operar na Camada 2 e aprender endereços MAC, os switches criam domínios de colisão por porta. Isso significa que cada porta do switch é um domínio de colisão separado. Em modo full-duplex, onde a transmissão e recepção ocorrem simultaneamente, as colisões são efetivamente eliminadas em cada porta. Isso resulta em um desempenho de rede significativamente melhor, pois a largura de banda não é mais compartilhada e os dispositivos podem se comunicar sem a preocupação constante de colisões. O texto também menciona que, embora switches segmentem domínios de colisão, eles geralmente mantêm um único domínio de broadcast (a menos que sejam configurados com VLANs), e que roteadores são os dispositivos responsáveis por segmentar domínios de broadcast.
+
+-- Conceitos-chave --
+Termo: Switch | Tipo: Hardware | Definicao: Dispositivo de rede mais inteligente que um repetidor ou hub, que opera na Camada 2 (Enlace) do modelo OSI. Ele aprende os endereços MAC dos dispositivos conectados e encaminha pacotes apenas para a porta de destino correta, reduzindo colisões e segmentando domínios de colisão.
+  Vantagens de Switch: Reduz colisões e melhora a eficiência da rede.; Segmenta domínios de colisão.; Encaminha tráfego de forma inteligente.; Suporta comunicação full-duplex.
+  Desvantagens de Switch: Mais caro que hubs ou repetidores.; Pode ser um ponto de falha único se não houver redundância.
+  Casos de uso de Switch: Redes locais (LANs) modernas.; Conectar múltiplos dispositivos em um mesmo segmento de rede.; Criar redes mais eficientes e com menor latência.
+Termo: Domínio de Colisão | Tipo: Conceito de Rede | Definicao: Uma área em uma rede onde pacotes de dados transmitidos simultaneamente podem colidir e interferir uns com os outros, exigindo retransmissão. Repetidores e hubs aumentam o domínio de colisão.
+  Vantagens de Domínio de Colisão: N/A (é uma característica inerente a certas tecnologias de rede).
+  Desvantagens de Domínio de Colisão: Reduz a eficiência da rede.; Aumenta a latência.; Pode levar a congestionamento.
+  Casos de uso de Domínio de Colisão: Identificar áreas problemáticas em redes legadas (ex: Ethernet com hubs).
+Termo: Full-Duplex | Tipo: Modo de Comunicação | Definicao: Modo de comunicação onde os dados podem ser transmitidos e recebidos simultaneamente em ambas as direções. Isso dobra a largura de banda teórica e elimina colisões.
+  Vantagens de Full-Duplex: Maior eficiência e velocidade de comunicação.; Elimina colisões.; Melhora o desempenho geral da rede.
+  Desvantagens de Full-Duplex: Requer hardware e fiação compatíveis.; Pode ser mais caro em implementações muito básicas.
+  Casos de uso de Full-Duplex: Comunicação entre switches e dispositivos finais em redes modernas.; Conexões de alta velocidade.
+Termo: Endereço MAC | Tipo: Identificador de Hardware | Definicao: Um identificador único atribuído a cada interface de hardware de rede (como uma placa de rede). É usado na Camada 2 (Enlace) para comunicação dentro de uma rede local.
+  Vantagens de Endereço MAC: Identificação única de dispositivos na rede local.; Essencial para o funcionamento de switches.
+  Desvantagens de Endereço MAC: Não é roteável entre redes diferentes.; Pode ser falsificado (MAC spoofing).
+  Casos de uso de Endereço MAC: Endereçamento em redes Ethernet.; Filtragem de acesso em switches.; Protocolos de resolução de endereços (ARP).
+Termo: Roteador | Tipo: Hardware | Definicao: Dispositivo de rede que opera na Camada 3 (Rede) do modelo OSI. Sua principal função é encaminhar pacotes entre diferentes redes (ou sub-redes), utilizando endereços IP. Roteadores segmentam domínios de broadcast.
+  Vantagens de Roteador: Segmenta domínios de broadcast, melhorando a eficiência da rede.; Permite a interconexão de redes diferentes.; Toma decisões de encaminhamento baseadas em endereços IP.
+  Desvantagens de Roteador: Mais complexo e caro que switches ou hubs.; Pode introduzir latência adicional.
+  Casos de uso de Roteador: Conectar uma rede local à Internet.; Criar sub-redes dentro de uma rede corporativa.; Roteamento entre diferentes segmentos de rede.
+
+-- Figuras e diagramas --
+Figura 'Domínio de Colisão por Porta em um Switch' (Diagrama de Rede): O diagrama mostra um switch com várias portas. Cada porta está conectada a um dispositivo (ou a um hub/repetidor). Uma linha pontilhada ou uma área destacada ao redor de cada porta indica que cada porta representa um domínio de colisão separado. Isso contrasta com a ideia de um único domínio de colisão em um hub.
+  Componentes visuais: Switch, Porta 1, Porta 2, Porta 3, Dispositivo conectado à Porta 1, Dispositivo conectado à Porta 2, Dispositivo conectado à Porta 3, Domínio de Colisão (por porta)
+  Relacionado a: switch, dominio_de_colisao, full_duplex
+
+-- Relacionamentos --
+Conexao: 'switch' --[segmenta]--> 'dominio_de_colisao'. Motivo: Cada porta de um switch atua como um domínio de colisão separado, melhorando o desempenho da rede.
+Conexao: 'switch' --[utiliza]--> 'endereco_mac'. Motivo: Switches usam endereços MAC para aprender a topologia da rede e encaminhar pacotes de forma inteligente.
+Conexao: 'switch' --[opera_em]--> 'full_duplex'. Motivo: A operação em full-duplex nos switches elimina colisões em cada porta.
+Conexao: 'switch' --[mantem_unico_dominio]--> 'dominio_de_broadcast'. Motivo: Sem configuração de VLANs, um switch geralmente mantém um único domínio de broadcast.
+Conexao: 'roteador' --[segmenta]--> 'dominio_de_broadcast'. Motivo: Roteadores são responsáveis por segmentar domínios de broadcast, conectando diferentes redes.
+
+=== SECAO [TI_SEC_010]: O Modelo OSI e a Posição dos Dispositivos de Rede ===
+O material posiciona os dispositivos de rede dentro do modelo OSI. Repetidores e hubs operam na Camada 1 (Física), lidando apenas com sinais elétricos e regenerando-os. Switches operam na Camada 2 (Enlace), utilizando endereços MAC para encaminhamento inteligente e segmentação de domínios de colisão. Roteadores operam na Camada 3 (Rede), utilizando endereços IP para encaminhamento entre redes e segmentação de domínios de broadcast. O texto também menciona que switches podem ter funcionalidades de Camada 3 (switches L3), mas sua função primária é na Camada 2. A discussão sobre 'dispositivos burros' (como hubs) versus 'dispositivos inteligentes' (como switches e roteadores) é feita com base na camada OSI em que operam e na inteligência que possuem para processar informações de endereçamento.
+
+-- Conceitos-chave --
+Termo: Modelo OSI | Tipo: Modelo Conceitual | Definicao: Um modelo conceitual de sete camadas que padroniza as funções de um sistema de telecomunicações ou de computação em termos de abstração. Cada camada serve à camada acima dela e é servida pela camada abaixo dela.
+  Vantagens de Modelo OSI: Facilita a compreensão da arquitetura de redes.; Promove a interoperabilidade entre diferentes tecnologias.; Permite o desenvolvimento modular de protocolos.
+  Desvantagens de Modelo OSI: É um modelo conceitual, não uma implementação direta.; O modelo TCP/IP é mais amplamente utilizado na prática da Internet.
+  Casos de uso de Modelo OSI: Educação e treinamento em redes de computadores.; Análise e solução de problemas de rede.; Desenvolvimento de novos protocolos de rede.
+Termo: Camada Física (OSI) | Tipo: Camada OSI | Definicao: A primeira camada do modelo OSI. É responsável pela transmissão e recepção de bits brutos não estruturados através de um meio físico (cabos, ondas de rádio). Lida com especificações elétricas, mecânicas e de temporização.
+  Vantagens de Camada Física (OSI): Define os padrões para a transmissão física do sinal.
+  Desvantagens de Camada Física (OSI): Não se preocupa com a organização dos bits em quadros ou pacotes.; Não lida com endereçamento lógico ou físico.
+  Casos de uso de Camada Física (OSI): Definição de cabos, conectores, sinais elétricos/ópticos.; Operação de repetidores e hubs.
+Termo: Camada de Enlace (OSI) | Tipo: Camada OSI | Definicao: A segunda camada do modelo OSI. Responsável pela transferência confiável de dados através do meio físico. Lida com endereçamento físico (MAC), controle de acesso ao meio (MAC), detecção e correção de erros em quadros.
+  Vantagens de Camada de Enlace (OSI): Fornece um serviço de transferência de dados confiável entre nós adjacentes.; Gerencia o acesso ao meio compartilhado.
+  Desvantagens de Camada de Enlace (OSI): Geralmente limitada a um único segmento de rede (domínio de broadcast).
+  Casos de uso de Camada de Enlace (OSI): Operação de switches e pontes.; Protocolos como Ethernet e PPP.
+Termo: Camada de Rede (OSI) | Tipo: Camada OSI | Definicao: A terceira camada do modelo OSI. Responsável pelo endereçamento lógico (IP) e pelo roteamento de pacotes através de redes interconectadas. Determina o melhor caminho para os dados viajarem.
+  Vantagens de Camada de Rede (OSI): Permite a comunicação entre redes diferentes.; Fornece endereçamento lógico (IP) que é roteável.
+  Desvantagens de Camada de Rede (OSI): Pode introduzir latência devido ao processo de roteamento.
+  Casos de uso de Camada de Rede (OSI): Operação de roteadores.; Protocolos como IP, ICMP.
+Termo: Repetidor (Repeater) | Tipo: Hardware | Definicao: Dispositivo de rede que recebe um sinal, o regenera (amplifica e limpa) e o retransmite para estender o alcance de um segmento de rede. Opera na Camada 1 (Física) do modelo OSI.
+  Vantagens de Repetidor (Repeater): Estende o alcance físico de um segmento de rede.; Permite a interconexão de segmentos com diferentes meios físicos.; Regenera o sinal, combatendo a atenuação.
+  Desvantagens de Repetidor (Repeater): Não analisa pacotes, retransmite tudo (incluindo ruídos e colisões).; Aumenta o domínio de colisão.; Pode propagar problemas de rede (colisões, ruídos).; Limitado pela regra 5-4-3 do Ethernet (historicamente).
+  Casos de uso de Repetidor (Repeater): Estender o alcance de cabos Ethernet em redes locais.; Conectar dois segmentos de rede usando o mesmo protocolo, mas com limites de distância.; Em redes mais antigas, para superar a atenuação do sinal.
+Termo: Hub (Concentrador) | Tipo: Hardware | Definicao: Dispositivo de rede que opera na Camada 1 (Física) do modelo OSI, funcionando como um repetidor multi-porta. Ele retransmite todos os pacotes recebidos para todas as outras portas, criando um único domínio de colisão e broadcast.
+  Vantagens de Hub (Concentrador): Simples e barato (historicamente).; Permite conectar múltiplos dispositivos em um ponto central.
+  Desvantagens de Hub (Concentrador): Cria um único domínio de colisão.; Todos os dispositivos compartilham a mesma largura de banda.; Ineficiente em redes com tráfego intenso.; Retransmite ruídos e colisões.; Obsoleto.
+  Casos de uso de Hub (Concentrador): Redes muito pequenas e simples (uso histórico).; Ferramenta de aprendizado para entender redes legadas.
+Termo: Switch | Tipo: Hardware | Definicao: Dispositivo de rede mais inteligente que um repetidor ou hub, que opera na Camada 2 (Enlace) do modelo OSI. Ele aprende os endereços MAC dos dispositivos conectados e encaminha pacotes apenas para a porta de destino correta, reduzindo colisões e segmentando domínios de colisão.
+  Vantagens de Switch: Reduz colisões e melhora a eficiência da rede.; Segmenta domínios de colisão.; Encaminha tráfego de forma inteligente.; Suporta comunicação full-duplex.
+  Desvantagens de Switch: Mais caro que hubs ou repetidores.; Pode ser um ponto de falha único se não houver redundância.
+  Casos de uso de Switch: Redes locais (LANs) modernas.; Conectar múltiplos dispositivos em um mesmo segmento de rede.; Criar redes mais eficientes e com menor latência.
+Termo: Roteador | Tipo: Hardware | Definicao: Dispositivo de rede que opera na Camada 3 (Rede) do modelo OSI. Sua principal função é encaminhar pacotes entre diferentes redes (ou sub-redes), utilizando endereços IP. Roteadores segmentam domínios de broadcast.
+  Vantagens de Roteador: Segmenta domínios de broadcast, melhorando a eficiência da rede.; Permite a interconexão de redes diferentes.; Toma decisões de encaminhamento baseadas em endereços IP.
+  Desvantagens de Roteador: Mais complexo e caro que switches ou hubs.; Pode introduzir latência adicional.
+  Casos de uso de Roteador: Conectar uma rede local à Internet.; Criar sub-redes dentro de uma rede corporativa.; Roteamento entre diferentes segmentos de rede.
+
+-- Tabelas comparativas --
+Tabela 'Dispositivos de Rede e suas Camadas OSI': Esta tabela mapeia os principais dispositivos de rede às camadas do modelo OSI em que operam, indicando seu nível de inteligência e função.
+  Linha LINHA_REPETIDOR_OSI: Dispositivo = Repetidor; Camada OSI = Camada 1 (Física); Função Principal = Regenerar e retransmitir sinal; Inteligência = Nenhuma (opera com sinais)
+    (Relacionado a: repetidor, camada_fisica_osi)
+  Linha LINHA_HUB_OSI: Dispositivo = Hub; Camada OSI = Camada 1 (Física); Função Principal = Concentrar conexões e retransmitir para todas as portas; Inteligência = Nenhuma (opera com sinais)
+    (Relacionado a: hub, camada_fisica_osi)
+  Linha LINHA_SWITCH_OSI: Dispositivo = Switch; Camada OSI = Camada 2 (Enlace); Função Principal = Encaminhar pacotes com base em endereços MAC; Inteligência = Média (aprende MACs, segmenta colisões)
+    (Relacionado a: switch, camada_enlace_osi, endereco_mac)
+  Linha LINHA_ROUTER_OSI: Dispositivo = Roteador; Camada OSI = Camada 3 (Rede); Função Principal = Roteamento de pacotes entre redes (baseado em IP); Inteligência = Alta (roteamento, segmentação de broadcast)
+    (Relacionado a: roteador, camada_rede_osi, endereco_ip)
+
+-- Figuras e diagramas --
+Figura 'Posicionamento de Dispositivos de Rede no Modelo OSI' (Diagrama de Camadas OSI): O diagrama mostra as 7 camadas do modelo OSI. Na Camada 1 (Física), estão posicionados Repetidores e Hubs. Na Camada 2 (Enlace), estão posicionados Switches e Pontes. Na Camada 3 (Rede), está posicionado o Roteador. As camadas superiores (Transporte, Sessão, Apresentação, Aplicação) são mostradas, mas sem dispositivos de rede específicos associados diretamente a elas neste contexto.
+  Componentes visuais: Camada 7: Aplicação, Camada 6: Apresentação, Camada 5: Sessão, Camada 4: Transporte, Camada 3: Rede (Roteador), Camada 2: Enlace (Switch, Ponte), Camada 1: Física (Repetidor, Hub), Setas indicando a relação entre camadas
+  Relacionado a: modelo_osi, camada_fisica_osi, camada_enlace_osi, camada_rede_osi, repetidor, hub, switch, roteador
+
+-- Relacionamentos --
+Conexao: 'repetidor' --[opera_em]--> 'camada_fisica_osi'. Motivo: Repetidores operam na Camada 1, focando na regeneração de sinais físicos.
+Conexao: 'hub' --[opera_em]--> 'camada_fisica_osi'. Motivo: Hubs operam na Camada 1, retransmitindo sinais sem inteligência de endereçamento.
+Conexao: 'switch' --[opera_em]--> 'camada_enlace_osi'. Motivo: Switches operam na Camada 2, utilizando endereços MAC para encaminhamento inteligente.
+Conexao: 'roteador' --[opera_em]--> 'camada_rede_osi'. Motivo: Roteadores operam na Camada 3, utilizando endereços IP para roteamento entre redes.
+Conexao: 'switch' --[utiliza_informacao_de]--> 'endereco_mac'. Motivo: Switches utilizam endereços MAC (Camada 2) para tomar decisões de encaminhamento.
+Conexao: 'roteador' --[utiliza_informacao_de]--> 'endereco_ip'. Motivo: Roteadores utilizam endereços IP (Camada 3) para tomar decisões de roteamento.
+
+=== SECAO [TI_SEC_011]: Considerações sobre Hubs e Switches no Mercado ===
+O texto aborda a realidade do mercado de equipamentos de rede, alertando que muitos dispositivos vendidos como 'switches' de baixo custo, especialmente para uso doméstico ou em pequenas empresas, podem na verdade ser hubs disfarçados. Esses dispositivos, embora rotulados como switches, operam com as limitações de um hub: modo half-duplex, compartilhamento de largura de banda e criação de um grande domínio de colisão. A principal forma de identificar um verdadeiro switch é verificar se ele opera em full-duplex e se é capaz de aprender e utilizar endereços MAC para encaminhamento inteligente. O texto sugere verificar o manual do produto para confirmar suas especificações técnicas e evitar ser enganado por marketing enganoso.
+
+-- Conceitos-chave --
+Termo: Switch Disfarçado (Hub) | Tipo: Hardware (Enganoso) | Definicao: Um dispositivo comercializado como switch, mas que na verdade opera como um hub, com características de Camada 1, modo half-duplex e criação de um grande domínio de colisão.
+  Vantagens de Switch Disfarçado (Hub): Baixo custo (comparado a switches reais).
+  Desvantagens de Switch Disfarçado (Hub): Desempenho muito inferior ao de um switch real.; Cria problemas de colisão e lentidão.; Engana o consumidor.
+  Casos de uso de Switch Disfarçado (Hub): Redes domésticas de baixo custo (onde o desempenho não é crítico).; Situações onde o vendedor não é confiável.
+Termo: Hub (Concentrador) | Tipo: Hardware | Definicao: Dispositivo de rede que opera na Camada 1 (Física) do modelo OSI, funcionando como um repetidor multi-porta. Ele retransmite todos os pacotes recebidos para todas as outras portas, criando um único domínio de colisão e broadcast.
+  Vantagens de Hub (Concentrador): Simples e barato (historicamente).; Permite conectar múltiplos dispositivos em um ponto central.
+  Desvantagens de Hub (Concentrador): Cria um único domínio de colisão.; Todos os dispositivos compartilham a mesma largura de banda.; Ineficiente em redes com tráfego intenso.; Retransmite ruídos e colisões.; Obsoleto.
+  Casos de uso de Hub (Concentrador): Redes muito pequenas e simples (uso histórico).; Ferramenta de aprendizado para entender redes legadas.
+Termo: Switch | Tipo: Hardware | Definicao: Dispositivo de rede mais inteligente que um repetidor ou hub, que opera na Camada 2 (Enlace) do modelo OSI. Ele aprende os endereços MAC dos dispositivos conectados e encaminha pacotes apenas para a porta de destino correta, reduzindo colisões e segmentando domínios de colisão.
+  Vantagens de Switch: Reduz colisões e melhora a eficiência da rede.; Segmenta domínios de colisão.; Encaminha tráfego de forma inteligente.; Suporta comunicação full-duplex.
+  Desvantagens de Switch: Mais caro que hubs ou repetidores.; Pode ser um ponto de falha único se não houver redundância.
+  Casos de uso de Switch: Redes locais (LANs) modernas.; Conectar múltiplos dispositivos em um mesmo segmento de rede.; Criar redes mais eficientes e com menor latência.
+Termo: Half-Duplex | Tipo: Modo de Comunicação | Definicao: Modo de comunicação onde os dados podem ser transmitidos em ambas as direções, mas não simultaneamente. Um dispositivo deve esperar que o outro termine de transmitir antes de poder enviar seus próprios dados.
+  Vantagens de Half-Duplex: Requer menos complexidade de hardware e fiação do que full-duplex.
+  Desvantagens de Half-Duplex: Menos eficiente, pois a comunicação é serial.; Pode levar a colisões se ambos os dispositivos tentarem transmitir ao mesmo tempo.
+  Casos de uso de Half-Duplex: Comunicação em redes legadas com hubs.; Alguns dispositivos sem fio mais antigos.
+Termo: Endereço MAC | Tipo: Identificador de Hardware | Definicao: Um identificador único atribuído a cada interface de hardware de rede (como uma placa de rede). É usado na Camada 2 (Enlace) para comunicação dentro de uma rede local.
+  Vantagens de Endereço MAC: Identificação única de dispositivos na rede local.; Essencial para o funcionamento de switches.
+  Desvantagens de Endereço MAC: Não é roteável entre redes diferentes.; Pode ser falsificado (MAC spoofing).
+  Casos de uso de Endereço MAC: Endereçamento em redes Ethernet.; Filtragem de acesso em switches.; Protocolos de resolução de endereços (ARP).
+
+-- Tabelas comparativas --
+Tabela 'Diferenças Chave: Hub vs. Switch Real (Perspectiva Comercial)': Esta tabela ajuda a distinguir entre um hub e um switch real, focando nas características que um comprador deve procurar para evitar adquirir um hub disfarçado de switch.
+  Linha LINHA_CAMADA_OSI_COM: Característica = Camada OSI de Operação; Hub (ou 'Switch Disfarçado') = Camada 1 (Física); Switch Real = Camada 2 (Enlace)
+    (Relacionado a: hub, switch_disfarcado, switch, camada_fisica_osi, camada_enlace_osi)
+  Linha LINHA_MODO_OPERACAO_COM: Característica = Modo de Operação; Hub (ou 'Switch Disfarçado') = Half-Duplex; Switch Real = Full-Duplex (geralmente)
+    (Relacionado a: hub, switch_disfarcado, switch, half_duplex, full_duplex)
+  Linha LINHA_ENCAMINHAMENTO_COM: Característica = Encaminhamento de Pacotes; Hub (ou 'Switch Disfarçado') = Broadcast para todas as portas; Switch Real = Encaminhamento inteligente baseado em MAC
+    (Relacionado a: hub, switch_disfarcado, switch, broadcast, endereco_mac)
+  Linha LINHA_VERIFICACAO_COM: Característica = Como Verificar; Hub (ou 'Switch Disfarçado') = Verificar manual para modo half-duplex e falta de aprendizado de MAC.; Switch Real = Verificar manual para modo full-duplex e capacidade de aprendizado de MAC.
+    (Relacionado a: hub, switch_disfarcado, switch, half_duplex, full_duplex, endereco_mac)
+
+-- Figuras e diagramas --
+Figura 'Exemplo de Dispositivo Comercializado como Switch, mas Operando como Hub' (Imagem de Produto (Ilustrativa)): A figura mostra um dispositivo de rede com várias portas Ethernet. A caixa do produto e/ou o próprio dispositivo exibem a palavra 'SWITCH'. No entanto, o texto explicativo (ou o manual) revela que ele opera em half-duplex e não aprende endereços MAC, funcionando na verdade como um hub. Isso ilustra o problema de dispositivos mal rotulados no mercado.
+  Componentes visuais: Dispositivo de Rede (Caixa), Etiqueta 'SWITCH', Portas Ethernet, Manual do Produto (referência), Texto 'Half-Duplex', Texto 'Não aprende MAC'
+  Relacionado a: switch_disfarcado, hub, half_duplex, endereco_mac
+
+-- Relacionamentos --
+Conexao: 'switch_disfarcado' --[tem_caracteristicas_de]--> 'hub'. Motivo: Dispositivos vendidos como switches, mas que operam como hubs, compartilham as desvantagens de um grande domínio de colisão e modo half-duplex.
+Conexao: 'switch' --[diferencia_de]--> 'hub'. Motivo: Switches reais diferem de hubs por operarem em Camada 2, usarem endereços MAC e suportarem full-duplex.
+Conexao: 'comprador' --[deve_verificar]--> 'manual_produto'. Motivo: Para evitar a compra de um hub disfarçado, o comprador deve verificar as especificações técnicas no manual do produto.
+Conexao: 'switch' --[utiliza]--> 'endereco_mac'. Motivo: A capacidade de aprender e usar endereços MAC é uma característica definidora de um switch real.
+

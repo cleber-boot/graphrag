@@ -1,0 +1,253 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Segurança em Redes WI-FI (IEEE 802.11)
+Idioma: pt-BR
+Tecnologias citadas no documento: IEEE 802.11, WEP, WPA, WPA2, WPA3, AES, TKIP, RC4, EAP, PEAP, TLS, TTLS, RADIUS, MAC Filtering
+
+=== SECAO [TI_SEC_001]: Introdução à Segurança em Redes Wi-Fi ===
+O material introduz a importância da segurança em redes Wi-Fi (IEEE 802.11), destacando que, historicamente, essas redes foram consideradas inseguras. Explica que, embora o padrão IEEE 802.11 tenha evoluído para incluir mecanismos de segurança, as primeiras implementações apresentaram falhas. O texto narra a evolução dos protocolos de segurança, desde os mais antigos e vulneráveis até os mais robustos, enfatizando a necessidade de autenticação, confidencialidade e integridade dos dados transmitidos. Aborda a diferença entre meios de transmissão guiados e não guiados, ressaltando a vulnerabilidade inerente às redes sem fio devido à sua natureza de transmissão pelo ar, o que facilita a interceptação de dados.
+
+-- Conceitos-chave --
+Termo: IEEE 802.11 | Tipo: Padrão | Definicao: Padrão que define as especificações para Redes Locais Sem Fio (WLANs), incluindo os mecanismos de segurança.
+  Vantagens de IEEE 802.11: Permite a comunicação sem fio.; Base para a evolução da tecnologia Wi-Fi.
+  Desvantagens de IEEE 802.11: Vulnerabilidades de segurança nas primeiras versões.; Complexidade na implementação segura.
+  Casos de uso de IEEE 802.11: Redes domésticas.; Redes corporativas.; Redes públicas (hotspots).
+Termo: Meio de Transmissão Não Guiado | Tipo: Conceito de Rede | Definicao: Meio de transmissão que utiliza ondas eletromagnéticas (como o ar) para propagar sinais, em contraste com meios guiados (cabos). Redes Wi-Fi utilizam o ar como meio de transmissão.
+  Vantagens de Meio de Transmissão Não Guiado: Mobilidade e flexibilidade.; Facilidade de implantação em certas áreas.
+  Desvantagens de Meio de Transmissão Não Guiado: Susceptível a interferências.; Vulnerável a interceptação de sinais (escuta).; Menor controle físico sobre o meio.
+  Casos de uso de Meio de Transmissão Não Guiado: Redes Wi-Fi.; Comunicações via rádio e satélite.
+Termo: Pilares da Segurança da Informação | Tipo: Conceito de Segurança | Definicao: Os três princípios fundamentais da segurança da informação: autenticação (quem é você?), confidencialidade (só quem pode ver, vê) e integridade (os dados não foram alterados).
+  Vantagens de Pilares da Segurança da Informação: Estabelece a base para a proteção de dados.; Fornece um framework para avaliar a segurança.
+  Casos de uso de Pilares da Segurança da Informação: Avaliação e implementação de segurança em qualquer sistema.; Definição de políticas de segurança.
+
+-- Relacionamentos --
+Conexao: 'ieee_802_11' --[define]--> 'seguranca_informacao_pilares'. Motivo: O padrão IEEE 802.11 especifica os protocolos e mecanismos para garantir os pilares da segurança da informação em redes Wi-Fi.
+Conexao: 'meio_transmissao_nao_guiado' --[caracteristica_de]--> 'ieee_802_11'. Motivo: Redes baseadas no padrão IEEE 802.11 utilizam o ar como meio de transmissão não guiado, o que introduz desafios de segurança.
+
+=== SECAO [TI_SEC_002]: Evolução dos Protocolos de Segurança Wi-Fi ===
+Esta seção detalha a evolução dos protocolos de segurança para redes Wi-Fi, começando com o WEP (Wired Equivalent Privacy), que se mostrou rapidamente vulnerável devido a falhas criptográficas (RC4) e problemas de gerenciamento de chaves. Em seguida, apresenta o WPA (Wi-Fi Protected Access), uma melhoria emergencial que utilizou TKIP (Temporal Key Integrity Protocol) como substituto para o RC4, mas ainda mantinha algumas vulnerabilidades. O WPA2, introduzido posteriormente, trouxe o AES (Advanced Encryption Standard) como algoritmo de criptografia principal, considerado muito mais seguro. Por fim, menciona o WPA3 como a geração mais recente, com melhorias em autenticação e criptografia, especialmente para redes abertas e corporativas.
+
+-- Conceitos-chave --
+Termo: WEP (Wired Equivalent Privacy) | Tipo: Protocolo de Segurança | Definicao: Primeiro protocolo de segurança para redes 802.11, projetado para oferecer um nível de privacidade equivalente ao das redes cabeadas. Foi amplamente criticado por suas falhas de segurança.
+  Vantagens de WEP (Wired Equivalent Privacy): Primeira tentativa de segurança para Wi-Fi.
+  Desvantagens de WEP (Wired Equivalent Privacy): Criptografia fraca (RC4 com IVs curtos).; Vulnerável a ataques de quebra de chave.; Gerenciamento de chaves estático e inseguro.
+  Casos de uso de WEP (Wired Equivalent Privacy): Redes Wi-Fi antigas (obsoleto e não recomendado).
+Termo: RC4 (Rivest Cipher 4) | Tipo: Algoritmo de Criptografia | Definicao: Algoritmo de criptografia de fluxo utilizado no WEP. Sua implementação e uso no WEP apresentaram sérias vulnerabilidades.
+  Vantagens de RC4 (Rivest Cipher 4): Simples e rápido de implementar.
+  Desvantagens de RC4 (Rivest Cipher 4): Vulnerável a ataques estatísticos e de texto claro conhecido.; Geração de chave pseudoaleatória fraca em certos contextos.
+  Casos de uso de RC4 (Rivest Cipher 4): Historicamente usado em WEP e TLS (em versões antigas).
+Termo: TKIP (Temporal Key Integrity Protocol) | Tipo: Protocolo de Segurança | Definicao: Protocolo de chave de integridade temporal, introduzido no WPA como uma melhoria sobre o WEP, utilizando criptografia por chave de sessão e um mecanismo de 'mixing' para dificultar ataques.
+  Vantagens de TKIP (Temporal Key Integrity Protocol): Melhoria sobre o WEP.; Permitiu a atualização de hardware legado.
+  Desvantagens de TKIP (Temporal Key Integrity Protocol): Ainda considerado menos seguro que AES.; Vulnerável a certos ataques de negação de serviço e de repetição.
+  Casos de uso de TKIP (Temporal Key Integrity Protocol): Redes WPA (obsoleto, mas ainda suportado em alguns dispositivos).
+Termo: WPA (Wi-Fi Protected Access) | Tipo: Protocolo de Segurança | Definicao: Padrão de segurança Wi-Fi que substituiu o WEP, introduzindo o TKIP para criptografia e o EAP para autenticação.
+  Vantagens de WPA (Wi-Fi Protected Access): Melhoria significativa em relação ao WEP.; Suporte a autenticação mais robusta (EAP).
+  Desvantagens de WPA (Wi-Fi Protected Access): Utiliza TKIP, que tem vulnerabilidades conhecidas.; Considerado um padrão de transição.
+  Casos de uso de WPA (Wi-Fi Protected Access): Redes Wi-Fi (substituído por WPA2 e WPA3).
+Termo: AES (Advanced Encryption Standard) | Tipo: Algoritmo de Criptografia | Definicao: Algoritmo de criptografia de bloco amplamente utilizado e considerado seguro, adotado como padrão no WPA2 e WPA3.
+  Vantagens de AES (Advanced Encryption Standard): Criptografia forte e robusta.; Padrão da indústria e governamental.; Resistente a ataques conhecidos.
+  Desvantagens de AES (Advanced Encryption Standard): Pode exigir mais recursos computacionais que algoritmos mais simples.
+  Casos de uso de AES (Advanced Encryption Standard): WPA2, WPA3.; Criptografia de dados em repouso e em trânsito.; VPNs.
+Termo: WPA2 (Wi-Fi Protected Access II) | Tipo: Protocolo de Segurança | Definicao: Padrão de segurança Wi-Fi que utiliza AES para criptografia, oferecendo um nível de segurança significativamente maior que o WPA.
+  Vantagens de WPA2 (Wi-Fi Protected Access II): Segurança robusta com AES.; Suporte a autenticação forte (PSK e Enterprise).
+  Desvantagens de WPA2 (Wi-Fi Protected Access II): Vulnerável a ataques de dicionário offline no modo PSK (WPA2-PSK).; Vulnerabilidades em implementações específicas (ex: KRACK).
+  Casos de uso de WPA2 (Wi-Fi Protected Access II): Redes Wi-Fi domésticas e corporativas (ainda amplamente utilizado).
+Termo: WPA3 (Wi-Fi Protected Access III) | Tipo: Protocolo de Segurança | Definicao: A mais recente geração de segurança Wi-Fi, introduzindo melhorias como proteção contra ataques de dicionário mais robusta, criptografia individualizada para redes abertas e segurança aprimorada para redes corporativas.
+  Vantagens de WPA3 (Wi-Fi Protected Access III): Proteção aprimorada contra ataques de dicionário.; Criptografia individualizada (SAE - Simultaneous Authentication of Equals).; Segurança simplificada para redes abertas.; Segurança robusta para redes corporativas (WPA3-Enterprise).
+  Desvantagens de WPA3 (Wi-Fi Protected Access III): Requer hardware mais recente.; Adoção ainda em progresso.
+  Casos de uso de WPA3 (Wi-Fi Protected Access III): Redes Wi-Fi modernas (domésticas, corporativas e públicas).
+
+-- Tabelas comparativas --
+Tabela 'Comparativo de Protocolos de Segurança Wi-Fi': Tabela comparativa que resume as características e a evolução dos principais protocolos de segurança Wi-Fi, destacando seus algoritmos de criptografia e níveis de segurança.
+  Linha LINHA_WEP: Protocolo = WEP; Ano de Lançamento = 1999; Algoritmo de Criptografia = RC4 (com IVs de 40/104 bits); Nível de Segurança = Muito Baixo (Obsoleto); Observações = Falhas graves, facilmente quebrável. Não recomendado.
+    (Relacionado a: wep, rc4)
+  Linha LINHA_WPA: Protocolo = WPA; Ano de Lançamento = 2003; Algoritmo de Criptografia = TKIP (baseado em RC4); Nível de Segurança = Baixo a Médio (Transição); Observações = Melhoria sobre WEP, mas ainda com vulnerabilidades. Suporte a PSK e Enterprise (EAP).
+    (Relacionado a: wpa, tkip, rc4)
+  Linha LINHA_WPA2: Protocolo = WPA2; Ano de Lançamento = 2004; Algoritmo de Criptografia = AES (CCMP); Nível de Segurança = Alto; Observações = Padrão amplamente adotado. Vulnerável a ataques de dicionário offline (PSK) e KRACK.
+    (Relacionado a: wpa2, aes)
+  Linha LINHA_WPA3: Protocolo = WPA3; Ano de Lançamento = 2018; Algoritmo de Criptografia = AES (GCMP-256 para WPA3-Enterprise); Nível de Segurança = Muito Alto; Observações = Proteção aprimorada contra ataques de dicionário, criptografia individualizada em redes abertas.
+    (Relacionado a: wpa3, aes)
+
+-- Relacionamentos --
+Conexao: 'wep' --[substituido_por]--> 'wpa'. Motivo: O WPA foi desenvolvido para substituir o WEP devido às suas graves falhas de segurança.
+Conexao: 'wpa' --[substituido_por]--> 'wpa2'. Motivo: O WPA2, com criptografia AES, ofereceu um nível de segurança superior ao WPA.
+Conexao: 'wpa2' --[substituido_por]--> 'wpa3'. Motivo: O WPA3 representa a evolução mais recente, com melhorias significativas em segurança sobre o WPA2.
+Conexao: 'rc4' --[usado_em]--> 'wep'. Motivo: O algoritmo RC4 foi utilizado na implementação do WEP, contribuindo para suas vulnerabilidades.
+Conexao: 'tkip' --[usado_em]--> 'wpa'. Motivo: O TKIP foi o protocolo de criptografia introduzido no WPA como uma melhoria em relação ao RC4 do WEP.
+Conexao: 'aes' --[usado_em]--> 'wpa2'. Motivo: O AES é o algoritmo de criptografia padrão e seguro utilizado no WPA2.
+Conexao: 'aes' --[usado_em]--> 'wpa3'. Motivo: O AES continua sendo o algoritmo de criptografia principal no WPA3, com variações para maior segurança.
+
+=== SECAO [TI_SEC_003]: Protocolos de Autenticação e Gerenciamento de Chaves ===
+Esta seção aborda os métodos de autenticação utilizados em redes Wi-Fi, focando em como os dispositivos e usuários são verificados para obter acesso. Menciona o uso de senhas pré-compartilhadas (PSK) para redes domésticas e o uso de servidores RADIUS (Remote Authentication Dial-In User Service) em ambientes corporativos (WPA-Enterprise) através de protocolos como EAP (Extensible Authentication Protocol) e suas variações (PEAP, TLS, TTLS). Explica que o gerenciamento de chaves é crucial para a segurança, garantindo que as chaves de criptografia sejam geradas, distribuídas e protegidas adequadamente.
+
+-- Conceitos-chave --
+Termo: PSK (Pre-Shared Key) | Tipo: Método de Autenticação | Definicao: Método de autenticação onde uma chave (senha) é compartilhada previamente entre o ponto de acesso e os clientes. Comum em redes domésticas (WPA/WPA2/WPA3-Personal).
+  Vantagens de PSK (Pre-Shared Key): Simples de configurar para redes pequenas.; Não requer infraestrutura de servidor adicional.
+  Desvantagens de PSK (Pre-Shared Key): Vulnerável a ataques de dicionário offline se a senha for fraca.; Compartilhamento da mesma senha por muitos usuários pode comprometer a segurança.
+  Casos de uso de PSK (Pre-Shared Key): Redes Wi-Fi domésticas.; Pequenos escritórios.
+Termo: RADIUS (Remote Authentication Dial-In User Service) | Tipo: Servidor de Autenticação | Definicao: Servidor de autenticação, autorização e contabilidade (AAA) amplamente utilizado em redes corporativas para gerenciar o acesso de usuários a recursos de rede, incluindo Wi-Fi.
+  Vantagens de RADIUS (Remote Authentication Dial-In User Service): Centraliza o gerenciamento de usuários.; Suporta autenticação forte e granular.; Permite auditoria e controle de acesso.
+  Desvantagens de RADIUS (Remote Authentication Dial-In User Service): Requer infraestrutura de servidor dedicada.; Complexidade de configuração e manutenção.
+  Casos de uso de RADIUS (Remote Authentication Dial-In User Service): Autenticação em redes Wi-Fi corporativas (WPA-Enterprise).; VPNs.; Acesso remoto seguro.
+Termo: EAP (Extensible Authentication Protocol) | Tipo: Protocolo de Autenticação | Definicao: Framework de autenticação que suporta múltiplos métodos de autenticação, usado em conjunto com RADIUS para autenticação de rede (ex: WPA-Enterprise).
+  Vantagens de EAP (Extensible Authentication Protocol): Flexível e extensível.; Suporta diversos métodos de autenticação (TLS, PEAP, TTLS, etc.).
+  Desvantagens de EAP (Extensible Authentication Protocol): A segurança depende do método EAP específico utilizado.; Pode ser complexo de configurar.
+  Casos de uso de EAP (Extensible Authentication Protocol): Autenticação em redes Wi-Fi corporativas e empresariais.; VPNs.
+Termo: PEAP (Protected Extensible Authentication Protocol) | Tipo: Método de Autenticação | Definicao: Um método EAP que utiliza TLS para criar um túnel criptografado, dentro do qual a autenticação do usuário ocorre. Geralmente requer um certificado no servidor RADIUS.
+  Vantagens de PEAP (Protected Extensible Authentication Protocol): Segurança forte através de túnel TLS.; Simplifica a implantação em ambientes Windows.
+  Desvantagens de PEAP (Protected Extensible Authentication Protocol): Requer certificados no servidor.; Pode ser vulnerável a ataques de 'man-in-the-middle' se os certificados não forem validados corretamente.
+  Casos de uso de PEAP (Protected Extensible Authentication Protocol): Autenticação em redes Wi-Fi corporativas.
+Termo: TLS (Transport Layer Security) | Tipo: Protocolo de Segurança | Definicao: Protocolo de segurança que fornece comunicação segura sobre uma rede de computadores. Usado em vários métodos EAP para criar túneis seguros.
+  Vantagens de TLS (Transport Layer Security): Criptografia forte.; Autenticação mútua (opcional).; Amplamente adotado e confiável.
+  Desvantagens de TLS (Transport Layer Security): Complexidade na configuração de certificados.; Vulnerável a ataques se implementado incorretamente.
+  Casos de uso de TLS (Transport Layer Security): HTTPS.; VPNs.; Métodos EAP (PEAP, EAP-TLS).
+Termo: TTLS (Tunneled TLS) | Tipo: Método de Autenticação | Definicao: Outro método EAP que usa TLS para criar um túnel seguro, permitindo a autenticação do cliente sem a necessidade de um certificado no cliente, mas geralmente requer um certificado no servidor.
+  Vantagens de TTLS (Tunneled TLS): Segurança forte com túnel TLS.; Não requer certificados no cliente, facilitando a implantação em massa.
+  Desvantagens de TTLS (Tunneled TLS): Requer certificados no servidor.; Pode ser mais complexo que PEAP em alguns cenários.
+  Casos de uso de TTLS (Tunneled TLS): Autenticação em redes Wi-Fi corporativas.
+
+-- Relacionamentos --
+Conexao: 'psk' --[usado_em]--> 'wpa'. Motivo: PSK é um método de autenticação comum em redes WPA.
+Conexao: 'radius' --[suporta]--> 'eap'. Motivo: O servidor RADIUS é frequentemente usado em conjunto com o protocolo EAP para autenticação em redes corporativas.
+Conexao: 'eap' --[utiliza]--> 'tls'. Motivo: O TLS é um protocolo de segurança fundamental utilizado por métodos EAP como PEAP e TTLS para criar túneis seguros.
+Conexao: 'peap' --[metodo_de]--> 'eap'. Motivo: PEAP é um método específico dentro do framework EAP.
+Conexao: 'ttls' --[metodo_de]--> 'eap'. Motivo: TTLS é outro método específico dentro do framework EAP.
+Conexao: 'radius' --[usado_em]--> 'wpa'. Motivo: O RADIUS é usado para autenticação em redes WPA-Enterprise.
+
+=== SECAO [TI_SEC_004]: Ataques Comuns e Vulnerabilidades ===
+Esta seção detalha os ataques comuns e as vulnerabilidades associadas aos protocolos de segurança Wi-Fi, com foco especial no WEP e WPA. Explica como o WEP, com seu algoritmo RC4 e IVs curtos, é suscetível a ataques estatísticos que permitem a recuperação da chave em minutos. O WPA, embora melhor, ainda sofre com o TKIP e a possibilidade de ataques de repetição. O texto também menciona a vulnerabilidade do WPA2-PSK a ataques de dicionário offline, onde senhas fracas podem ser descobertas. A importância de senhas fortes e a necessidade de atualizações de segurança são enfatizadas.
+
+-- Conceitos-chave --
+Termo: Ataque Estatístico | Tipo: Tipo de Ataque | Definicao: Tipo de ataque que explora padrões e probabilidades na criptografia para deduzir informações, como chaves. Foi um dos principais vetores de ataque contra o WEP.
+  Desvantagens de Ataque Estatístico: Permite a quebra de criptografia fraca.; Pode ser automatizado com ferramentas.
+  Casos de uso de Ataque Estatístico: Quebra de WEP.; Análise de tráfego criptografado com falhas.
+Termo: Ataque de Dicionário Offline | Tipo: Tipo de Ataque | Definicao: Ataque onde um 'hash' da senha é capturado e comparado com um grande dicionário de senhas pré-computadas ou geradas por força bruta, sem a necessidade de interagir com o alvo em tempo real.
+  Vantagens de Ataque de Dicionário Offline: Eficaz contra senhas fracas.; Não requer acesso direto à rede durante a execução.
+  Desvantagens de Ataque de Dicionário Offline: Ineficaz contra senhas fortes e complexas.; Pode ser computacionalmente intensivo.
+  Casos de uso de Ataque de Dicionário Offline: Quebra de WPA2-PSK.; Recuperação de senhas em sistemas com hashes fracos.
+Termo: Ataque de Repetição (Replay Attack) | Tipo: Tipo de Ataque | Definicao: Um atacante intercepta um pacote de dados válido e o retransmite posteriormente para obter acesso não autorizado ou causar efeitos indesejados. Mecanismos de segurança como IVs rotativos e timestamps ajudam a mitigar.
+  Vantagens de Ataque de Repetição (Replay Attack): Pode ser usado para obter acesso ou causar negação de serviço.
+  Desvantagens de Ataque de Repetição (Replay Attack): Mitigado por mecanismos de sequenciamento e autenticação de pacotes.
+  Casos de uso de Ataque de Repetição (Replay Attack): Interceptação e reuso de pacotes de autenticação.; Ataques a protocolos sem proteção contra repetição.
+Termo: Gerenciamento de Chave Inseguro | Tipo: Vulnerabilidade | Definicao: Práticas inadequadas na geração, distribuição, armazenamento e rotação de chaves criptográficas, levando a vulnerabilidades de segurança.
+  Desvantagens de Gerenciamento de Chave Inseguro: Facilita a quebra da criptografia.; Permite acesso não autorizado.; Compromete a confidencialidade e integridade dos dados.
+  Casos de uso de Gerenciamento de Chave Inseguro: WEP (chaves estáticas e IVs curtos).; Implementações inadequadas de WPA/WPA2.
+
+-- Tabelas comparativas --
+Tabela 'Ataques Comuns em WEP e WPA': Esta tabela detalha os tipos de ataques mais comuns contra os protocolos WEP e WPA, explicando brevemente como funcionam e suas consequências.
+  Linha LINHA_WEP_ESTATISTICO: Protocolo = WEP; Tipo de Ataque = Ataque Estatístico; Descrição = Explora a fraqueza do RC4 e dos IVs curtos para deduzir a chave de criptografia.; Impacto = Quebra da criptografia, acesso não autorizado, interceptação de dados.
+    (Relacionado a: wep, rc4, ataque_estatistico, gerenciamento_chave_inseguro)
+  Linha LINHA_WEP_REPETICAO: Protocolo = WEP; Tipo de Ataque = Ataque de Repetição; Descrição = Reutilização de pacotes de autenticação ou dados válidos.; Impacto = Acesso não autorizado, negação de serviço.
+    (Relacionado a: wep, ataque_repeticao)
+  Linha LINHA_WPA_DICCIONARIO: Protocolo = WPA (PSK); Tipo de Ataque = Ataque de Dicionário Offline; Descrição = Captura do handshake e tentativa de quebrar a senha pré-compartilhada (PSK) offline.; Impacto = Quebra da senha, acesso não autorizado à rede.
+    (Relacionado a: wpa, psk, ataque_dicionario_offline)
+  Linha LINHA_WPA_TKIP: Protocolo = WPA; Tipo de Ataque = Vulnerabilidades do TKIP; Descrição = Embora melhor que WEP, o TKIP ainda possuía fraquezas exploráveis.; Impacto = Potencial para interceptação de dados, negação de serviço.
+    (Relacionado a: wpa, tkip)
+
+-- Relacionamentos --
+Conexao: 'wep' --[vulneravel_a]--> 'ataque_estatistico'. Motivo: O WEP é altamente vulnerável a ataques estatísticos devido à sua implementação criptográfica.
+Conexao: 'wep' --[vulneravel_a]--> 'gerenciamento_chave_inseguro'. Motivo: O gerenciamento de chaves no WEP era falho, facilitando ataques.
+Conexao: 'wpa' --[vulneravel_a]--> 'ataque_dicionario_offline'. Motivo: O modo WPA-PSK é suscetível a ataques de dicionário offline se a senha for fraca.
+Conexao: 'wpa' --[vulneravel_a]--> 'ataque_repeticao'. Motivo: O TKIP usado no WPA pode ser vulnerável a certos tipos de ataques de repetição.
+
+=== SECAO [TI_SEC_005]: WPA2 e WPA3: Segurança Moderna ===
+Esta seção foca nos protocolos WPA2 e WPA3, considerados os padrões de segurança mais robustos para redes Wi-Fi. O WPA2, com o uso do AES (CCMP), oferece alta segurança para redes domésticas (WPA2-PSK) e corporativas (WPA2-Enterprise). No entanto, são mencionadas vulnerabilidades como ataques de dicionário offline contra PSKs fracas e o ataque KRACK. O WPA3 é apresentado como a evolução, introduzindo o SAE (Simultaneous Authentication of Equals) para proteção aprimorada contra ataques de dicionário, criptografia individualizada em redes abertas e segurança reforçada para redes corporativas. A importância de hardware compatível e a adoção gradual do WPA3 são destacadas.
+
+-- Conceitos-chave --
+Termo: KRACK (Key Reinstallation Attack) | Tipo: Vulnerabilidade | Definicao: Vulnerabilidade descoberta no protocolo WPA2 que permite a um atacante reexecutar a negociação de chave de criptografia, interceptando e manipulando tráfego de rede.
+  Desvantagens de KRACK (Key Reinstallation Attack): Permite interceptação e manipulação de tráfego.; Afeta implementações de WPA2 em diversos dispositivos.
+  Casos de uso de KRACK (Key Reinstallation Attack): Exploração de falhas no handshake do WPA2.
+Termo: SAE (Simultaneous Authentication of Equals) | Tipo: Protocolo de Autenticação | Definicao: Protocolo de autenticação introduzido no WPA3 que substitui o PSK, oferecendo proteção contra ataques de dicionário offline e garantindo autenticação mútua mais segura.
+  Vantagens de SAE (Simultaneous Authentication of Equals): Proteção robusta contra ataques de dicionário.; Autenticação mútua mais segura.; Substitui o PSK de forma mais segura.
+  Desvantagens de SAE (Simultaneous Authentication of Equals): Requer suporte de hardware mais recente.
+  Casos de uso de SAE (Simultaneous Authentication of Equals): WPA3-Personal.; Redes Wi-Fi domésticas e de pequenos escritórios.
+Termo: WPA3-Enterprise | Tipo: Protocolo de Segurança | Definicao: Modo de segurança do WPA3 para redes corporativas, que utiliza autenticação baseada em certificados e algoritmos de criptografia mais fortes, como GCMP-256.
+  Vantagens de WPA3-Enterprise: Segurança de nível empresarial com criptografia forte.; Autenticação robusta via EAP/RADIUS.
+  Desvantagens de WPA3-Enterprise: Requer infraestrutura de rede mais complexa (servidor RADIUS, certificados).
+  Casos de uso de WPA3-Enterprise: Redes Wi-Fi corporativas e governamentais.
+
+-- Tabelas comparativas --
+Tabela 'Comparativo WPA2 vs WPA3': Tabela comparativa destacando as principais diferenças e melhorias entre os protocolos WPA2 e WPA3 em termos de segurança e funcionalidades.
+  Linha LINHA_AUTENTICACAO: Recurso = Autenticação (Personal); WPA2 = PSK (Pre-Shared Key); WPA3 = SAE (Simultaneous Authentication of Equals)
+    (Relacionado a: psk, sae)
+  Linha LINHA_ATAQUE_DICCIONARIO: Recurso = Proteção contra Ataque de Dicionário; WPA2 = Vulnerável (PSK); WPA3 = Resistente (SAE)
+    (Relacionado a: ataque_dicionario_offline, psk, sae)
+  Linha LINHA_REDE_ABERTA: Recurso = Redes Abertas (sem senha); WPA2 = Sem criptografia (inseguro); WPA3 = Criptografia individualizada (OPP)
+    (Relacionado a: wpa3)
+  Linha LINHA_ENTERPRISE: Recurso = Redes Corporativas (Enterprise); WPA2 = WPA2-Enterprise (EAP/RADIUS, AES); WPA3 = WPA3-Enterprise (EAP/RADIUS, GCMP-256)
+    (Relacionado a: wpa2, wpa3, eap, radius, wpa3_enterprise)
+
+-- Relacionamentos --
+Conexao: 'wpa2' --[vulneravel_a]--> 'krack'. Motivo: O WPA2 possui vulnerabilidades como o ataque KRACK que foram exploradas.
+Conexao: 'wpa2' --[vulneravel_a]--> 'ataque_dicionario_offline'. Motivo: O modo WPA2-PSK é suscetível a ataques de dicionário offline.
+Conexao: 'wpa3' --[introduz]--> 'sae'. Motivo: O WPA3 introduziu o protocolo SAE para melhorar a segurança da autenticação.
+Conexao: 'wpa3' --[melhora]--> 'wpa2'. Motivo: O WPA3 melhora a segurança em relação ao WPA2, especialmente contra ataques de dicionário e em redes abertas.
+Conexao: 'wpa3_enterprise' --[utiliza]--> 'aes'. Motivo: O WPA3-Enterprise utiliza AES com modos de criptografia mais fortes como GCMP-256.
+
+=== SECAO [TI_SEC_006]: WPA3: Detalhes e Implementação ===
+Esta seção aprofunda os detalhes do WPA3, explicando seus componentes e como ele melhora a segurança em relação ao WPA2. Destaca o SAE (Simultaneous Authentication of Equals) como substituto do PSK, que impede ataques de dicionário offline e oferece autenticação mais robusta. Para redes abertas, o WPA3 introduz a criptografia individualizada (Opportunistic Wireless Encryption - OWE), garantindo que o tráfego seja criptografado mesmo sem senha. Em redes corporativas (WPA3-Enterprise), o padrão utiliza criptografia mais forte (GCMP-256) e autenticação via EAP/RADIUS. A seção também aborda a compatibilidade com hardware mais antigo e a necessidade de atualizações para aproveitar todos os benefícios do WPA3.
+
+-- Conceitos-chave --
+Termo: OWE (Opportunistic Wireless Encryption) | Tipo: Protocolo de Segurança | Definicao: Protocolo introduzido no WPA3 para fornecer criptografia automática e individualizada em redes Wi-Fi abertas (sem senha), protegendo contra espionagem passiva.
+  Vantagens de OWE (Opportunistic Wireless Encryption): Criptografa o tráfego em redes abertas sem exigir senha.; Protege contra espionagem passiva.; Transição transparente para o usuário.
+  Desvantagens de OWE (Opportunistic Wireless Encryption): Não oferece autenticação do usuário ou do ponto de acesso.; Não protege contra ataques ativos (ex: 'man-in-the-middle').
+  Casos de uso de OWE (Opportunistic Wireless Encryption): Redes Wi-Fi públicas (aeroportos, cafés, shoppings).
+Termo: WPA3-Personal | Tipo: Protocolo de Segurança | Definicao: Modo de segurança do WPA3 para redes domésticas e de pequenos escritórios, que utiliza o protocolo SAE para autenticação e criptografia robusta.
+  Vantagens de WPA3-Personal: Proteção aprimorada contra ataques de dicionário.; Autenticação mais segura que PSK.
+  Desvantagens de WPA3-Personal: Requer hardware compatível com WPA3.
+  Casos de uso de WPA3-Personal: Redes Wi-Fi domésticas e de pequenos escritórios.
+
+-- Figuras e diagramas --
+Figura 'Fluxo de Autenticação SAE (WPA3-Personal)' (Diagrama de Sequência): O diagrama mostra o processo de autenticação SAE entre um cliente e um ponto de acesso. O cliente e o AP trocam mensagens criptografadas usando o protocolo Diffie-Hellman para derivar uma chave de sessão compartilhada. Este processo garante que ambos os lados se autentiquem mutuamente e que a chave derivada seja única para a sessão, protegendo contra ataques de dicionário offline.
+  Componentes visuais: Cliente Wi-Fi, Ponto de Acesso (AP), Mensagens de Autenticação (M1, M2, M3, M4), Derivação de Chave, Túnel Criptografado
+  Relacionado a: sae, wpa3_personal
+
+-- Relacionamentos --
+Conexao: 'wpa3' --[inclui]--> 'sae'. Motivo: O WPA3 utiliza o protocolo SAE como seu principal método de autenticação para redes pessoais.
+Conexao: 'wpa3' --[inclui]--> 'owe'. Motivo: O WPA3 introduziu o OWE para fornecer criptografia em redes Wi-Fi abertas.
+Conexao: 'wpa3' --[inclui]--> 'wpa3_enterprise'. Motivo: O WPA3-Enterprise é o modo de segurança para redes corporativas dentro do padrão WPA3.
+Conexao: 'sae' --[substitui]--> 'psk'. Motivo: O SAE substitui o PSK no WPA3, oferecendo maior segurança contra ataques de dicionário.
+
+=== SECAO [TI_SEC_007]: Segurança em Redes Públicas e Corporativas ===
+Esta seção discute as particularidades da segurança em redes Wi-Fi públicas e corporativas. Para redes públicas, onde a autenticação do usuário é menos comum, o WPA3 com OWE oferece criptografia passiva. Em redes corporativas, a autenticação robusta via WPA3-Enterprise (EAP/RADIUS com certificados) é essencial para controlar o acesso e garantir a segurança dos dados. O texto também aborda a importância de políticas de segurança, segmentação de rede e o uso de firewalls para proteger os recursos internos.
+
+-- Conceitos-chave --
+Termo: Segmentação de Rede | Tipo: Técnica de Rede | Definicao: Divisão de uma rede em sub-redes menores e isoladas para melhorar a segurança, o desempenho e o gerenciamento. Reduz a área de impacto de um incidente de segurança.
+  Vantagens de Segmentação de Rede: Isola tráfego e potenciais ameaças.; Melhora o controle de acesso.; Facilita o gerenciamento de políticas de segurança.
+  Desvantagens de Segmentação de Rede: Aumenta a complexidade da infraestrutura de rede.; Requer planejamento cuidadoso.
+  Casos de uso de Segmentação de Rede: Redes corporativas.; Redes de hospitais e instituições financeiras.; Isolamento de redes de convidados (guest networks).
+Termo: Firewall | Tipo: Ferramenta de Segurança | Definicao: Dispositivo de segurança de rede que monitora e controla o tráfego de rede de entrada e saída com base em regras de segurança predeterminadas.
+  Vantagens de Firewall: Bloqueia tráfego não autorizado.; Controla o acesso a recursos.; Pode realizar inspeção profunda de pacotes (DPI).
+  Desvantagens de Firewall: Pode se tornar um gargalo de desempenho.; Requer configuração e manutenção adequadas.; Não protege contra todas as ameaças (ex: malware já instalado).
+  Casos de uso de Firewall: Proteção de perímetros de rede.; Segmentação de redes internas.; Controle de acesso a aplicações.
+
+-- Figuras e diagramas --
+Figura 'Arquitetura de Rede Wi-Fi Pública Segura com WPA3' (Diagrama de Arquitetura): O diagrama ilustra uma rede Wi-Fi pública utilizando WPA3. Um ponto de acesso (AP) com suporte a OWE e WPA3-Enterprise se conecta a um firewall. Dispositivos clientes se conectam ao AP. Para redes abertas, o OWE criptografa o tráfego passivamente. Para acesso corporativo, o AP autentica usuários via EAP/RADIUS, que por sua vez se comunica com um servidor RADIUS. O firewall protege a rede interna.
+  Componentes visuais: Dispositivo Cliente, Ponto de Acesso (AP), Firewall, Servidor RADIUS, Rede Interna, Internet
+  Relacionado a: owe, wpa3_enterprise, radius, firewall, segmentacao_rede
+
+-- Relacionamentos --
+Conexao: 'wpa3' --[apropriado_para]--> 'redes_publicas'. Motivo: O WPA3, com OWE, é ideal para redes Wi-Fi públicas, oferecendo criptografia passiva.
+Conexao: 'wpa3_enterprise' --[apropriado_para]--> 'redes_corporativas'. Motivo: O WPA3-Enterprise é o padrão recomendado para redes Wi-Fi corporativas devido à sua autenticação robusta.
+Conexao: 'segmentacao_rede' --[complementa]--> 'firewall'. Motivo: A segmentação de rede e o uso de firewalls trabalham juntos para proteger os recursos de rede.
+Conexao: 'firewall' --[protege]--> 'rede_interna'. Motivo: O firewall atua como uma barreira de segurança entre a rede externa (Internet) e a rede interna.
+
+=== SECAO [TI_SEC_008]: Considerações Finais e Recomendações ===
+A seção conclui reforçando a necessidade de utilizar os protocolos de segurança mais recentes e robustos, como WPA3, para proteger redes Wi-Fi. Enfatiza que protocolos mais antigos como WEP e WPA são obsoletos e inseguros. Recomenda a atualização de hardware e software para suportar WPA3 e a adoção de senhas fortes. Para ambientes corporativos, a autenticação WPA3-Enterprise com RADIUS é a melhor prática. A importância de manter os dispositivos atualizados e de estar ciente das novas vulnerabilidades é ressaltada.
+
+-- Conceitos-chave --
+Termo: Atualização de Software e Hardware | Tipo: Prática de Segurança | Definicao: Processo de manter os sistemas operacionais, firmwares de dispositivos e hardware de rede atualizados com as últimas versões e patches de segurança.
+  Vantagens de Atualização de Software e Hardware: Corrige vulnerabilidades conhecidas.; Melhora o desempenho e a estabilidade.; Adiciona novas funcionalidades de segurança.
+  Desvantagens de Atualização de Software e Hardware: Pode exigir custos de atualização ou substituição de hardware.; Alguns dispositivos mais antigos podem não receber mais atualizações.
+  Casos de uso de Atualização de Software e Hardware: Manutenção de segurança em qualquer sistema de TI.; Mitigação de riscos de exploração de vulnerabilidades.
+Termo: Senha Forte | Tipo: Prática de Segurança | Definicao: Uma senha que é difícil de adivinhar ou quebrar, geralmente combinando letras maiúsculas e minúsculas, números e símbolos, e com um comprimento razoável.
+  Vantagens de Senha Forte: Dificulta ataques de força bruta e dicionário.; Aumenta a segurança do acesso à conta ou rede.
+  Desvantagens de Senha Forte: Pode ser difícil para usuários memorizarem.; Requer políticas de complexidade e expiração.
+  Casos de uso de Senha Forte: Autenticação de usuários em sistemas.; Proteção de redes Wi-Fi (PSK).; Acesso a contas online.
+
+-- Relacionamentos --
+Conexao: 'wpa3' --[recomendado_para]--> 'redes_modernas'. Motivo: O WPA3 é o protocolo de segurança recomendado para todas as redes Wi-Fi modernas.
+Conexao: 'wep' --[obsoleto]--> 'redes_seguras'. Motivo: O WEP é obsoleto e não deve ser usado em nenhuma rede que necessite de segurança.
+Conexao: 'wpa' --[obsoleto]--> 'redes_seguras'. Motivo: O WPA, devido ao uso de TKIP, é considerado obsoleto e inseguro para a maioria das aplicações.
+Conexao: 'atualizacao_software_hardware' --[necessario_para]--> 'wpa3'. Motivo: A adoção do WPA3 requer hardware e software compatíveis e atualizados.
+Conexao: 'senha_forte' --[essencial_para]--> 'wpa2'. Motivo: Senhas fortes são essenciais para a segurança do WPA2-PSK.
+

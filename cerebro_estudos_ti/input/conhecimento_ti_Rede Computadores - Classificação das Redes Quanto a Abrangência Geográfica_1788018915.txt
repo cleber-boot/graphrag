@@ -1,0 +1,151 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Classificação das Redes Quanto a Abrangência Geográfica
+Idioma: pt-BR
+Tecnologias citadas no documento: LAN, MAN, WAN, PAN, Wi-Fi, Bluetooth, Satélite, Rede celular
+
+=== SECAO [TI_SEC_001]: Introdução à Classificação de Redes por Abrangência Geográfica ===
+O material introduz a classificação de redes de computadores com base em sua abrangência geográfica. Explica que essa classificação é fundamental para entender o escopo e as características de diferentes tipos de redes. Menciona que a abrangência é medida em termos de distância física que os equipamentos podem cobrir, mas também ressalta a importância da tecnologia utilizada, pois redes com alcance físico limitado podem, por exemplo, utilizar tecnologias de longa distância para comunicação, o que as descaracteriza como redes locais. O foco principal é a distinção entre redes locais (LAN), metropolitanas (MAN), de grande abrangência (WAN) e pessoais (PAN), com ênfase na rede local como ponto de partida.
+
+-- Conceitos-chave --
+Termo: Classificação de Redes por Abrangência Geográfica | Tipo: Conceito | Definicao: Categorização de redes de computadores com base na distância física que elas cobrem, influenciando diretamente em suas características de desempenho, tecnologia e infraestrutura.
+  Vantagens de Classificação de Redes por Abrangência Geográfica: Permite entender o escopo e as limitações de cada tipo de rede.; Auxilia na escolha da tecnologia e infraestrutura adequadas.; Facilita a comunicação e o planejamento de redes.
+  Desvantagens de Classificação de Redes por Abrangência Geográfica: Pode ser simplista, pois a tecnologia utilizada pode influenciar o alcance efetivo.; A linha entre as categorias pode ser tênue em alguns casos.
+  Casos de uso de Classificação de Redes por Abrangência Geográfica: Planejamento de infraestrutura de rede.; Seleção de equipamentos e tecnologias.; Estudo e ensino de redes de computadores.; Análise de requisitos de rede para diferentes aplicações.
+Termo: Alcance Geográfico | Tipo: Atributo | Definicao: A extensão física que uma rede de computadores pode cobrir, desde poucos metros até continentes inteiros.
+  Vantagens de Alcance Geográfico: É o principal critério para a classificação das redes.; Diretamente relacionado à velocidade e latência da rede.
+  Desvantagens de Alcance Geográfico: Não é o único fator determinante; a tecnologia é crucial.; Pode variar dependendo da infraestrutura e do ambiente.
+  Casos de uso de Alcance Geográfico: Definir o tipo de rede (LAN, MAN, WAN, PAN).; Dimensionar a infraestrutura necessária.; Avaliar o custo de implementação e manutenção.
+Termo: Influência da Tecnologia no Alcance | Tipo: Conceito | Definicao: O fato de que a tecnologia de comunicação utilizada pode estender ou limitar o alcance geográfico efetivo de uma rede, independentemente de sua classificação inicial.
+  Vantagens de Influência da Tecnologia no Alcance: Permite flexibilidade na implementação de redes.; Explica cenários onde redes locais usam infraestrutura de longa distância.
+  Desvantagens de Influência da Tecnologia no Alcance: Pode confundir a classificação se não for bem compreendida.; Requer conhecimento técnico para otimizar o uso.
+  Casos de uso de Influência da Tecnologia no Alcance: Redes locais que se conectam a redes externas via VPN.; Uso de satélite para comunicação em áreas remotas.; Redes sem fio que utilizam infraestrutura de operadoras de telefonia.
+
+-- Relacionamentos --
+Conexao: 'alcance_geografico' --[influencia]--> 'classificacao_rede_geografica'. Motivo: O alcance geográfico é o principal critério para classificar as redes.
+Conexao: 'influencia_tecnologia' --[afeta]--> 'alcance_geografico'. Motivo: A tecnologia utilizada pode modificar o alcance geográfico efetivo de uma rede.
+
+=== SECAO [TI_SEC_002]: Rede Local (LAN - Local Area Network) ===
+A Rede Local (LAN) é definida como uma rede de computadores confinada a uma área geográfica pequena, como uma casa, um escritório ou um prédio. Sua principal característica é permitir a interconexão de equipamentos de comunicação de dados, como computadores, impressoras e servidores, dentro desse espaço restrito. Uma observação crucial é que uma LAN não utiliza dispositivos para longo alcance. Por exemplo, uma rede que cobre uma pequena área mas utiliza comunicação via satélite ou rede celular para conectar seus pontos não é considerada uma LAN pura. As LANs são conhecidas por oferecerem altas taxas de transmissão de dados e baixa latência devido à sua curta distância.
+
+-- Conceitos-chave --
+Termo: Rede Local (LAN) | Tipo: Tipo de Rede | Definicao: Uma rede de computadores que conecta dispositivos em uma área geográfica limitada, como uma residência, um escritório ou um campus universitário.
+  Vantagens de Rede Local (LAN): Alta velocidade de transmissão de dados.; Baixa latência.; Custo de implementação relativamente baixo.; Fácil gerenciamento e controle.; Compartilhamento eficiente de recursos (impressoras, arquivos).
+  Desvantagens de Rede Local (LAN): Abrangência geográfica limitada.; Segurança pode ser um desafio em redes maiores ou mal configuradas.; Dependência de infraestrutura física (cabos, switches).
+  Casos de uso de Rede Local (LAN): Redes domésticas.; Redes em escritórios e empresas.; Redes em laboratórios de informática.; Conexão de dispositivos em um mesmo prédio.
+Termo: Características da LAN | Tipo: Atributo | Definicao: Conjunto de propriedades que definem uma Rede Local, incluindo sua cobertura geográfica, taxa de transmissão, latência e o tipo de tecnologia utilizada.
+  Vantagens de Características da LAN: Cobertura geográfica limitada (geralmente até alguns quilômetros).; Alta taxa de transmissão de dados.; Baixa latência.; Custo de implementação e manutenção geralmente menor que redes maiores.; Controle e gerenciamento mais simples.
+  Desvantagens de Características da LAN: A limitação geográfica pode ser uma desvantagem para aplicações distribuídas.; A segurança pode ser comprometida se não houver políticas adequadas.
+  Casos de uso de Características da LAN: Conectar computadores em um escritório para compartilhar arquivos e impressoras.; Permitir que dispositivos em uma casa se comuniquem entre si.; Redes de jogos em um mesmo local.
+Termo: Restrição de Longo Alcance em LANs | Tipo: Regra | Definicao: O princípio de que uma Rede Local (LAN) não deve utilizar tecnologias de comunicação projetadas para longas distâncias (como satélite ou rede celular) para sua operação principal.
+  Vantagens de Restrição de Longo Alcance em LANs: Mantém a simplicidade e o foco da rede local.; Garante o desempenho esperado (alta velocidade, baixa latência).
+  Desvantagens de Restrição de Longo Alcance em LANs: Pode limitar a conectividade externa se não houver gateways adequados.; Exige a separação clara entre a infraestrutura local e a de longa distância.
+  Casos de uso de Restrição de Longo Alcance em LANs: Evitar que uma rede de escritório seja classificada como WAN apenas por usar um link de internet.; Garantir que a comunicação interna seja otimizada para curtas distâncias.
+
+-- Figuras e diagramas --
+Figura 'Diagrama Simplificado de uma Rede Local (LAN)' (Diagrama de Rede): O diagrama ilustra quatro blocos representando dispositivos ou segmentos de rede. Esses blocos estão interconectados, indicando comunicação. A interconexão é feita através de dispositivos de rede, sugerindo que a comunicação ocorre dentro de um ambiente local. A figura representa a ideia de uma rede local onde múltiplos pontos se comunicam.
+  Componentes visuais: Bloco 1 (Dispositivo/Segmento), Bloco 2 (Dispositivo/Segmento), Bloco 3 (Dispositivo/Segmento), Bloco 4 (Dispositivo/Segmento), Linhas de conexão, Dispositivos de rede (implícitos)
+  Relacionado a: lan
+
+-- Relacionamentos --
+Conexao: 'lan' --[caracterizada_por]--> 'caracteristicas_lan'. Motivo: A definição de LAN inclui suas características de alta velocidade e baixa latência.
+Conexao: 'lan' --[restrita_por]--> 'restricao_longo_alcance'. Motivo: Uma LAN não deve utilizar tecnologias de longo alcance para sua operação principal.
+Conexao: 'caracteristicas_lan' --[inclui]--> 'alcance_geografico'. Motivo: O alcance geográfico é uma característica chave de uma LAN.
+
+=== SECAO [TI_SEC_003]: Rede Metropolitana (MAN - Metropolitan Area Network) ===
+A Rede Metropolitana (MAN) abrange uma área geográfica maior que uma LAN, tipicamente cobrindo uma cidade inteira ou uma grande região metropolitana. Ela interliga diversas LANs dentro dessa área, permitindo a comunicação entre diferentes locais de uma mesma organização ou entre organizações distintas. Uma MAN pode ser pública ou privada e frequentemente utiliza tecnologias de alta velocidade para conectar seus nós. A principal diferença para uma LAN é a escala geográfica, enquanto para uma WAN é a abrangência, sendo a MAN intermediária.
+
+-- Conceitos-chave --
+Termo: Rede Metropolitana (MAN) | Tipo: Tipo de Rede | Definicao: Uma rede de computadores que abrange uma área geográfica de tamanho médio, como uma cidade ou uma grande região metropolitana, interligando múltiplas LANs.
+  Vantagens de Rede Metropolitana (MAN): Cobre uma área geográfica maior que uma LAN.; Permite a interconexão de múltiplas LANs.; Pode oferecer alta velocidade e capacidade.; Facilita a comunicação entre diferentes locais dentro de uma cidade.
+  Desvantagens de Rede Metropolitana (MAN): Mais complexa e cara de implementar e gerenciar que uma LAN.; A latência pode ser maior que em uma LAN.; Dependência de infraestrutura de telecomunicações.
+  Casos de uso de Rede Metropolitana (MAN): Conectar filiais de uma empresa em diferentes partes de uma cidade.; Redes de provedores de internet em uma área metropolitana.; Sistemas de transporte público interligados.; Redes de câmeras de segurança municipais.
+Termo: Interconexão de LANs em MAN | Tipo: Funcionalidade | Definicao: A capacidade de uma Rede Metropolitana (MAN) de conectar e gerenciar múltiplas Redes Locais (LANs) dentro de sua área de cobertura.
+  Vantagens de Interconexão de LANs em MAN: Permite a comunicação centralizada entre diferentes departamentos ou unidades.; Otimiza o uso de recursos de rede.; Facilita a expansão da rede.
+  Desvantagens de Interconexão de LANs em MAN: Requer planejamento e gerenciamento cuidadosos.; A complexidade aumenta com o número de LANs interconectadas.
+  Casos de uso de Interconexão de LANs em MAN: Uma universidade com vários campi em uma cidade.; Uma rede municipal para serviços públicos.; Uma rede corporativa com escritórios espalhados por uma metrópole.
+Termo: Escala Geográfica da MAN | Tipo: Atributo | Definicao: A abrangência territorial característica de uma Rede Metropolitana, situando-se entre a LAN e a WAN.
+  Vantagens de Escala Geográfica da MAN: Adequada para cobrir necessidades de comunicação de cidades e regiões metropolitanas.; Oferece um equilíbrio entre alcance e custo/complexidade.
+  Desvantagens de Escala Geográfica da MAN: Pode ser excessiva para necessidades puramente locais.; Pode ser insuficiente para cobrir distâncias interurbanas ou internacionais.
+  Casos de uso de Escala Geográfica da MAN: Redes de provedores de serviços de internet (ISPs) em nível municipal.; Redes de comunicação para serviços de emergência em uma cidade.; Interligação de prédios governamentais em uma capital.
+
+-- Relacionamentos --
+Conexao: 'man' --[interliga]--> 'lan'. Motivo: Uma MAN conecta múltiplas LANs dentro de uma área metropolitana.
+Conexao: 'man' --[possui_escala]--> 'escala_geografica_man'. Motivo: A escala geográfica da MAN é intermediária entre LAN e WAN.
+Conexao: 'interconexao_lan_man' --[facilita]--> 'man'. Motivo: A capacidade de interconectar LANs é uma funcionalidade chave da MAN.
+
+=== SECAO [TI_SEC_004]: Rede de Grande Abrangência (WAN - Wide Area Network) ===
+A Rede de Grande Abrangência (WAN) é caracterizada por cobrir uma vasta área geográfica, podendo abranger países, continentes ou até mesmo o globo. Ela interliga redes menores, como LANs e MANs, que estão geograficamente dispersas. A internet é o exemplo mais proeminente de uma WAN. As WANs geralmente utilizam infraestrutura de telecomunicações de longa distância, como cabos submarinos, satélites e redes de operadoras, e podem apresentar taxas de transmissão mais baixas e latência maior em comparação com LANs e MANs, devido às grandes distâncias e à complexidade da infraestrutura.
+
+-- Conceitos-chave --
+Termo: Rede de Grande Abrangência (WAN) | Tipo: Tipo de Rede | Definicao: Uma rede de computadores que abrange uma área geográfica extensa, como países, continentes ou o mundo inteiro, interligando redes menores (LANs, MANs).
+  Vantagens de Rede de Grande Abrangência (WAN): Abrangência geográfica global ou continental.; Permite a comunicação e o compartilhamento de dados em larga escala.; Conecta redes geograficamente dispersas.; Facilita o acesso a recursos e serviços remotos.
+  Desvantagens de Rede de Grande Abrangência (WAN): Custo de implementação e manutenção muito elevado.; Taxas de transmissão de dados geralmente mais baixas que LANs/MANs.; Latência significativamente maior.; Complexidade de gerenciamento e segurança.; Dependência de provedores de serviços de telecomunicações.
+  Casos de uso de Rede de Grande Abrangência (WAN): A Internet.; Redes corporativas globais.; Redes de bancos internacionais.; Sistemas de comunicação para companhias aéreas.
+Termo: Internet | Tipo: Rede | Definicao: A maior e mais conhecida Rede de Grande Abrangência (WAN) do mundo, conectando bilhões de dispositivos globalmente.
+  Vantagens de Internet: Acesso global à informação e serviços.; Plataforma para comunicação, comércio e entretenimento.; Inovação contínua e desenvolvimento de novas tecnologias.
+  Desvantagens de Internet: Questões de segurança e privacidade.; Dependência de infraestrutura e provedores.; Velocidade e latência variáveis.; Desinformação e conteúdo malicioso.
+  Casos de uso de Internet: Navegação na web.; E-mail.; Streaming de vídeo e áudio.; Comércio eletrônico.; Redes sociais.; Comunicação via VoIP.
+Termo: Infraestrutura de Longa Distância | Tipo: Tecnologia | Definicao: Tecnologias e meios de comunicação utilizados para conectar redes geograficamente dispersas em uma WAN, como cabos submarinos, satélites e redes de operadoras.
+  Vantagens de Infraestrutura de Longa Distância: Permite a cobertura de vastas áreas geográficas.; Essencial para a conectividade global.; Oferece redundância e diversidade de caminhos.
+  Desvantagens de Infraestrutura de Longa Distância: Alto custo de instalação e manutenção.; Vulnerabilidade a danos físicos (cabos submarinos, satélites).; Pode introduzir latência adicional.
+  Casos de uso de Infraestrutura de Longa Distância: Conexão transoceânica de continentes.; Comunicação com estações espaciais.; Provisão de acesso à internet em áreas remotas.; Redes de backbone de operadoras de telecomunicações.
+
+-- Relacionamentos --
+Conexao: 'wan' --[interliga]--> 'lan'. Motivo: Uma WAN conecta múltiplas LANs geograficamente dispersas.
+Conexao: 'wan' --[interliga]--> 'man'. Motivo: Uma WAN também pode interligar múltiplas MANs.
+Conexao: 'wan' --[exemplo_principal]--> 'internet'. Motivo: A Internet é o exemplo mais proeminente de uma WAN.
+Conexao: 'wan' --[utiliza]--> 'infraestrutura_longa_distancia'. Motivo: WANs dependem de infraestrutura de longa distância para operar.
+
+=== SECAO [TI_SEC_005]: Rede Pessoal (PAN - Personal Area Network) ===
+A Rede Pessoal (PAN) é projetada para conectar dispositivos eletrônicos em torno de um único indivíduo, geralmente em um alcance muito curto, tipicamente de poucos metros. O objetivo principal é a comunicação entre dispositivos pessoais, como smartphones, fones de ouvido, smartwatches e laptops. Tecnologias como Bluetooth e Wi-Fi Direct são comumente usadas em PANs. A característica definidora é o foco no usuário individual e a curta distância de operação.
+
+-- Conceitos-chave --
+Termo: Rede Pessoal (PAN) | Tipo: Tipo de Rede | Definicao: Uma rede de computadores para comunicação entre dispositivos eletrônicos próximos a um único usuário, geralmente em um alcance de poucos metros.
+  Vantagens de Rede Pessoal (PAN): Conveniência para conectar dispositivos pessoais.; Baixo consumo de energia (em tecnologias como Bluetooth Low Energy).; Simplicidade de configuração.; Ideal para comunicação de curto alcance.
+  Desvantagens de Rede Pessoal (PAN): Alcance extremamente limitado.; Taxas de transmissão de dados geralmente baixas.; Segurança pode ser um problema se não configurada corretamente.; Pode haver interferência entre dispositivos.
+  Casos de uso de Rede Pessoal (PAN): Conectar um fone de ouvido Bluetooth a um smartphone.; Sincronizar um smartwatch com um celular.; Transferir arquivos entre um laptop e um smartphone via Bluetooth.; Usar um teclado e mouse sem fio com um computador.
+Termo: Tecnologias Comuns em PANs | Tipo: Tecnologia | Definicao: Protocolos e padrões de comunicação utilizados para implementar Redes Pessoais (PANs), como Bluetooth, Wi-Fi Direct e USB.
+  Vantagens de Tecnologias Comuns em PANs: Ampla adoção e disponibilidade.; Variedade de opções para diferentes necessidades (velocidade, consumo de energia).; Interoperabilidade entre dispositivos de diferentes fabricantes.
+  Desvantagens de Tecnologias Comuns em PANs: Limitações de alcance e velocidade.; Potenciais problemas de segurança.; Consumo de bateria em alguns casos.
+  Casos de uso de Tecnologias Comuns em PANs: Emparelhamento de dispositivos sem fio.; Criação de redes ad-hoc entre dispositivos.; Conexão de periféricos sem fio.
+Termo: Foco no Usuário Individual | Tipo: Conceito | Definicao: A característica principal de uma PAN, que é projetada para atender às necessidades de comunicação de um único usuário e seus dispositivos associados.
+  Vantagens de Foco no Usuário Individual: Personalização e controle sobre os dispositivos conectados.; Simplicidade de gerenciamento para o usuário.; Segurança focada no perímetro pessoal.
+  Desvantagens de Foco no Usuário Individual: Não escalável para múltiplos usuários ou ambientes maiores.; A dependência de um único usuário pode ser um ponto de falha.
+  Casos de uso de Foco no Usuário Individual: Configurar uma rede pessoal para um viajante.; Gerenciar dispositivos de saúde vestíveis.; Criar um 'ecossistema' de dispositivos para um indivíduo.
+
+-- Relacionamentos --
+Conexao: 'pan' --[utiliza]--> 'tecnologias_pan'. Motivo: PANs utilizam tecnologias como Bluetooth e Wi-Fi Direct.
+Conexao: 'pan' --[focada_em]--> 'foco_usuario_individual'. Motivo: O design da PAN é centrado nas necessidades de um único usuário.
+Conexao: 'tecnologias_pan' --[permite]--> 'pan'. Motivo: As tecnologias listadas permitem a criação e operação de PANs.
+
+=== SECAO [TI_SEC_006]: Comparativo Geral das Redes por Abrangência Geográfica ===
+Este tópico apresenta um comparativo detalhado entre os diferentes tipos de redes (LAN, MAN, WAN, PAN) com base em suas características geográficas, velocidade de transmissão, custo de implementação e tecnologias comuns. A LAN se destaca pela alta velocidade e baixo custo em curtas distâncias. A MAN oferece um alcance intermediário, conectando LANs em uma cidade. A WAN cobre vastas áreas, mas com menor velocidade e maior custo. A PAN foca no usuário individual com alcance mínimo. A tabela resume essas diferenças, auxiliando na compreensão das trade-offs e aplicações de cada tipo de rede.
+
+-- Conceitos-chave --
+Termo: Comparativo de Redes por Abrangência Geográfica | Tipo: Análise Comparativa | Definicao: Análise comparativa das características de diferentes tipos de redes (LAN, MAN, WAN, PAN) em termos de alcance, velocidade, custo e tecnologia.
+  Vantagens de Comparativo de Redes por Abrangência Geográfica: Facilita a escolha da rede mais adequada para cada necessidade.; Destaca as principais diferenças e semelhanças entre os tipos de rede.; Ajuda a entender os trade-offs tecnológicos e de custo.
+  Desvantagens de Comparativo de Redes por Abrangência Geográfica: Pode ser uma simplificação excessiva de redes complexas.; As características podem variar significativamente dependendo da implementação específica.
+  Casos de uso de Comparativo de Redes por Abrangência Geográfica: Tomada de decisão em projetos de infraestrutura de rede.; Estudo e aprendizado sobre redes de computadores.; Avaliação de soluções de conectividade.
+Termo: Trade-offs em Redes de Computadores | Tipo: Conceito | Definicao: As compensações inerentes ao projeto e implementação de redes, onde melhorias em uma característica (como velocidade) podem implicar em desvantagens em outra (como custo ou alcance).
+  Vantagens de Trade-offs em Redes de Computadores: Permite otimizar a rede para requisitos específicos.; Ajuda a justificar escolhas de design e investimento.
+  Desvantagens de Trade-offs em Redes de Computadores: Pode levar a soluções subótimas se não compreendidos corretamente.; Exige conhecimento técnico para balancear as prioridades.
+  Casos de uso de Trade-offs em Redes de Computadores: Escolher entre uma LAN de alta velocidade e uma WAN de baixo custo.; Decidir sobre a tecnologia de comunicação para uma MAN.; Balancear segurança, desempenho e custo em qualquer tipo de rede.
+
+-- Tabelas comparativas --
+Tabela 'Comparativo de Redes por Abrangência Geográfica': Esta tabela compara os principais tipos de redes (LAN, MAN, WAN, PAN) com base em sua abrangência geográfica, velocidade de transmissão, custo de implementação e tecnologias comuns associadas.
+  Linha LINHA_LAN: Tipo de Rede = LAN (Local Area Network); Abrangência Geográfica = Pequena (casa, escritório, prédio); Velocidade de Transmissão = Alta; Custo de Implementação = Baixo; Tecnologias Comuns = Ethernet, Wi-Fi
+    (Relacionado a: lan)
+  Linha LINHA_MAN: Tipo de Rede = MAN (Metropolitan Area Network); Abrangência Geográfica = Média (cidade, região metropolitana); Velocidade de Transmissão = Alta a Média; Custo de Implementação = Médio; Tecnologias Comuns = Fibra óptica, Ethernet de alta velocidade
+    (Relacionado a: man)
+  Linha LINHA_WAN: Tipo de Rede = WAN (Wide Area Network); Abrangência Geográfica = Grande (país, continente, global); Velocidade de Transmissão = Média a Baixa; Custo de Implementação = Alto; Tecnologias Comuns = MPLS, Satélite, Fibra óptica de longa distância, Redes de operadoras
+    (Relacionado a: wan, internet)
+  Linha LINHA_PAN: Tipo de Rede = PAN (Personal Area Network); Abrangência Geográfica = Muito Pequena (ao redor de um indivíduo); Velocidade de Transmissão = Baixa a Média; Custo de Implementação = Muito Baixo; Tecnologias Comuns = Bluetooth, Wi-Fi Direct, USB
+    (Relacionado a: pan)
+
+-- Relacionamentos --
+Conexao: 'comparativo_redes_geograficas' --[resume]--> 'lan'. Motivo: A tabela de comparativo detalha as características da LAN.
+Conexao: 'comparativo_redes_geograficas' --[resume]--> 'man'. Motivo: A tabela de comparativo detalha as características da MAN.
+Conexao: 'comparativo_redes_geograficas' --[resume]--> 'wan'. Motivo: A tabela de comparativo detalha as características da WAN.
+Conexao: 'comparativo_redes_geograficas' --[resume]--> 'pan'. Motivo: A tabela de comparativo detalha as características da PAN.
+Conexao: 'tradeoffs_rede' --[influencia]--> 'comparativo_redes_geograficas'. Motivo: Os trade-offs entre velocidade, custo e alcance são evidentes no comparativo das redes.
+

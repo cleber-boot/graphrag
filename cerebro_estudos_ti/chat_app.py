@@ -193,6 +193,28 @@ if "session_id" not in st.session_state:
 
 st.title(f"🧠 {st.session_state.title}")
 
+# ---------------------------------------------------------------
+# Controle global: expandir/colapsar todos os gabaritos de uma vez
+# ---------------------------------------------------------------
+def eh_mensagem_simulado(msg: dict) -> bool:
+    """Detecta se uma mensagem é um simulado, mesmo em conversas salvas
+    ANTES da marcação 'kind' existir (compatibilidade com histórico antigo)."""
+    if msg.get("kind") == "simulado":
+        return True
+    return msg.get("role") == "assistant" and "**Gabarito:**" in msg.get("content", "")
+
+
+if "mostrar_gabaritos" not in st.session_state:
+    st.session_state.mostrar_gabaritos = False
+
+tem_simulado_na_conversa = any(eh_mensagem_simulado(m) for m in st.session_state.messages)
+
+if tem_simulado_na_conversa:
+    rotulo_botao = "🙈 Colapsar todos os gabaritos" if st.session_state.mostrar_gabaritos else "👁️ Expandir todos os gabaritos"
+    if st.button(rotulo_botao):
+        st.session_state.mostrar_gabaritos = not st.session_state.mostrar_gabaritos
+        st.rerun()
+
 
 # ---------------------------------------------------------------
 # Barra lateral
@@ -217,7 +239,7 @@ with st.sidebar:
 
     banca = st.text_input("Banca", value="FGV", help="Ex: FGV, CESPE/CEBRASPE, FCC, VUNESP...")
     tema_simulado = st.text_input("Tema (opcional)", placeholder="Ex: redes de computadores, segurança da informação...")
-    quantidade_questoes = st.number_input("Quantidade de questões", min_value=1, max_value=100, value=5, step=1)
+    quantidade_questoes = st.number_input("Quantidade de questões", min_value=1, max_value=20, value=5, step=1)
     formato_questao = st.selectbox("Formato da questão", options=list(FORMATOS_QUESTAO.keys()))
 
     gerar_simulado_clicado = st.button("🎯 Gerar simulado agora", use_container_width=True, type="primary")
@@ -365,6 +387,40 @@ def formatar_simulado(texto: str) -> str:
     return texto.strip()
 
 
+def render_simulado(texto: str, msg_id) -> None:
+    """Renderiza o simulado questão por questão, escondendo o gabarito e o
+    comentário dentro de um expansor. O estado inicial (aberto/fechado) de
+    TODOS os expansores é controlado por st.session_state.mostrar_gabaritos.
+
+    Cada expansor recebe uma `key` que inclui o estado atual do botão mestre
+    (mostrar_gabaritos). Isso força o Streamlit a tratá-lo como um componente
+    NOVO sempre que o botão mestre é clicado, ignorando qualquer clique manual
+    anterior do usuário em um expansor individual — garantindo que todos
+    fiquem realmente sincronizados de uma vez."""
+    expandido = st.session_state.get("mostrar_gabaritos", False)
+
+    blocos = re.split(r"\n\n---\n\n", texto)
+    q_idx = 0
+    for bloco in blocos:
+        bloco = bloco.strip()
+        if not bloco:
+            continue
+
+        match = re.search(r"\*\*Gabarito:\*\*", bloco)
+        if match:
+            parte_questao = bloco[: match.start()].strip()
+            parte_questao = re.sub(r"^-+\s*", "", parte_questao)  # remove '---' solto no início
+            parte_gabarito = bloco[match.start():].strip()
+            st.markdown(parte_questao)
+            chave = f"gab_{msg_id}_{q_idx}_{expandido}"
+            with st.expander("👁️ Ver gabarito e comentário", expanded=expandido, key=chave):
+                st.markdown(parte_gabarito)
+            q_idx += 1
+        else:
+            bloco = re.sub(r"^-+\s*", "", bloco)
+            st.markdown(bloco)
+
+
 def run_graphrag_query(question: str, method: str, community_level: int) -> str:
     cmd = [
         "python", "-m", "graphrag", "query",
@@ -388,9 +444,12 @@ def run_graphrag_query(question: str, method: str, community_level: int) -> str:
 # ---------------------------------------------------------------
 # Renderiza histórico
 # ---------------------------------------------------------------
-for msg in st.session_state.messages:
+for _idx, msg in enumerate(st.session_state.messages):
     with st.chat_message(msg["role"]):
-        st.markdown(msg["content"])
+        if eh_mensagem_simulado(msg):
+            render_simulado(msg["content"], msg_id=f"hist_{_idx}")
+        else:
+            st.markdown(msg["content"])
 
 # ---------------------------------------------------------------
 # Geração de simulado (via botão na barra lateral)
@@ -414,20 +473,26 @@ if gerar_simulado_clicado:
         with st.spinner("Buscando conteúdo relevante na base de conhecimento..."):
             contexto = buscar_contexto_para_simulado(tema_simulado, metodo_para_simulado, community_level)
 
-        if not contexto or "unable to answer" in contexto.lower() or "não foi possível" in contexto.lower():
+        houve_erro = not contexto or "unable to answer" in contexto.lower() or "não foi possível" in contexto.lower()
+
+        if houve_erro:
             resposta_simulado = (
                 "⚠️ Não encontrei conteúdo suficiente na base de conhecimento para gerar o simulado "
                 f"{'sobre *' + tema_simulado + '*' if tema_simulado.strip() else 'solicitado'}. "
                 "Tente um tema mais amplo, ou verifique se o índice do GraphRAG já foi gerado com o material desejado."
             )
+            st.markdown(resposta_simulado)
         else:
             with st.spinner("Elaborando as questões com base no material encontrado..."):
                 resposta_bruta = gerar_simulado_via_llm(contexto, banca, tema_simulado, quantidade_questoes, formato_questao)
                 resposta_simulado = formatar_simulado(resposta_bruta)
+            render_simulado(resposta_simulado, msg_id=f"live_{len(st.session_state.messages)}")
 
-        st.markdown(resposta_simulado)
-
-    st.session_state.messages.append({"role": "assistant", "content": resposta_simulado})
+    st.session_state.messages.append({
+        "role": "assistant",
+        "content": resposta_simulado,
+        "kind": "chat" if houve_erro else "simulado",
+    })
     save_session(st.session_state.session_id, st.session_state.title, st.session_state.messages)
 
 

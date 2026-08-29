@@ -1,0 +1,27 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Equipamentos e Dispositivos de Redes de Computadores - Parte 1
+Idioma: pt-BR
+Tecnologias citadas no documento: Ethernet, Wi-Fi, Bluetooth, MAC Address, ROM, RAM
+
+=== SECAO [TI_SEC_001]: Introdução aos Dispositivos de Rede ===
+Para que uma rede de computadores funcione, é necessário não apenas um meio de comunicação (físico, guiado ou não guiado), mas também equipamentos e dispositivos que gerenciem, controlem e processem essa comunicação. Estes dispositivos, sejam de hardware ou software, são responsáveis por garantir que os dados trafeguem corretamente entre os componentes da rede. Embora compartilhem a característica comum de gerenciar a comunicação, cada dispositivo possui funcionalidades e características específicas que os diferenciam.
+
+-- Conceitos-chave --
+Termo: Meio de Comunicação | Tipo: Infraestrutura | Definicao: O canal físico ou lógico através do qual os dados trafegam em uma rede. Pode ser guiado (cabos) ou não guiado (ondas de rádio).
+  Vantagens de Meio de Comunicação: Permite a troca de informações entre dispositivos.
+  Desvantagens de Meio de Comunicação: Pode ser um gargalo de desempenho se não for adequado.; Vulnerável a interferências e danos físicos.
+  Casos de uso de Meio de Comunicação: Conexão de computadores em rede local (LAN).; Transmissão de dados sem fio (Wi-Fi, Bluetooth).; Comunicação de longa distância (fibra óptica).
+Termo: Dispositivo de Rede | Tipo: Hardware/Software | Definicao: Qualquer equipamento de hardware ou software que participa da comunicação em uma rede de computadores, seja transmitindo, recebendo, roteando ou gerenciando dados.
+  Vantagens de Dispositivo de Rede: Possibilitam a conectividade e a troca de dados.; Gerenciam o tráfego e a segurança da rede.; Permitem a expansão e a segmentação da rede.
+  Desvantagens de Dispositivo de Rede: Custo de aquisição e manutenção.; Complexidade de configuração e gerenciamento.; Podem ser pontos de falha na rede.
+  Casos de uso de Dispositivo de Rede: Conectar computadores a uma rede.; Roteamento de tráfego entre redes diferentes.; Filtragem de pacotes e controle de acesso.; Prover conectividade sem fio.
+Termo: Placa de Rede (NIC) | Tipo: Hardware | Definicao: Componente de hardware que permite a um computador ou dispositivo se conectar a uma rede. Também conhecida como Network Interface Card (NIC) ou Network Interface Controller (NIC).
+  Vantagens de Placa de Rede (NIC): Permite a comunicação física com o meio de rede.; Possui um endereço MAC único para identificação.; Suporta diferentes tecnologias de rede (Ethernet, Wi-Fi).
+  Desvantagens de Placa de Rede (NIC): Pode ser um gargalo se a velocidade for inferior à da rede.; Requer drivers para funcionar.; Vulnerável a falhas de hardware.
+  Casos de uso de Placa de Rede (NIC): Conectar um computador a uma rede cabeada (Ethernet).; Permitir conectividade Wi-Fi em laptops e desktops.; Servidores e dispositivos de rede que necessitam de comunicação.
+Termo: Endereço MAC | Tipo: Identificador | Definicao: Identificador único atribuído a cada placa de rede (NIC) pelo fabricante. É um endereço físico usado na camada de enlace de dados (Camada 2 do modelo OSI).
+  Vantagens de Endereço MAC: Identificação única de dispositivos na rede local.; Usado em protocolos de baixo nível para entrega de pacotes.; Imutável (geralmente) e gravado na ROM da NIC.
+  Desvantagens de Endereço MAC: Não é roteável entre redes diferentes.; Pode ser falsificado (MAC spoofing).; A gestão de blocos de MACs é responsabilidade dos fabricantes.
+  Casos de uso de Endereço MAC: Endereçamento em redes locais (LANs).; Controle de acesso baseado em MAC Address.; Protocolos como ARP (Address Resolution Protocol).
+Termo: None | Tipo: None | Definicao: None
+
