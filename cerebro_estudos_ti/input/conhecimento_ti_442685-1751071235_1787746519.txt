@@ -1,0 +1,100 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Redes de Computadores
+Idioma: pt-BR
+Tecnologias citadas no documento: Modem, Router, Gateway, Transceiver, Ethernet, Wi-Fi, Bluetooth, Fibra Óptica, ADSL, Cabo Coaxial, 3G/4G/5G, TCP/IP, NAT, SMTP, LAN, WAN
+
+=== SECAO [TI_SEC_001]: Equipamentos e Dispositivos de Redes de Computadores ===
+Esta seção introduz os componentes essenciais para a construção e operação de redes de computadores, detalhando exemplos de equipamentos e dispositivos. Abrange desde as placas de rede que permitem a conexão física dos dispositivos à rede, passando por repetidores, hubs, bridges/switches e roteadores que gerenciam o tráfego e a conectividade em diferentes níveis, até modems para comunicação com redes externas, gateways para interconexão de redes distintas, transceivers para conversão de sinais e os próprios servidores e estações de trabalho que compõem a rede.
+
+-- Conceitos-chave --
+Termo: Placa de Rede | Tipo: Hardware | Definicao: Componente de hardware que permite a um computador ou dispositivo se conectar a uma rede de computadores.
+  Vantagens de Placa de Rede: Permite a comunicação em rede.
+  Desvantagens de Placa de Rede: Pode ser um ponto de falha.
+  Casos de uso de Placa de Rede: Conectar qualquer dispositivo a uma rede local ou à Internet.
+Termo: Repeater | Tipo: Hardware | Definicao: Dispositivo que regenera e retransmite um sinal para estender o alcance de uma rede.
+  Vantagens de Repeater: Aumenta a distância de transmissão do sinal.
+  Desvantagens de Repeater: Não filtra tráfego, retransmite tudo, incluindo colisões.; Opera na camada física (camada 1).
+  Casos de uso de Repeater: Estender redes Ethernet cabeadas.
+Termo: Hub | Tipo: Hardware | Definicao: Dispositivo de rede que conecta múltiplos dispositivos em uma rede local, transmitindo dados recebidos de uma porta para todas as outras.
+  Vantagens de Hub: Simples e barato.
+  Desvantagens de Hub: Opera na camada física (camada 1).; Cria um único domínio de colisão, reduzindo a eficiência.; Não inteligência de roteamento.
+  Casos de uso de Hub: Redes pequenas e antigas onde a eficiência não é crítica.
+Termo: Bridge / Switch | Tipo: Hardware | Definicao: Dispositivo de rede que conecta segmentos de rede e toma decisões de encaminhamento com base em endereços MAC, operando na camada de enlace (camada 2). Switches são hubs multi-porta com inteligência.
+  Vantagens de Bridge / Switch: Segmenta redes em domínios de colisão menores, melhorando a performance.; Encaminha tráfego apenas para a porta de destino.; Switches modernos oferecem alta densidade de portas e performance.
+  Desvantagens de Bridge / Switch: Limitado a redes locais (LANs) baseadas em MAC addresses.; Switches mais simples podem ter limitações de performance.
+  Casos de uso de Bridge / Switch: Conectar dispositivos em uma LAN.; Segmentar redes para melhorar performance.; Criar redes locais eficientes.
+Termo: Router | Tipo: Hardware | Definicao: Dispositivo de rede que conecta diferentes redes (LANs, WANs) e encaminha pacotes de dados com base em endereços IP, operando na camada de rede (camada 3).
+  Vantagens de Router: Permite a comunicação entre redes distintas.; Seleciona o melhor caminho para os pacotes de dados.; Cria domínios de broadcast separados.
+  Desvantagens de Router: Mais complexo que switches.; Pode ser um gargalo de performance se não dimensionado corretamente.
+  Casos de uso de Router: Conectar uma rede local à Internet.; Interligar filiais de uma empresa.; Criar redes complexas com múltiplos segmentos.
+Termo: MoDem / Modem-Router | Tipo: Hardware | Definicao: Dispositivo que converte sinais digitais em analógicos (modulação) e vice-versa (demodulação) para permitir a comunicação através de meios analógicos como linhas telefônicas, cabos ou rádio.
+  Vantagens de MoDem / Modem-Router: Permite o uso de infraestrutura de comunicação existente (ex: linhas telefônicas) para transmissão de dados digitais.; Modem-routers integram funcionalidades de modem e roteador em um único aparelho.
+  Desvantagens de MoDem / Modem-Router: Velocidade pode ser limitada pela tecnologia (ex: ADSL, discado).; Requer conversão de sinal, o que pode introduzir latência.
+  Casos de uso de MoDem / Modem-Router: Conectar residências e escritórios à Internet.; Permitir comunicação entre redes usando diferentes tipos de sinal.
+Termo: Gateway | Tipo: Hardware/Software | Definicao: Dispositivo ou software que atua como ponto de interconexão entre duas redes diferentes, permitindo a comunicação entre sistemas que utilizam protocolos distintos. Pode realizar tradução de protocolos, roteamento, filtragem e conversão de endereços (NAT).
+  Vantagens de Gateway: Permite a comunicação entre redes heterogêneas.; Pode fornecer segurança (firewall) e gerenciamento de tráfego.; Facilita a integração de sistemas legados com redes modernas.
+  Desvantagens de Gateway: Pode ser um ponto de falha único.; Complexidade na configuração e manutenção.; Pode introduzir latência.
+  Casos de uso de Gateway: Conectar uma rede local à Internet (roteador doméstico).; Interconectar redes corporativas com diferentes protocolos.; Servidores de e-mail corporativos.
+Termo: Transceiver | Tipo: Hardware | Definicao: Dispositivo que combina as funções de transmissor e receptor, convertendo sinais digitais em sinais adequados para transmissão (elétricos, ópticos, rádio) e vice-versa na recepção.
+  Vantagens de Transceiver: Permite a transmissão e recepção de dados em diferentes mídias.; Essencial para a comunicação em redes cabeadas (Ethernet), sem fio (Wi-Fi, Bluetooth) e ópticas.
+  Desvantagens de Transceiver: Pode ser um componente de custo adicional.; Requer compatibilidade com a mídia de transmissão.
+  Casos de uso de Transceiver: Adaptar sinais digitais para cabos Ethernet.; Transmitir e receber sinais de rádio em dispositivos Wi-Fi e Bluetooth.; Converter sinais elétricos em pulsos de luz em redes de fibra óptica (SFP, GBIC).
+Termo: Servidor | Tipo: Hardware/Software | Definicao: Máquina projetada para fornecer serviços e recursos a outras máquinas (clientes) em uma rede, operando continuamente (24/7) e otimizada para alta disponibilidade, segurança e desempenho.
+  Vantagens de Servidor: Centraliza recursos e dados.; Permite acesso simultâneo por múltiplos usuários/dispositivos.; Alta disponibilidade e confiabilidade.
+  Desvantagens de Servidor: Custo inicial e de manutenção mais elevado.; Requer administração especializada.; Ponto único de falha se não houver redundância.
+  Casos de uso de Servidor: Servidores de banco de dados.; Servidores web.; Servidores de e-mail.; Servidores de arquivos.; Servidores de autenticação.
+Termo: Estação de Trabalho | Tipo: Hardware | Definicao: Computador projetado para uso individual, focado em desempenho gráfico, processamento e usabilidade, executando aplicações para o usuário final.
+  Vantagens de Estação de Trabalho: Interface gráfica amigável.; Adequada para tarefas individuais e aplicações específicas (design, engenharia).
+  Desvantagens de Estação de Trabalho: Não projetada para servir múltiplos usuários simultaneamente.; Menor foco em alta disponibilidade e redundância comparada a servidores.
+  Casos de uso de Estação de Trabalho: Uso pessoal (navegação, edição de texto).; Execução de softwares de design, engenharia, desenvolvimento.
+
+-- Tabelas comparativas --
+Tabela 'Tipos de Modem': Esta tabela compara diferentes tipos de modems, detalhando a tecnologia de conexão que utilizam e suas características principais.
+  Linha TI_LIN_001: Tipo = Modem ADSL; Descrição = Usa linha telefônica, mas separa voz e dados.
+    (Relacionado a: modem)
+  Linha TI_LIN_002: Tipo = Modem a cabo; Descrição = Usa cabo coaxial (como de TV a cabo).
+    (Relacionado a: modem)
+  Linha TI_LIN_003: Tipo = Modem 3G/4G/5G; Descrição = Usa rede de telefonia móvel.
+    (Relacionado a: modem)
+  Linha TI_LIN_004: Tipo = Modem de fibra; Descrição = Converte sinais ópticos da fibra em digitais.
+    (Relacionado a: modem)
+  Linha TI_LIN_005: Tipo = Modem discado; Descrição = Usado antigamente; fazia conexão via chamada telefônica.
+    (Relacionado a: modem)
+Tabela 'Função do Modem/Router': Esta tabela descreve as funções específicas de um modem e de um roteador quando integrados em um único dispositivo (modem-router), destacando suas responsabilidades na comunicação de rede.
+  Linha TI_LIN_006: Função = Modem; O que faz = Se comunica com o provedor de internet. Converte o sinal da rede (como ADSL, cabo ou fibra) em sinal digital para seu computador.
+    (Relacionado a: modem)
+  Linha TI_LIN_007: Função = Roteador (Router); O que faz = Cria uma rede local (LAN) e compartilha a internet com múltiplos dispositivos (PCs, celulares, smart TVs etc.), com ou sem fio.
+    (Relacionado a: router)
+
+-- Figuras e diagramas --
+Figura 'Diagrama de Rede com Equipamentos e Dispositivos' (Diagrama de Rede): O diagrama ilustra uma rede de computadores com diversos equipamentos e dispositivos interconectados. Começa com um servidor de e-mail e um servidor WWW conectados a um switch, que por sua vez faz parte da LAN 1. A LAN 1 também contém estações de trabalho. Um roteador conecta a LAN 1 à Internet. Outras LANs (LAN 2, LAN 3, LAN 4) são mostradas, cada uma com seus próprios switches ou hubs, conectando estações de trabalho e impressoras. Um repetidor é mostrado conectando a LAN 3. Um bridge conecta a LAN 4. O diagrama demonstra como diferentes dispositivos (servidores, estações de trabalho, impressoras) se conectam através de switches, hubs e roteadores para formar redes locais e se comunicar com a Internet.
+  Componentes visuais: Servidor WWW, Servidor de e-mail, Switch, Roteador, Internet, Estação de Trabalho, LAN 1, LAN 3, Repetidor, Impressora, Hub, LAN 2, Bridge, LAN 4
+  Relacionado a: servidor, switch, router, internet, estacao_de_trabalho, repeater, bridge, hub, placa_de_rede, modem
+Figura 'Exemplo de Placa de Rede' (Fotografia de Hardware): A imagem mostra uma placa de rede, um componente de hardware que se conecta a um slot em uma placa-mãe de computador para permitir a comunicação em rede.
+  Componentes visuais: Placa de Rede
+  Relacionado a: placa_de_rede
+Figura 'Exemplos de Modems' (Fotografia de Hardware): A imagem exibe diferentes tipos de modems, incluindo um modem ADSL mais antigo e dispositivos mais modernos que podem ser usados para conexões a cabo ou fibra óptica, ilustrando a variedade de tecnologias de modems disponíveis.
+  Componentes visuais: Modem ADSL, Modem a cabo/fibra
+  Relacionado a: modem
+Figura 'Exemplos de Modem-Router' (Fotografia de Hardware): A imagem apresenta dois exemplos de dispositivos modem-router. O da esquerda parece ser um modem DSL mais antigo com funcionalidade de roteador integrada, enquanto o da direita é um dispositivo mais moderno, possivelmente um roteador com modem integrado para conexões de banda larga.
+  Componentes visuais: Modem-Router (DSL), Modem-Router (Banda Larga)
+  Relacionado a: modem, router
+Figura 'Diagrama de Rede com Gateway e Bridge' (Diagrama de Rede): Este diagrama ilustra a interconexão de redes utilizando um gateway e uma bridge. Um 'host computer' está conectado a um gateway, que por sua vez se conecta a uma bridge. A bridge conecta dois servidores, cada um associado a uma LAN (LAN A e LAN B). Um modem está conectado à LAN A, e uma impressora está conectada à LAN A. O diagrama mostra como um gateway pode facilitar a comunicação entre redes diferentes e como uma bridge conecta segmentos de rede.
+  Componentes visuais: Host Computer, Gateway, Bridge, Server, Modem, Printer, LAN A, LAN B
+  Relacionado a: gateway, bridge, servidor, modem, router
+Figura 'Exemplos de Transceivers' (Fotografia de Hardware): A imagem exibe três dispositivos transceivers. Estes são componentes de hardware que transmitem e recebem sinais de comunicação em uma rede, convertendo sinais digitais em sinais adequados para transmissão e vice-versa. São essenciais para diferentes tipos de redes, como Ethernet, Wi-Fi e fibra óptica.
+  Componentes visuais: Transceiver (Ethernet), Transceiver (Fibra Óptica)
+  Relacionado a: transceiver
+
+-- Relacionamentos --
+Conexao: 'router' --[comunica_com]--> 'internet'. Motivo: Roteadores são responsáveis por encaminhar o tráfego de uma rede local (LAN) para a Internet (WAN) e vice-versa.
+Conexao: 'modem' --[converte_sinal]--> 'internet'. Motivo: Modems convertem sinais digitais em analógicos e vice-versa para permitir a comunicação com a infraestrutura da Internet, que pode usar meios analógicos.
+Conexao: 'gateway' --[interconecta]--> 'redes_diferentes'. Motivo: Gateways são projetados para conectar e permitir a comunicação entre redes que utilizam protocolos distintos.
+Conexao: 'gateway' --[implementa]--> 'nat'. Motivo: Gateways frequentemente implementam NAT (Network Address Translation) para traduzir endereços IP internos para públicos.
+Conexao: 'bridge_switch' --[conecta]--> 'dispositivos_lan'. Motivo: Switches e bridges conectam múltiplos dispositivos dentro de uma rede local (LAN), encaminhando tráfego com base em endereços MAC.
+Conexao: 'repeater' --[estende_alcance]--> 'sinal_rede'. Motivo: Repetidores regeneram e retransmitem sinais para aumentar a distância que um sinal de rede pode percorrer.
+Conexao: 'transceiver' --[converte_sinal]--> 'midia_transmissao'. Motivo: Transceivers convertem sinais digitais em formatos adequados para diferentes mídias de transmissão (elétrica, óptica, rádio) e vice-versa.
+Conexao: 'servidor' --[fornece_servico]--> 'estacao_de_trabalho'. Motivo: Servidores fornecem recursos e serviços (como dados, aplicações) para estações de trabalho (clientes) em uma rede.
+Conexao: 'modem_router' --[integra]--> 'modem_router_funcionalidades'. Motivo: O dispositivo modem-router integra as funcionalidades de um modem (conexão com provedor) e de um roteador (criação de LAN e compartilhamento de internet).
+Conexao: 'router' --[gerencia_trafego]--> 'redes_diferentes'. Motivo: Roteadores gerenciam o fluxo de pacotes de dados entre diferentes redes, selecionando o melhor caminho.
+

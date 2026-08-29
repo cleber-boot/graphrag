@@ -1,0 +1,116 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Conceitos de Protocolos de Redes de Computadores
+Idioma: pt-BR
+Tecnologias citadas no documento: TCP/IP, NCP, NetBEUI, IPX/SPX, AppleTalk, ARPANET, HTTP, FTP, SMTP, DNS, SSH, UDP, ICMP, ARP, Ethernet, Wi-Fi, PPP
+
+=== SECAO [TI_SEC_001]: Redes de Computadores e Protocolos ===
+Em redes de computadores, protocolos são essenciais para normatizar, orientar e regulamentar a comunicação, permitindo a interoperabilidade entre dispositivos de diferentes fabricantes. A comunicação em rede é dividida em etapas sistemáticas, organizadas em camadas, onde cada etapa possui suas próprias regras e procedimentos (protocolos). Essas etapas devem ser executadas em uma ordem consistente em todos os computadores da rede para garantir a comunicação.
+
+-- Conceitos-chave --
+Termo: Protocolo | Tipo: Protocolo | Definicao: Conjunto de normas, regras, leis, orientações e procedimentos que servem para a comunicação em redes de computadores. Permite a normatização, orientação e regulamentação das interações entre dispositivos, garantindo a interoperabilidade.
+  Vantagens de Protocolo: Permite a interoperabilidade entre dispositivos de diferentes fabricantes.; Estabelece um padrão de comunicação.; Facilita a análise e implementação de sistemas de comunicação em camadas.
+  Desvantagens de Protocolo: A complexidade pode aumentar com a quantidade de protocolos.; A falta de padronização em estágios iniciais levou a incompatibilidades.
+  Casos de uso de Protocolo: Comunicação entre computadores em uma rede local.; Acesso à Internet.; Transferência de arquivos.; Envio de e-mails.; Navegação na web.
+Termo: Estrutura de Comunicação em Camadas | Tipo: Arquitetura | Definicao: Organização da comunicação em rede em etapas distintas e sistemáticas, onde cada camada possui regras e procedimentos específicos. Essa estrutura facilita a análise, implementação e o gerenciamento da comunicação.
+  Vantagens de Estrutura de Comunicação em Camadas: Modularidade: Facilita o desenvolvimento e a manutenção.; Abstração: Cada camada se preocupa com uma função específica.; Interoperabilidade: Permite que diferentes tecnologias funcionem juntas.
+  Desvantagens de Estrutura de Comunicação em Camadas: Overhead: Cada camada adiciona informações de controle.; Complexidade na depuração entre camadas.
+  Casos de uso de Estrutura de Comunicação em Camadas: Todos os modelos de comunicação em rede, como o modelo OSI e TCP/IP.
+
+-- Figuras e diagramas --
+Figura 'Exemplo de Protocolo Humano' (Diagrama de Sequência): O diagrama ilustra uma comunicação humana simples. Uma pessoa cumprimenta a outra ('Oi'). A segunda pessoa responde. A primeira pergunta as horas ('Que horas são, por favor?'). A segunda responde com a hora ('2h00'). A comunicação ocorre ao longo do tempo, com interações sequenciais.
+  Componentes visuais: Pessoa 1, Pessoa 2, Linha do tempo, Mensagens de diálogo
+  Relacionado a: protocolo
+Figura 'Exemplo de Protocolo de Rede de Computadores' (Diagrama de Sequência): O diagrama mostra uma comunicação entre um computador e um servidor. O computador inicia com uma 'Solicitação de conexão TCP'. O servidor responde com uma 'Resposta de conexão TCP'. Em seguida, o computador envia uma requisição HTTP para obter um arquivo ('GET http://www.awl.com/kurose-ross'). O servidor responde com o '<arquivo>'. A comunicação ocorre ao longo do tempo, seguindo etapas definidas.
+  Componentes visuais: Computador, Servidor, Linha do tempo, Mensagens de requisição/resposta
+  Relacionado a: protocolo, tcp, ip
+
+-- Relacionamentos --
+Conexao: 'protocolo' --[implementa]--> 'camadas_comunicacao'. Motivo: Protocolos definem as regras e procedimentos para cada camada em uma estrutura de comunicação em rede.
+Conexao: 'camadas_comunicacao' --[depende_de]--> 'protocolo'. Motivo: A estrutura em camadas é organizada e definida pelos protocolos que operam em cada uma delas.
+
+=== SECAO [TI_SEC_002]: Protocolos Históricos: NCP, NetBEUI, IPX/SPX ===
+O Network Control Program (NCP) foi o primeiro protocolo da ARPANET, precursor da Internet, ativo de 1969 a 1982. Ele gerenciava conexões, permitia multiplexação e transferência de dados, mas delegava a confiabilidade aos aplicativos. Suas limitações, como a falta de suporte a redes interconectadas e controle de erros, levaram ao desenvolvimento do TCP/IP. O NetBEUI, desenvolvido pela IBM em 1985, era um protocolo de transporte não roteável para LANs pequenas e médias, conhecido pela simplicidade e bom desempenho em redes locais, mas inadequado para WANs e a Internet. O IPX/SPX, da Novell, dominou LANs antes do TCP/IP, oferecendo robustez, mas com custo elevado e limitações de escalabilidade e compatibilidade com a Internet.
+
+-- Conceitos-chave --
+Termo: Network Control Program (NCP) | Tipo: Protocolo | Definicao: Primeiro protocolo de comunicação da ARPANET, utilizado entre 1969 e 1982. Responsável pelo gerenciamento de conexões, multiplexação e transferência de dados, mas com a confiabilidade a cargo das aplicações.
+  Vantagens de Network Control Program (NCP): Gerenciamento de conexões.; Multiplexação de conexões.; Transferência de fluxo de dados.
+  Desvantagens de Network Control Program (NCP): Não suportava redes interconectadas (internetworking).; Sem controle nativo de erros ou retransmissão.; Dependência do software de aplicação para confiabilidade.; Limitado a redes locais da ARPANET.
+  Casos de uso de Network Control Program (NCP): Comunicação em redes locais da ARPANET (1969-1982).
+Termo: NetBEUI (NetBIOS Extended User Interface) | Tipo: Protocolo | Definicao: Protocolo de transporte de rede não roteável, desenvolvido pela IBM em 1985, projetado para comunicação em redes locais (LANs) pequenas e médias. Foi amplamente utilizado em sistemas Microsoft Windows nos anos 90.
+  Vantagens de NetBEUI (NetBIOS Extended User Interface): Rápido e eficiente em redes pequenas.; Baixo overhead (não necessita de endereçamento IP).; Simples de instalar e usar.; Ideal para compartilhamento de arquivos e impressoras em redes domésticas e de escritório.
+  Desvantagens de NetBEUI (NetBIOS Extended User Interface): Não roteável (inviável para WANs ou sub-redes).; Inadequado para redes corporativas modernas e a Internet.; Substituído por TCP/IP.; Suporte removido a partir do Windows XP.
+  Casos de uso de NetBEUI (NetBIOS Extended User Interface): Redes locais pequenas e médias (LANs) nos anos 90.; Compartilhamento de recursos em ambientes domésticos e de escritório da época.
+Termo: IPX/SPX (Internetwork Packet Exchange/Sequenced Packet Exchange) | Tipo: Protocolo | Definicao: Conjunto de protocolos de rede desenvolvido pela Novell nos anos 1980, dominante em redes locais (LANs) antes da ascensão do TCP/IP. Era conhecido por sua robustez.
+  Vantagens de IPX/SPX (Internetwork Packet Exchange/Sequenced Packet Exchange): Simplicidade de configuração em redes pequenas.; Desempenho eficiente em redes locais com baixo overhead.; Endereçamento automático via MAC (Plug-and-play).; Padrão de facto em redes corporativas com NetWare.
+  Desvantagens de IPX/SPX (Internetwork Packet Exchange/Sequenced Packet Exchange): Problemas de escalabilidade em redes grandes/heterogêneas.; Ausência de suporte nativo à Internet (incompatível com TCP/IP).; Complexidade administrativa em redes grandes (tráfego SAP/RIP causava congestionamento).; Rede cara.
+  Casos de uso de IPX/SPX (Internetwork Packet Exchange/Sequenced Packet Exchange): Redes locais corporativas com NetWare (anos 80 e início dos 90).
+
+-- Relacionamentos --
+Conexao: 'tcp_ip' --[substitui]--> 'ncp'. Motivo: O TCP/IP foi desenvolvido como um substituto mais robusto para o NCP, superando suas limitações em redes interconectadas e controle de erros.
+Conexao: 'tcp_ip' --[substitui]--> 'netbeui'. Motivo: O NetBEUI foi substituído pelo TCP/IP devido à sua incapacidade de operar em redes WAN e na Internet, e à remoção de seu suporte em sistemas operacionais mais recentes.
+Conexao: 'tcp_ip' --[substitui]--> 'ipx_spx'. Motivo: O TCP/IP tornou-se o padrão universal com a popularização da Internet, levando à adoção e eventual substituição do IPX/SPX, que não era compatível com a Internet.
+
+=== SECAO [TI_SEC_003]: Protocolos Históricos: AppleTalk ===
+O AppleTalk foi um conjunto de protocolos desenvolvido pela Apple nos anos 1980 para conectar dispositivos Macintosh, impressoras e periféricos em redes locais (LANs). Destacou-se pela simplicidade de configuração ('plug-and-play') e funcionava nativamente em Macs até o OS 9. Suas vantagens incluíam facilidade de uso, auto-descoberta e robustez em redes pequenas. No entanto, apresentava baixa velocidade (LocalTalk era lento comparado ao Ethernet), limitações de escalabilidade (254 dispositivos) e incompatibilidade com a Internet. A Apple migrou para TCP/IP a partir do Mac OS 9 e OS X, removendo o suporte final no Mac OS X v10.6.
+
+-- Conceitos-chave --
+Termo: AppleTalk | Tipo: Protocolo | Definicao: Conjunto de protocolos de rede desenvolvido pela Apple nos anos 1980 para conectar dispositivos Macintosh, impressoras e periféricos em redes locais (LANs). Conhecido pela simplicidade e funcionalidade 'plug-and-play'.
+  Vantagens de AppleTalk: Facilidade extrema de configuração para usuários finais.; Auto-descoberta de dispositivos.; Integração nativa ('out-of-thebox') em Macs até o OS 9.; Robustez em redes pequenas (escritórios com dispositivos Apple).
+  Desvantagens de AppleTalk: Baixa velocidade (LocalTalk 230 Kbps vs Ethernet 10 Mbps).; Escalabilidade limitada (254 dispositivos por rede física).; Tráfego de broadcast excessivo em redes grandes.; Incompatibilidade com TCP/IP e a Internet.; Substituído progressivamente por TCP/IP.
+  Casos de uso de AppleTalk: Redes locais (LANs) com dispositivos Apple nos anos 80 e 90.; Ambientes de escritório com predominância de Macs.
+
+-- Relacionamentos --
+Conexao: 'tcp_ip' --[substitui]--> 'appletalk'. Motivo: O AppleTalk foi gradualmente substituído pelo TCP/IP devido à sua incompatibilidade com a Internet e à necessidade de um padrão universal de comunicação.
+
+=== SECAO [TI_SEC_004]: Protocolo TCP/IP ===
+O TCP/IP (Transmission Control Protocol/Internet Protocol) é o conjunto de protocolos fundamental para a comunicação na Internet e na maioria das redes modernas, tornando-se o padrão universal. Ele é composto por dois protocolos principais: TCP (entrega confiável e orientada a conexão) e IP (entrega não confiável e sem conexão, responsável pelo endereçamento e roteamento). Desenvolvido nos anos 1970 pelo Departamento de Defesa dos EUA (projeto ARPANET) e mantido pela IETF, o TCP/IP oferece universalidade, escalabilidade, flexibilidade e resiliência. Seus desafios incluem a complexidade de configuração manual, a falta de criptografia nativa (resolvida com IPsec, TLS/SSL) e a latência causada pelo controle de congestionamento do TCP. A arquitetura TCP/IP é dividida em cinco camadas: Aplicação, Transporte, Rede (Internet), Enlace e Física.
+
+-- Conceitos-chave --
+Termo: TCP/IP | Tipo: Protocolo | Definicao: Conjunto de protocolos fundamentais que possibilita a comunicação na Internet e na maioria das redes modernas, tornando-se o padrão universal. É uma suíte de protocolos que inclui o TCP e o IP.
+  Vantagens de TCP/IP: Universalidade: Suportado por todos os sistemas operacionais e dispositivos modernos.; Escalabilidade: Adapta-se a redes locais (LANs) e globais (WANs/Internet).; Flexibilidade: Independente de tecnologia física (Ethernet, Wi-Fi, fibra).; Resiliência: Roteamento dinâmico evita pontos únicos de falha.
+  Desvantagens de TCP/IP: Complexidade: Configuração manual em redes grandes exige conhecimento.; Segurança: Projetado sem criptografia nativa (requer soluções adicionais como IPsec, TLS/SSL).; Latência: Controle de congestionamento do TCP pode reduzir velocidade em redes instáveis.
+  Casos de uso de TCP/IP: Comunicação na Internet.; Redes locais (LANs).; Redes de longa distância (WANs).; Acesso a serviços como web, e-mail, transferência de arquivos.
+Termo: Transmission Control Protocol (TCP) | Tipo: Protocolo | Definicao: Protocolo da camada de Transporte do modelo TCP/IP que fornece comunicação confiável, orientada a conexão e com entrega ordenada de dados.
+  Vantagens de Transmission Control Protocol (TCP): Entrega confiável de dados.; Entrega ordenada de pacotes.; Orientado a conexão (estabelece uma conexão antes da transmissão).
+  Desvantagens de Transmission Control Protocol (TCP): Maior overhead e latência comparado ao UDP.; Pode reduzir a velocidade em redes instáveis devido ao controle de congestionamento.
+  Casos de uso de Transmission Control Protocol (TCP): Navegação na web (HTTP/HTTPS).; Transferência de arquivos (FTP).; Envio de e-mails (SMTP).; Conexões seguras (SSH).
+Termo: Internet Protocol (IP) | Tipo: Protocolo | Definicao: Protocolo da camada de Rede (Internet) do modelo TCP/IP responsável pelo endereçamento lógico dos dispositivos e pelo roteamento de pacotes entre redes.
+  Vantagens de Internet Protocol (IP): Endereçamento lógico único para cada dispositivo.; Roteamento eficiente de pacotes através de diferentes redes.; Base para a comunicação global na Internet.
+  Desvantagens de Internet Protocol (IP): Entrega não confiável e sem conexão (não garante entrega ou ordem).; Depende de outros protocolos (como TCP) para garantir confiabilidade.
+  Casos de uso de Internet Protocol (IP): Endereçamento de dispositivos em redes.; Roteamento de tráfego na Internet.; Base para a comunicação entre redes.
+Termo: Arquitetura em Camadas (Modelo TCP/IP) | Tipo: Arquitetura | Definicao: Modelo de comunicação em rede dividido em cinco camadas (Aplicação, Transporte, Rede/Internet, Enlace, Física), onde cada camada desempenha funções específicas e interage com as camadas adjacentes.
+  Vantagens de Arquitetura em Camadas (Modelo TCP/IP): Modularidade e abstração de funções.; Facilita o desenvolvimento e a padronização.; Permite interoperabilidade entre diferentes tecnologias.
+  Desvantagens de Arquitetura em Camadas (Modelo TCP/IP): Overhead de dados em cada camada.; Complexidade na depuração entre camadas.
+  Casos de uso de Arquitetura em Camadas (Modelo TCP/IP): Todos os tipos de comunicação em redes de computadores modernas.
+Termo: User Datagram Protocol (UDP) | Tipo: Protocolo | Definicao: Protocolo da camada de Transporte do modelo TCP/IP que fornece entrega rápida, mas não confiável e sem conexão de dados.
+  Vantagens de User Datagram Protocol (UDP): Entrega rápida de dados.; Baixo overhead e latência.; Ideal para aplicações que toleram perda de pacotes.
+  Desvantagens de User Datagram Protocol (UDP): Não garante entrega de pacotes.; Não garante a ordem dos pacotes.; Sem controle de fluxo ou congestionamento.
+  Casos de uso de User Datagram Protocol (UDP): Streaming de vídeo e áudio.; Jogos online.; DNS (Domain Name System).; VoIP (Voice over IP).
+Termo: Internet Control Message Protocol (ICMP) | Tipo: Protocolo | Definicao: Protocolo da camada de Rede (Internet) utilizado para enviar mensagens de erro e controle, como diagnósticos de rede (ex: ping).
+  Vantagens de Internet Control Message Protocol (ICMP): Auxilia no diagnóstico e solução de problemas de rede.; Fornece feedback sobre a alcançabilidade de hosts e a qualidade da rede.
+  Desvantagens de Internet Control Message Protocol (ICMP): Pode ser usado em ataques de negação de serviço (DoS).; Não é um protocolo de transporte de dados.
+  Casos de uso de Internet Control Message Protocol (ICMP): Ferramentas como ping e traceroute.; Notificação de erros de roteamento.; Diagnóstico de conectividade.
+Termo: Address Resolution Protocol (ARP) | Tipo: Protocolo | Definicao: Protocolo da camada de Rede (Internet) ou Enlace/Física que mapeia endereços IP (lógicos) para endereços MAC (físicos) em uma rede local.
+  Vantagens de Address Resolution Protocol (ARP): Permite a comunicação entre dispositivos na mesma rede local.; Essencial para a entrega de pacotes IP em redes Ethernet.
+  Desvantagens de Address Resolution Protocol (ARP): Vulnerável a ataques de envenenamento de cache ARP.; Funciona apenas dentro de uma rede local.
+  Casos de uso de Address Resolution Protocol (ARP): Resolução de endereços IP para MAC em redes locais.; Entrega de pacotes IP em redes Ethernet.
+
+-- Tabelas comparativas --
+Tabela 'Arquitetura em Camadas (Modelo TCP/IP)': Esta tabela detalha as cinco camadas do modelo TCP/IP, os protocolos chave associados a cada camada e suas funções principais, ilustrando a estrutura hierárquica da comunicação em rede.
+  Linha TI_TAB_001_LIN_001: Camada = Aplicação; Protocolos Chave = HTTP, FTP, SMTP, DNS, SSH; Função Principal = Interface para aplicações (navegação, e-mail, transferência de arquivos).
+    (Relacionado a: tcp_ip)
+  Linha TI_TAB_001_LIN_002: Camada = Transporte; Protocolos Chave = TCP, UDP; Função Principal = TCP: Entrega confiável e ordenada de dados. UDP: Entrega rápida, sem confiabilidade.
+    (Relacionado a: tcp, udp, tcp_ip)
+  Linha TI_TAB_001_LIN_003: Camada = Rede (Internet); Protocolos Chave = IP, ICMP, ARP; Função Principal = IP: Endereçamento e roteamento de pacotes entre redes. ICMP: Mensagens de erro/controle (ex: ping). ARP: Mapeamento IP-MAC.
+    (Relacionado a: ip, icmp, arp, tcp_ip)
+  Linha TI_TAB_001_LIN_004: Camada = Enlace/Física; Protocolos Chave = Ethernet, Wi-Fi, PPP; Função Principal = Transmissão física de dados entre dispositivos na mesma rede.
+    (Relacionado a: tcp_ip)
+
+-- Relacionamentos --
+Conexao: 'tcp' --[depende_de]--> 'ip'. Motivo: O TCP utiliza o IP para o endereçamento e roteamento dos pacotes, mas adiciona confiabilidade e controle de fluxo.
+Conexao: 'arquitetura_tcp_ip_camadas' --[implementa]--> 'tcp'. Motivo: O TCP é um protocolo chave na camada de Transporte da arquitetura TCP/IP.
+Conexao: 'arquitetura_tcp_ip_camadas' --[implementa]--> 'ip'. Motivo: O IP é um protocolo chave na camada de Rede (Internet) da arquitetura TCP/IP.
+Conexao: 'arquitetura_tcp_ip_camadas' --[implementa]--> 'udp'. Motivo: O UDP é um protocolo chave na camada de Transporte da arquitetura TCP/IP.
+Conexao: 'arquitetura_tcp_ip_camadas' --[implementa]--> 'icmp'. Motivo: O ICMP é um protocolo chave na camada de Rede (Internet) da arquitetura TCP/IP.
+Conexao: 'arquitetura_tcp_ip_camadas' --[implementa]--> 'arp'. Motivo: O ARP é um protocolo chave na camada de Rede (Internet) ou Enlace/Física da arquitetura TCP/IP.
+

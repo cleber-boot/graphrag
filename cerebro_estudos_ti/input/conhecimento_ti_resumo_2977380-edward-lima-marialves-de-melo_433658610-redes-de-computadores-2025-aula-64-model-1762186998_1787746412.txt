@@ -1,0 +1,251 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Modelo OSI - Camada de Enlace - VLANs - Virtual Local Area Network (Redes Locais Virtuais)
+Idioma: pt-BR
+Tecnologias citadas no documento: Modelo OSI, VLAN, Switch, Roteador, MAC Address, IP Address, DHCP, ISL, 802.1Q
+
+=== SECAO [TI_SEC_001]: Introdução ao Modelo OSI e Camada de Enlace ===
+O material introduz a Camada de Enlace do Modelo OSI, focando na tecnologia VLAN (Virtual Local Area Network). Explica que VLANs permitem segmentar logicamente uma infraestrutura física de rede, tratando-a como múltiplas redes distintas. Essa segmentação é realizada na Camada 2 (Enlace) através de switches, diferenciando-se da Camada 3 (Rede) que utiliza roteadores e endereçamento IP. As VLANs permitem que dispositivos em uma mesma infraestrutura física se comuniquem como se estivessem em redes separadas, utilizando portas diferentes no mesmo switch.
+
+-- Conceitos-chave --
+Termo: Modelo OSI | Tipo: Modelo de Referência | Definicao: Um modelo conceitual de comunicação em rede em sete camadas, que descreve as funções de um sistema de telecomunicações ou de computação em termos de abstração. A Camada de Enlace (Camada 2) é responsável pela transferência de dados entre nós adjacentes em uma rede.
+  Vantagens de Modelo OSI: Padronização da comunicação em rede; Facilita o entendimento e desenvolvimento de protocolos
+  Desvantagens de Modelo OSI: Complexidade para iniciantes; Nem sempre reflete a implementação real das redes modernas
+  Casos de uso de Modelo OSI: Ensino e aprendizado de redes de computadores; Análise e solução de problemas de rede
+Termo: Camada de Enlace | Tipo: Camada do Modelo OSI | Definicao: A segunda camada do Modelo OSI, responsável pela transferência de dados confiável entre nós adjacentes em uma rede física. Utiliza endereçamento físico (MAC Address) e lida com detecção e correção de erros em quadros de dados.
+  Vantagens de Camada de Enlace: Gerencia a comunicação direta entre dispositivos na mesma rede local; Utiliza endereços MAC para identificação única de dispositivos
+  Desvantagens de Camada de Enlace: Limitada ao domínio de broadcast local; Não realiza roteamento entre redes diferentes
+  Casos de uso de Camada de Enlace: Comunicação entre computadores em uma LAN; Operação de switches e bridges
+Termo: VLAN | Tipo: Tecnologia de Rede | Definicao: Virtual Local Area Network. Permite segmentar uma rede física em múltiplas redes lógicas, isolando o tráfego entre elas. Cada VLAN funciona como um domínio de broadcast separado.
+  Vantagens de VLAN: Melhora a segurança ao isolar tráfego; Aumenta a escalabilidade da rede; Reduz o tráfego de broadcast; Facilita o gerenciamento da rede; Permite a organização lógica de usuários e dispositivos
+  Desvantagens de VLAN: Requer configuração cuidadosa para evitar problemas; VLANs mal configuradas podem causar paralisação da rede; A comunicação entre VLANs requer roteadores
+  Casos de uso de VLAN: Segmentar redes por departamento (ex: Vendas, TI, RH); Isolar tráfego de servidores críticos; Criar redes virtuais para convidados; Melhorar a segurança em redes corporativas
+Termo: Switch | Tipo: Equipamento de Rede | Definicao: Dispositivo de rede que opera na Camada 2 (Enlace) do Modelo OSI. Encaminha pacotes de dados com base nos endereços MAC de destino, aprendendo quais dispositivos estão conectados a quais portas.
+  Vantagens de Switch: Reduz colisões de rede em comparação com hubs; Permite comunicação full-duplex; Suporta VLANs para segmentação lógica da rede
+  Desvantagens de Switch: Não realiza roteamento entre redes diferentes; Pode se tornar um gargalo em redes muito grandes sem segmentação adequada
+  Casos de uso de Switch: Conectar dispositivos em uma rede local (LAN); Implementar VLANs; Criar redes de alta velocidade
+Termo: Roteador | Tipo: Equipamento de Rede | Definicao: Dispositivo de rede que opera na Camada 3 (Rede) do Modelo OSI. Encaminha pacotes de dados entre redes diferentes com base nos endereços IP de destino. É essencial para a comunicação entre VLANs.
+  Vantagens de Roteador: Permite a comunicação entre redes distintas; Realiza roteamento de tráfego; Pode implementar políticas de segurança e filtragem de pacotes; Suporta a interconexão de VLANs
+  Desvantagens de Roteador: Mais complexo que um switch; Pode ser um ponto de gargalo se não dimensionado corretamente
+  Casos de uso de Roteador: Conectar uma rede local à Internet; Interligar diferentes departamentos ou filiais; Roteamento entre VLANs
+Termo: Endereço MAC | Tipo: Endereçamento | Definicao: Media Access Control Address. Um identificador único atribuído a cada interface de hardware de rede. É usado na Camada de Enlace para comunicação dentro de uma rede local.
+  Vantagens de Endereço MAC: Identificação única de hardware; Essencial para o funcionamento de switches e bridges
+  Desvantagens de Endereço MAC: Não é roteável entre redes diferentes; Pode ser falsificado (MAC spoofing)
+  Casos de uso de Endereço MAC: Endereçamento em redes locais (LANs); Filtragem de acesso baseada em MAC; Identificação de dispositivos em VLANs estáticas
+Termo: Endereço IP | Tipo: Endereçamento | Definicao: Internet Protocol Address. Um identificador numérico atribuído a cada dispositivo em uma rede que utiliza o Protocolo de Internet para comunicação. Usado na Camada de Rede para roteamento.
+  Vantagens de Endereço IP: Permite o roteamento de pacotes entre redes; Hierárquico e flexível; Base para a comunicação na Internet
+  Desvantagens de Endereço IP: Requer um sistema de gerenciamento de endereços (DHCP, estático); Pode ser um alvo para ataques se não protegido
+  Casos de uso de Endereço IP: Comunicação entre redes diferentes; Acesso à Internet; Roteamento entre VLANs
+
+-- Figuras e diagramas --
+Figura 'Representação do Modelo OSI' (Diagrama de Camadas): O diagrama mostra as 7 camadas do Modelo OSI, começando pelo Físico na base e subindo até a Aplicação no topo. A Camada de Enlace é destacada como a segunda camada a partir da base.
+  Componentes visuais: Camada Física, Camada de Enlace, Camada de Rede, Camada de Transporte, Camada de Sessão, Camada de Apresentação, Camada de Aplicação
+  Relacionado a: modelo_osi, camada_enlace
+
+=== SECAO [TI_SEC_002]: Conceitos Gerais de VLANs ===
+VLANs são agrupamentos lógicos de estações ou dispositivos de rede, independentemente de sua localização física. Elas permitem que, dentro de uma mesma infraestrutura física (conectada a um switch), redes sejam logicamente distintas. O tráfego entre VLANs é restrito, e switches encaminham pacotes apenas para segmentos da VLAN à qual o tráfego pertence. A comunicação entre diferentes VLANs é provida por roteadores.
+
+-- Conceitos-chave --
+Termo: VLAN | Tipo: Tecnologia de Rede | Definicao: Virtual Local Area Network. Permite segmentar uma rede física em múltiplas redes lógicas, isolando o tráfego entre elas. Cada VLAN funciona como um domínio de broadcast separado.
+  Vantagens de VLAN: Melhora a segurança ao isolar tráfego; Aumenta a escalabilidade da rede; Reduz o tráfego de broadcast; Facilita o gerenciamento da rede; Permite a organização lógica de usuários e dispositivos
+  Desvantagens de VLAN: Requer configuração cuidadosa para evitar problemas; VLANs mal configuradas podem causar paralisação da rede; A comunicação entre VLANs requer roteadores
+  Casos de uso de VLAN: Segmentar redes por departamento (ex: Vendas, TI, RH); Isolar tráfego de servidores críticos; Criar redes virtuais para convidados; Melhorar a segurança em redes corporativas
+Termo: Domínio de Broadcast | Tipo: Conceito de Rede | Definicao: Uma área em uma rede onde um pacote de broadcast enviado por um host é recebido por todos os outros hosts. VLANs criam domínios de broadcast separados.
+  Vantagens de Domínio de Broadcast: Isolamento de tráfego de broadcast; Redução de tráfego desnecessário na rede
+  Desvantagens de Domínio de Broadcast: Pode limitar a comunicação se não for bem planejado
+  Casos de uso de Domínio de Broadcast: Segmentação de rede com VLANs; Controle de tráfego em redes grandes
+Termo: Roteador | Tipo: Equipamento de Rede | Definicao: Dispositivo de rede que opera na Camada 3 (Rede) do Modelo OSI. Encaminha pacotes de dados entre redes diferentes com base nos endereços IP de destino. É essencial para a comunicação entre VLANs.
+  Vantagens de Roteador: Permite a comunicação entre redes distintas; Realiza roteamento de tráfego; Pode implementar políticas de segurança e filtragem de pacotes; Suporta a interconexão de VLANs
+  Desvantagens de Roteador: Mais complexo que um switch; Pode ser um ponto de gargalo se não dimensionado corretamente
+  Casos de uso de Roteador: Conectar uma rede local à Internet; Interligar diferentes departamentos ou filiais; Roteamento entre VLANs
+Termo: Switch | Tipo: Equipamento de Rede | Definicao: Dispositivo de rede que opera na Camada 2 (Enlace) do Modelo OSI. Encaminha pacotes de dados com base nos endereços MAC de destino, aprendendo quais dispositivos estão conectados a quais portas.
+  Vantagens de Switch: Reduz colisões de rede em comparação com hubs; Permite comunicação full-duplex; Suporta VLANs para segmentação lógica da rede
+  Desvantagens de Switch: Não realiza roteamento entre redes diferentes; Pode se tornar um gargalo em redes muito grandes sem segmentação adequada
+  Casos de uso de Switch: Conectar dispositivos em uma rede local (LAN); Implementar VLANs; Criar redes de alta velocidade
+
+-- Figuras e diagramas --
+Figura 'Representação das Camadas do Modelo OSI' (Diagrama de Camadas): O diagrama mostra as 7 camadas do Modelo OSI, com a Camada de Enlace (Enlace) destacada.
+  Componentes visuais: Aplicação, Apresentação, Sessão, Transporte, Rede, Enlace, Físico
+  Relacionado a: modelo_osi, camada_enlace
+
+=== SECAO [TI_SEC_003]: Exemplo Prático de VLANs ===
+O texto descreve um exemplo prático de VLANs utilizando um diagrama de rede com switches em diferentes andares (Data Center, Piso 1, Piso 2, Piso -1, Piso -2). Computadores são agrupados em VLANs distintas (VLAN 20 - Contabilidade, VLAN 40 - Gestão de Pessoas, VLAN 65 - Financeiro) com base em cores. Apesar de compartilharem a mesma infraestrutura física, logicamente estão segregados. O tráfego entre VLANs é restrito e a comunicação entre elas é feita via roteadores. Switches encaminham tráfego unicast, multicast e broadcast apenas dentro do domínio da VLAN.
+
+-- Conceitos-chave --
+Termo: VLAN | Tipo: Tecnologia de Rede | Definicao: Virtual Local Area Network. Permite segmentar uma rede física em múltiplas redes lógicas, isolando o tráfego entre elas. Cada VLAN funciona como um domínio de broadcast separado.
+  Vantagens de VLAN: Melhora a segurança ao isolar tráfego; Aumenta a escalabilidade da rede; Reduz o tráfego de broadcast; Facilita o gerenciamento da rede; Permite a organização lógica de usuários e dispositivos
+  Desvantagens de VLAN: Requer configuração cuidadosa para evitar problemas; VLANs mal configuradas podem causar paralisação da rede; A comunicação entre VLANs requer roteadores
+  Casos de uso de VLAN: Segmentar redes por departamento (ex: Vendas, TI, RH); Isolar tráfego de servidores críticos; Criar redes virtuais para convidados; Melhorar a segurança em redes corporativas
+Termo: Switch | Tipo: Equipamento de Rede | Definicao: Dispositivo de rede que opera na Camada 2 (Enlace) do Modelo OSI. Encaminha pacotes de dados com base nos endereços MAC de destino, aprendendo quais dispositivos estão conectados a quais portas.
+  Vantagens de Switch: Reduz colisões de rede em comparação com hubs; Permite comunicação full-duplex; Suporta VLANs para segmentação lógica da rede
+  Desvantagens de Switch: Não realiza roteamento entre redes diferentes; Pode se tornar um gargalo em redes muito grandes sem segmentação adequada
+  Casos de uso de Switch: Conectar dispositivos em uma rede local (LAN); Implementar VLANs; Criar redes de alta velocidade
+Termo: Roteador | Tipo: Equipamento de Rede | Definicao: Dispositivo de rede que opera na Camada 3 (Rede) do Modelo OSI. Encaminha pacotes de dados entre redes diferentes com base nos endereços IP de destino. É essencial para a comunicação entre VLANs.
+  Vantagens de Roteador: Permite a comunicação entre redes distintas; Realiza roteamento de tráfego; Pode implementar políticas de segurança e filtragem de pacotes; Suporta a interconexão de VLANs
+  Desvantagens de Roteador: Mais complexo que um switch; Pode ser um ponto de gargalo se não dimensionado corretamente
+  Casos de uso de Roteador: Conectar uma rede local à Internet; Interligar diferentes departamentos ou filiais; Roteamento entre VLANs
+Termo: Domínio de Broadcast | Tipo: Conceito de Rede | Definicao: Uma área em uma rede onde um pacote de broadcast enviado por um host é recebido por todos os outros hosts. VLANs criam domínios de broadcast separados.
+  Vantagens de Domínio de Broadcast: Isolamento de tráfego de broadcast; Redução de tráfego desnecessário na rede
+  Desvantagens de Domínio de Broadcast: Pode limitar a comunicação se não for bem planejado
+  Casos de uso de Domínio de Broadcast: Segmentação de rede com VLANs; Controle de tráfego em redes grandes
+
+-- Figuras e diagramas --
+Figura 'Exemplo de Rede com VLANs' (Diagrama de Rede): O diagrama ilustra uma rede com switches em diferentes andares (Data Center, Piso 0, Piso 1, Piso -1, Piso -2). Computadores são coloridos e associados a VLANs específicas: VLAN 20 (Contabilidade - verde), VLAN 40 (Gestão de Pessoas - vermelho) e VLAN 65 (Financeiro - azul). A infraestrutura física é compartilhada, mas logicamente os dispositivos estão segregados em redes virtuais distintas. Um roteador é mostrado conectando a rede à Internet.
+  Componentes visuais: Switches, Computadores (estações de trabalho), Data Center, Pisos (Piso 0, Piso 1, Piso 2, Piso -1, Piso -2), Internet, VLAN 20 - Contabilidade, VLAN 40 - Gestão de Pessoas, VLAN 65 - Financeiro
+  Relacionado a: vlan, switch, roteador
+
+=== SECAO [TI_SEC_004]: Benefícios e Domínios de Broadcast das VLANs ===
+As VLANs oferecem benefícios como melhor escalabilidade, segurança e gerenciamento de rede. Roteadores em topologias VLAN realizam filtragem de broadcast (L3), segurança e gerenciamento de tráfego. A configuração de VLANs é feita por software, sem necessidade de intervenção física. VLANs mal configuradas podem causar problemas graves. Cada VLAN cria um domínio de broadcast separado, e switches encaminham tráfego apenas dentro do domínio da VLAN. Roteadores são usados para interligar esses domínios.
+
+-- Conceitos-chave --
+Termo: VLAN | Tipo: Tecnologia de Rede | Definicao: Virtual Local Area Network. Permite segmentar uma rede física em múltiplas redes lógicas, isolando o tráfego entre elas. Cada VLAN funciona como um domínio de broadcast separado.
+  Vantagens de VLAN: Melhora a segurança ao isolar tráfego; Aumenta a escalabilidade da rede; Reduz o tráfego de broadcast; Facilita o gerenciamento da rede; Permite a organização lógica de usuários e dispositivos
+  Desvantagens de VLAN: Requer configuração cuidadosa para evitar problemas; VLANs mal configuradas podem causar paralisação da rede; A comunicação entre VLANs requer roteadores
+  Casos de uso de VLAN: Segmentar redes por departamento (ex: Vendas, TI, RH); Isolar tráfego de servidores críticos; Criar redes virtuais para convidados; Melhorar a segurança em redes corporativas
+Termo: Escalabilidade de Rede | Tipo: Atributo de Rede | Definicao: A capacidade de uma rede de crescer e se adaptar a um aumento na demanda de usuários, tráfego ou serviços, sem comprometer o desempenho.
+  Vantagens de Escalabilidade de Rede: Permite o crescimento da rede sem grandes reestruturações; Reduz custos de longo prazo; Adapta-se a novas tecnologias e demandas
+  Desvantagens de Escalabilidade de Rede: Pode exigir investimentos iniciais maiores; Requer planejamento cuidadoso
+  Casos de uso de Escalabilidade de Rede: Redes corporativas em expansão; Provedores de serviços de Internet; Infraestruturas de nuvem
+Termo: Segurança de Rede | Tipo: Conceito de Segurança | Definicao: O conjunto de políticas, processos e tecnologias implementadas para proteger a integridade, confidencialidade e disponibilidade de redes e dados.
+  Vantagens de Segurança de Rede: Protege contra acessos não autorizados e ataques; Garante a confidencialidade e integridade dos dados; Mantém a disponibilidade dos serviços de rede
+  Desvantagens de Segurança de Rede: Pode adicionar complexidade e custo; Requer monitoramento constante; Nenhuma solução é 100% infalível
+  Casos de uso de Segurança de Rede: Proteção de dados sensíveis; Prevenção de ataques cibernéticos; Conformidade com regulamentações
+Termo: Gerenciamento de Rede | Tipo: Processo de Rede | Definicao: O processo de administração, monitoramento e controle de uma rede de computadores para garantir seu desempenho, disponibilidade e segurança.
+  Vantagens de Gerenciamento de Rede: Otimiza o desempenho da rede; Identifica e resolve problemas rapidamente; Melhora a segurança; Facilita a alocação de recursos
+  Desvantagens de Gerenciamento de Rede: Requer ferramentas e pessoal qualificado; Pode ser complexo em redes grandes
+  Casos de uso de Gerenciamento de Rede: Monitoramento de tráfego; Configuração de dispositivos; Solução de problemas; Planejamento de capacidade
+Termo: Domínio de Broadcast | Tipo: Conceito de Rede | Definicao: Uma área em uma rede onde um pacote de broadcast enviado por um host é recebido por todos os outros hosts. VLANs criam domínios de broadcast separados.
+  Vantagens de Domínio de Broadcast: Isolamento de tráfego de broadcast; Redução de tráfego desnecessário na rede
+  Desvantagens de Domínio de Broadcast: Pode limitar a comunicação se não for bem planejado
+  Casos de uso de Domínio de Broadcast: Segmentação de rede com VLANs; Controle de tráfego em redes grandes
+Termo: Roteador | Tipo: Equipamento de Rede | Definicao: Dispositivo de rede que opera na Camada 3 (Rede) do Modelo OSI. Encaminha pacotes de dados entre redes diferentes com base nos endereços IP de destino. É essencial para a comunicação entre VLANs.
+  Vantagens de Roteador: Permite a comunicação entre redes distintas; Realiza roteamento de tráfego; Pode implementar políticas de segurança e filtragem de pacotes; Suporta a interconexão de VLANs
+  Desvantagens de Roteador: Mais complexo que um switch; Pode ser um ponto de gargalo se não dimensionado corretamente
+  Casos de uso de Roteador: Conectar uma rede local à Internet; Interligar diferentes departamentos ou filiais; Roteamento entre VLANs
+
+-- Figuras e diagramas --
+Figura 'Topologia de Rede com VLANs e Roteador' (Diagrama de Rede): O diagrama mostra uma rede com um roteador conectando três VLANs (VLAN 1, VLAN 2, VLAN 3). Cada VLAN possui seus próprios switches e dispositivos. O roteador atua como gateway para a comunicação entre essas VLANs e para a conexão com a Internet (Fast Ethernet). O diagrama também ilustra a organização dos switches em diferentes andares (Floor 3, Floor 2, Floor 1).
+  Componentes visuais: Roteador, Switches, Dispositivos (computadores), VLAN 1, VLAN 2, VLAN 3, Fast Ethernet, Andares (Floor 1, Floor 2, Floor 3)
+  Relacionado a: vlan, roteador, switch, dominio_broadcast
+
+=== SECAO [TI_SEC_005]: Operações de VLANs: Estáticas e Dinâmicas ===
+As VLANs podem operar de duas formas: estáticas (port-based ou port-centric) e dinâmicas. Na VLAN estática, a associação de uma porta a uma VLAN é configurada manualmente. Cada porta do switch é designada a uma VLAN específica. A VLAN 1 é a VLAN padrão (default) para gerenciamento e não pode ser excluída. As VLANs dinâmicas utilizam software de gerenciamento de rede e associam dispositivos a VLANs com base em seus endereços MAC, consultando um banco de dados centralizado.
+
+-- Conceitos-chave --
+Termo: VLAN Estática | Tipo: Configuração de Rede | Definicao: Tipo de VLAN onde a associação de uma porta do switch a uma VLAN é configurada manualmente (port-based ou port-centric). O dispositivo conectado à porta assume automaticamente a VLAN configurada para ela.
+  Vantagens de VLAN Estática: Simples de configurar para redes pequenas; Controle direto sobre a associação de portas
+  Desvantagens de VLAN Estática: Demanda maior esforço administrativo em redes grandes; Menos flexível a mudanças de local físico dos dispositivos
+  Casos de uso de VLAN Estática: Redes com poucos dispositivos e mudanças raras; Ambientes onde a localização física dos dispositivos é fixa
+Termo: VLAN Dinâmica | Tipo: Configuração de Rede | Definicao: Tipo de VLAN onde a associação de um dispositivo a uma VLAN é feita dinamicamente, geralmente baseada no endereço MAC do dispositivo, através de um servidor de configuração de VLANs centralizado.
+  Vantagens de VLAN Dinâmica: Menos administração de cabeamento (wiring closet); Adapta-se facilmente a mudanças de dispositivos; Automação do processo de associação
+  Desvantagens de VLAN Dinâmica: Requer um servidor de configuração de VLANs (VCS); Pode ser mais complexa de implementar inicialmente; Dependência de um serviço centralizado
+  Casos de uso de VLAN Dinâmica: Redes grandes e dinâmicas com alta rotatividade de dispositivos; Ambientes corporativos com muitos usuários e dispositivos móveis
+Termo: VLAN de Gerenciamento | Tipo: Conceito de Rede | Definicao: Uma VLAN específica (geralmente VLAN 1) designada para o gerenciamento dos switches. Permite que administradores acessem e configurem os switches remotamente.
+  Vantagens de VLAN de Gerenciamento: Centraliza o acesso administrativo aos switches; Melhora a segurança ao isolar o tráfego de gerenciamento
+  Desvantagens de VLAN de Gerenciamento: Se a VLAN 1 for comprometida, todo o gerenciamento pode ser afetado
+  Casos de uso de VLAN de Gerenciamento: Gerenciamento remoto de switches; Configuração e monitoramento de dispositivos de rede
+Termo: Switch | Tipo: Equipamento de Rede | Definicao: Dispositivo de rede que opera na Camada 2 (Enlace) do Modelo OSI. Encaminha pacotes de dados com base nos endereços MAC de destino, aprendendo quais dispositivos estão conectados a quais portas.
+  Vantagens de Switch: Reduz colisões de rede em comparação com hubs; Permite comunicação full-duplex; Suporta VLANs para segmentação lógica da rede
+  Desvantagens de Switch: Não realiza roteamento entre redes diferentes; Pode se tornar um gargalo em redes muito grandes sem segmentação adequada
+  Casos de uso de Switch: Conectar dispositivos em uma rede local (LAN); Implementar VLANs; Criar redes de alta velocidade
+Termo: Endereço MAC | Tipo: Endereçamento | Definicao: Media Access Control Address. Um identificador único atribuído a cada interface de hardware de rede. É usado na Camada de Enlace para comunicação dentro de uma rede local.
+  Vantagens de Endereço MAC: Identificação única de hardware; Essencial para o funcionamento de switches e bridges
+  Desvantagens de Endereço MAC: Não é roteável entre redes diferentes; Pode ser falsificado (MAC spoofing)
+  Casos de uso de Endereço MAC: Endereçamento em redes locais (LANs); Filtragem de acesso baseada em MAC; Identificação de dispositivos em VLANs estáticas
+
+-- Figuras e diagramas --
+Figura 'Diagrama de VLANs Estáticas e Dinâmicas' (Diagrama de Rede): O diagrama ilustra a diferença entre VLANs estáticas e dinâmicas. Em VLANs estáticas, as portas são diretamente associadas a VLANs (VLAN1, VLAN2, VLAN3). Em VLANs dinâmicas, um 'Servidor de Configuração VLAN' é usado para associar dispositivos (identificados por MAC Address) a VLANs específicas. Um 'Novo Nó' é mostrado com um MAC Address desconhecido, indicando a necessidade de consulta ao servidor para determinar sua VLAN.
+  Componentes visuais: Switches, Servidor de Configuração VLAN, VLAN 1, VLAN 2, VLAN 3, Endereço MAC marcado no banco de dados, Novo Nó, MAC Address
+  Relacionado a: vlan_estatica, vlan_dinamica, vlan_gerenciamento, endereco_mac
+
+=== SECAO [TI_SEC_006]: Tipos de VLANs: Baseadas em Porta, MAC e Protocolo ===
+Existem três tipos principais de VLANs: baseadas em porta (mais comum, configurada manualmente por porta), baseadas em endereço MAC (raramente implementada, mais segura mas trabalhosa, associa MAC a VLAN) e baseadas em protocolo (configuradas por IP ou MAC, menos comum devido ao DHCP). A VLAN baseada em porta é simples e frequentemente usada com DHCP. A VLAN baseada em MAC é mais segura, mas difícil de administrar, sendo adequada para ambientes com suporte técnico ágil. A VLAN baseada em protocolo usa IP ou MAC e é menos comum.
+
+-- Conceitos-chave --
+Termo: VLAN Baseada em Porta | Tipo: Tipo de VLAN | Definicao: Método de configuração de VLAN onde cada porta do switch é atribuída a uma VLAN específica. É o método mais comum e simples de implementar.
+  Vantagens de VLAN Baseada em Porta: Simples de usar e configurar; Bom desempenho; Frequentemente usada com DHCP
+  Desvantagens de VLAN Baseada em Porta: Requer configuração manual para cada porta; Menos flexível para dispositivos móveis
+  Casos de uso de VLAN Baseada em Porta: Redes corporativas padrão; Ambientes com configuração de rede estável
+Termo: VLAN Baseada em Endereço MAC | Tipo: Tipo de VLAN | Definicao: Método de configuração de VLAN onde a associação de um dispositivo a uma VLAN é feita com base em seu endereço MAC. Oferece maior segurança, mas é mais complexo de administrar.
+  Vantagens de VLAN Baseada em Endereço MAC: Alta segurança (associação direta do dispositivo à VLAN); Flexível para dispositivos que mudam de porta
+  Desvantagens de VLAN Baseada em Endereço MAC: Difícil de administrar e gerenciar; Requer registro e configuração individual de cada MAC; Pode afetar o desempenho devido à filtragem
+  Casos de uso de VLAN Baseada em Endereço MAC: Ambientes com alta necessidade de segurança; Redes com suporte técnico disponível para manutenção rápida
+Termo: VLAN Baseada em Protocolo | Tipo: Tipo de VLAN | Definicao: Método de configuração de VLAN que utiliza informações de protocolo (como endereço IP ou tipo de protocolo) para determinar a associação de um dispositivo a uma VLAN. Menos comum atualmente.
+  Vantagens de VLAN Baseada em Protocolo: Pode ser útil em cenários específicos onde o protocolo é o fator determinante
+  Desvantagens de VLAN Baseada em Protocolo: Menos comum devido à popularidade do DHCP e VLANs baseadas em porta/MAC; Pode ser complexo de gerenciar
+  Casos de uso de VLAN Baseada em Protocolo: Redes legadas ou com requisitos de segmentação baseados em protocolos específicos
+Termo: DHCP | Tipo: Protocolo | Definicao: Dynamic Host Configuration Protocol. Protocolo que atribui automaticamente endereços IP e outras configurações de rede a dispositivos. Facilita a gestão de endereçamento em redes.
+  Vantagens de DHCP: Automatiza a atribuição de endereços IP; Evita conflitos de IP; Simplifica a administração da rede
+  Desvantagens de DHCP: Requer um servidor DHCP; Pode ser um ponto de falha se o servidor cair
+  Casos de uso de DHCP: Redes de qualquer tamanho para atribuição automática de IP; Redes com muitos dispositivos e alta rotatividade
+Termo: Endereço MAC | Tipo: Endereçamento | Definicao: Media Access Control Address. Um identificador único atribuído a cada interface de hardware de rede. É usado na Camada de Enlace para comunicação dentro de uma rede local.
+  Vantagens de Endereço MAC: Identificação única de hardware; Essencial para o funcionamento de switches e bridges
+  Desvantagens de Endereço MAC: Não é roteável entre redes diferentes; Pode ser falsificado (MAC spoofing)
+  Casos de uso de Endereço MAC: Endereçamento em redes locais (LANs); Filtragem de acesso baseada em MAC; Identificação de dispositivos em VLANs estáticas
+Termo: Endereço IP | Tipo: Endereçamento | Definicao: Internet Protocol Address. Um identificador numérico atribuído a cada dispositivo em uma rede que utiliza o Protocolo de Internet para comunicação. Usado na Camada de Rede para roteamento.
+  Vantagens de Endereço IP: Permite o roteamento de pacotes entre redes; Hierárquico e flexível; Base para a comunicação na Internet
+  Desvantagens de Endereço IP: Requer um sistema de gerenciamento de endereços (DHCP, estático); Pode ser um alvo para ataques se não protegido
+  Casos de uso de Endereço IP: Comunicação entre redes diferentes; Acesso à Internet; Roteamento entre VLANs
+
+-- Tabelas comparativas --
+Tabela 'Tipos de VLAN | Description': Esta tabela compara os diferentes tipos de VLANs (Baseado em Porta, Endereço MAC, Protocolo) com base em suas características, métodos de configuração e aplicabilidade.
+  Linha LINHA_001: Tipo de VLAN = Baseado em Porta; Descrição = Método mais comum de configuração. Portas designadas individualmente, em grupos, em linhas ou através de 2 ou mais switches.; Método de Configuração = Manual, porta por porta.; Vantagens = Simples de usar; Frequentemente implementado onde DHCP é usado.; Desvantagens = Requer configuração manual para cada porta.; Casos de Uso = Redes corporativas padrão; Ambientes com configuração estável.
+    (Relacionado a: vlan_baseada_porta, switch, dhcp)
+  Linha LINHA_002: Tipo de VLAN = Baseado em Endereço MAC; Descrição = Cada endereço MAC precisa ser registrado no switch e configurado individualmente.; Método de Configuração = Manual, por endereço MAC.; Vantagens = Considerado útil; Mais seguro (associa dispositivo à VLAN).; Desvantagens = Raramente implementado atualmente; Difícil de administrar, identificar e resolver problemas.; Casos de Uso = Ambientes com alta necessidade de segurança; Suporte técnico ágil.
+    (Relacionado a: vlan_baseada_mac, endereco_mac, switch)
+  Linha LINHA_003: Tipo de VLAN = Baseado em Protocolo; Descrição = Configurado como endereço MAC, mas usa um endereço IP ou lógico.; Método de Configuração = Baseado em IP ou Lógico.; Vantagens = Pode ser útil em cenários específicos.; Desvantagens = Não é mais comum devido ao DHCP.; Casos de Uso = Redes legadas; Requisitos de segmentação baseados em protocolos.
+    (Relacionado a: vlan_baseada_protocolo, endereco_ip, endereco_mac)
+
+-- Figuras e diagramas --
+Figura 'Associação de VLANs' (Diagrama de Rede): O diagrama compara a 'Associação por Porta' com a 'Associação por Endereço MAC'. Na 'Associação por Porta', o foco é maximizar o desempenho de encaminhamento, com VLANs conectadas diretamente a portas de switches. Na 'Associação por Endereço MAC', há exigência de filtragem e afeta o desempenho, com tabelas de endereços MAC associadas a cada VLAN, indicando um aumento na utilização de recursos.
+  Componentes visuais: VLAN, Switch, Porta, Endereço MAC, Tabelas de Endereços MAC, VLAN 1, VLAN 2, Troca de Tabelas, Aumento da Utilização de Recursos
+  Relacionado a: vlan_baseada_porta, vlan_baseada_mac, endereco_mac
+
+=== SECAO [TI_SEC_007]: Comunicação entre VLANs e Métodos de Tagging ===
+A comunicação entre VLANs é realizada por roteadores (Camada 3), que adicionam segurança e controle de acesso. Existem dois métodos principais de frame tagging para identificar a qual VLAN um pacote pertence: ISL (protocolo proprietário da Cisco) e 802.1Q (padrão IEEE). Ambos adicionam um campo de identificação (VLAN ID) ao cabeçalho do pacote. O 802.1Q modifica o cabeçalho Ethernet, enquanto o ISL encapsula o quadro original. Esses tags permitem que os switches e roteadores encaminhem o tráfego corretamente entre as VLANs.
+
+-- Conceitos-chave --
+Termo: Comunicação entre VLANs | Tipo: Conceito de Rede | Definicao: O processo de permitir que dispositivos em diferentes VLANs troquem dados. Geralmente requer um roteador para interligar as VLANs.
+  Vantagens de Comunicação entre VLANs: Permite colaboração entre diferentes segmentos de rede; Mantém o isolamento lógico das VLANs
+  Desvantagens de Comunicação entre VLANs: Requer um dispositivo de Camada 3 (roteador); Pode introduzir latência adicional
+  Casos de uso de Comunicação entre VLANs: Permitir que o departamento de Vendas acesse um servidor compartilhado na VLAN de TI; Acesso a recursos comuns por diferentes grupos de usuários
+Termo: Roteador | Tipo: Equipamento de Rede | Definicao: Dispositivo de rede que opera na Camada 3 (Rede) do Modelo OSI. Encaminha pacotes de dados entre redes diferentes com base nos endereços IP de destino. É essencial para a comunicação entre VLANs.
+  Vantagens de Roteador: Permite a comunicação entre redes distintas; Realiza roteamento de tráfego; Pode implementar políticas de segurança e filtragem de pacotes; Suporta a interconexão de VLANs
+  Desvantagens de Roteador: Mais complexo que um switch; Pode ser um ponto de gargalo se não dimensionado corretamente
+  Casos de uso de Roteador: Conectar uma rede local à Internet; Interligar diferentes departamentos ou filiais; Roteamento entre VLANs
+Termo: Frame Tagging | Tipo: Protocolo/Método | Definicao: Processo de adicionar informações (tags) ao cabeçalho de um frame Ethernet para identificar a qual VLAN ele pertence. Essencial para que switches e roteadores encaminhem o tráfego corretamente em redes com múltiplas VLANs.
+  Vantagens de Frame Tagging: Permite que múltiplos VLANs compartilhem um único link físico; Facilita o gerenciamento de redes complexas com VLANs
+  Desvantagens de Frame Tagging: Adiciona uma pequena sobrecarga ao cabeçalho; Requer suporte de switches e roteadores
+  Casos de uso de Frame Tagging: Conectar switches em uma rede com VLANs; Permitir que um único link físico transporte tráfego de várias VLANs
+Termo: ISL | Tipo: Protocolo | Definicao: Inter-Switch Link. Protocolo proprietário da Cisco para encapsulamento de frames Ethernet, adicionando um cabeçalho que inclui um campo VLAN ID. Usado para comunicação entre switches Cisco.
+  Vantagens de ISL: Suporta múltiplas VLANs em um único link; Oferece controle sobre o tráfego de VLAN
+  Desvantagens de ISL: Protocolo proprietário da Cisco, não é um padrão aberto; Menos comum hoje em dia em favor do 802.1Q
+  Casos de uso de ISL: Comunicação entre switches Cisco em redes mais antigas
+Termo: IEEE 802.1Q | Tipo: Padrão | Definicao: Padrão IEEE para tagging de frames Ethernet, permitindo que múltiplos VLANs compartilhem um único link físico. Modifica o cabeçalho Ethernet para incluir um campo VLAN ID.
+  Vantagens de IEEE 802.1Q: Padrão aberto e amplamente suportado; Permite múltiplas VLANs em um único link; Eficiente e amplamente utilizado
+  Desvantagens de IEEE 802.1Q: Adiciona uma pequena sobrecarga ao cabeçalho
+  Casos de uso de IEEE 802.1Q: Conectar switches e roteadores em redes com VLANs; Implementação padrão para redes corporativas
+Termo: VLAN ID | Tipo: Identificador | Definicao: Um identificador numérico (geralmente de 12 bits) que distingue uma VLAN de outra. É incluído no cabeçalho do frame (tag) para que os dispositivos de rede saibam a qual VLAN o tráfego pertence.
+  Vantagens de VLAN ID: Permite a identificação e o encaminhamento correto do tráfego de VLAN
+  Desvantagens de VLAN ID: Limite de 4094 VLANs no padrão 802.1Q
+  Casos de uso de VLAN ID: Segmentação de rede com VLANs; Gerenciamento de tráfego em redes complexas
+
+-- Tabelas comparativas --
+Tabela 'Tagging | Método | Meios | Description': Esta tabela compara os diferentes métodos de tagging de frames utilizados para implementar VLANs, destacando o protocolo, o meio físico, a modificação do cabeçalho e o campo de identificação da VLAN.
+  Linha LINHA_004: Protocolo = Inter-Switch Link (ISL); Meio = Fast Ethernet; Descrição do Cabeçalho = O cabeçalho ISL encapsula o quadro da rede local e existe um campo VLAN ID no cabeçalho ISL.; Modificação/Encapsulamento = O quadro é encapsulado.
+    (Relacionado a: isl, vlan_id)
+  Linha LINHA_005: Protocolo = 802.1Q; Meio = Fast Ethernet; Descrição do Cabeçalho = Ethernet VLAN protocol definido por IEEE.; Modificação/Encapsulamento = O cabeçalho é modificado.
+    (Relacionado a: ieee_802_1q, vlan_id)
+  Linha LINHA_006: Protocolo = Emulação de LAN (LANE); Meio = ATM; Descrição do Cabeçalho = Sem tagging. Uma conexão virtual implica a existência de VLAN ID.; Modificação/Encapsulamento = Conexão virtual implica ID de VLAN.
+    (Relacionado a: vlan_id)
+
+-- Figuras e diagramas --
+Figura 'Métodos de Topologia Física para VLANs' (Diagrama de Rede): O diagrama apresenta dois métodos de topologia física para implementar VLANs: 'Um Link Físico, Vários Links Lógicos' e 'Link Físico por cada VLAN'. O primeiro método utiliza um único link físico para transportar tráfego de múltiplas VLANs (VLAN 1, VLAN 2, VLAN 3), indicando o uso de tagging. O segundo método sugere um link físico dedicado para cada VLAN.
+  Componentes visuais: Link Físico, Links Lógicos, VLAN 1, VLAN 2, VLAN 3
+  Relacionado a: frame_tagging, vlan
+
+-- Relacionamentos --
+Conexao: 'roteador' --[comunica_com]--> 'vlan'. Motivo: Roteadores são responsáveis por interligar e permitir a comunicação entre diferentes VLANs, atuando como gateway entre elas.
+Conexao: 'vlan' --[depende_de]--> 'frame_tagging'. Motivo: Para que múltiplas VLANs compartilhem um único link físico, é necessário o uso de frame tagging (como 802.1Q ou ISL) para identificar o tráfego de cada VLAN.
+Conexao: 'ieee_802_1q' --[implementa]--> 'frame_tagging'. Motivo: O padrão IEEE 802.1Q é um método comum e aberto para realizar o frame tagging.
+Conexao: 'isl' --[implementa]--> 'frame_tagging'. Motivo: O protocolo ISL é outro método de frame tagging, utilizado principalmente pela Cisco.
+

@@ -1,0 +1,273 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Cabeamento Estruturado - Especificação Geral sobre Cabeamento Estruturado em Instalações Residenciais - ANSI/TIA 570
+Idioma: pt-BR
+Tecnologias citadas no documento: ANSI/TIA 570, UTP, Cabo Coaxial, Fibra Óptica, Cat 5e, Cat 3, Cat 7, Ethernet, CFTV, CATV, NID, ADO, DP
+
+=== SECAO [TI_SEC_001]: Introdução à Norma ANSI/TIA 570 ===
+A norma ANSI/TIA 570 estabelece os requisitos mínimos e recomendações para o projeto, instalação e topologia do cabeamento estruturado em ambientes residenciais, diferenciando-se das normas para edificações comerciais ou empresariais. Ela abrange residências unifamiliares, apartamentos, condomínios residenciais e edificações multifamiliares, definindo desde a quantidade e localização de tomadas até os tipos de serviços suportados, como dados, voz, vídeo e automação residencial. Diferentemente da norma 568, a 570 não prevê uma 'work area' para cada saída de serviço, mas foca em serviços e configurações peculiares ao ambiente residencial. A norma foi desenvolvida no contexto do início da oferta de serviços de banda larga, considerando a distribuição por fibra óptica ou cabo coaxial, sendo este último especificado na 570, o que não é comum na 568.
+
+-- Conceitos-chave --
+Termo: ANSI/TIA 570 | Tipo: Padrão | Definicao: Norma que especifica os requisitos mínimos e recomendações para o projeto, instalação e topologia do cabeamento estruturado em ambientes residenciais.
+  Vantagens de ANSI/TIA 570: Foco nas necessidades específicas de ambientes residenciais.; Define requisitos mínimos para garantir funcionalidade básica.; Abrange diversos tipos de residências (unifamiliares, multifamiliares, apartamentos).
+  Desvantagens de ANSI/TIA 570: Requisitos mínimos podem não atender a necessidades avançadas.; Menos detalhada que normas para ambientes comerciais em alguns aspectos.
+  Casos de uso de ANSI/TIA 570: Projeto de cabeamento estruturado em novas construções residenciais.; Modernização de instalações de cabeamento em residências existentes.; Garantia de infraestrutura de rede para serviços de telecomunicações em casas e apartamentos.
+Termo: Cabeamento Residencial Estruturado | Tipo: Arquitetura | Definicao: Infraestrutura de cabeamento em residências que segue padrões para suportar múltiplos serviços de telecomunicações de forma organizada e escalável.
+  Vantagens de Cabeamento Residencial Estruturado: Suporte a múltiplos serviços (voz, dados, vídeo, automação).; Facilita a instalação e manutenção.; Permite a atualização e expansão futura.
+  Desvantagens de Cabeamento Residencial Estruturado: Custo inicial de instalação pode ser maior que cabeamento não estruturado.; Requer planejamento e conhecimento técnico para implementação.
+  Casos de uso de Cabeamento Residencial Estruturado: Casas inteligentes (smart homes).; Apartamentos com infraestrutura de rede para múltiplos dispositivos.; Condomínios com áreas comuns conectadas.
+Termo: Automação Residencial | Tipo: Serviço | Definicao: Incorporação de inteligência à residência para controlar e automatizar serviços como iluminação, segurança, climatização e entretenimento, geralmente através de um cabeamento estruturado de dados.
+  Vantagens de Automação Residencial: Conveniência e conforto para os moradores.; Eficiência energética.; Aumento da segurança.; Controle remoto de dispositivos.
+  Desvantagens de Automação Residencial: Custo de implementação e manutenção.; Dependência de tecnologia e conectividade.; Complexidade de configuração e integração.
+  Casos de uso de Automação Residencial: Controle de iluminação e persianas.; Sistemas de segurança com câmeras e sensores.; Gerenciamento de climatização.; Controle de acesso e portões.
+
+-- Figuras e diagramas --
+Figura 'Diagrama de Subsistemas de Cabeamento Estruturado' (Diagrama de Arquitetura): O diagrama ilustra os subsistemas de um cabeamento estruturado, numerando os componentes principais: 1. Cabeamento horizontal, 2. Backbone (cabeamento vertical), 3. Área de trabalho, 4. Centros de telecomunicações, 5. Salas de equipamentos, 6. Facilidades de entrada, 7. Administração. Este diagrama é genérico e serve como base para entender a estrutura, embora a norma 570 adapte esses conceitos para o ambiente residencial.
+  Componentes visuais: Cabeamento horizontal, Backbone (Cabeamento vertical), Área de trabalho, Centros de telecomunicações, Salas de equipamentos, Facilidades de entrada, Administração
+  Relacionado a: cabeamento_residencial_estruturado
+
+=== SECAO [TI_SEC_002]: Principais Aspectos Abordados pela TIA-570 ===
+A norma TIA-570 aborda a arquitetura de cabeamento residencial, que se baseia na topologia em estrela com um ponto central de distribuição (Residential Gateway/Distribution Device). Ela suporta diversos serviços, incluindo dados, voz, vídeo, automação residencial e internet banda larga. A norma foi concebida no contexto da oferta de banda larga, que utiliza fibra óptica ou cabo coaxial para distribuição. Os meios físicos recomendados incluem cabos de par trançado balanceado (mínimo Cat 5e), cabos coaxiais e, crescentemente, fibra óptica. Para telefonia, o Cat 3 é suficiente, mas para dados, Cat 5e ou superior é necessário. Cabos coaxiais são especificados para banda larga residencial, e em condomínios, a distribuição interna de banda larga deve ser feita por coaxial ou fibra óptica, não por par trançado. A norma também considera a distribuição de internet e TV (CFTV/CATV) e a escalabilidade para condomínios.
+
+-- Conceitos-chave --
+Termo: Topologia em Estrela | Tipo: Topologia de Rede | Definicao: Uma arquitetura de rede onde todos os dispositivos são conectados a um ponto central comum. Em cabeamento estruturado, este ponto central é o dispositivo de distribuição.
+  Vantagens de Topologia em Estrela: Fácil instalação e gerenciamento.; Falha em um cabo não afeta o restante da rede (exceto o dispositivo conectado a ele).; Facilita a identificação e isolamento de falhas.
+  Desvantagens de Topologia em Estrela: Dependência do ponto central; se ele falhar, toda a rede para.; Requer mais cabo do que topologias como barramento ou anel.; O desempenho pode ser afetado se o ponto central for sobrecarregado.
+  Casos de uso de Topologia em Estrela: Cabeamento estruturado em residências e escritórios.; Redes locais (LANs) onde a organização e a facilidade de gerenciamento são importantes.
+Termo: Ponto Central de Distribuição (Residential Gateway / Distribution Device) | Tipo: Equipamento de Rede | Definicao: O dispositivo central em uma rede residencial que termina e gerencia os cabos vindos das tomadas, atuando como o ponto de interconexão principal para os serviços de telecomunicações.
+  Vantagens de Ponto Central de Distribuição (Residential Gateway / Distribution Device): Centraliza a distribuição de serviços.; Facilita a manutenção e o troubleshooting.; Permite a organização dos cabos e dispositivos.
+  Desvantagens de Ponto Central de Distribuição (Residential Gateway / Distribution Device): Ponto único de falha para a rede.; Requer espaço e energia adequados.; Pode se tornar um gargalo se não for dimensionado corretamente.
+  Casos de uso de Ponto Central de Distribuição (Residential Gateway / Distribution Device): Instalação de cabeamento estruturado residencial.; Conexão de múltiplos dispositivos e serviços em uma casa.; Ponto de terminação para cabos de rede, telefone e TV.
+Termo: Cabos de Par Trançado Balanceado | Tipo: Meio Físico | Definicao: Tipo de cabo de rede composto por pares de fios de cobre trançados para reduzir interferência eletromagnética. Utilizado para dados, voz e outros serviços.
+  Vantagens de Cabos de Par Trançado Balanceado: Custo relativamente baixo.; Fácil de instalar e manusear.; Ampla disponibilidade e variedade de categorias (Cat 5e, Cat 6, etc.).; Suporte a velocidades de rede Gigabit Ethernet.
+  Desvantagens de Cabos de Par Trançado Balanceado: Limitação de distância (geralmente 100m).; Susceptível a interferência eletromagnética (EMI) e de radiofrequência (RFI) em ambientes não controlados.; Menor largura de banda e velocidade comparado à fibra óptica.
+  Casos de uso de Cabos de Par Trançado Balanceado: Redes locais (LANs) em escritórios e residências.; Conexão de computadores, impressoras e outros dispositivos.; Serviços de telefonia (VoIP e tradicional).
+Termo: Cabos Coaxiais | Tipo: Meio Físico | Definicao: Cabo de transmissão de sinais com um condutor central, isolamento, malha metálica e capa externa. Utilizado para TV a cabo, internet banda larga e sistemas de CFTV.
+  Vantagens de Cabos Coaxiais: Boa imunidade a interferências externas.; Suporta frequências mais altas que cabos de par trançado.; Adequado para transmissão de vídeo e dados em banda larga.; Custo moderado.
+  Desvantagens de Cabos Coaxiais: Mais rígido e difícil de instalar que cabos de par trançado.; Limitação de distância para altas frequências.; Menor flexibilidade para futuras expansões de rede de dados comparado à fibra óptica.
+  Casos de uso de Cabos Coaxiais: Distribuição de sinal de TV a cabo (CATV).; Provedores de internet banda larga (DSL sobre coaxial).; Sistemas de Circuito Fechado de Televisão (CFTV).
+Termo: Fibra Óptica | Tipo: Meio Físico | Definicao: Meio de transmissão que utiliza pulsos de luz para enviar dados através de finos filamentos de vidro ou plástico. Oferece alta velocidade e grande largura de banda.
+  Vantagens de Fibra Óptica: Altíssima velocidade e largura de banda.; Imunidade total a interferências eletromagnéticas.; Longas distâncias de transmissão sem perda de sinal significativa.; Segurança (difícil de interceptar).
+  Desvantagens de Fibra Óptica: Custo mais elevado de instalação e equipamentos.; Requer técnicos especializados para instalação e manutenção.; Mais frágil que cabos de cobre.; Conectores e emendas podem ser complexos.
+  Casos de uso de Fibra Óptica: Backbones de redes de longa distância (WANs).; Conexões de alta velocidade em data centers.; Internet banda larga de alta performance.; Redes de telecomunicações.
+Termo: Cat 5e | Tipo: Padrão de Cabo | Definicao: Categoria de cabo de par trançado que suporta velocidades de até 1 Gbps em distâncias de até 100 metros. É um padrão comum para redes Ethernet.
+  Vantagens de Cat 5e: Suporte a Gigabit Ethernet.; Custo-benefício para redes de dados.; Ampla disponibilidade no mercado.; Adequado para telefonia e dados.
+  Desvantagens de Cat 5e: Menor desempenho e largura de banda que categorias superiores (Cat 6, Cat 6a).; Mais suscetível a interferências que categorias superiores.; Não ideal para aplicações de alta demanda de rede ou futuras.
+  Casos de uso de Cat 5e: Redes locais (LANs) em residências e pequenos escritórios.; Conexão de computadores, roteadores e switches.; Serviços de telefonia IP (VoIP).
+Termo: Cat 3 | Tipo: Padrão de Cabo | Definicao: Categoria de cabo de par trançado que suporta velocidades de até 10 Mbps. É um padrão mais antigo, geralmente utilizado para telefonia.
+  Vantagens de Cat 3: Custo muito baixo.; Adequado para serviços de telefonia tradicional.
+  Desvantagens de Cat 3: Velocidade muito baixa para redes de dados modernas.; Não suporta Ethernet de alta velocidade.; Obsoleto para a maioria das aplicações de rede.
+  Casos de uso de Cat 3: Linhas telefônicas tradicionais.; Sistemas de alarme ou controle que utilizam baixa velocidade de comunicação.
+Termo: Cat 7 | Tipo: Padrão de Cabo | Definicao: Categoria de cabo de par trançado blindado que suporta frequências de até 600 MHz, oferecendo desempenho superior para redes de alta velocidade e aplicações futuras.
+  Vantagens de Cat 7: Altíssimo desempenho e velocidade (10 Gbps e superior).; Excelente blindagem contra interferências.; Suporte a frequências muito altas.; Preparado para futuras demandas de rede.
+  Desvantagens de Cat 7: Custo significativamente mais alto.; Requer instalação cuidadosa devido à blindagem.; Menos comum e mais difícil de encontrar que Cat 6/6a.
+  Casos de uso de Cat 7: Redes corporativas de alta performance.; Data centers.; Aplicações que exigem largura de banda massiva e baixa latência.; Infraestrutura de rede preparada para o futuro.
+Termo: Circuito Fechado de Televisão (CFTV) | Tipo: Sistema de Segurança | Definicao: Sistema de vigilância por vídeo onde os sinais são transmitidos para um conjunto limitado de monitores, geralmente em um circuito fechado, garantindo acesso restrito às imagens.
+  Vantagens de Circuito Fechado de Televisão (CFTV): Aumento da segurança e monitoramento.; Dissuasão de atividades criminosas.; Possibilidade de gravação e análise de eventos.; Controle de acesso a áreas restritas.
+  Desvantagens de Circuito Fechado de Televisão (CFTV): Custo de instalação e manutenção dos equipamentos.; Necessidade de infraestrutura de cabeamento e energia.; Questões de privacidade e conformidade legal.; Manutenção e atualização dos sistemas.
+  Casos de uso de Circuito Fechado de Televisão (CFTV): Monitoramento de residências.; Segurança em condomínios.; Vigilância em estabelecimentos comerciais.; Controle de acesso em edifícios.
+Termo: Circuito Aberto de Televisão (CATV) | Tipo: Serviço de Mídia | Definicao: Sistema de televisão por assinatura onde o sinal é transmitido abertamente para qualquer assinante, como o serviço tradicional de TV a cabo.
+  Vantagens de Circuito Aberto de Televisão (CATV): Acesso a uma ampla variedade de canais de TV.; Conveniência para o usuário.; Infraestrutura estabelecida por operadoras.
+  Desvantagens de Circuito Aberto de Televisão (CATV): Custo mensal da assinatura.; Dependência da operadora para qualidade e disponibilidade.; Menos flexibilidade que serviços de streaming.
+  Casos de uso de Circuito Aberto de Televisão (CATV): Distribuição de canais de televisão para residências.; Serviço de TV oferecido por operadoras de telecomunicações.
+
+-- Tabelas comparativas --
+Tabela 'Serviços e Cabeamento Recomendado por Grau': Esta tabela compara os serviços suportados e o cabeamento recomendado para instalações residenciais, divididas em Grau 1 (requisitos mínimos) e Grau 2 (aplicações básicas e avançadas). Ela detalha quais tipos de cabos são adequados para cada serviço em cada grau.
+  Linha LIN_001: Serviço = Telefonia; Grade 1 = X; Grade 2 = X; Cabeamento = UTP 4 pares cat 3 ou superior; Grade 1 = 1; Grade 2 = X
+    (Relacionado a: cat_3, cabeamento_par_trancado)
+  Linha LIN_002: Serviço = Televisão; Grade 1 = X; Grade 2 = X; Cabeamento = UTP 4 pares cat 5e; Grade 1 = X; Grade 2 = 2
+    (Relacionado a: cat_5e, cabeamento_par_trancado)
+  Linha LIN_003: Serviço = Comunicação de dados; Grade 1 = X; Grade 2 = X; Cabeamento = Coaxial 75 Ω; Grade 1 = X; Grade 2 = 1
+    (Relacionado a: cabo_coaxial)
+  Linha LIN_004: Serviço = Multimídia; Grade 1 = X; Grade 2 = X; Cabeamento = Fibra óptica; Grade 1 = 2; Grade 2 = opcional
+    (Relacionado a: fibra_optica)
+
+-- Relacionamentos --
+Conexao: 'cabeamento_par_trancado' --[utilizado_para]--> 'telefonia'. Motivo: Cabos de par trançado, especialmente Cat 3 ou superior, são recomendados para serviços de telefonia.
+Conexao: 'cabeamento_par_trancado' --[utilizado_para]--> 'dados'. Motivo: Cabos de par trançado Cat 5e ou superior são necessários para transmissão de dados.
+Conexao: 'cabo_coaxial' --[utilizado_para]--> 'internet banda larga'. Motivo: Cabos coaxiais são especificados para o serviço de internet banda larga em ambientes residenciais.
+Conexao: 'fibra_optica' --[recomendado_para]--> 'multimídia'. Motivo: Fibra óptica é recomendada para aplicações de multimídia, especialmente em versões mais recentes da norma.
+Conexao: 'cabo_coaxial' --[utilizado_para]--> 'CFTV'. Motivo: Serviços de CFTV em condomínios são distribuídos por meio de cabo coaxial.
+Conexao: 'cabeamento_par_trancado' --[nao_utilizado_para]--> 'internet banda larga_condominio'. Motivo: Em condomínios, a chegada da internet banda larga não pode ser realizada por meio de cabo de par trançado.
+Conexao: 'cabo_coaxial' --[utilizado_para]--> 'internet banda larga_condominio'. Motivo: Em condomínios, a internet banda larga deve ser distribuída por cabo coaxial ou fibra óptica.
+Conexao: 'fibra_optica' --[utilizado_para]--> 'internet banda larga_condominio'. Motivo: Em condomínios, a internet banda larga deve ser distribuída por cabo coaxial ou fibra óptica.
+
+=== SECAO [TI_SEC_003]: Distribuição de Serviços e Meios Físicos ===
+Em unidades residenciais, após a centralização do equipamento de distribuição e utilizando a topologia em estrela, a internet pode ser distribuída por cabo de par trançado. A entrega da internet pode ocorrer por cabo coaxial se fibra óptica não estiver disponível. A banda larga também é usada em sistemas de CFTV (circuito fechado) e CATV (circuito aberto). O cabeamento para CFTV em condomínios também utiliza cabo coaxial. A norma 570 considera a escalabilidade e o crescimento, especialmente para condomínios multifamiliares, enquanto apartamentos e residências unifamiliares têm menor potencial de expansão. A classificação de instalação residencial é dividida em Grau 1 (mínimo) e Grau 2 (básico/avançado).
+
+-- Conceitos-chave --
+Termo: Distribuição de Internet Residencial | Tipo: Processo | Definicao: Processo de levar o sinal de internet até os dispositivos dentro de uma residência, utilizando diferentes meios físicos e topologias.
+  Vantagens de Distribuição de Internet Residencial: Permite acesso à informação e comunicação.; Suporta múltiplos dispositivos e serviços online.; Facilita o trabalho remoto e o entretenimento.
+  Desvantagens de Distribuição de Internet Residencial: Dependência de provedores de serviço.; Velocidade e estabilidade podem variar.; Custo da assinatura e da infraestrutura.
+  Casos de uso de Distribuição de Internet Residencial: Navegação na web.; Streaming de vídeo e música.; Jogos online.; Trabalho remoto e videoconferências.
+Termo: Escalabilidade e Expansão do Cabeamento | Tipo: Característica de Projeto | Definicao: Capacidade da infraestrutura de cabeamento de suportar o crescimento futuro em termos de número de usuários, dispositivos e demanda por largura de banda.
+  Vantagens de Escalabilidade e Expansão do Cabeamento: Permite adaptação a novas tecnologias e serviços.; Reduz a necessidade de grandes reformas futuras.; Aumenta o valor e a longevidade da propriedade.
+  Desvantagens de Escalabilidade e Expansão do Cabeamento: Custo inicial mais elevado para prever expansões.; Requer planejamento detalhado e visão de futuro.; Pode levar a um excesso de infraestrutura se as projeções forem imprecisas.
+  Casos de uso de Escalabilidade e Expansão do Cabeamento: Novas construções residenciais e comerciais.; Condomínios com planos de crescimento.; Instalações que visam suportar tecnologias emergentes.
+Termo: Grau de Instalação Residencial (Grau 1 e Grau 2) | Tipo: Classificação | Definicao: Classificação da infraestrutura de cabeamento residencial baseada nos serviços suportados. Grau 1 cobre requisitos mínimos, enquanto Grau 2 abrange aplicações mais avançadas.
+  Vantagens de Grau de Instalação Residencial (Grau 1 e Grau 2): Permite dimensionar a infraestrutura de acordo com a necessidade.; Oferece flexibilidade para diferentes orçamentos e requisitos.; Ajuda a garantir que os serviços essenciais sejam atendidos.
+  Desvantagens de Grau de Instalação Residencial (Grau 1 e Grau 2): Grau 1 pode ser insuficiente para necessidades futuras.; A distinção entre os graus pode não ser clara em todos os cenários.; Requer conhecimento para escolher o grau adequado.
+  Casos de uso de Grau de Instalação Residencial (Grau 1 e Grau 2): Definição de requisitos para novas instalações.; Avaliação de instalações existentes.; Planejamento de upgrades de infraestrutura.
+
+-- Tabelas comparativas --
+Tabela 'Serviços e Cabeamento Recomendado por Grau': Esta tabela compara os serviços suportados e o cabeamento recomendado para instalações residenciais, divididas em Grau 1 (requisitos mínimos) e Grau 2 (aplicações básicas e avançadas). Ela detalha quais tipos de cabos são adequados para cada serviço em cada grau.
+  Linha LIN_001: Serviço = Telefonia; Grade 1 = X; Grade 2 = X; Cabeamento = UTP 4 pares cat 3 ou superior; Grade 1 = 1; Grade 2 = X
+    (Relacionado a: cat_3, cabeamento_par_trancado)
+  Linha LIN_002: Serviço = Televisão; Grade 1 = X; Grade 2 = X; Cabeamento = UTP 4 pares cat 5e; Grade 1 = X; Grade 2 = 2
+    (Relacionado a: cat_5e, cabeamento_par_trancado)
+  Linha LIN_003: Serviço = Comunicação de dados; Grade 1 = X; Grade 2 = X; Cabeamento = Coaxial 75 Ω; Grade 1 = X; Grade 2 = 1
+    (Relacionado a: cabo_coaxial)
+  Linha LIN_004: Serviço = Multimídia; Grade 1 = X; Grade 2 = X; Cabeamento = Fibra óptica; Grade 1 = 2; Grade 2 = opcional
+    (Relacionado a: fibra_optica)
+
+-- Relacionamentos --
+Conexao: 'cabeamento_par_trancado' --[utilizado_para]--> 'internet_residencial'. Motivo: Em unidades residenciais, após a centralização, a internet pode ser distribuída por cabo de par trançado.
+Conexao: 'cabo_coaxial' --[utilizado_para]--> 'internet_residencial'. Motivo: A entrega da internet pode ocorrer por cabo coaxial quando fibra óptica não está disponível.
+Conexao: 'cabo_coaxial' --[utilizado_para]--> 'CFTV_residencial'. Motivo: Serviços de CFTV em condomínios são distribuídos por meio de cabo coaxial.
+Conexao: 'ansi_tia_570' --[considera]--> 'escalabilidade_cabeamento'. Motivo: A norma 570 considera a escalabilidade e o crescimento, especialmente para condomínios multifamiliares.
+Conexao: 'ansi_tia_570' --[classifica]--> 'grau_instalacao_residencial'. Motivo: A norma 570 classifica as instalações residenciais em Grau 1 (mínimo) e Grau 2 (básico/avançado).
+
+=== SECAO [TI_SEC_004]: Componentes e Limitações de Distância ===
+A norma TIA-570 detalha componentes como o Ponto de Demarcação (DP) e o Dispositivo Interface de Rede (NID), que marcam a interface com o provedor de serviço. O DP é geralmente externo à residência. A distância máxima do DP até a tomada mais distante é de 150 metros, uma regra mais flexível em ambientes residenciais comparada a comerciais devido às dimensões típicas das propriedades. A Tomada Auxiliar de Desconexão (ADO) permite ao usuário desconectar seu sistema do provedor. O Dispositivo de Distribuição (DD) atua como um cross-connect para terminação e manobra de cabos, necessitando de pontos de energia e aterramento próximos. O cabeamento para as tomadas (Outlet Cable) deve respeitar uma distância máxima de 90 metros, podendo utilizar pontos de consolidação. Meios físicos incluem UTP, fibra óptica multimodo e monomodo, e cabo coaxial série 6.
+
+-- Conceitos-chave --
+Termo: Ponto de Demarcação (DP) | Tipo: Ponto de Conexão | Definicao: Localização física onde a rede do provedor de serviço termina e se conecta à infraestrutura do cliente (residência).
+  Vantagens de Ponto de Demarcação (DP): Define claramente a responsabilidade do provedor e do cliente.; Facilita a instalação e o troubleshooting.; Ponto de interface padronizado.
+  Desvantagens de Ponto de Demarcação (DP): Geralmente localizado externamente, sujeito a intempéries.; Pode requerer acesso para manutenção pelo provedor.
+  Casos de uso de Ponto de Demarcação (DP): Instalação de novos serviços de telecomunicações (internet, telefone, TV).; Ponto de transição entre a rede externa do provedor e a rede interna do cliente.
+Termo: Dispositivo Interface de Rede (NID) | Tipo: Equipamento de Rede | Definicao: Equipamento fornecido e instalado pelo provedor de serviço, que pode incluir um modem, roteador ou ponte, servindo como interface entre a rede do provedor e a rede do cliente.
+  Vantagens de Dispositivo Interface de Rede (NID): Interface padronizada para conexão de serviços.; Pode integrar múltiplas funções (modem, roteador).; Instalado e mantido pelo provedor.
+  Desvantagens de Dispositivo Interface de Rede (NID): Funcionalidades limitadas pelo provedor.; Pode ser um ponto de falha.; Menos flexibilidade para o usuário final.
+  Casos de uso de Dispositivo Interface de Rede (NID): Conexão de serviços de internet, telefone e TV.; Ponto de entrada para a rede do provedor na residência.
+Termo: Tomada Auxiliar de Desconexão (ADO) | Tipo: Ponto de Conexão | Definicao: Um ponto de desconexão que permite ao usuário final isolar sua rede interna da rede do provedor de serviço, útil para troubleshooting ou manutenção.
+  Vantagens de Tomada Auxiliar de Desconexão (ADO): Permite ao usuário isolar sua rede.; Facilita o diagnóstico de problemas.; Aumenta o controle do usuário sobre a conexão.
+  Desvantagens de Tomada Auxiliar de Desconexão (ADO): Pode ser esquecida ou mal utilizada.; Requer conhecimento para ser utilizada corretamente.
+  Casos de uso de Tomada Auxiliar de Desconexão (ADO): Isolamento da rede residencial durante testes.; Desconexão temporária de serviços.; Manutenção da rede interna sem afetar a rede do provedor.
+Termo: Dispositivo de Distribuição (DD) | Tipo: Equipamento de Rede | Definicao: Componente central em uma instalação residencial que atua como um cross-connect, promovendo a terminação e a manobra dos cabos vindos das tomadas. Equivalente a um 'telecommunication closet' em ambientes comerciais.
+  Vantagens de Dispositivo de Distribuição (DD): Centraliza a distribuição de cabos.; Facilita a organização e o gerenciamento da rede.; Permite a conexão de dispositivos de proteção e ativos.
+  Desvantagens de Dispositivo de Distribuição (DD): Requer espaço físico adequado.; Necessita de pontos de energia e aterramento.; Pode se tornar um ponto de falha se não for bem implementado.
+  Casos de uso de Dispositivo de Distribuição (DD): Instalação de cabeamento estruturado residencial.; Ponto de terminação para cabos de rede, telefone e TV.; Organização de patch panels e switches.
+Termo: Limites de Distância do Cabeamento | Tipo: Regra de Projeto | Definicao: Restrições de comprimento para os cabos de rede, definidas por normas técnicas para garantir o desempenho e a integridade do sinal.
+  Vantagens de Limites de Distância do Cabeamento: Garante a qualidade do sinal e a performance da rede.; Evita problemas de interferência e perda de dados.; Padroniza a instalação.
+  Desvantagens de Limites de Distância do Cabeamento: Pode limitar o layout da rede em grandes propriedades.; Requer planejamento cuidadoso em instalações extensas.; A necessidade de repetidores ou extensores aumenta o custo.
+  Casos de uso de Limites de Distância do Cabeamento: Projeto de redes locais (LANs).; Instalação de cabeamento estruturado.; Garantia de conformidade com normas técnicas.
+
+-- Tabelas comparativas --
+Tabela 'Dimensões Recomendadas para Gabinetes de Cabeamento': Esta tabela especifica as dimensões (largura e altura) recomendadas para gabinetes de cabeamento, variando conforme o número de tomadas e o grau de instalação (Grau 1 ou Grau 2).
+  Linha LIN_005: Número de Tomadas = 1 a 8; Grade 1 = 410 mm de largura
+610 mm de altura; Grade 2 = 815 mm de largura
+915 mm de altura
+    (Relacionado a: grau_instalacao_residencial)
+  Linha LIN_006: Número de Tomadas = 9 a 16; Grade 1 = 410 mm de largura
+915 mm de altura; Grade 2 = 815 mm de largura
+915 mm de altura
+    (Relacionado a: grau_instalacao_residencial)
+  Linha LIN_007: Número de Tomadas = 17 a 24; Grade 1 = 410 mm de largura
+1220 mm de altura; Grade 2 = 815 mm de largura
+1220 mm de altura
+    (Relacionado a: grau_instalacao_residencial)
+  Linha LIN_008: Número de Tomadas = Mais de 24; Grade 1 = 410 mm de largura
+1525 mm de altura; Grade 2 = 815 mm de largura
+1525 mm de altura
+    (Relacionado a: grau_instalacao_residencial)
+
+-- Figuras e diagramas --
+Figura 'Diagrama de Cabeamento Estruturado Residencial' (Diagrama de Arquitetura de Rede): O diagrama ilustra um sistema de cabeamento estruturado residencial, mostrando os seguintes componentes e distâncias máximas: Access Lines (Linhas de Acesso) do provedor, Demarcation Point (DP), ADO Cables (Cabos ADO), Network Interface Device (NID), Auxiliary Disconnect Outlet (ADO), Distribution Device (DD), DD Cord, Electronic Equipment (Equipamento Eletrônico), Equipment Cord, Telecommunications outlet/connector (Tomada/Conector de Telecomunicações), Equipment Cord. As distâncias máximas indicadas são: 150 m (492 ft) Maximum para a conexão do provedor até o DD, e 90 m (295 ft) Maximum para o cabo da tomada (Outlet Cable) a partir do DD. Também mostra 100 m (328 ft) Maximum para o cabo do equipamento eletrônico.
+  Componentes visuais: Access Lines, Demarcation Point (DP), ADO Cables, Network Interface Device (NID), Auxiliary Disconnect Outlet (ADO), Distribution Device (DD), DD Cord, Electronic Equipment, Equipment Cord, Telecommunications outlet/connector, Outlet Cables
+  Relacionado a: ponto_demarcacao, network_interface_device, auxiliary_disconnect_outlet, dispositivo_distribuicao, limite_distancia_cabeamento, cabeamento_par_trancado, fibra_optica, cabo_coaxial
+
+-- Relacionamentos --
+Conexao: 'ponto_demarcacao' --[localizado_em]--> 'externo_residencia'. Motivo: O Ponto de Demarcação é normalmente localizado na parte externa da residência.
+Conexao: 'ponto_demarcacao' --[limite_distancia]--> 'tomada_distante'. Motivo: Do ponto de demarcação até a tomada mais distante não podem ter mais de 150 m.
+Conexao: 'auxiliary_disconnect_outlet' --[desejavel_localizacao]--> 'dispositivo_distribuicao'. Motivo: É desejável que a ADO seja localizada junto ao dispositivo de distribuição.
+Conexao: 'dispositivo_distribuicao' --[requer]--> 'ponto_energia'. Motivo: Deve haver pontos de energia próximos ao Dispositivo de Distribuição.
+Conexao: 'dispositivo_distribuicao' --[requer]--> 'ponto_aterramento'. Motivo: Deve haver pontos de aterramento próximos ao Dispositivo de Distribuição.
+Conexao: 'tomada_residencial' --[limite_distancia]--> 'dispositivo_distribuicao'. Motivo: O cabeamento para as tomadas (Outlet Cable) deve respeitar a distância máxima de 90 m do Dispositivo de Distribuição.
+Conexao: 'cabeamento_par_trancado' --[utilizado_em]--> 'tomada_residencial'. Motivo: UTP de 4 pares é um meio físico para cabeamento de tomadas.
+Conexao: 'fibra_optica' --[utilizado_em]--> 'tomada_residencial'. Motivo: Fibra óptica multimodo e monomodo são meios físicos para cabeamento de tomadas.
+Conexao: 'cabo_coaxial' --[utilizado_em]--> 'tomada_residencial'. Motivo: Cabo coaxial série 6 é um meio físico para cabeamento de tomadas.
+Conexao: 'ansi_569' --[contrasta_com]--> 'norma_570_caminhos_cabeamento'. Motivo: Em ambientes comerciais, a norma 569 permite canaletas expostas, o que não ocorre em residências conforme a norma 570.
+
+=== SECAO [TI_SEC_005]: Localização e Caminhos do Cabeamento ===
+A norma 570 especifica a localização das tomadas, exigindo pelo menos uma em cada cômodo principal (cozinha, banheiros, sala, gabinete), e tomadas adicionais para cobrir espaços contínuos ou longas distâncias. Em contraste com ambientes comerciais (norma 569), onde canaletas expostas são permitidas, a norma 570 indica caminhos adequados para o cabeamento em residências, recomendando que, em novas construções, o cabeamento seja todo embutido entre o Dispositivo de Distribuição (DD) e as tomadas. A topologia para as tomadas e conectores é a estrela. Para dispositivos específicos como porteiros eletrônicos ou sistemas de segurança, pode-se usar cabeamento dedicado conforme o fabricante.
+
+-- Conceitos-chave --
+Termo: Localização das Tomadas Residenciais | Tipo: Regra de Projeto | Definicao: Diretrizes para a disposição física das tomadas de telecomunicações dentro de uma residência, garantindo acesso conveniente e cobertura adequada.
+  Vantagens de Localização das Tomadas Residenciais: Garante acesso fácil aos serviços de rede.; Evita o uso excessivo de extensões.; Melhora a estética e a funcionalidade dos ambientes.
+  Desvantagens de Localização das Tomadas Residenciais: Pode exigir mais pontos de cabeamento do que o mínimo.; Requer planejamento cuidadoso durante a construção ou reforma.
+  Casos de uso de Localização das Tomadas Residenciais: Projeto de instalações elétricas e de rede em novas residências.; Planejamento de reformas para modernização de infraestrutura.; Garantia de cobertura de rede em todos os cômodos.
+Termo: Caminhos do Cabeamento Residencial | Tipo: Regra de Instalação | Definicao: Rotas e métodos recomendados para a passagem dos cabos de telecomunicações dentro de uma residência, priorizando a proteção e a estética.
+  Vantagens de Caminhos do Cabeamento Residencial: Protege os cabos contra danos físicos.; Melhora a organização e a aparência interna.; Facilita futuras manutenções ou expansões.
+  Desvantagens de Caminhos do Cabeamento Residencial: Instalação embutida pode ser mais complexa e cara.; Requer acesso a paredes e lajes durante a construção.; Pode limitar a flexibilidade de reconfiguração posterior.
+  Casos de uso de Caminhos do Cabeamento Residencial: Novas construções residenciais.; Instalações que buscam um acabamento limpo e profissional.; Ambientes onde a proteção dos cabos é crucial.
+Termo: Cabeamento Específico para Dispositivos | Tipo: Método de Instalação | Definicao: Utilização de cabos dedicados para conectar dispositivos específicos (como porteiros eletrônicos, sistemas de segurança) diretamente ao seu controlador, em vez de usar a rede estruturada geral.
+  Vantagens de Cabeamento Específico para Dispositivos: Garante a comunicação confiável para sistemas críticos.; Simplifica a configuração desses dispositivos.; Evita sobrecarregar a rede principal.
+  Desvantagens de Cabeamento Específico para Dispositivos: Pode resultar em múltiplos cabos e pontos de conexão.; Requer planejamento específico para cada tipo de dispositivo.; Menos flexível para mudanças futuras.
+  Casos de uso de Cabeamento Específico para Dispositivos: Instalação de sistemas de alarme e segurança.; Sistemas de interfonia e controle de acesso.; Automação residencial com dispositivos dedicados.
+
+-- Figuras e diagramas --
+Figura 'Instalação de Caixa de Telecomunicações Embutida' (Fotografia): A imagem mostra uma caixa de telecomunicações sendo instalada embutida em uma parede, com cabos de rede (amarelos) sendo passados através de conduítes. Isso ilustra a recomendação da norma 570 para cabeamento embutido em novas construções.
+  Componentes visuais: Caixa de telecomunicações, Cabos de rede, Conduítes, Parede
+  Relacionado a: caminhos_cabeamento_residencial
+Figura 'Passagem de Cabos em Conduítes' (Fotografia): A imagem exibe cabos de rede coloridos sendo passados através de conduítes em uma instalação. Isso demonstra a organização e proteção dos cabos durante a passagem, parte essencial do cabeamento embutido.
+  Componentes visuais: Cabos de rede coloridos, Conduítes
+  Relacionado a: caminhos_cabeamento_residencial
+
+-- Relacionamentos --
+Conexao: 'ansi_tia_570' --[recomenda]--> 'cabeamento_embutido'. Motivo: Para novas construções, a norma 570 recomenda que o cabeamento seja todo embutido entre o DD e as tomadas.
+Conexao: 'topologia_estrela' --[aplicada_em]--> 'tomadas_conectores'. Motivo: A topologia utilizada no cabeamento para as tomadas e conectores é a estrela.
+Conexao: 'cabeamento_dedicado_dispositivos' --[utilizado_para]--> 'dispositivos_especificos'. Motivo: Para dispositivos fixos como porteiros eletrônicos, sistemas de segurança, sensores e detectores de fumaça, pode-se utilizar cabeamento específico até o seu controlador.
+
+=== SECAO [TI_SEC_006]: Tomadas de Telecomunicações e Conectores ===
+A norma TIA-570 apresenta diversos tipos de tomadas e conectores para diferentes serviços. São mostradas tomadas para cabeamento coaxial, tomadas RJ (para par trançado), outro tipo de tomada coaxial e tomadas para fibra óptica. Uma imagem exibe uma tomada que integra múltiplos serviços, como Ethernet e fibra óptica. A seção também menciona cordões ópticos (Duo Fiber, Zip Cord), que são essenciais para conexões em redes de fibra óptica.
+
+-- Conceitos-chave --
+Termo: Tomada para Cabeamento Coaxial | Tipo: Conector | Definicao: Conector de parede utilizado para conectar dispositivos que utilizam cabo coaxial, como TVs e modems de banda larga.
+  Vantagens de Tomada para Cabeamento Coaxial: Adequado para sinais de RF (Rádio Frequência).; Conexão segura e robusta.; Padrão comum para TV a cabo e internet.
+  Desvantagens de Tomada para Cabeamento Coaxial: Limitado a aplicações de RF e banda larga.; Menos versátil que tomadas RJ para redes de dados.
+  Casos de uso de Tomada para Cabeamento Coaxial: Conexão de TVs.; Instalação de modems de internet a cabo.; Sistemas de CFTV.
+Termo: Tomada RJ (RJ45/RJ11) | Tipo: Conector | Definicao: Conector de parede padrão para cabos de par trançado, comumente utilizado para redes Ethernet (RJ45) e telefonia (RJ11).
+  Vantagens de Tomada RJ (RJ45/RJ11): Padrão universal para redes de dados e telefonia.; Fácil de usar e conectar.; Ampla variedade de conectores e cabos disponíveis.
+  Desvantagens de Tomada RJ (RJ45/RJ11): Limitado em velocidade e distância comparado à fibra óptica.; Susceptível a interferências eletromagnéticas.
+  Casos de uso de Tomada RJ (RJ45/RJ11): Conexão de computadores e dispositivos de rede.; Instalação de telefones fixos.; Redes locais (LANs).
+Termo: Tomada para Fibra Óptica | Tipo: Conector | Definicao: Conector de parede projetado para terminarr cabos de fibra óptica, permitindo a conexão de dispositivos que utilizam essa tecnologia.
+  Vantagens de Tomada para Fibra Óptica: Permite a conexão de alta velocidade e largura de banda.; Ideal para aplicações multimídia e de longa distância.; Imune a interferências eletromagnéticas.
+  Desvantagens de Tomada para Fibra Óptica: Requer ferramentas e técnicas de instalação específicas.; Mais sensível a danos físicos que conectores de cobre.; Custo de instalação pode ser maior.
+  Casos de uso de Tomada para Fibra Óptica: Conexão de equipamentos de rede de alta performance.; Instalação de internet de fibra óptica.; Sistemas de áudio e vídeo de alta fidelidade.
+Termo: Tomada Multi-Serviço | Tipo: Conector | Definicao: Um único ponto de conexão na parede que integra múltiplas interfaces de rede, como Ethernet, telefone e fibra óptica, para conveniência e organização.
+  Vantagens de Tomada Multi-Serviço: Economiza espaço na parede.; Simplifica a instalação e o gerenciamento de cabos.; Oferece flexibilidade para diferentes tipos de conexão.
+  Desvantagens de Tomada Multi-Serviço: Pode ser mais complexa de instalar.; A falha em um componente pode afetar outros.; Menos modularidade que tomadas individuais.
+  Casos de uso de Tomada Multi-Serviço: Instalações residenciais modernas.; Escritórios com diversas necessidades de conectividade.; Ambientes onde a otimização de espaço é importante.
+Termo: Cordões Ópticos | Tipo: Cabo de Rede | Definicao: Cabos de fibra óptica curtos com conectores em ambas as extremidades, utilizados para interligar equipamentos de rede ou conectar dispositivos a tomadas de fibra óptica.
+  Vantagens de Cordões Ópticos: Permitem a conexão de alta velocidade e baixa latência.; Flexíveis e fáceis de manusear (dependendo do tipo).; Disponíveis em diversas configurações (multimodo, monomodo, tipos de conectores).
+  Desvantagens de Cordões Ópticos: Mais caros que cabos de cobre.; Requerem cuidado para evitar danos.; Conectores precisam estar limpos para garantir performance.
+  Casos de uso de Cordões Ópticos: Conexão de switches a roteadores.; Interligação de servidores em data centers.; Conexão de equipamentos a painéis de fibra óptica.
+
+-- Figuras e diagramas --
+Figura 'Tomada para Cabeamento Coaxial' (Fotografia): A imagem mostra uma tomada de parede com um conector coaxial (geralmente do tipo F), utilizada para conectar dispositivos como TVs ou modems de internet a cabo.
+  Componentes visuais: Tomada coaxial, Conector tipo F
+  Relacionado a: tomada_coaxial
+Figura 'Tomada RJ' (Fotografia): A imagem exibe uma tomada de parede com um conector RJ, tipicamente RJ45 para redes Ethernet ou RJ11 para telefonia.
+  Componentes visuais: Tomada RJ45, Tomada RJ11
+  Relacionado a: tomada_rj
+Figura 'Outro Tipo de Tomada Coaxial' (Fotografia): Esta imagem apresenta um modelo diferente de tomada coaxial, possivelmente com um design ou conector ligeiramente distinto, mas ainda destinado a aplicações de RF.
+  Componentes visuais: Tomada coaxial
+  Relacionado a: tomada_coaxial
+Figura 'Tomada para Fibra Óptica' (Fotografia): A imagem mostra uma tomada de parede projetada para acomodar conectores de fibra óptica, permitindo a conexão de dispositivos à rede de fibra.
+  Componentes visuais: Tomada de fibra óptica, Conector de fibra óptica
+  Relacionado a: tomada_fibra_optica
+Figura 'Tomada Multi-Serviço' (Fotografia): Esta imagem exibe uma tomada de parede que integra múltiplas interfaces, como portas Ethernet (RJ45) e conectores de fibra óptica, oferecendo conectividade para diferentes tipos de serviços em um único ponto.
+  Componentes visuais: Tomada Ethernet, Tomada de fibra óptica, Placa de parede
+  Relacionado a: tomada_multi_servico, tomada_rj, tomada_fibra_optica
+Figura 'Cordões Ópticos' (Fotografia): A imagem apresenta diferentes tipos de cordões ópticos: 'Duo Fiber' e 'Zip Cord'. Estes são cabos de fibra óptica curtos com conectores em ambas as pontas, usados para interligar equipamentos de rede.
+  Componentes visuais: Cordão óptico Duo Fiber, Cordão óptico Zip Cord, Conectores ópticos
+  Relacionado a: cordao_optico, fibra_optica
+
+-- Relacionamentos --
+Conexao: 'tomada_coaxial' --[utilizado_para]--> 'servicos_rf'. Motivo: Tomadas coaxiais são usadas para conectar dispositivos que utilizam cabo coaxial, como TVs e modems de banda larga.
+Conexao: 'tomada_rj' --[utilizado_para]--> 'redes_ethernet'. Motivo: Tomadas RJ45 são o padrão para conectar dispositivos a redes Ethernet.
+Conexao: 'tomada_rj' --[utilizado_para]--> 'telefonia'. Motivo: Tomadas RJ11 são usadas para conectar linhas telefônicas.
+Conexao: 'tomada_fibra_optica' --[utilizado_para]--> 'redes_fibra_optica'. Motivo: Tomadas de fibra óptica permitem a conexão de dispositivos a redes de alta velocidade baseadas em fibra.
+Conexao: 'tomada_multi_servico' --[integra]--> 'ethernet'. Motivo: Tomadas multi-serviço podem integrar interfaces Ethernet.
+Conexao: 'tomada_multi_servico' --[integra]--> 'fibra_optica'. Motivo: Tomadas multi-serviço podem integrar interfaces de fibra óptica.
+Conexao: 'cordao_optico' --[utilizado_para]--> 'interligacao_equipamentos_fibra'. Motivo: Cordões ópticos são usados para interligar equipamentos de rede de fibra óptica.
+
