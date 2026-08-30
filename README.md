@@ -118,6 +118,22 @@ A interface permite escolher o método de busca (`local`, `global` ou `drift`), 
 
 O arquivo `settings.yaml` define os modelos usados (por padrão, `google/gemini-2.5-flash-lite` para completions e `google/gemini-embedding-2` para embeddings, ambos via OpenRouter) e os parâmetros de chunking dos documentos. Ajuste conforme sua necessidade e limites de API.
 
+## 🧹 Limpando o índice para recomeçar do zero
+
+Se você quiser apagar todo o índice já gerado (grafo, cache, embeddings, logs) e reindexar do zero — por exemplo, depois de rodar o `prompt-tune` e querer garantir que nada do índice antigo ficou misturado — rode, a partir de `cerebro_estudos_ti/`:
+
+```bash
+rm -rf output/ update_output/ cache/ logs/ .graphrag_cache/
+```
+
+Depois disso, basta rodar novamente:
+
+```bash
+python -m graphrag index --root .
+```
+
+> ⚠️ Esse comando apaga o grafo de conhecimento, os relatórios de comunidade e o cache de chamadas ao LLM já feitas — a próxima indexação vai consumir tokens/créditos da API novamente, do zero. Ele **não** apaga `input/`, `prompts/` nem `arquivos_processados/`.
+
 ## 📝 Licença
 
 Projeto pessoal de estudos. Adapte livremente para seu próprio fluxo de aprendizado.
