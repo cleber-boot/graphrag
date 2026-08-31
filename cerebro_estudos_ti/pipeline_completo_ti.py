@@ -22,7 +22,8 @@ client = OpenAI(
     api_key=os.environ.get("GRAPHRAG_API_KEY")
 )
 
-MODELO = "google/gemini-2.5-flash-lite"  # modelo multimodal: aceita texto, PDF, áudio e vídeo
+#MODELO = "google/gemini-2.5-flash-lite"  # modelo multimodal: aceita texto, PDF, áudio e vídeo
+MODELO = "openai/gpt-5-nano"  # modelo multimodal: aceita texto, PDF e imagens
 
 # Sem isso, a resposta pode ser cortada no meio de uma string do JSON em
 # PDFs densos (muitas tabelas/figuras/relações), causando os erros
