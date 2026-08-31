@@ -1,0 +1,253 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Mídia Local Redes de Computadores: OSI - Subcamada MAC - WIFI (IEEE 802.11) II
+Idioma: pt-BR
+Tecnologias citadas no documento: IEEE 802.11 (Wi‑Fi), CSMA/CA (Collision Avoidance), RTS/CTS (Request to Send / Clear to Send), ACK (Acknowledgement), ARP (Address Resolution Protocol), Ethernet 802.3, WDS (Wireless Distribution System), 802.11a/b/g/n/ac/ax/6E, Bandas de frequência: 2.4 GHz, 5 GHz, 6 GHz, Site survey, Power management, Rate adaptation
+
+=== SECAO [TI_SEC_MAC_001]: Introdução à camada MAC em redes Wi-Fi 802.11 ===
+Nesta seção introdutória, apresenta-se o contexto da camada MAC no modelo OSI, destacando a subdivisão em LLC (Logical Link Control) e MAC (Media Access Control). A camada MAC da família 802.11 trata do acesso ao meio sem fio, em oposição à Ethernet cabeada (802.3) onde o CSMA/CD é comum. Em redes Wi‑Fi, o meio é compartilhado e não há detecção confiável de colisão; por isso aplica-se o CSMA/CA (Collision Avoidance) para reduzir colisões e solicitar o espaço de transmissão de forma coordenada. O Access Point (AP) atua como coordenador do canal, gerenciando o acesso ao meio, os quadros de controle (RTS/CTS) e o fluxo entre rede sem fio e a infraestrutura cabeada, além de apoiar o planejamento de canais através de diferentes bandas (2.4 GHz, 5 GHz, 6 GHz) e larguras de canal (20/40/80/160 MHz). O documento reforça que, apesar de o CSMA/CA reduzir colisões, não há garantia absoluta de desempenho, pois interferências, sobreposição de canais e obstáculos podem impactar a qualidade da transmissão. Por fim, é apresentado o cenário de evolução de padrões (802.11b/g/n/ac/ax/6E) visando menor interferência, maior taxa e melhor cobertura mediante uso de bandas distintas e planejamento de canais. 
+
+-- Conceitos-chave --
+Termo: LLC vs MAC | Tipo: Arquitetura | Definicao: Divisão de responsabilidades da camada de enlace: LLC fornece serviços lógicos de enlace; MAC gerencia acesso ao meio e endereçamento no nível de enlace.
+  Vantagens de LLC vs MAC: Separação de funções entre serviços de rede e acesso ao meio; Flexibilidade para diferentes camadas superiores
+  Desvantagens de LLC vs MAC: Aumento de complexidade de implementação; Necessidade de interoperabilidade entre camadas
+  Casos de uso de LLC vs MAC: Padronização OSI; Encapsulamento de quadros entre redes distintas
+Termo: MAC 802.11 | Tipo: Arquitetura | Definicao: Conjunto de regras da camada MAC para redes sem fio, lidando com controle de acesso, endereçamento e integridade de transmissão.
+  Vantagens de MAC 802.11: Gestão de acesso concorrente; Suporte a power management; Interoperabilidade entre dispositivos Wi‑Fi
+  Desvantagens de MAC 802.11: Overheads de protocolo; Sensibilidade a interferência e a sobreposição de canais
+  Casos de uso de MAC 802.11: Redes domésticas e corporativas sem fio; Hotspots e provedores de serviço
+Termo: CSMA/CA | Tipo: Padrão | Definicao: Protocolo de acesso ao meio que evita colisões em redes sem fio, usando escuta de canal, prioridade de transmissão e handshake com RTS/CTS quando necessário.
+  Vantagens de CSMA/CA: Reduz colisões no meio compartilhado; Melhora desempenho com RTS/CTS em cenários com ocultação de estação
+  Desvantagens de CSMA/CA: Overheads de negociação (RTS/CTS); Não elimina completamente colisões e perdas por erro de canal
+  Casos de uso de CSMA/CA: Wi‑Fi 802.11 em ambientes com tráfego variável e múltiplos dispositivos; Arquiteturas com dispositivos móveis e APs
+Termo: Access Point (AP) como coordenador de canal | Tipo: Dispositivo | Definicao: Dispositivo que centraliza o gerenciamento do canal, coordena o acesso ao meio, e faz a ponte entre a rede sem fio e a infraestrutura cabeada (LAN).
+  Vantagens de Access Point (AP) como coordenador de canal: Gestão centralizada da cobertura e do acesso; Opera como ponto de autenticação/encaminhamento para a rede
+  Desvantagens de Access Point (AP) como coordenador de canal: Ponto único de falha; Dependência de configuração adequada de sites e canais
+  Casos de uso de Access Point (AP) como coordenador de canal: Cobertura Wi‑Fi em escritórios, escolas e ambientes públicos
+Termo: Quadros de Controle 802.11 | Tipo: Padrão | Definicao: Quadros de controle (RTS/CTS/dados/ACK) usados na negociação de acesso ao meio, na reserva de canal e na confirmação de recebimento de dados.
+  Vantagens de Quadros de Controle 802.11: Permite reserva de canal e mitigação de atrasos; Melhora desempenho com física fog e ocultação de estação
+  Desvantagens de Quadros de Controle 802.11: Overheads adicionais de transmissão; Complexidade de implementação de estados de frame
+  Casos de uso de Quadros de Controle 802.11: Configurar handshake RTS/CTS; Transmitir dados com confirmação de recebimento
+
+-- Tabelas comparativas --
+Tabela 'Bandas de Frequência e Características': Resumo comparativo entre bandas 2.4 GHz, 5 GHz e 6 GHz para redes Wi‑Fi 802.11
+  Linha L1: 2.4 GHz = 2.4 – 2.485; 20 MHz (com sobreposição) = 14 canais (1–14); Não sobrepostos? = Overlaps entre canais; Padrões = 802.11b/g/n; Interferência = Bluetooth, micro-ondas, ZigBee
+    (Relacionado a: bandas_2_4)
+  Linha L2: 5 GHz = 5.15 – 5.825; 20/40/80/160 = ; Canais típicos = 36/40/44/48 e 149/153/157/161; Padrões = 802.11a/n/ac/ax; Interferência = Menor, menos sobreposição
+    (Relacionado a: bandas_5)
+  Linha L3: 6 GHz = 5.925 – 7.175; 20/40/80/160 = ; Canais = Muitos, sem sobreposição (Wi‑Fi 6E); Padrões = 802.11ax (Wi‑Fi 6E); Interferência = Ainda menor, ambientes modernos
+    (Relacionado a: bandas_6)
+Tabela 'Handshake RTS/CTS e Overheads': Resumo de como RTS/CTS influencia o acesso ao canal e minimiza colisões
+  Linha L1: Estação ocultante (Hidden Terminal) = RTS/CTS ajuda a prevenir colisões; Handshake = RTS -> CTS -> Dados -> ACK; Benefícios = Reduz colisões e melhora desempenho em tráfego de várias estações; Custos = Overhead adicional
+    (Relacionado a: rtcts)
+  Linha L2: Rede com muitos clientes = RTS/CTS mais eficaz; Overhead = Aumento de tráfego de controle; Resultados = Possível melhoria de taxa efetiva; Uso = Casos com alto risco de colisão
+    (Relacionado a: csma_ca)
+
+-- Figuras e diagramas --
+Figura 'Diagrama de handshake CSMA/CA com RTS/CTS' (Diagrama de sequência): Sequência típica: Request to Send (RTS) -> Clear to Send (CTS) -> Dados -> ACK; o AP reserva o canal para comunicação entre origem e destino; os demais dispositivos adotam deferimento (interframe spacing) até a conclusão da transmissão.
+  Componentes visuais: Origem, Destino, AP (coordena o canal), Quadro RTS, Quadro CTS, Quadro de Dados, Quadro ACK
+  Relacionado a: csma_ca, rtcts, ap_coordenador
+Figura 'Plano de canais 2.4 GHz vs 5 GHz com sobreposição' (Fluxograma/Plano de canais): 2.4 GHz: canais sobrepostos (1-14); 5 GHz: múltiplos canais não sobrepostos (36/40/44/48, 149/153/157/161); 6 GHz: ampla ocupação com muitos canais não sobrepostos.
+  Componentes visuais: Banda 2.4 GHz, Canais sobrepostos, Banda 5 GHz (canais não sobrepostos), Banda 6 GHz (Wi‑Fi 6E)
+  Relacionado a: bandas_2_4, bandas_5, bandas_6
+
+-- Relacionamentos --
+Conexao: 'csma_ca' --[implementa]--> '80211_mac'. Motivo: 802.11 MAC implementa CSMA/CA para acesso ao meio sem fio.
+Conexao: 'rtcts' --[coordena]--> 'ap_coordenador'. Motivo: RTS/CTS é gerenciado pelo AP para reservar o canal entre origem e destino.
+Conexao: 'frame_80211' --[usa]--> 'arp'. Motivo: Quadro 802.11 transporta dados que podem incluir endereços MAC resolvidos via ARP.
+
+=== SECAO [TI_SEC_MAC_002]: Mecanismo de acesso ao meio 802.11: CSMA/CA, RTS/CTS e ACK ===
+A seção detalha o mecanismo de acesso ao meio (Medium Access Control) utilizado pelo 802.11. Em vez da detecção de colisão (CSMA/CD) típico de Ethernet cabeada, o Wi‑Fi utiliza CSMA/CA para evitar colisões antes que ocorram. Quando possível, a estação solicita acesso com RTS (Request to Send); o AP reserva o canal e responde com CTS (Clear to Send), permitindo a transmissão de dados. Durante a transmissão, outras estações adiam suas transmissões (interframes, como SIFS/DIFS). Ao final, ocorre o ACK (acknowledgement) para confirmar o recebimento. A solução também mitiga problemas de estação oculta quando RTS/CTS é empregado, desde que os quadros sejam transmitidos corretamente. A gestão do canal é realizada pelo AP, o que facilita a cobertura e a distribuição do tráfego entre origens e destinos, principalmente em cenários com site survey e planejamento de canais. Além disso, observa-se a necessidade de planejamento de canais para evitar a interferência e maximizar o desempenho, principalmente nas bandas 2.4 GHz, 5 GHz e 6 GHz. 
+
+-- Conceitos-chave --
+Termo: CSMA/CA | Tipo: Padrão | Definicao: Protocolo de acesso que evita colisões em redes sem fio através de escuta de canal e encaminhamento de transmissão com espaço entre frames.
+  Vantagens de CSMA/CA: Evita colisões antes de ocorrerem; Operação sem fio com coordenação via AP
+  Desvantagens de CSMA/CA: Overhead de controle (RTS/CTS); Não elimina colisões por falhas de canal
+  Casos de uso de CSMA/CA: Wi‑Fi onde múltiplas estações disputam o meio; Ambientes com demanda de acesso simultâneo
+Termo: RTS/CTS | Tipo: Padrão | Definicao: Handshake de controle para reservar o canal entre origem e destino antes da transmissão de dados.
+  Vantagens de RTS/CTS: Mitiga o problema da estação oculta; Reduz colisões em redes densas
+  Desvantagens de RTS/CTS: Overhead adicional de quadros de controle
+  Casos de uso de RTS/CTS: Cenários com várias estações próximas; Comunicações críticas com altas taxas de pacotes
+Termo: ACK | Tipo: Protocolo | Definicao: Quadro de reconhecimento que confirma o recebimento bem-sucedido de dados.
+  Vantagens de ACK: Confere integridade de entrega; Permite retransmissões apenas quando necessário
+  Desvantagens de ACK: Custo de latência adicional; Pode não cobrir erros de canal sem retransmissão
+  Casos de uso de ACK: Finalização de transmissão de dados 802.11; Detecção de falhas de recebimento
+Termo: Estação oculta | Tipo: Conceito | Definicao: Fenômeno em redes sem fio onde duas estações não ouvem uma à outra, levando a colisões não detectadas pela outra ponta.
+  Vantagens de Estação oculta: Permite comunicação direta em certos cenários; Relevante para análises de cobertura; 
+  Desvantagens de Estação oculta: Aumenta probabilidade de colisões; Requer mecanismos como RTS/CTS para mitigação
+  Casos de uso de Estação oculta: Ambientes com obstruções físicas entre estações
+
+-- Tabelas comparativas --
+Tabela 'Sequência de mensagens RTS/CTS e dados': Resumo do fluxo de controle para reserva de canal com RTS/CTS
+  Linha L1: 1) RTS = Request to Send; 2) CTS = Clear to Send; 3) Dados = Transmissão de dados; 4) ACK = Acknowledgement
+    (Relacionado a: handshake_rtscts, ack)
+Tabela 'Interframes e controle de transmissão': Interframes para gerenciamento do tempo de transmissão e evitar contenção excessiva
+  Linha L1: SIFS = Short Interframe Space — tempo curto entre RTS/CTS e dados; DIFS = Distributed Interframe Space — tempo entre concessões consecutivas; EIFS = Extended Interframe Space — uso em condições de erro
+    (Relacionado a: csma_ca)
+
+-- Figuras e diagramas --
+Figura 'Fluxo de acesso CSMA/CA com RTS/CTS' (Fluxograma de processo): Fluxo: Estação verifica canal -> RTS -> AP reserva canal -> CTS -> Dados -> ACK -> canal liberado para novas transmissões.
+  Componentes visuais: Estação Origem, AP, Estação Destino, Quadros RTS/CTS/Dados/ACK
+  Relacionado a: csma_ca, handshake_rtscts
+Figura 'Plano de canais: 2.4 GHz x 5 GHz x 6 GHz' (Diagrama de banda e canais): 2.4 GHz com sobreposição de canais; 5 GHz com canais não sobrepostos; 6 GHz com ampla disponibilidade de canais sem sobreposição (Wi‑Fi 6E).
+  Componentes visuais: 2.4 GHz canais, 5 GHz canais não sobrepostos, 6 GHz canais disponíveis
+  Relacionado a: bandas_2_4, bandas_5, bandas_6
+
+-- Relacionamentos --
+Conexao: 'csma_ca' --[depende_de]--> '80211_mac'. Motivo: CSMA/CA é implementado na camada MAC da norma 802.11.
+Conexao: 'handshake_rtscts' --[coordena]--> 'ap_coordenador'. Motivo: RTS/CTS é coordenado pelo AP para reservar o canal.
+
+=== SECAO [TI_SEC_MAC_003]: Bandas de frequência, canais e interferência em Wi‑Fi (2.4 GHz, 5 GHz e 6 GHz) ===
+Esta seção descreve as bandas de operação do Wi‑Fi e as diferenças entre 2.4 GHz, 5 GHz e 6 GHz. A banda de 2.4 GHz é extensa, mas sofre com interferência de dispositivos domésticos (Bluetooth, micro-ondas, telefones sem fio, ZigBee) e apresenta sobreposição de canais (canal 1, 6 e 11 são exemplos de estratégias de aeração para reduzir overlap, com apenas alguns casos sem sobreposição dependendo da região). A banda de 5 GHz oferece maior número de canais não sobrepostos, com largura de canal de 20/40/80/160 MHz, resultando em menor interferência, especialmente com Wi‑Fi 5/6 (802.11a/n/ac/ax). A banda de 6 GHz (Wi‑Fi 6E) traz ainda mais canais e menor interferência, suportando larguras de 20–160 MHz. O texto também ressalta que 2.4 GHz tem alcance maior, mas pior desempenho através de obstáculos, enquanto 5/6 GHz oferecem melhor desempenho em ambientes com obstáculos mais densos, porém alcance menor. Um resumo prático aponta que 2.4 GHz possui maior cobertura, porém maior congestão; 5 GHz e 6 GHz apresentam menor congestão e maior desempenho, com a 6 GHz sendo a mais recente e com maior disponibilidade de canais. 
+
+-- Conceitos-chave --
+Termo: 2.4 GHz | Tipo: Banda | Definicao: Faixa de operação de aproximadamente 2.4–2.485 GHz, com alta interferência e sobreposição de canais.
+  Vantagens de 2.4 GHz: Maior alcance/ Cobertura vertical; Melhor penetração por obstáculos
+  Desvantagens de 2.4 GHz: Alta interferência de dispositivos domésticos (Bluetooth, micro-ondas); Canais sobrepostos e menor desempenho em ambientes densos
+  Casos de uso de 2.4 GHz: Redes domésticas, ambientes com obstáculos baixos
+Termo: 5 GHz | Tipo: Banda | Definicao: Faixa de operação aproximadamente de 5.15 a 5.825 GHz, com múltiplos canais não sobrepostos e menor interferência.
+  Vantagens de 5 GHz: Mais canais disponíveis; Menor interferência relativa; Melhor desempenho em ambientes congestionados
+  Desvantagens de 5 GHz: Menor alcance e pior penetração por obstáculos; Requisitos de linha de visada
+  Casos de uso de 5 GHz: Wi‑Fi 5/6 (802.11a/n/ac/ax)
+Termo: 6 GHz | Tipo: Banda | Definicao: Faixa adicional de operação (Wi‑Fi 6E) com muitos canais não sobrepostos e baixo ruído.
+  Vantagens de 6 GHz: Grandes pools de canais; Menor interferência e overhead de canais
+  Desvantagens de 6 GHz: Requisitos de dispositivos compatíveis; Regulamentação regional
+  Casos de uso de 6 GHz: Wi‑Fi 6E, ambientes com alto volume de tráfego
+Termo: Sobreposição de canais | Tipo: Conceito | Definicao: Condição em que canais adjacentes se sobrepõem, gerando interferência entre transmissões.
+  Vantagens de Sobreposição de canais: Permite reutilização de espectro; Possibilita maior flexibilidade de implantação
+  Desvantagens de Sobreposição de canais: Aumenta interferência entre transmissores; Exige planejamento de canais (channel plan)
+  Casos de uso de Sobreposição de canais: 2.4 GHz com canais vizinhos (1/6/11)
+Termo: Wi‑Fi 6E / AX | Tipo: Padrão | Definicao: Padrões que exploram a banda de 6 GHz (802.11ax) com mais canais e menos interferência.
+  Vantagens de Wi‑Fi 6E / AX: Mais canais, maior desempenho, menos concorrência; Suporte a larguras de canal de 80/160 MHz
+  Desvantagens de Wi‑Fi 6E / AX: Necessita hardware compatível; Regulamentação regional
+  Casos de uso de Wi‑Fi 6E / AX: Ambientes de alta densidade de dispositivos; Redes empresariais modernas
+
+-- Tabelas comparativas --
+Tabela 'Configuração de canais na banda 2.4 GHz (Brasil)': Esquema de canais para evitar sobreposição na banda de 2.4 GHz
+  Linha L1: 1 = 2.412; 2.437 = Canal 6 utilizado como referência; 3 = 2.462
+    (Relacionado a: bandas_2_4)
+  Linha L2: 1 = 1; 2 = 2.412; 3 = Sobreposição
+    (Relacionado a: overlap)
+Tabela 'Canais típicos da banda 5 GHz (802.11a/n/ac/ax)': Padrões que utilizam canais não sobrepostos para reduzir interferência
+  Linha L1: Canais baixos = 36,40,44,48; Canais altos = 149,153,157,161; Observação = Não há sobreposição entre grupos
+    (Relacionado a: bandas_5)
+Tabela 'Wi‑Fi 6E na banda de 6 GHz': Características da banda de 6 GHz com grande pool de canais
+  Linha L1:  = 36–1175? (varia por região); Exemplos = Canais não sobrepostos (ex.: 1–8, 9–16, etc.); Observações = Suporte a 80/160 MHz; envolve Wi‑Fi 6E
+    (Relacionado a: bandas_6)
+
+-- Figuras e diagramas --
+Figura 'Overlap de canais na banda 2.4 GHz' (Diagrama de canais): Demonstra como canais adjacentes (2,4 GHz) se sobrepõem, exigindo planejamento; canais típicos: 1, 6, 11 evitam overlap direto.
+  Componentes visuais: Canais 1, 6, 11, Sobreposição entre 2 e 3, 4 etc.
+  Relacionado a: bandas_2_4
+Figura 'Plano de canais da banda 6 GHz (Wi‑Fi 6E)' (Diagrama de espectro): Grande número de canais não sobrepostos; menos interferência; uso de 80/160 MHz.
+  Componentes visuais: Bandas 6 GHz, Canais disponíveis, Largura de canal
+  Relacionado a: bandas_6
+
+-- Relacionamentos --
+Conexao: 'bandas_2_4' --[interfere_com]--> 'bandas_2_4'. Motivo: Interferência entre dispositivos na banda de 2.4 GHz (Bluetooth, micro-ondas) pode impactar o desempenho.
+Conexao: 'bandas_5' --[oferece]--> 'bandas_6'. Motivo: Bandas mais recentes (5 GHz e 6 GHz) oferecem menor interferência e maior largura de canal.
+
+=== SECAO [TI_SEC_MAC_004]: Quadro 802.11: formato de quadro, endereçamento e campos de controle ===
+Nesta seção, detalha-se a estrutura de quadros da 802.11: Frame Control (versão, tipo e subtipo), Duração, Endereços 1–4, Seq control, carga útil (payload) e CRC. O quadro pode ser de gerenciamento, controle ou dados. O subtipo distingue RTS/CTS, ACK, dados ou outros. O Endereço 1-4 descreve a origem, o destino, o AP ou o link entre redes. O campo EP (encriptação) indica se há criptografia. A fragmentação é controlada via Sequence Control. O modelo também descreve como o AP traduz entre Ethernet (802.3) e o meio sem fio, preenchendo os endereços para encaminhar entre sub-redes (com ARP para resolução de MAC). Esse conjunto de mecanismos viabiliza a comunicação entre hosts em redes com e sem fio, com troncos de dados atravessando o AP. 
+
+-- Conceitos-chave --
+Termo: Quadros 802.11 | Tipo: Quadro | Definicao: Formato de quadro com Frame Control, Duração, Endereços 1–4, Seq Control, Carga útil e CRC; tipos: Gerenciamento, Controle e Dados.
+  Vantagens de Quadros 802.11: Estrutura padronizada para controle de enlace; Suporta diferentes cenários (gerenciamento, dados, controle)
+  Desvantagens de Quadros 802.11: Aumento de sobrecarga com quadros de controle
+  Casos de uso de Quadros 802.11: Transmissão de dados sem fio; Gerenciamento de rede e autenticação
+Termo: Campos de Endereço (Endereço 1–4) | Tipo: Endereçamento | Definicao: Campos que identificam origem, destino, AP e, quando aplicável, o link WDS.
+  Vantagens de Campos de Endereço (Endereço 1–4): Permite encaminhamento entre redes (WDS, bridges) e sub-redes; Suporte a flips de ARP para resolução de MAC
+  Desvantagens de Campos de Endereço (Endereço 1–4): Complexidade de mapeamento entre 802.11 e Ethernet
+  Casos de uso de Campos de Endereço (Endereço 1–4): Encaminhamento entre hosts através de AP e switch/router
+Termo: EP (Propriedades de Criptografia) | Tipo: Segurança | Definicao: Campo que indica se a transmissão utiliza criptografia (WEP/WPA/WPA2/WPA3, etc.).
+  Vantagens de EP (Propriedades de Criptografia): Indica proteção de payload; Permite escolhas de criptografia/segurança
+  Desvantagens de EP (Propriedades de Criptografia): Riscos de fraturas de segurança se mal configurado; Possível impacto no desempenho
+  Casos de uso de EP (Propriedades de Criptografia): Transmissões com criptografia de dados
+Termo: Fragmentação | Tipo: Conceito | Definicao: Possibilidade de fragmentar payload para transmissão em pacotes menores.
+  Vantagens de Fragmentação: Melhora confiabilidade em canais com erro; Reduz necessidade de retransmissões de grandes frames
+  Desvantagens de Fragmentação: Aumento de overhead de controle; Mais complexidade de reassembly
+  Casos de uso de Fragmentação: Redes móveis com canais instáveis
+
+-- Tabelas comparativas --
+Tabela 'Campos do quadro 802.11': Descrição dos principais campos presentes no cabeçalho de cada quadro 802.11
+  Linha L1: Frame Control = Versão, Tipo, Subtipo; Duração = Tempo de transmissão/recebimento esperado; Endereço 1 = Destino; Endereço 2 = Origem; Endereço 3 = AP/Servidor ou conteúdo do enlace; Endereço 4 = WDS (quando aplicável); Carga útil = Dados ou protocolo encapsulado; CRC = Verificação de integridade
+    (Relacionado a: frame_80211, enderecos_80211)
+
+-- Figuras e diagramas --
+Figura 'Formato do quadro 802.11' (Diagrama de estrutura de quadro): Mostra Frame Control, Duração, Endereços 1–4, Seq Control, Payload e CRC; indica a possibilidade de endereçamento 4 para WDS.
+  Componentes visuais: Frame Control, Duração, Endereço 1-4, Seq Control, Payload, CRC
+  Relacionado a: frame_80211, enderecos_80211
+
+-- Relacionamentos --
+Conexao: 'frame_80211' --[depende_de]--> 'enderecos_80211'. Motivo: Endereçamento do quadro depende dos campos Endereço 1–4.
+Conexao: 'ep_enc' --[indica]--> 'quadros_80211'. Motivo: Estado de criptografia indicado pelo campo EP nos quadros.
+
+=== SECAO [TI_SEC_MAC_005]: Endereçamento e integração entre WLAN e LAN (ARP, bridging e WDS) ===
+Esta seção descreve como o AP faz a ponte entre a rede sem fio (802.11) e a infraestrutura cabeada (802.3). Um quadro Ethernet/802.3 chega ao AP, que mapeia o endereçamento para os campos 802.11 (Endereço 1–4) para transmissão sem fio. O ARP é usado para resolver o endereço MAC do destino na subrede remota, permitindo que o roteador/switch encaminhe o tráfego entre subredes. O WDS (Wireless Distribution System) permite a distribuição de pacotes entre múltiplos pontos de acesso, com Endereço 4 utilizado para cenários WDS. A seção também aborda a conversão de endereços entre o mundo cabeado e o mundo sem fio, evidenciando a função do AP como tradutor de MACs entre as redes. 
+
+-- Conceitos-chave --
+Termo: ARP (Address Resolution Protocol) | Tipo: Protocolo | Definicao: Protocolo para mapear endereços IP para endereços MAC em redes locais.
+  Vantagens de ARP (Address Resolution Protocol): Permite encaminhamento entre sub-redes; Facilita resolução de endereços em LAN/WLAN
+  Desvantagens de ARP (Address Resolution Protocol): Pode ser explorado em ataque de spoofing se não protegido
+  Casos de uso de ARP (Address Resolution Protocol): Resolucao de MAC a partir de IP
+Termo: WDS (Wireless Distribution System) | Tipo: Padrão | Definicao: Mecanismo para distribuir tráfego entre múltiplos APs sem fio, mantendo a mesma rede estendida.
+  Vantagens de WDS (Wireless Distribution System): Expande cobertura sem fio; Mantém domínio de broadcast local
+  Desvantagens de WDS (Wireless Distribution System): Requer suporte específico entre APs; Geralmente menor throughput entre nós
+  Casos de uso de WDS (Wireless Distribution System): Extensão de WLAN sem cabo entre APs
+Termo: Endereços 1–4 no quadro 802.11 | Tipo: Conceito | Definicao: Campos que transportam endereços de origem/destino, AP e relação com o nó remoto.
+  Vantagens de Endereços 1–4 no quadro 802.11: Permitem roteamento entre redes; Facilitam bridging entre WLAN e LAN
+  Desvantagens de Endereços 1–4 no quadro 802.11: Mapeamento entre 802.3 e 802.11 requer lógica de ponte
+  Casos de uso de Endereços 1–4 no quadro 802.11: Encaminhamento de pacotes entre subredes via AP/Router
+
+-- Tabelas comparativas --
+Tabela 'Endereços em Quadros 802.11': Semântica dos Endereços 1–4 e seu uso na ponte entre WLAN e LAN
+  Linha L1: Endereço 1 = Destino no meio sem fio; Endereço 2 = Origem (AP ou STA); Endereço 3 = MAC da interface do roteador/switch ou do AP adjacente; Endereço 4 = Uso WDS (se aplicável)
+    (Relacionado a: enderecos_80211, wds)
+
+-- Figuras e diagramas --
+Figura 'AR P e Bridge entre WLAN e LAN' (Diagrama de fluxo): AP utiliza ARP para resolver MAC de destinos na LAN; quadros 802.11 são mapeados para 802.3 e encaminhados pelo router/switch.
+  Componentes visuais: Host (H1), AP, Switch/Router, ARP, Quadro 802.3, Quadro 802.11
+  Relacionado a: arp, end_endereco_1_4
+
+-- Relacionamentos --
+Conexao: 'arp' --[utiliza]--> 'end_endereco_1_4'. Motivo: ARP resolve MAC para endereçamento no quadro 802.11.
+Conexao: 'wds' --[usado_para]--> 'ap_coordenador'. Motivo: WDS permite extensão de WLAN com mapeamento de endereços entre APs
+
+=== SECAO [TI_SEC_MAC_006]: Gerenciamento de energia e adaptação de taxa (802.11) ===
+A seção aborda recursos avançados da camada MAC que visam eficiência energética e adaptabilidade de taxa. O gerenciamento de energia permite que nós ativos entrem em modos de menor consumo quando possível, reduzindo o uso de energia sem comprometer a conectividade. A adaptação de taxa ajusta dinamicamente a modulação e a codificação com base nas condições do canal, buscando equilíbrio entre throughput e confiabilidade. Ambos os recursos são particularmente relevantes para dispositivos móveis e redes corporativas com tráfego variável. O texto destaca que tais mecanismos são complementares aos aspectos de canal, com o AP coordenando a transmissão para manter a eficiência da rede. 
+
+-- Conceitos-chave --
+Termo: Power Management (802.11) | Tipo: Recurso | Definicao: Mecanismo que reduz o consumo de energia de dispositivos sem fio mantendo a conectividade.
+  Vantagens de Power Management (802.11): Vida útil da bateria prolongada; Redução de consumo em dispositivos móveis
+  Desvantagens de Power Management (802.11): Latência adicional na saída/entrada de pacotes; Necessidade de configuração adequada
+  Casos de uso de Power Management (802.11): PoI com dispositivos móveis; Redes com muitos dispositivos ociosos
+Termo: Rate Adaptation | Tipo: Padrão | Definicao: Ajuste dinâmico da taxa de transmissão com base nas condições do canal e no desempenho observado.
+  Vantagens de Rate Adaptation: Melhora desempenho sob diferentes condições de canal; Maximiza throughput quando canal está bom
+  Desvantagens de Rate Adaptation: Algoritmos podem ser complexos; Requer monitoramento de canal
+  Casos de uso de Rate Adaptation: Redes móveis com variação de sinal; Ambientes com interferência variável
+
+-- Tabelas comparativas --
+Tabela 'Gerenciamento de energia e Taxa de Transmissão': Resumo dos recursos 802.11 para economia de energia e adaptação de taxa
+  Linha L1: Power Management = Reduz consumo em dispositivos ociosos; Rate Adaptation = Ajusta taxa com base no canal; Impacto = Equilíbrio entre latência, throughput e confiabilidade
+    (Relacionado a: pm80211, rate_adapt)
+
+-- Figuras e diagramas --
+Figura 'Diagrama de Energya e Adaptação de Taxa' (Fluxo): Dispositivo entra em modo de economia, AP ajusta taxa e gerencia a entrega de frames conforme disponibilidade de energia e qualidade do canal.
+  Componentes visuais: STA, AP, Mecanismo PM, Mecanismo de rate adaptation
+  Relacionado a: pm80211, rate_adapt
+
+-- Relacionamentos --
+Conexao: 'pm80211' --[implementa]--> 'rate_adapt'. Motivo: Gerenciamento de energia e adaptação de taxa são coordenados pela camada MAC para eficiência.
+
+=== SECAO [TI_SEC_MAC_007]: Segurança e considerações finais (fechamento do módulo) ===
+Esta seção encerraria o módulo com uma visão geral de segurança (criptografia, autenticação, integridade) associada aos quadros 802.11, bem como um resumo dos pontos-chave discutidos (CSMA/CA, RTS/CTS, endereçamento, bridging com Ethernet, desempenho entre bandas e gestão de energia). O trecho final reforça a existência de um bloco adicional sobre segurança, que pode cobrir criptografia (WPA/WPA2/WPA3), autenticação, e ameaças comuns em redes sem fio (spoofing, jamming, ataques de camada de enlace). 
+
+-- Conceitos-chave --
+Termo: Segurança 802.11 | Tipo: Conceito | Definicao: Conjunto de mecanismos para proteção de tráfego sem fio (criptografia, autenticação, integridade).
+  Vantagens de Segurança 802.11: Protege dados sensíveis; Garante autenticidade de pontos de acesso e clientes
+  Desvantagens de Segurança 802.11: Pode introduzir overhead e latência; Configuração inadequada pode comprometer a proteção
+  Casos de uso de Segurança 802.11: Wi‑Fi com WPA2/WPA3; Ambientes corporativos e institucionais
+
+-- Relacionamentos --
+Conexao: 'csma_ca' --[depende_de]--> 'ap_coordenador'. Motivo: CSMA/CA depende da coordenação do AP para gerenciamento de canal.
+Conexao: 'arp' --[utiliza]--> 'frame_80211'. Motivo: Quadros 802.11 transmitem payload que pode ser endereçado via ARP entre LAN e WLAN.
+

@@ -104,12 +104,35 @@ class ExtracaoGrafoTI(BaseModel):
     metadados_documento: MetadadosDocumento
     conteudo_estruturado: list[SecaoConteudo]
 
+
+def schema_strict(model: type[BaseModel]) -> dict:
+    """Força 'additionalProperties: false' em todo objeto do schema.
+    Necessário porque modelos estilo OpenAI (gpt-5-nano, gpt-4.1, etc.)
+    exigem isso no modo strict; o Gemini não exigia."""
+    schema = model.model_json_schema()
+
+    def _endurecer(node):
+        if isinstance(node, dict):
+            if node.get("type") == "object":
+                node["additionalProperties"] = False
+            for v in node.values():
+                _endurecer(v)
+        elif isinstance(node, list):
+            for v in node:
+                _endurecer(v)
+
+    _endurecer(schema)
+    for defn in schema.get("$defs", {}).values():
+        defn["additionalProperties"] = False
+    return schema
+
+
 RESPONSE_FORMAT_ESTRUTURADO = {
     "type": "json_schema",
     "json_schema": {
         "name": "extracao_grafo_ti",
         "strict": True,
-        "schema": ExtracaoGrafoTI.model_json_schema(),
+        "schema": schema_strict(ExtracaoGrafoTI),
     },
 }
 

@@ -1,0 +1,14 @@
+{
+    "total_runtime": 0.6612899303436279,
+    "num_documents": 0,
+    "update_documents": 0,
+    "input_load_time": 0,
+    "workflows": {
+        "load_update_documents": {
+            "overall": 0.6583156585693359,
+            "peak_memory_bytes": 4466795,
+            "memory_delta_bytes": 48812,
+            "tracemalloc_overhead_bytes": 131568
+        }
+    }
+}

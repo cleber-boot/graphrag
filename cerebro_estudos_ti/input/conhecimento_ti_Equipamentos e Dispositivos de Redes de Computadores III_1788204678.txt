@@ -1,0 +1,33 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Equipamentos e Dispositivos de Redes de Computadores III
+Idioma: pt-BR
+Tecnologias citadas no documento: Hub, Switch, Bridge, ARP, MAC Address, IP Address, OSI Model
+
+=== SECAO [TI_SEC_001]: Introdução aos Dispositivos de Rede: Hubs, Bridges e Switches ===
+Este bloco introdutório discute equipamentos e dispositivos de redes de computadores, focando em como eles transmitem pacotes. Começa relembrando placas de rede e introduz o conceito de retransmissão de pacotes, com foco inicial no hub. Em seguida, apresenta a bridge (ponte) e o switch como evoluções, detalhando suas funcionalidades e diferenças na forma como lidam com a transmissão de dados, especialmente em relação ao broadcast e unicast. O texto enfatiza que redes são formadas por equipamentos com trabalhos e características comuns, como a transmissão de pacotes, mas que a forma como essa transmissão é realizada difere entre os dispositivos.
+
+-- Conceitos-chave --
+Termo: Hub | Tipo: Dispositivo de Rede | Definicao: Um dispositivo de rede que opera na camada física (camada 1 do modelo OSI) e funciona como um repetidor de sinal elétrico. Ele retransmite qualquer sinal recebido em uma porta para todas as outras portas, realizando broadcast. É comparado a uma extensão de tomada para conectar mais equipamentos.
+  Vantagens de Hub: Simplicidade de uso; Baixo custo (historicamente)
+  Desvantagens de Hub: Opera em broadcast, gerando tráfego desnecessário; Alta probabilidade de colisões; Não segmenta a rede; Baixa eficiência em redes maiores
+  Casos de uso de Hub: Redes muito pequenas e antigas; Ambientes com tráfego de dados muito baixo; Redes domésticas ou de pequenos escritórios (historicamente)
+Termo: Switch | Tipo: Dispositivo de Rede | Definicao: Uma evolução do hub, que opera principalmente na camada de enlace (camada 2 do modelo OSI). Diferente do hub, o switch realiza chaveamento inteligente de pacotes entre a porta de origem e a porta de destino, utilizando endereços MAC. Embora possa propagar pacotes broadcast quando necessário, sua operação primária é em unicast, o que aumenta a eficiência e reduz colisões.
+  Vantagens de Switch: Opera em unicast, direcionando pacotes para o destino correto; Reduz colisões e tráfego desnecessário; Segmenta a rede em domínios de colisão; Alta eficiência e velocidade; Permite comunicação simultânea entre múltiplos pares de portas
+  Desvantagens de Switch: Custo inicial mais elevado que hubs (historicamente); Não segmenta domínios de broadcast por padrão
+  Casos de uso de Switch: Redes locais (LANs) de todos os portes; Redes corporativas; Redes de data centers; Redes que exigem alta performance e baixa latência
+Termo: Bridge (Ponte) | Tipo: Dispositivo de Rede | Definicao: Um dispositivo de rede que opera na camada de enlace (camada 2 do modelo OSI). Sua função principal é filtrar pacotes entre segmentos de redes locais, permitindo a comunicação entre eles. É considerado um precursor do switch e compartilha muitas de suas características, como a capacidade de aprender endereços MAC e tomar decisões de encaminhamento.
+  Vantagens de Bridge (Ponte): Filtra tráfego entre segmentos de rede; Reduz colisões ao segmentar a rede; Permite a interconexão de diferentes segmentos de rede local
+  Desvantagens de Bridge (Ponte): Menos portas e menos escalável que um switch moderno; Pode se tornar um gargalo em redes muito grandes
+  Casos de uso de Bridge (Ponte): Interconexão de dois ou mais segmentos de rede local; Segmentação de redes para melhorar performance; Redes corporativas de médio porte (historicamente)
+Termo: Broadcast | Tipo: Tipo de Transmissão | Definicao: Um tipo de transmissão de dados em redes onde um pacote é enviado para todos os dispositivos conectados em um segmento de rede. Hubs operam primariamente em broadcast, enquanto switches o utilizam apenas quando o destino é explicitamente broadcast.
+  Vantagens de Broadcast: Útil para enviar informações para todos os dispositivos simultaneamente (ex: descoberta de rede)
+  Desvantagens de Broadcast: Gera tráfego excessivo e desnecessário em redes maiores; Aumenta a probabilidade de colisões; Consome recursos de todos os dispositivos na rede
+  Casos de uso de Broadcast: Protocolos de descoberta (ex: ARP, DHCP); Mensagens de status ou controle para todos os hosts; Redes muito pequenas onde o tráfego é gerenciável
+Termo: Unicast | Tipo: Tipo de Transmissão | Definicao: Um tipo de transmissão de dados em redes onde um pacote é enviado de um único remetente para um único destinatário. Switches operam primariamente em unicast, direcionando o tráfego de forma eficiente.
+  Vantagens de Unicast: Tráfego direcionado e eficiente; Reduz congestionamento e colisões; Melhora a segurança ao não expor dados a dispositivos não-alvo
+  Desvantagens de Unicast: Não é adequado para enviar a mesma informação para múltiplos destinos simultaneamente sem repetição
+  Casos de uso de Unicast: Comunicação ponto a ponto; Acesso a servidores; Navegação na web; Transferência de arquivos
+
+=== SECAO [TI_SEC_002]: Camadas OSI e o Papel dos Dispositivos ===
+Esta seção detalha a operação de switches e bridges em relação às camadas do modelo OSI, especificamente a camada de enlace (camada 2). Explica que switches não leem endereços IP (camada 3), mas sim endereços MAC (camada 2). O protocolo ARP (Address Resolution Protocol) é introduzido como o mecanismo que traduz endereços IP em endereços MAC para permitir a comunicação em redes locais. A diferença entre endereço IP (lógico) e MAC (físico) é destacada, com o MAC sendo um identificador único de 48 bits gravado na placa de rede. A seção também reitera que hubs operam na camada 1, enquanto switches e bridges operam na camada 2, e rote
+

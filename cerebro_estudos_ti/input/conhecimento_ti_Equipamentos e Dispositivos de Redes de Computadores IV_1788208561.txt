@@ -1,0 +1,183 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Equipamentos e Dispositivos de Redes de Computadores IV
+Idioma: pt-BR
+Tecnologias citadas no documento: IPv4, endereçamento IP, endereçamento MAC, OSI, roteadores, switches, hub, bridge, tabela de roteamento, protocolos de roteamento, Nexthop, ISP, LAN, WAN, topologia de redes, IP vs MAC
+
+=== SECAO [TI_SEC_001]: Visão geral de dispositivos de rede e camadas do modelo OSI ===
+Este capítulo introdutório apresenta a família de dispositivos de rede e sua atuação em diferentes camadas do modelo OSI. Observa-se que redes são formadas por origens e destinos (hosts) e por equipamentos intermediários que retransmitem ou encaminham pacotes entre redes distintas. Dentro de uma mesma rede, hubs, bridges/pones, switches e repetidores exercem papéis diferentes, porém todos compartilham a função de retransmitir dados. A importância de diferenciar os componentes por camada fica evidente: hubs operam na camada física (OSi 1) sem leitura de endereços; switches trabalham na camada de enlace (OSi 2) com endereços MAC; roteadores atuam na camada de rede (OSi 3) lidando com endereços IP. Além disso, destaca-se que roteadores costumam ficar fora da LAN local, conectando redes distintas por meio de interfaces que pertencem a redes distintas, permitindo a comunicação entre redes geograficamente separadas. O capítulo também aborda a diferença entre endereços físicos (MAC) e lógicos (IP) utilizados pelos dispositivos para encaminhar tráfego.
+
+-- Conceitos-chave --
+Termo: Hub | Tipo: Dispositivo_Fisico | Definicao: Dispositivo que retransmite sinais elétricos sem interpretar endereços; opera na camada 1 (Física).
+  Vantagens de Hub: Baixo custo; Simplicidade
+  Desvantagens de Hub: Não faz aprendizado de endereços; Broadcast excessivo; Baixa eficiência
+  Casos de uso de Hub: Extensão física simples de redes
+Termo: Switch | Tipo: Dispositivo_Fisico | Definicao: Dispositivo que encaminha quadros com base em endereços MAC, atuando na camada 2 (Enlace).
+  Vantagens de Switch: Encaminhamento rápido por MAC; Reduz broadcast com filtragem
+  Desvantagens de Switch: Não roteia entre redes distintas sem roteador
+  Casos de uso de Switch: Concentrar dispositivos em uma LAN com filtragem de tráfego
+Termo: Bridge | Tipo: Dispositivo_Fisico | Definicao: Dispositivo de interconexão de redes em nível de enlace; funciona como Switch em muitos casos, aprendendo endereços MAC.
+  Vantagens de Bridge: Filtro de tráfego entre segmentos; Conecta redes de forma simples
+  Desvantagens de Bridge: Pode exigir configuração para topologias complexas
+  Casos de uso de Bridge: Segmentação de redes sem switches complexos
+Termo: Roteador | Tipo: Dispositivo_Fisico | Definicao: Dispositivo de retransmissão entre redes distintas, operando na camada 3 (Rede) com base em endereços IP.
+  Vantagens de Roteador: Interliga redes distintas (LANs/WANs); Escolha de caminhos com base em IP
+  Desvantagens de Roteador: Configuração complexa; Potencial latência se mal dimensionado
+  Casos de uso de Roteador: Interconexão entre redes locais e remotas; Encaminhamento entre redes com protocolos diferentes
+Termo: Endereço IP (IPv4) | Tipo: Endereco | Definicao: Identificador lógico da rede, parte do cabeçalho que identifica a rede (net ID) e o host (host ID).
+  Vantagens de Endereço IP (IPv4): Roteamento entre redes; Escala para redes globais
+  Desvantagens de Endereço IP (IPv4): Pode exigir NAT/segmentação; Gerência de endereçamento complexa
+  Casos de uso de Endereço IP (IPv4): Identificar subredes e hosts para roteamento
+Termo: Endereço MAC | Tipo: Endereco | Definicao: Identificador físico único gravado na placa de rede; usado para encaminhamento no nível de enlace.
+  Vantagens de Endereço MAC: Identificador único de hardware; Encaminhamento rápido no nível de enlace
+  Desvantagens de Endereço MAC: Não escala bem entre redes diferentes; Fixo à interface de hardware
+  Casos de uso de Endereço MAC: Encaminhar quadros dentro de uma LAN
+Termo: Camadas OSI | Tipo: Modelo | Definicao: Modelo de referência em camadas (1 Física, 2 Enlace, 3 Rede, etc.) para separar funções de rede.
+  Vantagens de Camadas OSI: Padronização de interfaces; Abstração de funções
+  Desvantagens de Camadas OSI: Menor correlação direta com protocolos modernos; Pode exigir mapeamento com TCP/IP
+  Casos de uso de Camadas OSI: Projeto de redes seguindo camadas
+
+-- Tabelas comparativas --
+Tabela 'Comparação básica de dispositivos de rede': Resumo técnico da função de alguns dispositivos nas camadas apropriadas.
+  Linha linha_01: Hub = Camada 1 (Física) - retransmissão simples; não lê endereços; Bridge/Bridge = Camada 2 (Enlace) - aprende MAC; conecta segmentos; Switch = Camada 2 (Enlace) - encaminha por MAC com tabela de endereços; Roteador = Camada 3 (Rede) - encaminha por IP via tabela de roteamento
+    (Relacionado a: hub, bridge, switch, roteador)
+
+-- Figuras e diagramas --
+Figura 'Estrutura de dispositivos de rede e suas camadas' (Diagrama de arquitetura de rede): Diagrama apresenta Hub na camada física, Bridge/Switch na camada de enlace, e Roteador na camada de rede, conectados a Hosts e Servidores.
+  Componentes visuais: Hub, Bridge, Switch, Roteador, Placade rede, Servidor, Estação de trabalho
+  Relacionado a: hub, bridge, switch, roteador, placa_de_rede, servidor, estacao_trabalho
+
+-- Relacionamentos --
+Conexao: 'hub' --[depende_de]--> 'endereco_fisico'. Motivo: Hub não lê endereços; depende da linha física para retransmitir sinais.
+Conexao: 'switch' --[implementa]--> 'tabela_mac'. Motivo: Switch utiliza a tabela MAC para encaminhar quadros entre portas.
+Conexao: 'roteador' --[depende_de]--> 'endereco_ip'. Motivo: Roteadores utilizam endereços IP para decisão de encaminhamento entre redes.
+Conexao: 'roteador' --[utiliza]--> 'protocolo_roteamento_OSPF'. Motivo: Roteadores utilizam protocolos de roteamento para troca de informações de topologia.
+Conexao: 'roteador_A' --[comunica_com]--> 'roteador_B'. Motivo: Roteadores trocam informações de roteamento entre si (fofoca de rede).
+Conexao: 'roteador_A' --[implementa]--> 'tabela_roteamento_A'. Motivo: Roteador A mantém e aplica a sua tabela de roteamento para encaminhar pacotes.
+Conexao: 'roteador_B' --[implementa]--> 'tabela_roteamento_B'. Motivo: Roteador B mantém e aplica a sua tabela de roteamento para encaminhar pacotes.
+
+=== SECAO [TI_SEC_002]: Roteadores e interconexão entre redes ===
+Este capítulo aprofunda a função do roteador como dispositivo de interconexão entre redes distintas (LANs, WANs) e detalha como ele opera na camada 3 do modelo OSI, lidando com endereços IP para decidir o próximo salto (next hop). Explica que um roteador pode estar conectado a várias redes por meio de diferentes interfaces (portas) e que, ao receber um pacote, ele verifica o IP de destino para selecionar a próxima rede. A ideia de redes distintas, porém conectadas, é enfatizada: a função é manter a identidade de cada sub-rede, enquanto o tráfego é roteado entre elas. Além disso, o texto relata que os roteadores divulgam informações entre si (tabelas de roteamento) e que isso pode ocorrer de forma estática (configuração manual) ou dinâmica (protocolos de roteamento).
+
+-- Conceitos-chave --
+Termo: Roteador A | Tipo: Dispositivo_Rede | Definicao: Roteador que conecta rede 1 e rede 2, com interfaces em diferentes redes.
+  Vantagens de Roteador A: Conecta redes distintas; Determina melhores caminhos entre redes
+  Desvantagens de Roteador A: Configuração pode ser complexa; Gerência de multi-redes requer planejamento
+  Casos de uso de Roteador A: Interconexão entre LANs, WANs, redes geograficamente separadas
+Termo: Roteador B | Tipo: Dispositivo_Rede | Definicao: Roteador que conecta rede 2 à rede 4, com outra interface para a rede 4.
+  Vantagens de Roteador B: Expande conectividade entre redes; Permite redundância geográfica
+  Desvantagens de Roteador B: Necessita de configuração de rotas entre redes
+  Casos de uso de Roteador B: Matriz e filial, interconexão entre redes distintas
+Termo: Net ID | Tipo: Conceito_IP | Definicao: Identificador da rede dentro de um endereço IP (IPv4).
+  Vantagens de Net ID: Facilita o roteamento entre redes
+  Desvantagens de Net ID: Precisa de planejamento de sub-redes
+  Casos de uso de Net ID: Determinar o caminho entre redes distintas
+Termo: Host ID | Tipo: Conceito_IP | Definicao: Identificador do host dentro da rede (parte do IP que identifica o nó final).
+  Vantagens de Host ID: Identifica dispositivos finais
+  Desvantagens de Host ID: Parte do IP pode exigir subnetting adequado para evitar conflitos
+  Casos de uso de Host ID: Roteamento de pacotes para hosts específicos
+Termo: Next Hop | Tipo: Conceito_Roteamento | Definicao: Próximo roteador ou ponto de encaminhamento no caminho para o destino.
+  Vantagens de Next Hop: Reduz a distância efetiva até o destino
+  Desvantagens de Next Hop: Dependência de topologia atualizada
+  Casos de uso de Next Hop: Encaminhar pacotes para o próximo salto
+Termo: Vizinhos (Neighbors) | Tipo: Conceito_Roteamento | Definicao: Roteadores adjacentes com os quais compartilham informações de topologia.
+  Vantagens de Vizinhos (Neighbors): Convergência rápida de rotas
+  Desvantagens de Vizinhos (Neighbors): Risco de loops se mal configurado
+  Casos de uso de Vizinhos (Neighbors): Interconexão de redes via adjacência de roteadores
+Termo: Tabela de Roteamento | Tipo: Conceito_Roteamento | Definicao: Conjunto de rotas que o roteador utiliza para encaminhar pacotes entre redes.
+  Vantagens de Tabela de Roteamento: Encaminhamento eficiente com base em IP
+  Desvantagens de Tabela de Roteamento: Pode exigir atualização constante
+  Casos de uso de Tabela de Roteamento: Encaminhar pacotes entre redes distintas
+Termo: Protocolos de Roteamento | Tipo: Conceito_Roteamento | Definicao: Conjuntos de regras para troca dinâmica de informações de topologia entre roteadores.
+  Vantagens de Protocolos de Roteamento: Atualizam dinamicamente rotas; Reduzem configuração manual
+  Desvantagens de Protocolos de Roteamento: Podem introduzir consumo de banda e latência
+  Casos de uso de Protocolos de Roteamento: Ambientes internos (IGP) e entre zonas (EGP)
+
+-- Figuras e diagramas --
+Figura 'Topologia com R1 (A) e R2 (B) conectando redes 1, 2 e 4' (Diagrama de topo de rede): Diagrama mostra R1 conectando à rede 1 pela interface Ethernet 0 e à rede 2 pela interface Serial 0; R2 conecta à rede 2 pela Serial 0 e à rede 4 pela Ethernet 0. Demonstra as rotas diretas (sem salto) para redes conectadas e salto (via rede 2) para redes adjacentes.
+  Componentes visuais: R1 (A), R2 (B), Rede 1, Rede 2, Rede 4, Ethernet0, Serial0, Next Hop
+  Relacionado a: roteador_A, roteador_B, net_id, net_id_2, net_id_4, next_hop, neighbors
+
+-- Relacionamentos --
+Conexao: 'roteador_A' --[comunica_com]--> 'roteador_B'. Motivo: Roteadores trocam informações de topologia (tabela de roteamento) entre si.
+Conexao: 'roteador_A' --[implementa]--> 'tabela_roteamento'. Motivo: Roteador A utiliza sua tabela de roteamento para encaminhar pacotes.
+Conexao: 'roteador_B' --[implementa]--> 'tabela_roteamento'. Motivo: Roteador B utiliza sua própria tabela para encaminhar pacotes.
+Conexao: 'protocolo_de_roteamento' --[utiliza]--> 'roteador_A'. Motivo: Roteadores utilizam protocolos de roteamento para troca de informações de topologia.
+Conexao: 'net_id' --[pertence_a]--> 'rede_1'. Motivo: Net ID identifica a rede à qual os hosts pertencem.
+
+=== SECAO [TI_SEC_003]: Tabelas de roteamento e protocolos de roteamento ===
+Este capítulo descreve as distinções entre tabelas de roteamento estáticas e dinâmicas. A configuração estática envolve a inserção manual de entradas em cada roteador, adequada apenas para redes pequenas ou estáveis; alterações topológicas exigem reconfiguração manual em todos os dispositivos envolvidos. Em redes maiores, o uso de tabelas dinâmicas via protocolos de roteamento (OSPF, RIP, BGP etc.) é essencial, pois esses protocolos permitem que roteadores aprendam e atualizem suas rotas automaticamente, sincronizando informações de topologia com vizinhos. O texto também enfatiza a importância de escolher protocolos adequados ao cenário (ambiente interno, borda, diferentes zonas) e a vantagem da convergência dinâmica para reduzir falhas de encaminhamento.
+
+-- Conceitos-chave --
+Termo: Roteamento Estático | Tipo: Conceito_Roteamento | Definicao: Entrada de rotas configuradas manualmente em cada roteador.
+  Vantagens de Roteamento Estático: Controle preciso; Sem consumo de recursos de protocolos de roteamento
+  Desvantagens de Roteamento Estático: Difícil de manter em redes grandes; Propaga alterações manualmente
+  Casos de uso de Roteamento Estático: Topologias estáticas, redes pequenas, segmentação controlada
+Termo: Roteamento Dinâmico | Tipo: Conceito_Roteamento | Definicao: Rotas atualizadas automaticamente através de protocolos de roteamento.
+  Vantagens de Roteamento Dinâmico: Adapta-se a mudanças de topologia; Convergência rápida entre vizinhos
+  Desvantagens de Roteamento Dinâmico: Consome banda de rede e CPU dos dispositivos
+  Casos de uso de Roteamento Dinâmico: Redes de médio a grande porte, WANs, ambientes dinâmicos
+Termo: OSPF (Open Shortest Path First) | Tipo: Protocolo_Roteamento | Definicao: Protocolo de roteamento interno que distribui informações de topologia para construir tabelas de roteamento dinâmicas.
+  Vantagens de OSPF (Open Shortest Path First): Convergência rápida; Escala bem em redes grandes
+  Desvantagens de OSPF (Open Shortest Path First): Configuração mais complexa em ambientes grandes
+  Casos de uso de OSPF (Open Shortest Path First): Redes empresariais internas com várias sub-redes
+Termo: RIP | Tipo: Protocolo_Roteamento | Definicao: Protocolo de roteamento interno simples, baseado em contagem de saltos.
+  Vantagens de RIP: Fácil de implementar
+  Desvantagens de RIP: Baixa escalabilidade; Convergência lenta em redes grandes
+  Casos de uso de RIP: Redes menores, aprendizado simples
+Termo: BGP | Tipo: Protocolo_Roteamento | Definicao: Protocolo de roteamento entre sistemas autônomos (EGP) na Internet.
+  Vantagens de BGP: Escala global; Controle de políticas de roteamento entre ISPs
+  Desvantagens de BGP: Mais complexo de configurar
+  Casos de uso de BGP: Conexões entre provedores e grandes redes
+
+-- Tabelas comparativas --
+Tabela 'Roteamento Estático vs Dinâmico': Comparação de características relevantes para decisões de projeto.
+  Linha linha_static: Roteamento Estático = Controle preciso; sem consumo de recursos; Roteamento Estático = Difícil de manter; sensível a mudanças
+    (Relacionado a: roteamento_estatico, roteamento_dinamico)
+  Linha linha_dynamic: Roteamento Dinâmico = Adapta-se a topologias; convergência rápida; Roteamento Dinâmico = Pode consumir recursos; configuração mais complexa
+    (Relacionado a: protocolo_OSPF, protocolo_RIP, protocolo_BGP)
+
+-- Figuras e diagramas --
+Figura 'Troca de informações entre roteadores (Topologia de vizinhança)' (Diagrama de topo de rede): Ilustra vizinhos de roteamento divulgando suas tabelas entre si, como OSPF/RIP praticam a troca de informações para construção de tabelas de roteamento dinâmicas.
+  Componentes visuais: Roteador 1, Roteador 2, Vizinhos (Neighbors), Tabelas de Roteamento, Protocolo de Roteamento
+  Relacionado a: roteador_A, roteador_B, tabela_roteamento, protocolo_OSPF
+
+-- Relacionamentos --
+Conexao: 'roteador_A' --[depende_de]--> 'protocolo_OSPF'. Motivo: Roteador A depende de protocolo de roteamento para trocar informações de topologia com vizinhos.
+Conexao: 'roteador_A' --[implementa]--> 'tabela_roteamento'. Motivo: Roteador A mantém a tabela de roteamento para encaminhar pacotes.
+Conexao: 'roteador_B' --[comunica_com]--> 'roteador_A'. Motivo: Roteadores trocam informações de topologia para convergência de rotas.
+
+=== SECAO [TI_SEC_004]: Casos de uso e topologias de redes com roteadores ===
+Este capítulo ilustra aplicações práticas de roteadores na interligação de redes locais (LAN) com redes remotas (WAN) e com provedores. Descreve topologias como LAN a LAN, interconexão entre filiais, e acesso à Internet via ISP. Demonstra a ideia de redes distintas que aparentam ser uma única rede devido à interconexão de roteadores, além de apresentar exemplos de endereçamento IP dividido em Net ID e Host ID para facilitar o encaminhamento entre redes. O material reforça que o roteador seleciona caminhos entre redes diferentes, cruzando fronteiras geográficas por meio de interfaces conectadas a sub-redes distintas.
+
+-- Conceitos-chave --
+Termo: Topologia LAN-para-Intranet com Roteadores | Tipo: Topologia | Definicao: Interconexão entre LANs para acesso a recursos internos (intranet) com passagem pela Internet via ISP quando necessário.
+  Vantagens de Topologia LAN-para-Intranet com Roteadores: Acesso centralizado a recursos; Segregação de tráfego entre filiais
+  Desvantagens de Topologia LAN-para-Intranet com Roteadores: Custo de infraestrutura; Gerência de complexidade
+  Casos de uso de Topologia LAN-para-Intranet com Roteadores: Matriz e filial conectadas; Acesso à intranet via ISP
+Termo: Matriz e Filial | Tipo: Topologia | Definicao: Conexão entre a matriz (data center/local central) e uma filial remota através de roteadores e links dedicados ou de serviço.
+
+  Vantagens de Matriz e Filial: Operação de continuidade de negócios; Lacunas de rede reduzidas
+  Desvantagens de Matriz e Filial: Latency e custos de link; Gerência de múltiplos provedores
+  Casos de uso de Matriz e Filial: Comunicação entre sede e filial; Backhaul para internet
+Termo: Internet para Intranet | Tipo: Topologia | Definicao: Conexão de rede interna com serviços externos via ISP para acesso à Internet ou serviços externos controlados.
+  Vantagens de Internet para Intranet: Acesso a serviços globais; Conectividade externa gerenciável
+  Desvantagens de Internet para Intranet: Risco de exposição a tráfego externo
+  Casos de uso de Internet para Intranet: Rede corporativa conectada à Internet com política de segurança
+
+-- Tabelas comparativas --
+Tabela 'Topologias de uso de roteadores': Exemplos práticos de conectividade entre redes com roteadores (LAN-LAN, matriz-filial, ISP).
+  Linha linha_top1: LAN-LAN = Conecta duas ou mais redes locais; Descrição = Roteado entre redes distintas com uso de tabelas de roteamento; Uso típico = Matriz conectada a filiais; Desafios = Gerência de rotas e latência
+    (Relacionado a: roteador_A, roteador_B, net_id, net_id_4)
+  Linha linha_top2: Internet para Intranet = Conecta rede interna à Internet; Descrição = Utiliza ISP como meio de saída para a Internet; Uso típico = Acesso a serviços externos/a nuvem; Desafios = Política de segurança, NAT, firewalls
+    (Relacionado a: roteador_A, protocolo_OSPF, ISP)
+
+-- Figuras e diagramas --
+Figura 'Topologia LAN-Intranet com WAN e ISP' (Diagrama de rede): Mostra como uma LAN interna se conecta a outra rede (intranet) via roteadores, possivelmente com um link para ISP para acesso à Internet.
+  Componentes visuais: LAN_1, LAN_2, Roteador_A, Roteador_B, ISP, Conexões WAN
+  Relacionado a: roteador_A, roteador_B, net_id, protocolo_OSPF, ISP
+
+-- Relacionamentos --
+Conexao: 'roteador_A' --[implementa]--> 'tabela_roteamento'. Motivo: Roteador A utiliza sua tabela de roteamento para encaminhar pacotes entre LANs e redes remotas.
+Conexao: 'roteador_B' --[comunica_com]--> 'roteador_A'. Motivo: Roteadores trocam informações de topologia para manter a consistência do encaminhamento.
+Conexao: 'protocolo_OSPF' --[utiliza]--> 'roteador_A'. Motivo: Protocolo de roteamento troca informações entre roteadores para construção de rotas internas.
+

@@ -1,0 +1,11 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Conceitos de Protocolos de Redes de Computadores
+Idioma: pt-BR
+Tecnologias citadas no documento: TCP/IP, HTTP, NCP, ARPANET, NetBEUI, IPX/SPX, AppleTalk, UDP, ICMP, ARP, IPSEC, TLS, SSL
+
+=== SECAO [TI_SEC_001]: Introdução aos Protocolos de Redes ===
+Este módulo introduz o conceito fundamental de protocolos em redes de computadores. Protocolos são definidos como normas, regras, leis, orientações e procedimentos essenciais para a comunicação e interoperabilidade entre diversos dispositivos e soluções de diferentes fabricantes. Sem eles, a comunicação seria caótica, pois cada fabricante desenvolveria suas próprias regras, impedindo a interação entre sistemas. A divisão do trabalho em camadas, com procedimentos específicos para cada uma, facilita a compreensão, implementação e análise dos sistemas de rede.
+
+-- Conceitos-chave --
+Termo: Protocolo | Tipo: None | Definicao: Conj
+
