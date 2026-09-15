@@ -25,6 +25,8 @@ import streamlit as st
 from openai import OpenAI
 from dotenv import load_dotenv
 
+import simulado_graph as sg
+
 # set_page_config precisa ser sempre o primeiro comando Streamlit do script.
 st.set_page_config(page_title="Chat GraphRAG", page_icon="🧠", layout="centered")
 
@@ -115,6 +117,11 @@ FORMATOS_QUESTAO = {
     "Certo ou Errado (CESPE-like)": "Uma única afirmação, a ser julgada como CERTO ou ERRADO.",
 }
 
+FORMATO_JSON_DESC = {
+    "Múltipla escolha (A–E)": "cinco alternativas (A, B, C, D, E), apenas uma correta",
+    "Certo ou Errado (CESPE-like)": "uma única afirmação a ser julgada como CERTO ou ERRADO",
+}
+
 PERGUNTA_BUSCA_CONTEXTO = (
     "Quais são os principais conceitos, tecnologias, protocolos, arquiteturas e relações técnicas {sobre_tema}? "
     "Traga definições, características técnicas, comparações e detalhes relevantes com o máximo de profundidade "
@@ -199,21 +206,40 @@ st.title(f"🧠 {st.session_state.title}")
 def eh_mensagem_simulado(msg: dict) -> bool:
     """Detecta se uma mensagem é um simulado, mesmo em conversas salvas
     ANTES da marcação 'kind' existir (compatibilidade com histórico antigo)."""
-    if msg.get("kind") == "simulado":
+    if msg.get("kind") in ("simulado", "simulado_json"):
         return True
     return msg.get("role") == "assistant" and "**Gabarito:**" in msg.get("content", "")
 
 
-if "mostrar_gabaritos" not in st.session_state:
-    st.session_state.mostrar_gabaritos = False
+def eh_simulado_estruturado(msg: dict) -> bool:
+    return msg.get("kind") == "simulado_json" and isinstance(msg.get("dados"), dict)
+
+
+for _flag in ("mostrar_gabaritos", "mostrar_base", "mostrar_micro"):
+    if _flag not in st.session_state:
+        st.session_state[_flag] = False
 
 tem_simulado_na_conversa = any(eh_mensagem_simulado(m) for m in st.session_state.messages)
+tem_estruturado = any(eh_simulado_estruturado(m) for m in st.session_state.messages)
 
 if tem_simulado_na_conversa:
-    rotulo_botao = "🙈 Colapsar todos os gabaritos" if st.session_state.mostrar_gabaritos else "👁️ Expandir todos os gabaritos"
-    if st.button(rotulo_botao):
-        st.session_state.mostrar_gabaritos = not st.session_state.mostrar_gabaritos
-        st.rerun()
+    col_g, col_b, col_m = st.columns(3)
+    with col_g:
+        rotulo = "🙈 Colapsar gabaritos" if st.session_state.mostrar_gabaritos else "👁️ Expandir gabaritos"
+        if st.button(rotulo, use_container_width=True):
+            st.session_state.mostrar_gabaritos = not st.session_state.mostrar_gabaritos
+            st.rerun()
+    if tem_estruturado:
+        with col_b:
+            rotulo = "🙈 Colapsar base" if st.session_state.mostrar_base else "📚 Expandir base de conhecimento"
+            if st.button(rotulo, use_container_width=True):
+                st.session_state.mostrar_base = not st.session_state.mostrar_base
+                st.rerun()
+        with col_m:
+            rotulo = "🙈 Colapsar micro questões" if st.session_state.mostrar_micro else "🧩 Expandir micro questões"
+            if st.button(rotulo, use_container_width=True):
+                st.session_state.mostrar_micro = not st.session_state.mostrar_micro
+                st.rerun()
 
 
 # ---------------------------------------------------------------
@@ -238,9 +264,88 @@ with st.sidebar:
     st.subheader("📝 Gerar simulado")
 
     banca = st.text_input("Banca", value="FGV", help="Ex: FGV, CESPE/CEBRASPE, FCC, VUNESP...")
-    tema_simulado = st.text_input("Tema (opcional)", placeholder="Ex: redes de computadores, segurança da informação...")
-    quantidade_questoes = st.number_input("Quantidade de questões", min_value=1, max_value=20, value=5, step=1)
     formato_questao = st.selectbox("Formato da questão", options=list(FORMATOS_QUESTAO.keys()))
+
+    origem = st.radio(
+        "Origem das questões",
+        options=["Conhecimentos do grafo", "Tema livre"],
+        help="No modo grafo você escolhe quantas questões quer de cada conhecimento indexado.",
+    )
+
+    # Estas variáveis são preenchidas por um dos dois modos abaixo.
+    tema_simulado = ""
+    quantidade_questoes = 0
+    plano_conhecimentos: list[dict] = []
+
+    if origem == "Conhecimentos do grafo":
+        assinatura = sg.assinatura_indice(ROOT_DIR)
+        conhecimentos = sg.carregar_conhecimentos(ROOT_DIR, assinatura)
+
+        if conhecimentos.empty:
+            st.warning(
+                "Não encontrei `output/community_reports.parquet`. "
+                "Rode a indexação do GraphRAG antes de usar este modo."
+            )
+        else:
+            niveis_disponiveis = sorted(conhecimentos["level"].unique().tolist())
+            niveis = st.multiselect(
+                "Granularidade (nível das comunidades)",
+                options=niveis_disponiveis,
+                default=[niveis_disponiveis[0]],
+                help="Nível 0 = conhecimentos mais amplos. Níveis maiores = temas mais específicos.",
+            )
+            busca_conhecimento = st.text_input(
+                "Filtrar conhecimentos", placeholder="Ex: cabeamento, VLAN, Wi-Fi..."
+            )
+
+            filtrados = sg.filtrar_conhecimentos(conhecimentos, niveis, busca_conhecimento)
+            st.caption(f"{len(filtrados)} conhecimento(s) disponível(is).")
+
+            selecionados = st.multiselect(
+                "Conhecimentos do grafo",
+                options=filtrados["rotulo"].tolist(),
+                help="Selecione um ou mais. Para cada um você define a quantidade de questões.",
+            )
+
+            if selecionados:
+                st.caption("Quantidade de questões por conhecimento:")
+                por_rotulo = filtrados.set_index("rotulo")
+                for rotulo in selecionados:
+                    linha = por_rotulo.loc[rotulo]
+                    qtd = st.number_input(
+                        linha["title"][:45],
+                        min_value=1,
+                        max_value=20,
+                        value=3,
+                        step=1,
+                        key=f"qtd_{linha['community']}_{linha['level']}",
+                    )
+                    plano_conhecimentos.append({
+                        "community": int(linha["community"]),
+                        "titulo": str(linha["title"]),
+                        "quantidade": int(qtd),
+                        "linha": linha,
+                    })
+                total = sum(p["quantidade"] for p in plano_conhecimentos)
+                st.info(f"Total: **{total}** questões em {len(plano_conhecimentos)} conhecimento(s).")
+    else:
+        tema_simulado = st.text_input(
+            "Tema (opcional)", placeholder="Ex: redes de computadores, segurança da informação..."
+        )
+        quantidade_questoes = st.number_input(
+            "Quantidade de questões", min_value=1, max_value=20, value=5, step=1
+        )
+
+    st.caption("Apoio ao estudo")
+    incluir_base = st.checkbox(
+        "📚 Incluir base de conhecimento", value=True,
+        help="Blocos de teoria necessários para resolver a questão, exibidos colapsados.",
+    )
+    incluir_micro = st.checkbox(
+        "🧩 Incluir micro questões", value=True,
+        help="Questões menores que decompõem o raciocínio da questão principal.",
+    )
+    n_micro = st.slider("Micro questões por questão", 1, 5, 3, disabled=not incluir_micro)
 
     gerar_simulado_clicado = st.button("🎯 Gerar simulado agora", use_container_width=True, type="primary")
 
@@ -446,7 +551,15 @@ def run_graphrag_query(question: str, method: str, community_level: int) -> str:
 # ---------------------------------------------------------------
 for _idx, msg in enumerate(st.session_state.messages):
     with st.chat_message(msg["role"]):
-        if eh_mensagem_simulado(msg):
+        if eh_simulado_estruturado(msg):
+            sg.render_simulado_estruturado(
+                msg["dados"],
+                prefixo=f"hist_{_idx}",
+                mostrar_base=st.session_state.mostrar_base,
+                mostrar_micro=st.session_state.mostrar_micro,
+                mostrar_gabarito=st.session_state.mostrar_gabaritos,
+            )
+        elif eh_mensagem_simulado(msg):
             render_simulado(msg["content"], msg_id=f"hist_{_idx}")
         else:
             st.markdown(msg["content"])
@@ -455,45 +568,126 @@ for _idx, msg in enumerate(st.session_state.messages):
 # Geração de simulado (via botão na barra lateral)
 # ---------------------------------------------------------------
 if gerar_simulado_clicado:
-    tema_label = tema_simulado.strip() if tema_simulado.strip() else "conteúdo geral da base"
-    pedido_visivel = f"🎯 Gerar simulado — banca {banca or 'FGV'} · {quantidade_questoes} questões · {tema_label}"
+    modo_grafo = origem == "Conhecimentos do grafo"
+    certo_errado = formato_questao.startswith("Certo")
+    formato_desc = FORMATO_JSON_DESC[formato_questao]
+
+    if modo_grafo and not plano_conhecimentos:
+        st.warning("Selecione pelo menos um conhecimento do grafo antes de gerar o simulado.")
+        st.stop()
+
+    if modo_grafo:
+        total = sum(p["quantidade"] for p in plano_conhecimentos)
+        detalhe = " · ".join(f"{p['titulo'][:30]} ({p['quantidade']})" for p in plano_conhecimentos)
+        pedido_visivel = f"🎯 Simulado — banca {banca or 'FGV'} · {total} questões\n\n**Conhecimentos:** {detalhe}"
+        titulo_auto = f"Simulado {banca or 'FGV'} — {plano_conhecimentos[0]['titulo']}"
+    else:
+        tema_label = tema_simulado.strip() or "conteúdo geral da base"
+        pedido_visivel = f"🎯 Gerar simulado — banca {banca or 'FGV'} · {quantidade_questoes} questões · {tema_label}"
+        titulo_auto = f"Simulado {banca or 'FGV'} — {tema_label}"
 
     st.session_state.messages.append({"role": "user", "content": pedido_visivel})
     with st.chat_message("user"):
         st.markdown(pedido_visivel)
 
     if len(st.session_state.messages) == 1 and st.session_state.title == "Nova conversa":
-        st.session_state.title = f"Simulado {banca or 'FGV'} — {tema_label}"[:50]
+        st.session_state.title = titulo_auto[:50]
 
-    # Simulados se beneficiam de contexto amplo do material -> usa 'global' por padrão,
-    # independente do método selecionado para o chat normal, a menos que o usuário já esteja em 'drift'.
-    metodo_para_simulado = "drift" if method == "drift" else "global"
+    questoes: list[dict] = []
+    erro_msg = ""
 
     with st.chat_message("assistant"):
-        with st.spinner("Buscando conteúdo relevante na base de conhecimento..."):
-            contexto = buscar_contexto_para_simulado(tema_simulado, metodo_para_simulado, community_level)
+        if modo_grafo:
+            mapa_entidades = sg.carregar_entidades_por_comunidade(ROOT_DIR, sg.assinatura_indice(ROOT_DIR))
+            barra = st.progress(0.0, text="Preparando...")
 
-        houve_erro = not contexto or "unable to answer" in contexto.lower() or "não foi possível" in contexto.lower()
+            for i, plano in enumerate(plano_conhecimentos):
+                barra.progress(
+                    i / len(plano_conhecimentos),
+                    text=f"Elaborando {plano['quantidade']} questão(ões) de '{plano['titulo'][:40]}'...",
+                )
+                contexto = sg.montar_contexto(plano["linha"], mapa_entidades.get(plano["community"], []))
+                try:
+                    novas = sg.gerar_questoes(
+                        client=openrouter_client,
+                        modelo=MODELO_SIMULADO,
+                        contexto=contexto,
+                        banca=banca,
+                        tema=plano["titulo"],
+                        quantidade=plano["quantidade"],
+                        formato_descricao=formato_desc,
+                        certo_errado=certo_errado,
+                        n_micro=n_micro,
+                        incluir_base=incluir_base,
+                        incluir_micro=incluir_micro,
+                    )
+                except Exception as exc:  # noqa: BLE001 - mostra o erro para o usuário
+                    st.warning(f"Falha ao gerar questões de '{plano['titulo']}': {exc}")
+                    continue
 
-        if houve_erro:
-            resposta_simulado = (
-                "⚠️ Não encontrei conteúdo suficiente na base de conhecimento para gerar o simulado "
-                f"{'sobre *' + tema_simulado + '*' if tema_simulado.strip() else 'solicitado'}. "
-                "Tente um tema mais amplo, ou verifique se o índice do GraphRAG já foi gerado com o material desejado."
-            )
-            st.markdown(resposta_simulado)
+                for q in novas:
+                    q["_conhecimento"] = plano["titulo"]
+                questoes.extend(novas)
+
+            barra.progress(1.0, text="Pronto!")
+            barra.empty()
         else:
-            with st.spinner("Elaborando as questões com base no material encontrado..."):
-                resposta_bruta = gerar_simulado_via_llm(contexto, banca, tema_simulado, quantidade_questoes, formato_questao)
-                resposta_simulado = formatar_simulado(resposta_bruta)
-            render_simulado(resposta_simulado, msg_id=f"live_{len(st.session_state.messages)}")
+            metodo_para_simulado = "drift" if method == "drift" else "global"
+            with st.spinner("Buscando conteúdo relevante na base de conhecimento..."):
+                contexto = buscar_contexto_para_simulado(tema_simulado, metodo_para_simulado, community_level)
 
-    st.session_state.messages.append({
-        "role": "assistant",
-        "content": resposta_simulado,
-        "kind": "chat" if houve_erro else "simulado",
-    })
+            if not contexto or "unable to answer" in contexto.lower() or "não foi possível" in contexto.lower():
+                erro_msg = (
+                    "⚠️ Não encontrei conteúdo suficiente na base de conhecimento para gerar o simulado "
+                    f"{'sobre *' + tema_simulado + '*' if tema_simulado.strip() else 'solicitado'}. "
+                    "Tente um tema mais amplo ou use o modo 'Conhecimentos do grafo'."
+                )
+            else:
+                with st.spinner("Elaborando as questões com base no material encontrado..."):
+                    try:
+                        questoes = sg.gerar_questoes(
+                            client=openrouter_client,
+                            modelo=MODELO_SIMULADO,
+                            contexto=contexto,
+                            banca=banca,
+                            tema=tema_simulado,
+                            quantidade=quantidade_questoes,
+                            formato_descricao=formato_desc,
+                            certo_errado=certo_errado,
+                            n_micro=n_micro,
+                            incluir_base=incluir_base,
+                            incluir_micro=incluir_micro,
+                        )
+                    except Exception as exc:  # noqa: BLE001
+                        erro_msg = f"⚠️ Não consegui montar o simulado: {exc}"
+
+        if not questoes:
+            erro_msg = erro_msg or "⚠️ Nenhuma questão foi gerada. Tente outro conhecimento ou reduza a quantidade."
+            st.markdown(erro_msg)
+        else:
+            dados_simulado = {
+                "cabecalho": f"**Simulado — banca {banca or 'FGV'}** · {len(questoes)} questões",
+                "questoes": questoes,
+            }
+            sg.render_simulado_estruturado(
+                dados_simulado,
+                prefixo=f"live_{len(st.session_state.messages)}",
+                mostrar_base=st.session_state.mostrar_base,
+                mostrar_micro=st.session_state.mostrar_micro,
+                mostrar_gabarito=st.session_state.mostrar_gabaritos,
+            )
+
+    if not questoes:
+        st.session_state.messages.append({"role": "assistant", "content": erro_msg, "kind": "chat"})
+    else:
+        st.session_state.messages.append({
+            "role": "assistant",
+            "content": sg.para_markdown(dados_simulado),
+            "kind": "simulado_json",
+            "dados": dados_simulado,
+        })
     save_session(st.session_state.session_id, st.session_state.title, st.session_state.messages)
+    st.rerun()
 
 
 # ---------------------------------------------------------------
