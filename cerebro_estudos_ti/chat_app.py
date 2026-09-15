@@ -174,6 +174,84 @@ def save_session(session_id: str, title: str, messages: list[dict]) -> None:
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
+def build_texto_chat(titulo: str, mensagens: list[dict]) -> str:
+    """Monta uma versão em texto simples de toda a conversa, pronta para copiar
+    (usa o mesmo Markdown do simulado quando a mensagem for um simulado)."""
+    linhas = [f"# {titulo}", ""]
+    for msg in mensagens:
+        rotulo = "Você" if msg["role"] == "user" else "Assistente"
+        linhas.append(f"### {rotulo}")
+        if eh_simulado_estruturado(msg):
+            linhas.append(sg.para_markdown(msg["dados"]))
+        else:
+            linhas.append(str(msg.get("content", "")))
+        linhas.append("")
+    return "\n".join(linhas).strip()
+
+
+def _chave_js(bruta: str) -> str:
+    """Sanitiza uma key qualquer para servir de nome de variável/id JS válido."""
+    return re.sub(r"[^0-9a-zA-Z_]", "_", bruta)
+
+
+def render_acoes_mensagem(texto: str, key: str) -> None:
+    """Desenha dois botõezinhos abaixo de UMA mensagem: copiar (clipboard do
+    navegador) e imprimir (abre a mensagem sozinha numa aba nova e chama
+    window.print(), imprimindo só aquele conteúdo, não o app inteiro)."""
+    k = _chave_js(key)
+    texto_js = json.dumps(texto)  # string JS já escapada (aspas, quebras de linha etc.)
+
+    html = f"""
+    <div style="display:flex; gap:6px; margin:2px 0 10px 0; font-family:-apple-system,sans-serif;">
+      <button id="copiar_{k}" style="
+          font-size:12px; padding:4px 10px; border-radius:6px;
+          border:1px solid #4a4a4a55; background:transparent; color:inherit; cursor:pointer;">
+        📋 Copiar
+      </button>
+      <button id="imprimir_{k}" style="
+          font-size:12px; padding:4px 10px; border-radius:6px;
+          border:1px solid #4a4a4a55; background:transparent; color:inherit; cursor:pointer;">
+        🖨️ Imprimir
+      </button>
+    </div>
+    <script>
+      (function() {{
+        const texto = {texto_js};
+
+        const btnCopiar = document.getElementById("copiar_{k}");
+        btnCopiar.addEventListener("click", function() {{
+          navigator.clipboard.writeText(texto).then(function() {{
+            btnCopiar.innerText = "✅ Copiado!";
+            setTimeout(function() {{ btnCopiar.innerText = "📋 Copiar"; }}, 1500);
+          }}).catch(function() {{
+            btnCopiar.innerText = "⚠️ Falhou";
+            setTimeout(function() {{ btnCopiar.innerText = "📋 Copiar"; }}, 1500);
+          }});
+        }});
+
+        const btnImprimir = document.getElementById("imprimir_{k}");
+        btnImprimir.addEventListener("click", function() {{
+          const esc = texto
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;");
+          const janela = window.open("", "_blank");
+          if (!janela) {{ return; }}
+          janela.document.write(
+            "<html><head><title>Imprimir</title></head><body>" +
+            "<pre style=\\"white-space:pre-wrap;font-family:sans-serif;font-size:14px;line-height:1.5;padding:24px;\\">" +
+            esc + "</pre></body></html>"
+          );
+          janela.document.close();
+          janela.focus();
+          setTimeout(function() {{ janela.print(); }}, 200);
+        }});
+      }})();
+    </script>
+    """
+    st.iframe(html, height="content")
+
+
 def now_iso() -> str:
     return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
@@ -348,6 +426,23 @@ with st.sidebar:
     n_micro = st.slider("Micro questões por questão", 1, 5, 3, disabled=not incluir_micro)
 
     gerar_simulado_clicado = st.button("🎯 Gerar simulado agora", use_container_width=True, type="primary")
+
+    st.divider()
+    st.subheader("📋 Copiar conversa")
+
+    if "mostrar_copia_chat" not in st.session_state:
+        st.session_state.mostrar_copia_chat = False
+
+    if st.button("📋 Copiar chat inteiro", use_container_width=True):
+        st.session_state.mostrar_copia_chat = not st.session_state.mostrar_copia_chat
+
+    if st.session_state.mostrar_copia_chat:
+        if not st.session_state.messages:
+            st.caption("Esta conversa ainda não tem mensagens.")
+        else:
+            texto_chat = build_texto_chat(st.session_state.title, st.session_state.messages)
+            st.caption("Clique no ícone 📄 no canto do bloco abaixo para copiar tudo.")
+            st.code(texto_chat, language=None, wrap_lines=True)
 
     st.divider()
     st.subheader("💬 Conversas salvas")
@@ -559,10 +654,13 @@ for _idx, msg in enumerate(st.session_state.messages):
                 mostrar_micro=st.session_state.mostrar_micro,
                 mostrar_gabarito=st.session_state.mostrar_gabaritos,
             )
+            render_acoes_mensagem(sg.para_markdown(msg["dados"]), key=f"hist_{_idx}")
         elif eh_mensagem_simulado(msg):
             render_simulado(msg["content"], msg_id=f"hist_{_idx}")
+            render_acoes_mensagem(msg["content"], key=f"hist_{_idx}")
         else:
             st.markdown(msg["content"])
+            render_acoes_mensagem(msg["content"], key=f"hist_{_idx}")
 
 # ---------------------------------------------------------------
 # Geração de simulado (via botão na barra lateral)
@@ -699,6 +797,7 @@ if user_input:
     st.session_state.messages.append({"role": "user", "content": user_input})
     with st.chat_message("user"):
         st.markdown(user_input)
+        render_acoes_mensagem(user_input, key=f"live_user_{len(st.session_state.messages)}")
 
     # Se for a primeira pergunta da conversa, usa ela pra sugerir um título automático
     if len(st.session_state.messages) == 1 and st.session_state.title == "Nova conversa":
@@ -710,6 +809,7 @@ if user_input:
         with st.spinner(f"Consultando (método: {method})..."):
             answer = run_graphrag_query(full_query, method, community_level)
         st.markdown(answer)
+        render_acoes_mensagem(answer, key=f"live_assistant_{len(st.session_state.messages)}")
 
     st.session_state.messages.append({"role": "assistant", "content": answer})
 
