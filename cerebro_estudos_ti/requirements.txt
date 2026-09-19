@@ -1,0 +1,7 @@
+json_repair==0.63.4
+openai==3.16.2
+pandas==3.0.6
+pydantic==2.13.5
+python-dotenv==1.2.3
+streamlit==1.56.0
+kk

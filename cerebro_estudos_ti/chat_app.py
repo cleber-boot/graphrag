@@ -394,7 +394,7 @@ with st.sidebar:
                         linha["title"][:45],
                         min_value=1,
                         max_value=20,
-                        value=3,
+                        value=1,
                         step=1,
                         key=f"qtd_{linha['community']}_{linha['level']}",
                     )
