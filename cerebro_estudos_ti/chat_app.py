@@ -37,9 +37,62 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 load_dotenv(SCRIPT_DIR / ".env")
 
 # ---------------------------------------------------------------
-# Configuração
+# Múltiplos grafos (bases de conhecimento)
 # ---------------------------------------------------------------
-ROOT_DIR = str(SCRIPT_DIR)
+# Cada "grafo" é uma pasta-irmã de cerebro_estudos_ti/ que também seja um
+# projeto GraphRAG completo (tem o próprio settings.yaml, input/, output/,
+# prompts/). Isso permite ter, por exemplo, um grafo de "Redes e TI" e outro
+# de "Direito Administrativo" e trocar entre eles sem misturar o conteúdo.
+GRAFOS_ROOT = SCRIPT_DIR.parent
+
+
+def listar_grafos(grafos_root: Path) -> list[dict]:
+    """Encontra toda pasta-irmã que seja um projeto GraphRAG válido
+    (identificado pela presença de settings.yaml)."""
+    grafos = []
+    if not grafos_root.exists():
+        return grafos
+    for pasta in sorted(grafos_root.iterdir()):
+        if pasta.is_dir() and (pasta / "settings.yaml").exists():
+            grafos.append({"nome": pasta.name, "path": pasta})
+    return grafos
+
+
+GRAFOS_DISPONIVEIS = listar_grafos(GRAFOS_ROOT)
+
+if not GRAFOS_DISPONIVEIS:
+    st.error(
+        f"⚠️ Não encontrei nenhum projeto GraphRAG (pasta com `settings.yaml`) "
+        f"dentro de `{GRAFOS_ROOT}`. Verifique se a estrutura de pastas está correta."
+    )
+    st.stop()
+
+NOMES_GRAFOS = [g["nome"] for g in GRAFOS_DISPONIVEIS]
+
+if "grafo_ativo" not in st.session_state:
+    # Prioriza "cerebro_estudos_ti" como padrão (grafo original), se existir.
+    st.session_state.grafo_ativo = (
+        "cerebro_estudos_ti" if "cerebro_estudos_ti" in NOMES_GRAFOS else NOMES_GRAFOS[0]
+    )
+
+with st.sidebar:
+    st.header("🗂️ Base de conhecimento")
+    grafo_escolhido = st.selectbox(
+        "Grafo ativo",
+        options=NOMES_GRAFOS,
+        index=NOMES_GRAFOS.index(st.session_state.grafo_ativo),
+        help="Cada grafo é uma base de conhecimento indexada separadamente (matéria, disciplina, etc.).",
+    )
+
+# Se o usuário trocou de grafo agora, descarta a conversa atual e recarrega
+# a sessão mais recente DAQUELE grafo (ou começa uma nova).
+_trocou_de_grafo = grafo_escolhido != st.session_state.grafo_ativo
+st.session_state.grafo_ativo = grafo_escolhido
+
+# ---------------------------------------------------------------
+# Configuração (dependente do grafo ativo)
+# ---------------------------------------------------------------
+ROOT_DIR = str(next(g["path"] for g in GRAFOS_DISPONIVEIS if g["nome"] == st.session_state.grafo_ativo))
 SESSIONS_DIR = Path(ROOT_DIR) / "chat_sessions"
 SESSIONS_DIR.mkdir(exist_ok=True)
 
@@ -47,7 +100,8 @@ MAX_HISTORY_TURNS = 4
 TIMEOUT_SECONDS = 300
 
 # Cliente direto para a OpenRouter, usado SÓ na etapa de geração do simulado
-# (a busca de contexto continua passando pelo GraphRAG via CLI).
+# (a busca de contexto continua passando pelo GraphRAG via CLI). A chave de
+# API é compartilhada entre todos os grafos (mesmo .env, ao lado deste script).
 _api_key = os.environ.get("GRAPHRAG_API_KEY")
 if not _api_key:
     st.error(
@@ -67,6 +121,7 @@ METHOD_INFO = {
     "global": "Perguntas amplas sobre o conjunto todo dos documentos (temas gerais).",
     "drift": "Meio-termo entre local e global — mais detalhado, porém mais lento/caro.",
 }
+
 
 # ---------------------------------------------------------------
 # Prompt para geração de simulados no estilo de banca de concurso
@@ -275,8 +330,24 @@ if "session_id" not in st.session_state:
         st.session_state.session_id = new_session_id()
         st.session_state.messages = []
         st.session_state.title = "Nova conversa"
+elif _trocou_de_grafo:
+    # O usuário trocou de grafo no seletor: descarta a conversa atual (ela
+    # continua salva no grafo anterior) e carrega a mais recente DESTE grafo,
+    # ou começa uma nova se ele ainda não tiver nenhuma conversa salva.
+    existing = list_sessions()
+    if existing:
+        st.session_state.session_id = existing[0]["id"]
+        loaded = load_session(existing[0]["id"])
+        st.session_state.messages = loaded["messages"]
+        st.session_state.title = loaded["title"]
+    else:
+        st.session_state.session_id = new_session_id()
+        st.session_state.messages = []
+        st.session_state.title = "Nova conversa"
+    st.rerun()
 
 st.title(f"🧠 {st.session_state.title}")
+st.caption(f"📂 Grafo: **{st.session_state.grafo_ativo}**")
 
 # ---------------------------------------------------------------
 # Controle global: expandir/colapsar todos os gabaritos de uma vez

@@ -1,0 +1,141 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Lei nº 12.527/2011 - Lei de Acesso à Informação (Conteúdo Legislativo - Trechos sobre Responsabilidade e Sigilo)
+Idioma: pt-BR
+Tecnologias citadas no documento: Lei 12.527/2011, Lei 8.112/1990, Lei n° 1.079/1950, Lei 8.429/1992
+
+=== SECAO [TI_SEC_001]: DAS RESPONSABILIDADES (ADMINISTRATIVAS) - CONDUTAS ILÍCITAS ===
+Esta seção consolida as condutas ilícitas atribuídas a agentes públicos ou militares, previstas no art. 32 da lei em estudo. Abrange recusa ou retardamento no fornecimento de informações, uso indevido, subtração/desfiguração/alteração/ocultação de informações sob guarda, dolo ou má‑fé na análise de solicitações de acesso, divulgação indevida de sigilos ou dados pessoais, imposição de sigilo para ganho próprio, ocultação de revisões de órgão competente para beneficiar a si ou terceiros, bem como destruição ou subtração de documentos relativos a possíveis violações de direitos humanos. A natureza da infração pode configurar transgressões administrativas, grau de punição e eventual responsabilização por improbidade, dependendo da norma aplicável.
+
+-- Conceitos-chave --
+Termo: Recusar ou retardar fornecimento de informação | Tipo: Conduta_ilícita | Definicao: Conduta ilícita de não fornecer, retardar deliberadamente, ou fornecer informações de forma incorreta, incompleta ou imprecisa.
+  Vantagens de Recusar ou retardar fornecimento de informação: Aumenta transparência e accountability; Protege o direito de acesso à informação
+  Desvantagens de Recusar ou retardar fornecimento de informação: Pode ser usada para obstruir investigações; Pode retardar processos administrativos
+  Casos de uso de Recusar ou retardar fornecimento de informação: Processos de requerimento de acesso à informação; Investigação de condutas de agentes públicos
+Termo: Utilizar indevidamente informações | Tipo: Conduta_ilícita | Definicao: Subtrair, destruir, inutilizar, desfigurar, alterar ou ocultar informações sob guarda ou acesso em razão do exercício de cargo público.
+  Vantagens de Utilizar indevidamente informações: Prevenção de danos a terceiros e à integridade das informações
+  Desvantagens de Utilizar indevidamente informações: Pode exigir provas complexas de finalidade e dano
+  Casos de uso de Utilizar indevidamente informações: Investigação de divulgação indevida; Controle de integridade de bases de dados públicas
+Termo: Divulgar ou permitir divulgação de informação sigilosa/pessoal | Tipo: Conduta_ilícita | Definicao: Divulgar, acessar ou permitir acesso indevido a informação sigilosa ou informação pessoal.
+  Vantagens de Divulgar ou permitir divulgação de informação sigilosa/pessoal: Protege segredos de estado e dados sensíveis
+  Desvantagens de Divulgar ou permitir divulgação de informação sigilosa/pessoal: Dependência de mecanismos de classificação e auditoria
+  Casos de uso de Divulgar ou permitir divulgação de informação sigilosa/pessoal: Processos disciplinares por abuso de sigilo; Auditorias de conformidade com proteção de dados
+Termo: Ocultar revisão de informações sigilosas | Tipo: Conduta_ilícita | Definicao: Ocultar da revisão de autoridade superior competente informação sigilosa para beneficiar a si ou terceiros.
+  Vantagens de Ocultar revisão de informações sigilosas: Possibilita mecanismos de controle interno
+  Desvantagens de Ocultar revisão de informações sigilosas: Gravemente prejudica a transparência e a controle externo
+  Casos de uso de Ocultar revisão de informações sigilosas: Auditoria de classificações de informações sigilosas
+
+-- Relacionamentos --
+Conexao: 'condutas_ilícitas' --[depende_de]--> 'lei_12527_2011'. Motivo: As condutas ilícitas previstas no art. 32 referem-se à Lei de Acesso à Informação.
+Conexao: 'sancoes_pessoas_fisicas_entidades_privadas' --[regula_por]--> 'lei_12527_2011'. Motivo: Sanções aplicáveis a pessoas físicas ou entidades privadas estão previstas pela Lei 12.527/2011.
+
+=== SECAO [TI_SEC_002]: NATUREZA DA INFRAÇÃO ===
+A seção descreve as formas de infração para fins disciplinares e administrativos. As transgressões militares médias ou graves podem compor a disciplina das Forças Armadas, dependendo dos critérios do regulamento, desde que não tipificadas como crime. Para fins da Lei 8.112/1990, as infrações administrativas são punidas, no mínimo, com suspensão. Há ainda possibilidade de responsabilização por improbidade administrativa conforme leis anteriores.
+
+-- Conceitos-chave --
+Termo: Transgressões militares médias ou graves | Tipo: Tipo_infração | Definicao: Transgressões disciplinares das Forças Armadas que não são crimes, imputadas conforme regulamentos internos.
+  Vantagens de Transgressões militares médias ou graves: Define gravidade para aplicação de punições disciplinares
+  Desvantagens de Transgressões militares médias ou graves: Exige critérios claros de média/gravidade para evitar abusos
+  Casos de uso de Transgressões militares médias ou graves: Aplicação de sanções disciplinares em militares
+Termo: Infrações administrativas (Lei 8.112/1990) | Tipo: Tipo_infração | Definicao: Infrações sujeitas a sanções administrativas, com suspensão entre as punições, de acordo com a Lei 8.112/1990.
+  Vantagens de Infrações administrativas (Lei 8.112/1990): Padroniza penalidade de servidores públicos
+  Desvantagens de Infrações administrativas (Lei 8.112/1990): Possibilidade de interpretação subjetiva da gravidade
+  Casos de uso de Infrações administrativas (Lei 8.112/1990): Imposição de sanções administrativas a servidores públicos
+
+-- Relacionamentos --
+Conexao: 'transgressoes_militares_medias_graves' --[depende_de]--> 'lei_12527_2011'. Motivo: Regulação disciplinar para Forças Armadas vinculada à Lei 12.527/2011
+Conexao: 'infracoes_administrativas_lei8112' --[depende_de]--> 'lei_12527_2011'. Motivo: Infrações administrativas segundo Lei 8.112/1990 sob o eixo de acesso à informação
+
+=== SECAO [TI_SEC_003]: SANÇÕES PARA PESSOAS FÍSICAS E ENTIDADES PRIVADAS ===
+A art. 33 enumera as sanções aplicáveis a pessoa física ou entidade privada que detém informações e não observou a lei: advertência, multa, rescisão do vínculo, suspensão temporária de participar em licitação e impedimento de contratar com a administração pública por até 2 anos, e declaração de inidoneidade para licitar ou contratar, até reabilitação promovida pela autoridade.
+
+-- Conceitos-chave --
+Termo: Advertência | Tipo: Sanção | Definicao: Primeira sanção administrativa para conduta irregular de observância à lei de acesso à informação.
+  Vantagens de Advertência: Sinalização de irregularidade sem efeitos penais imediatos
+  Desvantagens de Advertência: Pode não dissuadir condutas repetidas
+  Casos de uso de Advertência: Primeira infração não grave
+Termo: Multa | Tipo: Sanção | Definicao: Sanção econômica aplicada à parte responsável pela violação da lei.
+  Vantagens de Multa: Efeito dissuasório financeiro
+  Desvantagens de Multa: Pode impactar economicamente entidades privadas de menor porte
+  Casos de uso de Multa: Infrações que justifiquem penalidade financeira
+Termo: Rescisão do vínculo com o poder público | Tipo: Sanção | Definicao: Extinção do vínculo entre a parte sancionada e o poder público.
+  Vantagens de Rescisão do vínculo com o poder público: Impacto significativo na regularidade de contratos
+  Desvantagens de Rescisão do vínculo com o poder público: Pode exigir processo de reabilitação para reentrada
+  Casos de uso de Rescisão do vínculo com o poder público: Vínculos institucionais com a Administração
+Termo: Suspensão de participar em licitação | Tipo: Sanção | Definicao: Suspensão temporária de participação em licitações e impedimento de contratar com a Administração por até 2 anos.
+  Vantagens de Suspensão de participar em licitação: Protege a integridade de contratações públicas
+  Desvantagens de Suspensão de participar em licitação: Perda de oportunidades de negócio de curto prazo
+  Casos de uso de Suspensão de participar em licitação: Casos de violação grave de deveres de probidade
+Termo: Declaração de inidoneidade para licitar ou contratar | Tipo: Sanção | Definicao: Declaração formal de que a parte não é idônea para licitar ou contratar com a Administração, até reabilitação.
+  Vantagens de Declaração de inidoneidade para licitar ou contratar: Protege a integridade de futuras contratações
+  Desvantagens de Declaração de inidoneidade para licitar ou contratar: Pode exigir processo de reabilitação complexo
+  Casos de uso de Declaração de inidoneidade para licitar ou contratar: Casos de conduta reincidente ou grave
+
+-- Relacionamentos --
+Conexao: 'advertencia' --[depende_de]--> 'lei_12527_2011'. Motivo: Sanções previstas pela Lei de Acesso à Informação
+Conexao: 'multa' --[depende_de]--> 'lei_12527_2011'. Motivo: Aplicação de multa em conformidade com a demonstração de violação
+Conexao: 'suspensao_licitacao' --[depende_de]--> 'lei_12527_2011'. Motivo: Suspensão de licitar/contratar conforme a lei
+
+=== SECAO [TI_SEC_004]: MULTA PODE SER CUMULADA COM AS DEMAIS ===
+A seção esclarece que as sanções de advertência, rescisão de vínculo e suspensão podem ser aplicadas junto com a multa, conforme o direito de defesa, com prazo de 10 dias para manifestação. A reabilitação, quando cabível, depende do ressarcimento dos prejuízos promovidos e do decurso do prazo da sanção.
+
+-- Conceitos-chave --
+Termo: Cumulação de sanções | Tipo: Procedimento | Definicao: Possibilidade de aplicar multa conjuntamente com outras sanções previstas.
+  Vantagens de Cumulação de sanções: Aumenta o efeito dissuasório
+  Desvantagens de Cumulação de sanções: Pode ampliar o impacto sobre a parte sancionada
+  Casos de uso de Cumulação de sanções: Processos de responsabilização complexos
+
+-- Relacionamentos --
+Conexao: 'cumulo_sanacoes_pessoais' --[depende_de]--> 'lei_12527_2011'. Motivo: Disposição de cumulação conforme a legislação de acesso à informação
+
+=== SECAO [TI_SEC_005]: RESPONSABILIDADE DOS ÓRGÃOS E ENTIDADES ===
+Art. 34 estabelece que órgãos e entidades públicas respondem diretamente pelos danos advindos da divulgação não autorizada ou uso indevido de informações sigilosas ou pessoais. A apuração de responsabilidade funcional ocorre nos casos de dolo ou culpa, assegurado o direito de regresso. O parágrafo único estende essa responsabilidade também às pessoas físicas ou entidades privadas que, por vínculo com órgãos, acessem ou submetam a tratamento indevido de informações.
+
+-- Conceitos-chave --
+Termo: Responsabilidade dos órgãos e entidades | Tipo: Norma | Definicao: Os órgãos públicos respondem por danos decorrentes de divulgação não autorizada ou uso indevido de informações sigilosas ou pessoais.
+  Vantagens de Responsabilidade dos órgãos e entidades: Responsabiliza a Administração por danos ao interesse público e terceiros
+  Desvantagens de Responsabilidade dos órgãos e entidades: Pode exigir regresso financeiro a terceiros para ressarcimento
+  Casos de uso de Responsabilidade dos órgãos e entidades: Procedimentos de apuração de responsabilidade funcional
+Termo: Responsabilidade funcional (dolo ou culpa) | Tipo: Norma | Definicao: Possibilidade de responsabilização funcional quando comprovado dolo ou culpa do agente.
+  Vantagens de Responsabilidade funcional (dolo ou culpa): Aferição de condutas de alto grau de violação
+  Desvantagens de Responsabilidade funcional (dolo ou culpa): Exige comprovação subjetiva de dolo/culpa
+  Casos de uso de Responsabilidade funcional (dolo ou culpa): Improbidade administrativa e ações disciplinares
+
+-- Relacionamentos --
+Conexao: 'responsabilidade_dos_orgaos_entidades' --[depende_de]--> 'lei_12527_2011'. Motivo: Responsabilidade civil/administrativa prevista pela Lei de Acesso à Informação
+
+=== SECAO [TI_SEC_006]: DISPOSIÇÕES FINAIS E TRANSITÓRIAS ===
+Esta seção contempla o arcabouço institucional de avaliação de informações sigilosas: criação de Comissão Mista de Reavaliação de Informações (vetada). Prevê que a Comissão pode requisitar esclarecimentos, rever classificações ultrassecretas/secretas, e prorrogar o sigilo por prazo determinado. Define regras de renovação (única), revisões de ofício a cada 4 anos e desclassificação automática se não deliberadas nos prazos.
+
+-- Conceitos-chave --
+Termo: Comissão Mista de Reavaliação de Informações | Tipo: Órgão_responsavel | Definicao: Órgão que decide sobre tratamento e classificação de informações sigilosas, com poderes de requisição, revisão e prorrogação de sigilo.
+  Vantagens de Comissão Mista de Reavaliação de Informações: Aprimora a classificação de informações sigilosas
+  Desvantagens de Comissão Mista de Reavaliação de Informações: Processo potencialmente longo e burocrático
+  Casos de uso de Comissão Mista de Reavaliação de Informações: Reavaliação de informações ultrassecretas/secretas
+
+-- Relacionamentos --
+Conexao: 'comissao_mista_reavaliacao_informacoes' --[implementa]--> 'art39_reavaliacao'. Motivo: A comissão tem competência para requerer e rever classificações após o art. 39
+
+=== SECAO [TI_SEC_007]: ART. 39 - REAVALIAÇÃO ===
+O artigo 39 determina que os órgãos e entidades públicas devem proceder à reavaliação das informações classificadas como ultrassecretas ou secretas no prazo máximo de 2 anos a contar do termo inicial de vigência da lei.
+
+-- Conceitos-chave --
+Termo: Reavaliação de informações ultrassecretas/secretas | Tipo: Obrigacao | Definicao: Obrigação de reavaliar periodicamente as informações classificadas de alto sigilo.
+  Vantagens de Reavaliação de informações ultrassecretas/secretas: Mantém a classificação adequada com o tempo
+  Desvantagens de Reavaliação de informações ultrassecretas/secretas: Pode gerar sobrecarga administrativa
+  Casos de uso de Reavaliação de informações ultrassecretas/secretas: Gestão de classificação de informações sensíveis
+
+-- Relacionamentos --
+Conexao: 'reavaliacao_informacoes_ultrassecretas' --[depende_de]--> 'comissao_mista_reavaliacao_informacoes'. Motivo: Reavaliação pode ser realizada ou orientada pela comissão prevista
+
+=== SECAO [TI_SEC_008]: QUESTÃO DE PROVA - Q3662694 ===
+Questão de prova simulando cenário de concurso: pergunta sobre o prazo máximo para reavaliação de informações ultrassecretas/secretas pela Lei 12.527/2011, com cinco alternativas, destacando a resposta correta (letra B).
+
+-- Conceitos-chave --
+Termo: Questão de prova Q3662694 | Tipo: QuestaoProva | Definicao: Exercício de avaliação de conhecimento sobre prazo de reavaliação conforme a Lei 12.527/2011.
+  Vantagens de Questão de prova Q3662694: Pratica de estudo para concursos
+  Desvantagens de Questão de prova Q3662694: Pode não refletir casos práticos complexos
+  Casos de uso de Questão de prova Q3662694: Preparação para provas de ouvidoria e concursos
+
+-- Relacionamentos --
+Conexao: 'questao_avaliacao_q3662694' --[referencia]--> 'lei_12527_2011'. Motivo: Questão fundamentada na Lei 12.527/2011
+

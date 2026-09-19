@@ -1,0 +1,169 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Lei de Acesso à Informação (LAI) - Lei nº 12.527/2011
+Idioma: pt-BR
+Tecnologias citadas no documento: LAI, LGPD, transparência, acesso à informação
+
+=== SECAO [LAI_SEC_001]: Visão geral da Lei de Acesso à Informação (LAI) ===
+A LAI estabelece o direito de acesso a informações públicas de forma ampla, com obrigação do Estado de garantir procedimentos objetivos, ágeis, transparentes e linguagem de fácil compreensão (Art. 5º). O Art. 7º amplia o leque de informações acessíveis, incluindo registros de órgãos, informações produzidas por pessoas físicas ou jurídicas vinculadas a órgãos, bem como informações primárias, íntegras e atualizadas sobre atividades administrativas, patrimônio público, licitações, contratos e fiscalização. Em seus parágrafos, a LAI ainda define exceções para informações de P&D científicas/tecnológicas sigiladas por segurança, regras para extratos de informações e a tutela de decisões administrativas que fundamentem o ato. Há também diretrizes sobre divulgação proativa e sobre sanções para negativas não fundamentadas. 
+
+-- Conceitos-chave --
+Termo: Lei de Acesso à Informação (LAI) | Tipo: Lei/Regulado | Definicao: Conjunto de normas para garantir o acesso à informação pública por meio de procedimentos objetivos, transparência e linguagem clara.
+  Vantagens de Lei de Acesso à Informação (LAI): Transparência institucional; Participação cidadã; Agilidade no acesso à informação
+  Desvantagens de Lei de Acesso à Informação (LAI): Risco de exposição de informações sensíveis; Necessidade de recursos para implementação
+  Casos de uso de Lei de Acesso à Informação (LAI): Solicitar informações sobre orçamento, contratos, políticas públicas, auditorias
+Termo: Acesso à Informação | Tipo: Direito/Princípio | Definicao: Direito de obter informações de órgãos públicos, incluindo registros, documentos e informações produzidas ou custodiadas por entidades vinculadas.
+  Vantagens de Acesso à Informação: Gera accountability; Auxilia na tomada de decisões informadas
+  Desvantagens de Acesso à Informação: Pode gerar volume de dados e necessidade de filtragem
+  Casos de uso de Acesso à Informação: Solicitar dados sobre licitações, contratos, metas e resultados
+Termo: Sigilo de Informações | Tipo: Conceito | Definicao: Exceções previstas pela LAI, em que informações podem permanecer sigiladas por razões de segurança, proteção de pesquisas sensíveis ou interesses estratégicos.
+  Vantagens de Sigilo de Informações: Proteção de dados sensíveis; Segurança de Estado
+  Desvantagens de Sigilo de Informações: Reduz a transparência em determinados casos
+  Casos de uso de Sigilo de Informações: Proteção de informações de pesquisa e desenvolvimento sob sigilo
+Termo: Extrato da Parte Disponível | Tipo: Procedimento | Definicao: Quando o acesso integral não é autorizado, é assegurado o acesso à parte não sigilosa por meio de certidão, extrato ou cópia ocultando o que for sigiloso.
+  Vantagens de Extrato da Parte Disponível: Garante transparência parcial sem expor sigilo
+  Desvantagens de Extrato da Parte Disponível: Pode limitar a utilidade da informação para o solicitante
+  Casos de uso de Extrato da Parte Disponível: Fornecer resumos não sigilosos para tomada de decisão
+Termo: Pedido de Acesso | Tipo: Procedimento | Definicao: Procedimento pelo qual o interessado solicita informações; deve conter identificação do requerente e especificação da informação requerida.
+  Vantagens de Pedido de Acesso: Padronização do pedido; Proteção de dados do requerente
+  Desvantagens de Pedido de Acesso: Possíveis atrasos devido à necessidade de validação
+  Casos de uso de Pedido de Acesso: Solicitar documentos, relatórios, contratos
+Termo: Prazo de Resposta LAI | Tipo: Processo | Definicao: Prazo de até 20 dias para atender ao pedido; pode ser prorrogado por mais 10 dias mediante justificativa; formato digital é preferível quando disponível.
+  Vantagens de Prazo de Resposta LAI: Visibilidade temporária de prazos; Possibilidade de recurso em caso de atraso
+  Desvantagens de Prazo de Resposta LAI: Lei prevê prazos que podem ser estendidos, gerando incerteza
+  Casos de uso de Prazo de Resposta LAI: Pedidos que requerem consulta a diferentes órgãos
+Termo: Custos de Reprodução | Tipo: Custos/Serviços | Definicao: Cobrança apenas do valor necessário para ressarcimento dos custos de reprodução, com isenções para situação econômica que inviabilize o pagamento.
+  Vantagens de Custos de Reprodução: Cobrança apenas por custos diretos; Sustenta o serviço público
+  Desvantagens de Custos de Reprodução: Pode criar barreiras para usuários de baixa renda se não houver isenções adequadas
+  Casos de uso de Custos de Reprodução: Reprodução de documentos solicitados
+Termo: Divulgação de Informações | Tipo: Ação/Política | Definicao: Obrigação de promover divulgação, independentemente de requerimentos, de informações de interesse coletivo ou geral, com conteúdo mínimo e meios de divulgação (inclui internet).
+  Vantagens de Divulgação de Informações: Transparência contínua; Acesso facilitado por meio de meios oficiais
+  Desvantagens de Divulgação de Informações: Exposição contínua de dados, necessidade de curadoria
+  Casos de uso de Divulgação de Informações: Publicação de competências, contratos, orçamentos, FAQs
+Termo: Negativa de Acesso Fundamentada | Tipo: Conceito | Definicao: Recusa total ou parcial deve ser fundamentada com razões de fato ou direito; negativa não fundamentada sujeita o responsável a medidas disciplinares.
+  Vantagens de Negativa de Acesso Fundamentada: Princípio da motivação e responsabilidade
+  Desvantagens de Negativa de Acesso Fundamentada: Pode gerar contencioso se mal fundamentada
+  Casos de uso de Negativa de Acesso Fundamentada: Recusa de informações com justificativa legal
+Termo: Extravio de Informação | Tipo: Conceito | Definicao: Caso de extravio, o responsável deve promover sindicância; prazo de 10 dias para justificar o fato e indicar testemunhas.
+  Vantagens de Extravio de Informação: Detecção de falhas, responsabilização
+  Desvantagens de Extravio de Informação: Pode indicar falhas administrativas
+  Casos de uso de Extravio de Informação: Perda de documentos ou dados
+
+-- Figuras e diagramas --
+Figura 'Artigo 5º - Dever do Estado' (Texto legal): O Art. 5º estabelece o dever do Estado de garantir o direito de acesso à informação, por meio de procedimentos objetivos, ágeis, transparentes e em linguagem de fácil compreensão.
+  Componentes visuais: Artigo 5º, Dever do Estado, Procedimentos objetivos, Transparência, Linguagem simples
+  Relacionado a: lei_acesso_informacao
+
+-- Relacionamentos --
+Conexao: 'lei_acesso_informacao' --[implementa]--> 'acesso_informacao_publico'. Motivo: LAI institui o direito de acesso às informações.
+Conexao: 'lei_acesso_informacao' --[implementa]--> 'sigilo_informacoes'. Motivo: LAI define exceções de sigilo.
+Conexao: 'lei_acesso_informacao' --[implementa]--> 'divulgacao_informacoes'. Motivo: LAI estabelece divulgação de informações de interesse público.
+Conexao: 'divulgacao_informacoes' --[depende_de]--> 'divulgacao_internet'. Motivo: Divulgação obrigatória na internet conforme §2º de Art. 8º.
+Conexao: 'sigilo_informacoes' --[mitiga_risco]--> 'extrato_parte_disponivel'. Motivo: Parte não sigilosa pode ser fornecida via extrato.
+Conexao: 'pedido_acesso' --[regula]--> 'prazo_resposta'. Motivo: Pedido de acesso estabelece prazos de resposta (até 20 dias, com prorrogação).
+Conexao: 'pedido_acesso' --[regula]--> 'vedacao_motivo'. Motivo: Vedação de perguntar o motivo do requerimento para acesso a informações de interesse público.
+Conexao: 'pedido_acesso' --[regula]--> 'informacao_digital'. Motivo: Informação armazenada em formato digital deverá ser fornecida nesse formato (quando houver anuência).
+Conexao: 'servicos_busca_gratuitos' --[regula]--> 'cobrar_costos_reproducao'. Motivo: A cobrança é permitida apenas para custos de reprodução, serviço de busca é gratuito.
+Conexao: 'servicos_busca_gratuitos' --[permite]--> 'isencao_renda'. Motivo: Isenção de cobrança para pessoas em situação econômica que inviabilize o pagamento.
+Conexao: 'divulgacao_informacoes' --[regula]--> 'divulgacao_internet'. Motivo: Divulgação na internet como meio obrigatório de atendimento à divulgação de informações.
+Conexao: 'lei_acesso_informacao' --[implementa]--> 'pedido_acesso'. Motivo: LAI regulamenta o processo de pedido de acesso à informação.
+Conexao: 'extravio_informacao' --[gera]--> 'sindicancia'. Motivo: Extravio de informação implica abertura de sindicância para apurar fatos (art. 6º §5).
+
+=== SECAO [LAI_SEC_003]: Procedimento de Acesso à Informação - Do Pedido de Acesso (Art. 10) ===
+Art. 10 autoriza qualquer interessado a apresentar pedido de acesso, por meio legítimo, com identificação do requerente e descrição da informação. §1º determina que, para informações de interesse público, a identificação não pode inviabilizar a requisição. §3º veda perguntar o motivo do requerimento.
+
+-- Conceitos-chave --
+Termo: Pedido de Acesso | Tipo: Procedimento | Definicao: Procedimento de requerer informações; deve conter identificação do requerente e especificação da informação solicitada.
+  Vantagens de Pedido de Acesso: Procedimento claro para o cidadão; Proteção de dados do requerente
+  Desvantagens de Pedido de Acesso: Pode exigir validação de identidade
+  Casos de uso de Pedido de Acesso: Solicitar dados de contratos, relatórios e políticas públicas
+Termo: Vedação de perguntar o motivo | Tipo: Conceito | Definicao: É vedado exigir o motivo do requerimento para informações de interesse público.
+  Vantagens de Vedação de perguntar o motivo: Reduz entram de justificativas subjetivas; Autonomia do solicitante
+  Casos de uso de Vedação de perguntar o motivo: Solicitações de interesse público sem necessidade de justificar
+Termo: Identificação do Requerente | Tipo: Conceito | Definicao: Identificação necessária do requerente, exceto quando o acesso é de interesse público e exige pouca ou nenhuma identificação que inviabilize a solicitação (§1º).
+  Vantagens de Identificação do Requerente: Garanti a rastreabilidade do pedido
+  Desvantagens de Identificação do Requerente: Pode restringir o acesso de pessoas físicas sem documentos
+  Casos de uso de Identificação do Requerente: Solicitações formais por cidadãos
+
+-- Figuras e diagramas --
+Figura 'Do Pedido de Acesso - Processo' (Fluxo de Processo): Pedido de acesso deve conter identificação do requerente e especificação da informação; vedação de perguntar motivos; encaminhamento de informações ao órgão competente se necessário.
+  Componentes visuais: Identificação do requerente, Especificação da informação, Vedação de motivos, Encaminhamento/consulta
+  Relacionado a: pedido_acesso, vedacao_motivo, requerente_identificacao, acesso_informacao_publico
+
+-- Relacionamentos --
+Conexao: 'lei_acesso_informacao' --[implementa]--> 'pedido_acesso'. Motivo: LAI regula o processo de pedido de acesso.
+Conexao: 'pedido_acesso' --[regula]--> 'vedacao_motivo'. Motivo: Vedação de perguntar o motivo está contida na regra de pedido.
+Conexao: 'pedido_acesso' --[regula]--> 'requerente_identificacao'. Motivo: Pedido deve incluir identificação do requerente (com exceções para acesso público).
+
+=== SECAO [LAI_SEC_004]: Prazos, Formatos e Recursos (Art. 11) ===
+Art. 11 determina que, se não houver atendimento imediato, o órgão tem até 20 dias para:
+
+-- Conceitos-chave --
+Termo: Prazo de Resposta | Tipo: Procedimento | Definicao: Prazo de até 20 dias para comunicar data, local e modo de consulta, ou justificar recusa, ou encaminhar o pedido ao órgão competente.
+  Vantagens de Prazo de Resposta: Previsibilidade de atendimento
+  Desvantagens de Prazo de Resposta: Pode gerar atrasos se houver necessidade de encaminhamento
+  Casos de uso de Prazo de Resposta: Pedidos complexos que envolvem múltiplos órgãos
+Termo: Recurso de Acesso | Tipo: Conceito | Definicao: Possibilidade de interpor recurso caso a negativa ou o excesso de sigilo ocorra, com orientações sobre prazos e condições.
+  Vantagens de Recurso de Acesso: Mecanismo de contestação e controle
+  Desvantagens de Recurso de Acesso: Pode prolongar a disponibilização das informações
+  Casos de uso de Recurso de Acesso: Recursos contra decisões de negativa total/parcial
+Termo: Formato Digital | Tipo: Formato | Definicao: Informação armazenada digitalmente deve ser fornecida nesse formato, se houver anuência do requerente.
+  Vantagens de Formato Digital: Facilita visualização, cópia e armazenamento
+  Desvantagens de Formato Digital: Requer infraestrutura digital adequada
+  Casos de uso de Formato Digital: Entrega de informações em formato eletrônico
+
+-- Figuras e diagramas --
+Figura 'Prazo de Resposta - LAI' (Diagrama de Prazos): Aguardos máximos de 20 dias para atendimento, com possibilidade de extensão de 10 dias mediante justificativa; informações em formato digital se solicitado.
+  Componentes visuais: Prazo 20 dias, Extensão de 10 dias, Formato digital
+  Relacionado a: prazo_resposta, informacao_digital, recurso_acesso_informacao
+
+-- Relacionamentos --
+Conexao: 'pedido_acesso' --[regula]--> 'prazo_resposta'. Motivo: Pedido de acesso aciona o prazo de resposta (20 dias).
+Conexao: 'prazo_resposta' --[regula]--> 'recurso_acesso_informacao'. Motivo: Se recusa, há possibilidade de recurso dentro do prazo.
+Conexao: 'pedido_acesso' --[regula]--> 'informacao_digital'. Motivo: Entrega em formato digital é comum quando disponível (com anuência).
+
+=== SECAO [LAI_SEC_005]: Serviços de Busca são Gratuitos (Regra) - Art. 12 ===
+Art. 12 estabelece a gratuidade do serviço de busca e fornecimento de informação; §1 permite cobrança apenas para ressarcimento de custos de reprodução; §2 prevê isenção para pessoas em situação econômica que não possam arcar com tais custos.
+
+-- Conceitos-chave --
+Termo: Serviços de Busca Gratuitos | Tipo: Conceito | Definicao: O serviço de busca é gratuito; cobrança apenas pelos custos de reprodução quando necessário.
+  Vantagens de Serviços de Busca Gratuitos: Acesso facilitado sem custo inicial
+  Desvantagens de Serviços de Busca Gratuitos: Possíveis custos indiretos com reprodução
+  Casos de uso de Serviços de Busca Gratuitos: Solicitar informações sem custo de busca
+Termo: Custos de Reprodução | Tipo: Custos | Definicao: Cobrança pelo ressarcimento dos custos de reprodução de documentos solicitados.
+  Vantagens de Custos de Reprodução: Ressarcimento de custos operacionais
+  Desvantagens de Custos de Reprodução: Pode onerar o solicitante em reprodução de grande volume
+  Casos de uso de Custos de Reprodução: Solicitações que exijam cópias físicas
+Termo: Isenção por baixa renda | Tipo: Conceito | Definicao: Isenção de ressarcimento para pessoas cuja condição econômica não permita fazê-lo sem prejuízo.
+  Vantagens de Isenção por baixa renda: Garantia de acesso a cidadãos vulneráveis
+  Casos de uso de Isenção por baixa renda: Solicitações de pessoas com renda baixa
+
+-- Figuras e diagramas --
+Figura 'Serviços de Busca Gratuitos - Regra' (Diagrama de Custos): A busca é gratuita; cobrança é limitada a custos de reprodução; há isenção para pessoas de baixa renda.
+  Componentes visuais: Busca gratuita, Custos de reprodução, Isenção de baixa renda
+  Relacionado a: servicos_busca_gratuitos, cobrar_costos_reproducao, isencao_renda
+
+-- Relacionamentos --
+Conexao: 'servicos_busca_gratuitos' --[regula]--> 'cobrar_costos_reproducao'. Motivo: Cobrança permitida apenas para custos de reprodução, serviço de busca é gratuito.
+Conexao: 'servicos_busca_gratuitos' --[permite]--> 'isencao_renda'. Motivo: Isenção prevista para quem não pode arcar com custos.
+
+=== SECAO [LAI_SEC_006]: Exemplos de Questões de Prova sobre a LAI ===
+Seção dedicada a itens de avaliação em concursos, com itens que discutem que algumas afirmações sobre identificação, razões do pedido e prazos são verdadeiras ou falsas. Exemplos citados indicam jurisprudência de itens (ERRADA, CERTA) e a necessidade de interpretar a LAI à luz de decretos e LGPD.
+
+-- Conceitos-chave --
+Termo: Itens de Prova LAI | Tipo: Exame/Conteúdo | Definicao: Questões simulando cenários sobre sigilo, prazos, motivos de requerimento, e obrigatoriedade de identificação.
+  Vantagens de Itens de Prova LAI: Auxilia na preparação para concursos
+  Desvantagens de Itens de Prova LAI: Pode depender de interpretação de juridisprudência; Pode variar entre editais
+  Casos de uso de Itens de Prova LAI: Preparação para provas teóricas de LAI
+Termo: Questão de Prova LAI | Tipo: Exame/Conteúdo | Definicao: Questões com marcadores CERTA/ERRADA sobre os dispositivos da LAI e a aplicação prática.
+  Vantagens de Questão de Prova LAI: Estimula leitura crítica do texto legal
+  Desvantagens de Questão de Prova LAI: Interpretação sujeita a mudanças legais
+  Casos de uso de Questão de Prova LAI: Treinamento de analistas de TI e admins públicas
+
+-- Figuras e diagramas --
+Figura 'Itens de Prova LAI' (Exercícios de prova): Exemplos de itens com resultados (CERTA/ERRADA) sobre identificação do requerente, motivos do pedido e prazos de resposta.
+  Componentes visuais: Cenários de negativa fundamentada, Prazos de resposta, Requisitos de identificação
+  Relacionado a: pedido_acesso, prazo_resposta, negativa_acesso_fundamentada
+
+-- Relacionamentos --
+Conexao: 'lei_acesso_informacao' --[analisa]--> 'prova_lei'. Motivo: Questões de prova versam sobre interpretação da LAI.
+

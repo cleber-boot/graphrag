@@ -1,0 +1,466 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Decreto 7.845/2012 | Credenciamento de Segurança e Tratamento de Informação Sigilosa
+Idioma: pt-BR
+Tecnologias citadas no documento: certificado digital, criptografia, algoritmo de Estado, container de criptografia, VCGE (Vocabulário Controlado do Governo Eletrônico)
+
+=== SECAO [sec_vi_preservacao_guarda]: Seção VI - Da Preservação e da Guarda ===
+A Seção VI estabelece as diretrizes para preservação e guarda de documentos contendo informação desclassificada ou classificada. Define que a avaliação e a seleção de documentos para guarda permanente ou eliminação devem observar a legislação de gestão documental (Lei nº 8.159/1991 e Decreto nº 4.073/2002). A guarda permanente não pode ser desfigurada ou destruída, sob pena de responsabilização legal. Documentos desclassificados devem ser encaminhados ao Arquivo Nacional ou arquivo competente para organização, preservação e acesso.
+
+-- Conceitos-chave --
+Termo: Preservação e Guarda de Documentos | Tipo: Processo | Definicao: Processo de avaliação, seleção e guarda de documentos com informação desclassificada para guarda permanente ou eliminação.
+  Vantagens de Preservação e Guarda de Documentos: garantia de preservação de informações históricas e públicas; conformidade com a legislação de arquivos
+  Desvantagens de Preservação e Guarda de Documentos: requer infraestrutura de gestão documental e controles de acesso
+  Casos de uso de Preservação e Guarda de Documentos: gestão de documentos com finalidade de guarda permanente; eliminação controlada conforme classificação
+Termo: Destino pós-desclassificação | Tipo: Procedimento | Definicao: Encaminhamento de documentos de guarda permanente desclassificados ao Arquivo Nacional ou arquivo competente para organização, preservação e acesso.
+  Vantagens de Destino pós-desclassificação: organização centralizada; acesso controlado à informação
+  Desvantagens de Destino pós-desclassificação: transporte seguro de documentos sigilosos
+  Casos de uso de Destino pós-desclassificação: destinação final de documentos desclassificados
+Termo: Proteção de documentos permanentes | Tipo: Procedimento | Definicao: Proibição de desfigurar ou destruir documentos de guarda permanente; responsabilização legal para infratores.
+  Vantagens de Proteção de documentos permanentes: preservação da evidência histórica e legal; redução de danos à segurança institucional
+  Desvantagens de Proteção de documentos permanentes: requisitos de fiscalização e sanções podem envolver custos administrativos
+  Casos de uso de Proteção de documentos permanentes: manter integridade de documentos permanentes
+
+-- Tabelas comparativas --
+Tabela 'Graus de Sigilo e Prazos': Padrões de sigilo aplicáveis aos documentos de guarda permanente.
+  Linha 1: Grau de Sigilo = Ultrassecreto; Prazo de Sigilo (anos) = 25; Observações = Maior nível de sigilo
+  Linha 2: Grau de Sigilo = Secreto; Prazo de Sigilo (anos) = 15; Observações = Padrão para informações sensíveis
+  Linha 3: Grau de Sigilo = Reservado; Prazo de Sigilo (anos) = 5; Observações = Prazo inicial mais curto
+Tabela 'CIDIC – Estrutura em Duas Partes': CIDIC estruturado em duas partes para proteção e restrição de acesso.
+  Linha 1: Parte = 1ª Parte CIDIC; Conteúdo = Número Único de Protocolo (NUP); mantido após desclassificação; não utiliza tabelas de classificação que comprometam confidencialidade
+  Linha 2: Parte = 2ª Parte CIDIC; Conteúdo = Grau de sigilo; categorias VCGE; datas de produção e desclassificação; indicação de reclassificação; data de prorrogação (quando ultrassecreto)
+Tabela 'Gestão de Histórico do CIDIC': Histórico das alterações do CIDIC deve ser mantido para gestão documental.
+  Linha 1: Elemento = Histórico de alterações; Descrição = Mantido para gestão documental
+
+-- Figuras e diagramas --
+Figura 'Destino Pós-Desclassificação' (Diagrama de Fluxo): Documento de guarda permanente desclassificado deve ser encaminhado ao Arquivo Nacional; se contiver informação classificada, encaminhar ao arquivo competente para organização, preservação e acesso.
+  Componentes visuais: Documento Desclassificado, Arquivo Nacional, Arquivo Competente, Preservação e Acesso
+  Relacionado a: destino_desclassificacao, preservacao_guarda
+
+-- Relacionamentos --
+Conexao: 'preservacao_guarda' --[depende_de]--> 'destino_desclassificacao'. Motivo: A avaliação para guarda permanente ou eliminação determina o destino após desclassificação
+
+=== SECAO [sec_vii_sistemas_informacao]: Seção VII - Dos Sistemas de Informação ===
+Esta seção estabelece que os sistemas de informação que tratam de informação classificada devem ser seguros e compatíveis com padrões mínimos definidos pelo Poder Executivo. A transmissão entre redes corporativas deve ocorrer por canais seguros; a identidade do usuário deve ser autêntica via certificado digital; o controle de acesso deve possuir múltiplos níveis e recursos criptográficos apropriados; registros de acessos e transações devem ser mantidos por prazos compatíveis com a necessidade de proteção.
+
+-- Conceitos-chave --
+Termo: Sistemas e Canais Seguros | Tipo: Arquitetura | Definicao: Sistemas de informação e canais de comunicação com padrões mínimos de qualidade e segurança definidos pelo governo.
+  Vantagens de Sistemas e Canais Seguros: proteção de dados em trânsito e em repouso; conformidade com padrões governamentais
+  Desvantagens de Sistemas e Canais Seguros: custos de implementação e atualização
+  Casos de uso de Sistemas e Canais Seguros: transmissão de informações sigilosas entre unidades
+Termo: Autenticação por certificado digital | Tipo: Procedimento | Definicao: Autenticação da identidade do usuário por meio de certificado digital para acesso à rede.
+  Vantagens de Autenticação por certificado digital: alta confiabilidade de identidade; integração com infraestrutura PKI
+  Desvantagens de Autenticação por certificado digital: gestão de certificados e revogações
+  Casos de uso de Autenticação por certificado digital: acesso a sistemas de informação sigilosa
+Termo: Controle de Acesso em vários níveis | Tipo: Processo | Definicao: Níveis de controle de acesso proporcionados por políticas e recursos criptográficos; aplicado aos graus de sigilo.
+  Vantagens de Controle de Acesso em vários níveis: minimiza exposição de dados sensíveis
+  Desvantagens de Controle de Acesso em vários níveis: complexidade de gestão de permissões
+  Casos de uso de Controle de Acesso em vários níveis: segurança de informações classificadas
+Termo: Criptografia baseada em algoritmo de Estado | Tipo: Ferramenta | Definicao: Uso de recursos criptográficos com algoritmos aprovados pelo Estado para proteger informações sigilosas.
+  Vantagens de Criptografia baseada em algoritmo de Estado: conformidade com padrões oficiais; forte proteção de confidencialidade
+  Desvantagens de Criptografia baseada em algoritmo de Estado: auditoria e atualização constante de chaves
+  Casos de uso de Criptografia baseada em algoritmo de Estado: proteção de conteúdo sigiloso
+Termo: Registros de Acessos e Transações | Tipo: Procedimento | Definicao: Manutenção de controle e registro de acessos autorizados, não autorizados e transações, por prazo adequado ao nível de sigilo.
+  Vantagens de Registros de Acessos e Transações: auditoria e rastreabilidade
+  Desvantagens de Registros de Acessos e Transações: crescimento de logs e need for retention
+  Casos de uso de Registros de Acessos e Transações: investigação de incidentes e conformidade
+
+-- Figuras e diagramas --
+Figura 'Arquitetura de Sistemas de Informação Seguros' (Diagrama de Arquitetura): Dividido em quatro áreas: Sistemas e Canais Seguros; Autenticação e Controle de Acesso; Procedimentos de Segurança Criptográfica; Segurança de Equipamentos e Criptografia.
+  Componentes visuais: Sistemas e Canais Seguros, Autenticação e Controle de Acesso, Procedimentos de Segurança Criptográfica, Segurança de Equipamentos e Criptografia
+  Relacionado a: sistemas_informacao_seguro, autenticacao_certificado_digital, controle_acesso_multinivel, criptografia_estado
+
+-- Relacionamentos --
+Conexao: 'sistemas_informacao_seguro' --[usa]--> 'autenticacao_certificado_digital'. Motivo: Sistemas seguros dependem da autenticação por certificado digital para validação de identidades
+Conexao: 'autenticacao_certificado_digital' --[impõe]--> 'controle_acesso_multinivel'. Motivo: Autenticação robusta habilita controles de acesso em múltiplos níveis
+Conexao: 'criptografia_estado' --[aplica]--> 'procedimentos_seguranca_criptografica'. Motivo: Recursos criptográficos baseados em algoritmo de Estado são aplicados aos procedimentos criptográficos
+
+=== SECAO [sec_viii_areas_instalacoes_materiais]: Seção VIII - Das Áreas, Instalações e Materiais ===
+A Seção VIII estabelece que áreas e instalações que contenham documentos com qualquer grau de sigilo ou que exijam proteção tenham acesso restrito a pessoas autorizadas. Define que materiais que demandem proteção também sejam de acesso restrito, e descreve que itens de segurança devem ser demarcados, sinalizados e protegidos, inclusive quanto ao transporte de materiais de acesso restrito.
+
+-- Conceitos-chave --
+Termo: Acesso Restrito a Áreas e Instalações | Tipo: Princípio | Definicao: Áreas e instalações com documentos sigilosos ou proteção especial têm acesso restrito a pessoas autorizadas.
+  Vantagens de Acesso Restrito a Áreas e Instalações: reduz exposição de informações sensíveis
+  Desvantagens de Acesso Restrito a Áreas e Instalações: logística de controle de acesso
+  Casos de uso de Acesso Restrito a Áreas e Instalações: áreas com informações sigilosas
+Termo: Materiais de Acesso Restrito | Tipo: Categoria | Definicao: Itens que contenham informações sigilosas ou sensíveis, incluindo equipamentos TI, veículos, armamentos, explosivos, etc.
+  Vantagens de Materiais de Acesso Restrito: segurança de ativos de alto risco
+  Desvantagens de Materiais de Acesso Restrito: gestão de inventário e controle de transporte
+  Casos de uso de Materiais de Acesso Restrito: controle de materiais sensíveis
+Termo: Medidas de Segurança para Áreas | Tipo: Procedimento | Definicao: Órgãos devem definir, demarcar, sinalizar e implementar medidas de segurança para controlar o acesso às áreas.
+  Vantagens de Medidas de Segurança para Áreas: ambiente controlado para informações sensíveis
+  Desvantagens de Medidas de Segurança para Áreas: necessita fiscalização contínua
+  Casos de uso de Medidas de Segurança para Áreas: definir zonas de segurança
+Termo: Transporte de Materiais de Acesso Restrito | Tipo: Procedimento | Definicao: O transporte de materiais de acesso restrito é de responsabilidade do custodiante; pode ocorrer por empresas contratadas com contrato que preserve sigilo.
+  Vantagens de Transporte de Materiais de Acesso Restrito: mantém sigilo durante transporte
+  Desvantagens de Transporte de Materiais de Acesso Restrito: risco em transporte externo
+  Casos de uso de Transporte de Materiais de Acesso Restrito: transportes sigilosos
+
+-- Tabelas comparativas --
+Tabela 'Materiais de Acesso Restrito': Itens que contêm ou lidam com informações sigilosas ou sensíveis.
+  Linha 1: Item = Materiais de Acesso Restrito; Exemplos = Equipamentos TI, veículos, armas
+
+-- Figuras e diagramas --
+Figura 'Acesso Restrito: Áreas, Instalações e Materiais' (Infográfico): Demonstração de como áreas, instalações e materiais são protegidos por acesso restrito, sinalização e medidas de segurança.
+  Componentes visuais: Acesso Restrito (Área), Medidas de Segurança, Materiais de Acesso Restrito
+  Relacionado a: acesso_restrito, materiais_acesso_restrito
+
+-- Relacionamentos --
+Conexao: 'acesso_restrito' --[controla]--> 'areas_instalacoes'. Motivo: Acesso restrito controla o acesso às áreas e instalações que contêm informações sigilosas
+Conexao: 'materiais_acesso_restrito' --[armazenar]--> 'areas_instalacoes'. Motivo: Materiais de acesso restrito são armazenados e protegidos em áreas especiais
+Conexao: 'transporte_materiais_restritos' --[transporte]--> 'areas_instalacoes'. Motivo: Processo de transporte de materiais de acesso restrito entre locais
+
+=== SECAO [sec_ix_celebracao_contratos_sigilosos]: Seção IX - Da Celebração de Contratos Sigilosos (Arts. 48 a 49) ===
+A seção descreve as condições para contratos sigilosos, exigindo a assinatura do TCMS (Termo de Compromisso de Manutenção de Sigilo) e cláusulas contratuais detalhadas sobre segurança. Impõe obrigações de segurança ao contratado, inspeções e responsabilidade pela segurança, inclusive em subcontratações. Os órgãos públicos devem assegurar a aplicação dessas medidas.
+
+-- Conceitos-chave --
+Termo: Contratos Sigilosos | Tipo: Processo | Definicao: Contratos cuja objeto contenha informação classificada ou cuja execução envolva tal informação.
+  Vantagens de Contratos Sigilosos: garantia de sigilo no objeto contratual
+  Desvantagens de Contratos Sigilosos: complexidade de fiscalização e auditoria
+  Casos de uso de Contratos Sigilosos: contratos com itens sigilosos
+Termo: Termo de Compromisso de Manutenção de Sigilo (TCMS) | Tipo: Documento | Definicao: Documento contratual exigido para assegurar sigilo relativo ao objeto e à sua execução.
+  Vantagens de Termo de Compromisso de Manutenção de Sigilo (TCMS): cláusulas de segurança explícitas
+  Desvantagens de Termo de Compromisso de Manutenção de Sigilo (TCMS): requer acompanhamento jurídico
+  Casos de uso de Termo de Compromisso de Manutenção de Sigilo (TCMS): credenciamento de segurança em contratos
+Termo: Requisitos de Segurança em Contratos | Tipo: Procedimento | Definicao: Obrigações de manter sigilo, inspeções, subcontratação, e personalização de segurança conforme atividades.
+  Vantagens de Requisitos de Segurança em Contratos: proteção de informações sensíveis na execução contratual
+  Desvantagens de Requisitos de Segurança em Contratos: processo burocrático longo
+  Casos de uso de Requisitos de Segurança em Contratos: contratos com dados sigilosos
+
+-- Figuras e diagramas --
+Figura 'Contratos Sigilosos - Requisitos' (Infográfico): Condições para contratos sigilosos: TCMS, obrigações de segurança, inspeções, responsabilidade pela segurança e subcontratação.
+  Componentes visuais: TCMS, Obrigações de Segurança, Inspeções, Subcontratação
+  Relacionado a: tcms, contratos_sigilosos
+
+-- Relacionamentos --
+Conexao: 'tcms' --[aplica]--> 'contratos_sigilosos'. Motivo: TCMS é condição para celebração de contratos sigilosos
+
+=== SECAO [sec_cap_iv_indexacao]: Capítulo IV - Indexação de Documento com Informação Classificada (Arts. 50 a 53) ===
+O Capítulo IV trata da indexação de documentos contendo informação classificada (CIDIC). A CIDIC é estruturada em duas partes: a 1ª parte contém o Número Único de Protocolo (NUP), mantido mesmo após desclassificação; a 2ª parte contém o grau de sigilo, categorias VCGE, datas de produção e desclassificação, indicação de reclassificação e, para ultrassecreto, data de prorrogação. O histórico das alterações do CIDIC deve ser mantido para gestão documental.
+
+-- Conceitos-chave --
+Termo: CIDIC - Código de Indexação de Documento com Informação Classificada | Tipo: Padrão | Definicao: Código que protege e restringe o acesso a documentos com informação classificada, estruturado em duas partes.
+  Vantagens de CIDIC - Código de Indexação de Documento com Informação Classificada: proteção contínua da confidencialidade durante a gestão documental
+  Desvantagens de CIDIC - Código de Indexação de Documento com Informação Classificada: gestão de duas partes pode ser complexa
+  Casos de uso de CIDIC - Código de Indexação de Documento com Informação Classificada: indexação de documentos sigilosos
+Termo: Número Único de Protocolo (NUP) | Tipo: Dado | Definicao: Identificador cadastral utilizado na 1ª parte do CIDIC e mantido após desclassificação.
+  Vantagens de Número Único de Protocolo (NUP): rastreabilidade única do documento
+  Desvantagens de Número Único de Protocolo (NUP): necessidade de integração com sistemas de protocolo
+  Casos de uso de Número Único de Protocolo (NUP): identificação de documentos sigilosos
+Termo: 2ª Parte CIDIC | Tipo: Padrão | Definicao: Parte do CIDIC contendo grau de sigilo, VCGE, datas, reclassificação e prorrogação (quando ultrassecreto).
+  Vantagens de 2ª Parte CIDIC: granularidade de classificação e histórico
+  Desvantagens de 2ª Parte CIDIC: sensibilidade à gestão de prorrogações
+  Casos de uso de 2ª Parte CIDIC: gestão de confidencialidade
+Termo: Gestão de Histórico CIDIC | Tipo: Processo | Definicao: Histórico das alterações do CIDIC deve ser mantido para fins de gestão documental.
+  Vantagens de Gestão de Histórico CIDIC: traz rastreabilidade de alterações
+  Desvantagens de Gestão de Histórico CIDIC: manutenção de histórico exige controles
+  Casos de uso de Gestão de Histórico CIDIC: auditoria de classificação e reclassificação
+Termo: VCGE - Vocabulário Controlado do Governo Eletrônico | Tipo: Vocabulário | Definicao: Catálogo de categorias para classificação de informações, utilizado na segunda parte do CIDIC.
+  Vantagens de VCGE - Vocabulário Controlado do Governo Eletrônico: padronização de categorias
+  Desvantagens de VCGE - Vocabulário Controlado do Governo Eletrônico: necessita atualização constante
+  Casos de uso de VCGE - Vocabulário Controlado do Governo Eletrônico: classificação de informações
+Termo: Grau de Sigilo | Tipo: Conceito | Definicao: Indicação do grau de sigilo (Ultrassecreto, Secreto, Reservado) para o CIDIC.
+  Vantagens de Grau de Sigilo: define nível de proteção
+  Desvantagens de Grau de Sigilo: requisitos de atualização de prorrogações
+  Casos de uso de Grau de Sigilo: controle de acesso a documentos
+
+-- Tabelas comparativas --
+Tabela 'CIDIC – Estrutura em Duas Partes': CIDIC estruturado em duas partes para proteção e restrição de acesso.
+  Linha 1: Parte = 1ª Parte CIDIC; Conteúdo = Número Único de Protocolo (NUP); mantido após desclassificação; sem uso de tabelas de classificação que comprometam a confidencialidade
+  Linha 2: Parte = 2ª Parte CIDIC; Conteúdo = Grau de sigilo; categorias VCGE; datas de produção e desclassificação; indicação de reclassificação; data de prorrogação (quando ultrassecreto)
+Tabela 'Categorias VCGE': Categorias de VCGE associadas aos códigos dos primeiros níveis de classificação.
+  Linha 1: Categoria = Agricultura, extrativismo e pesca; Código Numeric = 01
+  Linha 2: Categoria = Ci1ência, Informa e7 e3o e Comunicao; Código Numeric = 02
+  Linha 3: Categoria = Comércio, Serviços e Turismo; Código Numeric = 03
+  Linha 4: Categoria = Cultura, Lazer e Esporte; Código Numeric = 04
+  Linha 5: Categoria = Defesa e Segurança; Código Numeric = 05
+  Linha 6: Categoria = Economia e Finanças; Código Numeric = 06
+  Linha 7: Categoria = Educação; Código Numeric = 07
+  Linha 8: Categoria = Governo e Política; Código Numeric = 08
+  Linha 9: Categoria = Habitao e Saneamento e Urbanismo; C f3digo Numeric = 09
+  Linha 10: Categoria = Ind fastria; C f3digo Numeric = 10
+  Linha 11: Categoria = Justia e Legislao; C f3digo Numeric = 11
+  Linha 12: Categoria = Meio ambiente; C f3digo Numeric = 12
+  Linha 13: Categoria = Pessoa, fam edlia e sociedade; C f3digo Numeric = 13
+  Linha 14: Categoria = Rela0es internacionais; C f3digo Numeric = 14
+  Linha 15: Categoria = Sa fade; C f3digo Numeric = 15
+  Linha 16: Categoria = Trabalho; C f3digo Numeric = 16
+  Linha 17: Categoria = Transportes e tr e2nsito; C f3digo Numeric = 17
+Tabela 'Histórico de Alterações do CIDIC': Rastreamento de modificações no CIDIC para gestão documental.
+  Linha 1: Data da Alteração = 26/10/2023; Descrição = Prorrogação da manutenção da classificação para ultrassecreto
+
+-- Figuras e diagramas --
+Figura 'Exemplo de CIDIC e Estrutura CIDIC 1ª/2ª Parte' (Diagrama): CIDIC 1ª Parte - NUP; CIDIC 2ª Parte - grau de sigilo, VCGE, datas, reclassificação e prorrogação (quando ultrassecreto). Histórico de alterações mantido.
+  Componentes visuais: CIDIC 1ª Parte (NUP), CIDIC 2ª Parte (Grau, VCGE, Datas), Histórico CIDIC
+  Relacionado a: cidic, nup, vcge
+
+-- Relacionamentos --
+Conexao: 'cidic' --[contém]--> 'cidic_primeira_parte'. Motivo: CIDIC contém a 1ª parte com NUP (Número Único de Protocolo)
+Conexao: 'cidic_segunda_parte' --[contém]--> 'vcge'. Motivo: CIDIC contém a 2ª parte com grau de sigilo e categorias VCGE
+Conexao: 'gestao_historico_cidic' --[mantem]--> 'cidic'. Motivo: Histórico de alterações do CIDIC mantido para gestão documental
+
+=== SECAO [sec_cap_iv_aos_indexacao]: Capítulo IV - Indexação de Documento com Informação Classificada (Arts. 50 a 53) ===
+O Capítulo IV define que a informação classificada recebe CIDIC, com duas partes. A primeira parte (NUP) permanece após desclassificação, sem tabelas de classificação. A segunda parte especifica grau de sigilo, VCGE, datas de produção/desclassificação, reclassificação e prorrogação (quando ultrassecreto). Também prevê a guarda do histórico de alterações para gestão documental.
+
+-- Conceitos-chave --
+Termo: CIDIC (Código de Indexação de Documento com Informação Classificada) | Tipo: Padrão | Definicao: Código de indexação que protege e restringe o acesso a documentos com informação classificada, estruturado em duas partes.
+  Vantagens de CIDIC (Código de Indexação de Documento com Informação Classificada): proteção contínua da confidencialidade
+  Desvantagens de CIDIC (Código de Indexação de Documento com Informação Classificada): gestão de duas partes complexa
+  Casos de uso de CIDIC (Código de Indexação de Documento com Informação Classificada): indexação de documentos sigilosos
+Termo: Número Único de Protocolo (NUP) | Tipo: Dado | Definicao: Identificador da 1ª parte do CIDIC, mantido mesmo após desclassificação.
+  Vantagens de Número Único de Protocolo (NUP): rastreabilidade única
+  Desvantagens de Número Único de Protocolo (NUP): requer integração com sistemas de protocolo
+  Casos de uso de Número Único de Protocolo (NUP): controle de documentos sigilosos
+Termo: 2ª Parte CIDIC | Tipo: Padrão | Definicao: Contém grau de sigilo, VCGE, datas, reclassificação e prorrogação (quando ultrassecreto).
+  Vantagens de 2ª Parte CIDIC: precisão na classificação e histórico de alterações
+  Desvantagens de 2ª Parte CIDIC: gestão de prorrogações complexa
+  Casos de uso de 2ª Parte CIDIC: gestão de confidencialidade
+Termo: Histórico de Alterações CIDIC | Tipo: Processo | Definicao: Histórico das alterações do CIDIC deve ser mantido para gestão documental.
+  Vantagens de Histórico de Alterações CIDIC: rastreabilidade de alterações
+  Desvantagens de Histórico de Alterações CIDIC: manter histórico aumenta a carga de dados
+  Casos de uso de Histórico de Alterações CIDIC: auditoria de classificação
+Termo: VCGE - Vocabulário Controlado do Governo Eletrônico | Tipo: Vocabulário | Definicao: Catálogo de categorias para classificação de informações (anexo VCGE).
+  Vantagens de VCGE - Vocabulário Controlado do Governo Eletrônico: padronização de categorias
+  Desvantagens de VCGE - Vocabulário Controlado do Governo Eletrônico: necessita atualização
+  Casos de uso de VCGE - Vocabulário Controlado do Governo Eletrônico: classificação de informações
+Termo: Grau de Sigilo | Tipo: Conceito | Definicao: Indicação do grau de sigilo no CIDIC (Ultrassecreto, Secreto, Reservado).
+  Vantagens de Grau de Sigilo: define proteção adequada
+  Desvantagens de Grau de Sigilo: exige atualização de prazos
+  Casos de uso de Grau de Sigilo: controle de acesso a documentos
+
+-- Tabelas comparativas --
+Tabela '1ª Parte CIDIC – NUP': 1ª parte do CIDIC contém o Número Único de Protocolo (NUP).
+  Linha 1: Parte = 1ª Parte CIDIC; Conteúdo = NUP (Número Único de Protocolo); mantido mesmo após desclassificação
+Tabela '2ª Parte CIDIC': 2ª parte do CIDIC contém grau de sigilo, VCGE, datas, reclassificação e prorrogação.
+  Linha 1: Elemento = Grau de Sigilo; Conteúdo = Ultrassecreto (U), Secreto (S) ou Reservado (R)
+  Linha 2: Elemento = Categorias VCGE; Conteúdo = Categorias de VCGE - dois dígitos
+  Linha 3: Elemento = Datas de Produção/Desclassificação; Conteúdo = Datas em formato dia/mês/ano
+  Linha 4: Elemento = Reclassificação; Conteúdo = Indicação de reclassificação (S/N)
+  Linha 5: Elemento = Prorrogação de Classificação; Conteúdo = Data de prorrogação para ultrassecreto
+Tabela 'Histórico de Alterações do CIDIC': Rastreamento de modificações no CIDIC para gestão documental.
+  Linha 1: Data da Alteração = 26/10/2023; Descrição = Prorrogação da manutenção da classificação para ultrassecreto
+
+-- Figuras e diagramas --
+Figura 'CIDIC - Estrutura em Duas Partes com NUP e Sigilo' (Diagrama): Demonstração de 1ª Parte (NUP) e 2ª Parte (Grau de Sigilo, VCGE, Datas, Reclassificação, Prorrogação)
+  Componentes visuais: 1ª Parte CIDIC (NUP), 2ª Parte CIDIC (Grau, VCGE, Datas, Reclassificação), Histórico CIDIC
+  Relacionado a: cidic_primeira_parte, cidic_segunda_parte, gestao_historico_cidic
+
+-- Relacionamentos --
+Conexao: 'cidic' --[contém]--> 'cidic_primeira_parte'. Motivo: CIDIC contém a 1ª parte (NUP)
+Conexao: 'cidic' --[contém]--> 'cidic_segunda_parte'. Motivo: CIDIC contém a 2ª parte (grau de sigilo, VCGE, datas)
+Conexao: 'gestao_historico_cidic' --[mantem]--> 'cidic'. Motivo: Histórico de alterações mantido para gestão documental
+
+=== SECAO [sec_capiv_indexacao_art_50_53]: Capítulo IV - Indexação de Documento com Informação Classificada (Arts. 50 a 53) ===
+Este capítulo define a CIDIC como código de indexação com duas partes. A 1ª parte (NUP) permanece mesmo após desclassificação, sem tabelas de classificação. A 2ª parte contém o grau de sigilo, categorias VCGE, datas de produção e desclassificação, indicação de reclassificação e prorrogação (para ultrassecreto). O histórico de alterações deve ser mantido para gestão documental.
+
+-- Conceitos-chave --
+Termo: CIDIC | Tipo: Padrão | Definicao: Código de Indexação de Documento com Informação Classificada, estruturado em duas partes.
+  Vantagens de CIDIC: proteção de confidencialidade durante a gestão documental
+  Desvantagens de CIDIC: gestão de duas partes requer controle cuidadoso
+  Casos de uso de CIDIC: indexação de documentos sigilosos
+Termo: Número Único de Protocolo (NUP) | Tipo: Dado | Definicao: Identificador da 1ª parte do CIDIC, mantido após desclassificação.
+  Vantagens de Número Único de Protocolo (NUP): rastreabilidade única
+  Desvantagens de Número Único de Protocolo (NUP): necessita integração com sistemas de protocolo
+  Casos de uso de Número Único de Protocolo (NUP): unificação de registro de documentos
+Termo: 2ª Parte CIDIC | Tipo: Padrão | Definicao: Contém grau de sigilo, VCGE, datas de produção/desclassificação, indicação de reclassificação e prorrogação (quando ultrassecreto).
+  Vantagens de 2ª Parte CIDIC: detalhamento de classificação e histórico
+  Desvantagens de 2ª Parte CIDIC: gestão de prorrogações pode ser complexa
+  Casos de uso de 2ª Parte CIDIC: gestão de confidencialidade
+Termo: Grau de Sigilo (CIDIC) | Tipo: Conceito | Definicao: Indicação do grau de sigilo associado à segunda parte do CIDIC.
+  Vantagens de Grau de Sigilo (CIDIC): clareza de proteção
+  Desvantagens de Grau de Sigilo (CIDIC): demanda atualização de políticas
+  Casos de uso de Grau de Sigilo (CIDIC): controle de acesso a documentos
+Termo: VCGE - Vocabulário Controlado do Governo Eletrônico | Tipo: Vocabulário | Definicao: Categorias que identificam o tema da informação na segunda parte do CIDIC.
+  Vantagens de VCGE - Vocabulário Controlado do Governo Eletrônico: padronização de categorias
+  Desvantagens de VCGE - Vocabulário Controlado do Governo Eletrônico: necessita atualização contínua
+  Casos de uso de VCGE - Vocabulário Controlado do Governo Eletrônico: classificação padronizada
+Termo: Histórico de Alterações CIDIC | Tipo: Processo | Definicao: Registro das alterações do CIDIC para fins de gestão documental.
+  Vantagens de Histórico de Alterações CIDIC: traços de auditoria e conformidade
+  Desvantagens de Histórico de Alterações CIDIC: manutenção pode exigir recursos
+  Casos de uso de Histórico de Alterações CIDIC: auditoria de classificação
+
+-- Tabelas comparativas --
+Tabela 'CIDIC 1ª Parte (NUP)': NUP utilizado na 1ª parte; permanece após desclassificação.
+  Linha 1: Parte = 1ª Parte CIDIC; Conteúdo = NUP - Número Único de Protocolo; mantém-se após desclassificação
+Tabela 'CIDIC 2ª Parte (Grau, VCGE, Datas)': Conteúdo da segunda parte com sigilo e categorias VCGE.
+  Linha 1: Elemento = Grau de Sigilo; Conteúdo = Ultrassecreto (U) / Secreto (S) / Reservado (R)
+  Linha 2: Elemento = VCGE; Conteúdo = Categorias VCGE (2 dígitos)
+  Linha 3: Elemento = Datas; Conteúdo = Data de produção e de desclassificação
+  Linha 4: Elemento = Reclassificação; Conteúdo = Indicação de reclassificação (S/N)
+  Linha 5: Elemento = Prorrogação; Conteúdo = Data de prorrogação da classificação (quando ultrassecreto)
+Tabela 'Histórico de Alterações do CIDIC': Rastreamento de modificações no CIDIC para gestão documental.
+  Linha 1: Data da Alteração = 26/10/2023; Descrição = Prorrogação da manutenção da classificação para ultrassecreto
+
+-- Figuras e diagramas --
+Figura 'CIDIC - Estrutura em Duas Partes' (Diagrama): Demonstra 1ª Parte (NUP) e 2ª Parte (Grau de Sigilo, VCGE, Datas, Reclassificação, Prorrogação)
+  Componentes visuais: 1ª Parte CIDIC (NUP), 2ª Parte CIDIC (Grau, VCGE, Datas, Reclassificação, Prorrogação), Histórico CIDIC
+  Relacionado a: cidic_primeira_parte, cidic_segunda_parte, gestao_historico_cidic
+
+-- Relacionamentos --
+Conexao: 'cidic_primeira_parte' --[contém]--> 'nup'. Motivo: A 1ª parte CIDIC contém o NUP
+Conexao: 'cidic_segunda_parte' --[contém]--> 'grau_sigilo'. Motivo: A 2ª parte CIDIC contém grau de sigilo e VCGE
+Conexao: 'gestao_historico_cidic' --[mantem]--> 'cidic'. Motivo: Histórico de alterações do CIDIC mantido
+
+=== SECAO [sec_cap_iv_arts_50_53]: Capítulo IV - Indexação de Documento com Informação Classificada (Arts. 50 a 53) ===
+O CIDIC é o código de indexação que protege documentos com informação classificada. A primeira parte (NUP) é mantida, sem tabelas de classificação. A segunda parte descreve o grau de sigilo, VCGE, datas de produção e desclassificação, além de indicar reclassificação e prorrogação. O histórico das alterações do CIDIC deve ser preservado para gestão documental.
+
+-- Conceitos-chave --
+Termo: CIDIC (Indexação de Documento com Informação Classificada) | Tipo: Conceito | Definicao: Código de indexação com duas partes para proteção temporária de acesso.
+  Vantagens de CIDIC (Indexação de Documento com Informação Classificada): proteção de confidencialidade durante o ciclo de vida do documento
+  Desvantagens de CIDIC (Indexação de Documento com Informação Classificada): gestão de duas partes requer controle adequado
+  Casos de uso de CIDIC (Indexação de Documento com Informação Classificada): gestão de documentos sigilosos
+Termo: NUP - Número Único de Protocolo | Tipo: Dado | Definicao: Identificador da 1ª parte do CIDIC mantido ao longo de todo o ciclo de vida do documento.
+  Vantagens de NUP - Número Único de Protocolo: rastreabilidade única
+  Desvantagens de NUP - Número Único de Protocolo: integração com sistemas de protocolo
+  Casos de uso de NUP - Número Único de Protocolo: controle de documentos sigilosos
+Termo: 2ª Parte CIDIC | Tipo: Conceito | Definicao: Contém grau de sigilo, VCGE, datas, indicação de reclassificação e prorrogação.
+  Vantagens de 2ª Parte CIDIC: granularidade de classificação e histórico
+  Desvantagens de 2ª Parte CIDIC: gestão de prorrogação] , ; casos_de_uso": [
+  Casos de uso de 2ª Parte CIDIC: controle de acesso a informações classificadas
+Termo: VCGE - Vocabulário Controlado do Governo Eletrônico | Tipo: Vocabulário | Definicao: Categorias que identificam o tema da informação na segunda parte do CIDIC.
+  Vantagens de VCGE - Vocabulário Controlado do Governo Eletrônico: padronização de categorias
+  Desvantagens de VCGE - Vocabulário Controlado do Governo Eletrônico: necessita atualização constante
+  Casos de uso de VCGE - Vocabulário Controlado do Governo Eletrônico: classificação de informações
+Termo: Grau de Sigilo (CIDIC) | Tipo: Conceito | Definicao: Indicação do grau de sigilo para a segunda parte do CIDIC.
+  Vantagens de Grau de Sigilo (CIDIC): grau de proteção definido
+  Desvantagens de Grau de Sigilo (CIDIC): regras de prorrogação
+  Casos de uso de Grau de Sigilo (CIDIC): classificação de documentos
+Termo: Data de Produção/Desclassificação | Tipo: Dado | Definicao: Datas registradas de produção e desclassificação no CIDIC.
+  Vantagens de Data de Produção/Desclassificação: cronologia de acesso
+  Desvantagens de Data de Produção/Desclassificação: necessita atualização constante
+  Casos de uso de Data de Produção/Desclassificação: gestão de tempo de sigilo
+Termo: Indicação de Reclassificação | Tipo: Dado | Definicao: Indicação se houve reclassificação da informação (S/N).
+  Vantagens de Indicação de Reclassificação: auditoria de mudanças de sigilo
+  Desvantagens de Indicação de Reclassificação: complexidade de controles
+  Casos de uso de Indicação de Reclassificação: gestão de revisões de sigilo
+Termo: Data de Prorrogação da Classificação | Tipo: Dado | Definicao: Data da prorrogação da classificação (quando ultrassecreto).
+  Vantagens de Data de Prorrogação da Classificação: possibilita continuidade de sigilo
+  Desvantagens de Data de Prorrogação da Classificação: requer controle de prorrogações
+  Casos de uso de Data de Prorrogação da Classificação: manutenção de sigilo ultrassecreto
+
+-- Tabelas comparativas --
+Tabela 'CIDIC – Estrutura e Conteúdos': CIDIC com duas partes; NUP na 1ª parte; grau de sigilo e VCGE na 2ª parte.
+  Linha 1: Parte = 1ª Parte CIDIC; Conteúdo = NUP; permanece após desclassificação
+  Linha 2: Parte = 2ª Parte CIDIC; Conteúdo = Grau de Sigilo, VCGE, Datas, Reclassificação, Prorrogação
+Tabela 'Categorias VCGE': Categorias do Vocabulário Controlado do Governo Eletrônico (VCGE).
+  Linha 1: Categoria VCGE = Agricultura, extrativismo e pesca; Código = 01
+  Linha 2: Categoria VCGE = Ciência, Informação e Comunicação; Código = 02
+  Linha 3: Categoria VCGE = Comércio, Serviços e Turismo; Código = 03
+  Linha 4: Categoria VCGE = Cultura, Lazer e Esporte; Código = 04
+  Linha 5: Categoria VCGE = Defesa e Segurança; Código = 05
+  Linha 6: Categoria VCGE = Economia e Finanças; Código = 06
+  Linha 7: Categoria VCGE = Educação; Código = 07
+  Linha 8: Categoria VCGE = Governo e Política; Código = 08
+  Linha 9: Categoria VCGE = Habitação, Saneamento e Urbanismo; Código = 09
+  Linha 10: Categoria VCGE = Indústria; Código = 10
+  Linha 11: Categoria VCGE = Justiça e Legislação; Código = 11
+  Linha 12: Categoria VCGE = Meio ambiente; Código = 12
+  Linha 13: Categoria VCGE = Pessoa, família e sociedade; Código = 13
+  Linha 14: Categoria VCGE = Relações internacionais; Código = 14
+  Linha 15: Categoria VCGE = Saúde; Código = 15
+  Linha 16: Categoria VCGE = Trabalho; Código = 16
+  Linha 17: Categoria VCGE = Transportes e trânsito; Código = 17
+Tabela 'Histórico de Alterações CIDIC': Histórico das alterações do CIDIC para fins de gestão documental.
+  Linha 1: Data da Alteração = 26/10/2023; Descrição = Prorrogação da manutenção da classificação para ultrassecreto
+
+-- Figuras e diagramas --
+Figura 'CIDIC - Visão Geral com NUP e Sigilo' (Diagrama): Demonstra a 1ª Parte (NUP) e a 2ª Parte (grau de sigilo, VCGE, datas, reclassificação e prorrogação).
+  Componentes visuais: NUP (1ª Parte), 2ª Parte CIDIC (sigilo e VCGE), Histórico CIDIC
+  Relacionado a: nup, grau_sigilo, vcge, gestao_historico_cidic
+
+-- Relacionamentos --
+Conexao: 'cidic_primeira_parte' --[contém]--> 'nup'. Motivo: A 1ª parte CIDIC contém o NUP
+Conexao: 'cidic_segunda_parte' --[contém]--> 'grau_sigilo'. Motivo: A 2ª parte CIDIC contém grau de sigilo e VCGE
+Conexao: 'cidic_segunda_parte' --[contém]--> 'vcge'. Motivo: A 2ª parte CIDIC contém VCGE
+Conexao: 'gestao_historico_cidic' --[mantem]--> 'cidic'. Motivo: Histórico de alterações do CIDIC mantido para gestão documental
+
+=== SECAO [sec_cap_iv_indexacao_art_50_53]: Capítulo IV - Indexação de Documento com Informação Classificada (Arts. 50 a 53) ===
+O CIDIC recebe o Código de Indexação de Documento com Informação Classificada (CIDIC). A 1ª parte (NUP) permanece após desclassificação, sem utilização de tabelas de classificação. A 2ª parte descreve o grau de sigilo, as categorias VCGE, as datas de produção e desclassificação, a indicação de reclassificação e, para ultrassecreto, a data de prorrogação da classificação. O histórico de alterações do CIDIC deve ser mantido para gestão documental.
+
+-- Conceitos-chave --
+Termo: CIDIC (Indexação de Documento com Informação Classificada) | Tipo: Conceito | Definicao: Código de indexação com duas partes para proteção temporária de acesso.
+  Vantagens de CIDIC (Indexação de Documento com Informação Classificada): proteção de confidencialidade durante a gestão documental
+  Desvantagens de CIDIC (Indexação de Documento com Informação Classificada): gestão de duas partes requer controle cuidadoso
+  Casos de uso de CIDIC (Indexação de Documento com Informação Classificada): indexação de documentos sigilosos
+Termo: VCGE - Vocabulário Controlado do Governo Eletrônico | Tipo: Vocabulário | Definicao: Categorias que identificam o tema da informação na segunda parte do CIDIC.
+  Vantagens de VCGE - Vocabulário Controlado do Governo Eletrônico: padronização de categorias
+  Desvantagens de VCGE - Vocabulário Controlado do Governo Eletrônico: necessita atualização constante
+  Casos de uso de VCGE - Vocabulário Controlado do Governo Eletrônico: classificação de informações
+Termo: Grau de Sigilo (CIDIC) | Tipo: Conceito | Definicao: Indicação do grau de sigilo para a segunda parte do CIDIC.
+  Vantagens de Grau de Sigilo (CIDIC): grau de proteção definido
+  Desvantagens de Grau de Sigilo (CIDIC): regras de prorrogação
+  Casos de uso de Grau de Sigilo (CIDIC): classificação de documentos
+Termo: NUP - Número Único de Protocolo | Tipo: Dado | Definicao: Número utilizado na 1ª parte do CIDIC.
+  Vantagens de NUP - Número Único de Protocolo: identificação única
+  Desvantagens de NUP - Número Único de Protocolo: depende da integração com sistema de protocolo
+  Casos de uso de NUP - Número Único de Protocolo: gestão de documentos sigilosos
+Termo: Gestão de Histórico CIDIC | Tipo: Processo | Definicao: Histórico de alterações do CIDIC para fins de gestão documental.
+  Vantagens de Gestão de Histórico CIDIC: rastreabilidade de alterações
+  Desvantagens de Gestão de Histórico CIDIC: manutenção exige controle de versão
+  Casos de uso de Gestão de Histórico CIDIC: auditoria de classificação
+Termo: Categoria VCGE | Tipo: Conceito | Definicao: Categoria do VCGE associada à segunda parte do CIDIC.
+  Vantagens de Categoria VCGE: padronização de classificação
+  Desvantagens de Categoria VCGE: necessita atualização de lista
+  Casos de uso de Categoria VCGE: classificação VCGE
+Termo: Data de Produção da Informação | Tipo: Dado | Definicao: Data de produção da informação classificada no CIDIC.
+  Vantagens de Data de Produção da Informação: cronologia de classificação
+  Desvantagens de Data de Produção da Informação: precisa de integração com controles de versão
+  Casos de uso de Data de Produção da Informação: rastreamento temporal
+Termo: Data de Desclassificação da Informação | Tipo: Dado | Definicao: Data potencial de desclassificação da informação classificada no CIDIC.
+  Vantagens de Data de Desclassificação da Informação: planejamento de acesso
+  Desvantagens de Data de Desclassificação da Informação: necessita atualização regular
+  Casos de uso de Data de Desclassificação da Informação: planejamento de liberação
+Termo: Indicação de Reclassificação | Tipo: Dado | Definicao: Indicação de ocorrência de reclassificação (S/N).
+  Vantagens de Indicação de Reclassificação: auditoria de mudanças de sigilo
+  Desvantagens de Indicação de Reclassificação: controle adicional
+  Casos de uso de Indicação de Reclassificação: gestão de revisões de sigilo
+Termo: Indicação de Prorrogação | Tipo: Dado | Definicao: Indicação da data de prorrogação da manutenção da classificação (quando ultrassecreto).
+  Vantagens de Indicação de Prorrogação: continuidade de sigilo ultrassecreto
+  Desvantagens de Indicação de Prorrogação: gerenciamento de prorrogações
+  Casos de uso de Indicação de Prorrogação: manter sigilo ultrassecreto
+
+-- Tabelas comparativas --
+Tabela 'Categorias VCGE - Cap IV': Categorias VCGE associadas às informações classificadas no CIDIC cap IV.
+  Linha 1: Categoria VCGE = Agricultura, extrativismo e pesca; Código = 01
+Tabela 'NUP - Número Único de Protocolo': NUP utilizado na 1ª Parte do CIDIC.
+  Linha 1: Elemento = NUP; Conteúdo = Identificador único de protocolo mantido durante o ciclo do CIDIC
+
+-- Figuras e diagramas --
+Figura 'CIDIC - Estrutura CIDIC (CIDIC 1ª e 2ª Partes)' (Diagrama): Demonstra as duas partes do CIDIC: 1ª (NUP) e 2ª (grau de sigilo, VCGE, datas, reclassificação e prorrogação).
+  Componentes visuais: 1ª Parte CIDIC (NUP), 2ª Parte CIDIC (sigilo, VCGE, datas), Histórico CIDIC
+  Relacionado a: nup, vcge, grau_sigilo
+
+-- Relacionamentos --
+Conexao: 'cidic_primeira_parte' --[utiliza]--> 'nup'. Motivo: A 1ª Parte CIDIC utiliza NUP como identificador
+Conexao: 'segunda_parte_cidic_cap_iv' --[usa]--> 'vcge_cap_iv'. Motivo: 2ª Parte CIDIC utiliza VCGE para classificação
+Conexao: 'gestao_historico_cidic_capiv' --[mantem]--> 'cidic_cap_iv'. Motivo: Histórico de alterações do CIDIC mantido
+
+=== SECAO [sec_cap_v_disposicoes_finais]: Capítulo V - Disposições Finais e Transitórias (Arts. 54 a 60) ===
+As disposições finais stabilizam a implementação do CIDIC, prazos para criptografia baseada em algoritmo de Estado, instruções complementares e o Regimento Interno da Comissão Mista de Reavaliação da Informação. O decreto também define a vigência (em vigor na data da publicação) e a revogação de decretos anteriores.
+
+-- Conceitos-chave --
+Termo: Implementação CIDIC e Prazos | Tipo: Processo | Definicao: Definição de prazos para implementação do CIDIC e uso temporário do NUP até a implantação total.
+  Vantagens de Implementação CIDIC e Prazos: cronograma de implementação claro
+  Desvantagens de Implementação CIDIC e Prazos: janela de transição
+  Casos de uso de Implementação CIDIC e Prazos: planejamento institucional
+Termo: Criptografia Estado - Prazos | Tipo: Processo | Definicao: Prazo para adoção dos recursos criptográficos baseados em algoritmo de Estado.
+  Vantagens de Criptografia Estado - Prazos: conformidade com padrões oficiais
+  Desvantagens de Criptografia Estado - Prazos: desafios de implementação gradual
+  Casos de uso de Criptografia Estado - Prazos: proteção de sigilo
+Termo: Instruções Complementares | Tipo: Procedimento | Definicao: Possibilidade de emissão de instruções adicionais pelos órgãos para credenciamento de segurança e tratamento de informações sigilosas.
+  Vantagens de Instruções Complementares: flexibilidade operacional
+  Desvantagens de Instruções Complementares: custo de implementação
+  Casos de uso de Instruções Complementares: customização institucional
+Termo: Regimento da Comissão Mista de Reavaliação | Tipo: Procedimento | Definicao: Regimento interno para salvaguardar informações durante os trabalhos da comissão e de sua Secretaria-Executiva.
+  Vantagens de Regimento da Comissão Mista de Reavaliação: governança de salvaguarda
+  Desvantagens de Regimento da Comissão Mista de Reavaliação: processos administrativos complexos
+  Casos de uso de Regimento da Comissão Mista de Reavaliação: procedimentos de reavaliação
+
+-- Figuras e diagramas --
+Figura 'Disposições Finais - Cronograma de Implementação' (Linha do tempo): Cronograma de implementação do CIDIC, incluindo prazos para implementação do CIDIC, uso do NUP temporário e adoção de criptografia com algoritmo de Estado.
+  Componentes visuais: Cronograma, Prazos, NUP temporário
+  Relacionado a: implementacao_cidic_prazos, criptografia_estado_prazos_sec_v
+
+-- Relacionamentos --
+Conexao: 'implementacao_cidic_prazos' --[depende_de]--> 'nup_cap_iv'. Motivo: Implementação do CIDIC depende da adoção de NUP na fase transitória
+Conexao: 'criptografia_estado_prazos_sec_v' --[depende_de]--> 'instrucoes_complementares_sec_v'. Motivo: Adoção de criptografia baseada em Estado depende de diretrizes de instruções complementares
+

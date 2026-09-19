@@ -1,0 +1,112 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Capítulo V - Das Informações Classificadas em Grau de Sigilo
+Idioma: pt-BR
+
+=== SECAO [GRAN_V_SEC_01]: Seção I - Da Classificação de Informações quanto ao Grau e Prazos de Sigilo ===
+Esta seção estabelece o fundamento jurídico para classificar informações como ultrassecreto, secreto ou reservado, com base no risco para a segurança, defesa, economia, relações internacionais e operações estratégicas. Define que a classificação depende da gravidade do dano potencial e do prazo máximo de sigilo, além de tratar de regras de delegação de competência, ratificação e término por evento específico. Também descreve as regras de delegação, vedação de subdelegação, prazos de ratificação e exceções, incluindo a delegação específica ao Banco Central em casos de ultrassecreto.
+
+-- Conceitos-chave --
+Termo: grau ultrassecreto | Tipo: Grau de sigilo | Definicao: O grau mais restritivo de sigilo, aplicável quando a divulgação possa colocar em risco a defesa, a soberania, a integridade territorial, ou informações de alto interesse estratégico.
+  Vantagens de grau ultrassecreto: Máxima proteção de informações sensíveis; Reduz risco de divulgação de temas críticos
+  Desvantagens de grau ultrassecreto: Baixa disponibilidade de dados para decisão; Processo burocrático e demorado
+  Casos de uso de grau ultrassecreto: Documentos de defesa nacional, pesquisas estratégicas, planos de operações sensíveis
+Termo: grau secreto | Tipo: Grau de sigilo | Definicao: Grau intermediário de sigilo, aplicado quando o dano for relevante, mas não extremo como ultrassecreto.
+  Vantagens de grau secreto: Proteção suficiente para informações sensíveis; Maior agilidade que ultrassecreto
+  Desvantagens de grau secreto: Menor controle de acesso que ultrassecreto
+  Casos de uso de grau secreto: Dados estratégicos, negociações sensíveis, informações de Estado com impacto relevante
+Termo: grau reservado | Tipo: Grau de sigilo | Definicao: Grau menos restritivo, utilizado para informações com menor risco ou necessidade de confidencialidade.
+  Vantagens de grau reservado: Maior disponibilidade de informação para tomada de decisão interna
+  Desvantagens de grau reservado: Risco de exposição se mal aplicado
+  Casos de uso de grau reservado: Relatórios internos, dados operacionais de menor sensibilidade
+Termo: Termo de Classificação de Informação (TCI) | Tipo: Procedimento | Definicao: Documento formal que registra a decisão de classificação, com campos obrigatórios como código de indexação, grau, categoria, tipo de documento, data de produção, base legal, razões e prazo de sigilo.
+  Vantagens de Termo de Classificação de Informação (TCI): Rastreabilidade e justificativa clara da classificação; Padronização do processo e prazo
+  Desvantagens de Termo de Classificação de Informação (TCI): Exigência de preenchimento completo pode gerar entraves
+  Casos de uso de Termo de Classificação de Informação (TCI): Formalização da decisão de classificação de informações
+Termo: CGU - Controladoria-Geral da União | Tipo: Órgão/Autoridade | Definicao: Órgão responsável pelo controle, auditoria e coordenação de informações classificadas, incluindo recebimento de dados para avaliação e eventual reclassificação.
+  Vantagens de CGU - Controladoria-Geral da União: Papel central de controle e auditoria de sigilo; Suporte à reavaliação de classificações
+  Desvantagens de CGU - Controladoria-Geral da União: Volume de notificações pode exigir recursos adicionais
+  Casos de uso de CGU - Controladoria-Geral da União: Recebimento de informações classificadas para controle e reavaliação
+Termo: Comissão Mista de Reavaliação de Informações | Tipo: Comissão | Definicao: Órgão colegiado indicado para reavaliar informações classificadas, especialmente nos graus ultrassecreto ou secreto.
+  Vantagens de Comissão Mista de Reavaliação de Informações: Contribui para ajuste de classificação conforme novas evidências
+  Desvantagens de Comissão Mista de Reavaliação de Informações: Processo demorado e institucionalmente complexo
+  Casos de uso de Comissão Mista de Reavaliação de Informações: Reavaliação de informações classificadas de alto grau
+Termo: Comissão Permanente de Avaliação de Documentos Sigilosos - CPADS | Tipo: Comissão | Definicao: Corpo permanente que opina sobre a classificação, assiste na desclassificação/reclassificação e sugere o destino final de documentos desclassificados.
+  Vantagens de Comissão Permanente de Avaliação de Documentos Sigilosos - CPADS: Apoio contínuo à gestão de sigilos; Contribui para transparência na destinação de informações
+  Desvantagens de Comissão Permanente de Avaliação de Documentos Sigilosos - CPADS: Pode introduzir fluxo adicional de trabalho
+  Casos de uso de Comissão Permanente de Avaliação de Documentos Sigilosos - CPADS: Opinar sobre classificação, desclassificação e destinação de documentos
+Termo: Lei nº 12.527/2011 - Lei de Acesso à Informação | Tipo: Lei | Definicao: Regula o acesso a informações públicas, condicionando o sigilo à proteção de interesses públicos relevantes.
+  Vantagens de Lei nº 12.527/2011 - Lei de Acesso à Informação: Transparência e accountability
+  Desvantagens de Lei nº 12.527/2011 - Lei de Acesso à Informação: Eventual necessidade de desclassificação para acesso
+  Casos de uso de Lei nº 12.527/2011 - Lei de Acesso à Informação: Regulação de acesso a informações públicas
+Termo: Lei nº 8.159/1991 - Lei de Arquivos | Tipo: Lei | Definicao: Regula a gestão de acervos, preservação e classificação de documentos em arquivos públicos.
+  Vantagens de Lei nº 8.159/1991 - Lei de Arquivos: Gestão adequada de documentos e preservação de evidências históricas
+  Desvantagens de Lei nº 8.159/1991 - Lei de Arquivos: Implementação complexa em órgãos com pouca estrutura
+  Casos de uso de Lei nº 8.159/1991 - Lei de Arquivos: Guarda permanente e destinação de documentos sigilosos
+Termo: Decreto nº 11.527, de 2023 | Tipo: Decreto | Definicao: Dispositivo que introduz ou altera regras de classificação, incluindo termos finais de restrição e procedimentos
+  Vantagens de Decreto nº 11.527, de 2023: Atualiza regras para o regime de sigilo
+  Desvantagens de Decreto nº 11.527, de 2023: Mudanças podem exigir readequações administrativas
+  Casos de uso de Decreto nº 11.527, de 2023: Atualização de prazos e critérios de sigilo
+Termo: Decreto nº 11.133, de 2022 | Tipo: Decreto | Definicao: Atualização normativa relacionada à delegação de competências de classificação
+  Vantagens de Decreto nº 11.133, de 2022: Esclarece a delegação de competencias
+  Desvantagens de Decreto nº 11.133, de 2022: Necessita constante atualização conforme mudanças administrativas
+  Casos de uso de Decreto nº 11.133, de 2022: Regulamentação de delegação de poder de classificação
+Termo: Decreto nº 9.716, de 2019 | Tipo: Decreto | Definicao: Regrava procedimentos para delegação de competência de classificação entre autoridades
+  Vantagens de Decreto nº 9.716, de 2019: Clarifica o processo de delegação; Previne subdelegação indevida
+  Desvantagens de Decreto nº 9.716, de 2019: Pode acrescentar etapas de aprovação
+  Casos de uso de Decreto nº 9.716, de 2019: Delegação de classificação em órgãos do Executivo
+
+-- Relacionamentos --
+Conexao: 'grau_ultrassecreto' --[depende_de]--> 'art_28'. Motivo: Art. 28 estabelece os prazos máximos por grau de sigilo, incluindo ultrassecreto (25 anos)
+Conexao: 'art_30' --[implementa]--> 'grau_ultrassecreto'. Motivo: Competência para classificar no grau ultrassecreto (alíneas I do caput)
+Conexao: 'art_31' --[comunica_com]--> 'tci'. Motivo: Art. 31 determina que a decisão de classificação seja formalizada no Termo de Classificação de Informação (TCI)
+Conexao: 'art_32' --[comunica_com]--> 'cgU'. Motivo: Art. 32 estabelece envio de informações classificadas à CGU ou Comissão Mista de Reavaliação (quando ultrassecreto ou secreto)
+Conexao: 'art_34' --[opina]--> 'cpads'. Motivo: Art. 34 atribui à CPADS a função de opinar sobre desclassificação, reclassificação e destinação de documentos
+
+=== SECAO [GRAN_V_SEC_02]: Seção II - Dos Procedimentos para Classificação de Informação ===
+Esta seção descreve o processo de classificação: a decisão deve ser formalizada no Termo de Classificação de Informação (TCI) conforme modelo do Anexo, com campos obrigatórios como código de indexação, grau, categoria, tipo de documento, data de produção, base legal, e razões. Inclui também o requisito de que o TCI contenha o prazo de sigilo, a data da classificação e a identificação da autoridade classificadora. Apresenta a obrigação de enviar as informações ao órgão competente (CGU ou Comissão Mista) no prazo de 30 dias, as regras para documentos com múltiplos graus e o papel da CPADS na avaliação e no destino final dos documentos desclassificados.
+
+-- Conceitos-chave --
+Termo: Termo de Classificação de Informação (TCI) | Tipo: Procedimento | Definicao: Documento que formaliza a classificação, contendo indexação, grau, categoria, tipo de documento, data, base legal, razões, prazo, data de classificação e autoridade.
+  Vantagens de Termo de Classificação de Informação (TCI): Rastreabilidade e justificativa clara da classificação; Transparência de processos; Padronização de documentos
+  Desvantagens de Termo de Classificação de Informação (TCI): Exigência de preenchimento rigoroso
+  Casos de uso de Termo de Classificação de Informação (TCI): Formalização da decisão de classificação de informações
+Termo: CGU - Controladoria-Geral da União (destino de envio) | Tipo: Órgão | Definicao: Órgão para onde as informações classificadas devem ser enviadas para controle e verificação
+  Vantagens de CGU - Controladoria-Geral da União (destino de envio): Controle e auditoria de sigilo; Suporte à correção de classificações
+  Desvantagens de CGU - Controladoria-Geral da União (destino de envio): Carga adicional de informação a CGU
+  Casos de uso de CGU - Controladoria-Geral da União (destino de envio): Envio de dados da classificação para CGU
+Termo: Comissão Mista de Reavaliação de Informações (informações ultrassecreto ou secreto) | Tipo: Comissão | Definicao: Comissão para reavaliar informações classificadas nos graus mais altos
+  Vantagens de Comissão Mista de Reavaliação de Informações (informações ultrassecreto ou secreto): Acurácia na classificação e possibilidade de declassificação quando cabível
+  Desvantagens de Comissão Mista de Reavaliação de Informações (informações ultrassecreto ou secreto): Processo burocrático e demorado
+  Casos de uso de Comissão Mista de Reavaliação de Informações (informações ultrassecreto ou secreto): Reavaliação de informações ultrassecreto/secreto
+Termo: CPADS - Comissão Permanente de Avaliação de Documentos Sigilosos | Tipo: Comissão | Definicao: Comissão com atribuições de opinar sobre classificação, auxiliar na desclassificação/reclassificação e propor o destino de informações desclassificadas
+  Vantagens de CPADS - Comissão Permanente de Avaliação de Documentos Sigilosos: Apoio estrutural à gestão de sigilos; Contribui para transparência na destinação de documentos
+  Desvantagens de CPADS - Comissão Permanente de Avaliação de Documentos Sigilosos: Pode aumentar a complexidade processual
+  Casos de uso de CPADS - Comissão Permanente de Avaliação de Documentos Sigilosos: Opinar sobre classificação e desclassificação; destinação de documentos
+Termo: Lei 12.527/2011 - Lei de Acesso à Informação | Tipo: Lei | Definicao: Lei que regula o direito de acesso à informação pública
+  Vantagens de Lei 12.527/2011 - Lei de Acesso à Informação: Transparência; Acesso público condicionado a sigilo quando cabível
+  Desvantagens de Lei 12.527/2011 - Lei de Acesso à Informação: Exige desclassificação para disponibilização de informações
+  Casos de uso de Lei 12.527/2011 - Lei de Acesso à Informação: Regulação do acesso a informações públicas
+Termo: Lei 8.159/1991 - Lei de Arquivos | Tipo: Lei | Definicao: Lei que regula a gestão de arquivos, preservação e destinação de documentos
+  Vantagens de Lei 8.159/1991 - Lei de Arquivos: Gestão adequada de documentos sigilosos; Preservação de evidências
+  Desvantagens de Lei 8.159/1991 - Lei de Arquivos: Requisitos administrativos complexos
+  Casos de uso de Lei 8.159/1991 - Lei de Arquivos: Destinação de documentos; guarda permanente
+Termo: Decreto 11.527/2023 | Tipo: Decreto | Definicao: Norma que atualiza regras de classificação, incluindo prazos e eventos que definem término
+  Vantagens de Decreto 11.527/2023: Adequação normativa às práticas atuais de sigilo
+  Desvantagens de Decreto 11.527/2023: Necessita constante atualização administrativa
+  Casos de uso de Decreto 11.527/2023: Revisão de prazos e critérios de sigilo
+Termo: Decreto 11.133/2022 | Tipo: Decreto | Definicao: Regulamenta a delegação de competências de classificação entre autoridades
+  Vantagens de Decreto 11.133/2022: Clarifica quem pode delegar classificação
+  Desvantagens de Decreto 11.133/2022: Pode exigir atos adicionais de ratificação
+  Casos de uso de Decreto 11.133/2022: Delegação de classificação entre autoridades
+Termo: Decreto 9.716/2019 | Tipo: Decreto | Definicao: Regulamenta a delegação de competência de classificação entre autoridades
+  Vantagens de Decreto 9.716/2019: Define regras de delegação e subdelegação
+  Desvantagens de Decreto 9.716/2019: Pode causar atrasos se mal implementado
+  Casos de uso de Decreto 9.716/2019: Delegação de classificação entre chefias e DAS
+
+-- Relacionamentos --
+Conexao: 'grau_ultrassecreto' --[depende_de]--> 'art_28'. Motivo: Art. 28 determina prazos máximos por grau de sigilo (inclui ultrassecreto: 25 anos)
+Conexao: 'art_30' --[implementa]--> 'grau_ultrassecreto'. Motivo: Competência para classificação no grau ultrassecreto (alínea I)
+Conexao: 'art_31' --[comunica_com]--> 'tci'. Motivo: Art. 31 estabelece que a decisão de classificação deve ser formalizada no TCI (modelo do Anexo)
+Conexao: 'art_32' --[comunica_com]--> 'cgU'. Motivo: Art. 32 determina envio das informações à CGU ou Comissão Mista, no prazo de 30 dias
+Conexao: 'art_34' --[opina]--> 'cpads'. Motivo: Art. 34 atribui à CPADS a função de opinar sobre desclassificação/reclassificação e destinação
+

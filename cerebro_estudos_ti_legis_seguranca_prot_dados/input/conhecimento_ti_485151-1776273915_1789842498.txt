@@ -1,0 +1,134 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Decreto de Implementação da Lei nº 12.527/2011 – Capítulos X a XI (Versão com alterações até 2023)
+Idioma: pt-BR
+Tecnologias citadas no documento: Lei nº 12.527, de 2011 (Lei de Acesso à Informação), Decreto nº 11.527, de 2023 (Redação atualizada), Lei nº 9.784, de 1999
+
+=== SECAO [CAPITULO_X_SECAO_I]: CAPÍTULO X - DO MONITORAMENTO DA APLICAÇÃO DA LEI | Seção I - Da Autoridade de Monitoramento ===
+Art. 67 designa a autoridade máxima de cada órgão para designar uma autoridade subordinada responsável por assegurar o cumprimento das normas de acesso à informação, avaliar e monitorar a implementação do Decreto, apresentar relatório anual sobre o cumprimento e recomendar melhorias.
+
+-- Conceitos-chave --
+Termo: Autoridade de Monitoramento | Tipo: Papel/Função | Definicao: Pessoa natural ou órgão designado pelo dirigente máximo para assegurar o cumprimento das normas de acesso à informação e monitorar a implementação do Decreto.
+  Vantagens de Autoridade de Monitoramento: Clareza de responsabilidades; Rastreamento de conformidade
+  Desvantagens de Autoridade de Monitoramento: Possível necessidade de recursos adicionais
+  Casos de uso de Autoridade de Monitoramento: Designação da autoridade; Acompanhamento de conformidade
+Termo: Relatório anual de cumprimento | Tipo: Documento de governança | Definicao: Relatório periódico sobre o cumprimento do Decreto, enviado ao dirigente máximo e à CGU.
+  Vantagens de Relatório anual de cumprimento: Transparência e accountability
+  Desvantagens de Relatório anual de cumprimento: Pode exigir sistematização de dados
+  Casos de uso de Relatório anual de cumprimento: Elaboração do relatório anual de cumprimento
+
+-- Figuras e diagramas --
+Figura 'Figura - Atribuições da Autoridade de Monitoramento (Art. 67)' (Diagrama de fluxo): Passos: 1) dirigente designa a autoridade; 2) autoridade assegura o cumprimento; 3) produz relatório; 4) recomenda melhorias; 5) encaminha ao CGU.
+  Componentes visuais: Dirigente máximo, Autoridade designada, Relatório anual, CGU
+  Relacionado a: autoridade_de_monitoramento, relatorio_anual_cumprimento, capitulo_x
+
+-- Relacionamentos --
+Conexao: 'decreto_n_11_527_2023' --[implementa]--> 'lei_12_527_2011'. Motivo: Decreto 11.527/2023 implementa a Lei 12.527/2011.
+Conexao: 'capitulo_x' --[comunica_com]--> 'art_67'. Motivo: Art. 67 é parte do Capítulo X, Seção I.
+Conexao: 'art_67' --[comunica_com]--> 'secao_i_da_autoridade_de_monitoramento'. Motivo: Art. 67 descreve as atribuições da Autoridade de Monitoramento na Seção I.
+
+=== SECAO [CAPITULO_X_SECAO_II]: CAPÍTULO X - DO MONITORAMENTO DA APLICAÇÃO DA LEI | Seção II - Das Competências Relativas ao Monitoramento ===
+Art. 68 estabelece as competências da CGU para promover padrões, campanhas, treinamento e monitoramento da Lei, além de supervisionar a implementação e produzir relatório anual; inclui a edição de enunciados e normatizações e o acompanhamento institucional pela CGU.
+
+-- Conceitos-chave --
+Termo: Controladoria-Geral da União (CGU) | Tipo: Órgão | Definicao: Órgão responsável por definir formulários, campanhas, treinamento e monitoramento da transparência na administração pública.
+  Vantagens de Controladoria-Geral da União (CGU): Unificação de procedimentos; Promoção de transparência
+  Desvantagens de Controladoria-Geral da União (CGU): Possível sobrecarga de atividades
+  Casos de uso de Controladoria-Geral da União (CGU): Definição de formulário padrão; Treinamento de agentes
+Termo: Formulário padrão de divulgação | Tipo: Procedimento | Definicao: Formato padronizado para divulgação de informações ao público.
+  Vantagens de Formulário padrão de divulgação: Coerência de dados; Facilita busca
+  Desvantagens de Formulário padrão de divulgação: Rigidez normativa
+  Casos de uso de Formulário padrão de divulgação: Publicação no SIC e no site
+Termo: Campanha nacional de transparência | Tipo: Iniciativa de políticas públicas | Definicao: Iniciativa para fomentar a cultura de transparência na Administração Pública.
+  Vantagens de Campanha nacional de transparência: Engajamento público
+  Desvantagens de Campanha nacional de transparência: Custos
+  Casos de uso de Campanha nacional de transparência: Campanhas de conscientização
+Termo: Treinamento de agentes públicos | Tipo: Programa de capacitação | Definicao: Capacitação de agentes públicos em práticas de transparência.
+  Vantagens de Treinamento de agentes públicos: Melhora de conformidade
+  Desvantagens de Treinamento de agentes públicos: Custo de treinamento
+  Casos de uso de Treinamento de agentes públicos: Capacitar agentes em transparência
+Termo: Relatório anual de implementação | Tipo: Documento de governança | Definicao: Relatório anual com informações sobre a implementação da Lei 12.527 encaminhado ao Congresso Nacional.
+  Vantagens de Relatório anual de implementação: Transparência institucional; Monitoramento de progresso
+  Desvantagens de Relatório anual de implementação: Custos administrativos
+  Casos de uso de Relatório anual de implementação: Elaboração e envio do relatório anual
+
+-- Figuras e diagramas --
+Figura 'Figura - Fluxo de competências (Art. 68)' (Diagrama de processos): CGU define formulário, lança campanha, realiza treinamentos, monitora implementação, elabora relatório e supervisiona o cumprimento, bem como edita enunciados para implementação.
+  Componentes visuais: CGU, Órgãos e entidades, Site/SIC, Treinamento, Relatório anual
+  Relacionado a: controladoria_geral_da_uniao, formulario_padrao, campanha_transparencia_nacional
+
+-- Relacionamentos --
+Conexao: 'decreto_n_11_527_2023' --[implementa]--> 'lei_12_527_2011'. Motivo: Decreto 11.527/2023 atualiza a Lei 12.527/2011.
+Conexao: 'capitulo_x_secao_ii' --[comunica_com]--> 'formulario_padrao'. Motivo: Seção II define o formulário padrão.
+Conexao: 'formulario_padrao' --[comunica_com]--> 'campanha_transparencia_nacional'. Motivo: Formulário padrão suportado por campanhas nacionais.
+
+=== SECAO [ARTIGO_69]: ART. 69 - Competência da Controladoria-Geral da União ===
+Art. 69 delega à CGU a estabelecer procedimentos, regras e padrões de divulgação, bem como detalhar os procedimentos para busca, estruturação e prestação de informações no SIC.
+
+-- Conceitos-chave --
+Termo: Procedimentos e padrões de divulgação | Tipo: Procedimento | Definicao: Procedimentos para divulgação pública com prazo máximo de atualização.
+  Vantagens de Procedimentos e padrões de divulgação: Padronização de informações; Atualização regular
+  Desvantagens de Procedimentos e padrões de divulgação: Rigor documental
+  Casos de uso de Procedimentos e padrões de divulgação: Definição de padrões de divulgação; Atualização de informações
+Termo: Detalhar procedimentos no SIC | Tipo: Procedimento | Definicao: Processos de busca, estruturação e disponibilização de informações no SIC.
+  Vantagens de Detalhar procedimentos no SIC: Melhor indexação de dados
+  Desvantagens de Detalhar procedimentos no SIC: Gestão de dados complexa
+  Casos de uso de Detalhar procedimentos no SIC: Busca, organização e disponibilização de informações
+
+-- Figuras e diagramas --
+Figura 'Figura - Procedimentos de divulgação (Art. 69)' (Fluxo de processo): Definição de procedimentos de divulgação e detalhamento de busca/estruturação no SIC.
+  Componentes visuais: CGU, SIC, Unidades de divulgação
+  Relacionado a: controladoria_geral_da_uniao
+
+-- Relacionamentos --
+Conexao: 'decreto_n_11_527_2023' --[implementa]--> 'lei_12_527_2011'. Motivo: Decreto 11.527/2023 atualiza a Lei 12.527/2011.
+
+=== SECAO [ARTIGO_70]: ART. 70 - Competência do Gabinete de Segurança Institucional ===
+Art. 70 delega ao GSI a estabelecer regras de indexação de classificação, expedir atos complementares e credenciar segurança de pessoas e entidades para o tratamento de informações classificadas.
+
+-- Conceitos-chave --
+Termo: Regras de indexação de classificação | Tipo: Procedimento | Definicao: Procedimentos para indexar e classificar informações conforme confidencialidade.
+  Vantagens de Regras de indexação de classificação: Controle de acesso; Transparência de classificação
+  Desvantagens de Regras de indexação de classificação: Risco de classificação indevida
+  Casos de uso de Regras de indexação de classificação: Indexação de informações classificadas
+Termo: Credenciamento de segurança | Tipo: Procedimento | Definicao: Procedimentos de credenciamento para tratamento de informações classificadas.
+  Vantagens de Credenciamento de segurança: Controle de acesso a informações confidenciais
+  Desvantagens de Credenciamento de segurança: Processos podem atrasar operações
+  Casos de uso de Credenciamento de segurança: Credenciamento pelo Núcleo de Credenciamento de Segurança
+Termo: Núcleo de Credenciamento de Segurança | Tipo: Órgão | Definicao: Estrutura institucional responsável pelo credenciamento de segurança.
+  Vantagens de Núcleo de Credenciamento de Segurança: Centralização de controles de segurança
+  Desvantagens de Núcleo de Credenciamento de Segurança: Burocracia potencial
+  Casos de uso de Núcleo de Credenciamento de Segurança: Credenciamento para manejo de informações classificadas
+
+-- Figuras e diagramas --
+Figura 'Figura - Fluxo de credenciamento de segurança (Art. 70)' (Diagrama de fluxo): Processo de credenciamento de segurança para pessoas/órgãos para tratamento de informações classificadas.
+  Componentes visuais: GSI, Núcleo de Credenciamento de Segurança, Órgãos/entidades
+  Relacionado a: gabinete_de_seguranca_institucional, nucleo_credenciamento_segurança
+
+-- Relacionamentos --
+Conexao: 'decreto_n_11_527_2023' --[implementa]--> 'lei_12_527_2011'. Motivo: Decreto 11.527/2023 atualiza a Lei 12.527/2011, incluindo credenciamento de segurança.
+
+=== SECAO [CAPITULO_XI_DISPOSICOES_TRANSITORIAS_E_FINAIS]: CAPÍTULO XI - DISPOSIÇÕES TRANSITÓRIAS E FINAIS ===
+Capítulo XI regula disposições transitórias e finais: adaptação das políticas de gestão da informação; reavaliação de informações classificadas no prazo de dois anos; manutenção de classificações até conclusão da reavaliação; início da publicação anual em 2013; aplicação subsidiária da Lei nº 9.784/1999 e a vigência do Decreto desde 16 de maio de 2012.
+
+-- Conceitos-chave --
+Termo: Reavaliação de informações ultrassecretas e secretas | Tipo: Procedimento | Definicao: Prazo de dois anos para reavaliar informações classificadas.
+  Vantagens de Reavaliação de informações ultrassecretas e secretas: Possível desclassificação adequada
+  Desvantagens de Reavaliação de informações ultrassecretas e secretas: Risco de manutenção de classificação inadequada
+  Casos de uso de Reavaliação de informações ultrassecretas e secretas: Reavaliação dentro do prazo de dois anos
+Termo: Publicação anual de informações | Tipo: Procedimento | Definicao: Publicação anual de informações a partir de junho de 2013.
+  Vantagens de Publicação anual de informações: Transparência contínua
+  Desvantagens de Publicação anual de informações: Atualização contínua necessária
+  Casos de uso de Publicação anual de informações: Publicação anual de informações
+Termo: Aplicação subsidiária da Lei 9.784/1999 | Tipo: Dispositivo legal | Definicao: Aplica subsidiariamente os procedimentos da Lei 9.784/1999 aos atos previstos no Decreto.
+  Vantagens de Aplicação subsidiária da Lei 9.784/1999: Convergência com a legislação administrativa geral
+  Desvantagens de Aplicação subsidiária da Lei 9.784/1999: Risco de conflitos entre leis
+  Casos de uso de Aplicação subsidiária da Lei 9.784/1999: Referência subsidiária
+
+-- Figuras e diagramas --
+Figura 'Figura - Cronograma de reavaliação (Arts. 71-72)' (Linha do tempo): Cronograma de reavaliação em dois anos e desclassificação automática se não realizada.
+  Componentes visuais: Prazos de reavaliação, Conformidade, Desclassificação
+  Relacionado a: reavaliacao_informacoes_classificadas_2_anos
+
+-- Relacionamentos --
+Conexao: 'decreto_n_11_527_2023' --[implementa]--> 'lei_9_784_1999'. Motivo: Aplica subsidiariamente a Lei 9.784/1999 aos procedimentos.
+

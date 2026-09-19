@@ -1,0 +1,53 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Artigos 8º-A e 8º-B – Divulgação de Informações de Empregados
+Idioma: pt-BR
+Tecnologias citadas no documento: Legislação, Portal de Transparência, Sistemas de Gestão de Pessoas (SGP)
+
+=== SECAO [LEG_008A_008B]: Disposições sobre Divulgação de Informações de Empregados (Art. 8º-A e 8º-B) ===
+O conjunto de dispositivos legais Art. 8º-A e 8º-B obriga entidades privadas com personalidade jurídica de direito privado, constituídas sob a forma de serviço social autônomo e que recebam recursos federais por contrato de gestão, a tornar públicas informações específicas sobre seus empregados. As obrigações do Art. 8º-A abrangem o plano de cargos e salários (I), o quantitativo total de empregados discriminado por cargo e faixa salarial com nomes (II), a lista de parcelas remuneratórias e indenizatórias (III) e o quantitativo de funções gratificadas com seus critérios (IV). O Art. 8º-B complementa exigindo que os conselhos de fiscalização profissional divulguem, de forma nominal e individualizada, as mesmas parcelas remuneratórias e indenizatórias. Esses dispositivos visam aumentar a transparência, permitir o controle público sobre gastos com pessoal e reforçar a responsabilização. Implementação envolve integração entre gestão de pessoas, contratos de gestão e portais de transparência, com necessidade de governança de dados para proteção de informações sensíveis e conformidade com legislação de privacidade.
+
+-- Conceitos-chave --
+Termo: Artigo 8º-A | Tipo: Lei | Definicao: Dispositivo legal que determina a divulgação de informações de empregados por entidades privadas que recebem recursos públicos federais por contrato de gestão.
+  Vantagens de Artigo 8º-A: Aumenta a transparência sobre gastos com pessoal; Facilita auditorias e fiscalização institucional
+  Desvantagens de Artigo 8º-A: Exposição de dados pessoais de empregados; Custos operacionais de compliance e proteção de dados
+  Casos de uso de Artigo 8º-A: Portais de transparência com dados salariais por cargo; Relatórios de conformidade para órgãos de controle
+Termo: Artigo 8º-B | Tipo: Lei | Definicao: Dispositivo legal que exige divulgação nominal e individualizada das parcelas remuneratórias e indenizatórias para conselhos de fiscalização profissional.
+  Vantagens de Artigo 8º-B: Transparência específica de remunerações de conselhos; Melhora na fiscalização profissional
+  Desvantagens de Artigo 8º-B: Risco adicional de privacidade de indivíduos
+  Casos de uso de Artigo 8º-B: Auditorias de remuneração em conselhos de fiscalização
+Termo: Plano de Cargos e Salários | Tipo: Processo | Definicao: Conjunto de critérios para evolução na carreira e para a fixação da política salarial.
+  Vantagens de Plano de Cargos e Salários: Clareza de progressão na carreira; Padronização de políticas salariais
+  Desvantagens de Plano de Cargos e Salários: Pode exigir atualização frequente e governança de dados; Possível inflexibilidade frente mudanças organizacionais
+  Casos de uso de Plano de Cargos e Salários: Definição de trilhas salariais por cargo; Políticas de promoção interna
+Termo: Quantidade de empregados por cargo e faixa salarial | Tipo: Dado | Definicao: Quadro total de empregados discriminado por cargo e faixa salarial, acompanhado do nome e do cargo de cada empregado.
+  Vantagens de Quantidade de empregados por cargo e faixa salarial: Visão granular de composição de pessoal; Facilita planejamento de recursos humanos
+  Desvantagens de Quantidade de empregados por cargo e faixa salarial: Exposição de dados pessoais sensíveis; Necessidade de controles de acesso rigorosos
+  Casos de uso de Quantidade de empregados por cargo e faixa salarial: Relatórios de composição de quadro de funcionários; Análises de equidade salarial por cargo
+Termo: Parcelas remuneratórias e indenizatórias | Tipo: Dado | Definicao: Lista discriminada por faixas salariais de parcelas como auxílios, ajudas de custo, gratificações, jetons e outras vantagens pecuniárias.
+  Vantagens de Parcelas remuneratórias e indenizatórias: Transparência detalhada de componentes da remuneração
+  Desvantagens de Parcelas remuneratórias e indenizatórias: Complexidade na coleta e atualização; Riscos de confidencialidade
+  Casos de uso de Parcelas remuneratórias e indenizatórias: integração de dados de folha com portais de transparência; auditorias de remuneração por parcela
+Termo: Funções Gratificadas | Tipo: Papel/Entidade | Definicao: Quantidade de funções gratificadas, critérios para ocupação e o rol dos empregados que as ocupam.
+  Vantagens de Funções Gratificadas: Maior governança de cargos de confiança
+  Desvantagens de Funções Gratificadas: Podem gerar distorções na remuneração caso mal definidas
+  Casos de uso de Funções Gratificadas: Gestão de funções de comando e de confiança
+Termo: Conselhos de Fiscalização Profissional | Tipo: Órgão | Definicao: Órgãos de fiscalização profissional que devem divulgar, de forma nominal e individualizada, as parcelas remuneratórias e indenizatórias.
+  Vantagens de Conselhos de Fiscalização Profissional: Transparência direta para a fiscalização pública
+  Desvantagens de Conselhos de Fiscalização Profissional: Exposição de dados de conselheiros e empregados
+  Casos de uso de Conselhos de Fiscalização Profissional: Publicação de folhas de pagamento de conselhos
+
+-- Figuras e diagramas --
+Figura 'Artigos 8º-A e 8º-B: Divulgação de informações de empregados' (Texto/Diagrama Legal): Figura mostra que o Artigo 8º-A impõe divulgação de: I - plano de cargos e salários; II - quadro de empregados por cargo e faixa salarial com nomes; III - parcelas remuneratórias e indenizatórias; IV - funções gratificadas com seus criterios. O Artigo 8º-B impõe divulgação nominal pelas comissões de fiscalização.
+  Componentes visuais: Artigo 8º-A, Parágrafos I a IV, Artigo 8º-B, Conselhos de Fiscalização Profissional
+  Relacionado a: artigo_8a, artigo_8b, plano_cargos_salarios, quantitativo_funcionarios, parcelas_remuneratorias_indenizatorias, funcoes_gratificadas, conselhos_fiscalizacao_profissional
+Figura 'Estrutura de dados para divulgação de remunerações' (Diagrama de Dados): Diagrama que correlaciona: empregados, cargos, faixas salariais, parcelas remuneratórias e indenizatórias, além de funções gratificadas e conselhos profissionais.
+  Componentes visuais: Empregados, Cargos, Faixas salariais, Parcelas remuneratórias, Indenizatórias, Funções gratificadas, Conselhos de fiscalização
+  Relacionado a: quantitativo_funcionarios, parcelas_remuneratorias_indenizatorias, funcoes_gratificadas, conselhos_fiscalizacao_profissional
+
+-- Relacionamentos --
+Conexao: 'artigo_8a' --[implementa]--> 'plano_cargos_salarios'. Motivo: I - Exige divulgação do plano de cargos e salários
+Conexao: 'artigo_8a' --[depende_de]--> 'contrato_gestao'. Motivo: Condição de aplicabilidade; entidades recebem recursos federais por contrato de gestão
+Conexao: 'artigo_8b' --[comunica_com]--> 'conselhos_fiscalizacao_profissional'. Motivo: 8º-B obriga divulgação por conselhos
+Conexao: 'plano_cargos_salarios' --[depende_de]--> 'quantitativo_funcionarios'. Motivo: Dados de cargos e salários alimentam o quadro de empregados
+Conexao: 'parcelas_remuneratorias_indenizatorias' --[comunica_com]--> 'conselhos_fiscalizacao_profissional'. Motivo: Conselhos devem divulgar as parcelas específicas conforme 8º-B
+

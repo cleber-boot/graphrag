@@ -1,0 +1,132 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Conceitos da LAI e Qualidade da Informação - Artigo 4º e conceitos correlatos
+Idioma: pt-BR
+Tecnologias citadas no documento: assinatura digital, hash criptográfico, e-mail com assinatura digital, certidão de nascimento (original), serviços de busca de informação, reprodução de documentos, hash de documentos, assinatura eletrônica
+
+=== SECAO [LAI_SEC_001]: Conceitos básicos da LAI (Artigo 4º) – Informação, Documento, Informação sigilosa e Informação pessoal ===
+O Artigo 4º da Lei 12.527/2011 (LAI) estabelece definições centrais para a gestão de informações na Administração Pública. Define Informação como dados que podem ser usados para produção/transmissão de conhecimento, Documento como a unidade de registro, Informação sigilosa como informação temporariamente restrita por sua relevância para a segurança pública, e Informação pessoal como aquela relacionada a pessoa natural identificável. Além disso, introduz conceitos-chave de qualidade da informação, e coloca as bases para tratamento, disponibilidade e qualidade de dados ao longo de processos institucionais.
+
+-- Conceitos-chave --
+Termo: Informação | Tipo: Conceito | Definicao: dados, processados ou não, que podem ser utilizados para produção e transmissão de conhecimento, contidos em qualquer meio, suporte ou formato.
+  Vantagens de Informação: facilita tomada de decisão e produção de conhecimento; facilita compartilhamento de informações
+  Desvantagens de Informação: risco de exposição indevida de dados; necessidade de governança de dados
+  Casos de uso de Informação: gestão de dados oficiais; transparência pública com controle de acesso
+Termo: Documento | Tipo: Conceito | Definicao: unidade de registro de informações, qualquer que seja o suporte ou formato.
+  Vantagens de Documento: fixa registro de informações; facilita auditoria e rastreabilidade
+  Desvantagens de Documento: dependência de formato e suporte; proteção de integridade requerida
+  Casos de uso de Documento: emissão de atestados; registros oficiais
+Termo: Informação sigilosa | Tipo: Conceito | Definicao: aquela submetida temporariamente à restrição de acesso público em razão de sua imprescindibilidade para a segurança da sociedade e do Estado.
+  Vantagens de Informação sigilosa: protege informações estratégicas; garante segurança nacional
+  Desvantagens de Informação sigilosa: requer gestão de acesso rígida; risco de atraso na disponibilidade de dados
+  Casos de uso de Informação sigilosa: informações estratégicas; dados sensíveis de segurança
+Termo: Informação pessoal | Tipo: Conceito | Definicao: aquela relacionada à pessoa natural identificada ou identificável.
+  Vantagens de Informação pessoal: protege a privacidade; facilita o cumprimento de leis de proteção de dados
+  Desvantagens de Informação pessoal: possível restrição de acesso; risco de abuso de dados pessoais
+  Casos de uso de Informação pessoal: cadastros, prontuários, dados de funcionários
+
+-- Tabelas comparativas --
+Tabela 'Conceitos do Artigo 4º da LAI': Definições de Informação, Documento, Informação sigilosa e Informação pessoal
+  Linha L1: Conceito = Informação; Definicao = dados, processados ou não, que podem ser utilizados para produção e transmissão de conhecimento, contidos em qualquer meio, suporte ou formato.
+  Linha L2: Conceito = Documento; Definicao = unidade de registro de informações, qualquer que seja o suporte ou formato.
+  Linha L3: Conceito = Informação sigilosa; Definicao = aquela submetida temporariamente à restrição de acesso público em razão de sua imprescindibilidade para a segurança da sociedade e do Estado.
+  Linha L4: Conceito = Informação pessoal; Definicao = aquela relacionada à pessoa natural identificada ou identificável.
+
+-- Figuras e diagramas --
+Figura 'Conceitos Art. 4º da LAI – Conceitos básicos' (Quadro): Quadro com quatro linhas: Informação, Documento, Informação sigilosa, Informação pessoal, com definição correspondente.
+  Componentes visuais: Tabela com 4 linhas
+  Relacionado a: informacao, documento, informacao_sigilosa, informacao_pessoal, tratamento_da_informação, disponibilidade, autenticidade, integridade, primariedade
+
+-- Relacionamentos --
+Conexao: 'informacao' --[comunica_com]--> 'documento'. Motivo: Documento registra a informação
+Conexao: 'informacao' --[comunica_com]--> 'informacao_sigilosa'. Motivo: Informação sigilosa é uma modalidade de informação sujeita a restrições
+Conexao: 'informacao' --[comunica_com]--> 'informacao_pessoal'. Motivo: Informação pessoal está relacionada à pessoa identificável
+Conexao: 'informacao' --[comunica_com]--> 'tratamento_da_informação'. Motivo: Tratamento da informação envolve ações sobre a informação
+Conexao: 'informacao' --[comunica_com]--> 'disponibilidade'. Motivo: Disponibilidade envolve o conhecimento e uso da informação por pessoas/sistemas autorizados
+Conexao: 'autenticidade' --[comunica_com]--> 'informacao'. Motivo: Autenticidade valida a origem/autor da informação
+Conexao: 'integridade' --[comunica_com]--> 'informacao'. Motivo: Integridade garante que a informação não tenha sido alterada
+Conexao: 'primariedade' --[comunica_com]--> 'informacao'. Motivo: Primariedade descreve coleta na fonte com detalhamento
+
+=== SECAO [LAI_SEC_002]: Conceitos de Qualidade da Informação (Tratamento, Disponibilidade, Autenticidade, Integridade e Primariedade) ===
+Esta seção descreve os conceitos de qualidade da informação na LAI: Tratamento da informação, Disponibilidade, Autenticidade, Integridade e Primariedade, incluindo o que cada conceito garante e exemplos típicos de aplicação.
+
+-- Conceitos-chave --
+Termo: Tratamento da informação | Tipo: Conceito | Definicao: conjunto de ações referentes à produção, recepção, classificação, utilização, acesso, reprodução, transporte, transmissão, distribuição, arquivamento, armazenamento, eliminação, avaliação, destinação ou controle da informação.
+  Vantagens de Tratamento da informação: controle centralizado de dados; melhoria de governança
+  Desvantagens de Tratamento da informação: complexidade de implementação; custo de conformidade
+  Casos de uso de Tratamento da informação: governança de dados; gestão de documentos; conformidade LAI
+Termo: Disponibilidade | Tipo: Conceito | Definicao: qualidade da informação que pode ser conhecida e utilizada por indivíduos, equipamentos ou sistemas autorizados.
+  Vantagens de Disponibilidade: acesso rápido a informações autorizadas; redução de gargalos
+  Desvantagens de Disponibilidade: risco de indisponibilidade se falhas; dependência de infraestrutura
+  Casos de uso de Disponibilidade: consultas públicas controladas; acesso a informações institucionais
+Termo: Autenticidade | Tipo: Conceito | Definicao: qualidade da informação que tenha sido produzida, expedida, recebida ou modificada por determinado indivíduo, equipamento ou sistema.
+  Vantagens de Autenticidade: veracidade da origem; confiança na entrega
+  Desvantagens de Autenticidade: pode exigir mecanismos de verificação
+  Casos de uso de Autenticidade: emails com assinatura digital; documentos oficiais
+Termo: Integridade | Tipo: Conceito | Definicao: qualidade da informação não modificada, inclusive quanto à origem, trânsito e destino.
+  Vantagens de Integridade: garantia de veracidade; detecção de alterações
+  Desvantagens de Integridade: investimento em controles de modificação
+  Casos de uso de Integridade: contratos digitais; exames médicos em PDF com hash
+Termo: Primariedade | Tipo: Conceito | Definicao: qualidade da informação coletada na fonte, com o máximo de detalhamento possível, sem modificações.
+  Vantagens de Primariedade: dados originais e confiáveis; minimiza ruídos de dados
+  Desvantagens de Primariedade: requer coleta extensa; volume maior de dados
+  Casos de uso de Primariedade: registro na fonte; dados primários
+
+-- Tabelas comparativas --
+Tabela 'Conceitos-chave de Qualidade da Informação': Tabela com os conceitos de qualidade: Disponibilidade, Autenticidade, Integridade, Primariedade e Tratamento
+  Linha L1: Conceito = Autenticidade; O que garante? = origem/autoria verdadeira; Exemplos = e-mail com assinatura digital
+  Linha L2: Conceito = Integridade; O que garante? = nenhuma modificação não autorizada; Exemplos = contrato assinado sem alterações
+  Linha L3: Conceito = Primariedade; O que garante? = coleta na fonte com detalhamento; Exemplos = certidão de nascimento (original)
+  Linha L4: Conceito = Disponibilidade; O que garante? = acesso autorizado a informações; Exemplos = serviço de busca gratuito
+
+-- Figuras e diagramas --
+Figura 'Diferença resumida entre Autenticidade, Integridade, Primariedade' (Tabela de comparação): Tabela que relaciona conceito, o que garante e exemplos
+  Componentes visuais: Tabela explicativa
+  Relacionado a: autenticidade, integridade, primariedade, disponibilidade, informacao
+
+-- Relacionamentos --
+Conexao: 'informacao' --[comunica_com]--> 'autenticidade'. Motivo: Autenticidade valida a origem/autor da informação
+Conexao: 'informacao' --[comunica_com]--> 'integridade'. Motivo: Integridade garante que a informação não tenha sido alterada
+Conexao: 'informacao' --[comunica_com]--> 'primariedade'. Motivo: Primariedade descreve coleta na fonte com detalhamento
+Conexao: 'informacao' --[comunica_com]--> 'disponibilidade'. Motivo: Disponibilidade envolve o acesso da informação por usuários autorizados
+Conexao: 'tratamento_da_informacao' --[implementa]--> 'informacao'. Motivo: Tratamento da informação descreve ações aplicadas sobre a informação
+
+=== SECAO [LAI_SEC_003]: Casos de uso e questões de prova ===
+Casos de uso e questões de prova presentes no material evidenciam a aplicação prática dos conceitos da LAI, incluindo leitura de definições, distinção entre informações sigilosas/pessoais e avaliação de proposições sobre autenticidade, integridade e disponibilidade. A seção reúne itens de provas (exemplos de perguntas verdadeiras/falsas) que ajudam a consolidar o entendimento dos conceitos intervenientes.
+
+-- Conceitos-chave --
+Termo: Autenticidade (Questões) | Tipo: Conceito | Definicao: Qualidade da informação de ser verdadeira e proveniente de fonte original.
+  Vantagens de Autenticidade (Questões): controle de origem de informações em provas; facilita validação de mensagens
+  Desvantagens de Autenticidade (Questões): exige mecanismos de verificação
+  Casos de uso de Autenticidade (Questões): provas de LAI
+Termo: Integridade (Questões) | Tipo: Conceito | Definicao: Não modificação da informação durante o percurso.
+  Vantagens de Integridade (Questões): garantia de veracidade; detecção de alterações
+  Desvantagens de Integridade (Questões): necessita de controles de integridade
+  Casos de uso de Integridade (Questões): documentos oficiais; contratos digitais
+Termo: Primariedade (Questões) | Tipo: Conceito | Definicao: Coleta na fonte com detalhamento máximo.
+  Vantagens de Primariedade (Questões): dados originais e confiáveis; minimiza ruídos de dados
+  Desvantagens de Primariedade (Questões): volume maior de dados
+  Casos de uso de Primariedade (Questões): registros de origem; dados primários
+Termo: Informação pessoal (Questões) | Tipo: Conceito | Definicao: Informação relacionada a pessoa natural identificável.
+  Vantagens de Informação pessoal (Questões): capacita avaliações de conformidade com LAI; protege privacidade
+  Desvantagens de Informação pessoal (Questões): restrições de acesso; limitações de uso em provas
+  Casos de uso de Informação pessoal (Questões): dados de indivíduos em avaliações
+
+-- Tabelas comparativas --
+Tabela 'Conceitos testados em questões de prova': Quadro com conceitos-chave testados em provas da LAI
+  Linha L1: Conceito = Autenticidade; O que garante? = origem/autoria verdadeira; Exemplos de aplicação = E-mail com assinatura digital
+  Linha L2: Conceito = Integridade; O que garante? = nenhuma modificação não autorizada; Exemplos de aplicação = Contrato assinado sem alterações
+  Linha L3: Conceito = Primariedade; O que garante? = coleta na fonte com detalhamento; Exemplos de aplicação = Certidão de nascimento original
+  Linha L4: Conceito = Disponibilidade; O que garante? = acesso autorizado a informações; Exemplos de aplicação = Serviços de busca gratuitos
+
+-- Figuras e diagramas --
+Figura 'Diferenças resumidas entre os conceitos de qualidade da informação' (Quadro explicativo): Quadro comparativo entre Autenticidade, Integridade, Primariedade e Disponibilidade com exemplos.
+  Componentes visuais: Tabela de comparação
+  Relacionado a: autenticidade, integridade, primariedade, disponibilidade, informacao
+
+-- Relacionamentos --
+Conexao: 'informacao' --[comunica_com]--> 'autenticidade'. Motivo: Autenticidade está relacionada à validade da origem/autor da informação
+Conexao: 'informacao' --[comunica_com]--> 'integridade'. Motivo: Integridade refere-se à não modificação da informação
+Conexao: 'informacao' --[comunica_com]--> 'primariedade'. Motivo: Primariedade descreve a coleta na fonte com detalhamento
+Conexao: 'informacao' --[comunica_com]--> 'disponibilidade'. Motivo: Disponibilidade envolve o acesso à informação por usuários autorizados
+Conexao: 'tratamento_da_informacao' --[implementa]--> 'informacao'. Motivo: Tratamento da informação descreve ações aplicadas sobre a informação
+

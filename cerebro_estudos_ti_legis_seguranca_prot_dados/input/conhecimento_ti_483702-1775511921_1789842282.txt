@@ -1,0 +1,110 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Capítulo IV - Da Transparência Passiva
+Idioma: pt-BR
+Tecnologias citadas no documento: Sistema Eletrônico de Registro de Pedidos de Acesso (Sic/CGU), Guia de Recolhimento da União (GRU), Lei nº 12.527/2011 - Lei de Acesso à Informação, Decreto nº 11.527, de 2023, Lei nº 7.115, de 1983
+
+=== SECAO [TI_SEC_001]: Seção I - Do Serviço de Informação ao Cidadão ===
+Esta seção institucionaliza o Serviço de Informações ao Cidadão (SIC) com objetivos claros: atender e orientar o público quanto ao acesso à informação, informar sobre a tramitação de documentos e receber/registrar pedidos de acesso. O SIC deve ser instalado em unidade física de fácil acesso e aberta ao público. Em unidades descentralizadas sem SIC, deve-se oferecer serviço de recebimento/registro; se a unidade descentralizada não possuir a informação, o pedido é encaminhado ao SIC central, que informa o protocolo e a data de recebimento para início do prazo de resposta. Em suma, o SIC é a porta de entrada para o cidadão obter informações públicas.
+
+-- Conceitos-chave --
+Termo: Serviço de Informação ao Cidadão (SIC) | Tipo: Processo | Definicao: Órgão/unidade responsável por orientar sobre acesso à informação, informar tramitações de documentos e receber pedidos.
+  Vantagens de Serviço de Informação ao Cidadão (SIC): Centraliza atendimento e padroniza triagem de pedidos; Rastreabilidade de solicitações; Melhora a transparência ao cidadão
+  Desvantagens de Serviço de Informação ao Cidadão (SIC): Requer infraestrutura física e tecnológica; Pode enfrentar gargalos se mal dimensionado
+  Casos de uso de Serviço de Informação ao Cidadão (SIC): Recebimento e registro de pedidos de acesso; Encaminhamento de pedidos à unidade responsável; Fornecimento de informações sobre tramitação
+Termo: Número de Protocolo | Tipo: Elemento de Sistema | Definicao: Identificador único gerado no registro do pedido que identifica a tramitação e prazo de resposta.
+  Vantagens de Número de Protocolo: Permite rastreamento claro da andamento do pedido; Facilita comunicação com o requerente
+  Desvantagens de Número de Protocolo: Dependência de sistemas de registro confiáveis
+  Casos de uso de Número de Protocolo: Atribuição de protocolo ao pedido; Referência em comunicações com o requerente
+Termo: Unidade física de atendimento ao SIC | Tipo: Instância | Definicao: Unidade identificada numericamente onde o SIC está instalado, de fácil acesso ao público.
+  Vantagens de Unidade física de atendimento ao SIC: Acesso presencial facilitado; Visibilidade institucional da transparência
+  Desvantagens de Unidade física de atendimento ao SIC: Custos de manutenção e infraestrutura; Pode exigir adaptação de acessibilidade
+  Casos de uso de Unidade física de atendimento ao SIC: Recebimento de pedidos presencial; Entrega de informações presenciais
+Termo: Decreto nº 11.527, de 2023 | Tipo: Norma | Definicao: Norma que introduz a obrigatoriedade do uso de sistema eletrônico para o registro de pedidos de informação.
+  Vantagens de Decreto nº 11.527, de 2023: Padronização e rastreabilidade; Facilita o gerenciamento de prazos
+  Desvantagens de Decreto nº 11.527, de 2023: Necessita atualização tecnológica constante
+  Casos de uso de Decreto nº 11.527, de 2023: Instituição do uso do sistema eletrônico nos órgãos e entidades
+
+-- Relacionamentos --
+Conexao: 'sic' --[implementa]--> 'pedido_acesso'. Motivo: O SIC recebe, orienta e registra pedidos de acesso à informação, funcionando como ponto de entrada.
+Conexao: 'pedido_acesso' --[comunica_com]--> 'protocolo'. Motivo: Ao registrar o pedido, é gerado um número de protocolo que acompanha a tramitação.
+Conexao: 'protocolo' --[comunica_com]--> 'sic'. Motivo: O protocolo está vinculado ao pedido e facilita o acompanhamento da tramitação pelo SIC.
+Conexao: 'decreto_11_527_2023' --[depende_de]--> 'sic'. Motivo: O decreto institui o uso do sistema eletrônico para registro de pedidos, influenciando a atuação do SIC.
+
+=== SECAO [TI_SEC_002]: Seção II - Do Pedido de Acesso à Informação ===
+Esta seção detalha quem pode formular pedidos de acesso (qualquer pessoa física ou jurídica), os meios de protocolo (formulário padrão, sistema eletrônico ou atendimento presencial) e o início do prazo a partir da apresentação. Embora exista a possibilidade de outros meios legítimos, o envio do protocolo e a data de recebimento pela unidade são os marcos que iniciam o prazo. A seção também inclui a obrigatoriedade de uso do sistema eletrônico (11-A) pela CGU, mantendo registro de pedidos e o atendimento pelas entidades.
+
+-- Conceitos-chave --
+Termo: Pedido de Acesso à Informação | Tipo: Processo | Definicao: Pedido apresentável por qualquer pessoa para acesso a informações públicas.
+  Vantagens de Pedido de Acesso à Informação: Protege o direito de acesso à informação; Estabelece requisitos mínimos de identidade e conteúdo
+  Desvantagens de Pedido de Acesso à Informação: Exigência de documentação pode ser impeditiva para alguns requerentes
+  Casos de uso de Pedido de Acesso à Informação: Formulação de pedidos, inclusão de requisitos de identificação e de conteúdo
+Termo: Sistema Eletrônico para Registro de Pedidos | Tipo: Ferramenta | Definicao: Sistema obrigatório para registro e acompanhamento de pedidos de acesso; também utilizado para comunicação de protocolo e prazos.
+  Vantagens de Sistema Eletrônico para Registro de Pedidos: Registro centralizado e rastreável; Transparência de tramitação
+  Desvantagens de Sistema Eletrônico para Registro de Pedidos: Dependência de disponibilidade tecnológica
+  Casos de uso de Sistema Eletrônico para Registro de Pedidos: Registro de pedidos por órgãos e entidades; Consulta de status por requerentes
+Termo: Lei nº 12.527/2011 (Lei de Acesso à Informação) | Tipo: Lei | Definicao: Base legal para o direito de acesso à informação, definindo procedimentos, prazos e recursos.
+  Vantagens de Lei nº 12.527/2011 (Lei de Acesso à Informação): Segurança jurídica para o direito de acesso; Padrões para atendimento de pedidos
+  Desvantagens de Lei nº 12.527/2011 (Lei de Acesso à Informação): Possível sobrecarga de pedidos e necessidade de recursos administrativos
+  Casos de uso de Lei nº 12.527/2011 (Lei de Acesso à Informação): Fundamentar pedidos, prazos de resposta e recursos
+Termo: Lei nº 7.115/1983 | Tipo: Lei | Definicao: Lei que regula, entre outros, a cobrança de custos para reprodução de documentos
+  Vantagens de Lei nº 7.115/1983: Clareza quanto aos custos de reprodução
+  Desvantagens de Lei nº 7.115/1983: Pode representar ônus adicional ao requerente
+  Casos de uso de Lei nº 7.115/1983: Cobrança de reprodução de informações
+
+-- Relacionamentos --
+Conexao: 'pedido_acesso' --[comunica_com]--> 'sistema_eletronico'. Motivo: Pedidos podem ser recebidos e registrados no sistema eletrônico, com envio de confirmação/protocolo.
+Conexao: 'lei_12527_2011' --[depende_de]--> 'pedido_acesso'. Motivo: A Lei orienta o regime de acesso à informação e os requisitos para pedidos.
+Conexao: 'decreto_11_527_2023' --[depende_de]--> 'sistema_eletronico'. Motivo: O decreto torna obrigatória a utilização de sistema eletrônico para registro de pedidos.
+
+=== SECAO [TI_SEC_003]: Seção III - Do Procedimento de Acesso à Informação ===
+Esta seção descreve o procedimento após o recebimento do pedido: acesso imediato quando a informação estiver disponível; caso contrário, prazo de até 20 dias para fornecer a informação, indicar local/forma de consulta, informar indisponibilidade, indicar órgão responsável ou detentor, e justificar negativa de acesso. Em situações com grande volume de documentos, ou necessidade de preservação da integridade, podem adotar medidas para facilitar a tramitação. Se a informação estiver disponível ao público, o órgão deve orientar o local e modo de acesso, desobrigando-se do fornecimento direto apenas se o requerente puder consultar por meios públicos.
+
+-- Conceitos-chave --
+Termo: Prazo de Resposta de 20 dias | Tipo: Prazo | Definicao: Prazos para resposta ao pedido, podendo ser prorrogado por mais 10 dias mediante justificativa.
+  Vantagens de Prazo de Resposta de 20 dias: Define expectativas de prazo; Permite planejamento do fluxo de atendimento
+  Desvantagens de Prazo de Resposta de 20 dias: Prorrogáveis podem prolongar a wait time para o requerente
+  Casos de uso de Prazo de Resposta de 20 dias: Resposta direta, encaminhamento, ou negativa com justificativa
+Termo: Acesso imediato | Tipo: Condição | Definicao: Condição em que a informação está disponível para consulta/transferência sem delay.
+  Vantagens de Acesso imediato: Rapidez no atendimento; Reduz escritas e custos operacionais
+  Casos de uso de Acesso imediato: Pedido atendido imediatamente quando a informação já é pública
+Termo: Informação disponível publicamente | Tipo: Condição | Definicao: Informação já acessível ao público, com orientação de onde e como consultar/obter.
+  Vantagens de Informação disponível publicamente: Economia de recursos; Transparência contínua
+  Desvantagens de Informação disponível publicamente: Pode exigir atualização de locais de acesso público
+  Casos de uso de Informação disponível publicamente: Orientação de acesso sem necessidade de fornecimento direto
+Termo: Recurso (Acesso à Informação) | Tipo: Procedimento | Definicao: Procedimento de contestação de negativa de acesso, com prazos para manifestação pelas autoridades competentes.
+  Vantagens de Recurso (Acesso à Informação): Amplia a garantia de direito de acesso; Estabelece hierarquia de apreciação
+  Desvantagens de Recurso (Acesso à Informação): Pode alongar o tempo de resolução
+  Casos de uso de Recurso (Acesso à Informação): Recurso institucional por decisão de negativa
+
+-- Relacionamentos --
+Conexao: 'pedido_acesso' --[comunica_com]--> 'prazo_resposta'. Motivo: Caso a informação não seja imediatamente disponível, o órgão tem até 20 dias para atender ou justificar a negativa.
+Conexao: 'informacao_disponivel_publico' --[comunica_com]--> 'pedido_acesso'. Motivo: Se a informação já estiver visível publicamente, o órgão orienta o requerente ao local/maneira de consulta.
+Conexao: 'recurso' --[depende_de]--> 'pedido_acesso'. Motivo: O recurso é acionado quando há negativa de acesso ou ausência de justificativa suficiente.
+
+=== SECAO [TI_SEC_004]: Seção IV - Dos Recursos ===
+Esta seção trata dos recursos em caso de negativa de acesso: recurso para autoridade hierarquicamente superior, com prazo de 5 dias para apreciação; se desprovido, recurso à autoridade máxima; omissões na resposta podem gerar reclamação ao órgão de monitoramento; após isso, recurso à Controladoria-Geral da União (CGU); e, se necessário, recurso à Comissão Mista de Reavaliação de Informações. Define ainda prazos de prazo e condições para desconsideração de recursos e para a reprodução de documentos.
+
+-- Conceitos-chave --
+Termo: Recurso (Acesso à Informação) - Etapas | Tipo: Procedimento | Definicao: Procedimento escalonado para contestar decisões, com apreciação por autoridades hierarquicamente superiores e, se necessário, pela CGU.
+  Vantagens de Recurso (Acesso à Informação) - Etapas: Aumenta a chance de revisão de decisões; Transparência de procedimentos administrativos
+  Desvantagens de Recurso (Acesso à Informação) - Etapas: Aumento de carga administrativa
+  Casos de uso de Recurso (Acesso à Informação) - Etapas: Recurso interno à autoridade superior; Recurso à CGU e, se cabível, à Comissão Mista
+Termo: Autoridade hierarquicamente superior | Tipo: Órgão | Definicao: Autoridade superior àquela que adotou a decisão, responsável por apreciar recursos.
+  Vantagens de Autoridade hierarquicamente superior: Revisão independente de decisões; Fortalece governança
+  Desvantagens de Autoridade hierarquicamente superior: Pode aumentar o tempo de resolução
+  Casos de uso de Autoridade hierarquicamente superior: Apreciar recursos no âmbito administrativo
+Termo: Comissão Mista de Reavaliação de Informações | Tipo: Órgão | Definicao: Órgão colegiado previsto no Capítulo VI para avaliações de informações desclassificadas ou de recurso.
+  Vantagens de Comissão Mista de Reavaliação de Informações: Aprimora a qualidade de revisões de informações
+  Desvantagens de Comissão Mista de Reavaliação de Informações: Pode exigir coordenação de várias entidades
+  Casos de uso de Comissão Mista de Reavaliação de Informações: Revisão de recursos e de desclassificação de informações
+Termo: Controladoria-Geral da União (CGU) | Tipo: Órgão | Definicao: Órgão central responsável pela apreciação de recursos quando as instâncias internas não atendem ao requerente.
+  Vantagens de Controladoria-Geral da União (CGU): Instância de última instância administrativa; Uniformização de decisões
+  Desvantagens de Controladoria-Geral da União (CGU): Pode gerar alto tempo de resolução conforme o volume de casos
+  Casos de uso de Controladoria-Geral da União (CGU): Apreciar recursos após esgotadas as etapas internas
+
+-- Relacionamentos --
+Conexao: 'pedido_acesso' --[depende_de]--> 'autoridade_hierarquicamente_superior'. Motivo: Caso haja negativa de acesso ou necessidade de reavaliação, o recurso é dirigido à autoridade superior.
+Conexao: 'autoridade_hierarquicamente_superior' --[implementa]--> 'cgU'. Motivo: Se mantida a negativa, o recurso pode ser encaminhado à CGU para apreciação.
+Conexao: 'cgU' --[implementa]--> 'comissao_mista_reavaliacao_informacoes'. Motivo: A CGU pode fixar prazo ou determinar esclarecimentos e encaminhar para comissões, quando cabível.
+Conexao: 'comissao_mista_reavaliacao_informacoes' --[implementa]--> 'pedido_acesso'. Motivo: Emite decisões que afetam o acesso à informação, com eventuais efeitos sobre o pedido original.
+

@@ -1,0 +1,176 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Decreto GRAN - Desclassificação e Reavaliação de Informações Classificadas
+Idioma: pt-BR
+Tecnologias citadas no documento: Lei nº 12.527, de 2011 (Lei de Acesso à Informação), Decreto nº 11.527, de 2023, Lei nº 8.159, de 1991, Lei nº 10.406, de 2002, Lei nº 9.278, de 1996
+
+=== SECAO [secao_iii_desclassificacao_reavaliacao_sigilo]: Seção III - Da Desclassificação e Reavaliação da Informação Classificada em Grau de Sigilo ===
+Esta seção regula o processo de desclassificação e reavaliação de informações classificadas. O art. 35 autoriza a desclassificação ou redução do prazo de sigilo pela autoridade classificadora ou por autoridade hierarquicamente superior, seja mediante provocação ou de ofício, observando prazos e salvaguardas. O caput é complementado por requisitos no art. 27, art. 28 e pela previsão do art. 47, que define prazos máximos de revisão (geralmente até quatro anos para informações ultrassecretas/secretas). O art. 36 permite pedir desclassificação independentemente de pedido de acesso; o art. 37 estabelece o recurso em caso de negativa, com procedimentos diferenciados para Forças Armadas, autoridades no exterior e para a Comissão Mista. O art. 38 determina que a decisão de desclassificação/reclassificação ou redução de sigilo seja registrada nas capas de processos e no TCI.
+
+-- Conceitos-chave --
+Termo: Desclassificação de Informações | Tipo: Processo | Definicao: Ato de retirar o sigilo de uma informação previamente classificada, ou reduzir o prazo de sigilo.
+  Vantagens de Desclassificação de Informações: aumento da transparência; acesso ampliado à informação quando seguro
+  Desvantagens de Desclassificação de Informações: risco de danos ou prejuízos se a divulgação ocorrer sem segurança
+  Casos de uso de Desclassificação de Informações: quando não há necessidade de manter sigilo após nova avaliação
+Termo: Reclassificação de Informações | Tipo: Processo | Definicao: Mudança do grau de sigilo de uma informação já classificada, podendo ampliar ou reduzir a proteção.
+  Vantagens de Reclassificação de Informações: flexibilidade na proteção de informações sensíveis
+  Desvantagens de Reclassificação de Informações: aumenta incerteza sobre o nível de sigilo
+  Casos de uso de Reclassificação de Informações: quando uma informação passa a exigir maior ou menor proteção
+Termo: Comissão Mista de Reavaliação de Informações | Tipo: Órgão | Definicao: Órgão colegiado incumbido de rever classificaçōes ultrassecreto/secretas, de ofício ou mediante provocação.
+  Vantagens de Comissão Mista de Reavaliação de Informações: padronização de decisões; fomento de controle institucional
+  Desvantagens de Comissão Mista de Reavaliação de Informações: possível morosidade processual; complexidade institucional
+  Casos de uso de Comissão Mista de Reavaliação de Informações: revisão periódica (a cada quatro anos) ou mediante provocação
+Termo: Prazos de Sigilo e Revisão | Tipo: Parâmetro | Definicao: Limites de tempo para restrição de acesso e para revisão de ofício, com possibilidades de prorrogação sob condições específicas.
+  Vantagens de Prazos de Sigilo e Revisão: segurança planejada com prazos claros
+  Desvantagens de Prazos de Sigilo e Revisão: risco de atraso na transparência se mal administrado
+  Casos de uso de Prazos de Sigilo e Revisão: revisões condicionadas ao interesse nacional e à soberania
+Termo: Recursos contra Desclassificação | Tipo: Procedimento | Definicao: Mecanismo de impugnação da decisão de desclassificação ou de redução de sigilo, previsto em art. 37.
+  Vantagens de Recursos contra Desclassificação: garantia de due process e controle democrático
+  Desvantagens de Recursos contra Desclassificação: eventual prolongamento de decisões
+  Casos de uso de Recursos contra Desclassificação: quando requerente discorda da decisão de classificação
+
+-- Relacionamentos --
+Conexao: 'secao_iii_desclassificacao_reavaliacao_sigilo' --[consulta_para_revisao]--> 'comissao_mista_reavaliacao_informacoes'. Motivo: A Comissão Mista é responsável por rever a classificação (arts. 47 e 51) a pedido ou de ofício.
+Conexao: 'comissao_mista_reavaliacao_informacoes' --[integra_por]--> 'casa_civil_presidencia'. Motivo: A Casa Civil integra a composição da Comissão (art. 46).
+Conexao: 'comissao_mista_reavaliacao_informacoes' --[integra_por]--> 'advocacia_geral_uniao'. Motivo: A Advocacia-Geral da União integra a composição da Comissão (art. 46).
+Conexao: 'comissao_mista_reavaliacao_informacoes' --[integra_por]--> 'controladoria_geral_uniao'. Motivo: A Controladoria-Geral da União integra a composição da Comissão (art. 46).
+Conexao: 'comissao_mista_reavaliacao_informacoes' --[integra_por]--> 'gabinete_seg_inst_presidencia'. Motivo: O Gabinete de Segurança Institucional integra a Comissão (art. 46).
+Conexao: 'comissao_mista_reavaliacao_informacoes' --[integra_por]--> 'ministerio_defesa'. Motivo: O Ministério da Defesa integra a Comissão (art. 46).
+Conexao: 'comissao_mista_reavaliacao_informacoes' --[base_legal_para_revisao]--> 'lei_12527_2011'. Motivo: Conselho fundamenta a competência de revisão pela Lei nº 12.527/2011 (lei de acesso à informação).
+
+=== SECAO [secao_iv_disposicoes_gerais]: Seção IV - Disposições Gerais ===
+Esta seção estabelece princípios gerais para informações ultrassecretas/secretas, incluindo preservação, guarda permanente para documentos de arquivo, e proteção de condutas que violem direitos humanos. Define também que o acesso deve ser restrito a pessoas credenciadas e que pessoal/entidades que tratem informações sigilosas devem observar procedimentos de segurança. Além disso, prevê publicação anual de rol de desclassificações, classificações em cada grau de sigilo, dados de indexação, dispositivos legais que fundamentam a classificação, datas relevantes e assuntos, bem como aspectos estatísticos de pedidos de acesso.
+
+-- Conceitos-chave --
+Termo: Preservação de Informações Ultrasscrote | Tipo: Processo | Definicao: As informações classificadas no grau ultrassecreto ou secreto devem ser definitivamente preservadas sob restrições de acesso.
+  Vantagens de Preservação de Informações Ultrasscrote: segurança reforçada; controle de acesso
+  Desvantagens de Preservação de Informações Ultrasscrote: limitação de acesso legítimo
+  Casos de uso de Preservação de Informações Ultrasscrote: manter informações sensíveis enquanto vigorar sigilo
+Termo: Arquivo Nacional | Tipo: Instituição | Definicao: Encaminhar informações de guarda permanente para organização e preservação no Arquivo Nacional.
+  Vantagens de Arquivo Nacional: preservação histórica; acesso qualificado
+  Desvantagens de Arquivo Nacional: deslocamento de materiais
+  Casos de uso de Arquivo Nacional: desclassificação de documentos de guarda permanente
+Termo: Direitos Humanos | Tipo: Direito | Definicao: Informações sobre condutas que impliquem violação de direitos humanos não podem ser classificadas nem ter seu acesso negado.
+  Vantagens de Direitos Humanos: proteção de direitos fundamentais
+  Desvantagens de Direitos Humanos: imprecisão na aplicação
+  Casos de uso de Direitos Humanos: quando haja violação de direitos humanos associada a conduta pública
+Termo: Credenciamento | Tipo: Procedimento | Definicao: Acesso a informações classificadas fica restrito a pessoas credenciadas pelo Núcleo de Segurança e Credenciamento.
+  Vantagens de Credenciamento: garantia de controle de acesso
+  Desvantagens de Credenciamento: complexidade de gestão de credenciais
+  Casos de uso de Credenciamento: concessão de acesso com devida autorização
+Termo: Publicação Anual de Rol de Informações | Tipo: Procedimento | Definicao: Publicação anual no sítio oficial contendo listas de desclassificações, classificações, dispositivos legais, datas e assunto.
+  Vantagens de Publicação Anual de Rol de Informações: transparência institucional; facilita auditorias
+  Desvantagens de Publicação Anual de Rol de Informações: exposição de dados sensíveis se mal redigidos
+  Casos de uso de Publicação Anual de Rol de Informações: obrigação anual de publicação
+
+-- Relacionamentos --
+Conexao: 'secao_iv_disposicoes_gerais' --[define]--> 'arquivo_nacional'. Motivo: Documentos de guarda permanente desclassificados devem ser encaminhados ao Arquivo Nacional para organização e preservação.
+Conexao: 'secao_iv_disposicoes_gerais' --[protege]--> 'direitos_humanos'. Motivo: Condutas que impliquem violação de direitos humanos não podem ser objeto de sigilo nem ter acesso negado.
+Conexao: 'secao_iv_disposicoes_gerais' --[requer_credenciamento]--> 'credenciamento_pessoas'. Motivo: Acesso a informações classificadas fica restrito a pessoas credenciadas pelo Nucleo de Segurança e Credenciamento.
+Conexao: 'secao_iv_disposicoes_gerais' --[publicacao_obrigatoria]--> 'publicacao_registro_rol'. Motivo: Autoridade máxima de cada órgão deve publicar o rol de informações anualmente.
+
+=== SECAO [capitulo_vi_comissao_mista_reavaliacao_informacoes]: Capítulo VI - Da Comissão Mista de Reavaliação de Informações Classificadas ===
+Este capítulo estabelece a criação e composição da Comissão Mista de Reavaliação de Informações, com a participação dos titulares de órgãos relevantes (Casa Civil, AGU, CGU, GSI, Defesa, entre outros). Define competências: rever classificações ultrassecreto/secretas de ofício ou mediante provocação, requisitar esclarecimentos, decidir recursos em processos de recusa de acesso ou de desclassificação, prorrogar o prazo de sigilo por até 25 anos (com limite máximo de 50 anos no total) e emitir orientações normativas gerais. O regimento interno deve ser aprovado por maioria absoluta ou simples, e o funcionamento requer reuniões mensais com mínimo de seis membros.
+
+-- Conceitos-chave --
+Termo: Comissão Mista de Reavaliação de Informações | Tipo: Órgão | Definicao: Órgão responsável por rever a classificação de informações ultrassecretas/secretas, bem como por decidir recursos e orientar a aplicação da Lei 12.527/2011.
+  Vantagens de Comissão Mista de Reavaliação de Informações: revisão independente; uniformização de critérios
+  Desvantagens de Comissão Mista de Reavaliação de Informações: ritmo lento de deliberação; burocracia
+  Casos de uso de Comissão Mista de Reavaliação de Informações: revisão de classificação a cada quatro anos; recursos contra decisões de desclassificação
+Termo: Composição Institucional | Tipo: Procedimento | Definicao: A comissão é integrada pelos titulares de várias entidades, com suplentes designados pelo Presidente.
+  Vantagens de Composição Institucional: amplitude de olhos institucionais; diversidade de perspectivas
+  Desvantagens de Composição Institucional: coordenação complexa
+  Casos de uso de Composição Institucional: integração de diversos corpos do governo
+Termo: Recursos | Tipo: Procedimento | Definicao: Possibilidade de apresentar recurso contra decisões de desclassificação ou revisão ao Ministro de Estado ou autoridade com prerrogativa similar.
+  Vantagens de Recursos: garantia de due process; supervisão de decisões
+  Desvantagens de Recursos: poder de atraso
+  Casos de uso de Recursos: quando a decisão é contestada
+Termo: Prorrogação de Sigilo | Tipo: Regra | Definicao: A comissão pode prorrogar o prazo de sigilo por uma única vez, por até 25 anos, desde que haja ameaça externa ou risco às relações internacionais, com o total da classificação limitado a 50 anos.
+  Vantagens de Prorrogação de Sigilo: proteção adicional em situações de risco nacional
+  Desvantagens de Prorrogação de Sigilo: concentração de poder decisório
+  Casos de uso de Prorrogação de Sigilo: quando há necessidade de manter sigilo por razões estratégicas
+Termo: Orientações Normativas Gerais | Tipo: Padrão | Definicao: A comissão pode estabelecer diretrizes para suprir lacunas na aplicação da Lei 12.527/2011.
+  Vantagens de Orientações Normativas Gerais: uniformidade na prática institucional
+  Desvantagens de Orientações Normativas Gerais: possível excesso de regulamentação
+  Casos de uso de Orientações Normativas Gerais: emissão de orientações para lacunas de aplicação
+
+-- Relacionamentos --
+Conexao: 'capitulo_vi_comissao_mista_reavaliacao_informacoes' --[composicao_por]--> 'casa_civil_presidencia'. Motivo: Casa Civil integra a Comissão como titular (art. 46).
+Conexao: 'capitulo_vi_comissao_mista_reavaliacao_informacoes' --[composicao_por]--> 'advocacia_geral_uniao'. Motivo: Advocacia-Geral da União integra a Comissão como titular (art. 46).
+Conexao: 'capitulo_vi_comissao_mista_reavaliacao_informacoes' --[composicao_por]--> 'controladoria_geral_uniao'. Motivo: Controladoria-Geral da União integra a Comissão como titular (art. 46).
+Conexao: 'capitulo_vi_comissao_mista_reavaliacao_informacoes' --[composicao_por]--> 'gabinete_seg_inst_presidencia'. Motivo: GSI integra a Comissão como titular (art. 46).
+Conexao: 'capitulo_vi_comissao_mista_reavaliacao_informacoes' --[composicao_por]--> 'ministerio_defesa'. Motivo: Ministério da Defesa integra a Comissão como titular (art. 46).
+Conexao: 'capitulo_vi_comissao_mista_reavaliacao_informacoes' --[base_legal_para_revisao]--> 'lei_12527_2011'. Motivo: Fundamento legal para a revisão pelas disposições da Lei 12.527/2011.
+
+=== SECAO [capitulo_vii_informacoes_pessoais]: Capítulo VII - Das Informações Pessoais ===
+Este capítulo regula o tratamento de informações pessoais, incluindo limites de acesso (até cem anos após produção), exceções de consentimento, e prioridade de acesso quando necessário para tutela judicial ou defesa de direitos humanos. Define regras de consentimento e suas exceções (ex.: prevenção médica, estatísticas com anonimização, decisões judiciais, defesa de direitos humanos, interesse público). Trata também de pormenores sobre acesso de terceiros, assinatura de termo de responsabilidade, e a aplicação de leis correlatas (Lei 9.507/1997, Lei 10.406/2002, Lei 9.278/1996).
+
+-- Conceitos-chave --
+Termo: Tratamento de Informações Pessoais | Tipo: Processo | Definicao: Processos de coleta, armazenamento, acesso e uso de dados pessoais por órgãos públicos e entidades parceiras.
+  Vantagens de Tratamento de Informações Pessoais: proteção da privacidade; segurança de dados
+  Desvantagens de Tratamento de Informações Pessoais: exigência de controles rigorosos
+  Casos de uso de Tratamento de Informações Pessoais: tratamento autorizado por lei ou consentimento
+Termo: Consentimento para Acesso a Informações Pessoais | Tipo: Condição | Definicao: Autorização do titular para permitir o acesso a dados pessoais, sujeita a exceções legais.
+  Vantagens de Consentimento para Acesso a Informações Pessoais: controle do titular sobre seus dados
+  Desvantagens de Consentimento para Acesso a Informações Pessoais: pendência de consentimento pode restringir acessos necessários
+  Casos de uso de Consentimento para Acesso a Informações Pessoais: quando há necessidade de acesso com consentimento expresso
+Termo: Anonimização de Dados Pessoais | Tipo: Processo | Definicao: Tratamento que impede a identificação da pessoa, exceto quando necessário para fins legais ou históricos.
+  Vantagens de Anonimização de Dados Pessoais: proteção da privacidade; possibilita uso estatístico
+  Desvantagens de Anonimização de Dados Pessoais: pode limitar utilidade de dados em alguns contextos
+  Casos de uso de Anonimização de Dados Pessoais: estatísticas de alto interesse público
+Termo: Proteção de Direitos Humanos | Tipo: Objetivo | Definicao: Garantia de que informações relevantes para direitos humanos não sejam classificadas de maneira a ocultar abusos.
+  Vantagens de Proteção de Direitos Humanos: amplia responsabilidade institucional
+  Desvantagens de Proteção de Direitos Humanos: dificuldade de transparência em casos sensíveis
+  Casos de uso de Proteção de Direitos Humanos: investigações de abusos por agentes públicos
+Termo: Lei de Acesso à Informação (Lei 12.527/2011) | Tipo: Lei | Definicao: Referência normativa que regula o acesso à informação no âmbito público.
+  Vantagens de Lei de Acesso à Informação (Lei 12.527/2011): base legal para transaparência
+  Desvantagens de Lei de Acesso à Informação (Lei 12.527/2011): interpretação jurídica pode variar
+  Casos de uso de Lei de Acesso à Informação (Lei 12.527/2011): pedidos de acesso a informações pessoais, com salvaguardas
+
+-- Relacionamentos --
+Conexao: 'capitulo_vii_informacoes_pessoais' --[aplicacao_lei]--> 'lei_12527_2011'. Motivo: Artigos sobre dados pessoais referenciam a Lei 12.527/2011 para definição de acesso e exceções.
+Conexao: 'capitulo_vii_informacoes_pessoais' --[base_legal]--> 'lei_10_406_2002'. Motivo: Referências à proteção de dados e direitos no âmbito civil (Lei 10.406/2002).
+Conexao: 'capitulo_vii_informacoes_pessoais' --[base_legal]--> 'lei_9_278_1996'. Motivo: Previsões para direitos de pessoas físicas e jurídicas associadas ao tratamento de dados.
+
+=== SECAO [capitulo_viii_entidades_privadas_sem_fins_lucrativos]: Capítulo VIII - Das Entidades Privadas sem Fins Lucrativos ===
+Este capítulo impõe obrigações de transparência para entidades privadas sem fins lucrativos que recebem recursos públicos para ações de interesse público, incluindo divulgação do estatuto, relação atualizada de dirigentes e cópias integrais de convênios/relatórios, com regras de publicação na Internet e em quadro de avisos. Prevê exceções para entidades que não disponham de meios para publicação.
+
+-- Conceitos-chave --
+Termo: Divulgação de Informações de Entidades Privadas com recursos públicos | Tipo: Procedimento | Definicao: Publicação de estatuto, diretoria e convênios relacionados a recursos públicos recebidos.
+  Vantagens de Divulgação de Informações de Entidades Privadas com recursos públicos: transparência na gestão de recursos públicos
+  Desvantagens de Divulgação de Informações de Entidades Privadas com recursos públicos: exposição de informações sensíveis da entidade
+  Casos de uso de Divulgação de Informações de Entidades Privadas com recursos públicos: cumprimento de obrigações legais de transparência
+Termo: Convênios e Contratos com Poder Executivo | Tipo: Documento | Definicao: Cópia integral de convênios, contratos, termos de parceria e relatórios de prestação de contas.
+  Vantagens de Convênios e Contratos com Poder Executivo: auditoria pública; accountability
+  Desvantagens de Convênios e Contratos com Poder Executivo: gestão documental complexa
+  Casos de uso de Convênios e Contratos com Poder Executivo: publicação e disponibilização para fiscalização
+
+-- Relacionamentos --
+Conexao: 'capitulo_viii_entidades_privadas_sem_fins_lucrativos' --[publica_dados]--> 'divulgacao_entidades_publicas_privadas'. Motivo: Entidades privadas sem fins lucrativos devem tornar públicas informações solicitadas quando recebem recursos públicos.
+Conexao: 'capitulo_viii_entidades_privadas_sem_fins_lucrativos' --[base_legal]--> 'lei_12527_2011'. Motivo: Controle de publicação de informações com base na Lei de Acesso (Lei 12.527/2011).
+
+=== SECAO [capitulo_ix_das_responsabilidades]: Capítulo IX - Das Responsabilidades ===
+Este capítulo descreve condutas ilícitas que geram responsabilidade de agentes públicos ou militares, incluindo recusa, atraso, divulgação indevida, uso indevido, dolo ou má-fé, ocultação ou destruição de informações, e a possibilidade de responsabilização administrativa, disciplinar e civil. Prevê sanções para pessoas físicas e entidades privadas, com faixas de multa, suspensão de contratos, inelegibilidade e reabilitação condicionadas ao ressarcimento dos danos.
+
+-- Conceitos-chave --
+Termo: Condutas Ilícitas de Agentes Públicos | Tipo: Conduta | Definicao: Recusar ou retardar o fornecimento, divulgar informações incorretas, ocultar ou destruir informações sob guarda, entre outras infrações.
+  Vantagens de Condutas Ilícitas de Agentes Públicos: garantia de accountability
+  Desvantagens de Condutas Ilícitas de Agentes Públicos: poder de punição potencialmente controverso
+  Casos de uso de Condutas Ilícitas de Agentes Públicos: aplicação de sanções administrativas e disciplinares
+Termo: Sanções | Tipo: Sanção | Definicao: Advertência, multa, rescisão de vínculo, suspensão de participação em licitações, inidoneidade para licitar/contratar.
+  Vantagens de Sanções: punição efetiva
+  Desvantagens de Sanções: impacto administrativo e legal
+  Casos de uso de Sanções: quando há violação de deveres legais
+Termo: Reabilitação | Tipo: Condição | Definicao: Possibilidade de reabilitação após ressarcimento dos danos e cumprimento de sanção de licitações/contratações.
+  Vantagens de Reabilitação: reparação de danos e retorno ao cargo
+  Desvantagens de Reabilitação: condições rigorosas para recuperação
+  Casos de uso de Reabilitação: quando há ressarcimento integral e prazo de sanção cumprido
+Termo: Lei 8.112/1990 | Tipo: Lei | Definicao: Aplicável às infrações administrativas no âmbito de servidores públicos.
+  Vantagens de Lei 8.112/1990: base legal de sanções administrativas
+  Desvantagens de Lei 8.112/1990: adaptação exigida aos casos específicos
+  Casos de uso de Lei 8.112/1990: infrações administrativas de servidores
+
+-- Relacionamentos --
+Conexao: 'capitulo_ix_das_responsabilidades' --[aplica_sancao]--> 'sancoes_pagos'. Motivo: As condutas descritas geram sanções previstas na caput do art. 65 e art. 66.
+Conexao: 'capitulo_ix_das_responsabilidades' --[aplicavel_lei]--> 'lei_8112_1990'. Motivo: Aplicação de infrações administrativas conforme a Lei 8.112/1990 para militares/servidores.
+Conexao: 'capitulo_ix_das_responsabilidades' --[condicao_reabilitacao]--> 'reabilitacao'. Motivo: Reabilitação condicionada ao ressarcimento de prejuízos e cumprimento de sanção.
+

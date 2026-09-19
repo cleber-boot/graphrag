@@ -1,0 +1,166 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Decreto 7.845/2012 - Credenciamento de Segurança e Tratamento de Informação Sigilosa
+Idioma: pt-BR
+Tecnologias citadas no documento: Algoritmo de Estado, Cifração, Recurso criptográfico, Code de indexação, Medidas de segurança, Credencial de segurança, Decifratação, Dispositivos móveis, Núcleo de Segurança e Credenciamento (NSC), Lei 12.527/2011 (LAI)
+
+=== SECAO [CAP_I_Finalidade_Abrangencia_Glossario_Arts1e2]: CAPÍTULO I - Finalidade, Abrangência e Glossário (Arts. 1º e 2º) ===
+CAPÍTULO I apresenta o objetivo do Decreto 7.845/2012: regulamentar procedimentos para credenciamento de segurança e tratamento de informação classificada em qualquer grau de sigilo no âmbito do Poder Executivo federal, além de dispor sobre o Núcleo de Segurança e Credenciamento (NSC). Define termos-chave (algoritmo de estado, cifração, código de indexação, comprometimento, contrato sigiloso, credencial de segurança, credenciamento de segurança, decifração, dispositivos móveis, gestor de segurança e credenciamento, marcação, medidas de segurança, órgãos de registro de nível 1 e 2, posto de controle, quebra de segurança, recurso criptográfico e tratamento da informação classificada) para padronizar o vocabulário utilizado ao longo do diploma. O capítulo ancora o escopo do decreto, abrangendo o Poder Executivo Federal, e estabelece a relação com LAI (Lei de Acesso à Informação).
+
+-- Conceitos-chave --
+Termo: Decreto 7.845/2012 | Tipo: Decreto | Definicao: Regulamenta procedimentos para credenciamento de segurança e tratamento de informação classificada em qualquer grau de sigilo no âmbito do Poder Executivo federal.
+  Vantagens de Decreto 7.845/2012: Cria base regulatória única para ICQGS (informação classificada em qualquer grau de sigilo).; Padroniza termos e processos entre órgãos do Executivo.
+  Desvantagens de Decreto 7.845/2012: Pode exigir atualizações para ajustes legais/organizacionais futuros.; Exige adesão e cumprimento por múltiplos atores com rotinas distintas.
+  Casos de uso de Decreto 7.845/2012: Credenciamento de órgãos/entidades públicas para tratamento de ICQGS.; Definição de responsabilidades do NSC.
+Termo: Lei n.º 12.527/2011 (Lei de Acesso à Informação) | Tipo: Lei | Definicao: Lei que regulamenta o acesso à informação pública e serve como referencial institucional para o NSC e o tratamento da informação sob sigilo.
+  Vantagens de Lei n.º 12.527/2011 (Lei de Acesso à Informação): Estabelece marco legal para transparência e criação de catalisadores para proteção de informações sensíveis.
+  Desvantagens de Lei n.º 12.527/2011 (Lei de Acesso à Informação): Possível tensão entre transparência e sigilo para informações sensíveis.
+  Casos de uso de Lei n.º 12.527/2011 (Lei de Acesso à Informação): Base para criação do NSC e para o enquadramento de informações sigilosas sob LAI.
+Termo: Núcleo de Segurança e Credenciamento (NSC) | Tipo: Órgão/Unidade | Definicao: Estrutura institucional responsável pela segurança da informação classificada e pelo credenciamento (arts. 25, 27, 29, 35 e 37 da LAI).
+  Vantagens de Núcleo de Segurança e Credenciamento (NSC): Concentrar governança de segurança da ICQGS.; Padronizar credenciamento e práticas de segurança entre órgãos.
+  Desvantagens de Núcleo de Segurança e Credenciamento (NSC): Pode exigir coordenação complexa entre diferentes ministérios e agências.
+  Casos de uso de Núcleo de Segurança e Credenciamento (NSC): Habilitar ministérios e entidades de nível 1 e 2 para manejo de ICQGS.
+Termo: Gestor de Segurança e Credenciamento | Tipo: Função/Cargo | Definicao: Responsável pela segurança da informação classificada no órgão de registro e posto de controle.
+  Vantagens de Gestor de Segurança e Credenciamento: Clarifica responsabilidades de proteção de ICQGS.; Facilita auditorias e responsabilidades de conformidade.
+  Desvantagens de Gestor de Segurança e Credenciamento: Necessita qualificação e treinamento contínuo.
+  Casos de uso de Gestor de Segurança e Credenciamento: Conduz ações de segurança, manage credenciamento e coordena postões de controle.
+Termo: Informação Classificada em Qualquer Grau de Sigilo (ICQGS) | Tipo: Dados/Informação | Definicao: Dados que exigem proteção de sigilo conforme o decreto e LAI; podem ser confidenciais, secretos ou ultrassecretos.
+  Vantagens de Informação Classificada em Qualquer Grau de Sigilo (ICQGS): Nível claro de proteção e controle de acesso.
+  Desvantagens de Informação Classificada em Qualquer Grau de Sigilo (ICQGS): Gerenciamento complexo de classificação e fluxos de tratamento.
+  Casos de uso de Informação Classificada em Qualquer Grau de Sigilo (ICQGS): Rotinas de produção, recepção, classificação, uso, acesso, transporte, armazenamento, eliminação e destinação de ICQGS.
+Termo: Posto de Controle | Tipo: Unidade | Definicao: Unidade habilitada responsável pelo armazenamento de ICQGS.
+  Vantagens de Posto de Controle: Focalização de responsabilidades de guarda de informações classificadas.
+  Desvantagens de Posto de Controle: Necessita infraestrutura de proteção física e lógica.
+  Casos de uso de Posto de Controle: Armazenamento e controle físico de ICQGS.
+Termo: Código de indexação | Tipo: Conceito | Definicao: Código alfanumérico que indexa documento com informação classificada em qualquer grau de sigilo.
+  Vantagens de Código de indexação: Facilita recuperação, rastreabilidade e controle de ICQGS.
+  Desvantagens de Código de indexação: Potencial de exposição se mal utilizado ou se mal gerido.
+  Casos de uso de Código de indexação: Indexação de documentos com ICQGS para recuperação controlada.
+Termo: Recurso criptográfico | Tipo: Conceito | Definicao: Sistema, programa, processo ou equipamento isolado ou em rede que utiliza algoritmo simétrico ou assimétrico para cifração/decifrção.
+  Vantagens de Recurso criptográfico: Suporta confidencialidade e integridade de ICQGS.
+  Desvantagens de Recurso criptográfico: Pode exigir gestão de chaves e atualizações técnicas.
+  Casos de uso de Recurso criptográfico: Realizar cifração/decifrção conforme políticas de segurança.
+Termo: Dispositivos móveis | Tipo: Dispositivo | Definicao: Equipamentos portáteis com capacidade computacional ou memória removível para armazenamento.
+  Vantagens de Dispositivos móveis: Flexibilidade de acesso remoto quando gerenciados com políticas.
+  Desvantagens de Dispositivos móveis: Risco aumentato de comprometimento se não protegidos adequadamente.
+  Casos de uso de Dispositivos móveis: Armazenamento/trasnporte seguro de ICQGS em dispositivos móveis sob políticas de proteção.
+
+-- Figuras e diagramas --
+Figura 'Timeline do Controle de Acesso à Informação' (Timeline): Sequência de marcos: Lei 12.527/2011 (LAI) → Decreto 7.724/2012 → Decreto 7.845/2012, com integração ao NSC e políticas de credenciamento; evidência de evolução de marco regulatório.
+  Componentes visuais: Marcas de tempo (LAI 2011, D.7.724/2012, D.7.845/2012), Setas de dependência e mudanças de foco na governança de ICQGS
+  Relacionado a: lei_12_527_2011, d7_724_2012, d7_845_2012
+Figura 'Letra da Lei - CAPÍTULO I' (Texto legal): Transcrição resumida das disposições gerais: objetivo do decreto, alcance, definições de termos-chave (alhoro de Estado, cifração, marcacao, etc.).
+  Componentes visuais: Bloco de texto com Artigos, Clips visuais de termos-chave
+  Relacionado a: decreto_7845_2012, lei_12_527_2011
+Figura 'Glossário - Art. 2º' (Glossário): Conjunto de termos técnicos e definições (Algoritmo de Estado, Cifração, Código de indexação, Comprometimento, Contrato sigiloso, Credencial de segurança, Credenciamento de segurança, Decifração, Dispositivos móveis, Gestor de segurança e credenciamento, Marcação, Medidas de segurança, Órgão de registro nível 1 e 2, Posto de controle, Quebra de segurança, Recurso criptográfico, Tratamento da informação classificada).
+  Componentes visuais: Ícones/adesivos de cada termo, Quadro de definicões
+  Relacionado a: algoritmo_estado, cifracao, codigo_indexacao, comprometimento, credencial_segurança, credenciamento_segurança, dispositivos_moveis, gestor_seg_credenciamento, marcacao, medidas_seguranca, orgao_registro_nivel1, orgao_registro_nivel2, posto_controle, quebra_seguranca, recurso_criptografico, tratamento_informacao_classificada
+
+-- Relacionamentos --
+Conexao: 'lei_12_527_2011' --[regulamenta]--> 'd7_845_2012'. Motivo: LAI fornece base legal de acesso à informação que influencia o escopo do Decreto e NSC.
+Conexao: 'd7_845_2012' --[regulamenta]--> 'nucleo_seg_credenciamento'. Motivo: Decreto regulamenta o NSC e o credenciamento de segurança (arts. 25, 27, 29, 35 e 37 da LAI).
+Conexao: 'd7_845_2012' --[regulamenta]--> 'icqgs'. Motivo: Define o tratamento de informação classificada em qualquer grau de sigilo.
+Conexao: 'gestor_seg_credenciamento' --[responsavel_pelo]--> 'icqgs'. Motivo: Gestor é responsável pela segurança da ICQGS.
+Conexao: 'posto_controle' --[armazenamento]--> 'icqgs'. Motivo: Posto de Controle armazena ICQGS.
+Conexao: 'codigo_indexacao' --[utiliza]--> 'icqgs'. Motivo: Código de indexação é aplicado a documentos ICQGS.
+
+=== SECAO [CAP_II_Credenciamento_Seguranca_arts3_a_16]: CAPÍTULO II - Credenciamento de Segurança Arts. 3º ao 16 ===
+CAPÍTULO II descreve o credenciamento de segurança como o processo de habilitar órgão ou entidade pública/privada a credenciar pessoa para o tratamento de ICQGS. Define o papel do NSC na supervisão, o alcance do credenciamento e a necessidade de manter a proteção de informações classificadas, bem como os componentes como credenciais, contratos sigilosos, postos de controle e dispositivos móveis.
+
+-- Conceitos-chave --
+Termo: Credenciamento de Segurança | Tipo: Procedimento | Definicao: Processo utilizado para habilitar órgão/entidade pública ou privada e credenciar pessoa para o tratamento de ICQGS.
+  Vantagens de Credenciamento de Segurança: Centraliza a autorização de acesso a ICQGS.; Aumenta a governança e a rastreabilidade.
+  Desvantagens de Credenciamento de Segurança: Pode gerar sobrecarga administrativa se mal dimensionado.
+  Casos de uso de Credenciamento de Segurança: Credenciamento de funcionários para manuseio de ICQGS.
+Termo: Credencial de Segurança | Tipo: Certificado/Certificação | Definicao: Certificado que autoriza pessoa para o tratamento de informação classificada.
+  Vantagens de Credencial de Segurança: Prova formal de autorização de acesso.
+  Desvantagens de Credencial de Segurança: Pode ser comprometida se chaves forem expostas.
+  Casos de uso de Credencial de Segurança: Verificar quem está autorizado a tratar ICQGS.
+Termo: Gestor de Segurança e Credenciamento (II) | Tipo: Função | Definicao: Responsável pela segurança e credenciamento para ICQGS no órgão/posto de controle.
+  Vantagens de Gestor de Segurança e Credenciamento (II): Responsabiliza o controle de ICQGS dentro do órgão.
+  Desvantagens de Gestor de Segurança e Credenciamento (II): Exige treinamento e atualização constante.
+  Casos de uso de Gestor de Segurança e Credenciamento (II): Condução de ações de segurança e credenciamento.
+Termo: Posto de Controle | Tipo: Unidade | Definicao: Unidade responsável pelo armazenamento de ICQGS.
+  Vantagens de Posto de Controle: Ponto de guarda físico e lógico para ICQGS.
+  Desvantagens de Posto de Controle: Requer infraestrutura de proteção adequada.
+  Casos de uso de Posto de Controle: Armazenamento seguro de ICQGS.
+Termo: Dispositivos móveis | Tipo: Dispositivo | Definicao: Equipamentos portáteis com capacidade computacional ou memória para armazenamento.
+  Vantagens de Dispositivos móveis: Permite acesso remoto controlado a ICQGS.
+  Desvantagens de Dispositivos móveis: Risco aumentado de perda/roubo se não protegidos.
+  Casos de uso de Dispositivos móveis: Transporte seguro de ICQGS em dispositivos móveis.
+
+-- Figuras e diagramas --
+Figura 'Diagrama de Credenciamento de Segurança' (Diagrama de Processo): Fluxo de credenciamento: órgão/entidade -> credencial -> gestor -> posto de controle -> serviço de ICQGS; inclusão de dispositivos móveis sob políticas de segurança.
+  Componentes visuais: Caixas representando órgão, NSC, posto de controle, Setas de fluxo entre credenciamento, credenciais e armazenamento de ICQGS
+  Relacionado a: credenciamento_seguranca, credencial_seguranca, gestor_seg_credenciamento_II, posto_controle_II, dispositivos_moveis_II
+
+-- Relacionamentos --
+Conexao: 'lei_12_527_2011' --[regulamenta]--> 'd7_845_2012'. Motivo: LAI define diretrizes de acesso à informação que influenciam credenciamento de ICQGS.
+Conexao: 'd7_845_2012' --[regulamenta]--> 'credenciamento_seguranca'. Motivo: Decreto define o escopo e procedimentos de credenciamento de segurança.
+Conexao: 'credenciamento_seguranca' --[utiliza]--> 'credencial_seguranca'. Motivo: Credenciamento utilizado para emitir credenciais de segurança.
+Conexao: 'gestor_seg_credenciamento_II' --[responsavel_pelo]--> 'dispositivos_moveis_II'. Motivo: Gestor supervisiona a proteção de ICQGS inclusive em dispositivos móveis.
+
+=== SECAO [CAP_III_Tratamento_Informacao_Classificada_Arts17_a_49]: CAPÍTULO III - Tratamento da Informação Classificada Arts. 17 a 49 ===
+CAPÍTULO III descreve o conjunto de ações para o tratamento da ICQGS: produção, recepção, classificação, utilização, acesso, reprodução, transporte, transmissão, distribuição, arquivamento, armazenamento, eliminação, avaliação, destinação ou controle de ICQGS. Enfatiza que o tratamento ocorre sob princípios de sigilo, inviolabilidade, integridade, autenticidade e disponibilidade, com referência a marcacão (rotulagem) e uso de medidas de segurança.
+
+-- Conceitos-chave --
+Termo: Tratamento da informação classificada | Tipo: Procedimento | Definicao: Conjunto de ações referentes a produção, recepção, classificação, utilização, acesso, reprodução, transporte, transmissão, distribuição, arquivamento, armazenamento, eliminação, avaliação, destinação ou controle de ICQGS.
+  Vantagens de Tratamento da informação classificada: Define fluxo apropriado para ICQGS com maior controle de segurança.
+  Desvantagens de Tratamento da informação classificada: Exige governança contínua para manter conformidade.
+  Casos de uso de Tratamento da informação classificada: Fluxos de manuseio de ICQGS desde criação até destinação.
+Termo: Marcação | Tipo: Conceito | Definicao: Aposição de marca que indica o grau de sigilo da informação classificada.
+  Vantagens de Marcação: Sinalização clara de nível de sigilo para controles de acesso.
+  Desvantagens de Marcação: Riscos de falhas de marcação se não padronizadas.
+  Casos de uso de Marcação: Rotular documentos com ICQGS para controle de acesso.
+Termo: Cifracao/Decifracao | Tipo: Conceito | Definicao: Uso de algoritmos criptográficos para cifrar ou decifrar informações.
+  Vantagens de Cifracao/Decifracao: Confidencialidade de ICQGS em trânsito e em repouso.
+  Desvantagens de Cifracao/Decifracao: Gestão de chaves crítica; vulnerável a falhas de implementação.
+  Casos de uso de Cifracao/Decifracao: Cifragem de ICQGS armazenadas e transmitidas.
+Termo: Comprometimento | Tipo: Conceito | Definicao: Perda de segurança resultante do acesso não autorizado.
+  Vantagens de Comprometimento: Indica risco e necessidade de resposta a incidentes.
+  Desvantagens de Comprometimento: Pode indicar falhas sistêmicas de controle.
+  Casos de uso de Comprometimento: Gestão de incidentes e resposta a violações.
+Termo: Recurso criptográfico | Tipo: Conceito | Definicao: Conjunto de recursos que utilizam algoritmos para cifrar/decifrar.
+  Vantagens de Recurso criptográfico: Versatilidade de soluções criptográficas.
+  Desvantagens de Recurso criptográfico: Complexidade de gestão de chaves e certificados.
+  Casos de uso de Recurso criptográfico: Implementar cifrografia conforme políticas.
+Termo: Medidas de segurança | Tipo: Conceito | Definicao: Medidas destinadas a garantir sigilo, inviolabilidade, integridade, autenticidade e disponibilidade da ICQGS.
+  Vantagens de Medidas de segurança: Protegem a integridade e disponibilidade de ICQGS.
+  Desvantagens de Medidas de segurança: Exige monitoramento contínuo e atualização.
+  Casos de uso de Medidas de segurança: Aplicação de controles técnicos e administrativos.
+
+-- Figuras e diagramas --
+Figura 'Glossário Art. 2º (Tratamento) - Diagrama' (Glossário): Conjunto de termos de cap III, com siglas e definições para proteção de ICQGS (marcação, cifração, decifracao, etc.).
+  Componentes visuais: Lista de termos com descrições, Ícones de segurança
+  Relacionado a: tratamento_informacao_classificada, marcacao, cifracao_III, comprometimento_III, recurso_criptografico_III, medidas_seguranca_III
+
+-- Relacionamentos --
+Conexao: 'tratamento_informacao_classificada' --[aplica_para]--> 'marcacao'. Motivo: Marcação é parte essencial do tratamento da ICQGS para indicar grau de sigilo.
+Conexao: 'cifracao_III' --[utiliza]--> 'recurso_criptografico_III'. Motivo: Cifracao/decifracao dependem de recursos criptográficos.
+Conexao: 'medidas_seguranca_III' --[implementa]--> 'tratamento_informacao_classificada'. Motivo: Medidas de segurança suportam o tratamento de ICQGS.
+
+=== SECAO [CAP_IV_Indexacao_Informacao_Classificada_Arts50a53]: CAPÍTULO IV - Indexação de Documento com Informação Classificada (Arts. 50 a 53) ===
+CAPÍTULO IV aborda a indexação de documentos com ICQGS por meio de códigos de indexação, facilitando a organização, recuperação e controle das informações classificadas. A seção 50–53 detalha a relação entre a classificação, indexação e o armazenamento de documentos com sigilo.
+
+-- Conceitos-chave --
+Termo: Código de indexação (Art. 50-53) | Tipo: Conceito | Definicao: Código alfanumérico que indexa documento com ICQGS para facilitar recuperação controlada.
+  Vantagens de Código de indexação (Art. 50-53): Melhora a rastreabilidade e o gerenciamento de ICQGS.
+  Desvantagens de Código de indexação (Art. 50-53): Necessita padrões consistentes de codificação e governança de metadados.
+  Casos de uso de Código de indexação (Art. 50-53): Indexar documentos de ICQGS com chaves para recuperação segura.
+
+-- Figuras e diagramas --
+Figura 'Indexação de Documentos com ICQGS' (Diagrama): Fluxo de indexação: criação de código de indexação -> aplicação ao documento -> armazenamento/controlando o acesso.
+  Componentes visuais: Documento, Código de indexação, Armazenamento
+  Relacionado a: codigo_indexacao_IV, tratamento_informacao_classificada
+
+-- Relacionamentos --
+Conexao: 'codigo_indexacao' --[utiliza]--> 'tratamento_informacao_classificada'. Motivo: Indexação aplicada ao tratamento de ICQGS para organização e recuperação.
+
+=== SECAO [CAP_V_Disposicoes_Finais_ARTS54a60]: CAPÍTULO V - Disposições Finais (Arts. 54 ao 60) ===
+CAPÍTULO V consolida disposições finais do diploma. Estabelece disposições transitórias, vigência, publicações, revisões e demais dispositivos finais correlatos ao Decreto 7.845/2012.
+
+-- Conceitos-chave --
+Termo: Disposições Finais | Tipo: Seção | Definicao: Conjunto de disposições de encerramento do decreto (arts. 54 a 60).
+  Vantagens de Disposições Finais: Consolida regras finais e normas de implementação.
+  Desvantagens de Disposições Finais: Pode exigir atualizações administrativas futuras.
+  Casos de uso de Disposições Finais: Atualização de normativas administrativas.
+

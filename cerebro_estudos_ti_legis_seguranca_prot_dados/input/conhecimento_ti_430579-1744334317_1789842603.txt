@@ -1,0 +1,131 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Decreto 7.845/2012 | Credenciamento de Segurança e Tratamento de Informação Sigilosa
+Idioma: pt-BR
+Tecnologias citadas no documento: LAI - Lei de Acesso à Informação, ICQGS - Informação Classificada, Tratamento de Informação Classificada, Gestão de Segurança da Informação, Tratados/ Acordos internacionais (em ênfase diplomática)
+
+=== SECAO [TI_SEC_001]: Seção I - Dos Órgãos ===
+Esta seção apresenta a arquitetura institucional para credenciamento de segurança e tratamento de informação sigilosa. Define o Núcleo de Segurança e Credenciamento (NSC) como órgão central, com o papel de habilitar órgãos de registro de nível 1 e 2, postos de controle e entidades privadas vinculadas, bem como credenciar pessoas físicas. Define ainda a fiscalização, inspeção e avaliação de conformidade, estabelecendo as responsabilidades do Gabinete de Segurança Institucional da Presidência da República (GSI-PR) e do Comitê Gestor da Segurança da Informação (CGSI). Os Órgãos de Registro de Nível 1 e 2 compõem a camada operativa que efetiva o credenciamento, armazenamento e tratamento da informação classificada, com o Posto de Controle atuando no gerenciamento de credenciais e na proteção da ICQGS.
+
+-- Conceitos-chave --
+Termo: Núcleo de Segurança e Credenciamento | Tipo: Processo | Definicao: Órgão central de credenciamento de segurança instituído no âmbito do GSI-PR, responsável por habilitar órgãos de registro, postos de controle, entidades privadas vinculadas e pessoas para o tratamento de informação classificada; realizar inspeção/investigação e fiscalizar conformidade.
+  Vantagens de Núcleo de Segurança e Credenciamento: Centralização de diretrizes e fiscalização; Padronização de requisitos de credenciamento; Visibilidade e coordenação entre órgãos
+  Desvantagens de Núcleo de Segurança e Credenciamento: Potencial gargalo administrativo; Risco de dependência de uma única autoridade central
+  Casos de uso de Núcleo de Segurança e Credenciamento: Habilitar órgãos de registro nível 1; Habilitar postos de controle; Credenciar pessoas com vínculo ao GSI-PR
+Termo: Comitê Gestor da Segurança da Informação | Tipo: Processo | Definicao: Órgão colegiado responsável por propor diretrizes gerais de credenciamento, definir parâmetros mínimos de qualificação técnica e credenciamento, e avaliar periodicamente o cumprimento do Decreto.
+  Vantagens de Comitê Gestor da Segurança da Informação: Guia diretrizes padronizadas; Avaliação periódica de conformidade
+  Desvantagens de Comitê Gestor da Segurança da Informação: Potencial lente burocrática se mal gerido
+  Casos de uso de Comitê Gestor da Segurança da Informação: Definir parâmetros mínimos de qualificação; Definir condições para concessão de credencial de segurança
+Termo: Gabinete de Segurança Institucional da Presidência da República – GSI-PR | Tipo: Processo | Definicao: Órgão que expede atos complementares, coordena negociações internacionais, acompanha averiguações de danos de segurança e assessora o Presidente em assuntos de credenciamento para tratamento de informação classificada.
+  Vantagens de Gabinete de Segurança Institucional da Presidência da República – GSI-PR: Coordenação de políticas de segurança de alto nível; Capacidade diplomática para acordos internacionais
+  Desvantagens de Gabinete de Segurança Institucional da Presidência da República – GSI-PR: Complexidade institucional elevada
+  Casos de uso de Gabinete de Segurança Institucional da Presidência da República – GSI-PR: Expedir atos normativos complementares; Participar de tratados e memorandos relativos à informação classificada
+Termo: Órgão de Registro Nível 1 | Tipo: Processo | Definicao: Órgão responsável por habilitar os Órgãos de Registro Nível 2, Postos de Controle e credenciar pessoas vinculadas, além de realizar inspeções e fiscalizar o cumprimento das normas.
+  Vantagens de Órgão de Registro Nível 1: Descentralização operacional com controle central; Capacidade de credenciar pessoas vinculadas a órgãos específicos
+  Desvantagens de Órgão de Registro Nível 1: Requisita coordenação com NSC para consistência de padrões
+  Casos de uso de Órgão de Registro Nível 1: Habilitar Org. Nível 2 para credenciamento; Habilitar Postos de Controle
+Termo: Órgão de Registro Nível 2 | Tipo: Processo | Definicao: Realiza investigação e credencia pessoas para o tratamento de informação classificada; pode delegar inspeções e investigações.
+  Vantagens de Órgão de Registro Nível 2: Especialização técnica em credenciamento; Capacidade de atuação em campo com maior foco
+  Desvantagens de Órgão de Registro Nível 2: Necessita de supervisão para manter padrões uniformes
+  Casos de uso de Órgão de Registro Nível 2: Investigar e credenciar pessoas vinculadas; Conduzir inspeções delegadas
+Termo: Posto de Controle | Tipo: Processo | Definicao: Órgão ou entidade responsável pelo controle das credenciais de segurança de pessoas e pela garantia da segurança da ICQGS (informação classificada).
+  Vantagens de Posto de Controle: Verificação de credenciais na prática; Proteção operacional da ICQGS
+  Desvantagens de Posto de Controle: Requer infraestrutura física e tecnológica de controle
+  Casos de uso de Posto de Controle: Controle diários de credenciais; Armazenamento seguro de ICQGS
+Termo: Entidade Privada com Vinculo ao GSI-PR | Tipo: Processo | Definicao: Entidade privada autorizada a tratar informação classificada quando mantêm vínculo com o GSI-PR.
+  Vantagens de Entidade Privada com Vinculo ao GSI-PR: Flexibiliza parcerias para tratamento de informações classificadas
+  Desvantagens de Entidade Privada com Vinculo ao GSI-PR: Exige controles rigorosos para evitar conflito de interesses
+  Casos de uso de Entidade Privada com Vinculo ao GSI-PR: Tratamento de informações classificadas por entidades privadas vinculadas
+Termo: Credencial de Segurança a uma Pessoa Física | Tipo: Processo | Definicao: Concessão de credencial de segurança a uma pessoa física, condicionada a requisitos legais e de aptidão.
+  Vantagens de Credencial de Segurança a uma Pessoa Física: Permite atuação individual sob padrões estabelecidos
+  Desvantagens de Credencial de Segurança a uma Pessoa Física: Dependência de verificação rigorosa de aptidão
+  Casos de uso de Credencial de Segurança a uma Pessoa Física: Credenciar indivíduos para tratamento de informação classificada
+Termo: Inspeção e Investigação para Credenciamento | Tipo: Processo | Definicao: Procedimento de inspeção e investigação para credenciamento de segurança necessário à execução do credenciamento.
+  Vantagens de Inspeção e Investigação para Credenciamento: Verifica conformidade com padrões técnicos
+  Desvantagens de Inspeção e Investigação para Credenciamento: Processo pode ser demorado
+  Casos de uso de Inspeção e Investigação para Credenciamento: Aprovação de credenciais após avaliação
+Termo: Fiscalização do Cumprimento de Normas | Tipo: Processo | Definicao: Atividade de fiscalização contínua para assegurar o cumprimento das normas e procedimentos de credenciamento de segurança e tratamento de informação classificada.
+  Vantagens de Fiscalização do Cumprimento de Normas: Mantém padrões de segurança ao longo do tempo
+  Desvantagens de Fiscalização do Cumprimento de Normas: Pode demandar recursos significativos
+  Casos de uso de Fiscalização do Cumprimento de Normas: Auditorias periódicas de conformidade
+
+-- Figuras e diagramas --
+Figura 'Núcleo de Segurança e Credenciamento (NSC) – Estrutura Central' (Arquitetura de alto nível): Diagrama que mostra NSC como núcleo central com ligações a CGSI, GSI-PR, Órgãos de Registro Nível 1 e 2, Posto de Controle e Entidade Privada vinculada.
+  Componentes visuais: NSC, CGSI, GSI-PR, Órgãos de Registro Nível 1, Órgãos de Registro Nível 2, Posto de Controle, Entidade Privada vinculada
+  Relacionado a: nsc, cgsi, gsi_pr, org_reg_nivel1, org_reg_nivel2, posto_controle, entidade_privada_vinculo
+Figura 'Órgãos de Registro Nível 1' (Diagrama de responsabilidades): Diagrama que ilustra que o Órgão de Registro Nível 1 habilita Órgão de Registro Nível 2, Postos de Controle e credencia pessoas ligadas a ele.
+  Componentes visuais: Habilita Org. Nível 2, Habilita Postos de Controle, Credencia Pessoa vinculada
+  Relacionado a: org_reg_nivel1, org_reg_nivel2, posto_controle, credencial_pessoa
+Figura 'Órgãos de Registro Nível 2 e Posto de Controle' (Diagrama operacional): Demonstra a função de investigação/credenciamento do Nível 2 e o controle de credenciais pelo Posto de Controle.
+  Componentes visuais: Investiga/Credencia (Nível 2), Controle de Credenciais (Posto de Controle)
+  Relacionado a: org_reg_nivel2, credencial_pessoa, posto_controle
+Figura 'Comitê Gestor da Segurança da Informação - CGSI' (Diagrama de governança): Figura que descreve o papel do CGSI em propor diretrizes, parâmetros mínimos e avaliação de cumprimento.
+  Componentes visuais: CGSI – Diretrizes, Parâmetros mínimos, Avaliação de cumprimento
+  Relacionado a: cgsi, nsc
+Figura 'Gabinete de Segurança Institucional PR - GSI-PR' (Diagrama institucional): Figura que mostra o papel do GSI-PR nas ações diplomáticas, atos internacionais, e assessoramento ao Presidente.
+  Componentes visuais: GSI-PR, Ações diplomáticas, Assessoramento ao Presidente
+  Relacionado a: gsi_pr, cgsi, nsc
+
+-- Relacionamentos --
+Conexao: 'nsc' --[implementa]--> 'org_reg_nivel1'. Motivo: NSC habilita Órgão de Registro Nível 1 para credenciamento e atividades associadas.
+Conexao: 'nsc' --[implementa]--> 'org_reg_nivel2'. Motivo: NSC habilita Órgão de Registro Nível 2 para credenciamento de pessoas.
+Conexao: 'nsc' --[implementa]--> 'posto_controle'. Motivo: NSC habilita Postos de Controle para armazenamento de ICQGS.
+Conexao: 'nsc' --[implementa]--> 'entidade_privada_vinculo'. Motivo: NSC habilita entidade privada vinculada com o GSI-PR para tratamento de informação classificada.
+Conexao: 'org_reg_nivel1' --[implementa]--> 'org_reg_nivel2'. Motivo: Órgão de Registro Nível 1 habilita Órgão de Registro Nível 2 para credenciamento.
+Conexao: 'org_reg_nivel1' --[implementa]--> 'posto_controle'. Motivo: Órgão de Registro Nível 1 habilita Posto de Controle para armazenamento de ICQGS.
+Conexao: 'org_reg_nivel2' --[implementa]--> 'credencial_pessoa'. Motivo: Órgão de Registro Nível 2 credencia pessoas para o tratamento de informação classificada.
+Conexao: 'posto_controle' --[depende_de]--> 'credencial_pessoa'. Motivo: Posto de Controle realiza controle das credenciais de segurança de pessoas.
+Conexao: 'cgsi' --[define_parametros]--> 'nsc'. Motivo: CGSI define diretrizes gerais (parâmetros mínimos) para credenciamento e tratamento.
+Conexao: 'gsi_pr' --[comunica_com]--> 'cgsi'. Motivo: GSI-PR participa de negociações/atos internacionais e coordena com o CGSI conforme necessário.
+Conexao: 'nsc' --[realiza_inspeção_investigação]--> 'inspecao_investigacao_credenciamento'. Motivo: NSC realiza inspeção/investigação para credenciamento de segurança.
+Conexao: 'nsc' --[fiscaliza]--> 'fiscalizacao_normas'. Motivo: NSC fiscaliza o cumprimento das normas de credenciamento.
+Conexao: 'nsc' --[realiza]--> 'ajustes_cooperacao'. Motivo: Órgãos podem firmar ajustes/convênios para cooperação em credenciamento e inspeção.
+
+=== SECAO [TI_SEC_002]: Seção II - Dos Procedimentos ===
+Esta seção detalha os procedimentos operacionais para credenciamento de segurança. Define requisitos para habilitação de órgãos públicos, habilitação de entidades privadas como postos de controle, concessão de credenciais de segurança a pessoas físicas e a possibilidade de firmar ajustes/cooperativas entre órgãos habilitados. Os artigos 10 a 12 especificam as condições de habilitação e credencial, enquanto o art. 13 estabelece que a habilitação e a concessão decorrem de análise objetiva dos requisitos. A seção 14 autoriza cooperação entre órgãos habilitados, e os arts. 15-16 tratam de postos de controle permanentes e de acordos com entidades estrangeiras.
+
+-- Conceitos-chave --
+Termo: Habilitação de Órgãos e Entidades Públicas | Tipo: Processo | Definicao: Condição de habilitação para credenciamento de segurança de órgãos e entidades públicas e privadas, incluindo a designação de gestor de segurança e seu substituto.
+  Vantagens de Habilitação de Órgãos e Entidades Públicas: Assegura qualificação técnica necessária; Clarifica governança de segurança
+  Desvantagens de Habilitação de Órgãos e Entidades Públicas: Processo pode ser demorado
+  Casos de uso de Habilitação de Órgãos e Entidades Públicas: Habilitar órgãos públicos para credenciamento; Habilitar organizações públicas para armazenamento ICQGS
+Termo: Habilitação de Entidade Privada como Posto de Controle | Tipo: Processo | Definicao: Condição para habilitar entidade privada como posto de controle, com exigência de regularidade fiscal, qualificação técnica, contrato sigiloso e aprovação em inspeção.
+  Vantagens de Habilitação de Entidade Privada como Posto de Controle: Expansão de capacidades de controle; Flexibilidade de parcerias
+  Desvantagens de Habilitação de Entidade Privada como Posto de Controle: Risco de litígios se não bem regulamentado
+  Casos de uso de Habilitação de Entidade Privada como Posto de Controle: Posto de Controle externo para credenciamento
+Termo: Credencial de Segurança a uma Pessoa Física | Tipo: Processo | Definicao: Concessão de credencial condicionada à solicitação formal, dados pessoais, autorização de investigação, aptidão para tratamento de informação classificada e assinatura de contrato de conhecimento de normas.
+  Vantagens de Credencial de Segurança a uma Pessoa Física: Autenticação individual baseada em requisitos
+  Desvantagens de Credencial de Segurança a uma Pessoa Física: Processo de investigação pode demandar tempo
+  Casos de uso de Credencial de Segurança a uma Pessoa Física: Concessão de credenciais a funcionários/pessoas ligadas a órgãos
+Termo: Ajustes, Convênios ou Termos de Cooperação | Tipo: Processo | Definicao: Possibilidade de firmar acordos entre órgãos ou entidades habilitados para credenciamento de segurança e realização de inspeção/investigação.
+  Vantagens de Ajustes, Convênios ou Termos de Cooperação: Facilita cooperação interinstitucional; Acelera processos de credenciamento
+  Desvantagens de Ajustes, Convênios ou Termos de Cooperação: Requer alinhamento entre várias partes
+  Casos de uso de Ajustes, Convênios ou Termos de Cooperação: Cooperação para credenciamento entre órgãos diferentes
+Termo: Requisitos de Credencial de Segurança | Tipo: Processo | Definicao: Conjunto de requisitos descritos para concessão de credencial de segurança a pessoas físicas (solicitação, dados, aptidão, conhecimento das normas).
+  Vantagens de Requisitos de Credencial de Segurança: Transparência e rastreabilidade do processo; Conformidade com normas
+  Desvantagens de Requisitos de Credencial de Segurança: Exige documentação e tempo de avaliação
+  Casos de uso de Requisitos de Credencial de Segurança: Processo de concessão de credenciais a indivíduos
+Termo: Análise objetiva de requisitos | Tipo: Processo | Definicao: A habilitação para credenciamento resulta de uma análise objetiva dos requisitos previstos (arts 10 a 12).
+  Vantagens de Análise objetiva de requisitos: Reduz subjetividade nas decisões; Transparência de critérios
+  Desvantagens de Análise objetiva de requisitos: Pode exigir dados completos
+  Casos de uso de Análise objetiva de requisitos: Tomada de decisão de habilitação e credencial
+Termo: Ajustes e cooperação entre órgãos | Tipo: Processo | Definicao: Possibilidade de firmar ajustes, convênios ou termos de cooperação com outros órgãos habilitados para credenciamento e inspeção.
+  Vantagens de Ajustes e cooperação entre órgãos: Amplia capacidades de credenciamento; Permite atividades conjuntas de inspeção
+  Desvantagens de Ajustes e cooperação entre órgãos: Complexidade de acordos
+  Casos de uso de Ajustes e cooperação entre órgãos: Parcerias entre órgãos para credenciamento
+
+-- Figuras e diagramas --
+Figura 'Procedimentos de Credenciamento' (Fluxo de processos): Representa os fluxos de habilitação de órgãos públicos, habilitação de entidades privadas como postos de controle, credenciais para pessoas físicas e ajustes entre órgãos.
+  Componentes visuais: Habilitação de Órgãos Públicos, Habilitação de entidades privadas como Posto de Controle, Credencial de Segurança a pessoa física, Ajustes/Convênios entre órgãos
+  Relacionado a: hab_orgos_publicos, hab_entidade_privada_posto, credencial_pessoa, ajustes_cooperacao
+Figura 'Governança de Procedimentos - CGSI' (Diagrama de governança): Sugere o papel do CGSI na definição de parâmetros mínimos e na avaliação de cumprimento.
+  Componentes visuais: CGSI – diretrizes, Parâmetros mínimos, Avaliação de cumprimento
+  Relacionado a: cgsi, nsc
+Figura 'GSI-PR - Atribuições Diplomáticas' (Diagrama institucional): Exibe o papel do GSI-PR em negociações de tratados/acordos internacionais e suporte ao Presidente.
+  Componentes visuais: GSI-PR, Negociações/Tratados, Apoio ao Presidente
+  Relacionado a: gsi_pr, cgsi
+
+-- Relacionamentos --
+Conexao: 'cgsi' --[define_parametros]--> 'nsc'. Motivo: CGSI define parâmetros mínimos para qualificação técnica e concessão de credencial.
+Conexao: 'gsi_pr' --[comunica_com]--> 'cgsi'. Motivo: GSI-PR participa de negociações e atos internacionais com o MRE, articulando com o CGSI.
+Conexao: 'nsc' --[realiza_inspeção_investigação]--> 'inspecao_investigacao_credenciamento'. Motivo: NSC realiza inspeção e investigação para credenciamento.
+
