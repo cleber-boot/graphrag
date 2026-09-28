@@ -615,13 +615,19 @@ def buscar_contexto_para_simulado(tema: str, method: str, community_level: int) 
 
 def gerar_simulado_via_llm(contexto: str, banca: str, tema: str, quantidade: int, formato_label: str) -> str:
     """Etapa 2: chamada DIRETA à OpenRouter (fora do GraphRAG) para elaborar
-    as questões formatadas, usando o contexto já buscado na etapa 1."""
+    as questões formatadas, usando o contexto já buscado na etapa 1.
+
+    max_tokens definido explicitamente (reaproveitando o mesmo teto usado
+    pelo modo estruturado, sg.MAX_TOKENS_GERACAO) para reduzir o risco de
+    truncamento silencioso em simulados grandes (quantidade alta de
+    questões + formato Markdown extenso)."""
     prompt = build_simulado_prompt(banca, tema, quantidade, formato_label, contexto)
 
     response = openrouter_client.chat.completions.create(
         model=MODELO_SIMULADO,
         messages=[{"role": "user", "content": prompt}],
         temperature=0.3,
+        max_tokens=sg.MAX_TOKENS_GERACAO,
     )
     return response.choices[0].message.content
 
@@ -764,6 +770,11 @@ if gerar_simulado_clicado:
 
     questoes: list[dict] = []
     erro_msg = ""
+    # Acumula UMA mensagem de erro por conhecimento que falhar no modo grafo.
+    # Antes isso era só um st.warning() dentro do loop — que some no próximo
+    # st.rerun() sem deixar rastro. Agora fica visível na conversa mesmo
+    # depois do rerun, porque entra em erro_msg (que é salvo em disco).
+    falhas_por_conhecimento: list[str] = []
 
     with st.chat_message("assistant"):
         if modo_grafo:
@@ -791,7 +802,9 @@ if gerar_simulado_clicado:
                         incluir_micro=incluir_micro,
                     )
                 except Exception as exc:  # noqa: BLE001 - mostra o erro para o usuário
-                    st.warning(f"Falha ao gerar questões de '{plano['titulo']}': {exc}")
+                    mensagem_falha = f"Falha ao gerar questões de '{plano['titulo']}': {exc}"
+                    st.warning(mensagem_falha)
+                    falhas_por_conhecimento.append(mensagem_falha)
                     continue
 
                 for q in novas:
@@ -800,6 +813,16 @@ if gerar_simulado_clicado:
 
             barra.progress(1.0, text="Pronto!")
             barra.empty()
+
+            if falhas_por_conhecimento:
+                # Monta o erro_msg com TODAS as falhas, mesmo que algumas
+                # questões tenham sido geradas com sucesso nos demais
+                # conhecimentos (nesse caso, erro_msg fica pronto mas só é
+                # de fato exibido isolado se `questoes` continuar vazio;
+                # caso contrário, vira um aviso extra abaixo do simulado).
+                erro_msg = "⚠️ Algumas questões não puderam ser geradas:\n\n" + "\n\n".join(
+                    f"- {f}" for f in falhas_por_conhecimento
+                )
         else:
             metodo_para_simulado = "drift" if method == "drift" else "global"
             with st.spinner("Buscando conteúdo relevante na base de conhecimento..."):
@@ -838,6 +861,10 @@ if gerar_simulado_clicado:
                 "cabecalho": f"**Simulado — banca {banca or 'FGV'}** · {len(questoes)} questões",
                 "questoes": questoes,
             }
+            if erro_msg:
+                # Houve sucesso parcial: mostra o simulado normalmente E,
+                # acima dele, o aviso do que falhou (persistido no histórico).
+                st.warning(erro_msg)
             sg.render_simulado_estruturado(
                 dados_simulado,
                 prefixo=f"live_{len(st.session_state.messages)}",
@@ -849,9 +876,14 @@ if gerar_simulado_clicado:
     if not questoes:
         st.session_state.messages.append({"role": "assistant", "content": erro_msg, "kind": "chat"})
     else:
+        conteudo_md = sg.para_markdown(dados_simulado)
+        if erro_msg:
+            # Prefixa o aviso de falha parcial no texto salvo, para que ele
+            # também apareça ao reabrir a conversa (não só nesta execução).
+            conteudo_md = f"{erro_msg}\n\n---\n\n{conteudo_md}"
         st.session_state.messages.append({
             "role": "assistant",
-            "content": sg.para_markdown(dados_simulado),
+            "content": conteudo_md,
             "kind": "simulado_json",
             "dados": dados_simulado,
         })

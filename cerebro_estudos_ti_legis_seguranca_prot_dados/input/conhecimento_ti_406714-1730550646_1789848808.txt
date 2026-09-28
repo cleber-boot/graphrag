@@ -1,0 +1,198 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Lei 12.965/2014 | Marco Civil da Internet no Brasil
+Idioma: pt-BR
+Tecnologias citadas no documento: Internet, Endereço IP, Registro de Conexão, Registro de Acesso a Aplicações de Internet, Tratamento de Dados Pessoais (TDP), Proteção de Dados Pessoais (LGPD)
+
+=== SECAO [SEC_01]: Glossário e Fundamentos ===
+Este segmento apresenta definições-chave que fundamentam o Marco Civil da Internet. Define termos essenciais para a compreensão da norma, como Internet, Terminal, Endereço IP, Administrador de Sistema Autônomo, Conexão à Internet, Registro de Conexão, Aplicações de Internet e Registros de Acesso a Aplicações. Esses conceitos ajudam a compreender quem são os agentes (usuários, provedores, administradores) e quais informações são coletadas, registradas e usadas para a identificação, rastreabilidade e funcionamento da rede.
+
+-- Conceitos-chave --
+Termo: Internet | Tipo: ConceitoChave | Definicao: o sistema constituído do conjunto de protocolos lógicos, estruturado em escala mundial para uso público e irrestrito, com a finalidade de possibilitar a comunicação de dados entre terminais por meio de diferentes redes
+  Vantagens de Internet: Conectividade global; Padrões abertos de comunicação
+  Desvantagens de Internet: Riscos de privacidade e segurança; Complexidade de governança global
+  Casos de uso de Internet: Comunicação entre dispositivos em redes distintas; Acesso a serviços e aplicações web
+Termo: Terminal | Tipo: ConceitoChave | Definicao: o computador ou qualquer dispositivo que se conecte à internet
+  Vantagens de Terminal: Ponto de acesso à rede
+  Desvantagens de Terminal: Vulnerável a ataques dependentes do dispositivo
+  Casos de uso de Terminal: Dispositivos móveis, desktops, sensores conectados
+Termo: Endereço IP | Tipo: ConceitoChave | Definicao: o código atribuído a um terminal de uma rede para permitir sua identificação, definido segundo parâmetros internacionais
+  Vantagens de Endereço IP: Identificação única na rede; Roteamento de pacotes
+  Desvantagens de Endereço IP: Potencial de rastreabilidade e privacidade; Pode ser dinâmico ou estático conforme a rede
+  Casos de uso de Endereço IP: Encaminhamento de dados entre terminais; Controle de acesso e logs de rede
+Termo: Administrador de Sistema Autônomo | Tipo: ConceitoChave | Definicao: a pessoa física ou jurídica que administra blocos de endereço IP específicos e o respectivo sistema autônomo de roteamento, devidamente cadastrada no ente nacional responsável pelo registro e distribuição de endereços IP geograficamente referentes ao País
+  Vantagens de Administrador de Sistema Autônomo: Gestão de roteamento e hierarquia de IPs; Facilita a atribuição geográfica de blocos IP
+  Desvantagens de Administrador de Sistema Autônomo: Responsabilidade legal e de conformidade; Risco de abuso de dados de rede
+  Casos de uso de Administrador de Sistema Autônomo: Distribuição de blocos IP para ISPs; Gerenciamento de rotas internas
+Termo: Conexão à Internet | Tipo: ConceitoChave | Definicao: a habilitação de um terminal para envio e recebimento de pacotes de dados pela internet, mediante a atribuição ou autenticação de um endereço IP
+  Vantagens de Conexão à Internet: Acesso a redes e serviços globais
+  Desvantagens de Conexão à Internet: Dependência de infraestrutura de rede
+  Casos de uso de Conexão à Internet: Conexão de residências, empresas e dispositivos IoT
+Termo: Registro de Conexão | Tipo: ConceitoChave | Definicao: conjunto de informações referentes à data e hora de início e término de uma conexão à internet, sua duração e o endereço IP utilizado pelo terminal para o envio e recebimento de pacotes de dados
+  Vantagens de Registro de Conexão: Auditoria e monitoramento de uso
+  Desvantagens de Registro de Conexão: Potencial violação de privacidade se mal utilizado
+  Casos de uso de Registro de Conexão: Logs de conectividade para suporte e conformidade
+Termo: Aplicações de Internet | Tipo: ConceitoChave | Definicao: o conjunto de funcionalidades que podem ser acessadas por meio de um terminal conectado à internet
+  Vantagens de Aplicações de Internet: Acesso a serviços e plataformas diversas
+  Desvantagens de Aplicações de Internet: Possíveis dependsência de plataformas específicas
+  Casos de uso de Aplicações de Internet: WhatsApp, redes sociais, aplicações web
+Termo: Registros de Acesso a Aplicações de Internet | Tipo: ConceitoChave | Definicao: conjunto de informações referentes à data e hora de uso de uma determinada aplicação de internet a partir de um determinado endereço IP
+  Vantagens de Registros de Acesso a Aplicações de Internet: Auditoria de uso de aplicações
+  Desvantagens de Registros de Acesso a Aplicações de Internet: Risco de dados sensíveis se mal geridos
+  Casos de uso de Registros de Acesso a Aplicações de Internet: Logs de uso de redes sociais, serviços de nuvem
+
+-- Figuras e diagramas --
+Figura 'Glossário Artigo 5 - Definições' (Infografico): Definições de Internet, Terminal, Endereço IP, Administrador de Sistema Autônomo, Conexão à Internet, Registro de Conexão, Aplicações de Internet, Registros de Acesso a Aplicações
+  Componentes visuais: Internet, Terminal, Endereço IP, Administrador de Sistema Autônomo, Conexão à Internet, Registro de Conexão, Aplicações de Internet, Registros de Acesso
+  Relacionado a: internet, terminal, endereco_ip, administrador_sistema_autonomo, conexao_internet, registro_conexao, aplicacoes_internet, registros_acesso_aplicacoes
+
+-- Relacionamentos --
+Conexao: 'internet' --[comunica_com]--> 'terminal'. Motivo: A Internet permite a comunicação entre terminais de redes distintas.
+Conexao: 'terminal' --[depende_de]--> 'endereco_ip'. Motivo: Um terminal precisa de um endereço IP para identificação na rede.
+Conexao: 'registro_conexao' --[depende_de]--> 'conexao_internet'. Motivo: O registro de conexão registra informações da conexão efetuada.
+Conexao: 'administrador_sistema_autonomo' --[depende_de]--> 'endereco_ip'. Motivo: Gerencia blocos de IPs utilizados para encaminhamento e identificação.
+
+=== SECAO [SEC_02]: Princípios, Fundamentos e Objetivos (Art. 1º a 6º) ===
+Os arts. 1º a 6º consolidam a base normativa: Art. 1º define o objetivo da lei de estabelecer princípios, garantias, direitos e deveres para o uso da internet no Brasil; Art. 2º descreve fundamentos humanos e democráticos; Art. 3º elenca princípios (liberdade de expressão, privacidade, proteção de dados, neutralidade de rede, estabilidade, responsabilização, participação, liberdade de modelos de negócios); Art. 4º define o objetivo de promover acesso, informação, inovação e padrões abertos; Art. 5º recapitula definições-chave; Art. 6º orienta a interpretação da lei considerando a natureza da internet.
+
+-- Conceitos-chave --
+Termo: Art. 1º - Objeto da Lei | Tipo: ConceitoChave | Definicao: Esta Lei estabelece princípios, garantias, direitos e deveres para o uso da internet no Brasil e determina diretrizes para atuação da União, dos Estados, do DF e dos Municípios.
+  Vantagens de Art. 1º - Objeto da Lei: Clareza na atribuição de competências
+  Desvantagens de Art. 1º - Objeto da Lei: Necessidade de atualização conforme evolução tecnológica
+  Casos de uso de Art. 1º - Objeto da Lei: Guia de atuação para autoridades públicas
+Termo: Art. 2º - Fundamentos | Tipo: ConceitoChave | Definicao: A disciplina do uso da internet tem como fundamento o respeito à liberdade de expressão, aos direitos humanos, desenvolvimento humano, pluralidade, abertura, colaboração, iniciativa econômica e finalidade social da rede.
+  Vantagens de Art. 2º - Fundamentos: Base ética para políticas públicas digitais
+  Desvantagens de Art. 2º - Fundamentos: Interpretação pode se alterar com mudanças sociais
+  Casos de uso de Art. 2º - Fundamentos: Formulação de políticas de inclusão digital
+Termo: Art. 3º - Princípios | Tipo: ConceitoChave | Definicao: Princípios que norteiam a disciplina da internet: liberdade de expressão, proteção da privacidade, proteção de dados, neutralidade de rede, estabilidade, responsabilização, participação e liberdade de modelos de negócios.
+  Vantagens de Art. 3º - Princípios: Governança clara de direitos digitais
+  Desvantagens de Art. 3º - Princípios: Equilíbrio entre direitos e responsabilidades pode gerar conflitos
+  Casos de uso de Art. 3º - Princípios: Definição de políticas de governança de rede
+Termo: Art. 4º - Objetivos | Tipo: ConceitoChave | Definicao: Promover o acesso à internet, o acesso à informação, à participação cívica, à inovação e a adoção de padrões tecnológicos abertos.
+  Vantagens de Art. 4º - Objetivos: Inclusão digital e interoperabilidade
+  Desvantagens de Art. 4º - Objetivos: Necessidade de adoção de padrões abertos pode impactar modelos proprietários
+  Casos de uso de Art. 4º - Objetivos: Políticas públicas de inclusão digital
+Termo: Art. 5º - Definições | Tipo: ConceitoChave | Definicao: Fornece definições de internet, terminal, endereço IP, administrador de sistema autônomo, conexão, registro de conexão, aplicações e registros de acesso a aplicações.
+  Vantagens de Art. 5º - Definições: Padronização terminológica
+  Desvantagens de Art. 5º - Definições: Tradução de termos pode gerar ambiguidades entre ambientes
+  Casos de uso de Art. 5º - Definições: Interpretação com bases legais
+Termo: Art. 6º - Interpretação | Tipo: ConceitoChave | Definicao: Na interpretação da lei serão considerados fundamentos, princípios, objetivos e a natureza da internet, seus usos, costumes e sua importância para o desenvolvimento humano, econômico, social e cultural.
+  Vantagens de Art. 6º - Interpretação: Flexibilidade interpretativa diante de novas tecnologias
+  Desvantagens de Art. 6º - Interpretação: Possibilidade de diferentes leituras jurídicas
+  Casos de uso de Art. 6º - Interpretação: Atualizações jurisprudenciais e técnicas
+
+-- Figuras e diagramas --
+Figura 'Visão Geral Art. 1º a 6º' (Diagrama de princípios): Capítulos definem objeto, fundamentos, princípios, objetivos, definições e interpretação da lei
+  Componentes visuais: Artigo 1, Artigo 2, Artigo 3, Artigo 4, Artigo 5, Artigo 6
+  Relacionado a: art1_objeto, art2_foundations, art3_principles, art4_objectives, art5_definicoes, art6_interp
+
+-- Relacionamentos --
+Conexao: 'art1_objeto' --[implementa]--> 'art2_foundations'. Motivo: Art. 1 define o objeto que fundamenta os artigos subsequentes.
+Conexao: 'art2_foundations' --[depende_de]--> 'art3_principles'. Motivo: Os fundamentos fundamentam os princípios.
+Conexao: 'art3_principles' --[depende_de]--> 'art4_objectives'. Motivo: Os princípios sustentam os objetivos da lei.
+Conexao: 'art5_definicoes' --[comunica_com]--> 'art3_principles'. Motivo: Definições ajudam a interpretar princípios e artigos subsequentes.
+Conexao: 'art6_interp' --[comunica_com]--> 'art1_objeto'. Motivo: Interpretação considera o objeto da lei e seu impacto.
+
+=== SECAO [SEC_03]: Direitos e Garantias dos Usuários - Art. 7º e 8º ===
+O Capítulo II consolida os direitos fundamentais dos usuários da internet no Brasil: inviolabilidade da intimidade e vida privada; sigilo do fluxo de comunicações; sigilo de comunicações armazenadas; não suspensão da conexão; manutenção da qualidade contratada; contratos transparentes; não fornecimento de dados pessoais a terceiros sem consentimento; tratamento de dados pessoais com finalidade específica e consentimento; exclusão de dados; acessibilidade; proteção ao consumidor; e nulidade de cláusulas que violem a privacidade. O Art. 8º destaca que a garantia da privacidade e liberdade de expressão é condição para o pleno exercício do direito de acesso, com nulidade de cláusulas que violem esse conteúdo.
+
+-- Conceitos-chave --
+Termo: Inviolabilidade da intimidade e da vida privada | Tipo: ConceitoChave | Definicao: Proteção da esfera íntima do usuário e indenização por danos decorrentes de violação
+  Vantagens de Inviolabilidade da intimidade e da vida privada: Proteção de direitos fundamentais; Recursos de indenização
+  Desvantagens de Inviolabilidade da intimidade e da vida privada: Custos de fiscalização e compliance
+  Casos de uso de Inviolabilidade da intimidade e da vida privada: Litígios por violação de privacidade
+Termo: Sigilo do fluxo das comunicações | Tipo: ConceitoChave | Definicao: Proteção do conteúdo e metadados das comunicações pela internet, salvo por ordem judicial
+  Vantagens de Sigilo do fluxo das comunicações: Proteção de dados em trânsito
+  Desvantagens de Sigilo do fluxo das comunicações: Exigência de ordem judicial para acesso
+  Casos de uso de Sigilo do fluxo das comunicações: Logs, interceptações autorizadas
+Termo: Sigilo de comunicações privadas armazenadas | Tipo: ConceitoChave | Definicao: Proteção de conteúdos armazenados, salvo ordem judicial
+  Vantagens de Sigilo de comunicações privadas armazenadas: Preservação de privacidade histórica de usuários
+  Desvantagens de Sigilo de comunicações privadas armazenadas: Conservação de dados que pode ser explorada
+  Casos de uso de Sigilo de comunicações privadas armazenadas: Logs de mensagens, armazenamentos de dados em serviços
+Termo: Não suspensão da conexão | Tipo: ConceitoChave | Definicao: Garantia de continuidade do serviço, salvo débito decorrente da utilização
+  Vantagens de Não suspensão da conexão: Continuidade do acesso
+  Desvantagens de Não suspensão da conexão: Riscos de inadimplência
+  Casos de uso de Não suspensão da conexão: Cobrança por uso inadequado de serviços
+Termo: Manutenção da qualidade contratada | Tipo: ConceitoChave | Definicao: Garantia de manter o nível de serviço contratado pelo usuário
+  Vantagens de Manutenção da qualidade contratada: Previsibilidade de desempenho
+  Desvantagens de Manutenção da qualidade contratada: Possíveis ajustes contratuais
+  Casos de uso de Manutenção da qualidade contratada: Garantia de velocidade e estabilidade
+Termo: Informações claras sobre políticas de dados | Tipo: ConceitoChave | Definicao: Políticas de tratamento de dados, coleta, armazenamento, uso e proteção
+  Vantagens de Informações claras sobre políticas de dados: Consentimento informado; Transparência
+  Desvantagens de Informações claras sobre políticas de dados: Complexidade de políticas
+  Casos de uso de Informações claras sobre políticas de dados: Termos de uso, políticas de privacidade
+Termo: Consentimento expresso sobre dados pessoais | Tipo: ConceitoChave | Definicao: Consentimento deve ocorrer de forma destacada e informada
+  Vantagens de Consentimento expresso sobre dados pessoais: Controle do usuário sobre seus dados
+  Desvantagens de Consentimento expresso sobre dados pessoais: Pode atrapalhar operações automatizadas
+  Casos de uso de Consentimento expresso sobre dados pessoais: Opt-in para coleta de dados
+Termo: Exclusão de dados | Tipo: ConceitoChave | Definicao: Exclusão definitiva de dados pessoais ao término da relação, com exceções legais de retenção
+  Vantagens de Exclusão de dados: Proteção de privacidade futura
+  Desvantagens de Exclusão de dados: Necessidade de gestão de retenção legal
+  Casos de uso de Exclusão de dados: Fechamento de contas e apps
+Termo: Acessibilidade | Tipo: ConceitoChave | Definicao: Consideração das características físicas, cognitivas e sensoriais do usuário
+  Vantagens de Acessibilidade: Inclusão digital
+  Desvantagens de Acessibilidade: Custos de acessibilidade
+  Casos de uso de Acessibilidade: Web acessível, apps inclusivos
+Termo: Proteção e defesa do consumidor | Tipo: ConceitoChave | Definicao: Aplicação das normas de defesa do consumidor nas relações de consumo na internet
+  Vantagens de Proteção e defesa do consumidor: Mínimos padrões de qualidade e justiça nas relações de consumo
+  Desvantagens de Proteção e defesa do consumidor: Conflitos entre contratos de adesão e direitos individuais
+  Casos de uso de Proteção e defesa do consumidor: Reclamações de consumidores em e-commerce e serviços online
+
+-- Figuras e diagramas --
+Figura 'Direitos e Garantias – Cards (Art. 7º e 8º)' (Infografico): Conjunto de direitos centrais: privacidade, sigilo, não suspensão, qualidade, contratos transparentes, tratamento de dados, consentimento, exclusão, acessibilidade, defesa do consumidor.
+  Componentes visuais: Inviolabilidade intimidade, Sigilo fluxo comunicações, Sigilo comunicações armazenadas, Não suspensão, Manutenção qualidade, Transparência contratos, Não fornecimento dados, Tratamento de dados, Consentimento, Exclusão dados, Acessibilidade, Defesa do consumidor
+  Relacionado a: inv_priv_interior, sigilo_fluxo, dados_privados_armazenados, nao_suspensao_conexao, manutencao_qualidade, transparencia_policies, consentimento_TDP, exclusao_dados, acessibilidade, defesa_consumidor
+Figura 'Letra da Lei – Art. 7º e 8º' (Texto + Destaques): Texto integral dos artigos 7º e 8º com destaques das garantias e nulidades contratuais.
+  Componentes visuais: Art. 7º – direitos, Art. 8º – privacidade e expressão
+  Relacionado a: art7_8_texto
+Figura 'Provedor de Conexão X Provedor de Aplicação' (Infografico): Duas camadas de provedores: conexão à Internet e provedores de aplicações; relacionamento de dependência entre serviços de rede e plataformas.
+  Componentes visuais: Provedores de conexão à Internet, Provedores de aplicações de Internet
+  Relacionado a: provedor_conexao, provedor_aplicacoes
+Figura 'Glossário – Conceitos-Chave (Art. 5º)' (Infografico): Representação visual das definições do Art. 5º: Internet, Terminal, Endereço IP, Administrador de S.I. Autônomo, Conexão, Registro de Conexão, Aplicações, Registros de Acesso.
+  Componentes visuais: Internet, Terminal, Endereço IP, Administrador de S.I. Autônomo, Conexão, Registro de Conexão, Aplicações, Registros de Acesso
+  Relacionado a: internet, terminal, endereco_ip, administrador_sistema_autonomo, conexao_internet, registro_conexao, aplicacoes_internet, registros_acesso_aplicacoes
+
+-- Relacionamentos --
+Conexao: 'inv_priv_interior' --[implementa]--> 'sigilo_fluxo'. Motivo: Garantia de privacidade se aplica ao fluxo de comunicações, com exceções previstas em lei.
+Conexao: 'sigilo_fluxo' --[comunica_com]--> 'dados_privados_armazenados'. Motivo: Proteção de fluxo está conectada à proteção de conteúdo armazenado sob ordem judicial.
+Conexao: 'nao_suspensao_conexao' --[depende_de]--> 'manutencao_qualidade'. Motivo: Não suspensão está relacionada à manutenção da qualidade da conexão contratada.
+Conexao: 'transparencia_policies' --[comunica_com]--> 'consentimento_TDP'. Motivo: Políticas de uso informam sobre coleta e tratamento de dados, que requer consentimento explícito.
+Conexao: 'art7_8_texto' --[depende_de]--> 'acessibilidade'. Motivo: Aprivatividade e acessibilidade são condições para o pleno exercício dos direitos de acesso à internet.
+
+=== SECAO [SEC_04]: Exercícios de Revisão e Questões ===
+Sessões de perguntas avaliativas para fixação de conteúdo do Marco Civil, incluindo itens sobre definições, direitos, garantias e interpretação da lei, bem como exercícios que comparam conceitos com LAI, LGPD e Delitos Informáticos.
+
+-- Conceitos-chave --
+Termo: Questão 5 - Definições da Lei | Tipo: ConceitoChave | Definicao: Conjunto de opções que identifica a correta definição de termos apresentados no art. 5º da lei.
+  Vantagens de Questão 5 - Definições da Lei: Reforço de memorização
+  Desvantagens de Questão 5 - Definições da Lei: Interpretação contextual
+  Casos de uso de Questão 5 - Definições da Lei: Preparação para provas
+Termo: Questão 6 - Sigilo de comunicações | Tipo: ConceitoChave | Definicao: Afirmação sobre sigilo do fluxo e de comunicações armazenadas conforme Art. 7º
+  Vantagens de Questão 6 - Sigilo de comunicações: Ancoragem conceitual
+  Desvantagens de Questão 6 - Sigilo de comunicações: Induz erro se mal interpretada
+  Casos de uso de Questão 6 - Sigilo de comunicações: Simulados de prova
+
+-- Relacionamentos --
+Conexao: 'exa_q5_definicao' --[comunica_com]--> 'art5_definicoes'. Motivo: Q5 utiliza termos descritos no Art. 5º.
+
+=== SECAO [SEC_05]: Letra da Lei – Art. 7º e 8º ===
+Transcrição resumida do conteúdo do Art. 7º e 8º com ênfase nas garantias de inviolabilidade, sigilo, não suspensão, qualidade de serviço, informações contratuais, tratamento de dados, consentimento, exclusão de dados, acessibilidade e nulidades contratuais.
+
+-- Conceitos-chave --
+Termo: Art. 7º - Direitos do Usuário | Tipo: ConceitoChave | Definicao: Conjunto de direitos, incluindo inviolabilidade de intimidade, sigilo de comunicações, continuidade do serviço e transparência contratual.
+  Vantagens de Art. 7º - Direitos do Usuário: Proteção de direitos básicos; Previsibilidade de serviços
+  Desvantagens de Art. 7º - Direitos do Usuário: Complexidade de conformidade para fornecedores
+  Casos de uso de Art. 7º - Direitos do Usuário: Defesas em litígios de privacidade
+Termo: Art. 8º - Privacidade e Liberdade de Expressão | Tipo: ConceitoChave | Definicao: A garantia do direito à privacidade e à liberdade de expressão é condição para o pleno exercício do direito de acesso à internet. Cláusulas nulas se violarem esse conteúdo.
+  Vantagens de Art. 8º - Privacidade e Liberdade de Expressão: Claridade de limites contratuais
+  Desvantagens de Art. 8º - Privacidade e Liberdade de Expressão: Disputas sobre alcance da proteção
+  Casos de uso de Art. 8º - Privacidade e Liberdade de Expressão: Avaliação de cláusulas em contratos de adesão
+
+-- Figuras e diagramas --
+Figura 'Texto do Art. 7º e 8º' (Texto Completo): Texto integral com itens I a XIII do Art. 7º e o Art. 8º.
+  Componentes visuais: Art. 7º - Direitos, Art. 8º - Privacidade
+  Relacionado a: art7_8_texto
+
+-- Relacionamentos --
+Conexao: 'art7_asis_rights' --[implementa]--> 'inv_priv_interior'. Motivo: Art. 7º detalha a inviolabilidade da intimidade e do sigilo.
+Conexao: 'art8_priv_express' --[comunica_com]--> 'inv_priv_interior'. Motivo: Art. 8º reforça a proteção de privacidade como condição do acesso.
+

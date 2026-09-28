@@ -1,0 +1,147 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Lei 12.965/2014 | Marco Civil da Internet no Brasil
+Idioma: pt-BR
+Tecnologias citadas no documento: Conexão de Internet, Aplicações de Internet, Governança de dados, Centros de dados, Governo eletrônico, Dados públicos abertos
+
+=== SECAO [TI_SEC_IV_REQ_REG]: Da Requisição Judicial de Registros ===
+Esta seção descreve a Requisição Judicial de Registros prevista no Art. 22 da Lei 12.965/2014. Qualquer pessoa pode requerer ao juiz a guarda ou fornecimento de registros de conexão ou de acesso a aplicações de internet para uso como prova em processo judicial. O juiz pode determinar segredo de justiça (Art. 23) e deve proteger a intimidade, vida privada, honra e imagem do usuário. O requerimento deve atender aos requisitos legais: fundados indícios, justificativa da utilidade dos registros e o período a que se referem.
+
+-- Conceitos-chave --
+Termo: Requisição Judicial de Registros | Tipo: Processo | Definicao: Procedimento pelo qual o requerente solicita ao juiz que determine ao responsável pela guarda a entrega de registros de conexão ou de acesso para uso como prova em processo judicial.
+  Vantagens de Requisição Judicial de Registros: Possibilita a formação de conjunto probatório em processos civis ou penais; Contribui para a apuração de ilícitos no ambiente digital; Pode ser utilizado para instruir provas
+  Desvantagens de Requisição Judicial de Registros: Risco de violação de privacidade se mal utilizado; Dependência da presença de fundados indícios e de justificativa suficiente; Exigência de observância de limites temporais (período)
+  Casos de uso de Requisição Judicial de Registros: Processos civis e penais; Investigações envolvendo registros de conexão e de uso de aplicações de internet
+Termo: Pedido de Registros | Tipo: Processo | Definicao: Solicitação formal ao juiz para que determine a guarda e fornecimento de registros de conexão ou de acesso a aplicações de internet.
+  Vantagens de Pedido de Registros: Estrutura o atos jurídicos de prova digital; Clarifica finalidade para o juiz e o provedor
+  Desvantagens de Pedido de Registros: Pode enfrentar inadmissibilidade se não cumprir requisitos; Pode implicar em contenção de informações sensíveis
+  Casos de uso de Pedido de Registros: Provas em processos judiciais
+Termo: Segredo de Justiça | Tipo: Processo | Definicao: Medida que o juiz pode tomar para manter sigilo de informações recebidas, inclusive quanto aos pedidos de guarda de registro, preservando a intimidade do usuário.
+  Vantagens de Segredo de Justiça: Protege a privacidade e informações sensíveis; Preserva investigações em curso
+  Desvantagens de Segredo de Justiça: Pode dificultar a fiscalização pública e a transparência; Pode impactar a cidadao da verificação de informações
+  Casos de uso de Segredo de Justiça: Ocorrências envolvendo dados sensíveis ou investigações sigilosas
+Termo: Proteção da Privacidade | Tipo: Processo | Definicao: Obrigação do juiz de preservar a intimidade, a vida privada, a honra e a imagem do usuário, conforme Art. 23.
+  Vantagens de Proteção da Privacidade: Garantia de direitos fundamentais do usuário; Limita exposições indevidas de dados pessoais
+  Desvantagens de Proteção da Privacidade: Pode restringir o acesso a informações úteis para a investigação; Requisitos rigorosos para invocação do sigilo
+  Casos de uso de Proteção da Privacidade: Pedidos de registros sob sigilo
+Termo: Finalidade do Pedido | Tipo: Processo | Definicao: Objetivo de formar um conjunto de provas para um processo judicial cível ou penal.
+  Vantagens de Finalidade do Pedido: Conduz a coleta de provas de forma estruturada; Foco na utilidade probatória
+  Desvantagens de Finalidade do Pedido: Excesso de dados pode exigir filtragem e proteção adicional; Pode implicar violação de privacidade se mal utilizado
+  Casos de uso de Finalidade do Pedido: Instrução probatória em processos judiciais
+Termo: Requisitos do Pedido | Tipo: Processo | Definicao: Conjunto de itens exigidos por lei para validade do requerimento: I fundados indícios da ocorrência do ilícito; II justificativa da utilidade; III período a que se referem os registros.
+  Vantagens de Requisitos do Pedido: Garante fundamentação legal do pedido; Reduz riscos de judicialização indevida
+  Desvantagens de Requisitos do Pedido: Requisitos podem ser estritos, levando à inadmissibilidade se não atendidos
+  Casos de uso de Requisitos do Pedido: Procedimentos Civis e Penais envolvendo registros digitais
+
+-- Tabelas comparativas --
+Tabela 'Requisitos do Pedido (Art. 22, § único)': Lista dos requisitos formais para o requerimento de registros
+  Linha L1: Item = I; Conteúdo = fundados indícios da ocorrência do ilícito
+    (Relacionado a: art_22, paragrafo_unico)
+  Linha L2: Item = II; Conteúdo = justificativa motivada da utilidade dos registros solicitados
+    (Relacionado a: art_22, paragrafo_unico)
+  Linha L3: Item = III; Conteúdo = período ao qual se referem os registros
+    (Relacionado a: art_22, paragrafo_unico)
+
+-- Figuras e diagramas --
+Figura 'A Justiça e Os Registros Digitais (Art.22)' (Infográfico): Descrição passo a passo: 1) Pedido de Registros; 2) Obrigação do Juiz; 3) Finalidade do Pedido; 4) Requisitos do Pedido; 5) Segredo de Justiça; 6) Proteção da Privacidade.
+  Componentes visuais: Pedido de Registros, Obrigação do Juiz, Finalidade do Pedido, Requisitos do Pedido, Segredo de Justiça, Proteção da Privacidade
+  Relacionado a: art_22, art_23, requisicao_judicial_registros, pedido_registros, segredo_justica, protecao_privacidade
+
+-- Relacionamentos --
+Conexao: 'requisicao_jud_registros' --[depende_de]--> 'art_22'. Motivo: A requisição judicial de registros é estabelecida quais registros podem ser solicitados pelo art. 22.
+Conexao: 'pedido_registros' --[implementa]--> 'requisitos_pedido'. Motivo: O pedido de registros deve cumprir os requisitos do art.22, §1º.
+Conexao: 'finalidade_pedido' --[depende_de]--> 'pedido_registros'. Motivo: A finalidade do pedido está intrinsecamente ligada ao formato do pedido apresentado.
+Conexao: 'segredo_justica' --[mitiga_risco]--> 'protecao_privacidade'. Motivo: Segredo de justiça protege a privacidade na relação entre pedido e registros.
+Conexao: 'requisicao_jud_registros' --[comunica_com]--> 'pedido_registros'. Motivo: O pedido é o mecanismo de requisição efetiva dos registros.
+
+=== SECAO [TI_SEC_IV_ATUACAO_PODER]: Atuação do Poder Público ===
+Capítulo IV estabelece diretrizes para a atuação da União, Estados, DF e Municípios no desenvolvimento da internet no Brasil. Estabelece governança multiparticipativa, interoperabilidade entre sistemas, adoção de tecnologias abertas, dados públicos acessíveis, melhoria da infraestrutura, capacitação para uso da internet, promoção da cultura digital e serviços públicos online. Os arts. 24 a 28 detalham essas diretrizes: Art.24 (governança e interoperabilidade), Art.25 (aplicações de internet de entes públicos devem ser compatíveis, acessíveis, fáceis de usar e abertas à participação social), Art.26 (educação para uso seguro e responsável), Art.27-28 (inclusão digital, produção de conteúdo nacional e metas/plano de desenvolvimento).
+
+-- Conceitos-chave --
+Termo: Diretrizes para o desenvolvimento da internet (Art.24) | Tipo: Padrão | Definicao: Conjunto de diretrizes para atuação da União, Estados, DF e Municípios visando governança, interoperabilidade, dados abertos, capacitação e promoção da cultura digital.
+  Vantagens de Diretrizes para o desenvolvimento da internet (Art.24): Governança multiparticipativa, transparente e democrática; Interoperabilidade entre sistemas e terminais diversos; Adoção de tecnologias, padrões e formatos abertos; Dados públicos acessíveis e transparência na divulgação
+  Desvantagens de Diretrizes para o desenvolvimento da internet (Art.24): Complexidade de implementação em diferentes esferas de governo; Necessidade de coordenação entre diversos atores
+  Casos de uso de Diretrizes para o desenvolvimento da internet (Art.24): Governo eletrônico integrado; Políticas públicas de inclusão digital
+Termo: Aplicações de internet do governo (Art.25) | Tipo: Padrão | Definicao: Aplicações de internet de entes públicos devem buscar compatibilidade com diferentes terminais, acessibilidade, leitura humana e tratamento automatizado, facilidade de uso e participação social.
+  Vantagens de Aplicações de internet do governo (Art.25): Compatibilidade com múltiplos dispositivos; Acessibilidade para pessoas com diferentes capacidades; Tratamento automatizado de informações
+  Desvantagens de Aplicações de internet do governo (Art.25): Pode exigir investimentos para padrões abertos e acessibilidade
+  Casos de uso de Aplicações de internet do governo (Art.25): Serviços públicos online acessíveis
+Termo: Educação para o uso da internet (Art.26) | Tipo: Padrão | Definicao: O governo deve incluir educação para uso seguro, consciente e responsável da Internet em todos os níveis de ensino.
+  Vantagens de Educação para o uso da internet (Art.26): Promoção de cidadania digital; Disseminação de práticas seguras e responsáveis
+  Desvantagens de Educação para o uso da internet (Art.26): Desafios de implementação uniforme em todas as redes de ensino
+  Casos de uso de Educação para o uso da internet (Art.26): Programas educativos em escolas e comunidades
+Termo: Fomento à cultura digital (Art.27 e 28) | Tipo: Padrão | Definicao: Iniciativas públicas para inclusão digital, redução de desigualdades regionais e incentivo à produção e circulação de conteúdo nacional; formulação de estudos, metas e planos para o uso e desenvolvimento da internet.
+  Vantagens de Fomento à cultura digital (Art.27 e 28): Promoção da inclusão digital; Redução de desigualdades regionais no acesso à TI; Estimulo à produção cultural e conteúdo nacional
+  Desvantagens de Fomento à cultura digital (Art.27 e 28): Recursos limitados podem restringir o alcance
+  Casos de uso de Fomento à cultura digital (Art.27 e 28): Programas de inclusão digital; Políticas de conteúdo nacional
+
+-- Figuras e diagramas --
+Figura 'Diretrizes para o desenvolvimento da internet (Art. 24)' (Diagrama): Resumo visual das diretrizes: governança participativa; tecnologias abertas; dados públicos; interoperabilidade; capacitação; cultura e serviços públicos online.
+  Componentes visuais: Governança participativa e transparente, Tecnologias abertas e livres, Dados públicos acessíveis, Interoperabilidade entre sistemas, Capacitação para uso da internet, Promoção da cultura e cidadania, Serviços públicos online
+  Relacionado a: dir_desenvolvimento_art24
+Figura 'Aplicações de internet do governo (Art. 25)' (Diagrama): Resumo visual das diretrizes da aplicação pública: compatibilidade, acessibilidade, leitura humana e automatizada, facilidade de uso, participação social.
+  Componentes visuais: Compatibilidade com diversos dispositivos, Acessibilidade para todos, Leitura humana e tratamento automatizado, Facilidade de uso, Fortalecimento da participação social
+  Relacionado a: aplicacoes_governo_art25
+
+-- Relacionamentos --
+Conexao: 'art_24' --[implementa]--> 'dir_desenvolvimento_art24'. Motivo: Art. 24 estabelece diretrizes que são implementadas pela ação governamental descrita no conceito.
+Conexao: 'art_25' --[implementa]--> 'aplicacoes_governo_art25'. Motivo: Art. 25 descreve aplicações de internet do governo a serem buscadas.
+Conexao: 'art_26' --[implementa]--> 'educacao_internet_art26'. Motivo: Art. 26 prevê educação para uso da internet no âmbito educacional.
+Conexao: 'art_27_28' --[implementa]--> 'fomento_cultura_digital_art27_28'. Motivo: Arts. 27 e 28 tratam do fomento à cultura digital e ações correlatas.
+Conexao: 'art_24' --[coerentes]--> 'art_25'. Motivo: Coerência entre diretrizes de desenvolvimento e aplicações de governo.
+
+=== SECAO [TI_SEC_V_DISPOSICOES_FINAIS]: Disposições Finais ===
+Capítulo V trata das disposições finais, incluindo o art. 29 (controle parental), art. 30 (defesa de direitos na internet), art. 31 (responsabilidade de provedores de aplicações de internet quanto a conteúdo de terceiros, até a vigência de lei específica) e art. 32 (vigência 60 dias após publicação).
+
+-- Conceitos-chave --
+Termo: Controle parental (Art. 29) | Tipo: Disposição Final | Definicao: Opção de livre escolha para usar programas de controle parental, com orientação pública sobre boas práticas para inclusão digital de crianças.
+  Vantagens de Controle parental (Art. 29): Permite aos pais regular o conteúdo acessado por filhos; Promove uso responsável da internet
+  Desvantagens de Controle parental (Art. 29): Dependência de dispositivos do usuário; Necessidade de educação sobre boas práticas
+  Casos de uso de Controle parental (Art. 29): Uso de controles parentais em terminais domésticos
+Termo: Defesa de Direitos (Art. 30) | Tipo: Disposição Final | Definicao: Autorização para defender direitos na justiça, individualmente ou coletivamente, quando violados na internet.
+  Vantagens de Defesa de Direitos (Art. 30): Fortalece a proteção de direitos digitais
+  Desvantagens de Defesa de Direitos (Art. 30): Possível demanda de recursos judiciais
+  Casos de uso de Defesa de Direitos (Art. 30): Ações em defesa de direitos na internet
+Termo: Vigência (Art. 32) | Tipo: Disposição Final | Definicao: A Lei entra em vigor 60 dias após a sua publicação oficial.
+  Vantagens de Vigência (Art. 32): Período de adaptação para usuários e governo
+  Desvantagens de Vigência (Art. 32): Período de transição pode gerar incertezas
+  Casos de uso de Vigência (Art. 32): Implementação gradual das diretrizes
+Termo: Disposições Finais (Arts. 29 a 32) | Tipo: Disposições Finais | Definicao: Conjunto de dispositivos que encerra o Capítulo V com orientações sobre controle parental, defesa de direitos, responsabilidade de provedores e vigência.
+  Vantagens de Disposições Finais (Arts. 29 a 32): Fechamento legal com orientações claras
+  Casos de uso de Disposições Finais (Arts. 29 a 32): Consolidação de regras para o uso da internet
+
+-- Figuras e diagramas --
+Figura 'Disposições Finais e Cronograma de Vigência' (Diagrama de linha do tempo): Indicação da entrada em vigor 60 dias após publicação; itens de parentalidade e defesa de direitos apresentados.
+  Componentes visuais: Controle parental (Art.29), Defesa de Direitos (Art.30), Conteúdo de terceiros e responsabilidades (Art.31), Vigência (Art.32)
+  Relacionado a: controle_parental_art29, defesa_direitos_art30, art_31, vigencia_art32
+
+-- Relacionamentos --
+Conexao: 'arte_29' --[implementa]--> 'controle_parental_art29'. Motivo: Art.29 descreve o mecanismo de controle parental que é implementado na prática por usuários e provedores.
+Conexao: 'art_30' --[implementa]--> 'defesa_direitos_art30'. Motivo: Art.30 disponibiliza o direito de defesa perante a justiça.
+Conexao: 'art_31' --[depende_de]--> 'art_32'. Motivo: Disposição de responsabilidade de provedores se mantém até vigência de lei específica; vigência prevista em Art.32.
+
+=== SECAO [SEC_GABARITO]: Gabarito das Questões ===
+Gabarito das questões apresentadas na coletânea (Q1 a Q20).
+
+-- Tabelas comparativas --
+Tabela 'Gabarito das Questões': Questões e respectivas respostas do material
+  Linha Q1: Questão = 1; Resposta = C
+  Linha Q2: Questão = 2; Resposta = E
+  Linha Q3: Questão = 3; Resposta = C
+  Linha Q4: Questão = 4; Resposta = C
+  Linha Q5: Questão = 5; Resposta = E
+  Linha Q6: Questão = 6; Resposta = E
+  Linha Q7: Questão = 7; Resposta = E
+  Linha Q8: Questão = 8; Resposta = A
+  Linha Q9: Questão = 9; Resposta = E
+  Linha Q10: Questão = 10; Resposta = A
+  Linha Q11: Questão = 11; Resposta = E
+  Linha Q12: Questão = 12; Resposta = E
+  Linha Q13: Questão = 13; Resposta = C
+  Linha Q14: Questão = 14; Resposta = A
+  Linha Q15: Questão = 15; Resposta = E
+  Linha Q16: Questão = 16; Resposta = B
+  Linha Q17: Questão = 17; Resposta = E
+  Linha Q18: Questão = 18; Resposta = B
+  Linha Q19: Questão = 19; Resposta = C
+  Linha Q20: Questão = 20; Resposta = E
+

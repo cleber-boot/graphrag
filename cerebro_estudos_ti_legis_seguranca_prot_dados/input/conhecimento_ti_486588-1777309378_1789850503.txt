@@ -1,0 +1,82 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Glossário Fundamental da LGPD
+Idioma: pt-BR
+Tecnologias citadas no documento: LGPD, Lei nº 13.709/2018
+
+=== SECAO [SEC_LGPD_ART5_CONCEITOS]: Artigo 5º da LGPD - Conceitos Fundamentais (Titular, Controlador, Operador, Encarregado, Dados) ===
+Este capítulo apresenta os conceitos-chave definidos pelo Artigo 5º da LGPD, que estruturam a governança de dados no Brasil. São apresentados: (i) Dado Pessoal, informação relacionada à pessoa natural identificada ou identificável; (ii) Dado Pessoal Sensível, informação com potencial de discriminação (raça, religião, saúde, orientação sexual, etc.); (iii) Dado Anonimizado, dado relativo a titular que não possa ser identificado pelas medidas técnicas razoáveis existentes; (iv) Titular, a pessoa a quem os dados se referem; (v) Controlador, a quem competem as decisões sobre o tratamento; (vi) Operador, aquele que realiza o tratamento em nome do controlador; (vii) Encarregado (DPO), o canal de comunicação entre titular, controlador e a autoridade nacional de proteção de dados (ANPD); e por fim, o conceito de Banco de Dados como o conjunto estruturado de dados pessoais armazenados em suporte eletrônico ou físico. Esses conceitos orientam responsabilidades, níveis de risco e requisitos de proteção, como consentimento, minimização de dados, segurança e transparência.
+
+-- Conceitos-chave --
+Termo: Dado Pessoal | Tipo: Conceito | Definicao: informação relacionada à pessoa natural identificada ou identificável, cuja identificação pode ocorrer direta ou indiretamente.
+  Vantagens de Dado Pessoal: Permite personalização de serviços e conformidade regulatória; Base para processos de decisão e melhoria de produtos
+  Desvantagens de Dado Pessoal: Risco elevado de violação de privacidade; Exige controles de acesso e minimização de dados
+  Casos de uso de Dado Pessoal: Cadastro de clientes; Log de atividades; Análise estatística com dados identificáveis
+Termo: Dado Pessoal Sensível | Tipo: Conceito | Definicao: dado pessoal cuja discriminação possa trazer danos, incluindo origem racial/étnica, religião, convicção religiosa, saúde, vida sexual, geneticamente ligado a pessoa, entre outros.
+  Vantagens de Dado Pessoal Sensível: Permite segmentação para políticas públicas e de saúde; Contribui para medidas de proteção especiais
+  Desvantagens de Dado Pessoal Sensível: Maior risco de violação e discriminação; Regulamentação mais rígida e controles adicionais
+  Casos de uso de Dado Pessoal Sensível: Dados de saúde; Religião/convicções; Biometria
+Termo: Dado Anonimizado | Tipo: Conceito | Definicao: dado relativo a titular que não possa ser identificado, considerando a utilização de meios técnicos razoáveis e disponíveis na ocasião de seu tratamento.
+  Vantagens de Dado Anonimizado: Possibilita uso de dados para pesquisa sem riscos de identificação; Reduz riscos de privacidade; Facilita compliance regulatório
+  Desvantagens de Dado Anonimizado: Pode ser reidentificado com técnicas inadequadas; Qualidade dos dados pode ser comprometida
+  Casos de uso de Dado Anonimizado: Estatísticas agregadas; Pesquisa científica; Métricas de negócio sem identificação
+Termo: Titular | Tipo: Conceito | Definicao: pessoa natural a quem se referem os dados pessoais que são objeto de tratamento; é quem detém os direitos sobre os dados.
+  Vantagens de Titular: Constitui o foco da proteção de dados; Direitos de acesso, correção, exclusão, portabilidade; Transparência para o titular
+  Desvantagens de Titular: Pode exigir gestão complexa de consentimentos e preferências
+  Casos de uso de Titular: Solicitar acesso a dados; Exigir correção/eliminação; Consultar consentimento
+Termo: Controlador | Tipo: Conceito | Definicao: pessoa natural ou jurídica, de direito público ou privado, a quem competem as decisões referentes ao tratamento de dados pessoais; define finalidades e meios.
+  Vantagens de Controlador: Responsabilidade clara pela conformidade; Capacidade de definir políticas de tratamento
+  Desvantagens de Controlador: Risco de falhas de governança se não houver controles e DPIA; Demonstração de conformidade exige documentação
+  Casos de uso de Controlador: Definição de finalidades de uso de dados; Rule set para tratamento; Design de políticas de privacidade
+Termo: Operador | Tipo: Conceito | Definicao: pessoa natural ou jurídica, de direito público ou privado, a quem competem as decisões referentes ao tratamento de dados pessoais?
+  Vantagens de Operador: Permite terceirização de operações de processamento; Facilita especialização técnica
+  Desvantagens de Operador: Responsabilidade solidária em caso de não conformidade; Necessidade de contrato e cláusulas de proteção de dados bem definidas
+  Casos de uso de Operador: Prestação de serviços de processamento; Subcontratação de processamento de dados
+Termo: Encarragado (DPO) | Tipo: Conceito | Definicao: Data Protection Officer; atuar como canal de comunicação entre titulares, controlador e ANPD, assegurando a conformidade e a prática regular de LGPD.
+  Vantagens de Encarragado (DPO): Ponto único de contato para titulares e ANPD; Apoia a governança de dados; Auxilia na gestão de DPIAs e monitoramento de riscos
+  Desvantagens de Encarragado (DPO): Pode exigir independência e autoridade formal dentro da organização; Carga de trabalho pode ser elevada em grandes estruturas
+  Casos de uso de Encarragado (DPO): Relatórios a ANPD; Gestão de DPIA; Treinamento e conscientização
+Termo: Banco de Dados | Tipo: Conceito | Definicao: conjunto estruturado de dados pessoais, estabelecido em um ou em vários locais, em suporte eletrônico ou físico.
+  Vantagens de Banco de Dados: Organização estruturada para consulta e análise; Escalabilidade de armazenamento e recuperação de dados
+  Desvantagens de Banco de Dados: Risco de vazamento se mal protegido; Exige controles de acesso e backup
+  Casos de uso de Banco de Dados: Compartilhamento seguro de dados; Gerenciamento de dados de cliente
+Termo: Dados Pessoais | Tipo: Conceito | Definicao: informação relacionada à pessoa natural identificada ou identificável; base para o tratamento de LGPD.
+  Vantagens de Dados Pessoais: Base para serviços personalizados e compliance; Análise de comportamento e melhoria de produtos
+  Desvantagens de Dados Pessoais: Risco de violação de privacidade; Necessidade de governança de dados
+  Casos de uso de Dados Pessoais: Perfil de clientes; Logs de sistemas; Relatórios operacionais
+
+-- Tabelas comparativas --
+Tabela 'Gabarito - Questões LGPD': Respostas corretas para as questões apresentadas no material.
+  Linha 1: Questão = 1; Resposta = A
+  Linha 2: Questão = 2; Resposta = B
+  Linha 3: Questão = 3; Resposta = certo
+  Linha 4: Questão = 4; Resposta = B
+
+-- Figuras e diagramas --
+Figura 'Classificação da Matéria-Prima (Dado Pessoal, Dado Pessoal Sensível, Dado Anonorizado)' (Classificação de Dados): Figura com três colunas destacando: Dado Pessoal (Inciso I), Dado Pessoal Sensível (Inciso II) e Dado Anonimizado (Inciso III).
+  Componentes visuais: Dado Pessoal (Inciso I), Dado Pessoal Sensível (Inciso II), Dado Anonimizado (Inciso III)
+  Relacionado a: titular, controlador, operador, encarragado
+Figura 'A Dinâmica entre os Atores' (Diagrama de Papéis LGPD): Diagrama com Titular, Controlador (Agente), Operador (Agente) e Encarrgado (DPO); descreve quem faz o quê e como se comunica.
+  Componentes visuais: Titular, Controlador (Agente), Operador (Agente), Encarragado (DPO)
+  Relacionado a: titular, controlador, operador, encarragado
+Figura 'O Ciclo de Vida e o Controle' (Fluxo de Processo): Diagrama com etapas: 1) Conceito Universal; 2) Chave de Entrada (Consentimento XII); 3) Fim da Linha (Segurança e Exclusão)
+  Componentes visuais: Conceito Universal, Consentimento (XII), Fim da Linha (Segurança/Exclusão)
+  Relacionado a: titular, controlador, operador, encarragado
+Figura 'Visão Sistêmica: Como o Art. 5º se conecta' (Arquitetura de Dados LGPD): Diagrama de fluxo: Titular -> Dados Pessoais/Sensíveis -> Tratamento -> Controlador -> Operador; Encarragado/DPO serve de ponte; ANPD como órgão regulador
+  Componentes visuais: Titular, Dados Pessoais, Tratamento, Controlador, Operador, Encarragado (DPO), ANPD
+  Relacionado a: titular, controlador, operador, encarragado, ANPD
+Figura 'Fluxos e Governança (Artigo 5º)' (Quadro de Governança): Quadro com blocos: IV - Banco de Dados; XVI - Uso Compartilhado de Dados; XV - Transferência Internacional; XVII - Relatório de Impacto (RIPD)
+  Componentes visuais: IV - Banco de Dados, XVI - Uso Compartilhado de Dados, XV - Transferência Internacional, XVII - Relatório de Impacto (RIPD)
+  Relacionado a: controlador, ANPD
+Figura 'Regulamentação e Pesquisa (XVIII e XIX)' (Definições de órgãos): Painel com XVIII - órgão de pesquisa (componente de instituição pública/privada); XIX - autoridade nacional (ANPD)
+  Componentes visuais: XVIII - Órgão de Pesquisa, XIX - Autoridade Nacional - ANPD
+  Relacionado a: ANPD, órgão de pesquisa
+Figura 'Árbitro e Ciência' (Diagrama de Funções): Divisão entre O Árbitro do Jogo (ANPD) e A Proteção à Ciência (Órgão de Pesquisa); papéis complementares na regulação e pesquisa
+  Componentes visuais: O Árbitro do Jogo (ANPD), A Proteção à Ciência (Órgão de Pesquisa)
+  Relacionado a: ANPD, órgão de pesquisa
+
+-- Relacionamentos --
+Conexao: 'titular' --[comunica_com]--> 'controlador'. Motivo: Titular fornece dados e direitos ao controlador, que decide o tratamento.
+Conexao: 'controlador' --[delegacao]--> 'operador'. Motivo: Controlador define finalidades/meios e delega a execução ao operador.
+Conexao: 'controlador' --[comunicacao]--> 'encarragado'. Motivo: Controlador designa o DPO; DPO atua como canal entre titulares e ANPD.
+Conexao: 'encarragado' --[comunicacao]--> 'ANPD'. Motivo: DPO comunica-se com a ANPD em assuntos de proteção de dados.
+

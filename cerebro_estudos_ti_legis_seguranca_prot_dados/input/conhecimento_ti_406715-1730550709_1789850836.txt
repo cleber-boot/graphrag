@@ -1,0 +1,138 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Lei 12.965/2014 | Marco Civil da Internet no Brasil
+Idioma: pt-BR
+Tecnologias citadas no documento: Neutralidade da Rede, Proteção aos Registros, aos Dados e às Comunicações, Proteção de dados pessoais, Privacidade, Sigilo das comunicações, Ordem judicial, Sanções administrativas
+
+=== SECAO [TI_SEC_001]: Neutralidade da Rede – Seção I (Art. 9º) ===
+Capítulo III, Seção I, trata da Neutralidade de Rede. O provedor responsável pela transmissão, comutação ou roteamento tem o dever de tratar de forma isonômica quaisquer pacotes de dados, sem discriminação por conteúdo, origem, destino, serviço, terminal ou aplicação. Eventuais discriminações ou degradações de tráfego devem obedecer a requisitos técnicos indispensáveis ou à priorização de serviços de emergência, podendo ser regulamentadas pelo Presidente da República, com ouvidos o Comitê Gestor da Internet e a Anatel. Em caso de discriminação, o provedor deve agir com proporcionalidade, transparência e isonomia, e informar seus usuários sobre as práticas adotadas.
+
+-- Conceitos-chave --
+Termo: Neutralidade da Rede | Tipo: Princípio | Definicao: Princípio segundo o qual o provedor deve tratar de forma isonômica quaisquer pacotes de dados, sem discriminação por conteúdo, origem, destino, serviço, terminal ou aplicação.
+  Vantagens de Neutralidade da Rede: Ambiente competitivo e previsível para usuários e aplicações; Reduz risco de práticas anticoncorrenciais
+  Desvantagens de Neutralidade da Rede: Pode limitar monetização de serviços diferenciados; Requisitos de transparência podem elevar custos operacionais
+  Casos de uso de Neutralidade da Rede: Garantia de acesso igual para sites e aplicações; Proteção de usuários contra discriminação por operadora
+Termo: Gerenciamento de Tráfego | Tipo: Padrão | Definicao: Conjunto de práticas técnicas para gerenciar o tráfego com o objetivo de manter a qualidade do serviço, observando limites legais para exceções à neutralidade.
+  Vantagens de Gerenciamento de Tráfego: Melhora a experiência do usuário para serviços críticos; Previne congestões de rede
+  Desvantagens de Gerenciamento de Tráfego: Pode ser percebido como discriminação se não transparente; Exige governança clara para evitar abusos
+  Casos de uso de Gerenciamento de Tráfego: Gestão de tráfego durante picos de uso; Garantia de QoS para serviços essenciais
+Termo: Priorização de Serviços de Emergência | Tipo: Exceção | Definicao: Exceção à neutralidade para priorizar serviços de emergência conforme necessidade pública e regulamentação.
+  Vantagens de Priorização de Serviços de Emergência: Acelera respostas em situações críticas; Contribui para a segurança pública
+  Desvantagens de Priorização de Serviços de Emergência: Pode abrir espaço para abusos se mal regulamentado
+  Casos de uso de Priorização de Serviços de Emergência: Chamadas de emergência; Serviços de vigilância e desastres
+Termo: Transparência, Proporcionalidade e Isonomia | Tipo: Princípio | Definicao: Obrigação de descrever de forma clara as práticas de gerenciamento e mitigação de tráfego, assegurando proporcionalidade e isonomia.
+  Vantagens de Transparência, Proporcionalidade e Isonomia: Confiabilidade e auditorabilidade; Facilita conformidade regulatória
+  Desvantagens de Transparência, Proporcionalidade e Isonomia: Pode exigir investimentos em divulgação de políticas
+  Casos de uso de Transparência, Proporcionalidade e Isonomia: Relatórios públicos de gerenciamento de tráfego; Auditorias independentes de conformidade
+
+-- Tabelas comparativas --
+Tabela 'Discriminações proibidas pela Neutralidade': Resumo das discriminações proibidas segundo o Artigo 9º
+  Linha L1: 
+
+-- Figuras e diagramas --
+Figura 'Esquema da Neutralidade da Rede' (Arquitetura de Software): O provedor deve tratar todos os pacotes de dados de forma isônoma; exceções permitidas: serviços de emergência, gerenciamento de tráfego para qualidade de serviço (QoS) e cumprimento de ordem judicial.
+  Componentes visuais: Provedor (transmissão/roteamento), Pacotes de dados, Usuários, Conteúdo, Emergência
+  Relacionado a: neutralidade_da_rede, provedor, usuarios, pacotes_dados
+
+-- Relacionamentos --
+Conexao: 'neutralidade_da_rede' --[implica_aplica]--> 'provedor'. Motivo: A neutralidade impõe tratamento isonômico dos pacotes pelo provedor
+Conexao: 'provedor' --[comunica_com]--> 'usuarios'. Motivo: O provedor fornece tráfego aos usuários de forma igualitária
+Conexao: 'neutralidade_da_rede' --[implementa]--> 'priorizacao_emergencias'. Motivo: Priorização de serviços de emergência quando exigido por lei/regulamentação
+
+=== SECAO [TI_SEC_002]: Proteção aos Registros, aos Dados e às Comunicações (Arts. 10 a 12) ===
+Capítulo determina que a guarda, disponibilização e tratamento de registros de conexão, dados pessoais e conteúdo de comunicações devem respeitar a privacidade, sigilo e as salvaguardas legais. A lei cobre também a aplicação extraterritorial quando houver presença de oferta de serviço no Brasil, e estabelece requisitos para provas de cumprimento e sanções por infrações.
+
+-- Conceitos-chave --
+Termo: Proteção da Privacidade | Tipo: Direito | Definicao: Preservação da intimidade, vida privada, honra e imagem das partes envolvidas.
+  Vantagens de Proteção da Privacidade: Proteção de direitos fundamentais; Transparência e confiança dos usuários
+  Desvantagens de Proteção da Privacidade: Pode dificultar o acesso a dados para fins legais sob determinadas circunstâncias
+  Casos de uso de Proteção da Privacidade: Investigações com autorização judicial; Conformidade com regulamentos de proteção de dados
+Termo: Ordem Judicial | Tipo: Procedimento | Definicao: Acesso aos dados de registros, dados pessoais ou conteúdo de comunicações somente mediante ordem judicial, conforme a seção pertinente da lei.
+  Vantagens de Ordem Judicial: Limita o acesso não autorizado; Garante devido processo legal
+  Desvantagens de Ordem Judicial: Pode atrasar investigações em casos de necessidade urgente
+  Casos de uso de Ordem Judicial: Solicitações de autoridades competentes; Procedimentos judiciais
+Termo: Aplicação no Brasil | Tipo: Aplicação Territorial | Definicao: Dados e comunicações no Brasil estão protegidos pela legislação brasileira, e a obrigação se estende a empresas estrangeiras que prestem serviço ao público brasileiro.
+  Vantagens de Aplicação no Brasil: Unificação de normas de privacidade; Fomento a compliance global
+  Desvantagens de Aplicação no Brasil: Complexidade regulatória para empresas estrangeiras
+  Casos de uso de Aplicação no Brasil: Prestação de serviços por empresas com filial no Brasil; Cooperação entre autoridades nacionais e estrangeiras
+
+-- Tabelas comparativas --
+Tabela 'Resumo de Proteção de Dados e Privacidade': Aspectos de guarda, acesso e sigilo de registros, dados pessoais e comunicações privadas
+  Linha L1: 
+  Linha L2: 
+  Linha L3: 
+
+-- Figuras e diagramas --
+Figura 'Proteção aos Registros, aos Dados e às Comunicações' (Infográfico): Três blocos centrais: Proteção da Privacidade; Legislação Brasileira e Direitos dos Usuários; Sanções por Infrações.
+  Componentes visuais: Proteção da Privacidade, Legislação Brasileira e Direitos dos Usuários, Sanções por Infrações
+  Relacionado a: protecao_privacidade, ordem_judicial_acesso, sancoes
+
+-- Relacionamentos --
+Conexao: 'provedor' --[guarda_e_acesso]--> 'dados_pessoais'. Motivo: Guarda de registros e dados; acesso condicionado a ordem judicial
+Conexao: 'autoridades' --[requisita]--> 'dados_pessoais'. Motivo: Autoridades requisitam dados conforme lei
+Conexao: 'dados_pessoais' --[pertence]--> 'usuarios'. Motivo: Dados pessoais pertencem aos usuários
+
+=== SECAO [TI_SEC_003]: Proteção aos Registros, aos Dados Pessoais e às Comunicações Privadas – Seção II ===
+Seção II detalha a proteção de dados pessoais e o sigilo de comunicações privadas, destacando que a guarda, o tratamento e a disponibilização devem respeitar a intimidade, a vida privada, a honra e a imagem das partes. Acesso a conteúdos e dados só ocorre mediante ordem judicial e regras legais, incluindo a possibilidade de autoridades acessarem dados cadastrais quando cabível.
+
+-- Conceitos-chave --
+Termo: Dados Pessoais | Tipo: Categoria | Definicao: Dados que identificam ou possam identificar pessoa natural.
+Termo: Sigilo das Comunicações | Tipo: Direito | Definicao: Proteção do conteúdo das comunicações privadas, acessível apenas sob condições legais.
+Termo: Ordem Judicial | Tipo: Procedimento | Definicao: Procedimento formal que autoriza o acesso a comunicações e dados.
+
+-- Tabelas comparativas --
+Tabela 'Resumo de Proteção de Dados e Comunicações Privadas': Guarda/disponibilização com base na privacidade e na legislação
+  Linha L1: 
+  Linha L2: 
+  Linha L3: 
+
+-- Figuras e diagramas --
+Figura 'Proteção aos Registros, aos Dados Pessoais e às Comunicações' (Diagrama de Blocos): Blocos representando: Proteção da privacidade; Legislação e direitos dos usuários; Sigilo e ordem judicial
+  Componentes visuais: Provedor, Dados de usuários, Autoridades, Ordem Judicial
+  Relacionado a: protecao_privacidade, ordem_judicial, sigilo_comunicacoes
+
+-- Relacionamentos --
+Conexao: 'provedor' --[guarda_e_acesso]--> 'dados_pessoais'. Motivo: Guarda de dados pessoais e registros com acesso mediante ordem judicial
+Conexao: 'autoridades' --[requisita]--> 'dados_pessoais'. Motivo: Autoridades requisitam dados conforme a lei
+Conexao: 'dados_pessoais' --[pertence]--> 'usuarios'. Motivo: Dados pessoais pertencem aos usuários
+
+=== SECAO [TI_SEC_004]: Sanções (Art. 12) – Infrações às normas dos arts. 10 e 11 ===
+Artigo 12 estabelece sanções aplicáveis às infrações relacionadas à guarda, ao tratamento e à privacidade dos dados, incluindo advertência, multa de até 10% do faturamento, suspensão temporária das atividades e proibição de exercício, além da responsabilidade solidária de filiais/estabelecimentos no Brasil de empresas estrangeiras.
+
+-- Conceitos-chave --
+Termo: Advertência | Tipo: Medida administrativa | Definicao: Advertência com indicação de prazo para adoção de medidas corretivas
+  Vantagens de Advertência: Estimula correção rápida de não conformidades
+  Desvantagens de Advertência: Pode não ser suficiente para infrações graves
+  Casos de uso de Advertência: Falhas não graves em proteção de dados
+Termo: Multa | Tipo: Sanção econômica | Definicao: Multa de até 10% do faturamento do grupo econômico no Brasil no último exercício
+  Vantagens de Multa: Disuasão econômica efetiva
+  Desvantagens de Multa: Impacto financeiro significativo para o infrator
+  Casos de uso de Multa: Gravidade moderada a alta de infrações
+Termo: Suspensão Temporária | Tipo: Sanção administrativa | Definicao: Suspensão temporária das atividades que envolvam os atos previstos
+  Vantagens de Suspensão Temporária: Interrupção de atividades nocivas rapidamente
+  Desvantagens de Suspensão Temporária: Potencial impacto social e econômico
+  Casos de uso de Suspensão Temporária: Não conformidades persistentes
+Termo: Proibição | Tipo: Sanção administrativa | Definicao: Proibição do exercício das atividades que envolvam os atos previstos
+  Vantagens de Proibição: Bloqueio definitivo de atividades nocivas
+  Desvantagens de Proibição: Pode afetar usuários e serviços críticos
+  Casos de uso de Proibição: Infrações graves e persistentes
+Termo: Responsabilidade solidária | Tipo: Responsabilidade legal | Definicao: Parcial ou total responsabilização da filial/sucursal no Brasil de empresas estrangeiras
+  Vantagens de Responsabilidade solidária: Encaminha conformidade de players estrangeiros
+  Desvantagens de Responsabilidade solidária: Complexidade de responsabilização transnacional
+  Casos de uso de Responsabilidade solidária: Filiais de empresas estrangeiras no Brasil
+
+-- Tabelas comparativas --
+Tabela 'Sanções por Infrações (Arts. 10-12)': Conjunto de sanções aplicáveis a infrações relacionadas a registros, dados e comunicações
+  Linha L1: 
+  Linha L2: 
+  Linha L3: 
+  Linha L4: 
+
+-- Figuras e diagramas --
+Figura 'Sanções às infrações' (Gráfico de Barras): Mostra as possíveis sanções aplicáveis conforme infração
+  Componentes visuais: Advertência, Multa, Suspensão, Proibição, Responsabilidade Solidária
+  Relacionado a: advertencia_sancoes, multa_sancoes, suspensao_sancoes, proibicao_sancoes, responsabilidade_solidaria
+
+-- Relacionamentos --
+Conexao: 'infrator' --[sujeito_a]--> 'sancoes'. Motivo: O infrator está sujeito às sanções previstas
+Conexao: 'autoridades' --[aplica]--> 'infrator'. Motivo: Autoridades aplicam as sanções
+

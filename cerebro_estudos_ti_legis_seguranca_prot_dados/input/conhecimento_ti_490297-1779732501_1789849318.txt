@@ -1,0 +1,60 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: LGPD - Segurança, Sigilo de Dados e Governança (Arts. 46 a 49)
+Idioma: pt-BR
+Tecnologias citadas no documento: LGPD, Privacidade by Design, ISO 27001 (Gestão da Segurança da Informação), ISO 27701 (Privacidade da Informação)
+
+=== SECAO [SEC_INTRO_LGPD]: Introdução à LGPD e visão geral dos Arts. 46 a 49 ===
+Este material apresenta a Lei Geral de Proteção de Dados Pessoais (LGPD) com foco nos artigos 46 a 49, que definem as obrigações de segurança da informação, a atuação da Autoridade Nacional (ANPD), as regras de comunicação de incidentes, bem como a estrutura de governança necessária para uma Adequação LGPD contínua. A partir dessas bases, são apresentados conceitos-chave como Medidas de Segurança, Privacidade por Design e os pilares de governança, ilustrados por diagramas e tabelas que articulam fases operacionais, mecanismos legais e práticas recomendadas.
+
+-- Conceitos-chave --
+Termo: Artigo 46 - Medidas de Segurança | Tipo: Padrão/regulamento | Definicao: O controlador/operador deve adotar medidas de segurança, técnicas e administrativas aptas a proteger dados pessoais contra acessos não autorizados e contra destruição, perda, alteração, comunicação ou tratamento inadequado.
+  Vantagens de Artigo 46 - Medidas de Segurança: Proteção contra incidentes e vazamentos; Aumento da confiança de titulares e reguladores; Conformidade com a LGPD
+  Desvantagens de Artigo 46 - Medidas de Segurança: Custos de implementação e manutenção; Exigência de governança e monitoramento contínuo
+  Casos de uso de Artigo 46 - Medidas de Segurança: Qualquer organização que trate dados pessoais (controladores/operadores)
+Termo: Privacidade por Design (Privacy by Design) | Tipo: Conceito | Definicao: Conceito que recomenda incorporar controles de privacidade na concepção de produtos e serviços desde o início do ciclo de vida do sistema.
+  Vantagens de Privacidade por Design (Privacy by Design): Reduz risco de violação de dados desde o início; Facilita conformidade com Art. 46 e seguintes
+  Desvantagens de Privacidade por Design (Privacy by Design): Pode aumentar complexidade de desenvolvimento; Custos iniciais de implementação
+  Casos de uso de Privacidade por Design (Privacy by Design): Desenvolvimento de software com proteção de dados desde o design
+Termo: Relação Artigo 46 x Privacidade por Design | Tipo: Conceito-relacional | Definicao: Artigo 46 solicita medidas de segurança; Privacidade por Design é uma prática que operacionaliza tais medidas desde a concepção de produtos.
+  Vantagens de Relação Artigo 46 x Privacidade por Design: Alinha conformidade legal com prática de desenvolvimento; Reduz retrabalho de segurança
+  Desvantagens de Relação Artigo 46 x Privacidade por Design: Requer cultura organizacional voltada a privacidade
+  Casos de uso de Relação Artigo 46 x Privacidade por Design: Integração de controles de privacidade no SDLC (Software Development Life Cycle)
+
+-- Tabelas comparativas --
+Tabela 'Síntese Executiva: O Framework de Segurança (Arts. 46 a 49)': Resumo operacional das fases, deveres legais e mecanismos práticos para aplicação dos Arts. 46 a 49 da LGPD.
+  Linha linha1: Pré-Lançamento (Desenvolvimento) = Art. 46 (Privacy by Design);  = Incorporação de restrições de segurança desde a concepção do produto/serviço
+    (Relacionado a: art46_medidas_segurança, privacy_by_design)
+  Linha linha2: Operação Contínua (Dia a Dia) = Arts. 46 e 49;  = Monitoramento de redes, certificações ISO, políticas corporativas e cultura de proteção
+    (Relacionado a: art46_medidas_segurança, art49_struct_governance)
+  Linha linha3: Durante a Crise (Incidente) = Art. 48;  = Notificação tempestiva, plano de contenção de danos e preservação de evidências; dados podem estar criptografados
+    (Relacionado a: art48_comunicacao_incidentes, autoridade_nacional)
+  Linha linha4: Pós-Ciclo de Vida (Fim de Contrato) = Art. 47;  = Garantia de retenção segura ou descarte irreversível e certificado
+    (Relacionado a: art47_acoes_nacional, governanca)
+
+-- Figuras e diagramas --
+Figura 'Da Segurança e do Sigilo de Dados: Art. 46' (Texto/Ilustração explicativa): Texto do Art. 46 destacando a obrigação de medidas de segurança; destaca-se a relação entre proteção de dados, acessos não autorizados e eliminação de riscos.
+  Componentes visuais: Medidas Técnicas, Medidas Administrativas, Proteção de dados pessoais
+  Relacionado a: art46_medidas_segurança
+Figura 'Durante o Tratamento vs Mesmo após o Termo' (Diagrama de Timeline): Linha do tempo com dois estados: Durante o Tratamento — obrigações plenas de segurança; Mesmo após o término — dever de proteger dados permanece.
+  Componentes visuais: Durante o Tratamento, Termo do Contrato
+  Relacionado a: art46_medidas_segurança, art47_acoes_nacional
+Figura 'Adequação LGPD Continua: Estrutura, Boas Práticas e Governança' (Diagrama de blocos): Três pilares: Estrutura de Sistemas, Padrões de Boas Práticas, Governança.
+  Componentes visuais: Estrutura de Sistemas, Boas Práticas, Governança
+  Relacionado a: estrutura_de_sistemas, padroes_boas_praticas, governanca
+Figura 'Síntese Executiva: Framework de Segurança (Arts. 46 a 49)' (Tabela/Gráfico): Resumo da relação entre Fase Operacional, Dever Legal e Mecanismo Prático (quatro fases-chave)
+  Componentes visuais: Pré-Lançamento, Operação Contínua, Durante a Crise, Pós-Ciclo de Vida
+  Relacionado a: tbl_framework_46_49
+Figura 'Checklist de Resposta Rápida (Art. 48)' (Checklist/Quadro): Itens de resposta rápida: o que comunicar, quem comunicar, como comunicar, riscos, medidas de contenção e evidências.
+  Componentes visuais: O que comunicar, Quem comunicar, Como comunicar, Riscos, Medidas de contenção, Evidências
+  Relacionado a: art48_comunicacao_incidentes, gabarito
+
+-- Relacionamentos --
+Conexao: 'art46_medidas_segurança' --[implementa]--> 'medidas_tecnicas'. Motivo: Artigo 46 exige a implementação de medidas técnicas de proteção de dados.
+Conexao: 'art46_medidas_segurança' --[implementa]--> 'medidas_administrativas'. Motivo: Artigo 46 também requer medidas administrativas para governança e controles de segurança.
+Conexao: 'art46_medidas_segurança' --[implementa]--> 'privacy_by_design'. Motivo: Prática de Privacidade por Design é um mecanismo prático alinhado com o Art. 46.
+Conexao: 'art48_comunicacao_incidentes' --[comunica_com]--> 'autoridade_nacional'. Motivo: Artigo 48 CAPUT e §1º prevê comunicação de incidentes à ANPD.
+Conexao: 'art48_comunicacao_incidentes' --[comunica_com]--> 'titulares'. Motivo: Artigo 48 também requer comunicação aos titulares quando houver risco relevante.
+Conexao: 'art49_estrutura_governanca' --[depende_de]--> 'estrutura_de_sistemas'. Motivo: Estrutura de sistemas deve suportar governança conforme Art. 49.
+Conexao: 'art49_estrutura_governanca' --[depende_de]--> 'padroes_boas_praticas'. Motivo: Boas práticas dependem da governança para serem efetivamente implementadas.
+Conexao: 'framework_segurança_46_49' --[comunica_com]--> 'governanca'. Motivo: O Framework de Segurança orienta e integra as três áreas (estrutura, boas práticas e governança).
+

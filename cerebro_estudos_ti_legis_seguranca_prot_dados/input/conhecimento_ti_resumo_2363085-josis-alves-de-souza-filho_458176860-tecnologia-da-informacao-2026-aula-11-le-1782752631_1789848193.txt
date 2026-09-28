@@ -1,0 +1,110 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Lei nº 13.709/2018 - Lei Geral de Proteção de Dados Pessoais - LGPD XI
+Idioma: pt-BR
+Tecnologias citadas no documento: LGPD, Segurança da Informação, Proteção de Dados Pessoais, ANPD
+
+=== SECAO [LGPD_ART15_16]: O Fim do Ciclo de Vida dos Dados Pessoais – Artigos 15 e 16 ===
+Esta seção compila a prática associada ao término do tratamento de dados pessoais conforme a LGPD. O Artigo 15 estabelece que o término ocorre quando (I) a finalidade foi alcançada ou os dados deixaram de ser necessários ou pertinentes; (II) fim do período de tratamento; (III) o titular comunica a revogação do consentimento, resguardado o interesse público; ou (IV) determinação da autoridade nacional (ANPD) em caso de violação. A aplicação prática envolve cenários como o encerramento automático ao vencer o prazo ou ao alcançar a finalidade (por exemplo, cadastros de candidatos após a vaga ser preenchida). Além disso, o Artigo 16 disciplina a eliminação ou retenção de dados após o término, com exceções para finalidades legais, pesquisa com anonimização ou uso pelo controlador sob condições restritas. A presença de gatilhos externos (titular e ANPD) e a complementariedade entre arts. 15 e 16 orientam políticas de retenção, descarte seguro e continuidade contratual sob bases legais. A ANPD pode determinar suspensão ou encerramento do tratamento em caso de violação.
+
+-- Conceitos-chave --
+Termo: Término do Tratamento (Art. 15) | Tipo: Processo | Definicao: Fim do tratamento ocorre quando a finalidade é atingida ou os dados deixam de ser necessários/pertinentes ao alcance da finalidade, ou ao fim do período, ou por revogação de consentimento, ou por determinação da ANPD em caso de violação.
+  Vantagens de Término do Tratamento (Art. 15): Redução de riscos de retenção indevida; Conformidade com LGPD; Facilita descarte seguro de dados; Apoia governança de dados
+  Desvantagens de Término do Tratamento (Art. 15): Pode limitar usos futuros não previstos; Exige políticas claras de descarte e rastreabilidade; Necessita acordos de conservação (banco de talentos, etc.)
+  Casos de uso de Término do Tratamento (Art. 15): Descartar currículos após a seleção (salvo consentimento para banco de talentos); Encerrar tratamento ao término do prazo de validade de uma campanha
+Termo: Fim do Período de Tratamento | Tipo: Processo | Definicao: Encerramento automático do tratamento ao fim do prazo previamente estabelecido para aquela finalidade.
+  Vantagens de Fim do Período de Tratamento: Clareza temporal; Automação de encerramento
+  Desvantagens de Fim do Período de Tratamento: Pode exigir atualizações de contratos/ bases legais; Riscos de retenção acidental se o prazo não for monitorado
+  Casos de uso de Fim do Período de Tratamento: Promoção de loja com validade até data X; tratamento encerra em 01/01
+Termo: Revogação de Consentimento (Art. 8, §5º) | Tipo: Processo | Definicao: Titular pode revogar o consentimento para o tratamento, resguardado o interesse público; diante disso, encerra-se o tratamento sob a base de consentimento.
+  Vantagens de Revogação de Consentimento (Art. 8, §5º): Controle direto do titular; Conformidade com consentimento; Possibilita nova fundamentação legal
+  Desvantagens de Revogação de Consentimento (Art. 8, §5º): Impacto em fluxos de marketing/analítica; Possível necessidade de readequação de dados
+  Casos de uso de Revogação de Consentimento (Art. 8, §5º): Revogação de consentimento para envios de marketing; Desativação de geolocalização mediante revogação de consentimento
+Termo: Intervenção da ANPD | Tipo: Processo | Definicao: A ANPD pode determinar o encerramento do tratamento quando houver violação à LGPD, agindo como autoridade regulatória.
+  Vantagens de Intervenção da ANPD: Proteção de dados e controle de violações; Disuasão de condutas inadequadas
+  Desvantagens de Intervenção da ANPD: Risco de interrupção abrupta do processamento; Possível impacto operacional; necessidade de gestão de conformidade
+  Casos de uso de Intervenção da ANPD: Descoberta de coleta abusiva de geolocalização com suspensão do tratamento
+
+-- Figuras e diagramas --
+Figura 'Fluxo: Término do Tratamento (Art. 15)' (Fluxograma): Sequência: Missão Cumprida -> Gatilho Art. 15 -> Tratamento Encerrado
+  Componentes visuais: Missão Cumprida, Gatilho Art. 15, Tratamento Encerrado
+  Relacionado a: termino_tratamento_art15, revogacao_consentimento_art8_sec5, anpd_intervencao
+
+-- Relacionamentos --
+Conexao: 'anpd_intervencao' --[determina_encerramento]--> 'termino_tratamento_art15'. Motivo: ANPD pode ordenar o encerramento do tratamento em caso de violação à LGPD.
+Conexao: 'revogacao_consentimento_art8_sec5' --[comunica_com]--> 'termino_tratamento_art15'. Motivo: Revogação de consentimento pode encerrar o tratamento quando não houver outra base legal.
+
+=== SECAO [LGPD_GATILHOS_EXTERNOS]: Aplicação prática – Gatilhos externos (Titular e ANPD) ===
+A LGPD reconhece gatilhos externos que encerram ou suspendem o tratamento além do término da finalidade. O titular pode revogar consentimento (Art. 8, §5º) e exercer direitos, o que pode justificar o fim do tratamento. A ANPD pode intervir e determinar a cessação do tratamento quando houver violação. Observa-se a necessidade de alinhamento entre as bases legais e as decisões administrativas.
+
+-- Conceitos-chave --
+Termo: Gatilho Externo – Titular | Tipo: Processo | Definicao: Revogação de consentimento e exercício de direitos pelo titular; resguardo do interesse público.
+  Vantagens de Gatilho Externo – Titular: Cessa tratamento de forma direta e consciente pelo titular; Conformidade com direitos do titular
+  Desvantagens de Gatilho Externo – Titular: Pode afetar a continuidade de análises/marketing; Pode exigir realocação de dados ou criação de novas bases legais
+  Casos de uso de Gatilho Externo – Titular: Revogação de consentimento para marketing; Retirada de consentimento para uso de geolocalização
+Termo: Gatilho Externo – ANPD | Tipo: Processo | Definicao: Intervenção direta da ANPD por infração à LGPD, com possibilidade de suspensão do tratamento.
+  Vantagens de Gatilho Externo – ANPD: Proteção de dados, fiscalização efetiva; Correção rápida de condutas inadequadas
+  Desvantagens de Gatilho Externo – ANPD: Interrupção do processamento; Necessidade de resposta operacional rápida
+  Casos de uso de Gatilho Externo – ANPD: ANPD descobre coleta abusiva de geolocalização e suspende o tratamento
+
+-- Figuras e diagramas --
+Figura 'Inciso III – Transferência para Fora' (Diagrama de Fluxo): Condição: Transferência para fora somente sob bases legais; exemplo de clínica encerra atividades e transfere carteira para outra clínica.
+  Componentes visuais: Inciso III – O Titular, Nova Controladora, Dados transferidos, Conservação em base legal
+  Relacionado a: transferencia_art16, controlador, transferencia_para_terceiros_art16
+Figura 'Inciso IV – Uso Exclusivo Interno' (Diagrama de Fluxo): Condição: Uso apenas pelo Controlador; acesso de terceiros proibido; dados anonimizados.
+  Componentes visuais: Controlador, Terceiros proibidos, Dados anonimizados
+  Relacionado a: uso_exclusivo_controlador_art16
+
+-- Relacionamentos --
+Conexao: 'termino_tratamento_art15' --[depende_de]--> 'gatilho_externo_titular'. Motivo: Término por revogação de consentimento pode levar ao término do tratamento.
+Conexao: 'anpd_intervencao' --[determina_encerramento]--> 'termino_tratamento_art15'. Motivo: ANPD pode ordenar encerramento do tratamento por violação.
+
+=== SECAO [LGPD_ART16]: Artigo 16 – Eliminação e Retenção de Dados (Parte 1) ===
+Artigo 16 regula a eliminação dos dados após o término do tratamento, com exceções: (I) cumprimento de obrigação legal/regulatória; (II) estudo por órgão de pesquisa com anonimização; (III) transferência a terceiros; (IV) uso exclusivo do controlador com dados anonimizados. A seção descreve a prática de retenção com base nesses limites, destacando a necessidade de anonimização quando aplicável e da observância das bases legais para transferências.
+
+-- Conceitos-chave --
+Termo: Retenção por Obrigação Legal/Regulatória (Art. 16 I) | Tipo: Processo | Definicao: Conservação de dados para atender obrigações legais ou regulatórias pelo controlador.
+  Vantagens de Retenção por Obrigação Legal/Regulatória (Art. 16 I): Conformidade com exigências legais; Reduz risco de autuações
+  Desvantagens de Retenção por Obrigação Legal/Regulatória (Art. 16 I): Privacidade reduzida durante o período de retenção; Custos de armazenamento
+  Casos de uso de Retenção por Obrigação Legal/Regulatória (Art. 16 I): Conservação de folha de pagamento por 5 anos para Receita Federal e Justiça do Trabalho
+Termo: Estudo por Órgão de Pesquisa com Anonimização (Art. 16 II) | Tipo: Processo | Definicao: Condução de estudo por órgão de pesquisa com dados anonimizados sempre que possível.
+  Vantagens de Estudo por Órgão de Pesquisa com Anonimização (Art. 16 II): Proteção da privacidade; Possibilita pesquisa com dados reais
+  Desvantagens de Estudo por Órgão de Pesquisa com Anonimização (Art. 16 II): Anonimização pode reduzir utilidade dos dados; Exige controles de qualidade da anonimização
+  Casos de uso de Estudo por Órgão de Pesquisa com Anonimização (Art. 16 II): Análise demográfica com dados anonimizados
+Termo: Transferência a Terceiros (Art. 16 III) | Tipo: Processo | Definicao: Transferência de dados a terceiros deve obedecer às bases legais da LGPD.
+  Vantagens de Transferência a Terceiros (Art. 16 III): Continuidade de serviços; Conformidade regulatória
+  Desvantagens de Transferência a Terceiros (Art. 16 III): Controles adicionais necessários; Rastreamento de responsabilidade
+  Casos de uso de Transferência a Terceiros (Art. 16 III): Venda de carteira de pacientes para continuidade de atendimento
+Termo: Uso Exclusivo do Controlador (Art. 16 IV) | Tipo: Processo | Definicao: Dados usados apenas pelo controlador, com acesso proibido a terceiros e com dados anonimizados.
+  Vantagens de Uso Exclusivo do Controlador (Art. 16 IV): Máxima privacidade; Conformidade elevada
+  Desvantagens de Uso Exclusivo do Controlador (Art. 16 IV): Limita usos analíticos com dados não anonimizados
+  Casos de uso de Uso Exclusivo do Controlador (Art. 16 IV): Treinamento de algoritmos com dados agregados e anonimizados
+
+-- Tabelas comparativas --
+Tabela 'Quatro Exceções de Conservação (Art. 16)': Resumo das situações em que a retenção é permitida mesmo após o término.
+  Linha linha_1: Finalidade da Conservação = Obrigação Legal/Regulatória; Permite Acesso de Terceiros? = Sim (Governo/Auditoria); Exige Anonimização? = Não (Precisa identificar)
+    (Relacionado a: retencao_obrigatoria_art16)
+  Linha linha_2: Finalidade da Conservação = Estudo por Órgão de Pesquisa; Permite Acesso de Terceiros? = Sim (Apenas o Órgão); Exige Anonimização? = Sim (Sempre que possível)
+    (Relacionado a: estudo_pesquisa_anon_art16)
+  Linha linha_3: Finalidade da Conservação = Transferência a Terceiros; Permite Acesso de Terceiros? = Sim (O novo controlador); Exige Anonimização? = Não (Se amparado por base legal)
+    (Relacionado a: transferencia_art16)
+  Linha linha_4: Finalidade da Conservação = Uso Exclusivo do Controlador; Permite Acesso de Terceiros? = Não (Totalmente vedado); Exige Anonimização? = Sim (Obrigatório e absoluto)
+    (Relacionado a: uso_exclusivo_controlador_art16)
+
+-- Figuras e diagramas --
+Figura 'A Regra de Ouro – Artigo 16 (Exceções de Conservação)' (Diagrama): Conjunto de exceções que permite retenção: obrigação legal, estudo com anonimização, transferência para terceiros com cuidados legais, uso exclusivo interno com anonimização.
+  Componentes visuais: Retenção, Conservação, Anonimização, Terceiros
+  Relacionado a: retencao_obrigatoria_art16, estudo_pesquisa_anon_art16, transferencia_art16, uso_exclusivo_controlador_art16
+Figura 'Inciso III – Transferência para Fora' (Ilustração): Condição: Deve seguir bases legais; Exemplo: clínica encerra atividades e transfere carteira para outra clínica.
+  Componentes visuais: Controlador, Terceiro, Dados transferidos
+  Relacionado a: transferencia_art16, controlador, transferencia_para_terceiros_art16
+Figura 'Inciso IV – Uso Exclusivo Interno' (Ilustração): Condição: Uso apenas pelo Controlador; acesso de terceiros proibido; dados anonimizados.
+  Componentes visuais: Controlador, Terceiros proibidos, Dados anonimizados
+  Relacionado a: uso_exclusivo_controlador_art16
+
+-- Relacionamentos --
+Conexao: 'artigo_16' --[descreve]--> 'retencao_obrigatoria_art16'. Motivo: Artigo 16 descreve regras de eliminação/retenção, incluindo exceções.
+Conexao: 'retencao_obrigatoria_art16' --[implica]--> 'gatilho_externo_anpd'. Motivo: Exceções exigem compliance com obrigações legais, com supervisão da ANPD.
+
+=== SECAO [GABARITO_SECTION]: Gabarito ===
+Seção com as respostas das questões de revisão apresentadas no material. Gabarito: 01. a; 02. c; 03. a.
+

@@ -1,0 +1,201 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Lei 12.965/2014 | Marco Civil da Internet no Brasil
+Idioma: pt-BR
+Tecnologias citadas no documento: Conexão à Internet, Registros de Acesso a Aplicações, Ordem Judicial, Autorizações Judiciais, Proteção de Dados Pessoais, Indisponibilização de Conteúdo, Liberdade de Expressão
+
+=== SECAO [SEC_01]: Guarda de Registros de Conexão (Art. 13) ===
+O Art. 13 determina que a guarda dos registros de conexão cabe ao administrador de sistema autônomo (ASA) e deve ocorrer sob sigilo, em ambiente controlado e seguro, pelo prazo de 1 ano. A responsabilidade pela guarda não pode ser transferida a terceiros. Caso autoridades desejem estender o prazo, é possível requerer guarda cautelar, devendo ingressar com autorização judicial em até 60 dias. O pedido de guarda e a disponibilização dos registros sempre dependem de autorização judicial. Penas por descumprimento são avaliadas com base na gravidade, danos e antecedentes.
+
+-- Conceitos-chave --
+Termo: Administrador de Sistema Autônomo (ASA) | Tipo: Processo | Definicao: Responsável pela guarda dos registros de conexão, em ambiente seguro; não pode terceirizar essa guarda.
+  Vantagens de Administrador de Sistema Autônomo (ASA): Conservação centralizada de registros; Controle de sigilo e segurança; Traçabilidade e auditoria
+  Desvantagens de Administrador de Sistema Autônomo (ASA): Risco operacional de falha única; Custos de infraestrutura de segurança; Responsabilidade legal direta
+  Casos de uso de Administrador de Sistema Autônomo (ASA): Retenção de logs para auditoria de rede; Coleta autorizada por autoridade judicial
+Termo: Registros de Conexão | Tipo: Padrão | Definicao: Dados que registram a atividade de conexão dos usuários à Internet.
+  Vantagens de Registros de Conexão: Permite rastreabilidade de atividades de rede; Suporta investigações legais
+  Desvantagens de Registros de Conexão: Potencial exposição de dados sensíveis; Necessita gestão de sigilo
+  Casos de uso de Registros de Conexão: Auditoria de incidentes de segurança; Investigação de crimes cibernéticos
+Termo: Sigilo do Pedido | Tipo: Padrão | Definicao: O pedido de guarda mantido em segredo pelo provedor por mais tempo.
+  Vantagens de Sigilo do Pedido: Protege a integridade da investigação; Previne contestações prematuras
+  Desvantagens de Sigilo do Pedido: Pode reduzir transparência pública temporariamente
+  Casos de uso de Sigilo do Pedido: Procedimentos de guarda cautelar; Solicitações administrativas
+Termo: Autorização Judicial | Tipo: Processo | Definicao: A disponibilização dos registros depende de autorização judicial.
+  Vantagens de Autorização Judicial: Controle judicial sobre acesso a dados; Proteção de direitos individuais
+  Desvantagens de Autorização Judicial: Pode ampliar prazos de resposta; Exige deslocamento de processos judiciais
+  Casos de uso de Autorização Judicial: Atendimentos a ordens de divulgação de dados
+Termo: Prazo de Guarda | Tipo: Padrão | Definicao: Período legal para conservar os registros de conexão.
+  Vantagens de Prazo de Guarda: Previsibilidade regulatória; Facilita auditoria e conformidade
+  Desvantagens de Prazo de Guarda: Carga de armazenamento prolongada; Riscos de retenção indevida
+  Casos de uso de Prazo de Guarda: Retenção para investigação criminal; Conformidade regulatória
+Termo: Sanções | Tipo: Processo | Definicao: Pena ou sanção aplicável pelo descumprimento da guarda de registros.
+  Vantagens de Sanções: Desincentivo a não conformidade; Reconhecimento de gravidade do dano
+  Desvantagens de Sanções: Impacto operacional e reputacional
+  Casos de uso de Sanções: Aplicação de penalidades por infração
+
+-- Figuras e diagramas --
+Figura 'Guarda de Registros de Conexão (Art. 13)' (Diagrama de Fluxo / Infográfico): 1) ASA guarda registros de conexão; 2) Guarda sob sigilo e em ambiente seguro; 3) Não pode ser transferida a terceiros; 4) Autorizações judiciais para guarda/custódia prolongada; 5) Sigilo do pedido; 6) Disponibilização apenas com autorização judicial; 7) Sanções por descumprimento, considerando gravidade.
+  Componentes visuais: ASA, Guarda Própria, Sigilo do Pedido, Autorização Judicial, Prazo de Guarda, Sanções
+  Relacionado a: asa, registros_conexao, sigilo_pedido, autorizacao_judicial, prazo_guardas, sancoes
+
+-- Relacionamentos --
+Conexao: 'asa' --[implementa]--> 'registros_conexao'. Motivo: O ASA mantém os registros de conexão sob sigilo e ambiente controlado pelo prazo de 1 ano, conforme o caput do art. 13.
+Conexao: 'pedido_autoridade' --[depende_de]--> 'registros_conexao'. Motivo: Autoridade pode requerer guarda por prazo superior; requerimento deve acompanhar autorização judicial.
+Conexao: 'autorizacao_judicial' --[comunica_com]--> 'registros_conexao'. Motivo: A disponibilização de registros depende de autorização judicial.
+Conexao: 'registros_conexao' --[toma_sigilo]--> 'sigilo_pedido'. Motivo: O pedido de guarda deve manter sigilo até decisão judicial ou indeferimento.
+
+=== SECAO [SEC_02]: Guarda de Registros de Acesso a Aplicações (Art. 14-17) ===
+A legislação diferencia os regimes entre provedores: provedores de conexão não podem guardar registros de acesso a aplicações; provedores de aplicações com fins econômicos devem manter os registros de acesso a aplicações por 6 meses; as autoridades podem requisitar guarda por mais tempo mediante autorização judicial, idêntico ao regime de conexão. O armazenamento de dados deve respeitar consentimento e proteção de dados pessoais; os registros de acesso a aplicações só podem ser fornecidos com autorização judicial.
+
+-- Conceitos-chave --
+Termo: Provedor de aplicações com fins econômicos | Tipo: Padrão | Definicao: Empresa que oferece aplicações de internet sob um modelo econômico; sujeita à guarda de registros de acesso a aplicações por 6 meses.
+  Vantagens de Provedor de aplicações com fins econômicos: Conformidade com exigências legais; Rastreamento de utilização de aplicações
+  Desvantagens de Provedor de aplicações com fins econômicos: Custos de retenção de dados; Risco de violação de privacidade se mal gerenciado
+  Casos de uso de Provedor de aplicações com fins econômicos: Auditoria de uso de aplicações; Investigação de incidentes
+Termo: Provedor de conexão | Tipo: Padrão | Definicao: Prestador de serviços de transporte de dados; não pode guardar registros de acesso a aplicações.
+  Vantagens de Provedor de conexão: Reduz riscos de privacidade; Menor carga de dados sensíveis
+  Desvantagens de Provedor de conexão: Limita auditoria direta sobre uso de aplicações
+  Casos de uso de Provedor de conexão: Garantia de não retenção de dados de acesso a aplicações
+Termo: Registros de Acesso a Aplicações | Tipo: Padrão | Definicao: Dados que registram o acesso a aplicações de internet; sua guarda é exigida de forma distinta entre provedores.
+  Vantagens de Registros de Acesso a Aplicações: Permite auditoria de uso de aplicações; Melhora a responsabilização por operações
+  Desvantagens de Registros de Acesso a Aplicações: Pode expor dados de usuários; Exige controles de privacidade
+  Casos de uso de Registros de Acesso a Aplicações: Verificação de incidentes em aplicações; Conformidade com obrigações legais
+Termo: Ordem Judicial | Tipo: Processo | Definicao: Instrumento que autoriza guarda/indisponibilização ou fornecimento de registros, conforme o art. 14-17.
+  Vantagens de Ordem Judicial: Legitimidade para acessos a dados; Proteção de direitos fundamentais
+  Desvantagens de Ordem Judicial: Pode gerar atrasos administrativos; Necessita de protocolo/processo
+  Casos de uso de Ordem Judicial: Solicitações de autoridades para retenção ou acesso a dados
+Termo: Autorização Judicial | Tipo: Processo | Definicao: Autorização emitida por autoridade competente para exigir retenção/fornecimento de registros.
+  Vantagens de Autorização Judicial: Valida o tratamento de dados com respaldo legal
+  Desvantagens de Autorização Judicial: Processo judicial pode ser demorado
+  Casos de uso de Autorização Judicial: Cumprimento de ordens judiciais de retenção/fornecimento
+
+-- Tabelas comparativas --
+Tabela 'Questão sobre guarda de registros (Art. 14-17) - Opções': Perguntas sobre tempo mínimo de guarda e regime de guarda dos registros de acesso a aplicações e de conexão.
+  Linha lin_q14_01: A = Provedor de aplicações deverá guardar registros de acesso a aplicações, sob sigilo, por 6 meses.
+    (Relacionado a: provedor_aplicacoes, registros_acesso_aplicacoes)
+  Linha lin_q14_02: B = Provedor de aplicações deverá guardar registros de acesso a aplicações publicamente.
+    (Relacionado a: provedor_aplicacoes)
+  Linha lin_q14_03: C = A guarda de registros de acesso a aplicações é obrigatória por 1 ano.
+    (Relacionado a: registros_acesso_aplicacoes)
+  Linha lin_q14_04: D = Guarda mínima de 3 anos para registros de acesso a aplicações.
+    (Relacionado a: provedor_aplicacoes, registros_acesso_aplicacoes)
+  Linha lin_q14_05: E = Legislação não especifica tempo mínimo; depende do terms de uso.
+    (Relacionado a: lei_12965_2014)
+
+-- Figuras e diagramas --
+Figura 'Guarda de Registros de Acesso a Aplicações (Art. 14-17)' (Infográfico): Esquema comparando provedores de conexão e provedores de aplicações; regras de guarda por 6 meses para aplicações; vedação de guarda por parte de provedores de conexão; possibilidade de guarda adicional por ordem judicial.
+  Componentes visuais: Provedores de CONEXÃO não guardam registros de acesso a aplicações, Provedores de APLICAÇÕES devem guardar por 6 meses, Ordem judicial pode exigir guarda adicional, Autorização judicial impede disponibilização sem consentimento
+  Relacionado a: provedor_conexao, provedor_aplicacoes, registros_acesso_aplicacoes, ordem_judicial, autorizacao_judicial
+
+-- Relacionamentos --
+Conexao: 'provedor_aplicacoes' --[implementa]--> 'registros_acesso_aplicacoes'. Motivo: O provedor de aplicações deve manter os registros de acesso a aplicações por 6 meses (art. 15).
+Conexao: 'provedor_conexao' --[mitiga_risco]--> 'registros_acesso_aplicacoes'. Motivo: Provedor de conexão não guarda registros de acesso a aplicações; isso reduz riscos de privacidade.
+Conexao: 'autoridade_judicial' --[requer]--> 'registros_acesso_aplicacoes'. Motivo: Autoridade pode requerer guarda por prazo superior mediante autorização judicial.
+Conexao: 'autorizacao_judicial' --[comunica_com]--> 'registros_acesso_aplicacoes'. Motivo: Disponibilização/guarda de registros depende de autorização judicial.
+
+=== SECAO [SEC_03]: Conteúdo de Terceiros: Quem responde? (Arts 18-21) ===
+O Marco Civil define responsabilidades distintas entre provedores: o provedor de conexão não é responsável por danos decorrentes de conteúdo gerado por terceiros (Art. 18). O provedor de aplicações só pode ser responsabilizado civilmente por danos decorrentes de conteúdo gerado por terceiros se, após ordem judicial específica, não tornar indisponível o conteúdo; a remoção deve seguir regras de notificação e contraditório (Art. 19-21). Em casos de conteúdo íntimo, há responsabilidade subsidiária para conteúdos de terceiros se não remover conforme notificação; o provedor deve notificar o usuário sobre a indisponibilização e permitir o contraditório (Art. 20-21).
+
+-- Conceitos-chave --
+Termo: Provedor de Conexão | Tipo: Processo | Definicao: Não é responsável, de antemão, por danos decorrentes de conteúdo criado por terceiros; responde somente conforme ordem judicial específica.
+  Vantagens de Provedor de Conexão: Proteção de conteúdo de terceiros por padrão; Menor responsabilidade direta
+  Desvantagens de Provedor de Conexão: Não impede danos imediatos sem ordem judicial
+  Casos de uso de Provedor de Conexão: Casos de conteúdo ilícito sem ordem judicial vigente
+Termo: Provedor de aplicações | Tipo: Processo | Definicao: Pode ser responsabilizado civilmente por danos decorrentes de conteúdo de terceiros apenas sob condições específicas (ordem judicial e atuação diligente).
+  Vantagens de Provedor de aplicações: Proteção à liberdade de expressão com salvaguardas legais
+  Desvantagens de Provedor de aplicações: Risco de responsabilização subsidiária se não agir rapidamente
+  Casos de uso de Provedor de aplicações: Remoção de conteúdo após ordem judicial
+Termo: Conteúdo Gerado por Terceiros | Tipo: Conteúdo | Definicao: Conteúdo publicado por usuários de serviços de internet; pode violar direitos de terceiros.
+  Vantagens de Conteúdo Gerado por Terceiros: Favorece a liberdade de expressão
+  Desvantagens de Conteúdo Gerado por Terceiros: Potencial dano a direitos de personalidade
+  Casos de uso de Conteúdo Gerado por Terceiros: Notificações de remoção com base em ordem judicial
+Termo: Remoção de Conteúdo | Tipo: Processo | Definicao: Indisponibilização de conteúdo após ordem judicial; pode incluir substituição pelo provedor que removeu o conteúdo.
+  Vantagens de Remoção de Conteúdo: Proteção de direitos (honra, privacidade)
+  Desvantagens de Remoção de Conteúdo: Pode gerar disputa judicial e atraso
+  Casos de uso de Remoção de Conteúdo: Indisponibilização de conteúdo infrator
+Termo: Conteúdo ÍNTIMO | Tipo: Conteúdo | Definicao: Conteúdo envolvendo nudez ou atos sexuais privados; sujeitos a regras específicas de notificação e remoção.
+  Vantagens de Conteúdo ÍNTIMO: Proteção de privacidade individual
+  Desvantagens de Conteúdo ÍNTIMO: Maior risco de danos à honra se não removido adequadamente
+  Casos de uso de Conteúdo ÍNTIMO: Remoção sob ordem judicial ou notificações
+
+-- Tabelas comparativas --
+Tabela 'Arbitragem/Marco Civil - itens de julgamento (exemplos)': Questões comentadas relativas à arbitragem e responsabilidade conforme o Marco Civil (art. 18-21) com base em itens de prova.
+  Linha lin_q_arb_15: 15 = A) O provedor de conexão responderá civilmente por danos decorrentes de conteúdo gerado por terceiros.; 15 = B) O provedor de aplicações responderá subsidiariamente por conteúdos ilícitos.; 15 = C) Certo / D) Errado / E) Não aplicável
+    (Relacionado a: provedor_conexao, provedor_aplicacoes, conteudo_terceiros)
+Tabela 'Questões 16-17 (exercícios de prova) - guarda de registros': Itens sobre guarda de registros em modalidade gratuita e regime de responsabilização civil por conteúdos gerados por terceiros.
+  Linha lin_q_16: 16 = A) Em modalidade gratuita, a guarda de registros de acesso a aplicações é lícita, mas o provedor de conexão pode ser responsabilizado por danos decorrentes de conteúdo gerado por terceiros.; 16 = B) Não é lícito guardar registros em modalidade gratuita.
+    (Relacionado a: provedor_conexao, provedor_aplicacoes)
+  Linha lin_q_17: 17 = C) Certo / D) Errado / E) Indeterminado
+    (Relacionado a: lei_12965_2014)
+
+-- Figuras e diagramas --
+Figura 'Conteúdo de Terceiros: Quem responde? (Art. 18 a 21)' (Infográfico): Diagrama com quatro áreas: Provedores de CONEXÃO, Provedores de APLICAÇÃO, Remoção de CONTEÚDO, Conteúdo ÍNTIMO. Mostra que provedores de conexão não respondem por conteúdo; provedores de aplicações respondem apenas se não removerem após ordem; conteúdo íntimo tem responsabilização subsidiária; notificação para identificação de material violador.
+  Componentes visuais: Provedores de CONEXÃO, Provedores de APLICAÇÃO, Remoção de CONTEÚDO, Conteúdo ÍNTIMO
+  Relacionado a: provedor_conexao, provedor_aplicacoes, conteudo_terceiros, remocao_conteudo, conteudo_intimo
+
+-- Relacionamentos --
+Conexao: 'provedor_conexao' --[depende_de]--> 'conteudo_terceiros'. Motivo: Não é responsável por danos de conteúdo gerado por terceiros; está ligado ao conteúdo de terceiros por meio de regras de indisponibilidade.
+Conexao: 'provedor_aplicacoes' --[implementa]--> 'conteudo_terceiros'. Motivo: Só pode ser responsabilizado civilmente por conteúdo de terceiros se não tornar indisponível após ordem judicial.
+Conexao: 'conteudo_terceiros' --[solicitacao_remocao]--> 'remocao_conteudo'. Motivo: Mediante ordem judicial ou notificação, remoção de conteúdo pode ser efetuada; conteúdo íntimo tem regras específicas.
+Conexao: 'conteudo_intimo' --[subsidiaria]--> 'provedor_aplicacoes'. Motivo: Provedor de aplicações pode ser responsabilizado subsidiariamente pela divulgação de conteúdo íntimo não removido após notificação.
+
+=== SECAO [SEC_04]: Letra da Lei - Artigos 13 a 21 (Resumo e Disposições Relevantes) ===
+A Lei detalha a guarda de registros (Art. 13) com sigilo e autorização judicial, a vedação de guarda de registros de acesso a aplicações pelo provedor de conexão (Art. 14) e a obrigação de manter registros de acesso a aplicações por provedores de aplicações com fins econômicos por 6 meses (Art. 15). Os arts. 16-17 tratam de limitações e isenções de guarda. Os Arts. 18-21 tratam da responsabilidade dos provedores por conteúdos de terceiros, remoção/indisponibilização mediante ordem judicial, notificação aos usuários, e responsabilização subsidiária em casos de conteúdo íntimo.
+
+-- Conceitos-chave --
+Termo: Marco Civil da Internet (Lei n° 12.965/2014) | Tipo: Arquitetura | Definicao: Legislação fundamental que define responsabilidade, guarda de dados e neutralidade da rede no Brasil.
+  Vantagens de Marco Civil da Internet (Lei n° 12.965/2014): Base legal para segurança e direitos digitais; Equilíbrio entre liberdade de expressão e proteção de dados
+  Desvantagens de Marco Civil da Internet (Lei n° 12.965/2014): Complexidade regulatória; Desafios de implementação prática
+  Casos de uso de Marco Civil da Internet (Lei n° 12.965/2014): Conformidade jurídica de provedores; Procedimentos judiciais e administrativos
+Termo: Conteúdo Gerado por Terceiros (Arts. 18-21) | Tipo: Padrão | Definicao: Regula a responsabilidade de provedores por conteúdo publicado por usuários, com regras de remoção/indisponibilização mediante ordem judicial.
+  Vantagens de Conteúdo Gerado por Terceiros (Arts. 18-21): Proteção à liberdade de expressão; Direitos de personalidade protegidos
+  Desvantagens de Conteúdo Gerado por Terceiros (Arts. 18-21): Risco de censura indireta se mal aplicado
+  Casos de uso de Conteúdo Gerado por Terceiros (Arts. 18-21): Remoção de conteúdo ilegal após ordem judicial; Notificação ao usuário
+Termo: Ordem Judicial | Tipo: Processo | Definicao: Instrumento para indisponibilizar conteúdos de terceiros, com identificação clara do material.
+  Vantagens de Ordem Judicial: Precisa de identificação específica do conteúdo
+  Desvantagens de Ordem Judicial: Poder de remoção pode impactar liberdade de expressão
+  Casos de uso de Ordem Judicial: Indisponibilização de conteúdo violador de direitos
+
+-- Figuras e diagramas --
+Figura 'Letra da Lei - Estrutura de artigos 13 a 21' (Diagrama de Estrutura): Resumo dos artigos 13 a 21: Guarda de registros (Art.13), Guarda de registros de acesso a aplicações (Arts.14-15), Limites (Art.16-17), Conteúdo de terceiros (Arts.18-21).
+  Componentes visuais: Art. 13 - Guarda de Registros de Conexão, Art. 14 - Proibição de guarda de registros de acesso a aplicações pela provisão de conexão, Art. 15 - Guarda por provedores de aplicações com fins econômicos, Arts. 18-21 - Responsabilidade e remoção de conteúdo de terceiros
+  Relacionado a: lei_12965_2014, art_18_21, art_15, provedor_conexao, provedor_aplicacoes
+
+-- Relacionamentos --
+Conexao: 'lei_12965_2014' --[implementa]--> 'art_13_21'. Motivo: Conjunto de artigos que regem guarda de registros, acesso a aplicações e responsabilidade por conteúdo.
+Conexao: 'art_13_21' --[comunica_com]--> 'provedor_aplicacoes'. Motivo: Interpreta como as regras sobre guarda de dados se aplicam a provedores de aplicações.
+
+=== SECAO [SEC_05]: Questões de Provas e Casos (Resumo e Análise) ===
+Trechos de questões de provas apresentam cenários sobre responsabilidade civil de provedores, guarda de registros e aplicação prática do marco. São apresentados casos de vídeos de nudez, notificações extrajudiciais, ordens judiciais e a distinção entre provedores de conexão e de aplicações. As respostas envolvem o entendimento de quando cada provedor é responsabilizado e como proceder conforme a lei.
+
+-- Conceitos-chave --
+Termo: Provedor de Conexão | Tipo: Processo | Definicao: Não responde civilmente por conteúdo de terceiros, exceto nas hipóteses previstas e mediante ordem judicial.
+  Vantagens de Provedor de Conexão: Protege o provedor de conteúdo de terceiros por padrão
+  Desvantagens de Provedor de Conexão: Pode dificultar a resposta a danos se houver violação de direitos
+  Casos de uso de Provedor de Conexão: Casos de conteúdo de terceiros sem violação direta
+Termo: Provedor de aplicações | Tipo: Processo | Definicao: Pode ser responsabilizado civilmente por conteúdos de terceiros apenas após ordem judicial específica e omissão de remoção.
+  Vantagens de Provedor de aplicações: Proteção de expressões legais com ordens judiciais
+  Desvantagens de Provedor de aplicações: Risco de responsabilização subsidiária se não agir rapidamente
+  Casos de uso de Provedor de aplicações: Remoção de conteúdo após ordem judicial
+Termo: Conteúdo Gerado por Terceiros | Tipo: Conteúdo | Definicao: Conteúdo publicado por usuários; pode violar direitos de terceiros.
+  Vantagens de Conteúdo Gerado por Terceiros: Facilita a liberdade de expressão
+  Desvantagens de Conteúdo Gerado por Terceiros: Risco de danos a reputação e privacidade
+  Casos de uso de Conteúdo Gerado por Terceiros: Notificações e remoção mediante ordem judicial
+
+-- Tabelas comparativas --
+Tabela 'Questões de Jurisprudência (Arbitragem e Marco Civil) - Opções': Conjunto de itens com alternativas sobre responsabilidade de provedores e retirada de conteúdos.
+  Linha lin_q_arb_15: 15 = A) O provedor de conexão responderá civilmente por danos decorrentes de conteúdo gerado por terceiros.; 15 = B) O provedor de aplicações responderá subsidiariamente pela violação da intimidade decorrente da divulgação se não disponibilizar o conteúdo.
+    (Relacionado a: provedor_conexao, provedor_aplicacoes, conteudo_terceiros)
+  Linha lin_q_arb_17: 17 = C) Certo / D) Errado / E) Indeterminado
+    (Relacionado a: art_18_21)
+
+-- Figuras e diagramas --
+Figura 'Conteúdo de Terceiros - Quem responde? (Resumo de itens 18 a 21)' (Infográfico): Quadro demonstrando as responsabilidades distintas entre provedores de conexão e de aplicações, bem como a necessidade de ordem judicial para indisponibilização/removal de conteúdos de terceiros.
+  Componentes visuais: Provedores de CONEXÃO, Provedores de APLICAÇÃO, Remoção de CONTEÚDO, Conteúdo ÍNTIMO
+  Relacionado a: provedor_conexao, provedor_aplicacoes, conteudo_terceiros, remocao_conteudo, conteudo_intimo
+
+-- Relacionamentos --
+Conexao: 'provedor_conexao' --[depende_de]--> 'conteudo_terceiros'. Motivo: Não responde por danos de conteúdo de terceiros; depende de ordem judicial para ações sobre o conteúdo.
+Conexao: 'provedor_aplicacoes' --[implementa]--> 'conteudo_terceiros'. Motivo: Pode ser responsabilizado se não remover conteúdo após ordem judicial (Art. 19-21).
+Conexao: 'conteudo_terceiros' --[solicitacao_remocao]--> 'remocao_conteudo'. Motivo: Conteúdo pode ser removido/indisponibilizado mediante ordem judicial ou notificação com contraditório.
+Conexao: 'conteudo_intimo' --[subsidiaria]--> 'provedor_aplicacoes'. Motivo: Provedor de aplicações pode responder subsidiariamente pela divulgação de conteúdo íntimo não removido após notificação.
+

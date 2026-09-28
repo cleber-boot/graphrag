@@ -19,6 +19,41 @@ Este módulo cuida de três coisas que o chat_app.py apenas consome:
 Observação sobre expansores: o Streamlit não permite expander dentro de
 expander. Por isso as respostas das micro questões usam checkbox dentro do
 expander do grupo, e não outro expander.
+
+------------------------------------------------------------------
+Notas desta revisão (diagnóstico de "nenhuma questão gerada" / JSON inválido)
+------------------------------------------------------------------
+Havia duas camadas de problema:
+
+  1) Erros na chamada à API eram capturados e relançados com mensagem
+     específica (em vez de deixar a exceção genérica do SDK vazar ou, pior,
+     ser ignorada). `response_format={"type": "json_object"}` tem fallback
+     automático caso não seja aceito pelo modelo/proxy. Isso já estava OK.
+
+  2) O problema real por trás de "O modelo não conseguiu devolver um JSON
+     válido mesmo após a correção" em tópicos densos (ex.: lotes de 3
+     questões com base_conhecimento + micro_questoes) era TRUNCAMENTO por
+     limite de tokens, não JSON malformado de verdade: a resposta batia no
+     `max_tokens`, era cortada no meio do objeto, o parse falhava (como
+     esperado) e a "correção" pedia pro modelo reescrever o MESMO conteúdo
+     no MESMO orçamento de tokens — ou seja, cortava de novo do mesmo jeito.
+
+  Correções aplicadas:
+    - `_chamar_llm` agora devolve também o `finish_reason` da resposta.
+    - `_gerar_lote` detecta `finish_reason == "length"` (truncamento) e,
+      nesse caso, DOBRA o orçamento de tokens e tenta de novo (até um teto),
+      em vez de tratar como "JSON malformado" e pedir uma reescrita inútil
+      no mesmo orçamento.
+    - `MAX_TOKENS_GERACAO` foi aumentado (4000 -> 8000), já que um lote de
+      3 questões com base de conhecimento + micro questões facilmente passa
+      de 4000 tokens.
+    - O tamanho do lote agora é calculado dinamicamente por
+      `_tamanho_lote_efetivo`: quando base_conhecimento e/ou micro_questoes
+      estão ativados, o lote diminui (menos questões por chamada = menos
+      risco de estourar qualquer teto de tokens, e resposta mais
+      previsível). Ver essa função para as regras exatas.
+    - Quando o JSON volta sem a chave "questoes", a exceção levantada informa
+      quais chaves vieram de fato, para facilitar o diagnóstico.
 """
 
 from __future__ import annotations
@@ -30,12 +65,22 @@ from pathlib import Path
 import pandas as pd
 import streamlit as st
 
-# Quantas questões pedir por chamada de LLM. Lotes pequenos deixam o JSON
-# mais confiável e evitam resposta truncada quando há micro questões.
+# Tamanho do lote "base" (sem base de conhecimento nem micro questões).
+# Quando esses extras estão ligados, o lote é reduzido automaticamente
+# (ver _tamanho_lote_efetivo), porque cada extra multiplica bastante o
+# tamanho da resposta esperada por questão.
 TAMANHO_LOTE = 3
 
 # Quantidade máxima de entidades do conhecimento que entram no contexto.
 MAX_ENTIDADES_CONTEXTO = 60
+
+# Tokens máximos por resposta do LLM ao gerar questões. Aumentado: um lote
+# de 3 questões com base de conhecimento + micro questões pode passar de
+# 4000 tokens facilmente (esse era o bug real por trás de "JSON inválido"
+# em tópicos densos — o modelo era cortado no meio pelo max_tokens, não
+# estava de fato escrevendo JSON malformado). Ver _gerar_lote: se ainda
+# assim a resposta for cortada, o orçamento é dobrado automaticamente.
+MAX_TOKENS_GERACAO = 8000
 
 
 # ---------------------------------------------------------------
@@ -153,10 +198,10 @@ def montar_contexto(linha: pd.Series, entidades: list[str]) -> str:
 
 
 # ---------------------------------------------------------------
-# 2) Geração das questões (JSON estruturado)
+# 2) Geração das questões (JSON estruturado com Lógica Socrática)
 # ---------------------------------------------------------------
 PROMPT_JSON = """Você é um elaborador de provas experiente, especializado em reproduzir fielmente o estilo da \
-banca {banca} em concursos públicos de Tecnologia da Informação.
+banca {banca} em concursos públicos de Tecnologia da Informação, utilizando rigorosamente o Método Socrático.
 
 MATERIAL DE REFERÊNCIA (extraído da base de conhecimento do candidato):
 \"\"\"
@@ -166,9 +211,11 @@ MATERIAL DE REFERÊNCIA (extraído da base de conhecimento do candidato):
 Crie {quantidade} questão(ões) {sobre_tema}no estilo da banca {banca}, usando EXCLUSIVAMENTE conceitos, \
 tecnologias, normas e relações presentes no material acima. Não invente nada que não esteja no material.
 
-FORMATO DAS ALTERNATIVAS DA QUESTÃO PRINCIPAL: {formato}
+DIRETRIZES DO MÉTODO SOCRÁTICO PARA AS QUESTÕES:
+1. ENUNCIADO PRINCIPAL: Deve descrever um mini-cenário prático de problema de TI (uma falha de arquitetura, um bug de concorrência, uma vulnerabilidade ou um gargalo de infraestrutura) retirado do material. O cenário deve instigar o aluno a deduzir a utilidade ou a consequência técnica da tecnologia correta. NUNCA faça perguntas diretas ou conceituais (ex: proibido "O que é X?" ou "Segundo o texto...").
+2. FORMATO DAS ALTERNATIVAS DA QUESTÃO PRINCIPAL: {formato}. Apenas uma alternativa correta deve resolver de fato o problema técnico do cenário apresentado. As outras 4 devem ser distratores plausíveis de TI que geram falhas lógicas ou não resolvem o gargalo do enunciado.
 
-Para CADA questão principal, produza também:
+Para CADA questão principal, produza também o JSON contendo os blocos de apoio conforme as instruções abaixo:
 {blocos_apoio}
 {instrucao_certo_errado}
 
@@ -178,27 +225,27 @@ neste formato:
 {{
   "questoes": [
     {{
-      "enunciado": "texto do enunciado da questão principal",
+      "enunciado": "texto do enunciado prático e baseado em problema da questão principal",
       "alternativas": [
         {{"letra": "A", "texto": "..."}},
         {{"letra": "B", "texto": "..."}}
       ],
       "gabarito": "letra correta (ou CERTO/ERRADO)",
-      "comentario": "por que a correta está certa e por que cada uma das outras está errada, destacando a pegadinha típica da banca {banca}",
+      "comentario": "comentário socrático explicando por que a correta sana o problema prático e o erro lógico de cada distrator, destacando a malícia da banca {banca}",
       "base_conhecimento": [
         {{"titulo": "título curto do conceito", "conteudo": "explicação didática"}}
       ],
       "micro_questoes": [
         {{
           "conceito_alvo": "conceito cobrado nesta micro questão",
-          "enunciado": "texto da micro questão",
+          "enunciado": "texto do cenário/provocação da micro questão",
           "alternativas": [
             {{"letra": "A", "texto": "..."}},
             {{"letra": "B", "texto": "..."}},
             {{"letra": "C", "texto": "..."}}
           ],
           "gabarito": "letra correta",
-          "explicacao": "explicação curta"
+          "explicacao": "explicação da linha de raciocínio dedutivo"
         }}
       ]
     }}
@@ -216,16 +263,31 @@ NUNCA revele qual é a alternativa correta dentro da base de conhecimento. Quand
 complexa, divida o conteúdo em blocos menores, cada um tratando de uma parte do raciocínio."""
 
 INSTRUCAO_MICRO = """
-2. "micro_questoes": exatamente {n_micro} questões MENORES e mais simples que decompõem o raciocínio da \
-questão principal. Cada micro questão deve cobrar um único conceito isolado da base de conhecimento, em \
-ordem crescente de dificuldade, de modo que quem acertar todas tenha construído o raciocínio completo \
-necessário para resolver a questão principal. Use 3 alternativas (A, B, C) nas micro questões, com \
-explicação curta da resposta."""
+2. "micro_questoes": exatamente {n_micro} questões MENORES de múltipla escolha (A, B, C) que aplicam o \
+MÉTODO SOCRÁTICO para decompor o raciocínio da questão principal. Cada microquestão NÃO deve perguntar definições \
+diretas. Em vez disso, deve colocar o aluno diante de uma micro-provocação ou mini-gargalo técnico isolado da base \
+de conhecimento, in ordem crescente de complexidade. Elas devem guiar o raciocínio dedutivo passo a passo do aluno, \
+de modo que, ao resolver as alternativas corretas das microquestões, ele descubra por si mesmo a lógica necessária \
+para matar a questão principal."""
 
 INSTRUCAO_CERTO_ERRADO = (
     'Como o formato é CERTO ou ERRADO, a questão principal deve ter "alternativas": [] (lista vazia) e '
     '"gabarito" igual a "CERTO" ou "ERRADO". As micro questões continuam com alternativas A, B e C.'
 )
+
+# Reforço textual usado quando a chamada precisa ser refeita sem o parâmetro
+# response_format (porque o modelo/proxy não o suporta). Deixa explícito
+# que a resposta deve ser só o JSON, já que perdemos a garantia estrutural
+# que o response_format oferecia.
+REFORCO_APENAS_JSON = (
+    "\n\nIMPORTANTÍSSIMO: responda SOMENTE com o objeto JSON pedido acima. Não inclua nenhum texto "
+    "explicativo antes ou depois, nem cercas de código markdown (```)."
+)
+
+
+class ErroGeracaoQuestoes(RuntimeError):
+    """Erro específico para falhas ao gerar questões, com mensagem já
+    pronta para ser exibida ao usuário no Streamlit."""
 
 
 def _extrair_json(bruto: str) -> dict:
@@ -249,6 +311,137 @@ def _extrair_json(bruto: str) -> dict:
     raise ValueError("O modelo não devolveu um JSON válido.")
 
 
+def _tamanho_lote_efetivo(incluir_base: bool, incluir_micro: bool, n_micro: int) -> int:
+    """Reduz o lote quando a resposta por questão fica maior (base de
+    conhecimento e/ou micro questões), para não depender só de aumentar
+    max_tokens — menos itens por chamada também reduz o risco de
+    truncamento, e mantém os lotes mais previsíveis.
+
+    Regras (empíricas, ajuste se notar truncamento mesmo assim):
+      - nem base nem micro: lote cheio (TAMANHO_LOTE, hoje 3)
+      - só um dos dois: lote médio (2)
+      - os dois juntos: lote pequeno (2), e menor ainda (1) se n_micro for alto
+    """
+    if not incluir_base and not incluir_micro:
+        return TAMANHO_LOTE
+    if incluir_base and incluir_micro:
+        return 1 if n_micro >= 4 else 2
+    return 2  # só base OU só micro
+
+
+def _chamar_llm(
+    client,
+    modelo: str,
+    prompt: str,
+    *,
+    usar_response_format: bool,
+    max_tokens: int = MAX_TOKENS_GERACAO,
+) -> tuple[str, str | None]:
+    """Chama a API do LLM, isolando os kwargs para facilitar o fallback
+    sem response_format quando o modelo/proxy não o suporta.
+
+    Devolve (conteudo, finish_reason). O finish_reason é usado por quem
+    chama para distinguir "resposta cortada por limite de tokens"
+    (finish_reason == "length") de "resposta malformada por outro motivo",
+    já que os dois casos pedem correções bem diferentes.
+    """
+    kwargs = dict(
+        model=modelo,
+        messages=[{"role": "user", "content": prompt}],
+        temperature=0.3,
+        max_tokens=max_tokens,
+    )
+    if usar_response_format:
+        kwargs["response_format"] = {"type": "json_object"}
+
+    resposta = client.chat.completions.create(**kwargs)
+    escolha = resposta.choices[0]
+    return escolha.message.content, getattr(escolha, "finish_reason", None)
+
+
+def _gerar_lote(client, modelo: str, prompt: str, *, tentativa_max_tokens: int = MAX_TOKENS_GERACAO) -> dict:
+    """Faz a chamada ao LLM e devolve o dict já parseado, tentando:
+    1) com response_format;
+    2) se falhar a CHAMADA em si (ex.: parâmetro não suportado), sem response_format;
+    3) se a resposta veio CORTADA por limite de tokens (finish_reason ==
+       "length"), dobra o orçamento de max_tokens e tenta de novo — pedir
+       para "reescrever como JSON válido" no mesmo orçamento não resolveria,
+       porque o conteúdo pedido é maior do que o espaço disponível;
+    4) se o JSON vier malformado por outro motivo (não truncamento), pede
+       pro modelo reescrever só o JSON.
+
+    Levanta ErroGeracaoQuestoes com uma mensagem específica se nada funcionar.
+    """
+    conteudo = None
+    finish_reason = None
+    erro_chamada = None
+
+    try:
+        conteudo, finish_reason = _chamar_llm(
+            client, modelo, prompt, usar_response_format=True, max_tokens=tentativa_max_tokens
+        )
+    except Exception as exc:  # noqa: BLE001 - queremos capturar qualquer falha do SDK/proxy
+        erro_chamada = exc
+        try:
+            conteudo, finish_reason = _chamar_llm(
+                client, modelo, prompt + REFORCO_APENAS_JSON,
+                usar_response_format=False, max_tokens=tentativa_max_tokens,
+            )
+        except Exception as exc2:  # noqa: BLE001
+            raise ErroGeracaoQuestoes(
+                "Falha ao chamar o modelo de linguagem. Primeira tentativa "
+                f"(com response_format=json_object): {erro_chamada}. "
+                f"Segunda tentativa (sem response_format): {exc2}."
+            ) from exc2
+
+    # Cortado por limite de tokens: NÃO adianta pedir pro modelo "reescrever
+    # como JSON válido" no mesmo orçamento — ele vai cortar de novo no mesmo
+    # lugar. Dobra o orçamento (até um teto) e tenta de novo do zero.
+    if finish_reason == "length":
+        if tentativa_max_tokens < MAX_TOKENS_GERACAO * 2:
+            return _gerar_lote(client, modelo, prompt, tentativa_max_tokens=tentativa_max_tokens * 2)
+        raise ErroGeracaoQuestoes(
+            "A resposta do modelo foi cortada por limite de tokens mesmo após "
+            f"dobrar o orçamento para {tentativa_max_tokens}. Reduza o lote "
+            "(TAMANHO_LOTE / _tamanho_lote_efetivo), o número de micro questões "
+            "(n_micro), ou desative a base de conhecimento/micro questões para "
+            f"este conhecimento. Início da resposta cortada: {(conteudo or '')[:300]!r}"
+        )
+
+    try:
+        return _extrair_json(conteudo)
+    except ValueError:
+        # Uma segunda tentativa, pedindo só o JSON de volta (aqui o motivo NÃO
+        # foi truncamento, então faz sentido pedir uma reescrita).
+        try:
+            correcao_conteudo, correcao_finish = _chamar_llm(
+                client, modelo,
+                prompt + f"\n\n[RESPOSTA ANTERIOR PARA CORRIGIR]\n{conteudo}\n\n"
+                "Reescreva a resposta anterior como JSON válido, sem nenhum texto fora do objeto JSON.",
+                usar_response_format=False, max_tokens=tentativa_max_tokens,
+            )
+        except Exception as exc:  # noqa: BLE001
+            raise ErroGeracaoQuestoes(
+                f"O modelo devolveu um JSON inválido e a tentativa de correção também falhou: {exc}. "
+                f"Início da resposta original: {(conteudo or '')[:300]!r}"
+            ) from exc
+
+        if correcao_finish == "length":
+            raise ErroGeracaoQuestoes(
+                "A correção também foi cortada por limite de tokens — o conteúdo "
+                "pedido é maior do que o orçamento atual. Reduza TAMANHO_LOTE "
+                "(ou n_micro) e tente novamente."
+            )
+
+        try:
+            return _extrair_json(correcao_conteudo)
+        except ValueError as exc:
+            raise ErroGeracaoQuestoes(
+                "O modelo não conseguiu devolver um JSON válido mesmo após a correção. "
+                f"Início da resposta: {(correcao_conteudo or '')[:300]!r}"
+            ) from exc
+
+
 def gerar_questoes(
     client,
     modelo: str,
@@ -262,9 +455,24 @@ def gerar_questoes(
     incluir_base: bool = True,
     incluir_micro: bool = True,
 ) -> list[dict]:
-    """Gera `quantidade` questões em lotes pequenos e devolve a lista de dicts."""
+    """Gera `quantidade` questões em lotes pequenos e devolve a lista de dicts.
+
+    O tamanho do lote é calculado dinamicamente (ver _tamanho_lote_efetivo):
+    quanto mais "pesada" fica cada questão (base de conhecimento + micro
+    questões), menor o lote, para reduzir o risco de a resposta do modelo
+    ser cortada por limite de tokens. Se mesmo assim uma resposta for
+    cortada, `_gerar_lote` dobra automaticamente o orçamento de tokens
+    antes de desistir.
+
+    Levanta ErroGeracaoQuestoes (com mensagem específica) se algum lote
+    falhar de forma irrecuperável. Antes essa função apenas retornava uma
+    lista (possivelmente vazia) sem explicar o motivo — o que fazia o
+    chat_app.py mostrar apenas "Nenhuma questão foi gerada", sem pista
+    nenhuma da causa real.
+    """
     questoes: list[dict] = []
     restante = max(1, int(quantidade))
+    tamanho_lote = _tamanho_lote_efetivo(incluir_base, incluir_micro, int(n_micro))
 
     apoio = ""
     if incluir_base:
@@ -274,8 +482,16 @@ def gerar_questoes(
     if not apoio:
         apoio = '\nDeixe "base_conhecimento" e "micro_questoes" como listas vazias.'
 
+    if not contexto or not contexto.strip():
+        raise ErroGeracaoQuestoes(
+            "O contexto enviado ao modelo está vazio. Verifique se a comunidade "
+            "selecionada tem 'full_content'/'summary' preenchidos no "
+            "community_reports.parquet, e se communities.parquet/entities.parquet "
+            "existem e estão atualizados."
+        )
+
     while restante > 0:
-        lote = min(TAMANHO_LOTE, restante)
+        lote = min(tamanho_lote, restante)
         prompt = PROMPT_JSON.format(
             banca=banca.strip() or "FGV",
             contexto=contexto,
@@ -286,32 +502,14 @@ def gerar_questoes(
             instrucao_certo_errado=INSTRUCAO_CERTO_ERRADO if certo_errado else "",
         )
 
-        resposta = client.chat.completions.create(
-            model=modelo,
-            messages=[{"role": "user", "content": prompt}],
-            temperature=0.3,
-            response_format={"type": "json_object"},
-        )
-        conteudo = resposta.choices[0].message.content
-
-        try:
-            dados = _extrair_json(conteudo)
-        except ValueError:
-            # Uma segunda tentativa, pedindo só o JSON de volta.
-            correcao = client.chat.completions.create(
-                model=modelo,
-                messages=[
-                    {"role": "user", "content": prompt},
-                    {"role": "assistant", "content": conteudo},
-                    {"role": "user", "content": "Reescreva a resposta anterior como JSON válido, sem nenhum texto fora do objeto JSON."},
-                ],
-                temperature=0,
-            )
-            dados = _extrair_json(correcao.choices[0].message.content)
+        dados = _gerar_lote(client, modelo, prompt)
 
         novas = dados.get("questoes") or []
         if not isinstance(novas, list) or not novas:
-            break
+            raise ErroGeracaoQuestoes(
+                "O modelo devolveu um JSON válido, mas sem a chave 'questoes' "
+                f"preenchida como lista. Chaves recebidas: {list(dados.keys())!r}."
+            )
         questoes.extend(novas[:lote])
         restante -= lote
 
@@ -423,13 +621,13 @@ def render_simulado_estruturado(
 
 
 def para_markdown(dados: dict) -> str:
-    """Versão em texto do simulado — usada como `content` da mensagem salva,
+    """Versão em texto do simulado — usada como content da mensagem salva,
     para que buscas e exportações continuem funcionando."""
     linhas = [dados.get("cabecalho", "")]
     for i, q in enumerate(dados.get("questoes", []), start=1):
         linhas.append(f"## Questão {i}")
         if q.get("_conhecimento"):
-            linhas.append(f"*Conhecimento: {q['_conhecimento']}*")
+            linhas.append(f"Conhecimento: {q['_conhecimento']}")
         linhas.append(str(q.get("enunciado", "")))
         linhas.append(_bloco_alternativas(q.get("alternativas")))
         for bloco in q.get("base_conhecimento") or []:

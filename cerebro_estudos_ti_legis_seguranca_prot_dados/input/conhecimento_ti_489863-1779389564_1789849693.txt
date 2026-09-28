@@ -1,0 +1,309 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Framework LGPD no Setor Público (Arts. 23 a 25) – Análise para concursos (Conteúdo de slides Gran)
+Idioma: pt-BR
+Tecnologias citadas no documento: LGPD, LAI – Lei de Acesso à Informação, Habeas Data, Processo Administrativo, DPO – Encarregado de Proteção de Dados, Interoperabilidade, Formato Estruturado, Portais de Transparência
+
+=== SECAO [sec_art23_triad]: A Tríade da Conformidade Pública (Art. 23) ===
+O Artigo 23 da LGPD fixa a regra geral para tratamento de dados pessoais pela Administração Pública, enfatizando que esse tratamento deve ocorrer para atender finalidades públicas e legítimas. A partir dele emergem três pilares que descrevem a gestão de dados no setor público: 1) Propósito e Finalidade do Tratamento, orientando as atividades públicas; 2) Dever de Transparência, assegurando que as informações sobre tratamento sejam compreensíveis e acessíveis; 3) Governança e Liderança, com a designação de um Encarregado pelo Tratamento (DPO) e a organização de uma estrutura de governança para assegurar conformidade. Esses pilares devem conviver com a Lei de Acesso à Informação (LAI), de modo que políticas públicas, serviços e informações sejam disponibilizados de forma responsável e auditável. A tríade funciona como mecanismo de alinhamento entre interesse público, privacidade e accountability, promovendo interoperabilidade e respeito aos direitos do cidadão.
+
+-- Conceitos-chave --
+Termo: Propósito e Finalidade do Tratamento | Tipo: Conceito_Geral | Definicao: Definir claramente a finalidade pública do tratamento de dados, evitando usos não previstos e assegurando que o processamento ocorra para fins compatíveis com a atuação estatal.
+  Vantagens de Propósito e Finalidade do Tratamento: Alinha o tratamento com a missão institucional; Reduz exposição a usos indevidos; Facilita avaliação de conformidade com a LGPD e LAI
+  Desvantagens de Propósito e Finalidade do Tratamento: Pode impor rigidez operacional; Exigem governança mais complexa e monitoramento contínuo
+  Casos de uso de Propósito e Finalidade do Tratamento: Tratamento de dados para programas sociais; Gestão de cadastros de pacientes em serviços públicos; Integração de bases para políticas públicas
+Termo: Dever de Transparência | Tipo: Conceito_Geral | Definicao: Obrigação de expor, de forma clara e acessível, as informações sobre o tratamento de dados, procedimentos e finalidades para cidadãos e controles públicos.
+  Vantagens de Dever de Transparência: Aumento da confiança pública; Fomenta participação e escrutínio social
+  Desvantagens de Dever de Transparência: Risco de exposição de informações sensíveis caso não haja filtragem adequada; Exige mecanismos de priorização de dados; Pode aumentar demanda por acessos e auditorias
+  Casos de uso de Dever de Transparência: Publicação de portais de dados abertos; Transparência em contratos de compras públicas; Relatórios de impacto de políticas públicas
+Termo: Governança e Liderança | Tipo: Conceito_Geral | Definicao: Estabelecimento de estruturas de governança da proteção de dados, incluindo a nomeação de Encarregado pelo Tratamento (DPO) e a coordenação de políticas de dados entre órgãos.
+  Vantagens de Governança e Liderança: Melhora accountability e responsabilidade; Facilita alinhamento entre LGPD e LAI; Coordena respostas a incidentes e exigências legais
+  Desvantagens de Governança e Liderança: Custos de implementação de DPO e governança; Risco de burocracia se mal manejado
+  Casos de uso de Governança e Liderança: Nomeação de DPO em órgãos públicos; Criação de comitês de dados e comissões de conformidade; Auditorias e revisões de impacto de dados (DPIA)
+
+-- Figuras e diagramas --
+Figura 'A Tríade da Conformidade Pública (Art. 23) – visão de alto nível' (Diagrama de fluxo/Arquitetura): Diagrama que mostra três blocos interligados: Propósito/Finalidade, Dever de Transparência e Governança/Liderança (DPO). Em paralelo, indica a sinergia com LAI para disponibilizar informações ao público.
+  Componentes visuais: Propósito e Finalidade, Dever de Transparência, Governança e Liderança (DPO), Interoperabilidade com LAI
+  Relacionado a: sec_art23_triad_artigo, sec_art23_direitos_titular
+Figura 'A Dinâmica Híbrida dos Cartórios – Regime Público para Entes Privados e Via de Mão Dupla Eletrônica' (Diagrama de processo/Fluxo de dados): Painel mostrando duas linhas de fluxo: (1) Regime Público para Entes Privados (delegação de serviços); (2) Via de Mão Dupla Eletrônica (troca eletrônica de dados entre cartórios e a Administração).
+  Componentes visuais: Regime Público para Entes Privados, Fluxo de Dados (Mão Dupla Eletrônica), Exemplos de integração (Gov.br, DPO)
+  Relacionado a: sec_dinamica_cartorios, sec_art23_cartorios
+Figura 'Art. 25 – Estruturação e Compartilhamento de Dados' (Diagrama de arquitetura de dados): Exibe dados mantidos em formato estruturado e interoperável, com foco em uso compartilhado entre órgãos públicos para execução de políticas públicas.
+  Componentes visuais: Formato Estruturado, Interoperabilidade, Uso Compartilhado, Descentralização da atividade pública
+  Relacionado a: sec_art25_estrutura_compartilhamento, sec_framework_lgpd_setor_publico
+Figura 'Framework LGPD no Setor Público (Arts. 23 a 25) – Quem e Como' (Diagrama de blocos com três colunas): Mostra a separação entre: 1) O QUEM: Poder Público; 2) O QUEM HÍBRIDO: Estatais; 3) O COMO: Arquitetura de Dados.
+  Componentes visuais: O QUEM: Poder Público (Art. 23), O QUEM HÍBRIDO: Estatais (Art. 24), O COMO: Arquitetura de Dados (Art. 25)
+  Relacionado a: sec_framework_lgpd_setor_publico, sec_art24_estatais, sec_art25_estrutura_compartilhamento
+
+-- Relacionamentos --
+Conexao: 'sec_art23_triad' --[comunica_com]--> 'sec_art23_direitos_titular'. Motivo: A tríade orienta direitos do titular como direito de acesso, retificação, e controle de informações.
+Conexao: 'sec_art23_triad' --[implementa]--> 'sec_art23_governanca_lideranca'. Motivo: Governança e DPO operacionalizam a aplicação da tríade no cotidiano da Administração.
+Conexao: 'sec_art23_cartorios' --[depende_de]--> 'sec_art23_triad'. Motivo: Cartórios operam sob a regulação do Art. 23 e devem respeitar a tríade para interoperabilidade e transparência.
+Conexao: 'fig_art25_estrutura_compartilhamento' --[ilustra]--> 'sec_art25_estrutura_compartilhamento'. Motivo: Exemplifica como dados estruturados permitem compartilhamento entre órgãos com foco em políticas públicas.
+Conexao: 'sec_art24_estatais' --[depende_de]--> 'sec_art23_triad'. Motivo: Regimes de Estatais precisam alinhar-se com a tríade (Propósito, Transparência, Governança) conforme o Art. 23.
+Conexao: 'sec_framework_lgpd_setor_publico' --[agrupa]--> 'fig_framework_lgpd'. Motivo: Consolida a organização de LGPD no Setor Público integrando Arts. 23 a 25.
+
+=== SECAO [sec_art23_cartorios]: Art. 23: Cartórios e Serviços Delegados ===
+Este item aborda a atuação de cartórios e serviços delegados como parte do setor público, sob regras da LGPD, LAI e legislação conexa. §4 indica que há um regime público para entes privados quando operam sob delegação; §5 reforça a necessidade de acesso eletrônico aos dados pela Administração Pública. O modelo de cartórios envolve fluxo de dados entre a via pública e os registros, com especial atenção a segurança, transparência e interoperabilidade, mantendo a legalidade das operações e a proteção de dados pessoais.
+
+-- Conceitos-chave --
+Termo: Cartórios e Serviços Delegados | Tipo: Padrão | Definicao: Entidades públicas que exercem funções notariais/registrais por delegação, sujeitas às regras de LGPD, LAI e legislação correlata.
+  Vantagens de Cartórios e Serviços Delegados: Concessão de serviços públicos com especialização; Acesso facilitado a registros; Transparência por meio de LAI e LGPD cuando adequadamente governados
+  Desvantagens de Cartórios e Serviços Delegados: Risco de burocracia e complexidade de interoperabilidade; Necessidade de governança de dados entre órgãos públicos e delegados
+  Casos de uso de Cartórios e Serviços Delegados: Registro de imóveis e serviços notariais; Publicação de portarias e atos administrativos com dados de titulares
+Termo: Via de Mão Dupla Eletrônica | Tipo: Conceito_Geral | Definicao: Fluxo de dados entre cartórios e órgãos da Administração por meios eletrônicos, promovendo eficiência e rastreabilidade.
+  Vantagens de Via de Mão Dupla Eletrônica: Redução de papel e agilização de processos; Melhoria de rastreabilidade e auditoria
+  Desvantagens de Via de Mão Dupla Eletrônica: Necessidade de infraestrutura tecnológica e padrões de interoperabilidade; Risco de falhas técnicas e segurança de dados
+  Casos de uso de Via de Mão Dupla Eletrônica: Integração de registros com bases públicas; Consulta eletrônica de certidões para atos administrativos
+
+-- Tabelas comparativas --
+Tabela 'Matriz Diagnóstica: Regime das Estatais (Art. 24)': Comparação entre Regime de Mercado (Caput) e Regime de Estado (Parágrafo Único) aplicado a empresas públicas e sociedades de economia mista.
+  Linha linha1: Contexto = Atuação em mercado financeiro/competição direta; Regra Aplicada = Regime de Mercado (Privado) - seguem regras de empresas particulares regulares; Exemplo = Banco público vendendo seguro de vida, concorrência com bancos privados
+    (Relacionado a: sec_art24_estatais)
+  Linha linha2: Contexto = Operações públicas que visam políticas públicas e serviços oficiais; Regra Aplicada = Regime de Estado (Público) - retornam às regras aplicadas a Ministérios e Secretarias (Art. 23); Exemplo = Publicação de portarias, nomeações e processos administrativos com tratamento de dados de titulares
+    (Relacionado a: sec_art24_estatais)
+
+-- Figuras e diagramas --
+Figura 'Matriz Diagnóstica: Qual a Roupa que a Estatal está Vestindo?' (Tabela/Diagrama comparativo): Compara Regime de Mercado vs Regime de Estado para estatais e entidades públicas; descreve contexto, regra aplicada e exemplos.
+  Componentes visuais: Contexto (Mercado), Regra Aplicada (Mercado), Exemplo (Mercado), Contexto (Estado), Regra Aplicada (Estado), Exemplo (Estado)
+  Relacionado a: sec_art24_estatais
+Figura 'A Dinâmica Híbrida dos Cartórios' (Diagrama de fluxo com blocos): Mostra o regime público para entes privados (delegação) e a via de mão dupla eletrônica entre cartórios e órgãos públicos, com fluxo de dados bilateral.
+  Componentes visuais: O Regime Público para Entes Privados (§4), A Via de Mão Dupla Eletrônica (§5), Fluxo de dados entre cartório e Administração
+  Relacionado a: sec_art23_cartorios, sec_art23_mao_dupla_eletronica
+Figura 'O Framework LGPD no Setor Público (Arts. 23 a 25)' (Diagrama de arquitetura de dados): Apresenta a relação entre quem gere os dados (Poder Público e Estatais) e como os dados devem ser estruturados e compartilhados (Arquitetura de Dados).
+  Componentes visuais: O QUEM: Poder Público (Art. 23), O QUEM HÍBRIDO: Estatais (Art. 24), O COMO: Arquitetura de Dados (Art. 25), Formato Estruturado, Interoperabilidade, Uso Compartilhado
+  Relacionado a: sec_framework_lgpd_setor_publico, sec_art24_estatais, sec_art25_estrutura_compartilhamento
+
+-- Relacionamentos --
+Conexao: 'sec_art24_estatais' --[depende_de]--> 'sec_art23_triad'. Motivo: Os regimes de mercado/estado nas estatais devem obedecer à tríade de conformidade (Propósito/Finalidade; Transparência; Governança).
+Conexao: 'sec_art23_direitos_titular' --[informado_por]--> 'sec_art23_triad'. Motivo: Direitos do titular são amparados pela governança e transparência, conforme Art. 23.
+Conexao: 'sec_art25_estrutura_compartilhamento' --[usa]--> 'sec_framework_lgpd_setor_publico'. Motivo: A Arquitetura de Dados habilita o uso compartilhado conforme LGPD no setor público.
+Conexao: 'fig_art25_arquitetura_dados' --[representa]--> 'sec_art25_estrutura_compartilhamento'. Motivo: Figura ilustra a estrutura de dados necessária para compartilhamento entre órgãos.
+Conexao: 'fig_art23_mao_eletronica' --[ilustra]--> 'sec_art23_cartorios'. Motivo: Exemplo de como a Via de Mão Dupla Eletrônica facilita o intercâmbio entre cartórios e a Administração.
+
+=== SECAO [sec_art24_estatais]: Art. 24: O Regime das Estatais ===
+O Artigo 24 disciplina o regime aplicável às empresas públicas e sociedades de economia mista, distinguindo entre atuação em regime de mercado (Caput) e regime de estado (Parágrafo Único). No regime de mercado, as organizações atuam em competição no mercado, seguindo regras próprias de empresas privadas; no regime de estado, operam como instrumentos do poder público, retomando normas de governo, ministérios e secretarias. A escolha do regime impacta diretamente o tratamento de dados, a governança, o acesso à informação e a proteção de dados, exigindo harmonização com LGPD e LAI.
+
+-- Conceitos-chave --
+Termo: Regime de Mercado (Art. 24, Caput) | Tipo: Conceito_Geral | Definicao: Contexto de atuação concorrencial no mercado, com regras próprias de empresas privadas, mesmo sob controle público.
+  Vantagens de Regime de Mercado (Art. 24, Caput): Competitividade e eficiência; Acesso a práticas de governança modernas
+  Desvantagens de Regime de Mercado (Art. 24, Caput): Risco de tratamento de dados orientado ao lucro; Necessidade de controle público mais robusto para dados sensíveis
+  Casos de uso de Regime de Mercado (Art. 24, Caput): Banco público concorrendo no setor financeiro; Prestação de serviços pela empresa pública sob regime de mercado
+Termo: Regime de Estado (Art. 24, Parágrafo Único) | Tipo: Conceito_Geral | Definicao: Regime em que a empresa pública atua para implementação de políticas públicas e serviços oficiais, com regras de governo, ministérios e secretarias.
+  Vantagens de Regime de Estado (Art. 24, Parágrafo Único): Alinhamento direto com políticas públicas; Maior previsibilidade na governança de dados; Transparência institucional fortalecida
+  Desvantagens de Regime de Estado (Art. 24, Parágrafo Único): Burocracia potencial; Menor flexibilidade operacional
+  Casos de uso de Regime de Estado (Art. 24, Parágrafo Único): Controle de dados para programas sociais do governo; Gestão de cadastros de serviços públicos
+
+-- Tabelas comparativas --
+Tabela 'Art. 25 – Estruturação e Compartilhamento (Resumo de Conteúdo)': Resumo dos itens chave de Art. 25: dados estruturados, interoperáveis, uso compartilhado, descentralização, com foco em políticas públicas.
+  Linha linha1: Formato Estruturado = Dados devem usar padrões de banco de dados legíveis por máquina (APIs governamentais); Uso Compartilhado = Foco na eficiência, com formas de compartilhamento entre órgãos públicos
+    (Relacionado a: sec_art25_estrutura_compartilhamento)
+  Linha linha2: Interoperabilidade = Interoperabilidade entre sistemas e bases de dados para políticas públicas; Descentralização = Descentralização da atividade pública aliada a uma base de dados unificada
+    (Relacionado a: sec_art25_estrutura_compartilhamento)
+
+-- Figuras e diagramas --
+Figura 'Arquitetura LGPD no Setor Público (Arts. 23 a 25)' (Diagrama de Arquitetura): Apresenta a relação entre poder público, regulações (LGPD/LAI) e a arquitetura de dados para uso compartilhado.
+  Componentes visuais: O QUEM: Poder Público, O QUEM HÍBRIDO: Estatais, O COMO: Arquitetura de Dados, Regime Público vs. Regime de Estado, Formato Estruturado e Interoperável
+  Relacionado a: sec_framework_lgpd_setor_publico, sec_art24_estatais, sec_art25_estrutura_compartilhamento
+Figura 'Art. 23: Regulacao e Direitos do Titular' (Diagrama de direitos): Demonstra a relação entre regulação, direitos e prazos de exercício.
+  Componentes visuais: Regulação (Art. 23), Direitos do Titular, Prazos de Exercício
+  Relacionado a: sec_art23_direitos_titular
+Figura 'Matriz Diagnóstica: Regimes de Mercado vs Estado (Art. 24)' (Tabela/Diagrama): Comparação de contextos, regras aplicadas e exemplos práticos para Estatais.
+  Componentes visuais: Contexto (Mercado), Regra Aplicada (Mercado), Exemplo (Mercado), Contexto (Estado), Regra Aplicada (Estado), Exemplo (Estado)
+  Relacionado a: sec_art24_estatais
+Figura 'Framework LGPD no Setor Público (Arts. 23 a 25)' (Diagrama de blocos): Resumo de quem participa (Quem) e como (Como) na aplicação da LGPD no setor público.
+  Componentes visuais: O QUEM: Poder Público (Art. 23), O QUEM HÍBRIDO: Estatais (Art. 24), O COMO: Arquitetura de Dados (Art. 25), Formato Estruturado, Interoperabilidade, Uso Compartilhado
+  Relacionado a: sec_framework_lgpd_setor_publico, sec_art24_estatais, sec_art25_estrutura_compartilhamento
+
+-- Relacionamentos --
+Conexao: 'sec_art24_estatais' --[depende_de]--> 'sec_art23_triad'. Motivo: Regimes de mercado/estado devem alinhar-se à tríade de conformidade (Propósito, Transparência, Governança).
+Conexao: 'sec_art25_estrutura_compartilhamento' --[usa]--> 'fig_art25_framework'. Motivo: Arquitetura de dados habilita o uso compartilhado para políticas públicas.
+Conexao: 'fig_art23_arquitetura' --[representa]--> 'sec_framework_lgpd_setor_publico'. Motivo: Figura consolidada as dimensões de LGPD no setor público.
+
+=== SECAO [sec_art23_direitos_titular]: Art. 23: Regulacao e Direitos do Titular ===
+Este item descreve os direitos do titular e a regulação associada aos dados tratados pela Administração Pública, incluindo o papel do Encarregado, prazos de resposta, e a necessidade de manter a conformidade com normas específicas da legislação, como a Lei de Acesso à Informação. Os parágrafos destacam: §1 – possibilidade de publicidade das operações; §2 – ressalvas para autoridades; §3 – prazos e procedimentos para exercício dos direitos, com referências a leis correlatas (Habeas Data, Lei de Processo Administrativo).
+
+-- Conceitos-chave --
+Termo: Direitos do Titular | Tipo: Conceito_Geral | Definicao: Conjunto de prerrogativas do cidadão para acessar, correto, apagar e controlar informações pessoais que o governo trata.
+  Vantagens de Direitos do Titular: Proteção de dados sensíveis; Empoderamento do cidadão; Maior legitimidade do poder público
+  Desvantagens de Direitos do Titular: Risco de demandas administrativas elevadas; Possível sobrecarga de processos de atendimento
+  Casos de uso de Direitos do Titular: Pedido de acesso a dados; Correção de dados incorretos; Eliminação de dados indevidos conforme LGPD
+Termo: Regulação e Prazos (Parágrafos) | Tipo: Conceito_Geral | Definicao: Disposições que orientam prazos, procedimentos e responsabilidades ao exercer direitos do titular perante o setor público.
+  Vantagens de Regulação e Prazos (Parágrafos): Estabelece previsibilidade processual; Consolida obrigações legais
+  Desvantagens de Regulação e Prazos (Parágrafos): Complexidade administrativa; Possível demora em respostas; Risco de falhas de conformidade
+  Casos de uso de Regulação e Prazos (Parágrafos): Resposta a solicitações de dados; Procedimentos de acesso a dados governamentais; Conformidade com normas de proteção de dados
+
+-- Figuras e diagramas --
+Figura 'Art. 23: Regulação e Direitos do Titular' (Diagrama de direitos com parágrafos): Ilustra direitos de titular, regulação aplicável e prazos de resposta para solicitações de dados.
+  Componentes visuais: §1 – Publicidade de operações, §2 – Limites à aplicação para autoridades, §3 – Prazos e procedimentos de exercício dos direitos
+  Relacionado a: sec_art23_direitos_titular
+
+-- Relacionamentos --
+Conexao: 'sec_art23_titular' --[dota_de]--> 'sec_art23_direitos_titular'. Motivo: Direitos do titular apontados pela regulação com prazos e procedimentos.
+
+=== SECAO [sec_hibrida_cartorios]: A Dinâmica Híbrida dos Cartórios ===
+A dinâmica dos cartórios envolve um regime público para entes privados (delegação) e a via de mão dupla eletrônica para o fluxo de dados entre cartórios e a Administração. O objetivo é quebrar silos burocráticos, melhorar a eficiência dos serviços públicos, e assegurar segurança jurídica e transparência no acesso a dados. O diagrama exemplifica como o regime de delegação e a troca eletrônica de dados podem coexistir, facilitando a execução de políticas públicas com uma base de dados integrada e compliance com LGPD/LAI.
+
+-- Conceitos-chave --
+Termo: Regime Público para Entes Privados (§4) | Tipo: Conceito_Geral | Definicao: Cartórios atuando como serviço público por delegação, seguindo regras rigorosas do Poder Público e de proteção de dados.
+  Vantagens de Regime Público para Entes Privados (§4): Padronização de serviços; Acesso público aos registros; Conformidade com LAI e LGPD
+  Desvantagens de Regime Público para Entes Privados (§4): Necessidade de governança de dados entre setores; Custos de integração e monitoramento
+  Casos de uso de Regime Público para Entes Privados (§4): Registro de imóveis compartilhado entre órgãos; Publicação de atos de delegação com auditoria de dados
+Termo: A Via de Mão Dupla Eletrônica | Tipo: Conceito_Geral | Definicao: Fluxo bilateral de dados entre cartórios e órgãos públicos, com validação, rastreabilidade e segurança de dados.
+  Vantagens de A Via de Mão Dupla Eletrônica: Eficiência na circulação de dados; Rastreamento e auditoria facilitados
+  Desvantagens de A Via de Mão Dupla Eletrônica: Dependência de infraestrutura tecnológica; Desafios de padronização de APIs e formatos
+  Casos de uso de A Via de Mão Dupla Eletrônica: Consulta eletrônica de certidões; Integração com bases públicas (e.g., registros, títulos)
+
+-- Figuras e diagramas --
+Figura 'A Dinâmica Híbrida dos Cartórios' (Diagrama de fluxo com blocos): Visualiza o regime de delegação (cartórios) e a via eletrônica de compartilhamento de dados entre cartórios e Administração; destaca o fluxo de dados com validações legais.
+  Componentes visuais: Regime Público para Entes Privados (§4), Via de Mão Dupla Eletrônica (§5), Fluxo de dados entre cartório e Administração
+  Relacionado a: sec_art23_cartorios, sec_hibrida_cartorios
+
+-- Relacionamentos --
+Conexao: 'sec_art23_cartorios' --[depende_de]--> 'sec_art23_triad'. Motivo: Cartórios devem operar sob a tríade (Propósito, Transparência, Governança).
+Conexao: 'sec_hibrida_cartorios' --[utiliza]--> 'fig_art23_dinamicablocos'. Motivo: Demonstra o fluxo entre regimes de delegação e via eletrônica.
+
+=== SECAO [sec_art23_direitos_titular]: Art. 23: Regulacao e Direitos do Titular ===
+Este item detalha a regulação e os direitos do titular conforme o Art. 23. O titular tem direito de acesso, correção, e controle sobre os dados tratados pela Administração. O Encarregado (DPO) e os prazos de resposta são elementos centrais, com exigências de observância de leis correlatas (Lei de Acesso à Informação, Habeas Data e leis administrativas). O conteúdo enfatiza que a maior parte dessas prerrogativas depende de condução transparente do governo e de procedimentos padronizados para tratamento de dados pelos órgãos públicos.
+
+-- Conceitos-chave --
+Termo: Direitos do Titular (Art. 23) | Tipo: Conceito_Geral | Definicao: Conjunto de direitos assegurados aos cidadãos frente aos dados tratados pela Administração, incluindo acesso, correção, oposição e anonimização quando aplicável.
+  Vantagens de Direitos do Titular (Art. 23): Proteção de dados pessoais; Transparência e controle do cidadão sobre seus dados
+  Desvantagens de Direitos do Titular (Art. 23): Requisitos processuais complexos; Possível aumento de demanda por atendimentos
+  Casos de uso de Direitos do Titular (Art. 23): Solicitação de acesso a dados pelo cidadão; Correção de informações incorretas; Solicitações de consentimento e retirada de consentimento
+Termo: Prazos e Procedimentos (Parágrafos) | Tipo: Conceito_Geral | Definicao: Parâmetros de tempo e forma para o exercício de direitos, bem como as regras processuais para resposta das autoridades.
+  Vantagens de Prazos e Procedimentos (Parágrafos): Agilidade e previsibilidade; Clareza para a população e órgãos; Melhor governança de dados
+  Desvantagens de Prazos e Procedimentos (Parágrafos): Riscos de atrasos por excesso de demandas; Necessidade de SLA e monitoramento contínuo
+  Casos de uso de Prazos e Procedimentos (Parágrafos): Gestão de prazos de atendimento a titulares; Definição de fluxos de resposta a solicitudes
+
+-- Relacionamentos --
+Conexao: 'sec_art23_direitos_titular' --[capta_direitos]--> 'sec_art23_prazos_e_procedimentos'. Motivo: Prazos e procedimentos suportam os direitos do titular.
+
+=== SECAO [sec_framework_lgpd_setor_publico]: Framework: LGPD no Setor Público (Arts. 23 a 25) ===
+Este quadro apresenta a estrutura de implementação da LGPD no setor público a partir dos Arts. 23 a 25: O QUEM (Poder Público; AJUDA de Cartórios e entidades delegadas); O QUEM HÍBRIDO (Estatais); O COMO (Arquitetura de Dados). O modelo ressalta a necessidade de padronização tecnológica, governança, interoperabilidade, e uso compartilhado de dados com proteção de dados e transparência. O diagrama demonstra a relação entre os entes públicos, os regimes de atuação (Mercado vs Estado) e a arquitetura de dados que facilita o cumprimento da LGPD e LAI.
+
+-- Conceitos-chave --
+Termo: O QUEM: Poder Público (Art. 23) | Tipo: Conceito_Geral | Definicao: Entidades oficiais que definem políticas públicas e regulamentam o tratamento de dados; incluem órgãos, ministérios e agências.
+  Vantagens de O QUEM: Poder Público (Art. 23): Controle centralizado de políticas; Promove responsabilidade pública; Facilita publicação de dados e portais de transparência
+  Desvantagens de O QUEM: Poder Público (Art. 23): Burocracia potencial; Dificuldade de alinhamento entre diversos órgãos
+  Casos de uso de O QUEM: Poder Público (Art. 23): Definição de políticas de dados; Publicação de dados abertos
+Termo: O QUEM HÍBRIDO: Estatais (Art. 24) | Tipo: Conceito_Geral | Definicao: Estatais que atuam entre regime de mercado e regime de estado, dependendo da natureza da atividade econômica e das políticas públicas
+  Vantagens de O QUEM HÍBRIDO: Estatais (Art. 24): Flexibilidade operacional; Capacidade de inovar com políticas públicas; Possibilidade de eficiência de mercado
+  Desvantagens de O QUEM HÍBRIDO: Estatais (Art. 24): Conflito entre interesses públicos e privados; Necessidade de governança de dados robusta
+  Casos de uso de O QUEM HÍBRIDO: Estatais (Art. 24): Parcerias público-privadas; Operação de serviços fundamentais com aspirações de lucro
+Termo: O COMO: Arquitetura de Dados (Art. 25) | Tipo: Conceito_Geral | Definicao: Formato estruturado, padrões de dados, interoperabilidade e uso compartilhado para facilitar políticas públicas.
+  Vantagens de O COMO: Arquitetura de Dados (Art. 25): Padronização de dados; Interoperabilidade entre sistemas; Acesso ágil a informações para políticas públicas
+  Desvantagens de O COMO: Arquitetura de Dados (Art. 25): Exige investimento em padronização; Riscos de vazamento se não houver controles
+  Casos de uso de O COMO: Arquitetura de Dados (Art. 25): Integração de bases oficiais; Publicação de dados interoperáveis para usuários e órgãos
+
+-- Figuras e diagramas --
+Figura 'Framework LGPD no Setor Público (Arts. 23 a 25)' (Diagrama de Blocos): Demonstra a relação entre quem (Poder Público, Estatais) e como (Arquitetura de Dados) para cumprir LGPD/LAI.
+  Componentes visuais: O QUEM: Poder Público (Art. 23), O QUEM HÍBRIDO: Estatais (Art. 24), O COMO: Arquitetura de Dados (Art. 25), Formato Estruturado, Interoperabilidade, Uso Compartilhado
+  Relacionado a: sec_framework_lgpd_setor_publico, sec_art24_estatais, sec_art25_estrutura_compartilhamento
+
+-- Relacionamentos --
+Conexao: 'sec_framework_lgpd_setor_publico' --[agrupa]--> 'fig_framework_server'. Motivo: Figura agrega aspectos de quem e como na LGPD para o setor público.
+
+=== SECAO [sec_art25_estrutura_compartilhamento]: Art. 25: Estruturação e Compartilhamento ===
+O Artigo 25 especifica que os dados devem ser mantidos em formato interoperável e estruturado para uso compartilhado, com ênfase na execução de políticas públicas, na prestação de serviços e na disseminação de informações ao público. O objetivo é facilitar o compartilhamento de dados entre órgãos, reduzir silos e promover a interoperabilidade entre sistemas governamentais, mantendo a proteção de dados pessoais.
+
+-- Conceitos-chave --
+Termo: Formato Estruturado | Tipo: Conceito_Geral | Definicao: Dados organizados em formatos legíveis por máquina (APIs, bancos de dados padrões) para facilitar processamento automatisado.
+  Vantagens de Formato Estruturado: Facilita automação; Permite integrações mais rápidas
+  Desvantagens de Formato Estruturado: Necessita padrões comuns; Pode exigir transformação de dados existentes
+  Casos de uso de Formato Estruturado: APIs governamentais; Portais de dados abertos interoperáveis
+Termo: Uso Compartilhado | Tipo: Conceito_Geral | Definicao: Uso de dados por múltiplos órgãos para eficiência de políticas públicas, respeitando LGPD e LAI.
+  Vantagens de Uso Compartilhado: Melhora qualidade das políticas; Reduz duplicação de dados; Transparência para a sociedade
+  Desvantagens de Uso Compartilhado: Controles de acesso complexos; Riscos de uso indevido se mal gerido
+  Casos de uso de Uso Compartilhado: Integração de cadastros nacionais; Compartilhamento de dados para monitoramento de programas sociais
+Termo: Interoperabilidade | Tipo: Conceito_Geral | Definicao: Capacidade de diferentes sistemas falarem a mesma linguagem de dados, padrões e APIs para facilitar o fluxo de informações entre órgãos.
+  Vantagens de Interoperabilidade: Redução de silos; Melhor governança de dados; Transparência
+  Desvantagens de Interoperabilidade: Dependência de padrões comuns; Custos de governança de dados e integração
+  Casos de uso de Interoperabilidade: Reposição de dados entre ministérios; Interoperabilidade com sistemas de saúde, educação, finanças
+
+-- Figuras e diagramas --
+Figura 'Art. 25 – Estruturação e Compartilhamento (Resumo visual)' (Diagrama de arquitetura de dados): Ilustra a necessidade de dados estruturados, interoperáveis e disponíveis para uso compartilhado entre órgãos.
+  Componentes visuais: Formato Estruturado, Interoperabilidade, Uso Compartilhado
+  Relacionado a: sec_art25_estrutura_compartilhamento
+
+=== SECAO [sec_art23_titular_direitos]: Art. 23: Cartórios e Serviços Delegados ===
+Este slide descreve a atuação de cartórios e serviços delegados no âmbito da LGPD para o tratamento de dados, incluindo a delegação de serviços e o fluxo de dados com autoridades. A notação evidencia a relação entre o regime público de cartórios e a estratégia de interoperabilidade para assegurar transparência e eficiência, evitando silos e promovendo o atendimento a políticas públicas com proteção de dados.
+
+-- Conceitos-chave --
+Termo: Cartórios e Serviços Delegados | Tipo: Conceito_Geral | Definicao: Órgãos notariais e seus serviços delegados atuando como prestadores de serviço público por delegação, com regras de LGPD e LAI.
+  Vantagens de Cartórios e Serviços Delegados: Acesso público a registros; Consolidação de serviços; Transparência com governança de dados
+  Desvantagens de Cartórios e Serviços Delegados: Riscos de duplicidade de dados; Custos de governança entre setor público e delegados
+  Casos de uso de Cartórios e Serviços Delegados: Registro de imóveis; Publicação de portarias e atos oficiais
+Termo: A Via de Mão Dupla Eletrônica | Tipo: Conceito_Geral | Definicao: Cada troca de dados entre cartórios e a Administração ocorre via meios eletrônicos com validação, assegurando rastreabilidade.
+  Vantagens de A Via de Mão Dupla Eletrônica: Rastreamento de dados; Integração com dados públicos
+  Desvantagens de A Via de Mão Dupla Eletrônica: Necessita padrões e infraestrutura de interoperabilidade
+  Casos de uso de A Via de Mão Dupla Eletrônica: Consulta eletrônica de certidões; Compartilhamento de registros com órgãos públicos
+
+-- Figuras e diagramas --
+Figura 'A Dinâmica de Cartórios (Cartórios e Serviços Delegados)' (Diagrama de fluxo): Mostra a relação entre o regime público, delegação e fluxo de dados entre cartórios e a Administração.
+  Componentes visuais: Cartório como serviço delegado, Fluxo de dados entre cartórios e Administração, Regulamentação LGPD/LAI
+  Relacionado a: sec_art23_cartorios, sec_art23_dados_eletrônicos_delegados
+
+-- Relacionamentos --
+Conexao: 'sec_art23_cartorios' --[depende_de]--> 'sec_art23_triad'. Motivo: Cartórios operam sob a tríade de conformidade (Propósito/Finalidade, Transparência, Governança).
+
+=== SECAO [sec_art24_estatais]: Art. 24: O Regime das Estatais ===
+Este item apresenta a distinção entre Regime de Mercado (Caput) e Regime de Estado (Parágrafo Único) para empresas públicas e sociedades de economia mista. O Regime de Mercado envolve atuação em mercados concorrenciais com regras próprias, semelhante às empresas privadas; o Regime de Estado envolve a operacionalização de políticas públicas oficiais, com retorno às regras de ministérios e secretarias. A escolha de regime afeta governança de dados, transparência e acesso à informação, exigindo compatibilidade com LGPD e LAI.
+
+-- Conceitos-chave --
+Termo: Regime de Mercado (Art. 24, Caput) | Tipo: Conceito_Geral | Definicao: Atuação em concorrência direta no mercado financeiro/comercial, com regras próprias de empresas privadas e operação sob controle público.
+  Vantagens de Regime de Mercado (Art. 24, Caput): Eficiência, competitividade; Adaptação rápida a mudanças de mercado
+  Desvantagens de Regime de Mercado (Art. 24, Caput): Possível priorização de lucro sobre interesse público; Necessidade de controles de dados mais robustos
+  Casos de uso de Regime de Mercado (Art. 24, Caput): Banco público atuando em mercado financeiro; Prestação de serviços por empresa pública com foco competitivo
+Termo: Regime de Estado (Art. 24, Parágrafo Único) | Tipo: Conceito_Geral | Definicao: Entidades que operam para implementação de políticas públicas com governança pública.
+  Vantagens de Regime de Estado (Art. 24, Parágrafo Único): Alinhamento direto com políticas públicas; Transparência institucional maior
+  Desvantagens de Regime de Estado (Art. 24, Parágrafo Único): Burocracia; Menos flexibilidade operacional
+  Casos de uso de Regime de Estado (Art. 24, Parágrafo Único): Gestão de cadastros e serviços que exigem controle governamental; Execução de programas públicos com dados sensíveis
+
+-- Tabelas comparativas --
+Tabela 'Comparação de Regimes (Mercado vs Estado) – Art. 24': Tabela que diferencia contextos, regras aplicadas e exemplos práticos para estatais.
+  Linha linha1: Contexto = Mercado (Caput); Regra Aplicada = Regime Privado - regras de empresa particular; Exemplo = Banco público concorrendo com bancos privados
+    (Relacionado a: sec_art24_estatais)
+  Linha linha2: Contexto = Estado (Parágrafo Único); Regra Aplicada = Regime Público - regras aplicadas a Ministérios e Secretarias; Exemplo = Publicação de portarias com tratamento de dados de titulares
+    (Relacionado a: sec_art24_estatais)
+
+-- Figuras e diagramas --
+Figura 'Matriz de Regimes: Mercado vs Estado (Art. 24)' (Matriz/Diagrama): Demonstra a diferença de regime, contexto e as implicações de governança de dados para estatais.
+  Componentes visuais: Mercado (Caput), Estado (Parágrafo Único), Implicações de Governança de Dados
+  Relacionado a: sec_art24_estatais
+
+-- Relacionamentos --
+Conexao: 'sec_art24_estatais' --[depende_de]--> 'sec_art23_triad'. Motivo: Regime das estatais deve alinhar-se com a tríade de conformidade (Propósito, Transparência, Governança).
+
+=== SECAO [sec_art23_notarios_delegados]: Art. 23: Cartórios e Serviços Delegados (Resumo Adicional) ===
+Resumo adicional destacando a relação entre cartórios e o tratamento de dados, bem como as obrigações de publicidade, disponibilidade de dados ao público e o papel da LAI na governança de dados por meio de delegação. Enfatiza-se a necessidade de utilizar portais oficiais, incluir DPO/autoridades competentes e manter a conformidade com LGPD durante operações delegadas.
+
+-- Conceitos-chave --
+Termo: Publicidade de Operações | Tipo: Conceito_Geral | Definicao: Disposição de informações sobre as operações de tratamento de dados para a transparência pública.
+  Vantagens de Publicidade de Operações: Aumento da accountability; Facilidade de fiscalização
+  Desvantagens de Publicidade de Operações: Exposição de dados sensíveis se não filtrados
+  Casos de uso de Publicidade de Operações: Publicação de atos, decisões e registros
+Termo: DPO nos Cartórios | Tipo: Conceito_Geral | Definicao: Indicação de encarregado pela proteção de dados no âmbito de cartórios e serviços delegados.
+  Vantagens de DPO nos Cartórios: Garantia de conformidade; Ponto focal para dúvidas de dados
+  Desvantagens de DPO nos Cartórios: Custo de manutenção de DPO
+  Casos de uso de DPO nos Cartórios: Gestão de incidentes e solicitações de titulares
+
+-- Figuras e diagramas --
+Figura 'Cartórios e Serviços Delegados – Publicidade e DPO' (Diagrama/Quadro): Demonstra a inter-relação entre LAI, LGPD, cartórios e a atuação do DPO.
+  Componentes visuais: LAI, LGPD, Cartórios, DPO
+  Relacionado a: sec_art23_titular_direitos, sec_art23_cartorios_diagrama
+
+-- Relacionamentos --
+Conexao: 'sec_art23_cartorios' --[comunica_com]--> 'sec_art23_titular_direitos'. Motivo: Cartórios comunicam-se com cidadãos para exercer direitos e com DPO para conformidade.
+
+=== SECAO [sec_art23_titular_direitos]: Art. 23: Regulacao e Direitos do Titular (Resumo) ===
+Resumo específico dos direitos do titular com base no Art. 23. O titular tem direitos de acesso, retificação, oposição e controle de dados, sob regulação com prazos de resposta. A seção enfatiza a necessidade de procedimentos padronizados e de mecanismos para assegurar a proteção de dados no âmbito público.
+
+-- Conceitos-chave --
+Termo: Direitos do Titular (Resumo) | Tipo: Conceito_Geral | Definicao: Conjunto de direitos do cidadão para acesso e controle de seus dados tratados pelo setor público.
+  Vantagens de Direitos do Titular (Resumo): Proteção de dados; Transparência para o cidadão
+  Desvantagens de Direitos do Titular (Resumo): Processos podem ser custosos e demorados; Necessidade de infra de suporte
+  Casos de uso de Direitos do Titular (Resumo): Solicitar acesso a dados; Solicitar retificação; Solicitar eliminação de dados quando aplicável
+
+-- Relacionamentos --
+Conexao: 'sec_art23_titular_direitos' --[aplica_para]--> 'sec_art23_direitos_titular_resumo'. Motivo: Direitos do titular regem os procedimentos de atendimento e resposta.
+

@@ -1,0 +1,280 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: Tratamento de Dados: Anonimização e Saúde Pública
+Idioma: pt-BR
+Tecnologias citadas no documento: LGPD (Lei nº 13.709/2018), Anonimização, Pseudonimização, Reidentificação, Segurança de Dados, Pesquisa em Saúde Pública
+
+=== SECAO [TI_SEC_001]: Conceito de Dado Anonimizado (Artigo 12 da LGPD) ===
+Esta seção apresenta o conceito legal de dado anonimizad o segundo a LGPD. O dado anonimizad o não é considerado dado pessoal para fins da LGPD, desde que o processo de anonimização não possa ser revertido de forma razoável. Se a reversibilidade for possível com meios razoáveis, o dado continua sendo pessoal. A 'Regra de Ouro' orienta que, se for possível reidentificar, o dado ainda é pessoal.
+
+-- Conceitos-chave --
+Termo: Dado Pessoal | Tipo: Padrão | Definicao: Informação relacionada a uma pessoa natural identificável.
+  Vantagens de Dado Pessoal: Identificação direta de indivíduos; Fundamental para operações legais
+  Desvantagens de Dado Pessoal: Risco de privacidade; Conformidade exige controles
+  Casos de uso de Dado Pessoal: Registros de pacientes; Análises com dados identificáveis
+Termo: Dado Anonimizado | Tipo: Padrão | Definicao: Dado que não pode identificar o titular por meios razoáveis.
+  Vantagens de Dado Anonimizado: Reduz risco de identificação; Facilita compartilhamento para pesquisa
+  Desvantagens de Dado Anonimizado: Pode ser revertido com esforço razoável
+  Casos de uso de Dado Anonimizado: Pesquisa em saúde pública; Compartilhamento de dados para estudos
+Termo: Dado Pseudonimizado | Tipo: Padrão | Definicao: Dado que não identifica diretamente, mas pode ser reidentificado com chaves adicionais.
+  Vantagens de Dado Pseudonimizado: Reduz identificação direta; Mantém capacidade de reidentificação sob controle
+  Desvantagens de Dado Pseudonimizado: Ainda é dado pessoal; Chaves devem ser protegidas
+  Casos de uso de Dado Pseudonimizado: Pesquisas com controle de chaves
+Termo: Processo de Anonimização | Tipo: Processo | Definicao: Conjunto de técnicas para tornar dados não identificáveis de forma estável.
+  Vantagens de Processo de Anonimização: Possibilita compartilhamento seguro
+  Desvantagens de Processo de Anonimização: Pode ser reversível se não adequado
+  Casos de uso de Processo de Anonimização: Anonimização de bases de dados para pesquisa
+Termo: Esforço Razoável | Tipo: Padrão | Definicao: Conjunto de fatores (custo, tempo e tecnologia) que influenciam a reversibilidade.
+  Vantagens de Esforço Razoável: Ajuda a determinar se reversão é viável
+  Desvantagens de Esforço Razoável: Subjetivo e context-dependent
+  Casos de uso de Esforço Razoável: Avaliação de risco de reidentificação
+
+-- Figuras e diagramas --
+Figura 'Teste de Reversibilidade' (Fluxograma): Dado Pessoal -> Processo de Anonimização -> Dado Anonimizado; Pergunta: Pode ser revertido? Se sim, volta a Dado Pessoal; Se não, permanece como Dado Anonimizado. O que é Esforço Razoável? Custo/Tempo/Tecnologia.
+  Componentes visuais: Dado Pessoal, Processo de Anonimização, Dado Anonimizado, Pergunta: Pode ser revertido?, Regra de Ouro: se puder reverter, ainda é dado pessoal, Esforço Razoável: custo, tempo, tecnologia
+  Relacionado a: dado_pessoal, processo_anonimizacao, dado_anonimado
+Figura 'Perfil Comportamental e Padrões da ANPD' (Ilustração): Conceito: Dados aparentemente anonimos podem se tornar dados pessoais se puderem identificar uma pessoa. A ANPD regula padrões e fiscaliza a segurança dos dados.
+  Componentes visuais: Rede de dados, Pontos conectados
+  Relacionado a: perfil_comportamental, anpd
+Figura 'A Regulação e a ANPD' (Fluxograma): Autoridade Nacional (ANPD) define Padrões de Anonimização e Fiscaliza Segurança; Baseado no Conselho Nacional; Fluxo de decisão regulatória.
+  Componentes visuais: ANPD, Padrões de Anonimização, Fiscalização, Conselho Nacional
+  Relacionado a: anpd, processo_anonimizacao
+Figura 'Artigo 13: Pesquisa em Saúde Pública' (Texto/Diagrama): Art. 13: em estudos de saúde pública, órgãos de pesquisa podem ter acesso a bases de dados pessoais para pesquisa, tratados dentro do órgão, ambiente controlado, anonimização ou pseudonimização sempre que possível.
+  Relacionado a: dado_pessoal, instituicao_pesquisa
+Figura 'A Mecânica da Pseudonimização' (Diagrama): Dado Base <-> Informação Adicional com chave; Pseudonimização: chave guarda separadamente; Reversibilidade possível.
+  Componentes visuais: Dado Base, Informação Adicional, Chave
+  Relacionado a: dado_pessoal, dado_pseudonimizado, informacao_adicional
+Figura 'Perfil Comportamental e Papel da ANPD' (Ilustração): Conceito: Dados aparentemente anonimos podem se tornar dados pessoais se puderem identificar uma pessoa. A ANPD define padrões e fiscaliza a segurança.
+  Componentes visuais: Rede de dados, Pontos conectados
+  Relacionado a: perfil_comportamental, anpd, padroes_anonimizacao
+Figura 'A Regulação (ANPD)' (Fluxograma): ANPD define Padrões de Anonimização e fiscaliza a segurança.
+  Componentes visuais: ANPD, Padrões deAnonimização, Fiscalização
+  Relacionado a: anpd, processo_anonimizacao
+Figura 'Artigo 13: Pesquisa em Saúde Pública' (Texto/Diagrama): Autorização de acesso com ambiente controlado e anonimização/pseudonimização onde possível.
+  Relacionado a: dado_pessoal, instituicao_pesquisa
+Figura 'A Mecânica da Pseudonimização' (Diagrama): Dado Base <-> Informação Adicional com chave; Pseudonimização: chave guarda separadamente; Reversibilidade possível.
+  Componentes visuais: Dado Base, Informação Adicional, Chave
+  Relacionado a: dado_pessoal, dado_pseudonimizado, informacao_adicional
+
+-- Relacionamentos --
+Conexao: 'dado_pessoal' --[depende_de]--> 'processo_anonimizacao'. Motivo: O Dado Pessoal é submetido ao Processo de Anonimização.
+Conexao: 'processo_anonimizacao' --[implementa]--> 'dado_anonimizado'. Motivo: O resultado do processo é o Dado Anonimizado.
+Conexao: 'anpd' --[comunica_com]--> 'processo_anonimizacao'. Motivo: ANPD define padrões de Anonimização e fiscaliza segurança que afetam o processo.
+Conexao: 'instituto_pesquisa' --[depende_de]--> 'dado_pessoal'. Motivo: Órgão de pesquisa pode requerer acesso a dados para estudos, condicionado pela LGPD.
+
+=== SECAO [TI_SEC_002]: Comentário: O Teste de Reversibilidade ===
+Esta seção ilustra o teste de reversibilidade da anonimização. Caso o processo de anonimização possa ser revertido com meios razoáveis, o dado continua sendo pessoal; caso contrário, o dado permanece anonimizad o. A ludicidade do slide exemplifica a ideia de 'Esforço Razoável' em termos de custo, tempo e tecnologia.
+
+-- Conceitos-chave --
+Termo: Teste de Reversibilidade | Tipo: Padrão | Definicao: Verifica se o dado anonimizad o pode ser revertido para dados pessoais.
+  Vantagens de Teste de Reversibilidade: Confere nível de proteção real
+  Desvantagens de Teste de Reversibilidade: Pode exigir grandes recursos
+  Casos de uso de Teste de Reversibilidade: Avaliar clareza de anonimização
+Termo: Dado Pessoal | Tipo: Padrão | Definicao: Informação que identifica ou pode identificar uma pessoa.
+  Vantagens de Dado Pessoal: Identificação direta
+  Desvantagens de Dado Pessoal: Privacidade comprometida
+  Casos de uso de Dado Pessoal: Uso em pesquisas com dados identificáveis
+Termo: Dado Anonimizado | Tipo: Padrão | Definicao: Dado que não pode ser utilizado para identificar titular sem medidas adicionais.
+  Vantagens de Dado Anonimizado: Protege a privacidade
+  Desvantagens de Dado Anonimizado: Pode ser revertido com esforço razoável
+  Casos de uso de Dado Anonimizado: Uso em pesquisas com objetivos de privacidade
+Termo: Esforço Razoável | Tipo: Padrão | Definicao: Conjunto de fatores para reversão: custo, tempo, tecnologia.
+  Vantagens de Esforço Razoável: Define viabilidade de reversão
+  Desvantagens de Esforço Razoável: Varia entre contextos
+  Casos de uso de Esforço Razoável: Avaliação de risco de reidentificação
+
+-- Figuras e diagramas --
+Figura 'Teste de Reversibilidade' (Fluxograma): ver acima
+  Componentes visuais: Dado Pessoal, Processo de Anonimização, Dado Anonimizado, Pergunta: Pode ser revertido?
+  Relacionado a: dado_pessoal, processo_anonimizacao, dado_anonimizado
+
+-- Relacionamentos --
+Conexao: 'dado_pessoal' --[depende_de]--> 'processo_anonimizacao'. Motivo: O dado pessoal passa pelo processo de anonimizacao.
+Conexao: 'processo_anonimizacao' --[implementa]--> 'dado_anonimizado'. Motivo: Processo gera dado anonimizado.
+Conexao: 'anpd' --[comunica_com]--> 'processo_anonimizacao'. Motivo: ANPD define padrões de anonimização e fiscalização que afetam o processo.
+
+=== SECAO [TI_SEC_003]: Artigo 12: Perfis Comportamentais e Padrões da ANPD ===
+Esta seção aborda o Artigo 12, que trata de perfis comportamentais e padrões da ANPD. O conteúdo descreve que dados aparentemente anonimos podem se tornar dados pessoais se puderem ser utilizados para identificar uma pessoa. A ANPD define padrões de anonimização e supervisiona a segurança de dados, com o objetivo de regulamentar o tratamento de dados para fins de pesquisa.
+
+-- Conceitos-chave --
+Termo: Perfil Comportamental | Tipo: Padrão | Definicao: Conjunto de dados que facilita a construção de um perfil da pessoa natural.
+  Vantagens de Perfil Comportamental: Melhora a compreensão de padrões de comportamento
+  Desvantagens de Perfil Comportamental: Risco de violação de privacidade
+  Casos de uso de Perfil Comportamental: Monitoramento de comportamentos para políticas públicas
+Termo: ANPD | Tipo: Padrão | Definicao: Autoridade Nacional de Proteção de Dados
+  Vantagens de ANPD: Regulamentação e fiscalização de dados
+  Desvantagens de ANPD: Pode criar burocracia
+  Casos de uso de ANPD: Políticas de proteção de dados
+Termo: Padrões de Anonimização | Tipo: Padrão | Definicao: Conjunto de técnicas padronizadas para anonimizacao de dados.
+  Vantagens de Padrões de Anonimização: Padroniza o nível de anonimização
+  Desvantagens de Padrões de Anonimização: Pode ser superado por técnicas novas
+  Casos de uso de Padrões de Anonimização: Analises comparativas entre bases
+
+-- Figuras e diagramas --
+Figura 'Perfil Comportamental e Papel da ANPD' (Ilustração): Conceito: Dados aparentemnte anonimos podem se tornar dados pessoais se puderem identificar uma pessoa. A ANPD define padrões e fiscaliza a segurança.
+  Componentes visuais: Rede de dados, Pontos conectados
+  Relacionado a: perfil_comportamental, anpd, padroes_anonimizacao
+Figura 'A Regulação (ANPD)' (Fluxograma): ANPD define Padrões de Anonimização e fiscaliza a segurança.
+  Componentes visuais: ANPD, Padrões deAnonimização, Fiscalização
+  Relacionado a: anpd, processo_anonimizacao
+
+-- Relacionamentos --
+Conexao: 'anpd' --[comunica_com]--> 'processo_anonimizacao'. Motivo: ANPD define padrões de Anonimização e fiscalização que afetam o processo.
+
+=== SECAO [TI_SEC_004]: Artigo 13: Pesquisas em Saúde Pública ===
+Artigo 13 autoriza o acesso de órgãos de pesquisa a bases de dados pessoais para estudo, desde que o tratamento ocorra dentro do órgão, em ambiente controlado, seguro, e com anonimização ou pseudonimização quando possível, obedecendo padrões éticos.
+
+-- Conceitos-chave --
+Termo: Artigo 13: Pesquisa em Saúde Pública | Tipo: Padrão | Definicao: Regula o acesso de bases de dados pessoais para estudos, com tratamento interno e controles de segurança.
+  Vantagens de Artigo 13: Pesquisa em Saúde Pública: Protege informações sensíveis; Promove pesquisa em saúde pública
+  Desvantagens de Artigo 13: Pesquisa em Saúde Pública: Pode restringir acesso externo; Complexidade de compliance
+  Casos de uso de Artigo 13: Pesquisa em Saúde Pública: Estudos epidemiológicos; Pesquisas clínicas
+
+-- Figuras e diagramas --
+Figura 'Artigo 13: Pesquisa em Saúde Pública' (Texto/Diagrama): Autorização de acesso com ambiente controlado e anonimização/pseudonimização onde possível.
+  Relacionado a: dado_pessoal, instituicao_pesquisa
+
+-- Relacionamentos --
+Conexao: 'instituto_pesquisa' --[depende_de]--> 'dado_pessoal'. Motivo: Instituto de pesquisa acessa dados com limitações legais; dados ficam sob controle do órgão.
+Conexao: 'anpd' --[comunica_com]--> 'artigo_pesquisa_saude'. Motivo: ANPD estabelece regulamentos para pesquisa.
+
+=== SECAO [TI_SEC_005]: Comentários: Regras para Pesquisas em Saúde ===
+Sessão apresenta as regras que regem o acesso e o repasse de dados em pesquisas de saúde: exigência de finalidade estrita, tratamento dentro da instituição, ambiente seguro, anonimização/pseudonimização sempre que possível, e padrões éticos. Observa ainda que repasse de dados pode ter regras específicas.
+
+-- Conceitos-chave --
+Termo: Requisitos Obrigatórios para Acesso a Dados | Tipo: Padrão | Definicao: Conjunto de condições que autorizam o acesso a dados para pesquisa.
+  Vantagens de Requisitos Obrigatórios para Acesso a Dados: Garante privacidade no estudo
+  Desvantagens de Requisitos Obrigatórios para Acesso a Dados: Pode limitar a pesquisa
+  Casos de uso de Requisitos Obrigatórios para Acesso a Dados: Pesquisas epidemiológicas
+Termo: Dados Pessoais | Tipo: Padrão | Definicao: Dados que identificam ou podem identificar uma pessoa.
+  Vantagens de Dados Pessoais: Potencial de insights; Desvantagens: Privacidade sensível
+  Desvantagens de Dados Pessoais: Privacidade sensível
+  Casos de uso de Dados Pessoais: Pesquisas com dados sensíveis
+Termo: Ambiente Controlado e Seguro | Tipo: Padrão | Definicao: Espaço com controles de segurança e acesso restrito.
+  Vantagens de Ambiente Controlado e Seguro: Reduz risco de vazamento
+  Desvantagens de Ambiente Controlado e Seguro: Custos
+  Casos de uso de Ambiente Controlado e Seguro: Laboratórios de dados
+
+-- Figuras e diagramas --
+Figura 'Regras para Pesquisas em Saúde' (Texto/Diagrama): Restrições de acesso, ambiente controlado, anonimização/pseudonimização, padrões éticos.
+  Componentes visuais: Ilustrações de hospital e banco de dados
+  Relacionado a: instituto_pesquisa, dado_pessoal, ambiente_controlado
+
+=== SECAO [TI_SEC_006]: Artigo 13: Vedação em Pesquisas de Saúde ===
+Artigo 13 também estabelece as ved ações: a divulgação de resultados que identifiquem pacientes é proibida, bem como qualquer transferência de dados que viole a privacidade.
+
+-- Conceitos-chave --
+Termo: Vedação de Divulgação | Tipo: Padrão | Definicao: Proibição de divulgar resultados que identifiquem pacientes.
+  Vantagens de Vedação de Divulgação: Protege privacidade do paciente
+  Desvantagens de Vedação de Divulgação: Pode limitar comunicação de resultados
+  Casos de uso de Vedação de Divulgação: Relatórios agregados
+
+-- Figuras e diagramas --
+Figura 'Vedação em Pesquisas de Saúde' (Quadro/Diagrama): Proibição de divulgação que identifique pacientes; responsabilidade de segurança da informação.
+  Componentes visuais: Legenda de dados, Icones de segurança
+  Relacionado a: dado_pessoal, instituto_pesquisa, anpd
+
+=== SECAO [TI_SEC_007]: Comentários: Linhas Vermelhas da Divulgação e Repassse (Quadro) ===
+Este bloco mostra as linhas vermelhas de divulgação: o que é permitido (resultados agregados) e o que é proibido (dados pessoais identificáveis). Também apresenta o diagrama de repasse entre instituição de pesquisa e terceiros.
+
+-- Conceitos-chave --
+Termo: Linhas Vermelhas | Tipo: Padrão | Definicao: Limites éticos de divulgação e repasse de dados.
+  Vantagens de Linhas Vermelhas: Protege privacidade; Evita vazamentos
+  Desvantagens de Linhas Vermelhas: Pode reduzir a divulgação de resultados individuais
+  Casos de uso de Linhas Vermelhas: Publicação de estatísticas agregadas
+Termo: Repassse de Dados | Tipo: Padrão | Definicao: Transferência de dados entre instituições, especialmente dados brutos a terceiros.
+  Vantagens de Repassse de Dados: Colaboração
+  Desvantagens de Repassse de Dados: Risco de violação de privacidade
+  Casos de uso de Repassse de Dados: Parcerias com institutos
+Termo: Dados Pessoais | Tipo: Padrão | Definicao: Dados que identificam indivíduos.
+
+-- Tabelas comparativas --
+Tabela 'Linhas: o que é permitido vs o que é proibido': Exemplos de resultados permitidos vs. dados pessoais proibidos.
+  Linha lin1: O que é permitido (Resultados) = Publicar estatísticas gerais agregadas (ex: 40% dos pacientes apresentaram melhoria).; O que é proibido (Dados Pessoais) = Publicar qualquer excerto que identifique o paciente (ex.: o paciente X, morador do bairro Y).
+    (Relacionado a: dados_pessoais)
+
+-- Figuras e diagramas --
+Figura 'Linhas Vermelhas da Divulgação e Repassse' (Diagrama): Ilustra o que é permitido vs proibido, e o fluxo de repasse entre instituições.
+  Componentes visuais: Research Institute, Third Party / Empresa Privada, Dados Pessoais
+  Relacionado a: repassse, instituto_pesquisa, dados_pessoais
+
+-- Relacionamentos --
+Conexao: 'dados_pessoais' --[comunica_com]--> 'instituto_pesquisa'. Motivo: Resultados permitidos podem ser compartilhados apenas de forma agregada.
+Conexao: 'instituto_pesquisa' --[comunica_com]--> 'terceira_parte'. Motivo: Transferência de dados brutos para terceiros é proibida.
+
+=== SECAO [TI_SEC_008]: Artigo 13: Regulamentação e Pseudonimização ===
+Esta seção descreve que o acesso a dados é regulado pela autoridade nacional, que a pseudonimização é um tratamento que, com a devida proteção, pode ainda considerar dados pessoais, e que a desidentificação deve manter meios de proteção.
+
+-- Conceitos-chave --
+Termo: Regulamentação e Pseudonimização | Tipo: Padrão | Definicao: Regulação pelo órgão competente; pseudonimização mantém dados como dados pessoais com proteções específicas.
+  Vantagens de Regulamentação e Pseudonimização: Garante proteção adicional
+  Desvantagens de Regulamentação e Pseudonimização: Complexidade de implementação
+  Casos de uso de Regulamentação e Pseudonimização: Compliance de pesquisa
+Termo: Dado Pseudonimizado | Tipo: Dado | Definicao: Dado que pode ser reidentificado com a chave apropriada
+  Vantagens de Dado Pseudonimizado: Reduz identificação direta
+  Desvantagens de Dado Pseudonimizado: Ainda é dado pessoal
+  Casos de uso de Dado Pseudonimizado: Utilizado em pesquisas com controles de chaves
+
+-- Figuras e diagramas --
+Figura 'A Mecânica da Pseudonimização' (Diagrama): Dado Base <-> Informação Adicional com chave; Pseudonimização: chave guarda separadamente; Reversibilidade possível.
+  Componentes visuais: Dado Base, Informação Adicional, Chave
+  Relacionado a: dado_pessoal, dado_pseudonimizado, informacao_adicional
+
+-- Relacionamentos --
+Conexao: 'dado_pessoal' --[depende_de]--> 'dado_pseudonimizado'. Motivo: Pseudonimização transforma dados pessoais em dados que ainda mantêm possibilidade de reidentificação com a devida chave.
+Conexao: 'anpd' --[comunica_com]--> 'dado_pseudonimizado'. Motivo: ANPD regula e orienta sobre pseudonimização.
+
+=== SECAO [TI_SEC_009]: Comentários: Linhas Vermelhas da Divulgação e Repassse (Quadro) ===
+Este bloco mostra as linhas vermelhas de divulgação: o que é permitido (resultados agregados) e o que é proibido (dados pessoais identificáveis). Também apresenta o diagrama de repasse entre instituição de pesquisa e terceiros.
+
+-- Conceitos-chave --
+Termo: Linhas Vermelhas | Tipo: Padrão | Definicao: Limites éticos de divulgação e repasse de dados.
+  Vantagens de Linhas Vermelhas: Protege privacidade e evita vazamentos
+  Desvantagens de Linhas Vermelhas: Pode reduzir a divulgação de resultados individuais
+  Casos de uso de Linhas Vermelhas: Publicação de estatísticas agregadas
+Termo: Repassse de Dados | Tipo: Padrão | Definicao: Transferência de dados entre instituições, especialmente dados brutos a terceiros.
+  Vantagens de Repassse de Dados: Colaboração
+  Desvantagens de Repassse de Dados: Risco de violação de privacidade
+  Casos de uso de Repassse de Dados: Parcerias com institutos
+Termo: Dados Pessoais | Tipo: Padrão | Definicao: Dados que identificam indivíduos.
+
+-- Tabelas comparativas --
+Tabela 'Linhas: o que é permitido vs o que é proibido': Exemplos de resultados permitidos vs. dados pessoais proibidos.
+  Linha lin1: O que é permitido (Resultados) = Publicar estatísticas gerais agregadas (ex: 40% dos pacientes apresentaram melhoria).; O que é proibido (Dados Pessoais) = Publicar qualquer excerto que identifique o paciente (ex.: o paciente X, morador do bairro Y).
+    (Relacionado a: dados_pessoais)
+
+-- Figuras e diagramas --
+Figura 'Linhas Vermelhas da Divulgação e Repassse' (Diagrama): Ilustra o que é permitido vs proibido, e o fluxo de repasse entre instituições.
+  Componentes visuais: Research Institute, Third Party / Empresa Privada, Dados Pessoais
+  Relacionado a: repassse, instituto_pesquisa, dados_pessoais
+
+-- Relacionamentos --
+Conexao: 'dados_pessoais' --[comunica_com]--> 'instituto_pesquisa'. Motivo: Resultados permitidos podem ser compartilhados apenas de forma agregada.
+Conexao: 'instituto_pesquisa' --[comunica_com]--> 'terceira_parte'. Motivo: Transferência de dados brutos para terceiros é proibida.
+
+=== SECAO [TI_SEC_010]: Artigo 13: Regulamentação e Pseudonimização (Continuação) ===
+Continuação da regulamento com pseudonimização, com orientações sobre a proteçao de dados e a necessidade de manter segredos de chave.
+
+-- Conceitos-chave --
+Termo: Regulamentação e Pseudonimização | Tipo: Padrão | Definicao: Regulação pelo órgão competente; pseudonimização mantém dados como dados pessoais com proteções específicas.
+  Vantagens de Regulamentação e Pseudonimização: Garante proteção adicional
+  Desvantagens de Regulamentação e Pseudonimização: Complexidade de implementação
+  Casos de uso de Regulamentação e Pseudonimização: Compliance de pesquisa
+
+-- Figuras e diagramas --
+Figura 'A Mecânica da Pseudonimização' (Diagrama): Dado Base <-> Informação Adicional com chave; Pseudonimização: chave guarda separadamente; Reversibilidade possível.
+  Componentes visuais: Dado Base, Informação Adicional, Chave
+  Relacionado a: dado_pessoal, dado_pseudonimizado, informacao_adicional
+
+-- Relacionamentos --
+Conexao: 'dado_pessoal' --[depende_de]--> 'dado_pseudonimizado'. Motivo: Pseudonimização transforma dados pessoais em dados que ainda mantêm possibilidade de reidentificação com a devida chave.
+Conexao: 'anpd' --[comunica_com]--> 'dado_pseudonimizado'. Motivo: ANPD regula e orienta sobre pseudonimização.
+
+=== SECAO [TI_SEC_011]: Gabarito ===
+Gabarito dos itens de prova: 1 - C, 2 - D, 3 - certo.
+
+-- Conceitos-chave --
+Termo: Gabarito da Prova | Tipo: Padrão | Definicao: Resposta correta para as questões apresentadas.
+  Vantagens de Gabarito da Prova: Auxilia na correção
+  Desvantagens de Gabarito da Prova: Pouco conteúdo técnico
+  Casos de uso de Gabarito da Prova: Correção de provas
+

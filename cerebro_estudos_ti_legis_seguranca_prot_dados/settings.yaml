@@ -52,7 +52,12 @@ embedding_models:
       type: exponential_backoff
 
 input:
-  type: text
+  file_pattern: ".*\\.(txt|jsonl)" # 🆕 Expressão regular que aceita os dois formatos
+  base_dir: "dados_entrada"
+  file_type: text # Garante que o GraphRAG trate os dados como conteúdo textual para indexação
+  storage:                                # 🔹 CORRIGIDO: O tipo 'file' agora é injetado como um sub-bloco de storage
+   type: file
+   base_dir: "dados_entrada"
 
 chunking:
   type: tokens
@@ -62,11 +67,7 @@ chunking:
 
 ### Storage settings ###
 
-input_storage:
-  type: file
-  base_dir: "input"
-
-output_storage:
+output:
   type: file
   base_dir: "output"
 

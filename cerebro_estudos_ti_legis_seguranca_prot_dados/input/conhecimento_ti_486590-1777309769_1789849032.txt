@@ -1,0 +1,199 @@
+=== METADADOS DO DOCUMENTO ===
+Titulo: LGPD: Os 10 Requisitos para o Tratamento de Dados Pessoais
+Idioma: pt-BR
+Tecnologias citadas no documento: LGPD, Lei Geral de Proteção de Dados (Lei n° 13.709/2018), Redação pela Lei n° 13.853/2019 (vigência)
+
+=== SECAO [LGPD_BASES_LEGAIS_SINT]: Síntese: As 10 Bases Legais Estruturadas ===
+A LGPD estabelece 10 bases legais que autorizam o tratamento de dados pessoais, descrevendo condições sob as quais o tratamento é lícito. A estrutura apresenta as bases centrais (Consentimento; Obrigação Legal; Políticas Públicas; Órgãos de Pesquisa; Execução de Contrato; Processos Judiciais; Proteção da Vida; Tutela da Saúde; Interesse Legítimo; Proteção do Crédito) e enfatiza princípios de finalidade, necessidade, minimização e salvaguardas para o titular. A seção oferece uma visão consolidada para orientar a seleção da base aplicável em operações de tratamento e introduz noções sobre exceções, novas rotas e balanço com direitos do titular.
+
+-- Conceitos-chave --
+Termo: Consentimento | Tipo: Base Legal | Definicao: Autorização livre, informada e inequívoca do titular para o tratamento de dados com finalidade específica.
+  Vantagens de Consentimento: Legitima a atuação com autoproteção do titular; Transparência e controle direto
+  Desvantagens de Consentimento: Pode ser revogado a qualquer momento; Pode inviabilizar usos amplos de dados
+  Casos de uso de Consentimento: Envio de comunicações de marketing mediante consentimento específico; Coleta de dados para finalidades devidamente informadas
+Termo: Obrigação Legal (Inciso II) | Tipo: Base Legal | Definicao: Tratamento necessário para cumprir obrigações legais ou regulatórias impostas ao controlador.
+  Vantagens de Obrigação Legal (Inciso II): Facilita conformidade e auditorias; Permite tratamento sem consentimento quando exigido pela norma
+  Desvantagens de Obrigação Legal (Inciso II): Pode restringir o uso de dados; Menor margem de manobra para titulares
+  Casos de uso de Obrigação Legal (Inciso II): Relatórios regulatórios; Auditorias e controles internos
+Termo: Políticas Públicas (Inciso III) | Tipo: Base Legal | Definicao: Tratamento necessário para a execução de políticas públicas previstas em leis e regulamentos, ou respaldadas em contratos e instrumentos congêneres.
+  Vantagens de Políticas Públicas (Inciso III): Apoio a programas governamentais; Transparência e accountability
+  Desvantagens de Políticas Públicas (Inciso III): Risco de uso indevido para fins de vigilância; Requisitos legais complexos
+  Casos de uso de Políticas Públicas (Inciso III): Censos e estatísticas públicas; Programas de saúde pública
+Termo: Órgãos de Pesquisa (Inciso IV) | Tipo: Base Legal | Definicao: Tratamento para fins de pesquisa, com anonymização sempre que possível, por instituições acadêmicas ou oficiais.
+  Vantagens de Órgãos de Pesquisa (Inciso IV): Acelera inovação científica; Proteção de identidades; Validação de dados para pesquisa
+  Desvantagens de Órgãos de Pesquisa (Inciso IV): Risco de reidentificação; Necessidade de salvaguardas éticas e técnicas
+  Casos de uso de Órgãos de Pesquisa (Inciso IV): Censos e estudos estatísticos; Pesquisa acadêmica com dados anonimizados
+Termo: Execução de Contrato (Inciso V) | Tipo: Base Legal | Definicao: Tratamento essencial para entregar o produto ou serviço contratado, mesmo sem consentimento explícito, quando necessário para cumprir o contrato.
+  Vantagens de Execução de Contrato (Inciso V): Facilita a prestação de serviços; Garantia de continuidade contratual
+  Desvantagens de Execução de Contrato (Inciso V): Exige balanceamento com direitos do titular; Proteção de dados sensíveis
+  Casos de uso de Execução de Contrato (Inciso V): Plataformas de e‑commerce; Prestação de serviços sob contrato
+Termo: Processos Judiciais (Inciso VI) | Tipo: Base Legal | Definicao: Tratamento necessário para argumentar defesa de direitos em processo judicial, administrativo ou arbitral.
+  Vantagens de Processos Judiciais (Inciso VI): Assegura defesa e rights de titular; Base legal para decisões judiciais
+  Desvantagens de Processos Judiciais (Inciso VI): Limites na finalidade; Risco de exposição de dados sensíveis
+  Casos de uso de Processos Judiciais (Inciso VI): Defesa em litígios; Procedimentos administrativos
+Termo: Proteção da Vida (Inciso VII) | Tipo: Base Legal | Definicao: Tratamento necessário para situações de emergência ou para preservar a vida ou a integridade física do titular ou de terceiros.
+  Vantagens de Proteção da Vida (Inciso VII): Intervenção rápida; Salva vidas e bem-estar
+  Desvantagens de Proteção da Vida (Inciso VII): Requer salvaguardas para evitar abusos
+  Casos de uso de Proteção da Vida (Inciso VII): Resgate médico; Emergências públicas
+Termo: Tutela da Saúde (Inciso VIII) | Tipo: Base Legal | Definicao: Tratamento exclusivo para áreas de saúde por profissionais autorizados, com finalidade de proteção da saúde.
+  Vantagens de Tutela da Saúde (Inciso VIII): Proteção de dados sensíveis de saúde; Acesso rápido para atendimento
+  Desvantagens de Tutela da Saúde (Inciso VIII): Risco de violação de dados clínicos; Necessidade de consentimento ou autorização específica
+  Casos de uso de Tutela da Saúde (Inciso VIII): Hospitais e serviços de saúde; Registros médicos para assistência
+Termo: Interesse Legítimo (Inciso IX) | Tipo: Base Legal | Definicao: Tratamento permitido quando possua propósito legítimo do controlador, desde que os direitos do titular sejam protegidos e balanceados.
+  Vantagens de Interesse Legítimo (Inciso IX): Flexibilidade operacional; Eficiência; Economia de recursos
+  Desvantagens de Interesse Legítimo (Inciso IX): Necessidade de balanço com direitos do titular; Risco de abuso se mal utilizado
+  Casos de uso de Interesse Legítimo (Inciso IX): Análise de histórico de clientes; Personalização com base em comportamento
+Termo: Proteção do Crédito (Inciso X) | Tipo: Base Legal | Definicao: Tratamento para atividades de crédito, score e avaliação financeira, com salvaguardas apropriadas.
+  Vantagens de Proteção do Crédito (Inciso X): Avaliação de risco e acesso ao crédito; Agilidade em decisões financeiras
+  Desvantagens de Proteção do Crédito (Inciso X): Risco de inclusão indevida; Proteção de dados sensíveis; Necessidade de controles rigorosos
+  Casos de uso de Proteção do Crédito (Inciso X): Cálculos de score de crédito; Cadastro de inadimplentes e avaliação financeira
+
+-- Figuras e diagramas --
+Figura 'Síntese: As 10 Bases Legais Estruturadas' (Diagrama de Estrutura): Diagrama com 5 bases no topo e 5 no rodapé representando as bases legais da LGPD
+  Componentes visuais: Autonomia do Titular, Cumprimento de Deveres, Relações Comerciais e Econômicas, Interesse Social e do Estado, Proteção à Integridade
+  Relacionado a: consentimento, obrigacao_legal, politicas_publicas, orgaos_pesquisa, execucao_contrato, processos_judiciais, protecao_vida, tutela_saude, interesse_legitimo, protecao_credito
+
+-- Relacionamentos --
+Conexao: 'consentimento' --[depende_de]--> 'titular'. Motivo: O tratamento depende do consentimento livre, informado e inequívoco do titular.
+Conexao: 'obrigacao_legal' --[implementa]--> 'controlador'. Motivo: A obrigação legal impõe controles ao controlador.
+Conexao: 'politicas_publicas' --[comunica_com]--> 'estado'. Motivo: Políticas públicas são definidas pelo Estado e exigem conformidade com LGPD.
+Conexao: 'execucao_contrato' --[depende_de]--> 'titular'. Motivo: Execução de contrato requer tratamento para cumprir os termos com o titular.
+Conexao: 'interesse_legitimo' --[depende_de]--> 'controlador'. Motivo: Interesse legítimo do controlador para tratamento, desde que balanceado com direitos do titular.
+Conexao: 'protecao_credito' --[depende_de]--> 'controlador'. Motivo: Tratamento para atividades de crédito sob salvaguardas e finalidade específica.
+
+=== SECAO [LGPD_NA_PRATICA_1]: Na Prática: Consentimento, Obrigação Legal e Poder Público ===
+Apresenta os incisos I a III da LGPD (Consentimento, Obrigação Legal e Políticas Públicas), definindo o que significam, quais são as implicações para o titular e exemplos práticos de aplicação e conformidade.
+
+-- Conceitos-chave --
+Termo: Consentimento (Inciso I) | Tipo: Base Legal | Definicao: Base que exige consentimento explícito, livre, informado e inequívoco do titular para o tratamento.
+  Vantagens de Consentimento (Inciso I): Controle direto do titular; Transparência e legitimidade
+  Desvantagens de Consentimento (Inciso I): Revogação possível; Pode restringir usos amplos dos dados
+  Casos de uso de Consentimento (Inciso I): Envio de newsletters com consentimento expresso; Marketing com consentimento específico
+Termo: Obrigação Legal (Inciso II) | Tipo: Base Legal | Definicao: Tratamento necessário para cumprir obrigações legais ou regulatórias impostas ao controlador, independentemente da vontade do titular.
+  Vantagens de Obrigação Legal (Inciso II): Conformidade regulatória; Aplicável sem consentimento; Segurança jurídica
+  Desvantagens de Obrigação Legal (Inciso II): Pode limitar usos de dados; Menor controle pelo titular
+  Casos de uso de Obrigação Legal (Inciso II): Relatórios regulatórios; Auditorias e controles internos
+Termo: Políticas Públicas (Inciso III) | Tipo: Base Legal | Definicao: Tratamento necessário para a execução de políticas públicas previstas em leis, regulamentos ou instrumentos congêneres respaldados pela Administração Pública.
+  Vantagens de Políticas Públicas (Inciso III): Impacto social; Transparência pública
+  Desvantagens de Políticas Públicas (Inciso III): Potencial para uso indevido; Requisitos legais complexos
+  Casos de uso de Políticas Públicas (Inciso III): Programas governamentais; Censos e estatísticas públicas
+
+-- Figuras e diagramas --
+Figura 'Consentimento, Obrigação Legal e Poder Público - Incisos I a III' (Quadro Descritivo): Três blocos com definição e exemplos para os incisos I-III
+  Componentes visuais: Inciso I: Consentimento, Inciso II: Obrigação Legal, Inciso III: Políticas Públicas
+  Relacionado a: consentimento, obrigacao_legal, politicas_publicas
+
+-- Relacionamentos --
+Conexao: 'consentimento' --[depende_de]--> 'titular'. Motivo: O consentimento depende da autorização do titular.
+Conexao: 'obrigacao_legal' --[implementa]--> 'controlador'. Motivo: A obrigação legal impõe obrigações ao controlador.
+Conexao: 'politicas_publicas' --[comunica_com]--> 'estado'. Motivo: Políticas públicas são instrumentos que envolvem atuação do Estado e finalidade pública.
+
+=== SECAO [LGPD_NA_PRATICA_2]: Na Prática: Pesquisa, Contratos e Processos Judiciais ===
+Aborda os incisos IV, V e VI (Órgãos de Pesquisa, Execução de Contrato, Processos Judiciais) indicando como o tratamento ocorre nesses contextos, com foco em finalidades legítimas, anonimização quando possível e salvaguardas para defesa de direitos.
+
+-- Conceitos-chave --
+Termo: Órgãos de Pesquisa (Inciso IV) | Tipo: Base Legal | Definicao: Tratamento voltado para atividades de pesquisa, com privilegiamento de anonimização e proteção de dados pessoais, especialmente para fins acadêmicos e oficiais.
+  Vantagens de Órgãos de Pesquisa (Inciso IV): Avanço científico; Proteção de identidade
+  Desvantagens de Órgãos de Pesquisa (Inciso IV): Risco de reidentificação; Necessidade de governança de dados
+  Casos de uso de Órgãos de Pesquisa (Inciso IV): IBGE/segurança de dados para estatísticas; Pesquisa acadêmica com dados anonimizados
+Termo: Execução de Contrato (Inciso V) | Tipo: Base Legal | Definicao: Tratamento necessário à entrega do produto ou serviço contratado, mesmo sem consentimento explícito, quando imprescindível para cumprir a obrigação contratual.
+  Vantagens de Execução de Contrato (Inciso V): Permite operacionalidade; Concretiza obrigações contratuais
+  Desvantagens de Execução de Contrato (Inciso V): Avaliação de riscos para o titular; Proteção de dados sensíveis
+  Casos de uso de Execução de Contrato (Inciso V): Plataformas de e-commerce; Gestão de contratos com dados necessários
+Termo: Processos Judiciais (Inciso VI) | Tipo: Base Legal | Definicao: Tratamento necessário para defesa de direitos em processo judicial, administrativo ou arbitral.
+  Vantagens de Processos Judiciais (Inciso VI): Garantia de defesa; Concretização de direitos
+  Desvantagens de Processos Judiciais (Inciso VI): Limites de finalidade; Risco de exposição de dados
+  Casos de uso de Processos Judiciais (Inciso VI): Defesa em litígio; Procedimentos administrativos
+
+-- Figuras e diagramas --
+Figura 'Pesquisa, Contratos e Processos Judiciais' (Quadro com três blocos): Incisos IV-V-VI com definição e exemplos
+  Componentes visuais: Órgãos de Pesquisa, Execução de Contrato, Processos Judiciais
+  Relacionado a: orgaos_pesquisa, execucao_contrato, processos_judiciais
+
+-- Relacionamentos --
+Conexao: 'orgaos_pesquisa' --[depende_de]--> 'titular'. Motivo: Pesquisas devem considerar anonimização e proteção de dados.
+Conexao: 'execucao_contrato' --[depende_de]--> 'titular'. Motivo: Execução depende do contrato com o titular/cliente.
+Conexao: 'processos_judiciais' --[depende_de]--> 'titular'. Motivo: Dados usados em defesa/contencioso devem obedecer a princípios legais.
+
+=== SECAO [LGPD_NA_PRATICA_3]: Na Prática: Vida, Saúde, Interesse Legítimo e Crédito ===
+Explora as bases VII a X (Proteção da Vida; Tutela da Saúde; Interesse Legítimo; Proteção do Crédito), descrevendo cenários de aplicação, requisitos de salvaguarda, exemplos operacionais e limites para o equilíbrio entre utilidade e direitos do titular.
+
+-- Conceitos-chave --
+Termo: Proteção da Vida (Inciso VII) | Tipo: Base Legal | Definicao: Tratamento necessário para situações de emergência que assegurem a vida ou a integridade física.
+  Vantagens de Proteção da Vida (Inciso VII): Intervenção rápida; Proteção de terceiros
+  Desvantagens de Proteção da Vida (Inciso VII): Necessidade de salvaguardas robustas; Limitações de finalidade
+  Casos de uso de Proteção da Vida (Inciso VII): Aleatoriedade de emergências; Intervenções médicas emergenciais
+Termo: Tutela da Saúde (Inciso VIII) | Tipo: Base Legal | Definicao: Tratamento de dados de saúde por profissionais autorizados para proteção da saúde, com devida autorização ou circunstância prevista.
+  Vantagens de Tutela da Saúde (Inciso VIII): Acesso rápido à informação de saúde; Apoio a atendimento médico
+  Desvantagens de Tutela da Saúde (Inciso VIII): Dados sensíveis exigem controles fortes; Risco de abuso se mal utilizado
+  Casos de uso de Tutela da Saúde (Inciso VIII): Registros médicos; Dados de saúde para assistência clínica
+Termo: Interesse Legítimo (Inciso IX) | Tipo: Base Legal | Definicao: Tratamento permitido para fins legítimos do controlador, desde que o titular não tenha direitos prioritários violados.
+  Vantagens de Interesse Legítimo (Inciso IX): Flexibilidade operacional; Eficiência; Melhorias de serviços
+  Desvantagens de Interesse Legítimo (Inciso IX): Necessita balancear direitos do titular; Risco de proporcionalidade
+  Casos de uso de Interesse Legítimo (Inciso IX): Análise de comportamento do cliente; Personalização de serviços com salvaguardas
+Termo: Proteção do Crédito (Inciso X) | Tipo: Base Legal | Definicao: Tratamento necessário para atividades de crédito, scoring e avaliação financeira, com salvaguardas pertinentes.
+  Vantagens de Proteção do Crédito (Inciso X): Avaliação de risco de crédito; Acesso responsável a crédito
+  Desvantagens de Proteção do Crédito (Inciso X): Potencial para inclusão indevida; Exposição de dados financeiros sensíveis
+  Casos de uso de Proteção do Crédito (Inciso X): Cálculos de score; Cadastro de inadimplentes
+
+-- Figuras e diagramas --
+Figura 'Vida, Saúde, Interresse Legítimo e Crédito' (Quadro com 4 blocos): Incisos VII-X com definição e exemplos
+  Componentes visuais: Proteção da Vida, Tutela da Saúde, Interesse Legítimo, Proteção do Crédito
+  Relacionado a: protecao_vida, tutela_saude, interesse_legitimo, protecao_credito
+
+-- Relacionamentos --
+Conexao: 'protecao_vida' --[depende_de]--> 'titular'. Motivo: Proteção da vida depende de intervenções quando necessário.
+Conexao: 'tutela_saude' --[depende_de]--> 'titular'. Motivo: Dados de saúde devem ser tratados com finalidade legítima e autorização quando aplicável.
+Conexao: 'interesse_legitimo' --[depende_de]--> 'controlador'. Motivo: Interesse legítimo do controlador é balanceado com direitos do titular.
+Conexao: 'protecao_credito' --[depende_de]--> 'controlador'. Motivo: Tratamento para crédito está sujeito a salvaguardas legais.
+
+=== SECAO [LGPD_NA_PRATICA_4]: Na Prática: Compartilhamento, Exceções e Novas Finalidades ===
+Aborda as diretrizes para compartilhamento direcionado, dispensas de consentimento e a possibilidade de novas finalidades com dados públicos, enfatizando limites, salvaguardas e necessidade de consentimento específico para cada fim.
+
+-- Conceitos-chave --
+Termo: Compartilhamento Direcionado (Inciso 5) | Tipo: Base Legal | Definicao: Consentimento não é um cheque em branco; dados podem ser compartilhados com terceiros para fins específicos, mediante consentimento específico.
+  Vantagens de Compartilhamento Direcionado (Inciso 5): Transparência; Eficiência na cooperação; Melhora de serviços
+  Desvantagens de Compartilhamento Direcionado (Inciso 5): Risco de uso indevido; Exige consentimento específico para cada finalidade
+  Casos de uso de Compartilhamento Direcionado (Inciso 5): Parcerias com terceiros para projetos específicos
+Termo: Dispensa Não Vale Tudo (Inciso 6) | Tipo: Base Legal | Definicao: Uso de bases como 'Contrato' ou 'Obrigação Legal' para dispensar consentimento, mantendo direitos do titular.
+  Vantagens de Dispensa Não Vale Tudo (Inciso 6): Mais flexibilidade operacional; Proteção de direitos essenciais
+  Desvantagens de Dispensa Não Vale Tudo (Inciso 6): Pode gerar dúvidas sobre finalidade; Requer controles rigorosos
+  Casos de uso de Dispensa Não Vale Tudo (Inciso 6): Contratos que envolvem dados de clientes e terceiros
+Termo: Novas Rotas para Dados Públicos (Inciso 7) | Tipo: Base Legal | Definicao: Dados originalmente públicos podem ser usados para novas finalidades legítimas, desde que respeitados os direitos dos titulares.
+  Vantagens de Novas Rotas para Dados Públicos (Inciso 7): Aprimora políticas públicas; Fortalece dados abertos
+  Desvantagens de Novas Rotas para Dados Públicos (Inciso 7): Risco de uso indevido de dados públicos; Necessidade de governança de dados
+  Casos de uso de Novas Rotas para Dados Públicos (Inciso 7): Publicação de dados para IA e pesquisa pública
+
+-- Figuras e diagramas --
+Figura 'Compartilhamento, Exceções e Novas Finalidades' (Quadro com três blocos): Incisos 5-7 com definições e exemplos
+  Componentes visuais: Compartilhamento Direcionado, Dispensa ≠ Vale Tudo, Novas Rotas para Dados Públicos
+  Relacionado a: compartilhamento_direcionado, dispensa_nao_vale_tudo, novas_rotas
+
+-- Relacionamentos --
+Conexao: 'compartilhamento_direcionado' --[comunica_com]--> 'terceiros'. Motivo: Compartilhamento dirigido de dados para finalidades específicas com terceiros
+Conexao: 'dispensa_nao_vale_tudo' --[depende_de]--> 'titular'. Motivo: Dispensa de consentimento está condicionada a outras bases legais e salvaguardas
+Conexao: 'novas_rotas' --[depende_de]--> 'dados_publicos'. Motivo: Uso de dados públicos para novas finalidades sujeita a garantias de privacidade
+
+=== SECAO [LGPD_GABARITO]: Gabarito ===
+Seção com as respostas das questões apresentadas no material (1: C; 2: certo; 3: B).
+
+-- Conceitos-chave --
+Termo: Gabarito Q1 | Tipo: Resultado de avaliação | Definicao: Resposta correta: C
+  Vantagens de Gabarito Q1: Validação do conteúdo estudado; Instrumento de correção
+  Desvantagens de Gabarito Q1: Específico do conjunto de questões
+  Casos de uso de Gabarito Q1: Correção de provas
+Termo: Gabarito Q2 | Tipo: Resultado de avaliação | Definicao: Resposta: certo
+  Vantagens de Gabarito Q2: Feedback direto; Confirmação de conteúdo
+  Desvantagens de Gabarito Q2: Interpretação possível de termos
+  Casos de uso de Gabarito Q2: Correção de provas
+Termo: Gabarito Q3 | Tipo: Resultado de avaliação | Definicao: Resposta: B
+  Vantagens de Gabarito Q3: Confirmação de conteúdo; Avaliação objetiva
+  Desvantagens de Gabarito Q3: Não explora o raciocínio completo
+  Casos de uso de Gabarito Q3: Correção de exercícios
+
+-- Tabelas comparativas --
+Tabela 'Gabarito das Perguntas': Resultados das perguntas do material (1-3)
+  Linha 1: Q1 = C
+  Linha 2: Q2 = certo
+  Linha 3: Q3 = B
+
