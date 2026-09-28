@@ -1,3 +1,7 @@
 .env
 arquivos_processados/
 conteudo_profundo_notebooklm/
+cache/
+logs/
+*.db
+*.log
