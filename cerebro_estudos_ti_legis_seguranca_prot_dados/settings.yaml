@@ -31,8 +31,8 @@
 completion_models:
   default_completion_model:
     model_provider: openai                     
-    #model: google/gemini-2.5-flash-lite
-    model: openai/gpt-5-nano         
+    model: google/gemini-2.5-flash-lite
+    #model: openai/gpt-5-nano         
     auth_method: api_key
     api_key: ${GRAPHRAG_API_KEY}
     api_base: https://openrouter.ai/api/v1
@@ -104,7 +104,7 @@ embed_text:
 extract_graph:
   completion_model_id: default_completion_model
   prompt: "prompts/extract_graph.txt"
-  entity_types: [organization,person,geo,event]
+  entity_types: [lei, decreto, norma, conceito, tratamento de dados, segurança da informação, risco, ameaça digital, proteção de dados, responsabilidade legal, sanção, órgão, autoridade nacional de proteção de dados, dano, glossário, princípio, objetivo, fundamento]
   max_gleanings: 1
 
 summarize_descriptions:

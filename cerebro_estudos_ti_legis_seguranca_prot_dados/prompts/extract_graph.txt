@@ -1,0 +1,155 @@
+
+-Goal-
+Given a text document that is potentially relevant to this activity and a list of entity types, identify all entities of those types from the text and all relationships among the identified entities.
+
+-Steps-
+1. Identify all entities. For each identified entity, extract the following information:
+- entity_name: Name of the entity, capitalized
+- entity_type: One of the following types: [lei, decreto, norma, conceito, tratamento de dados, segurança da informação, risco, ameaça digital, proteção de dados, responsabilidade legal, sanção, órgão, autoridade nacional de proteção de dados, dano, glossário, princípio, objetivo, fundamento]
+- entity_description: Comprehensive description of the entity's attributes and activities
+Format each entity as ("entity"<|><entity_name><|><entity_type><|><entity_description>)
+
+2. From the entities identified in step 1, identify all pairs of (source_entity, target_entity) that are *clearly related* to each other.
+For each pair of related entities, extract the following information:
+- source_entity: name of the source entity, as identified in step 1
+- target_entity: name of the target entity, as identified in step 1
+- relationship_description: explanation as to why you think the source entity and the target entity are related to each other
+- relationship_strength: an integer score between 1 to 10, indicating strength of the relationship between the source entity and target entity
+Format each relationship as ("relationship"<|><source_entity><|><target_entity><|><relationship_description><|><relationship_strength>)
+
+3. Return output in Portuguese as a single list of all the entities and relationships identified in steps 1 and 2. Use **##** as the list delimiter.
+
+4. If you have to translate into Portuguese, just translate the descriptions, nothing else!
+
+5. When finished, output <|COMPLETE|>.
+
+-Examples-
+######################
+
+Example 1:
+
+entity_types: [lei, decreto, norma, conceito, tratamento de dados, segurança da informação, risco, ameaça digital, proteção de dados, responsabilidade legal, sanção, órgão, autoridade nacional de proteção de dados, dano, glossário, princípio, objetivo, fundamento]
+text:
+ técnicas e\nadministrativas aptas a\nproteger os dados\npessoais.\n\nVazamento de base de dados → Usuário passa a\nreceber golpes.\n\nUso indevido de imagem/voz → Dano irreversível à\nreputação.\n\n**2) DESCRIÇÃO DA ESTRUTURA:**\n\nA imagem apresenta uma estrutura de comparação e contextualização, dividida verticalmente em duas seções principais: \"O Cenário de Risco\" e \"O Escudo Legal\". Há também um subtítulo principal no topo e duas frases finais abaixo das seções principais.\n\n**Título Principal:**\n*   Ameaças Digitais: Vazamentos e Novos Riscos\n\n**Seção Esquerda: O Cenário de Risco**\nEsta seção detalha os tipos de ameaças digitais.\n*   **Item 1:**\n    *   Título: Incidentes Massivos:\n    *   Descrição: Vazamentos envolvendo CPF, e-mails e senhas.\n*   **Item 2:**\n    *   Título: Novos Riscos Tecnológicos:\n    *   Descrição: Deepfakes, fraude digital e engenharia social.\n*   **Elemento Visual:** À direita dos itens 1 e 2, há um ícone de um cadeado quebrado, simbolizando a violação de segurança.\n\n**Seção Direita: O Escudo Legal**\nEsta seção apresenta a proteção legal contra as ameaças.\n*   **Conteúdo Principal (dentro de um ícone de escudo):** Os agentes de tratamento devem adotar medidas de segurança, técnicas e administrativas aptas a proteger os dados pessoais.\n\n**Frases Finais (abaixo das seções principais):**\n*   Vazamento de base de dados → Usuário passa a receber golpes.\n*   Uso indevido de imagem/voz → Dano irreversível à reputação."}}
+{{"id": "486586-1777308904.pdf_pag_6_fig_2",
+------------------------
+output:
+("entity"<|>DECRETO 7.845/2012<|>decreto<|>Regulamenta o credenciamento de segurança e o tratamento de informação sigilosa.)
+##
+("entity"<|>INFORMAÇÃO SIGILOSA<|>conceito<|>Informações que requerem segurança específica, com tecnologia atualizada e controle de acesso em redes.)
+##
+("entity"<|>ARMAZENAMENTO E ARQUIVAMENTO DE INFORMAÇÃO CLASSIFICADA<|>conceito<|>Procedimentos de segurança para guardar informações classificadas.)
+##
+("entity"<|>SEGURANÇA NO ARMAZENAMENTO<|>segurança da informação<|>Medidas de segurança aplicadas ao armazenamento de informações.)
+##
+("entity"<|>TRANSFERÊNCIA DE RESPONSABILIDADE<|>conceito<|>Processo de transferir a guarda ou custódia de documentos controlados ou material de acesso restrito a substitutos, exigindo conferência adequada.)
+##
+("entity"<|>CRIPTOGRAFIA EM MEIOS ELETRÔNICOS<|>segurança da informação<|>Uso de criptografia em dispositivos eletrônicos para proteger informações.)
+##
+("entity"<|>INFORMAÇÕES SIGILOSAS EXIGEM SEGURANÇA ESPECÍFICA<|>norma<|>Requisito de que informações sigilosas necessitam de segurança particular, incluindo tecnologia atualizada e controle de acesso em redes.)
+##
+("entity"<|>MEIOS ELETRÔNICOS DE ARMAZENAMENTO DEVEM UTILIZAR CRIPTOGRAFIA ADEQUADA<|>norma<|>Requisito de que meios eletrônicos de armazenamento utilizem criptografia apropriada ao nível de sigilo da informação.)
+##
+("entity"<|>TRANSFERÊNCIA DA GUARDA OU CUSTÓDIA DE DOCUMENTOS CONTROLADOS OU MATERIAL DE ACESSO RESTRITO<|>conceito<|>O ato de passar a posse ou responsabilidade por documentos sigilosos ou restritos para outros indivíduos.)
+##
+("entity"<|>SEGURANÇA DE REDES<|>segurança da informação<|>Medidas para proteger redes de computadores e os dados que nelas trafegam.)
+##
+("entity"<|>GRAU DE SIGILO DA INFORMAÇÃO<|>conceito<|>Nível de confidencialidade atribuído a uma informação, que determina o tipo de segurança necessário.)
+##
+("entity"<|>INFORMAÇÃO CLASSIFICADA<|>conceito<|>Informação que foi formalmente classificada em um determinado nível de sigilo.)
+##
+("entity"<|>PROFESSOR MAURICIO FRANCESCHINI<|>PERSON<|>Professor especialista em segurança e tratamento de informação sigilosa.)
+##
+("relationship"<|>DECRETO 7.845/2012<|>INFORMAÇÃO SIGILOSA<|>O Decreto 7.845/2012 estabelece diretrizes para o tratamento de Informação Sigilosa.<|>9)
+##
+("relationship"<|>INFORMAÇÃO SIGILOSA<|>SEGURANÇA NO ARMAZENAMENTO<|>A segurança no armazenamento é uma aplicação da proteção necessária para Informações Sigilosas.<|>7)
+##
+("relationship"<|>INFORMAÇÃO SIGILOSA<|>CRIPTOGRAFIA EM MEIOS ELETRÔNICOS<|>Criptografia em meios eletrônicos é uma medida de segurança aplicada a Informações Sigilosas.<|>8)
+##
+("relationship"<|>INFORMAÇÕES SIGILOSAS EXIGEM SEGURANÇA ESPECÍFICA<|>INFORMAÇÃO SIGILOSA<|>A norma descreve a necessidade de segurança específica para Informações Sigilosas.<|>9)
+##
+("relationship"<|>MEIOS ELETRÔNICOS DE ARMAZENAMENTO DEVEM UTILIZAR CRIPTOGRAFIA ADEQUADA<|>CRIPTOGRAFIA EM MEIOS ELETRÔNICOS<|>A norma especifica o uso de criptografia em meios eletrônicos.<|>9)
+##
+("relationship"<|>MEIOS ELETRÔNICOS DE ARMAZENAMENTO DEVEM UTILIZAR CRIPTOGRAFIA ADEQUADA<|>GRAU DE SIGILO DA INFORMAÇÃO<|>A adequação da criptografia está diretamente ligada ao grau de sigilo da informação.<|>8)
+##
+("relationship"<|>TRANSFERÊNCIA DA GUARDA OU CUSTÓDIA DE DOCUMENTOS CONTROLADOS OU MATERIAL DE ACESSO RESTRITO<|>TRANSFERÊNCIA DE RESPONSABILIDADE<|>A transferência da guarda é um exemplo específico do conceito de Transferência de Responsabilidade.<|>7)
+##
+("relationship"<|>DECRETO 7.845/2012<|>PROFESSOR MAURICIO FRANCESCHINI<|>O Professor Mauricio Franceschini comenta e explica o Decreto 7.845/2012.<|>6)
+##
+("relationship"<|>PROFESSOR MAURICIO FRANCESCHINI<|>CRIPTOGRAFIA EM MEIOS ELETRÔNICOS<|>O Professor Mauricio Franceschini discute a aplicação de criptografia em meios eletrônicos conforme o decreto.<|>7)
+<|COMPLETE|>
+#############################
+
+
+Example 2:
+
+entity_types: [lei, decreto, norma, conceito, tratamento de dados, segurança da informação, risco, ameaça digital, proteção de dados, responsabilidade legal, sanção, órgão, autoridade nacional de proteção de dados, dano, glossário, princípio, objetivo, fundamento]
+text:
+ decisões referentes ao tratamento de dados \npessoais.\nC) Considera-se banco de dados: conjunto estruturado de dados pessoais, \nestabelecido em um ou em vários locais, em suporte eletrônico ou físico.\nD) Considera-se bloqueio: suspensão temporária de qualquer operação de \ntratamento, mediante guarda do dado pessoal ou do banco de dados."}}
+{{"id": "486588-1777309378.pdf_pag_17_texto", "title": "Texto Normativo - 486588-1777309378.pdf - Página 17", "text": "GABARITO\n1 - A\n2 - B\n3 - certo\n4 - B"}}
+{{"id": "486588-1777309378.pdf_pag_17_tab_0", "title": "Tabela 0 - 486588-1777309378.pdf - Página 17", "text": "Dados estruturados da Tabela 0 na página 17:\nLinha 1: GABARITO\nLinha 2: 1 - A\nLinha 3: 2 - B\nLinha 4: 3 - certo\nLinha 5: 4 - B"}}
+{{"id": "486588-1777309378.pdf_pag_1_fig_0", "title": "Elemento Gráfico 0 - 486588-1777309378.pdf - Página 1", "text": "Análise visual de figura da página 1 do documento 486588-1777309378.pdf (arquivo img_486588_1777309378_pdf_pag_1_0.jpeg):\n1) GRAN\n\n2) DECORATIVA."}}
+{{"id": "486588-1777309378.pdf_pag_1_fig_1", "title": "Elemento Gráfico 1 - 486588-1777309378.pdf - Página 1", "text": "Análise visual de figura da página 1 do documento 486588-1777309378.pdf (arquivo img_486588_1777309378_pdf_pag_1_1.jpeg):\n1) GRAN\n\n2) DECORATIVA."}}
+{{"id": "486588-1777309378.pdf_pag_
+------------------------
+output:
+("entity"<|>DECRETO 7.845/2012<|>decreto<|>Decreto que dispõe sobre o credenciamento de segurança e o tratamento de informação sigilosa, incluindo armazenamento, arquivamento, segurança e transferência de responsabilidade.)
+##
+("entity"<|>INFORMAÇÃO CLASSIFICADA<|>conceito<|>Informação que requer medidas de segurança específicas para seu tratamento, incluindo armazenamento, arquivamento e transferência.)
+##
+("entity"<|>ARMAZENAMENTO E ARQUIVAMENTO DE INFORMAÇÃO CLASSIFICADA<|>conceito<|>Refere-se aos procedimentos e às medidas de segurança necessárias para guardar e manter informações classificadas.)
+##
+("entity"<|>SEGURANÇA NO ARMAZENAMENTO<|>segurança da informação<|>Medidas e tecnologias necessárias para garantir a proteção de informações classificadas durante seu armazenamento.)
+##
+("entity"<|>TRANSFERÊNCIA DE RESPONSABILIDADE<|>conceito<|>Procedimento que ocorre quando a guarda ou custódia de documentos controlados ou material de acesso restrito é passada a substitutos, exigindo conferência adequada.)
+##
+("entity"<|>CRIPTOGRAFIA EM MEIOS ELETRÔNICOS<|>segurança da informação<|>Uso de criptografia em meios eletrônicos para garantir o sigilo e a proteção de informações, adequada ao grau de sigilo da informação classificada.)
+##
+("entity"<|>INFORMAÇÕES SIGILOSAS<|>proteção de dados<|>Informações que exigem segurança específica, com tecnologia atualizada e controle de acesso em redes.)
+##
+("entity"<|>MEIOS ELETRÔNICOS DE ARMAZENAMENTO<|>conceito<|>Dispositivos ou sistemas eletrônicos utilizados para guardar informações, que devem empregar criptografia adequada.)
+##
+("entity"<|>DOCUMENTOS CONTROLADOS<|>conceito<|>Documentos que requerem um nível de controle específico em sua transferência de guarda ou custódia.)
+##
+("entity"<|>MATERIAL DE ACESSO RESTRITO<|>conceito<|>Material cuja acesso é limitado e que, em caso de transferência, exige conferência adequada.)
+##
+("entity"<|>PROF MAURICIO FRANCESCHINI<|>PERSON<|>Professor especialista em segurança e tratamento de informação sigilosa.)
+##
+("entity"<|>CÓDIGO DE DEFESA DO CONSUMIDOR<|>lei<|>Lei que atua como escudo adicional ao titular em relações comerciais.)
+##
+("relationship"<|>DECRETO 7.845/2012<|>INFORMAÇÃO CLASSIFICADA<|>O Decreto 7.845/2012 trata do tratamento de Informação Classificada.<|>8)
+##
+("relationship"<|>DECRETO 7.845/2012<|>ARMAZENAMENTO E ARQUIVAMENTO DE INFORMAÇÃO CLASSIFICADA<|>O Decreto 7.845/2012 estabelece diretrizes para o armazenamento e arquivamento de Informação Classificada.<|>8)
+##
+("relationship"<|>DECRETO 7.845/2012<|>SEGURANÇA NO ARMAZENAMENTO<|>O Decreto 7.845/2012 aborda a segurança necessária durante o armazenamento de informações.<|>7)
+##
+("relationship"<|>DECRETO 7.845/2012<|>TRANSFERÊNCIA DE RESPONSABILIDADE<|>O Decreto 7.845/2012 regulamenta a transferência de responsabilidade pela guarda de documentos controlados.<|>7)
+##
+("relationship"<|>DECRETO 7.845/2012<|>CRIPTOGRAFIA EM MEIOS ELETRÔNICOS<|>O Decreto 7.845/2012 determina o uso de criptografia em meios eletrônicos de armazenamento.<|>8)
+##
+("relationship"<|>DECRETO 7.845/2012<|>INFORMAÇÕES SIGILOSAS<|>O Decreto 7.845/2012 estabelece requisitos de segurança específicos para informações sigilosas.<|>7)
+##
+("relationship"<|>INFORMAÇÕES SIGILOSAS<|>SEGURANÇA NO ARMAZENAMENTO<|>Informações sigilosas exigem segurança específica no armazenamento.<|>7)
+##
+("relationship"<|>INFORMAÇÕES SIGILOSAS<|>CRIPTOGRAFIA EM MEIOS ELETRÔNICOS<|>Meios eletrônicos de armazenamento de informações sigilosas devem utilizar criptografia adequada.<|>7)
+##
+("relationship"<|>MEIOS ELETRÔNICOS DE ARMAZENAMENTO<|>CRIPTOGRAFIA EM MEIOS ELETRÔNICOS<|>Meios eletrônicos de armazenamento devem utilizar criptografia adequada.<|>8)
+##
+("relationship"<|>TRANSFERÊNCIA DE RESPONSABILIDADE<|>DOCUMENTOS CONTROLADOS<|>A transferência de guarda de documentos controlados exige conferência adequada.<|>7)
+##
+("relationship"<|>TRANSFERÊNCIA DE RESPONSABILIDADE<|>MATERIAL DE ACESSO RESTRITO<|>A transferência de custódia de material de acesso restrito exige conferência adequada.<|>7)
+##
+("relationship"<|>PROF MAURICIO FRANCESCHINI<|>DECRETO 7.845/2012<|>O Professor Mauricio Franceschini discute o Decreto 7.845/2012.<|>5)
+##
+("relationship"<|>CÓDIGO DE DEFESA DO CONSUMIDOR<|>INFORMAÇÕES SIGILOSAS<|>O Código de Defesa do Consumidor pode atuar como um escudo adicional em relações comerciais, potencialmente relacionado à proteção de dados sigilosos.<|>3)
+<|COMPLETE|>
+#############################
+
+
+
+-Real Data-
+######################
+entity_types: [lei, decreto, norma, conceito, tratamento de dados, segurança da informação, risco, ameaça digital, proteção de dados, responsabilidade legal, sanção, órgão, autoridade nacional de proteção de dados, dano, glossário, princípio, objetivo, fundamento]
+text: {input_text}
+######################
+output:
